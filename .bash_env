@@ -7,12 +7,14 @@ export R_LIBS_USER
 # 
 
 #====  nvim =====
-VIMRC="~/.config/nvim/init.vim"
+VIMRC="~/dotfiles/init.vim"			# physical location of file
+#VIMRC="~/.config/nvim/init.vim"		# ln -s does not seem to work
 export VIMRC
 
 #====	TMUX =====
 START_TMUX="~/dotfiles/start_tmux.sh"
 export START_TMUX
+
 #====	PATH ====
 #OLD_PATH="/home/jim/bin:/home/jim/.local/bin:/home/jim/bin:/home/jim/.local/bin:/home/jim/bin:/home/jim/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 OLD_PATH="$PATH"
