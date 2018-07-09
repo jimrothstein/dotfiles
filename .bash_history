@@ -268,3 +268,353 @@ ll
 ln -s ~/dotfiles/start_tmux.sh start_tmux.sh
 ll
 tmux kill-server
+more $START_TMUX 
+more "$START_TMUX" 
+more "$(START_TMUX)"
+cd dotfiles
+ll
+git status
+cd ..
+ssh-keygen -t rsa -b 4096 -C "jimrothstein@gmail.com"
+ll .config/
+mkdir .config/.ssh
+ssh-keygen -t rsa -b 4096 -C "jimrothstein@gmail.com"
+cd .ssh
+ll
+mv * ~/.config/.ssh/
+ll
+cd ..
+rm -rd .ssh
+cd dotfiles/
+more id_rsa.pub
+cd ~/.config/.ssh
+ll
+more id_rsa.pub 
+cd ~/dotfiles/
+git@github.com:jimrothstein/dotfiles.git
+man git-clone
+git clone git@github.com:jimrothstein/dotfiles.git
+ssh -T git@github.com
+cd ~
+ssh -vT git@github.com
+ll
+cd .ssh
+ll
+mv ~/.config/.ssh/*
+ll
+mv ~/.config/.ssh/id_rsa.pub 
+mv ~/.config/.ssh/id_rsa.pub .
+ll
+ll ~/.config/.ssh/
+ll
+ssh -T git@github.com
+ll
+rm *
+ll
+rm -rd ~/.config/.ssh/
+ssh-keygen -t rsa -b 4096 -C "jimrothstein@gmail.com"
+ll
+more id_rsa.pub
+ssh -T git@github.com
+git clone git@github.com:jimrothstein/dotfiles.git
+ll
+rm -rf dotfiles/
+cd ..
+cd dotfiles
+ll
+git clone git@github.com:jimrothstein/dotfiles.git
+git status
+ll
+cd dotfiles
+ll
+mv * ../
+ll
+ll ../
+ll
+mv -R .git/* ../
+man mv
+mv .git/ ../
+ll
+cd ..
+ll
+rm -rf dotfiles/
+git status
+git add .
+git commit -m "7July - 1st commit"
+git config --global user.email "jimrothstein@gmail.com"
+git config --global user.name "jimrothstein"
+git commit -m "7July - 1st commit"
+git push
+echo $VIMRC 
+more $VIMRC 
+fg
+nvim $VIMRC 
+VIMRC=~/dotfiles/init.vim 
+nvim $VIMRC 
+source ~/dotfiles/.bash_env
+echo $VIMRC 
+fg
+source .bash_aliases 
+goCode
+$goCode 
+cd ..
+ll
+$goDot 
+goDot
+ll
+goCode
+cd code
+ll
+cd sr_/
+ll
+more bash_test.sh 
+chmod u+x bash_test.sh 
+./bash_test.sh 
+[[ -n $BASH_VERSION ]]
+echo [[ -n $BASH_VERSION ]]
+echo "$BASH_VERSION"
+nvim bash_test.sh 
+./bash_test.sh 
+fg
+./bash_test.sh 
+fg
+./bash_test.sh 
+fg
+./bash_test.sh 
+fg
+./bash_test.sh 
+fg
+./bash_test.sh 
+fg
+./bash_test.sh 
+fg
+./bash_test.sh 
+fg
+./bash_test.sh 
+fg
+./bash_test.sh 
+fg
+start_tmux.sh 
+ll
+ln -s ~/dotfiles/bash_aliases .bash_aliases
+ll
+touch ~/dotfiles/.bash_aliases
+ll
+sudo apt-get musescore
+sudo apt-get install musescore
+musescore
+nvim ~/dotfiles/start_tmux.sh 
+man tmux
+tmux kill-server
+tmux list-sessions
+tmux list-windows
+tmux list-clients
+cd dotfiles/
+ll
+nvim start_tmux.sh 
+echo $TMUX
+test -z $TMUX
+test -z $TMUX; then echo "he" fi
+test -z $TMUX then echo "he" fi
+man test
+test -z $TMUX
+test -z $TMUX1
+test -z $TMUX3
+echo (test -z $TMUX)
+echo "test -z $TMUX"
+echo "test -z $TMUX1"
+test "-z $TMUX"
+tmux kill-server
+env
+goDot
+cd ~/dotfiles/
+exit
+nvim
+fg
+cd code/sr_/
+ll
+./bash_test.sh 
+fg
+ll
+chmod +x test_tmux.sh 
+ll
+chmod -x test_tmux.sh 
+ll
+chmod u+x test_tmux.sh 
+ll
+./test_tmux.sh 
+fg
+ll
+./test_tmux.sh 
+fg
+./test_tmux.sh 
+fg
+./test_tmux.sh 
+fg
+./test_tmux.sh 
+fg
+nvim test_tmux.sh 
+./test_tmux.sh 
+fg
+./test_tmux.sh 
+fg
+./test_tmux.sh 
+fg
+source ~/dotfiles/.bashrc
+env
+source ~/dotfiles/.bash_aliases 
+env | grep go*
+fg
+cd ~/dotfiles
+ll
+nvim .bash_env 
+. .bashrc 
+nvim ~/code/BASH_usingShell/make_play/make_device/device_info.mk 
+ll
+cp code/sr_/test_tmux.sh ../jim/Downloads/
+goCode
+env
+env | grep go*
+source ~/.bash_aliases 
+source ~/dotfiles/.bash_aliases 
+env | grep go*
+source .bash_aliases 
+env | grep go*
+alias
+alias goCode='go ~\code\'
+goCode 
+alias goCode='go ~\code'
+goCode 
+alias goCode='cd ~\code'
+goCode 
+alias goCode='cd ~/code'
+goCode 
+cd ~
+ll
+cd dotfiles/
+ll
+more .bash_aliases 
+. .bash_env
+. .bash_aliases 
+. .bashrc
+more .bashrc
+cd ~/code
+ll
+git clone git@github.com:jimrothstein/BASH_usingShell.git
+ll
+cd BASH_usingShell/
+ll
+cd nvim_play/
+ll
+more makefile
+cd ..
+cd make_play/
+ll
+cd make_device/
+ll
+export MAKE_DEVICE=/home/jim/code/BASH_usingShell/make_play/make_device/device_info.mk 
+echo $MAKE_DEVICE 
+man uname
+ll
+make device_info.mk 
+more device_info.mk 
+make version
+ll
+make device_info.mk version
+make -f device_info.mk version
+sudo fdisk -l
+man sudo
+uname -r
+mount
+make -f device_info.mk mount
+make -f device_info.mk fstab
+cat /etc/mtab
+cat /etc/mtab | grep mmc
+make -f device_info.mk du
+lspci
+sudo modprobe
+tune2fs
+readelf
+man readelf
+man modprobe
+make -f device_info.mk modprobe
+more device_info.mk 
+make -f device_info.mk modprobe
+sudo modprobe -a
+sudo modprobe -h
+q
+man modprobe
+sudo modprobe -C
+sudo modprobe -d
+sudo modprobe -V
+echo $PS1
+make -f device_info.mk PS1
+cp device_info.mk ~/Downloads/
+cd ~
+more /etc/sudoers
+sudo more /etc/sudoers
+whoami
+sudo visudo
+sudo kill-server
+tmux kill-server
+xiwi -T rstudio
+ll
+cd Downloads/
+ll
+sudo dpkg -i rstudio-xenial-1.1.453-amd64.deb 
+sudo apt-get update
+sudo enter-chroot
+xiwi -T rstudio
+locate libxslt.so.1
+ldd rstudio | grep xslt
+cd ..
+sudo find / -name "*xslt*"
+sudo find / -name libxslt.so.1
+sudo find / -name libxslt*
+sudo apt-get install libxslt1-dev
+xiwi -T rstudio
+sudo enter-chroot
+tmux new-session -s jimSession -d
+tmux new-window win_tmux
+tmux new-window win_nvim
+tmux new-window win_rstudio
+tmux attach-session -t jimSession
+ll
+echo "$PATH"
+cd bin
+./tmux.sh 
+man bash
+echo $SHELL
+nvim tmux.sh 
+./tmux.sh 
+ll
+tmux list-sessions
+more tmux.sh 
+tmux new-session jimSession
+tmux list-sessions
+tmux kill-session
+tmux
+nvim tmux.sh
+tmux kill-session
+tmux
+cd ..
+echo $PATH
+source .bash_env 
+echo $PATH
+more .bash_env
+$START_TMUX 
+~/dotfiles/start_tmux.sh 
+tmux kill-server
+tmux
+start_tmux.sh 
+clear
+start_tmux.sh
+sudo reboot now
+exit
+ls
+ll
+cd
+ll
+exit
+ls
+ll
