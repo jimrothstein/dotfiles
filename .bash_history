@@ -618,3 +618,29 @@ ll
 exit
 ls
 ll
+man youtube_dl
+youtube_dl
+echo $PATH
+whereis youtube_dl
+cd ..
+ll
+mkdir c_practice
+gcc first.c -o first.o
+ll
+./first.o 
+first
+first.0
+first.o
+./first.o 
+ll
+make
+first
+./first
+ll
+./first.0
+./first.o
+make
+ll
+make
+./first.0
+./first.o

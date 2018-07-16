@@ -16,13 +16,6 @@ set nohlsearch				" no highlight on search matches
 "set noh				" compare
 "
 "####################
-
-
-"#### Backup ####
-set backup 
-set backupdir=~/.config/nvim/backup/	" do not surround with quotes!
-"################
-"
 "
 "
 "####    map terminal ####
