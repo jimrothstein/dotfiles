@@ -1,12 +1,8 @@
+
 # ~/.bash_aliases
-
-
-
-
-
-goCode='cd ~/code/'
-goDot='cd ~/dotfiles'
-goR='cd ~/code/'
-goBin='cd ~/bin'
+alias goCode='cd ~/code/'
+alias goDot='cd ~/dotfiles'
+alias goR='cd ~/code/'
+alias goBin='cd ~/bin'
 export goCode goDot goR goBin
 

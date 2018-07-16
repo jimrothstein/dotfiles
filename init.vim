@@ -3,8 +3,27 @@
 "
 "
 imap jj <Esc>
-set number
+set number				" nonumber to turn off
+colorscheme darkblue		" till I figure out better
+set colorcolumn=81		" display right margin
 
+noremap <C-s> :w<Enter>		" save file
+"
+"####### colors #####
+"set background=dark			" easier to read on dark (black) background
+"
+set nohlsearch				" no highlight on search matches
+"set noh				" compare
+"
+"####################
+
+
+"#### Backup ####
+set backup 
+set backupdir=~/.config/nvim/backup/	" do not surround with quotes!
+"################
+"
+"
 "
 "####    map terminal ####
 tnoremap <Esc> <C-\><C-n>		" return to normal mode

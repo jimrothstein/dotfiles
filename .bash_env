@@ -7,7 +7,7 @@ export R_LIBS_USER
 # 
 
 #====  nvim =====
-VIMRC="~/dotfiles/init.vim"			# physical location of file
+VIMRC=~/dotfiles/init.vim			# physical location of file
 #VIMRC="~/.config/nvim/init.vim"		# ln -s does not seem to work
 export VIMRC
 
