@@ -8,8 +8,16 @@ export R_LIBS_USER
 
 #====  nvim =====
 VIMRC=~/dotfiles/init.vim			# physical location of file
-#VIMRC="~/.config/nvim/init.vim"		# ln -s does not seem to work
-export VIMRC
+BACKUP=~/.config/nvim/backup/			# all backups here, same as for vim
+
+export VIMRC BACKUP
+
+legal=~/documents/legal_18SC21468/SC_outline.md
+export legal 
+
+VIM_WIKI_HOME=~/Downloads/vimwiki/
+export VIM_WIKI_HOME
+
 
 #====	TMUX =====
 START_TMUX="~/dotfiles/start_tmux.sh"

@@ -20,5 +20,12 @@ tmux new-window -n win_other
 tmux select-window -t jimSession:1	# win_nvim
 tmux attach-session	-t jimSession
 
+#### vim :checkhealth ####
+# set 29 JUNE 2018 because :checkhealth said to
+tmux set-option -sg escape-time 10
+tmux set-option -g  default-terminal "screen-256color"
+# but then checkhealth dislikes $TERM and TMUX
+
+
 # CHECK
 echo "test -z $TMUX"		# if non zero string, displays file
