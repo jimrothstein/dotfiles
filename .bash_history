@@ -1,889 +1,3 @@
-fg
-source ~/.bash_env 
-echo $PATH
-echo $OLD_PATH
-echo $START_TMUX 
-cd ~/dotfiles
-ll
-mv tmux.sh start_tmux.sh
-fg
-cd ..
-nvim $START_TMUX 
-exit
-tmux.sh 
-tmux list-sessions
-tmux list-windows
-tmux new-window win_nvim
-tmux new-window win_nvim -t jimSession
-tmux list-sessions
-tmux list-windows
-tmux new-window -n win_nvim -t jimSession
-sudo apt install git
-cd ..
-ll
-cd .config/
-ll
-cd ..
-git status
-more .lesshst 
-more .profile
-if [ -n "$BASH_VERSION" ]; echo "true"; ;
-if [ -n "$BASH_VERSION" ]; then echo "true"; ;
-if [ -n "$BASH_VERSION" ]; then echo "true" fi; ;
-if [ -n "$BASH_VERSION" ]; then echo "true";
-if [ -n "$BASH_VERSION" ]; then echo "true"; fi
-ll
-cd bin
-ll
-mv tmux.sh ../dotfiles/
-cd ../dot
-cd ../dotfiles/
-cd ..
-tmux kill-server
-nvim $START_TMUX 
-exit
-tmux list-sessions
-tmux list-clients
-exit
-exit
-tmux list-sessions
-tmux list-windows
-~/dotfiles/start_tmux.sh 
-eit
-exit
-start_tmux.sh 
-tmux list-sessions
-cd ~/bin
-ll
-ln -s ~/dotfiles/start_tmux.sh start_tmux.sh
-ll
-tmux kill-server
-more $START_TMUX 
-more "$START_TMUX" 
-more "$(START_TMUX)"
-cd dotfiles
-ll
-git status
-cd ..
-ssh-keygen -t rsa -b 4096 -C "jimrothstein@gmail.com"
-ll .config/
-mkdir .config/.ssh
-ssh-keygen -t rsa -b 4096 -C "jimrothstein@gmail.com"
-cd .ssh
-ll
-mv * ~/.config/.ssh/
-ll
-cd ..
-rm -rd .ssh
-cd dotfiles/
-more id_rsa.pub
-cd ~/.config/.ssh
-ll
-more id_rsa.pub 
-cd ~/dotfiles/
-git@github.com:jimrothstein/dotfiles.git
-man git-clone
-git clone git@github.com:jimrothstein/dotfiles.git
-ssh -T git@github.com
-cd ~
-ssh -vT git@github.com
-ll
-cd .ssh
-ll
-mv ~/.config/.ssh/*
-ll
-mv ~/.config/.ssh/id_rsa.pub 
-mv ~/.config/.ssh/id_rsa.pub .
-ll
-ll ~/.config/.ssh/
-ll
-ssh -T git@github.com
-ll
-rm *
-ll
-rm -rd ~/.config/.ssh/
-ssh-keygen -t rsa -b 4096 -C "jimrothstein@gmail.com"
-ll
-more id_rsa.pub
-ssh -T git@github.com
-git clone git@github.com:jimrothstein/dotfiles.git
-ll
-rm -rf dotfiles/
-cd ..
-cd dotfiles
-ll
-git clone git@github.com:jimrothstein/dotfiles.git
-git status
-ll
-cd dotfiles
-ll
-mv * ../
-ll
-ll ../
-ll
-mv -R .git/* ../
-man mv
-mv .git/ ../
-ll
-cd ..
-ll
-rm -rf dotfiles/
-git status
-git add .
-git commit -m "7July - 1st commit"
-git config --global user.email "jimrothstein@gmail.com"
-git config --global user.name "jimrothstein"
-git commit -m "7July - 1st commit"
-git push
-echo $VIMRC 
-more $VIMRC 
-fg
-nvim $VIMRC 
-VIMRC=~/dotfiles/init.vim 
-nvim $VIMRC 
-source ~/dotfiles/.bash_env
-echo $VIMRC 
-fg
-source .bash_aliases 
-goCode
-$goCode 
-cd ..
-ll
-$goDot 
-goDot
-ll
-goCode
-cd code
-ll
-cd sr_/
-ll
-more bash_test.sh 
-chmod u+x bash_test.sh 
-./bash_test.sh 
-[[ -n $BASH_VERSION ]]
-echo [[ -n $BASH_VERSION ]]
-echo "$BASH_VERSION"
-nvim bash_test.sh 
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-start_tmux.sh 
-ll
-ln -s ~/dotfiles/bash_aliases .bash_aliases
-ll
-touch ~/dotfiles/.bash_aliases
-ll
-sudo apt-get musescore
-sudo apt-get install musescore
-musescore
-nvim ~/dotfiles/start_tmux.sh 
-man tmux
-tmux kill-server
-tmux list-sessions
-tmux list-windows
-tmux list-clients
-cd dotfiles/
-ll
-nvim start_tmux.sh 
-echo $TMUX
-test -z $TMUX
-test -z $TMUX; then echo "he" fi
-test -z $TMUX then echo "he" fi
-man test
-test -z $TMUX
-test -z $TMUX1
-test -z $TMUX3
-echo (test -z $TMUX)
-echo "test -z $TMUX"
-echo "test -z $TMUX1"
-test "-z $TMUX"
-tmux kill-server
-env
-goDot
-cd ~/dotfiles/
-exit
-nvim
-fg
-cd code/sr_/
-ll
-./bash_test.sh 
-fg
-ll
-chmod +x test_tmux.sh 
-ll
-chmod -x test_tmux.sh 
-ll
-chmod u+x test_tmux.sh 
-ll
-./test_tmux.sh 
-fg
-ll
-./test_tmux.sh 
-fg
-./test_tmux.sh 
-fg
-./test_tmux.sh 
-fg
-./test_tmux.sh 
-fg
-nvim test_tmux.sh 
-./test_tmux.sh 
-fg
-./test_tmux.sh 
-fg
-./test_tmux.sh 
-fg
-source ~/dotfiles/.bashrc
-env
-source ~/dotfiles/.bash_aliases 
-env | grep go*
-fg
-cd ~/dotfiles
-ll
-nvim .bash_env 
-. .bashrc 
-nvim ~/code/BASH_usingShell/make_play/make_device/device_info.mk 
-ll
-cp code/sr_/test_tmux.sh ../jim/Downloads/
-goCode
-env
-env | grep go*
-source ~/.bash_aliases 
-source ~/dotfiles/.bash_aliases 
-env | grep go*
-source .bash_aliases 
-env | grep go*
-alias
-alias goCode='go ~\code\'
-goCode 
-alias goCode='go ~\code'
-goCode 
-alias goCode='cd ~\code'
-goCode 
-alias goCode='cd ~/code'
-goCode 
-cd ~
-ll
-cd dotfiles/
-ll
-more .bash_aliases 
-. .bash_env
-. .bash_aliases 
-. .bashrc
-more .bashrc
-cd ~/code
-ll
-git clone git@github.com:jimrothstein/BASH_usingShell.git
-ll
-cd BASH_usingShell/
-ll
-cd nvim_play/
-ll
-more makefile
-cd ..
-cd make_play/
-ll
-cd make_device/
-ll
-export MAKE_DEVICE=/home/jim/code/BASH_usingShell/make_play/make_device/device_info.mk 
-echo $MAKE_DEVICE 
-man uname
-ll
-make device_info.mk 
-more device_info.mk 
-make version
-ll
-make device_info.mk version
-make -f device_info.mk version
-sudo fdisk -l
-man sudo
-uname -r
-mount
-make -f device_info.mk mount
-make -f device_info.mk fstab
-cat /etc/mtab
-cat /etc/mtab | grep mmc
-make -f device_info.mk du
-lspci
-sudo modprobe
-tune2fs
-readelf
-man readelf
-man modprobe
-make -f device_info.mk modprobe
-more device_info.mk 
-make -f device_info.mk modprobe
-sudo modprobe -a
-sudo modprobe -h
-q
-man modprobe
-sudo modprobe -C
-sudo modprobe -d
-sudo modprobe -V
-echo $PS1
-make -f device_info.mk PS1
-cp device_info.mk ~/Downloads/
-cd ~
-more /etc/sudoers
-sudo more /etc/sudoers
-whoami
-sudo visudo
-sudo kill-server
-tmux kill-server
-xiwi -T rstudio
-ll
-cd Downloads/
-ll
-sudo dpkg -i rstudio-xenial-1.1.453-amd64.deb 
-sudo apt-get update
-sudo enter-chroot
-xiwi -T rstudio
-locate libxslt.so.1
-ldd rstudio | grep xslt
-cd ..
-sudo find / -name "*xslt*"
-sudo find / -name libxslt.so.1
-sudo find / -name libxslt*
-sudo apt-get install libxslt1-dev
-xiwi -T rstudio
-sudo enter-chroot
-tmux new-session -s jimSession -d
-tmux new-window win_tmux
-tmux new-window win_nvim
-tmux new-window win_rstudio
-tmux attach-session -t jimSession
-ll
-echo "$PATH"
-cd bin
-./tmux.sh 
-man bash
-echo $SHELL
-nvim tmux.sh 
-./tmux.sh 
-ll
-tmux list-sessions
-more tmux.sh 
-tmux new-session jimSession
-tmux list-sessions
-tmux kill-session
-tmux
-nvim tmux.sh
-tmux kill-session
-tmux
-cd ..
-echo $PATH
-source .bash_env 
-echo $PATH
-more .bash_env
-$START_TMUX 
-~/dotfiles/start_tmux.sh 
-tmux kill-server
-tmux
-start_tmux.sh 
-clear
-start_tmux.sh
-sudo reboot now
-exit
-ls
-ll
-cd
-ll
-exit
-ls
-ll
-man youtube_dl
-youtube_dl
-echo $PATH
-whereis youtube_dl
-cd ..
-ll
-mkdir c_practice
-gcc first.c -o first.o
-ll
-./first.o 
-first
-first.0
-first.o
-./first.o 
-ll
-make
-first
-./first
-ll
-./first.0
-./first.o
-make
-ll
-make
-./first.0
-./first.o
-goCode 
-cd shell
-ll
-cd scripts_/
-ll
-cd bash/
-ll
-./000_#_example_ex_ex.sh 
-ll
-./000_#_example_ex_ex.sh 
-ll
-chmod u+x 000_#_example_ex_ex.sh 
-./000_#_example_ex_ex
-./000_#_example_ex_ex.sh 
-systemctl start snapd.service
-systemctl status snapd.service
-service
-sudo service
-sudo service snap start
-sudo service snapd start
-sudo service --start-all
-sudo service --status-all
-exit
-ls
-ll
-nvim $VIMRC
-cd dotfiles/
-ll
-mroe init.vim 
-more init.vim 
-git status
-git add .
-git status
-git commit -m "9JUL"
-git push
-git config --global push.default.simple
-git push
-git config --global push.default simple
-git push
-git config
-git config -l
-cd ~/code
-ll
-git clone git@github.com:jimrothstein/r_penn_state.git
-ll
-git clone git@github.com:jimrothstein/try_things_here.git
-ll
-mv try_things_here/ r_try_things_here/
-ll
-git clone git@github.com:jimrothstein/project_health_labs.git
-ll
-mv project_health_labs/ r_project_health_labs
-ll
-mv BASH_usingShell/ r_bash_make/
-ll
-git clonegit@github.com:jimrothstein/project_Row.git
-git clone git@github.com:jimrothstein/project_Row.git
-ll
-mv project_Row/ r_project_row/
-ll
-mv sr_/ scripts_/
-ll
-cd ../dotfiles/
-ll
-touch .Rprofile
-fg
-nvim .Rprofile
-cd ..
-sudo apt-get install youtube-dl
-ll
-cd code
-ll
-cd scripts_/
-ll
-touch youtube_dl.sh
-chmod o+u youtube_dl.sh 
-ll
-chmod o+x youtube_dl.sh 
-ll
-nvim youtube_dl.sh 
-cd ..
-ll
-cd c_practice/
-nvim first.c
-cd ~
-df -h
-nvim $VIMRC 
-nvim dotfiles/.bashrc 
-nvim
-echo $VIMRC
-echo "$VIMRC"
-nvim "$VIMRC"
-nvim ~/dotfiles/init.vim 
-dot2=dotfiles/init.vim
-nvim $dot2
-source .bashrc
-env
-nvim $VIMRC 
-ls -i
-ls -ila
-nvim .bash_aliases
-nvim .bash_env
-ln -s ~/dotfiles/.bash_aliases .bash_aliases
-rm .bash_aliases 
-ln -s ~/dotfiles/.bash_aliases .bash_aliases
-ll
-echo .bash_aliases 
-echo ".bash_aliases"
-more .bash_aliases 
-cat .bash_aliases 
-adb devices
-adb kill-server
-adb devices
-adb kill-server
-adb
-adb devices
-adb kill-server
-adb devices
-adb reboot
-adb kill-server
-adb devices
-adb kill-server
-adb devices
-fastboot oem
-sudo apt-get install fastboot
-fastboot oem
-fastboot oem get_unlock_data
-ll
-adb devices
-adb
-man fastboot
-fastboot devices
-fastboot devices -l
-adb devices -l
-adb pull
-adb usb
-adb reboot-bootloader
-adb get-state
-adb get-devpath
-adb recovery
-adb reboot recovery
-adb reboot sideload
-adb shell
-fastboot boot recovery
-fastboot boot 
-fastboot reboot
-adb shell
-adb devices -l
-goCode 
-cd scripts_/
-ll
-cd ..
-ll
-cd r_
-ll
-ll r_system_info_files/
-cd ..
-ll
-cd ..
-ll
-cd Downloads/
-ll
-cd ..
-goCode 
-ll
-cd r_bash_make/
-ll
-cd reading
-ll
-rm reading.md-2018-04-23 
-nvim reading.md 
-goCode 
-ll
-mv r_bash_make/ r_bash_make_read
-ll
-cd scripts_/
-ll
-more bash_test.sh 
-nvim and_or_statements.sh
-chmod o+x and_or_statements.sh 
-ll
-chmod o-x and_or_statements.sh 
-ll
-chmod u+x and_or_statements.sh 
-ll
-./and_or_statements.sh 
-nvim and_or_statements.sh
-./and_or_statements.sh 
-fg
-./and_or_statements.sh 
-fg
-./and_or_statements.sh 
-fg
-./and_or_statements.sh 
-fg
-ll /
-mv
-ll
-mv and_or_statements.sh ~/Downloads/
-mkdir ~/Downloads/toGoogle
-mkdir ~/Downloads/print_and_delete
-mv ~/Downloads/and_or_statements.sh ~/Downloads/print_and_delete/
-ll
-nv bash_test.sh 
-nvim bash_test.sh 
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-./bash_test.sh 
-fg
-echo $VIMRUNTIME
-fg
-ll
-nvim bash_test.sh 
-ll
-chmod o+x bash_root_test.sh 
-ll
-chmod o-x bash_root_test.sh 
-chmod u+x bash_root_test.sh 
-ll
-who
-whoami
-./bash_root_test.sh 
-nvim bash_root_test.sh 
-./bash_root_test.sh 
-fg
-./bash_root_test.sh 
-echo $?
-fg
-./bash_root_test.sh 
-$?
-echo $?
-nvim bash_root_test.sh 
-./bash_root_test.sh 
-echo $?
-echo $UID
-echo $ROOT_UID
-fg
-./bash_root_test.sh 
-echo $?
-fg
-./bash_root_test.sh 
-fg
-ll
-mv bash_root_test.sh bash_tests2.sh
-nvim bash_tests2.sh 
-mv bash_test2.sh bash_test2.sh
-mv bash_tests2.sh bash_test2.sh
-ll
-rm bash_test.sh test1.sh
-mv bash_test2.sh test2.sh
-ll
-nvim
-cd ~/.config/nvim/
-ll
-fg
-ll
-mkdir backup
-fg
-goCode
-ll
-cd r_bash_make_read/
-ll
-cd reading/
-ll
-mv reading non_R_reading.md
-mv reading.md non_R_reading.md
-ll
-fg
-ll
-xs ..
-ll
-cd ..
-ll
-cd ..
-ll
-cd scripts_/
-ll
-mv R_stats_reading.md ../r_bash_make_read/
-ll
-cd reading
-ll
-cd ..
-rm -rd reading/
-git status
-git add .
-git commit -m "14JUL"
-git push
-ll
-cd BASH_usingShell/
-ll
-cd ..
-rm BASH_usingShell/
-rm -rd BASH_usingShell/
-ll
-cd bash_scripts_play/
-ll
-fg
-goCode
-ll
-cd r_bash_make_read/
-ll
-ll reading/
-ll
-mv R_stats_reading.md reading/
-rm README.md 
-ll
-cd ..
-ll
-cd scripts_/
-ll
-ll nvim_play/
-ll ../r_bash_make_read/make_play/
-ll
-ll -R
-ll -R >> code_scripts_index.txt
-cd ..
-cd r_bash_make_read/
-ll
-ll -R
-ll -R >> r_bash_make_read.txt
-ll
-cp r_bash_make_read.txt ~/Downloads/print_and_delete/
-cd -
-cd scripts_/
-ll
-cp code_scripts_index.txt ~/Downloads/print_and_delete/
-ll ~/Downloads/print_and_delete/
-ll
-cd bash_scripts_play/
-ll
-nvim 006_functions_style.sh
-chmod u+x 006_functions_style.sh 
-ll
-./006_functions_style.sh junk
-fg
-./006_functions_style.sh junk
-fg
-./006_functions_style.sh junk
-echo $?
-fg
-./006_functions_style.sh junk
-cp 006_functions_style.sh ~/Downloads/print_and_delete/
-ll
-cp test2.sh ~/Downloads/print_and_delete/
-ll
-cd ..
-ll
-cd bash_scripts_play/
-ll
-cd ..
-mv bash_scripts_play/ bash/
-ll
-cd ../r_bash_make_read/
-ll
-cd nvim_play/
-ll
-cd ..
-rm -rd nvim_play/
-ll
-cd make_play/
-ll
-rm -rd *
-cd ..
-rm -rd make_play/
-ll
-cd bash_scripts_play/
-ll
-cd ..
-rm -rd bash_scripts_play/
-ll
-cd reading/
-ll
-mv R_stats_reading.md 001_R_stats_reading.md
-mv non_R_reading.md 002_non_R_reading.md
-ll
-rm reading.html 
-ll
-cd ..
-ll
-cd ..
-mv r_bash_make_read/ r_reading/
-ll
-cd r_reading
-ll
-mv reading/ .
-mv reading/* .
-ll
-rm -rd reading/
-ll
-git status
-git add .
-git status
-git commit -m "14JUL"
-git push
-cd ../scripts_/
-ll
-git add .
-git commit -m "17JUL"
-git status
-ll
-git push
-git config
-git config -g user jimrothstein
-git config --g list
-git config -l
-git remote -l
-git remote 
-git remote get-url
-git remote -all
-git config
-cd ../r_reading/
-ll
-git clone git@github.com:jimrothstein/reading.git
-git status
-git add .
-ll
-mv reading/* ..
-mv reading/* .
-ll
-ll reading/
-rm -rd reading/
-ll
-cd ..
-ll
-mv README.md r_reading/
-ll
-cd r_reading/
-ll
-sudo rm -rd reading/
-git status
-git add .
-git status
-git commit -m "17 JUL"
-git status
-git log1
-git log
-git config -l
-git config remote 
-git remote
-git remote add git@github.com:jimrothstein/reading.git
-nvim
-cp 002_non_R_reading.md ~/Downloads/print_and_delete/
-ll
-git status
-git remote -v
-git remote show origin
 git remote  add upstream git@github.com:jimrothstein/reading.git
 git remote -v
 git fetch upstream
@@ -1998,3 +1112,889 @@ cd tmux
 sh ./autogen.sh 
 ./configure && make
 tmux kill-session
+tmux kill-session
+cd ~
+tmux -V
+nvim $legal
+nvim 
+nvim ~/code/r_reading/
+goR
+ll
+cd legal_18SC21468/
+ll
+cd ..
+rm -rf legal_18SC21468/
+ll
+cd r_reading/
+ll
+mkdir html
+ll
+rm 002_non_R_reading.html 
+pandoc 002_non_R_reading.md | -stdin
+pandoc 002_non_R_reading.md | lynx -stdin
+fg
+pandoc 002_non_R_reading.md | lynx -stdin
+ll
+ll html
+pandoc 002_non_R_reading.md -o html/002
+ll
+ll html/
+mv html/002 html/002.html
+ll
+cd html
+lynx 002.html 
+ll
+mkdir ~/Downloads/dropbox
+cp 002.html ~/Downloads/dropbox/
+cd ..
+cp 002_non_R_reading.md ~/Downloads/dropbox/
+fg
+cd ~
+nvim
+nvim $VIMRC 
+nvim
+nvim $VIMRC 
+nvim
+cd ~/.config/nvim/
+ll
+cd bundle/
+ll
+cd ~
+nvim 
+nvim
+nvim +PluginInstall +qall
+nvim
+fg
+nvim index.md
+goCode 
+ll
+more delete.sh 
+ll
+cd scripts_/
+ll
+cd bash/
+ll
+ls | grep function
+cd ..
+ll
+cd ..
+ll
+more delete.sh 
+ll
+cd scripts_/
+ll
+cd bash/
+ll
+ls | grep tests
+cat 011_function_tests.sh 
+cd ..
+ll
+cd ..
+more
+ll
+rm delete.sh 
+cd scripts_/
+ll
+cd nvim_play/
+ll
+mkdir vim_hard
+cd vim_hard/
+ll
+nvim ~/.bash_env
+source ~/.bash_aliases 
+aliases
+alias
+goHard
+source ~/.bash_aliases 
+nvim ~/.bash_aliases
+alias
+source ~/.bash_aliases 
+alias
+fg
+ll
+nvim
+cd ~/Downloads/vimwiki/
+ll
+mkdir jim
+mkdir jim/html
+ll jim
+fg
+ll
+cd jim
+ll
+cd ..
+nvim 
+ll
+mv index.md jim/
+ll
+cd jim
+ll
+nvim index.md 
+edit this line in nvim 
+nvim
+echo $PS1
+echo "$PS1"
+echo "$(PS1)"
+echo "${PS1}"
+echo "$PS1"
+echo $PS1
+PS1_old=PS1
+echo PS1_old
+PS1="\! \w >"
+fg
+tmux kill-server
+cd ~
+ll
+cd ~/.config/nvim/
+ll
+mkdir bundle
+cd bundle
+mv ~/Downloads/vimwiki-master.zip .
+ll
+unzip vimwiki-master.zip 
+ll
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+ll
+rm -rf vimwiki-master/
+ll
+cd ~/.vim/
+ll
+cd bundle
+ll
+cd ..
+rm -rf .vim/
+ll
+cd Downloads/
+ll
+mkdir vimwiki
+ll
+source $BASHRC
+source ~/.bashrc
+env
+cd $VIM_WIKI_HOME/
+ll
+cd ..
+cd ~
+ll
+cd dotfiles
+ll
+git status
+git add .
+git commit -m "31JUL"
+git push
+git status
+goCode 
+ll
+cd r_reading/
+ll
+git status
+git add .
+git commit -m "31JUL"
+git push
+goLegal 
+ll
+more junk
+rm junk
+make
+more makefile
+nvim makefile 
+ll ~/Downloads/
+make
+ll ~/Downloads/toGoogle
+fg
+make
+ll ~/Downloads/toGoogle
+ll ~/.config/nvim/backup/legal_backup
+ll ~/.config/nvim/backup/
+ll
+more missfont.log 
+rm missfont.log 
+more notes.md 
+ll
+mv notes.md 2018_07_25_mediation_notes.md
+ll
+cp 2018_07_25_mediation_notes.md ~/Downloads/
+rm ~/Downloads/2018_07_25_mediation_notes.md 
+whoami
+sudo visudo
+start_tmux.sh 
+tmux kill-server
+ll
+cd bin
+ll
+./start_tmux.sh 
+cd ~
+ll
+./start_tmux.sh 
+cd bin
+./start_tmux.sh 
+fg
+cd ~
+nvim .bash_aliases 
+source .bash_aliases 
+echo env
+env
+goTest 
+echo $visible_dir/
+fg
+env
+env | grep go
+alias
+source .bash_aliases 
+alias
+goTest 
+echo $VISIBLE_DIR/
+fg
+source .bash_aliases 
+echo $VISIBLE_DIR/
+goTest 
+fg
+ll
+cd legal_18SC21468/
+ll
+mv 90_375_unlawful.md 2018_short_case_summary.md
+ll
+cd ..
+mkdir markdown_examples
+ll
+mv indent_examples.md markdown_examples/
+ll
+rm indent_examples.html 
+ll
+l
+echo $l
+l
+ll
+cd legal_18SC21468/
+ll
+makefile
+make
+tmux kill-server
+xiwi -T rstudio
+/opt/google/chrome/chrome
+whereis google
+whereis chrome
+chrome
+google
+goCode 
+ll
+goDocs 
+ll
+cd ..
+mkdir Downloads/documents
+ll Downloads/documents
+mv documents/*  ~/Downloads/documents/
+ll ~/Downloads/documents/
+cd ~/documents/
+ll
+cd ..
+rm -rf documents
+ll
+cd Downloads/
+ll
+cd documents/
+ll
+goCode
+ll
+cd scripts_/
+ll
+cd bash/
+ll
+git status
+git add .
+git commit -m "1AUG"
+git push
+ll
+cd ..
+ll
+git status
+git add .
+git remote -v
+git commmit -m "1AUG"
+git commit -m "1AUG"
+git push
+cd ~/Downloads/
+ll
+more Google\ Voice\ -\ airbnb\ amy\ salem.mhtml 
+xiwi -T rstudio
+exit
+tmux kill-server
+tmux list-sessions
+exit
+goLegal 
+ll
+nvim
+fg
+cd ..
+goCode 
+ll
+cd r_reading/
+ll
+nvim 002_non_R_reading.md 
+fg
+nvim 001_R_stats_reading.md 
+ll
+goLegal 
+ll
+cd ..
+ll
+mv 2018_08_06_lawyer_questions.md legal_18SC21468/
+ll
+fg
+goLegal 
+ll
+nvim *
+ls /etc/
+cd ..
+ll
+more .gitconfig 
+rm .gitconfig 
+more index.md 
+rm index.md 
+more junk
+rm junk 
+ll
+more key.txt 
+more .lesshst 
+ll
+l
+ll
+cd /code
+cd ~/code
+ll
+mkdir ~/Downloads/documents/reading; mv r_reading/* ~/Downloads/documents/
+ll
+ll ~/Downloads/documents/ll
+ll
+ll ~/Downloads/documents/
+ll ~/Downloads/documents/reading/
+cd r_reading/
+ll
+cd ~/Downloads/documents/
+ll
+mv 001_R_stats_reading.md 002_non_R_reading.md reading/
+ll
+rm junk
+ll
+cd html
+ll
+cd ..
+rm html
+rm -rd html
+ll
+more r_bash_make_read.txt 
+ll
+mv r_bash_make_read.txt delete_me.txt
+ll
+less delete_me.txt 
+ll
+cd reading
+ll
+mv -r ~/code/r_reading/* .
+man mv
+mv  ~/code/r_reading/* .
+mv  ~/code/r_reading/.git/* .
+ll
+mkdir .git
+mv * .git/
+ll
+cd .git
+ll
+mv 001_R_stats_reading.md 002_non_R_reading.md ../
+cd ..
+ll
+mv ~/code/r_reading/.gitignore .
+ll ~/code/r_reading/*
+ll ~/code/
+ll ~/code/r_reading/
+cd .git
+ll
+cd hooks
+ll
+cd ..
+ll
+git status
+git add .
+git commit -m "2AUG"
+git push
+ll ~/code/r_reading/
+rm -rd  ~/code/r_reading/*
+rm -rd  ~/code/r_reading/
+ll
+cd ..
+ll
+more README.md 
+ll
+cd legal_18SC21468/
+ll
+make
+ffmeg
+ffmpeg
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
+cd ~
+youtube-dl
+cd mp3
+ll
+cd Downloads/
+ll
+cd mp3
+ll
+ll .sh
+ll *.sh
+ll | less
+goCode
+ll
+cd scripts_/
+ll
+cd bash/
+ll
+more youtube_dl.sh 
+cp youtube_dl.sh ~/Downloads/mp3/
+cd ~/Downloads/mp3
+ll
+mkdir 2AUG_downloads
+cd 2AUG_downloads/
+ll
+../youtube_dl.sh PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
+../youtube_dl.sh -F PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
+cd ..
+./youtube_dl.sh -F PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
+ll
+whoami
+chmod o+x youtube_dl.sh 
+ll
+chmod u+x youtube_dl.sh 
+./youtube_dl.sh -F list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
+./youtube_dl.sh 
+more youtube_dl.sh 
+whereis youtube_dl
+/usr/local/bin/youtube-dl
+/usr/local/bin/youtube-dl -F PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
+/usr/local/bin/youtube-dl -x  -f mp3 PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
+more ./youtube_dl.sh 
+nvim youtube_dl.sh 
+./youtube_dl.sh PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
+fg
+/usr/local/bin/youtube-dl 
+./nvim youtube_dl.sh 
+./youtube_dl.sh PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
+/usr/local/bin/youtube-dl PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
+ll
+mkdir 2AUG2018
+mkdir JUL2018
+ll NA*
+mv N* JUL2018/
+ll
+ll -h
+mv K.D.\ Lang\ -\ Theme\ From\ The\ Valley\ Of\ The\ Dolls-IPmok_ZcgF4.mp3 JUL2018/
+ll
+ll 2AUG_downloads/
+ll 2AUG2018/
+ll
+ll *.mp4
+rm *.mp4
+ll
+ll *.webm
+ll -h  *.webm
+ll
+more youtube_dl.sh 
+nvim youtube_dl.sh 
+fg
+man youtube_dl
+man /usr/local/bin/youtube-dl 
+cd /usr/local/bin
+ll
+mv youtube-dl ~/bin/
+ll
+mv youtube-dl ~/
+ll
+cp youtube-dl ~/bin/
+cd ~/bin
+ll
+youtube-dl 
+youtube-dl --help
+youtube-dl --help | less
+ll
+cd ~/Downloads/mp3
+ll
+nvim youtube_dl.sh 
+fg
+ll
+cd cd 2AUG_downloads/
+cd 2AUG_downloads/
+ll
+cd ..
+ll
+nvim youtube_dl.sh 
+ll
+./youtube_dl.sh 
+youtube_dl
+~/bin/youtube_dl
+ll ~/bin
+~/bin/youtube_dl
+~/bin/youtube-dl 
+fg
+./youtube_dl.sh 
+/home/jim/bin/youtube-dl 
+youtube_dl
+echo $PATH
+fg
+./youtube_dl.sh 
+fg
+./youtube_dl.sh 
+fg
+./youtube_dl.sh 
+youtube-dl --help
+youtube-dl --help | less
+./youtube_dl.sh 
+fg
+./youtube_dl.sh 
+fg
+./youtube_dl.sh 
+fg
+./youtube_dl.sh 
+fg
+./youtube_dl.sh 
+fg
+./youtube_dl.sh 
+ll
+sudo apt-get install ffprobe
+sudo apt-get install ffmpeg
+./youtube_dl.sh 
+fg
+./youtube_dl.sh PLbcglKxZP5PNjd-GewMOhXn9sKv2ZaJUB
+ll
+more youtube_dl.sh 
+nvim youtube_dl.sh 
+./youtube_dl.sh 
+./youtube_dl.sh PLbcglKxZP5PNjd-GewMOhXn9sKv2ZaJUB
+fg
+./youtube_dl.sh https://www.youtube.com/playlist?list=PLbcglKxZP5PNjd-GewMOhXn9sKv2ZaJUB
+fg
+./youtube_dl.sh 
+ll
+tmux attach
+exit
+ps aux
+ps aux | grep tmux
+tmux kill-session
+ps aux | grep tmux
+tmux list-sessions
+tmux kill-server
+ps aux | grep tmux
+tmux kill-server
+echo ?
+tmux list-sessions
+exit
+tmux
+tmux attach
+tmux list-sessions
+tmux attach
+tmux list-sessions
+tmux list-clients
+tmux kill-server
+cd bin
+ll
+./start_tmux.sh 
+more start_tmux.sh 
+tmux list-sessions
+tmux kill-server
+exit
+tmux list-sessions
+tmux attach
+tmux
+tmux kill-server
+ps aux | grep tmux
+tmux kill-session jimSession
+tmux kill-session -t jimSession
+ps aux | grep tmux
+man kill-session
+man tmux-kill-session
+ps aux | grep tmux
+man tmux
+tmux list-client
+tmux list-clients
+tmux list
+tmux list-windows
+tmux list-buffers
+tmux list-commands
+ps aux | grep tmux
+ps aux | grep nvim
+ps aux | grep neovim
+kill 20756
+ps aux | grep tmux
+kill 20759
+ps aux | grep tmux
+kill 20800
+ps aux | grep tmux
+sudo kill 20759
+ps aux | grep tmux
+tmux kill-server
+ps aux | grep tmux
+man pkill
+pkill -f tmux
+ps aux | grep tmux
+man kill
+kill -L
+man kill
+man pkill
+man kill
+pkill -L 20759
+man pkill
+man kill
+kill -L
+kill -L 20759
+man kill
+whereis kill
+/bin/kill -L
+kill -h
+kill --help
+kill
+man killall
+ps aux | grep tmux
+man ps
+ps -e
+ps -e | grep tmux
+kill 20759
+ps -e | grep tmux
+pkill -f tmux
+ps -e | grep tmux
+man kill
+man killall
+killall -h
+killall --help
+exit
+tmux
+tmux kill-servrer
+tmux kill-server
+ll
+tmux list-sessions
+cd bin
+ll
+ps aux | grep tmux
+tmux attach -t jimSession
+tmux list-sessions
+./start_tmux.sh 
+tmux list-sessions
+tmux list-session
+tmux attach
+tmux list-clients
+exit
+nvim
+zoiper
+cd ~/D
+cd ~/Downloads/
+ll
+sudo dpgk -i zoiper5_5.2.19_x86_64.deb 
+sudo dpkg -i zoiper5_5.2.19_x86_64.deb 
+man dpgk
+man dpkg
+sudo apt-get install libnotify4
+man apt-get
+sudo apt-get -f zoiper5
+sudo apt-get update
+sudo apt-get install -f
+sudo apt-get install zoiper5
+sudo apt-get install -f zoiper5
+sudo apt-get install -f
+zoiper
+zoiper5
+sudo dpkg -i zoiper5_5.2.19_x86_64.deb 
+cd ~
+zoiper
+whereis zoiper
+whereis zoiper5
+zoiper5
+apt-get install libgtk-x11-2.0.so.0
+sudo apt-get install libgtk-x11-2.0.so.0
+sudo apt-get install libgtk-x11-2.0.so
+sudo apt-get install libgtk2-
+sudo apt-get install libgtk2.0-
+sudo apt-get install libgtk2.0-dev
+zoiper5
+ls
+tmux list-sessions
+tmux list-sessions
+tmux attach
+exit
+tmux kill-server
+ps aux | grep tmux
+kill 19658
+ps aux | grep tmux
+kill 19661
+ps aux | grep tmux
+exit
+start_tmux.sh 
+tmux list-sessions
+tmux attach
+ps aux | grep tmux
+kill 19661
+kill 19703
+ps aux | grep tmux
+tmux attach-session -t jimSession
+ps aux | grep tmux
+tmux kill-session -t jimSession
+ps aux | grep tmux
+start_tmux.sh 
+ps aux | grep tmux
+man kill
+man pkill
+man killall
+man kill
+man pkill
+pkill tmux
+ps aux | grep tmux
+pkill 19661
+ps aux | grep tmux
+pkill 29156
+ps aux | grep tmux
+sudo apt-get install killall
+whereis killall
+exit
+ps aux | grep tmux
+tmux attach
+ps aux | grep tmux
+pkill -f tmux
+ps aux | grep tmux
+kill -9 tmux
+kill -9 19661
+ps aux | grep tmux
+kill -9 19703
+ps aux | grep tmux
+exit
+goLegal 
+ll
+more subpeona_duces_tecum.md 
+more Supbeona_Duces_Tecum 
+rm Supbeona_Duces_Tecum 
+ll
+mv airbnb_subpeona supbeona_airbnb.md
+more supbeona_airbnb.md 
+ll
+mv supbeona_airbnb.md subpeona_airbnb.md
+mv subpeona_duces_tecum.md subpeona_Zimmerman_Amy_Lynn_duces_tecum.md
+nv subpeona_*
+nvim subpeona_*
+ll
+mv ./pkill_tmux.sh ~/dotfiles/pkill_tmux.sh
+ll 
+ln -s ~/dotfiles/pkill_tmux.sh  pkill_tmux.sh
+ll
+ll pkill_tmux.sh 
+cat pkill_tmux.sh 
+cd ..
+shopt
+afjkasfj
+sh
+jobs
+set -o
+jobs -l
+jobs -p
+jobs -lp
+fc -l
+fc -l -e nvim
+fc -e 
+fc -l -e nvim
+ll
+man fc
+fc --help
+fc -e nvim -l
+fc -e nvim -ln
+fc -e nvim -ln >> temp
+nvim temp
+fc --help
+help fc
+echo ?
+man echo
+man -e nvim -r
+man -e nvim 1
+man -e nvim 1,100
+fc -e
+pidof tmux
+ps -p 19068
+ps -p 19068 19030
+glances
+sudo apt-get remove snap
+sudo apt-get remove snapd
+sudo apt-get autoremove
+whereis snap
+goDocs 
+ll
+cd legal_18SC21468/
+cd ../reading/
+ll
+git status
+pandoc -f markdown 002_non_R_reading.md  -t junk.pdf 
+pandoc -f markdown -t junk.pdf 002_non_R_reading.md 
+pandoc  002_non_R_reading.md -o junk.pdf
+ll
+view junk.pdf 
+cd ..
+ll
+pandoc -f html -t markdown https://www.airbnb.com/users/show/23877716j
+ll
+mv ~/Downloads/print_and_delete/amy.mhtml .
+ll
+pandoc -f html -t markdown amy.mhtml 
+whereis firefox
+exit
+ll
+ps aux | grep tmux
+fg
+nvim pkill_tmux.sh 
+./pkill_tmux.sh 
+fg
+cd ..
+goDocs 
+cd reading/
+nvim 002_non_R_reading.md 
+tmux kill-server
+ps aux | grep tmux
+kill -9 tmux
+pkill -9 tmux
+ps aux | grep tmux
+cd bin
+ll
+nvim start_tmux.sh 
+ll
+mv pkill_tmux pkill_tmux.sh
+chmod o+x pkill_tmux.sh 
+ll
+./pkill_tmux.sh
+chmod o-x pkill_tmux.sh ; ll
+chmod u+x pkill_tmux.sh ; ll
+./pkill_tmux.sh ; ll
+exit
+./014_variables.sh 
+./014_variables.sh a
+./014_variables.sh a b
+echo ${-}
+echo ${_}
+ls
+echo ${_}
+./014_variables.sh a b
+late
+./014_variables.sh a b
+echo $my_name
+echo ${my_name}
+./014_variables.sh a b
+echo $PS1
+echo "${PS1}"
+./014_variables.sh a b
+echo $PS1
+./014_variables.sh 
+ll
+chmod u+x loop_thru_files.sh 
+./loop_thru_files.sh *
+ll
+chmod u+x 018_tiff_pdf.sh 
+ll
+./018_tiff_pdf.sh 
+./018_tiff_pdf.sh *
+rm loop_thru_files.sh 
+./018_tiff_pdf.sh ~/Downloads/print_and_delete/tif_test/*
+ll
+tiff2pdf ~/Downloads/print_and_delete/tif_test/Letter\ 8-10-2018\ 10.26.38\ 64198908\ 76D11A51-8BFD-4F87-93E2-8BED9DFDE51C.tif -o junk.pdf
+ll
+view junk.pdf 

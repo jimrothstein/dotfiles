@@ -85,7 +85,21 @@ map <Leader>A :echo "hi"<enter> " <Leader> is syntax, not variable:
 vnoremap <Leader>n :norm i#<enter>	" ,n comments the line
 "
 "#################
+" play mappings - keep?
+"
+" capitalize W in insert mode, move to end of word and append
+inoremap <C-u> <esc>viWUwa
+nnoremap <C-u> viWU
+"
+" do NOT do this, recursive, <C-c> to end
+" :nmap dd O<esc>jddk
+" :unnmap dd
+"
+" 1st \ is escape variable
+let localmapleader="\\"
 
+"#################
+"
 
 "##### frequent files ####
 nnoremap <Leader>ev	:vsplit $MYVIMRC<cr>

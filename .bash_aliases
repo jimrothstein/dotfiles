@@ -10,5 +10,13 @@ alias goHard='cd ~/code/scripts_/vim_play/vim_hard/'
 
 alias goBackup='cd ~/.config/nvim/backup/'
 
-alias goDocs='cd ~/documents/'
-alias goLegal='cd ~/documents/legal_18SC21468/'
+# use env var for ~/Documents
+VISIBLE_DIR=~/Downloads
+export VISIBLE_DIR
+alias goDocs='cd $VISIBLE_DIR/documents/'
+
+alias goLegal='cd ~/Downloads/documents/legal_18SC21468/'
+
+
+# experimental
+
