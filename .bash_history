@@ -1,2000 +1,2000 @@
-git remote  add upstream git@github.com:jimrothstein/reading.git
-git remote -v
-git fetch upstream
-man git-remote
-git remote remove git@github.com:jimrothstein/BASH_usingShell.git
-git log --pretty --oneline --graph
-git log --pretty --oneline --graph -3
-git log --pretty --oneline --graph -5
-git config alias.log1 "log --pretty --oneline --graph -5"
-git log1
-git config -l
-ll .git/config 
-more .git/config
-nvim .git/config
-git fetch
+less one
+more 002_simple_bash_loop 
+more 003_shell_type_ex.sh 
+more one
+rm 002_simple_bash_loop 
+rm 003_shell_type_ex.sh 
+rm 005_find_cmd_ex.sh 
+mv one 002_loop_tests_find.sh
 ll
-git status
-git remote -v
+cat 004_read_input_ex.sh 002_loop_tests_find.sh 
+cat 004_read_input_ex.sh >> 002_loop_tests_find.sh 
+ll
+more 002_loop_tests_find.sh 
+rm 004_read_input_ex.sh 
+ll
+cat 010_test.sh 006_>> functions_style.sh 
+cat 010_test.sh >> 006_functions_style.sh 
+ll
+rm 010_test.sh 
+more rm functions_style.sh 
+rm functions_style.sh 
+more 012_test_tmux.sh 
+ll
+cat user_ex_ex_ex.sh >> 016_tmux_experiments.sh 
+rm user_ex_ex_ex.sh 
+ll
 git add .
-git commit -m "17JUL"
+git commit -a "11AUG 2"
+git commit -m "11AUG 2"
 git push
-git pull
-git status
-ll
-more 002_non_R_reading.md 
-git push
-git status
-git push
-cd ~/code/scripts_/
-ll
-nvim .git/config
-git satus
-status
-git status
-git commit -m "16JUL"
-git push
-git status
-cd ~/dotfiles/
-ll
-git satus
-git status
-git add .
-git commit -m "16JUL"
-git status
-git push
-cd ..
-ll
-more .Rhistory 
-mkdir documents
-cd documents
-ll
-mkdir legal
-cd legal
-nvim outline.md
-tar -cvpzf backup *
-ll
-tar -t backup 
-tar -tf backup 
-fg
-make -f makefile backup
-ll
-fg
-nvim *
-file backup 
-rm backup
-file makefile
-file outline.md 
-file legal_backup.tar.gz 
-cd ~
-ll
-more key.txt 
-cd tmp
-ll
-nvim junk
-goCode 
-ll
-cd scripts_/
-ll
-cd bash/
-ll
-chmod u+x 008_arrays.sh 
-nvim 008_arrays.sh 
-ll
-./008_arrays.sh 
-fg
-./008_arrays.sh 
-fg
-./008_arrays.sh 
-fg
-./008_arrays.sh 
-fg
-cd ~/documents/legal/
-ll
-nvim 90_375_unlawful.md
-nvim makefile outline.md 90_375_unlawful.md 
-cd ~
-nvim junk
-goCode 
-cd scripts_/
-ll
-cd bash/
-nvim 
-ll
-chmod u_x 010_test.sh 
-chmod u+x 010_test.sh 
-ll
-./010_test.sh 
-ll ~/.bashrc 
-fg
-./010_test.sh 
-fg
-cd ~/documents/legal/
-ll
-mv outline.md SC_outline.md
-nvim SC_outline.md 
-ll
-nvim SC_outline.md 
-ll
-make list
-make 
-ll ~/.config/nvim/backup/
-env
-more $VIMRC
-fg
-source ~/.bash_aliases 
-en
-source ~/.bash_env
-env
-cd $BACKUP/
-ll
-fg
-cd -
-fg
-source ~/.bash_aliases
-alias
-goBackup
-goScripts 
-cd -
-goDocs 
-ll
-cd legal_18SC21468/
-ll
-makefile
-make
-make list
-fg
-goCode 
-cd scripts_/
-ll
-cd bash/
-ll
-fg
-ll
-cd ..
-ll
-rm functions_tests.sh 
-cd bash/
-ll
-more junk_ex.sh 
-ll
-mv junk_ex.sh function_tests.sh
-fg
-LL
-ll
-mv function_tests.sh 011_function_tests.sh
-ll
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-ll
+more 012_test_tmux.sh 
 more 011_function_tests.sh 
-cd ..
 ll
-cd ..
+mv 015_arith.sh 009_arith.sh
 ll
-mv functions_tests.sh delete.sh
+more 015_is_pdf.sh 
 ll
-cd -
+cp 015_is_pdf.sh 017_print_me.sh
+l
 ll
-cd base
-cd bash
+nvim 017_print_me.sh 
 ll
-mv 006_functions_style_ex.sh 006_functions_style.sh
+nvim 014_variables.sh 
 ll
+fg
+ll
+fg
+nvim 002_loop_tests_find.sh 
+sh 002_loop_tests_find.sh 
+fg
+sh 002_loop_tests_find.sh 
+fg
+ll
+mv 000_#_example_ex_ex.sh 000_regex_mv_loop.sh
 more 006_functions_style.sh 
 ll
 fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
 ll
-mv youtube_dl_ex.sh youtube_dl.sh
+chmod u+x 019_basic_cmd_expansion.sh 
+./019_basic_cmd_expansion.sh 
 ll
 fg
-./011_function_tests.sh 
+tail -f -n5 /var/log/syslog
+tail -f -n5 /var/log/dpkg.log 
+tail -n5 /var/log/dpkg.log 
+tail -n50 /var/log/dpkg.log 
 fg
-./011_function_tests.sh 
+more 019_basic_cmd_expansion.sh 
+./019_basic_cmd_expansion.sh 
+tail -n10 /var/log/dmesg 
+tail -n10 /var/log/dmesg.log
+tail -n10 /var/log/dpkg.log
+tail -n10 /var/log/dpkg.log
 fg
-mv test_tmux_ex.sh 012_test_tmux.sh
+tail -n10 /var/log/dpkg.log
 fg
-./011_function_tests.sh 
+./019_basic_cmd_expansion.sh 
+$(ls)
+$(ll)
 fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-fg
-./011_function_tests.sh 
-echo $?
-fg
-./011_function_tests.sh 
-echo $?
-ll
-cp 011_function_tests.sh ~/Downloads/print_and_delete/
-fg
-ll
-cd ~/documents/legal_18SC21468
-ll
-rm questions.html 
-cp motion_to_dismiss.md ~/Downloads/print_and_delete/
-ll
-cp * ~/Downloads/print_and_delete/
-cd  ~/Downloads/print_and_delete/
-ll
-ls *.pdf
-rm makefile 
-ll
-cd -
-ll
-fg
-cp motion_to_dismiss.md ~/Downloads/print_and_delete/
-clear
-fg
-ll
-mv Supbeona_Duces_Tecum subpeona_duces_tecum.md
-ll
-cp subpeona_duces_tecum.md ~/Downloads/print_and_delete/
-fg
-ll
-fg
-ll
-rm motion_to_dismiss.html
-rm motion_to_dismiss.pdf
-ll
-more misc_info.Rmd 
-rm misc_info.Rmd 
-nvim SC_outline.md 
-ll
-rm questions.md 
-fg
-mkdir temp
-mv ~/Downloads/temp/ temp/
-ll
-cd temp
-ll
-cd ..
-ls -la temp/temp/*
-ls -la temp/temp/* >> files_drive
-ll
-rm temp/temp/*
-rm -rd temp
-ll
-fg
-echo $(date)
-echo "$(date)"
-echo "${date}"
-fg
-make
-ll
-ll ~/.config/nvim/backup/
-fg
-make
-ll ~/.config/nvim/backup/
-ll
-more missfont.log 
-cp files_drive SC_outline.md ~/Downloads/print_and_delete/
-fg'
-exit
-quit
-fg
-nvim SC_outline.md 
-source $VIMRC 
-fg
-source $VIMRC 
-fg
-source $VIMRC 
-fg
-source $VIMRC 
-fg
-cd ~
-source $VIMRC
-fg
-more $VIMRC 
-source $VIMRC 
-source ~/dotfiles/init.vim
-fg
-source $VIMRC 
-nvim $VIMRC 
-source $VIMRC 
-fg
-source $VIMRC 
-fg
-source .bash_env
-fg
-source .bash_env
-fg
-ll
-echo $legal
-cat $legal
-nvim .bash_env
-source .bash_env
-echo $legal
-cat $legal
-fg
-source .bash_env
-echo $legal
-fg
-nvim $legal
-nvim $VIMRC
-ll
-cd dotfiles/
-ll
-mv notes ~/documents/legal_18SC21468/
-cp ~/documents/legal_18SC21468/notes.html ~/Downloads/
-fg
-ll
-goDocs 
-ll
-cd legal_18SC21468/
-ll
-ls *.html
-rm *.html
-more 90_375_unlawful.
-more 90_375_unlawful.md
-ll
-ls *.pdf
-rm *.pdf
-more files_drive 
-make
-ll
-nv SC_outline.md 
-nvim SC_outline.md 
-ll
-cp 2018_07_27_drM ~/Downloads/print_and_delete/
-fg
-goCode 
-ll
-more delete.sh 
-ll
-cd scripts_/
-ll
-cd nvim_play/
-ll
-nvim 005_simple_regex.sh
-env
-env | grep go*
-env | grep go
-source ~/dotfiles/.bash_env
-source ~/dotfiles/.bash_aliases 
-goLegal 
-echo $Legal
-echo $legal 
-fg
-locale
-ll
-file subpeona_duces_tecum.md 
-tree
-whereis tree
-pdfinfo
-cd ~
-man lynx
-sudo apt-get install pandoc
-goCode 
-ll
-cd scripts_/
-ll
-mkdir markdown_play/
-ll
-cd markdown_play/
-ll
-fg
-nvim 001_basic.md
-ll
-pandoc 001_basic.md 
-ll
-pandoc 001_basic.md 001_basic.html
-man pandoc
-mkdir /html
-ll
-mkdir html/
-pandoc -o html/001 001_basic.md 
-ll
-ll html/
-mv html/001 html/001.html
-ll
-viewr
-viewer
-View
-lynx html/001.html 
-ll
-rm *.html
-ll
-pandoc 001_basic.md | lynx -stdin
-lynx nytimes.com
-lynx html/001.html 
-lynx http://vimcasts.org
-fg
-cd ~
-nvim
-ll
-xiwi -T rstudio
-man youtube-dl
-youtube-dl 
-snap
-snap find hello
-snap find youtube-dl
-snap install youtuble-dl-casept
-sudo snap install youtuble-dl-casept
-sudo snap install youtube-dl-casept
-env
-nvim $VIMRC 
-man readlink
-echo $VIMRC
-nvim ~/dotfiles/init.vim
-nvim $VIMRC
-nvim ~/.config/nvim/init.vim 
-$SHELL
-echo $TERM 
-echo $SHELL
-cd /etc/fonts
-ll
-more fonts.conf
-cd conf.d/
-ll
-more README 
-ll
-more  70-no-bitmaps.conf 
-ll
-cd ..
-ll
-cat fonts.conf | grep "font"
-ll
-cd ll
-ll conf.avail/
-more  conf.avail/60-latin.conf 
-cd conf.d/
-ll
-cd ..
-ll
-cd conf.avail/
-ll
-goCode
-ll
-goDocs 
-ll
-cd legal_18SC21468/
-ll
-cp motion_to_dismiss.html ~/Downloads/
-ll
-more motion_to_dismiss.html 
-clear
-cd~
-cd ~
-ll
-sudo snap find
-systemctl status snapd.service
-service snap start
-sudo service snap start
-man service
-whereis snap
-snap
-snap start
-snap services
-sudo snap services
-sudo snap start
-sudo snap service start
-sudo service snap start
-sudo service snap
-ll
-ln -s ~/dotfiles/.Rprofile .Rprofile
-ll
-man youtube-dl
-youtube-dl -fix  --audio-format mp3 "https://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl -f https://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-youtube-dl -f "https://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl help
-youtube-dl --help
-man youtube-dl
-youtube-dl -f 'https://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ'
-youtube-dl -f 'http://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ'
-youtube-dl -f "http://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl  "http://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl --verbose "http://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl -xi "http://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl -xi --audio-format mp3 "http://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl -xi --audio-format mp3 "https://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl -xif mp3 --audio-format mp3 "https://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl -F "https://www.youtube.com/playlist?list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ"
-youtube-dl -F https://www.youtube.com/watch?v=SiXEjCjthRs&index=3&list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ&t=0s
-youtube-dl -F "https://www.youtube.com/watch?v=SiXEjCjthRs&index=3&list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ&t=0s"
-youtube-dl -F https://www.youtube.com/watch?v=qtxqFZbyzS0&index=2&list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ&t=0s
-youtube-dl -f mp3 -x --audio-format mp3  https://www.youtube.com/watch?v=qtxqFZbyzS0&index=2&list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ&t=0s
-youtube-dl -f mp3 -x mp3  https://www.youtube.com/watch?v=qtxqFZbyzS0&index=2&list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ&t=0s
-youtube-dl -f mp3  https://www.youtube.com/watch?v=qtxqFZbyzS0&index=2&list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ&t=0s
-youtube-dl -f mp3  "https://www.youtube.com/watch?v=qtxqFZbyzS0&index=2&list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ&t=0s"
-youtube-dl -f mp3  "https://www.youtube.com/watch?v=qtxqFZbyzS0"
-youtube-dl -x --audio-format "mp3"  "https://www.youtube.com/watch?v=qtxqFZbyzS0" 
-youtube-dl -x --audio-format mp3  "https://www.youtube.com/watch?v=qtxqFZbyzS0" 
-youtube-dl  "https://www.youtube.com/watch?v=qtxqFZbyzS0" 
-youtube-dl -v
-sudo youtube-dl -U
-sudo apt-get update
-sudo apt-get youtube-dl
-sudo apt-get install youtube-dl
-sudo apt autoremove
-sudo apt-get install youtube-dl
-sudo apt-get remove -y youtube-dl
-sudo apt autoremove
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
-youtube-dl -v
-youtube-dl 
-whereis youtube-dl
-echo $PATH
-ll /usr/local/bin/youtube-dl 
-sudo chown jim:jim /usr/local/bin/youtube-dl 
-youtube-dl -v
-youtube-dl -V
-/usr/local/bin/youtube-dl 
-sudo snap install youtube-dl-casept
-sudo apt install snap
-sudo snap install youtube-dl-casept
-snap
-sudo snap find gimp
-whereis snap
-sudo snap
-/usr/lib/snap
-/usr/lib/snap/snap 
-sudo apt install snapd
-sudo apt remove snap
-sudo snap install youtube-dl-casept
-man snapd
-wheris snapd
-whereis snapd
-cd /usr/lib/snapd/
-ll
-info
-info snapd
-man snapd
-help snapd
-snapd
-./snapd
-sudo snapd
-sudo ./snapd
-cd ~
-youtube-dl 
-sudo youtube-dl
-adb devices
-sudo apt install adb
-adb devices
-sudo adb devices
-man adb
-sudo adb devices
-adb 
-adb devices
-fastboot
-sudo adb devices
-adb pull
-adb reboot
-adb root
-adb devices
-favorite
-15
-I've been attempting to use adb to pull the sms/mms inbox in its entirety from the device but am having some trouble. The phone is rooted and I've tried the following commands:
-Input
-./adb pull /data/data/com.android.providers.telephony/databases/mmssms.db
-adb pull /data/data/com.android.providers.telephony/databases/mmssms.db
-adb
-adb devices
-adb kill-server
-adb root
-adb devices
-adb kill-server
-adb devices
-adb kill-server
-adb
-adb devices
-lsb
-lsub
-lsblk
-lsusb
-sudo apt-get install lsusb
-sudo apt-get install usbutils
-lsusb
-
-adb devices
-adb | more
-adb | less
-less adb
-adb | less
-adb usb
-adb | more
-adb help | more
-adb help | les
-man adb
-youtube-dl
-sudo snap find youtube-dl
-man snap
-snap
-snap start
-snap start youtube-dl
-sudo snap start youtube-dl
-sudo snapd install youtube-dl-casept
-whereis snapd
-/usr/lib/snapd
-sudo snap login
-service start snap
-sudo service start snap
-systemctl status snapd.service
-systemctl restart snapd.service
-sudo apt install snapd
-snap find hello
-sudo /usr/lib/snapd/snapd
-env
-echo $goBin
-alias
-source ~/dotfiles/.bash_alias
-source ~/dotfiles/.bash_aliases 
-alias
-more .bash_aliases 
-less .bash_aliases 
-less dotfiles/.bash_aliases 
-source dotfiles/.bash_aliases 
-aliases
-alias
-. ./dotfiles/.bash_aliases 
-alias
-alias goDot='cd ~/dotfiles'
-alias
-goDot 
-source .bashrc
-alias
-goDot 
-goCode 
-cd /etc/
-ll
-ls *bash*
-more bash.bashrc 
-less bash.bashrc 
-cat bash.bashrc | grep source
-cat bash.bashrc | grep .bashrc
-ll profile
-more profile
-ll bas*
-ll
-cd bash_completion.d/
-ll
-cd ..
-ll
-source ~/.bashrc
-env
-adb devices
-adb kill-server
-adb devices
-fastboot
-fastboot devices
-fastboot devices -l
-man fastboot
-fastboot devices -l
-fastboot rebooy
-fastboot reboot
-adb kill-server
-adb devices
-fastboot devices -l
-adb kill-server
-adb devices
-fastboot devices -l
-adb shell
-adb root
-fastboot oem device-info
-fastboot oem device
-man fastboot oem
-fastboot oem help
-sudo apt-get install curl openssh
-sudo apt-get install curl openssl
-sudo apt-get install libcurl
-sudo apt-get install libcurl4-openssl-dev
-sudo apt-get install libssl-dev 
-sudo apt-get install abootimg
-man aboot
-abootimg
-cd ..
-ll
-cd ~
-cd tmp
-mkdir tmp
-cd tmp
-ll
-cd boot
-mkdir boot
-cd boot
-mv ~/Downloads/MotoG/twrp-3.2.2-0-falcon.img .
-file twrp-3.2.2-0-falcon.img 
-ll
-cp twrp-3.2.2-0-falcon.img twrp.img
-ll
-head -n1 twrp.img 
-strings | head -n2 twrp.img 
-strings twrp.img | head -n2
-strings twrp.img | head -n4
-strings twrp.img | head -n40
-fastboot devices -l
-fastboot devices
-ll
-sudo fastboot boot twrp.img 
-ll
-mv twrp-3.2.2-0-falcon.img ~/Downloads/MotoG/
-cp ~/Downloads/MotoG/twrp-3.0.0-0-falcon.img twrp.img
-ll
-file twrp.img 
-sudo fastboot boot twrp.img 
-cp ~/Downloads/MotoG/twrp-3.0.0-0-falcon.img new.img
-ll
-mv new.img twrp.img
-sudo fastboot boot twrp.img 
-fastboot devices 
-sudo adb devices
-sudo adb shell
-mkdir boot
-cd boot
-abootimg -x ../twrp.img 
-ll
-ls -lah *
-mkdir ramdisk
-cd ramdisk
-man gunzip
-gunzip -c ../initrd.img 
-file ../initrd.img 
-lzma
-lzma --help
-lzma -z ../initrd.img 
-ll
-ll ../
-lzma -z ../initrd.img .
-lzma -z ../initrd.img.lzma .
-sudo apt-get install  p7zip-full
-ll
-cd ..
-ll
-abootimg -x  ../twrp.img .
-abootimg -x  ../twrp.img 
-ll
-rm initrd.img.lzma 
-cd ramdisk/
-ll
-man p7
-man p7zip
-sudo apt-get install  p7zip-full
-whereis p7
-p7
-p7zip
-appropo p7zip
-appropos p7zip
-apropos p7zip
-7z
-7z -e ../initrd.img .
-7z -e ../initrd.img 
-man 7z
-7z e ../initrd.img 
-ll
-file initrd 
-ll ~/tmp/boot
-cd boot
-ll ~/tmp/boot/boot/
-7z e ../initrd.img |cpio -i
-ll
-cat initrd | cpio -i
-ll
-fastboot reboot
-cd ~/.config/
-ll
-cd nvim/
-ll
-cd backup
-ll
-cd ..
-cd ~/.config/nvim/backup
-ll
-goCode 
-git status
-ll
-cd scripts_/
-git status
-ll
-git init
-git status
-git add .
-git commit -m "15JUL"
-git push
-git remote add jimrothstein
-git remote
-git remote -l
-git remote add git@github.com:jimrothstein/BASH_usingShell.git
-git clone git@github.com:jimrothstein/BASH_usingShell.git
-ll
-git status
-git add .
-git status
-cd BASH_usingShell/
-ll
-mv ../*.sh bash_scripts_play/
-ll
-cd ..
-ll
-mv BASH_usingShell/ .
-mv BASH_usingShell/* .
-ll
-cd reading
-ll
-cd ~
-ll
-cd -
-cd ..
-ll
-rm test2.sh~ 
-ll
-cd BASH_usingShell/
-ll
-cd ..
-git status
-git add .
-git commit -m "15JUL"
-git push
-git remote add https://github.com/jimrothstein/BASH_usingShell
-git remote add master https://github.com/jimrothstein/BASH_usingShell
-git push
-git config
-git config -l
-git push remote
-git push --set-upstream remote master
-git push --set-upstream https://github.com/jimrothstein/BASH_usingShell master
-git fetch
-git fetch https://github.com/jimrothstein/BASH_usingShell
-git status
-git add .
-git commit -m "15JUL 2"
-git status
-git add .
-git status
-git checkout
-git status
-git checkout BASH_usingShell/
-git status
-ll
-cd BASH_usingShell/
-ll
-cd ..
-rm BASH_usingShell/
-rm rd BASH_usingShell/
-rm -rd BASH_usingShell/
-cd BASH_usingShell/
-ll
-sudo rm -rf .git/*
-cd ..
-rm BASH_usingShell/
-rm -rdBASH_usingShell/
-rm -rd BASH_usingShell/
-git status
-git add .
-git status
-git push
-git push https://github.com/jimrothstein/BASH_usingShell
-git push --set-upstream https://github.com/jimrothstein/BASH_usingShell
-git push --set-upstream https://github.com/jimrothstein/BASH_usingShell master
-git pull
-git pull https://github.com/jimrothstein/BASH_usingShell
-git push
-git push master https://github.com/jimrothstein/BASH_usingShell
-git push https://github.com/jimrothstein/BASH_usingShell
-git push master
-git push --set-upstream master master
-git status
-ll
-cd ..
-ll
-cd legal_18SC21468/
-ll
-more misc_summary.Rmd 
-more sms_files.Rmd 
-ll
-man test
-ll
-stat sms_files.Rmd 
-more sms_files.Rmd 
-cd ..
-ll
-cd legal_18SC21468/
-ll
-mv *.Rmd ~/documents/legal/
-ll
-cd ..
-rm -rd legal_18SC21468/
-ll
-source ~/.bash_aliases 
+./019_basic_cmd_expansion.sh 
 goDocs
 ll
-mv legal/ legal_18SC21468/
+mkdir correspondence
+cd correspondence/
+nvim 2018_08_13_DrM
 ll
-cd legal_18SC21468/
-ll
-more sms_files.Rmd 
-ll
-rm sms_files.Rmd motoG_data_recovery.Rmd
-lll
-ll
-more misc_summary.Rmd 
-ll
-mv misc_summary.Rmd misc_info.Rmd
-ll ~/.config/nvim/backup/
-ll
-cd ~
-ll
-mv documents/legal_18SC21468/legal_backup.tar.gz ~/.config/nvim/backup
-ll  ~/.config/nvim/backup/
-cd bin
-ll
-hugo
-hugo help new
-man hugo
-info hugo
-help hugo
-sudo apt-get install tex
-sudo apt-get install latex
-sudo apt-get install pdflatex
-sudo apt-get install TeX
-sudo apt-get install texlive-full
-sudo apt-get install texlive-core
-sudo apt-get install texlive-latex-base
-sudo apt-get update
-sudo apt-get install texlive-latex-base
-sudo apt-get install 
-systemctl status snapd.service
-sudo apt-get install texlive-framed
-sudo apt-get install texlive-core
-sudo apt-get install texlive-framed
-sudo apt-get install texlive-core
-sudo apt-get install texlive-latex-extra
-find snap hello
-snap find hello
-sudo systemctl enable
-service snapd start
-sudo service snapd start
-systemctl start snapd.service
-systemctl status snapd.service
-sudo service snap status
-sudo service snapd status
-man service
-service --status
-sudo service
-sudo service --status-all
-sudo service --full-restart
-sudo service snap --full-restart
-sudo apt-get install snap
-man snap
-sudo service --status-all
-man snap
-sudo snap install hello
-service snapd start
-sudo servcie snapd start
-sudo service snapd start
-sudo service snap start
-sudo systemclt start snapd.service
-sudo systemctl start snapd.service
-cd ~
-locale
-sudo locale-gen "en_US.UTF-8"
+pandoc 2018_08_13_DrM -o test.pdf
+fg
 goCode 
-goDocs 
 ll
-cd legal_18SC21468/
+cd scripts_/
 ll
-google-chrome 90_375_unlawful.html
-view 90_375_unlawful.html
-lynx 90_375_unlawful.html
-w3m 90_375_unlawful.html 
-man w3m
-lynx 90_375_unlawful.html 
+cd bash/
 ll
-ls -la
-more makefile 
-more SC_outline.
-more SC_outline.md 
+./018_tiff_pdf.sh 
+fg
+./018_tiff_pdf.sh ~/Downloads/print_and_delete/tif_test/*
+ll ~/Downloads/print_and_delete/tif_test/
+fg
+ll ~/Downloads/print_and_delete/tif_test/*
+
+ll ~/Downloads/print_and_delete/tif_test/*
+fg
+tmux kill-server
+xiwi -T rstuio
+xiwi -T rstudio
+cd ~/Downloads/print_and_delete/
 ll
-ls-la
-rm rss.gz\ \ \ 
-rm rss.g*
+rm -rf firefox/*
 ll
-rm h
+rm -rf firefox/*
 ll
-make
-cd ~
-apropos chrome
-whereis google
-/opt/google/chrome/chrome 
-ls /usr/bin/
-sudo find . -name "chrome*
-"
-sudo find . -name "chrome*"
-sudo find . -name "*chrome*"
-sudo find / -name "*chrome*"
-/run/chrome
-lynx
-goCode ll
-cd legal_18SC21468/
-ll
-cd ~/Downloads/
-ll
-lynx Google\ Voice\ -\ airbnb\ amy\ salem.mhtml 
-man lynx
-ll
-unzip
-unzip takeout-20180722T234928Z-001.zip 
-ll
-cd Takeout/
-ll
-cd Voice
+cd firefox/
 ll
 cd ..
-cd ~/code/legal_18SC21468/ll
-cd ~/code/legal_18SC21468/
+rm firefox/
+rm -rd firefox/
 ll
-goDocs 
-ll
-cd legal_18SC21468/
-ll
-git status
-make
-tmux set-option escape-time 10
-tmux set-option -g default-terminal "screen-256color"
-tmux -V
-tmux show-option -qvg default-terminal
-sudo apt-get update
-man tmux
 cd ~
-cd ~/lib/
+xiwi -T firefox
 ll
-git clone https://github.com/tmux/tmux.git
-ll
-cd tmux
-ll
-sh autogen.sh
-ll auto*
-sh ./autogen.sh 
-sudo apt-get install autotools
-sudo apt-get install autotools-dev
-sudo apt-get install autoconf
-sh ./autogen.sh 
-./configure && make
 cd ~/Downloads/
 ll
+rm zoiper5_5.2.19_x86_64.deb 
 cd print_and_delete/
 ll
-file libevent-2.1.8-stable.tar.gz 
-man gzip
-mv libevent-2.1.8-stable.tar.gz ~/lib/
-cd ~/lib
+unzip firefox-61.0.1.tar.bz2 
+man unzip
+man bunzip
+apropos bz2
+bzip2
+man bzip2
+bunzip2 firefox-61.0.1.tar.bz2 
 ll
-gunzip libevent-2.1.8-stable.tar.gz 
+mkdir firefox
+mv firefox-61.0.1.tar firefox/
+cd firefox/
 ll
-file libevent-2.1.8-stable.tar 
-man tar
-tar -x  libevent-2.1.8-stable.tar 
-tar -xf  libevent-2.1.8-stable.tar 
+tar -xf firefox-61.0.1.tar 
 ll
-rm libevent-2.1.8-stable.tar 
-cd libevent-2.1.8-stable/
+cd firefox
 ll
-./configure 
-make
-make verify
-make install
-sudo apt-get install libevent
-sudo apt-get install libevent-dev
-ll
+ll | less
+ls | more
+./firefox
 cd ..
-ll
-rm -rf libevent-2.1.8-stable/
-ll
-sudo apt-get install  autoconf
-ll
-cd tmux
-sh ./autogen.sh 
-./configure && make
-tmux kill-session
-tmux kill-session
+firefox/firefox/firefox
 cd ~
-tmux -V
-nvim $legal
-nvim 
-nvim ~/code/r_reading/
-goR
-ll
-cd legal_18SC21468/
-ll
-cd ..
-rm -rf legal_18SC21468/
-ll
-cd r_reading/
-ll
-mkdir html
-ll
-rm 002_non_R_reading.html 
-pandoc 002_non_R_reading.md | -stdin
-pandoc 002_non_R_reading.md | lynx -stdin
-fg
-pandoc 002_non_R_reading.md | lynx -stdin
-ll
-ll html
-pandoc 002_non_R_reading.md -o html/002
-ll
-ll html/
-mv html/002 html/002.html
-ll
-cd html
-lynx 002.html 
-ll
-mkdir ~/Downloads/dropbox
-cp 002.html ~/Downloads/dropbox/
-cd ..
-cp 002_non_R_reading.md ~/Downloads/dropbox/
-fg
-cd ~
-nvim
-nvim $VIMRC 
-nvim
-nvim $VIMRC 
-nvim
-cd ~/.config/nvim/
-ll
-cd bundle/
-ll
-cd ~
-nvim 
-nvim
-nvim +PluginInstall +qall
-nvim
-fg
-nvim index.md
-goCode 
-ll
-more delete.sh 
-ll
-cd scripts_/
-ll
-cd bash/
-ll
-ls | grep function
-cd ..
-ll
-cd ..
-ll
-more delete.sh 
-ll
-cd scripts_/
-ll
-cd bash/
-ll
-ls | grep tests
-cat 011_function_tests.sh 
-cd ..
-ll
-cd ..
-more
-ll
-rm delete.sh 
-cd scripts_/
-ll
-cd nvim_play/
-ll
-mkdir vim_hard
-cd vim_hard/
-ll
-nvim ~/.bash_env
-source ~/.bash_aliases 
-aliases
-alias
-goHard
-source ~/.bash_aliases 
-nvim ~/.bash_aliases
-alias
-source ~/.bash_aliases 
-alias
-fg
-ll
-nvim
-cd ~/Downloads/vimwiki/
-ll
-mkdir jim
-mkdir jim/html
-ll jim
-fg
-ll
-cd jim
-ll
-cd ..
-nvim 
-ll
-mv index.md jim/
-ll
-cd jim
-ll
-nvim index.md 
-edit this line in nvim 
-nvim
-echo $PS1
-echo "$PS1"
-echo "$(PS1)"
-echo "${PS1}"
-echo "$PS1"
-echo $PS1
-PS1_old=PS1
-echo PS1_old
-PS1="\! \w >"
-fg
-tmux kill-server
-cd ~
-ll
-cd ~/.config/nvim/
-ll
-mkdir bundle
-cd bundle
-mv ~/Downloads/vimwiki-master.zip .
-ll
-unzip vimwiki-master.zip 
-ll
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
-ll
-rm -rf vimwiki-master/
-ll
-cd ~/.vim/
-ll
-cd bundle
-ll
-cd ..
-rm -rf .vim/
-ll
-cd Downloads/
-ll
-mkdir vimwiki
-ll
-source $BASHRC
-source ~/.bashrc
-env
-cd $VIM_WIKI_HOME/
-ll
-cd ..
-cd ~
-ll
-cd dotfiles
-ll
-git status
-git add .
-git commit -m "31JUL"
-git push
-git status
-goCode 
-ll
-cd r_reading/
-ll
-git status
-git add .
-git commit -m "31JUL"
-git push
-goLegal 
-ll
-more junk
-rm junk
-make
-more makefile
-nvim makefile 
-ll ~/Downloads/
-make
-ll ~/Downloads/toGoogle
-fg
-make
-ll ~/Downloads/toGoogle
-ll ~/.config/nvim/backup/legal_backup
-ll ~/.config/nvim/backup/
-ll
-more missfont.log 
-rm missfont.log 
-more notes.md 
-ll
-mv notes.md 2018_07_25_mediation_notes.md
-ll
-cp 2018_07_25_mediation_notes.md ~/Downloads/
-rm ~/Downloads/2018_07_25_mediation_notes.md 
-whoami
-sudo visudo
-start_tmux.sh 
-tmux kill-server
-ll
-cd bin
-ll
-./start_tmux.sh 
-cd ~
-ll
-./start_tmux.sh 
-cd bin
-./start_tmux.sh 
-fg
-cd ~
-nvim .bash_aliases 
-source .bash_aliases 
-echo env
-env
-goTest 
-echo $visible_dir/
-fg
-env
-env | grep go
-alias
-source .bash_aliases 
-alias
-goTest 
-echo $VISIBLE_DIR/
-fg
-source .bash_aliases 
-echo $VISIBLE_DIR/
-goTest 
-fg
-ll
-cd legal_18SC21468/
-ll
-mv 90_375_unlawful.md 2018_short_case_summary.md
-ll
-cd ..
-mkdir markdown_examples
-ll
-mv indent_examples.md markdown_examples/
-ll
-rm indent_examples.html 
-ll
-l
-echo $l
-l
-ll
-cd legal_18SC21468/
-ll
-makefile
-make
-tmux kill-server
-xiwi -T rstudio
-/opt/google/chrome/chrome
-whereis google
-whereis chrome
-chrome
-google
-goCode 
-ll
-goDocs 
-ll
-cd ..
-mkdir Downloads/documents
-ll Downloads/documents
-mv documents/*  ~/Downloads/documents/
-ll ~/Downloads/documents/
-cd ~/documents/
-ll
-cd ..
-rm -rf documents
-ll
+sudo apt-get install firefox
+firefox
+firefox 
+/usr/bin/firefox 
+/usr/bin/x-www-browser 
+man firefox
+DISPLAY=paxbox1.paxco.com:0.0 firefox & 
+clr
+cls
+clear
+ls
 cd Downloads/
 ll
 cd documents/
 ll
-goCode
+cd amy_Vacation\ Rentals\,\ Homes\,\ Experiences\ \&\ Places\ -\ Airbnb
+cd amy_Vacation\ Rentals\,\ Homes\,\ Experiences\ \&\ Places\ -\ Airbnb/
+ll
+pandoc -f html -t plain amy_Vacation\ Rentals\,\ Homes\,\ Experiences\ \&\ Places\ -\ Airbnb.html 
+ll
+pandoc -f html -t plain amy2_https\:_www.airbnb.com_users_show_23877716
+pandoc -f html -t plain amy2_https\:_www.airbnb.com_users_show_23877716_files/
+pandoc -f html -t plain amy2_https\:_www.airbnb.com_users_show_23877716.html 
+ll
+pandoc -f html -t plain amy2_https\:_www.airbnb.com_users_show_23877716.html -o amy.txt
+ll
+more amy.txt 
+pandoc -f html -t markdown amy2_https\:_www.airbnb.com_users_show_23877716.html -o amy.md
+ll
+more amy.md
+ll
+mv amy2_https\:_www.airbnb.com_users_show_23877716_files/ amy2
+ll
+cd amy2
+ll
+cd ..
+rm -rf amy2
+nvim amy2_https\:_www.airbnb.com_users_show_23877716.html 
+ll
+rm amy.mhtml 
+rm amy.txt
+rm amy_Vacation\ Rentals\,\ Homes\,\ Experiences\ \&\ Places\ -\ Airbnb.html
+rm -rf amy_Vacation\ Rentals\,\ Homes\,\ Experiences\ \&\ Places\ -\ Airbnb_files/
+ll
+pandoc amy2_https\:_www.airbnb.com_users_show_23877716.html -o amy2.pdf
+ll
+cd legal_18SC21468/
+ll
+head 2018_08_07_amy_airbnb_page_download_as_html.html 
+mv 2018_08_07_amy_airbnb_page_download_as_html.html 2018_08_07_amy_airbnb_page.html
+ll
+mv 2018_08_07_amy_airbnb_page_download_as_web_page_complete_files/ 2018_08_07_amy_airbnb_dir/
+ll
+cd 2018_08_07_amy_airbnb_dir/
+ll
+cd ..
+ll
+mv 2018_08_07_amy_airbnb_page_download_as_web_page_complete.html 2018_08_07_airbnb_page_complete.html
+ll
+goCode 
 ll
 cd scripts_/
 ll
 cd bash/
 ll
-git status
-git add .
-git commit -m "1AUG"
-git push
+cat 011_function_tests.sh 
 ll
+file README.md 
+file test2_ex.sh 
 cd ..
 ll
-git status
-git add .
-git remote -v
-git commmit -m "1AUG"
-git commit -m "1AUG"
-git push
+file code_scripts_index.txt 
+pandoc -f plain -t pdf -o test.pdf
+pandoc -f plain -t latex -o test.pdf
+pandoc -f txt -t latex -o test.pdf
+pandoc -f text -t latex -o test.pdf
+pandoc -t latex code_scripts_index.txt 
+ll
+pandoc -t latex code_scripts_index.txt -o test.pdf
+ll
+file test.pdf 
+rm *.pdf
+ll
+more code_scripts_index.txt 
+ll
+rm code_scripts_index.txt 
+more README.md 
+ll
+cd bash/
+ll
+more 011_function_tests.sh 
+ll
+nvim 011_function_tests.sh 
+chmod u+x is_pdf.sh 
+ll
+./is_pdf.sh 
+ll
+echo $(file)
+echo $(file is_pdf.sh )
+fg
+./is_pdf.sh is_pdf.sh 
+fg
+./is_pdf.sh is_pdf.sh 
+fg
+./is_pdf.sh is_pdf.sh 
+fg
+./is_pdf.sh is_pdf.sh 
+fg
+./is_pdf.sh is_pdf.sh 
+fg
+./is_pdf.sh is_pdf.sh 
+ll
+./is_pdf.sh README.md 
+fg
+ll
+chown u+x print_me.sh 
+chmod u+x print_me.sh 
+mv print_me.sh 013_print_me.sh
+jj
+ll
+./013_print_me.sh 
+fg
+ll
+more 013_print_me.sh 
+./013_print_me.sh 
+fg
+./013_print_me.sh 
+./013_print_me.sh 013_print_me.sh 
+ll ~/Downloads/print_and_delete/
+ll
+rm print_me.sh 
+fg
+./013_print_me.sh junk
+sudo apt-get install feh
+feh
+feh --list
+sudo apt install tiff2pdf
+tiff2pdf
+$ sudo apt-get install ghostscript libtiff-tools
+$ sudo apt-get install ghostscript
+$ sudo apt-get install
+sudo apt-get install ghostscript libtiff-tools
+tiff2pdf
 cd ~/Downloads/
 ll
-more Google\ Voice\ -\ airbnb\ amy\ salem.mhtml 
-xiwi -T rstudio
-exit
-tmux kill-server
-tmux list-sessions
-exit
-goLegal 
+cd print_and_delete/
 ll
-nvim
+tiff2pdf Letter\ 8-10-2018\ 10.26.37\ 55677003\ 3C3AD73D-B33B-48DC-81DF-2DDE0AE2AE23.tif -o test.pdf
+ll
+man tiff2pdf
+file Letter\ 8-10-2018\ 10.26.37\ 55677003\ 3C3AD73D-B33B-48DC-81DF-2DDE0AE2AE23.tif 
+man tiff2pdf
+tiff2pdf Letter\ 8-10-2018\ 10.26.37\ 55677003\ 3C3AD73D-B33B-48DC-81DF-2DDE0AE2AE23.tif -o test.pdf
+ll
+view test.pdf 
+goScripts 
+ll
+cd bash
+ll
+nvim 014_variables.sh
+chmod u+x 013_print_me.sh 
+./013_print_me.sh 
+./013_print_me.sh a b
 fg
-cd ..
-goCode 
-ll
-cd r_reading/
-ll
-nvim 002_non_R_reading.md 
+./013_print_me.sh a b
 fg
-nvim 001_R_stats_reading.md 
-ll
-goLegal 
-ll
-cd ..
-ll
-mv 2018_08_06_lawyer_questions.md legal_18SC21468/
-ll
+./013_print_me.sh a b
 fg
-goLegal 
 ll
-nvim *
-ls /etc/
-cd ..
+chmod u+x 014_variables.sh 
+./014_variables.sh 
+fg
 ll
-more .gitconfig 
-rm .gitconfig 
-more index.md 
-rm index.md 
-more junk
-rm junk 
+git status
+git add .
+git commit -m "12AUG"
+git push
+cd ~
 ll
 more key.txt 
-more .lesshst 
+cd .config/
 ll
-l
-ll
-cd /code
-cd ~/code
-ll
-mkdir ~/Downloads/documents/reading; mv r_reading/* ~/Downloads/documents/
-ll
-ll ~/Downloads/documents/ll
-ll
-ll ~/Downloads/documents/
-ll ~/Downloads/documents/reading/
-cd r_reading/
-ll
-cd ~/Downloads/documents/
-ll
-mv 001_R_stats_reading.md 002_non_R_reading.md reading/
-ll
-rm junk
-ll
-cd html
+more QtProject.conf 
+gpg --list-secret-keys --keyid-format LONG
+pg2 --list-keys --keyid-format LONG
+gpg2 --list-keys --keyid-format LON
+gpg --full-generate-key
+man gp
+gpg --gen-key
 ll
 cd ..
-rm html
-rm -rd html
 ll
-more r_bash_make_read.txt 
+cd .ssh
 ll
-mv r_bash_make_read.txt delete_me.txt
+cat id_rsa.pub 
+gpg --list-secret-keys --keyid-format LONG
+gpg --armor --export B4CA84381997CEF1
+gpg --armor --export B4CA84381997CEF1 > myKEY
 ll
-less delete_me.txt 
+cat myKEY 
+nvim myKEY 
 ll
-cd reading
+rm myKEY 
+cat id_rsa.pub 
+goCode
 ll
-mv -r ~/code/r_reading/* .
-man mv
-mv  ~/code/r_reading/* .
-mv  ~/code/r_reading/.git/* .
+cd scripts_/
 ll
-mkdir .git
-mv * .git/
+git status
+git add .
+git commit -m "12AUG"
+git push
 ll
-cd .git
+cd make_play/
 ll
-mv 001_R_stats_reading.md 002_non_R_reading.md ../
+git status
 cd ..
 ll
-mv ~/code/r_reading/.gitignore .
-ll ~/code/r_reading/*
-ll ~/code/
-ll ~/code/r_reading/
-cd .git
+cd nvim_play/
 ll
-cd hooks
+git status
+cd ..
 ll
+cd markdown_play/
+ll
+git status
+cd ..
+ll
+goDocs
+ll
+goDot 
+ll
+git status
+git add .
+git commit -m "13Aug"
+git push
+cd ~/.config/nvim/
+ll
+cd backup/
+ll
+rm legal_backup.tar.gz 
+rm legal_backup-.tar.gz 
+ll
+cd ..
+ll
+more .netrwhist 
+goCode
+ll
+cd r_legal/
+ll
+cd ..
+cd scripts_/
+ll
+cd bash/
+ll
+cd ..
+mv bash/ bash_script_play
+ll
+cd bash_script_play/
+ll
+rm junk.pdf 
+git status
+git add .
+ll
+git commit -m "13Aug"
+git push
 cd ..
 ll
 git status
 git add .
-git commit -m "2AUG"
+git commit -m "13Aug"
 git push
-ll ~/code/r_reading/
-rm -rd  ~/code/r_reading/*
-rm -rd  ~/code/r_reading/
+ll
+cat "13Aug" >> README.md 
+echo "13Aug" >> README.md 
+ll
+more README.md 
+ll ~
+cd .ssh/
+cd ~/.ssh/
+ll
+cat id_rsa.pub 
+ssh -T git@github.com
+goCode
+ll
+cd scripts_/
+ll
+ssh -T git@github.com
+ssh -vT git@github.com
+ssh-add -l
+eval "$(ssh-agent -s)
+eval "$(ssh-agent -s)"
+ssh-add -l -E md5
+ssh-add -l
+eval `ssh-agent -s` 
+ssh-add ~/.ssh/*_rsa
+ssh-add -l -E md5
+git  status
+git add .
+git commit -m "13AUG"
+git push
+git config remote.origin.url 
+git config -l
+ll
+cd .git
+ll
+cd ..
+git config
+git config --global
+git config --global -e
 ll
 cd ..
 ll
+git status
+cd scripts_/
+git status
+git config remote.origin.url "git@github.com:jimrothstein/scripts_.git"
+git status
+git add .
+git commit -m "13AUG"
+git push
+git config --l
+git config --global -l
+cd ..
+mv scripts_ backup_
+ll
+git clone git@github.com:jimrothstein/scripts_.git
+ll
+cd scripts
+cd scripts_
+git status
+ll
 more README.md 
+echo "13AUG\/n" >> README.md 
+ll
+more README.md 
+echo "13AUG/n" >> README.md 
+more README.md 
+git add .
+git commit -m "13AUG"
+git push
+cd make_play/
+ll
+touch remove_this
+cd ..
+git status
+git add .
+git commit -m "13AUG"
+git push
+ll
+cd bash_script_play/
+ll
+more 018_tiff_pdf.sh 
+cd ..
+ll
+cd ..
+ll
+goDocs 
 ll
 cd legal_18SC21468/
 ll
 make
-ffmeg
-ffmpeg
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
-cd ~
-youtube-dl
-cd mp3
 ll
-cd Downloads/
+cd ~/Downloads/toGoogle/
 ll
-cd mp3
+cd -
 ll
-ll .sh
-ll *.sh
-ll | less
+cd airbnb_amy/
+ll
+cd 2018_08_07/
+ll
+cd 2018_08_07_amy_airbnb_
+cd 2018_08_07_amy_airbnb_dir/
+ll
+cd .
 goCode
 ll
+rm -rd backup_/
+sudo rm -rd backup_/
+cd r_legal/
+ll
+cd r_
+cd r_/
+cd ..
+cd r_/
+ll
+more r_system_info.md
+ll
+cd ..
+mv r_/ r_system_info/
+ll
+ll c_practice/
+ll r_penn_state/
+git status
+cd r_penn_state/
+ll
+git status
+cd ..
+ll
+cd r_project_health_labs/
+ll
+git status
+cd ..
+ll
+cd r_try_things_here/
+ll
+git status
+git add .
+git commit -m "14AUG"
+git push
+cd ..
+ll
+cd r_penn_state/
+ll
+sudo rm -rd .git/
+ll
+cd ..
+ll
+cd r_project_health_labs/
+ll
+sudo rm -rd .git/
+sudo rm -rd .gitignore 
+cd ..
+mv r_project_health_labs/ r_health_labs
+ll
+mv r_project_row/ r_row/
+ll
+cd row
+cd r_row/
+ll
+sudo rm -rd .git
+sudo rm .gitignore 
+cd ..
+ll
+cd r_try_things_here/
+ll
+sudo rm -rd .git/
+rm .gitignore 
+ll
+cd ..
+ll
+git clone git@github.com:jimrothstein/code.git
+git status
+ll
+cd code
+ll
+mv README.md ../
+man mv
+mv .git/* ../
+ll
+sudo mv .git/* ../
+ll
+cd .git
+ll
+cd ..
+rm -rd git
+rm -rd .git
+cd ..
+ll
+mkdir .git
+mv branches .git/
+ll code/
+rm -rd code
+mv config .git/
+mv description ./git
+mv HEAD index ./git
+mv HEAD index .git/
+ll
+more git
+rm git
+mv hooks/ .git/
+mv info/ .git/
+mv logs/ .git/
+mv objects/ .git/
+mv ref/ .git/
+mv refs/ .git/
+ll
+mv packed-refs .git/
+ll
+git status
+git add .
+git commit -m "14AUG"
+git status
+git push
+git status
 cd scripts_/
 ll
-cd bash/
+more .gitignore 
+git status
+goDocs
 ll
-more youtube_dl.sh 
-cp youtube_dl.sh ~/Downloads/mp3/
-cd ~/Downloads/mp3
-ll
-mkdir 2AUG_downloads
-cd 2AUG_downloads/
-ll
-../youtube_dl.sh PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-../youtube_dl.sh -F PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-cd ..
-./youtube_dl.sh -F PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-ll
-whoami
-chmod o+x youtube_dl.sh 
-ll
-chmod u+x youtube_dl.sh 
-./youtube_dl.sh -F list=PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-./youtube_dl.sh 
-more youtube_dl.sh 
-whereis youtube_dl
-/usr/local/bin/youtube-dl
-/usr/local/bin/youtube-dl -F PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-/usr/local/bin/youtube-dl -x  -f mp3 PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-more ./youtube_dl.sh 
-nvim youtube_dl.sh 
-./youtube_dl.sh PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-fg
-/usr/local/bin/youtube-dl 
-./nvim youtube_dl.sh 
-./youtube_dl.sh PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-/usr/local/bin/youtube-dl PLbcglKxZP5POzBGQXWhmi3jgdCGWbledQ
-ll
-mkdir 2AUG2018
-mkdir JUL2018
-ll NA*
-mv N* JUL2018/
-ll
-ll -h
-mv K.D.\ Lang\ -\ Theme\ From\ The\ Valley\ Of\ The\ Dolls-IPmok_ZcgF4.mp3 JUL2018/
-ll
-ll 2AUG_downloads/
-ll 2AUG2018/
-ll
-ll *.mp4
-rm *.mp4
-ll
-ll *.webm
-ll -h  *.webm
-ll
-more youtube_dl.sh 
-nvim youtube_dl.sh 
-fg
-man youtube_dl
-man /usr/local/bin/youtube-dl 
-cd /usr/local/bin
-ll
-mv youtube-dl ~/bin/
-ll
-mv youtube-dl ~/
-ll
-cp youtube-dl ~/bin/
-cd ~/bin
-ll
-youtube-dl 
-youtube-dl --help
-youtube-dl --help | less
-ll
-cd ~/Downloads/mp3
-ll
-nvim youtube_dl.sh 
-fg
-ll
-cd cd 2AUG_downloads/
-cd 2AUG_downloads/
+cd markdown_examples/
 ll
 cd ..
+./is_pdf.sh 
+./is_pdf.sh a
+./is_pdf.sh is_pdf.sh
 ll
-nvim youtube_dl.sh 
+pandoc -f markdown -t latex README.md -o README.pdf
 ll
-./youtube_dl.sh 
-youtube_dl
-~/bin/youtube_dl
-ll ~/bin
-~/bin/youtube_dl
-~/bin/youtube-dl 
-fg
-./youtube_dl.sh 
-/home/jim/bin/youtube-dl 
-youtube_dl
-echo $PATH
-fg
-./youtube_dl.sh 
-fg
-./youtube_dl.sh 
-fg
-./youtube_dl.sh 
-youtube-dl --help
-youtube-dl --help | less
-./youtube_dl.sh 
-fg
-./youtube_dl.sh 
-fg
-./youtube_dl.sh 
-fg
-./youtube_dl.sh 
-fg
-./youtube_dl.sh 
-fg
-./youtube_dl.sh 
-ll
-sudo apt-get install ffprobe
-sudo apt-get install ffmpeg
-./youtube_dl.sh 
-fg
-./youtube_dl.sh PLbcglKxZP5PNjd-GewMOhXn9sKv2ZaJUB
-ll
-more youtube_dl.sh 
-nvim youtube_dl.sh 
-./youtube_dl.sh 
-./youtube_dl.sh PLbcglKxZP5PNjd-GewMOhXn9sKv2ZaJUB
-fg
-./youtube_dl.sh https://www.youtube.com/playlist?list=PLbcglKxZP5PNjd-GewMOhXn9sKv2ZaJUB
-fg
-./youtube_dl.sh 
-ll
-tmux attach
-exit
-ps aux
-ps aux | grep tmux
-tmux kill-session
-ps aux | grep tmux
-tmux list-sessions
-tmux kill-server
-ps aux | grep tmux
-tmux kill-server
-echo ?
-tmux list-sessions
-exit
-tmux
-tmux attach
-tmux list-sessions
-tmux attach
-tmux list-sessions
-tmux list-clients
-tmux kill-server
+./is_pdf.sh README.pdf
+start_tmux.sh 
 cd bin
 ll
 ./start_tmux.sh 
 more start_tmux.sh 
-tmux list-sessions
-tmux kill-server
-exit
-tmux list-sessions
-tmux attach
-tmux
-tmux kill-server
-ps aux | grep tmux
-tmux kill-session jimSession
-tmux kill-session -t jimSession
-ps aux | grep tmux
-man kill-session
-man tmux-kill-session
-ps aux | grep tmux
-man tmux
-tmux list-client
-tmux list-clients
-tmux list
-tmux list-windows
-tmux list-buffers
-tmux list-commands
-ps aux | grep tmux
-ps aux | grep nvim
-ps aux | grep neovim
-kill 20756
-ps aux | grep tmux
-kill 20759
-ps aux | grep tmux
-kill 20800
-ps aux | grep tmux
-sudo kill 20759
-ps aux | grep tmux
-tmux kill-server
-ps aux | grep tmux
-man pkill
-pkill -f tmux
-ps aux | grep tmux
-man kill
-kill -L
-man kill
-man pkill
-man kill
-pkill -L 20759
-man pkill
-man kill
-kill -L
-kill -L 20759
-man kill
-whereis kill
-/bin/kill -L
-kill -h
-kill --help
-kill
-man killall
-ps aux | grep tmux
-man ps
-ps -e
-ps -e | grep tmux
-kill 20759
-ps -e | grep tmux
-pkill -f tmux
-ps -e | grep tmux
-man kill
-man killall
-killall -h
-killall --help
-exit
-tmux
-tmux kill-servrer
-tmux kill-server
+more pkill_tmux.sh 
+cd ~/dotfiles/
 ll
-tmux list-sessions
-cd bin
+more start_tmux.sh 
+cd ~/.config/nvim/
 ll
-ps aux | grep tmux
-tmux attach -t jimSession
-tmux list-sessions
-./start_tmux.sh 
-tmux list-sessions
-tmux list-session
-tmux attach
-tmux list-clients
-exit
-nvim
-zoiper
-cd ~/D
-cd ~/Downloads/
+cd backup/
 ll
-sudo dpgk -i zoiper5_5.2.19_x86_64.deb 
-sudo dpkg -i zoiper5_5.2.19_x86_64.deb 
-man dpgk
-man dpkg
-sudo apt-get install libnotify4
-man apt-get
-sudo apt-get -f zoiper5
-sudo apt-get update
-sudo apt-get install -f
-sudo apt-get install zoiper5
-sudo apt-get install -f zoiper5
-sudo apt-get install -f
-zoiper
-zoiper5
-sudo dpkg -i zoiper5_5.2.19_x86_64.deb 
+more start_tmux.sh~ 
+cp start_tmux.sh~ ~/dotfiles/start_tmux.sh
 cd ~
-zoiper
-whereis zoiper
-whereis zoiper5
-zoiper5
-apt-get install libgtk-x11-2.0.so.0
-sudo apt-get install libgtk-x11-2.0.so.0
-sudo apt-get install libgtk-x11-2.0.so
-sudo apt-get install libgtk2-
-sudo apt-get install libgtk2.0-
-sudo apt-get install libgtk2.0-dev
-zoiper5
-ls
-tmux list-sessions
-tmux list-sessions
-tmux attach
-exit
-tmux kill-server
-ps aux | grep tmux
-kill 19658
-ps aux | grep tmux
-kill 19661
-ps aux | grep tmux
-exit
 start_tmux.sh 
-tmux list-sessions
-tmux attach
-ps aux | grep tmux
-kill 19661
-kill 19703
-ps aux | grep tmux
-tmux attach-session -t jimSession
-ps aux | grep tmux
-tmux kill-session -t jimSession
-ps aux | grep tmux
-start_tmux.sh 
-ps aux | grep tmux
-man kill
-man pkill
-man killall
-man kill
-man pkill
-pkill tmux
-ps aux | grep tmux
-pkill 19661
-ps aux | grep tmux
-pkill 29156
-ps aux | grep tmux
-sudo apt-get install killall
-whereis killall
 exit
-ps aux | grep tmux
 tmux attach
-ps aux | grep tmux
-pkill -f tmux
-ps aux | grep tmux
-kill -9 tmux
-kill -9 19661
-ps aux | grep tmux
-kill -9 19703
-ps aux | grep tmux
-exit
-goLegal 
 ll
-more subpeona_duces_tecum.md 
-more Supbeona_Duces_Tecum 
-rm Supbeona_Duces_Tecum 
+goCode
+cd scripts_/
+cd bash_script_play/
 ll
-mv airbnb_subpeona supbeona_airbnb.md
-more supbeona_airbnb.md 
+nvim 012_test_tmux.sh 
 ll
-mv supbeona_airbnb.md subpeona_airbnb.md
-mv subpeona_duces_tecum.md subpeona_Zimmerman_Amy_Lynn_duces_tecum.md
-nv subpeona_*
-nvim subpeona_*
+./014_variables.sh 
+fg
+./014_variables.sh 
+ls 003*
 ll
-mv ./pkill_tmux.sh ~/dotfiles/pkill_tmux.sh
-ll 
-ln -s ~/dotfiles/pkill_tmux.sh  pkill_tmux.sh
+fg
+./014_variables.sh 
+fg
+./014_variables.sh 
+fg
+./014_variables.sh 
+fg
+./014_variables.sh 
+fg
+./014_variables.sh 
+fg
+echo "$PS1"
+echo "${PS1}"
+echo "$(PS1)"
+fg
+./014_variables.sh 
+fg
+./014_variables.sh 
+fg
+./014_variables.sh 
+fg
+./014_variables.sh 
+fg
+./014_variables.sh 
+fg
+./014_variables.sh 
+fg
+./019
+./019_basic_cmd_expansion.sh 
+file /usr/bin/unzip
+fg
+ls /usr/bin/unzip
+ls /usr/bin/unzip | grep zip
+ls /usr/bin/unzip | grep zip | file
+file (ls /usr/bin/unzip | grep zip) 
+fg
+./019_basic_cmd_expansion.sh 
+ll /usr/bin/* | more
+ll /usr/bin/* | grep zip | more
+fg
+./019_basic_cmd_expansion.sh 
+fg
+./019_basic_cmd_expansion.sh 
+file ~/.httr-oauth 
+ll ~/
+FG
+fg
+./019_basic_cmd_expansion.sh 
+fg
+ls ~/*
+ls -la ~/*
+alias
+man ls
+fg
+./019_basic_cmd_expansion.sh 
+la ~/*
+fg
 ll
-ll pkill_tmux.sh 
-cat pkill_tmux.sh 
-cd ..
-shopt
-afjkasfj
-sh
-jobs
-set -o
-jobs -l
-jobs -p
-jobs -lp
-fc -l
-fc -l -e nvim
-fc -e 
-fc -l -e nvim
+./013_print_me.sh 
+./013_print_me.sh 019_basic_cmd_expansion.sh 
 ll
-man fc
-fc --help
-fc -e nvim -l
-fc -e nvim -ln
-fc -e nvim -ln >> temp
-nvim temp
-fc --help
-help fc
-echo ?
-man echo
-man -e nvim -r
-man -e nvim 1
-man -e nvim 1,100
-fc -e
-pidof tmux
-ps -p 19068
-ps -p 19068 19030
-glances
-sudo apt-get remove snap
-sudo apt-get remove snapd
-sudo apt-get autoremove
-whereis snap
-goDocs 
+nvim 000_regex_mv_loop.sh 
+nvim
+./017_print_me.sh 000_regex_mv_loop.sh 
+fg
+./000_regex_mv_loop.sh 
+fg
+goDocs
+cd correspondence/
 ll
-cd legal_18SC21468/
-cd ../reading/
+nvim 2018_08_17_DrM_hydration_memo.md 
+goCode 
+cd scripts_/
 ll
 git status
-pandoc -f markdown 002_non_R_reading.md  -t junk.pdf 
-pandoc -f markdown -t junk.pdf 002_non_R_reading.md 
-pandoc  002_non_R_reading.md -o junk.pdf
+cd ..
+git status
+git add .
+git commit -m 
+git commit -m "18Aug"
+git status
+git add .
+git status
+git add ./scripts_/*
+git add ./scripts_/
+git status
+cd scripts_/
+git status
+cd ..
+git add scripts_/
+git status
+git add scripts_/bash_script_play/
+git push
+cd scripts_/
+ll
+git status
+git add .
+git commit -m "18AUG"
+git status
+cd ..
+git status
+git add .
+git status
+git commit -m "18AUG=2"
+git push
+git status
+cd -
+git status
+cd bash_script_play/
+ll
+nvim 000_regex_mv_loop.sh 
+ll
+mv 2018_08_18_ask_police_testify* ~/Downloads/documents/legal_18SC21468/
+ll
+goLegal 
+ll
+nvim 2018_08_18_ask_police_testify*
+nvim
+goDocs 
+ll
+cd markdown_examples/
+ll
+nvim lorem.txt
+cd ~
+nvim lorem.txt 
+goLegal 
+ll
+fg
+make
+cd ~/Downloads/toGoogle/
+ll
+rm legal_backup-Tue\ Aug\ 28\ 19\:17\:41\ PDT\ 2018.tar.gz 
+ll
+goCode 
+ll
+cd scripts_/
+ll
+cd bash_script_play/
+ll
+more 018_tiff_pdf.sh 
+goLegal 
+ll
+cd 15dr14800_dir/
+ll
+mv ~/code/scripts_/bash_script_play/
+cp ~/code/scripts_/bash_script_play/018_tiff_pdf.sh .
+ll | less
+./018_tiff_pdf.sh 
+more 018_tiff_pdf.sh 
+./018_tiff_pdf.sh 
+./018_tiff_pdf.sh .tiff
+./018_tiff_pdf.sh *.tif
+ll
+ll *.pdf
+mkdir pdf
+mv *.pdf pdf/
+ll
+cd pdf/
+ll
+fg
+cd ..
+ll
+more amy.md
+ll
+rm amy.md
+rm amy2_https\:_www.airbnb.com_users_show_23877716.html 
+ll
+rm delete_me.txt 
+cat README.md 
+more README.md 
+rm README.md 
+ll
+goCode 
+ll
+cd scripts_/
+ll
+cd nvim_play/
+ll
+mv ~/lorem.txt .
+mv lorem.txt 006_lorem.txt
+fg
+ll
+nvim 006_lorem.txt 
+cd ~/.config/nvim/
+ll
+cd bundle/
+ll
+cd ..
+fg
+goCode 
+cd scripts_/
+ll
+cd nvim_play/
+ll
+nvim 008
+nvim 008_color_scheme.vim 
+goLegal 
+cd ..
+mkdir legal_18CR
+cd legal_18CR/
+fg
+ll
+fg
+nvim
+ll
+mv filing fiiling_system.md
+ll
+rm filing_system.md 
+mv fiiling_system.md filing_system.md
+ll
+nvim filing_system.md 
+goScripts 
+ll
+cd markdown_play/
+ll
+cd ..
+goDocs
+ll
+git status
+cd markdown_examples/
+git status
+ll
+nvim indent_examples.md 
+ll
+mv 2018_09_06_district_attorney.md ../legal_18CR/
+cd ../legal_18CR/
+ll
+nvim 2018_09_06_district_attorney.md 
+ll
+lynx 2018_09_06_district_attorney.md 
+lynx zimmerman_notes.md 
+w3m
+whereis w3m
+hugo
+hugo help new
+hugo new zimmerman_notes.md 
+hugo new .
+fg
+ll
+cd ../reading/
+ll
+pandoc 002_non_R_reading.md -o test.epub
+ll
+rm junk.pdf 
+ll
+git status
+git add .
+git commit -m "7SEPT"
+git push
+ll
+pandoc -o non_R_reading.epub 002_non_R_reading.md 
+ll
+fg
+goLegal 
+cd ..
+cd legal_18CR/
+ll
+nvim zimmerman_notes.md 
+xiwi -T rstudio
+ll
+cd Zotero/
+ll
+cd ..
+ll
+xiwi - T ~/Downloads/Zotero_linux-x86_64/zotero
+xiwi -T ~/Downloads/Zotero_linux-x86_64/zotero
+xiwi -T zoiper
+whereis zoiper
+cd ~/Downloads/print_and_delete/
+ll
+sudo deb -i zoiper5_5.2.19_x86_64.deb 
+sudo dpkg -i zoiper5_5.2.19_x86_64.deb 
+xiwi -T zoiper5
+ll
+rm zoiper5_5.2.19_x86_64.deb 
+sudo apt-get remove zoiper5
+sudo apt-get purge zoiper5
+sudo apt autoremove
+type
+type -a bash
+man type
+type -h
+type --help
+type -h
+ll
+type .xsel.log 
+whereis type
+type -a bash
+type -a dash
+type -a sh
+help type
+man bash
+man set
+help set
+help set | less
+bash -x ll
+bash -x ls
+bash ls
+sh ls
+journalctl 
+man journalctl
+journalctl 
+mttr
+man squashfs
+more /etc/issue
+ll
+cd lib
+ll
+cd ..
+cd /usr/
+ll
+cd /bin/
+ll
+man file
+cd ..
+ls /usr/bin/*
+ls /usr/bin/* | wc -l
+ls /usr/bin/* | grep .zip
+ls /usr/bin/* | grep zip
+ls /usr/bin/* | grep tar
+ls /usr/bin/* | grep tar$
+ls /usr/bin/* | grep zip$
+tmux set-option
+tmux set-option escape-time
+tmux set-option -sg escape-time 10
+tmux set-option escape-time
+man tmux
+tmux show-options
+tmux show-options escape-time
+man tmux
+man pandoc
+sudo find .  -name lore*
+ln -s ~/Downloads/documents/markdown_examples/lorem.txt lorem.txt
+man ln
+ln -Ts ~/Downloads/documents/markdown_examples/lorem.txt lorem.txt
+ll ~/Downloads/documents/markdown_examples/
+ll
+cd ~
+ln -s ~/Downloads/documents/markdown_examples/lorem.txt lorem.txt
+ll
+cd ~/Downloads/print_and_delete/
+ll
+mv Voice\ -\ Fix\ Hut.mhtml Voice.mhtml
+ll
+pandoc Voice.mhtml t: Voice.pdf
+pandoc f: Voice.mhtml Voice.pdf
+man pandoc
+pandoc -f mhtml Voice.mhtml Voice.pdf
+pandoc 
+man pandoc
+pandoc -o voice.pdf -f Voice.mhtml 
+man pandoc
+pandoc -o voice.pdf Voice.mhtml 
+ll
+unzip takeout-20180823T225547Z-001.zip 
+ll
+cd Takeout/
+ll
+cd Voice/
+ll
+cd Calls/
+ll
+ll *amy*
+ll amy
+ll *amy*
+ll airbnb*amy*
+cp airbnb*amy* 1.html
+cp airbnb*amy*.html 1.html
+pandoc "airbnb amy salem - Text - 2017-05-23T15_22_18Z.html" -t latex -o test.pdf 
+cp "airbnb amy salem - Text - 2017-05-23T15_22_18Z.html" 1.html 
+pandoc 1.html -t latex -o 1.pdf
+more 1.html
+ll 1.pdf
+more 1.html
+pandoc 1.html -t latex -o 1.pdf
+cd ../../..
+ll
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-10T23_17_48Z.html -t latex -o 1.pdf
+view 1.pdf 
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-10T23_17_48Z.html -t latex -V fontsize=20pt -o 2.pdf 
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-10T23_17_48Z.html -t latex -V fontsize=12pt -o 3.pdf 
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-23T03_40_04Z.html -t latex -V fontsize=12pt -o May23.pdf
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-23T15_22_18Z.html -t latex -V fontsize=12pt -o May23.pdf
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-06-07T00_09_29Z.html -t latex -V fontsize=12pt -o jun06.pdf
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-06-08T19_02_50Z.html -t latex -V fontsize=12pt -o jun07.pdf
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-06-16T17_12_03Z.html -t latex -V fontsize=12pt -o jun16.pdf
+ll
+cd Takeout/
+ll
+cd Voice/
+ll
+cd Calls/
+ll
+ll *amy*
+ll *2017-06*
+ll *2017-06-03*
+pandoc +19199168397\ -\ Text\ -\ 2017-06-03T19_56_43Z.html -t latex -o ~/Downloads/print_and_delete/what.pdf
+cd .
+cd 
+cd -
+cd ..
+ll
+cd ..
+ll
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-19T19_11_51Z.html -t latex -V fontsize=12pt -o may19.pdf
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-23T15_22_18Z.html -t latex -V fontsize=12pt -o may23.pdf
+ll
+cd Takeout/
+ll
+cd Voice/
+ll
+cd Calls/
+ll
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-23T15_22_18Z.html -t latex -V fontsize=12pt -o ~/Downloads/print_and_delete/may23.pdf
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-23T15_22_18Z.html -t latex  -o ~/Downloads/print_and_delete/may23.pdf
+man pandoc
+pandoc airbnb\ amy\ salem\ -\ Text\ -\ 2017-05-23T15_22_18Z.html -t latex --extract-media=media -o ~/Downloads/print_and_delete/may23.pdf
+cd ..
+ll
+pandoc may23_try_no_image.html -t latex -V fontsize=12pt -o may23_no_image.pdf
+goLegal 
+ll
+man gzip
+gunzip -f 15dr14800.zip 
+man gunzip
+gunzip 15dr14800.zip 
+man gunzip
+gunzip
+gzip -h
+gzip -l 15dr14800.zip 
+gzip -d 15dr14800.zip 
+man gzip
+unzip
+unzip -l 15dr14800.zip 
+unzip
+mkdir 15dr14800_dir
+ll
+mv 15dr14800.zip 15dr14800_dir/
+ll
+cd 15dr14800_dir/
+ll
+unzip 15dr14800.zip 
+ll
+ll >> file_listing.txt
+more file_listing.txt 
+nvim file_listing.txt 
+mv Digitized\ Judgment\ Document\ 8-10-2018\ 10.26.36\ 43029793\ B5502BC5-ACEE-4003-AFEB-EFE51A808626.tif Digitized_judgement_8-10-2018.tif
+ll
+pandoc -f tif Digitized_judgement_8-10-2018.tif -o judgement.pdf
+pandoc -f tiff Digitized_judgement_8-10-2018.tif -o judgement.pdf
+man pandoc
+pdflatex
+pdflatex -h
+fg
+cd ..
+ll
+cd ..
+ll
+cd correspondence/
+ll
+cd ..
+cd legal_18CR/
+ll
+cd ..
+ll
+more filing_system.md 
+rm filing_system.md 
+more .exrc 
+ll
+cd legal_18CR/
+ll
+more junk 
+rm junk
+ll
+more zimmerman_notes.md 
+ll
+cd ~
+ll
+more junk
+rm junk
+more key.txt 
+mv key.txt_remove
+mv key.txt key.txt_remove
+ll
+goCode 
+ll
+goDocs
+ll
+cd reading/
 ll
 view junk.pdf 
+cd ~/Downloads/
+ll
+cd toGoogle/
+ll
+cd ..
+ll dropbox/
+ll print_and_delete/
+rm print_and_delete/cap1_august_2018.pdf 
+rm print_and_delete/takeout-20180823T225547Z-001.zip 
+rm print_and_delete/ORS\ 90.385.pdf 
+ll
+cd toGoogle/
+ll
+ll -h
+sudo apt-get install vim-gtk3
+cd ..
+cd print_and_delete/
+ll
+rm 2018_09_06_Zimmerman_Gmail\ -\ Servpro.pdf 
+pandoc -o koreader_getting_started.epub Getting\ Started\ ·\ koreader_koreader\ Wiki.mhtml 
+ll
+rm 
+rm Getting\ Started\ ·\ koreader_koreader\ Wiki.mhtml 
 cd ..
 ll
-pandoc -f html -t markdown https://www.airbnb.com/users/show/23877716j
+apropos zotero
+apropos bz2
+apropos tar
+man unzip
+man gz
+apropos gz
+man gzip
+man zcat
+help bz2
+man -k bz2
+info bz2
+man bzip
+man bunzip
+man bzip2
+bzip2 Zotero-5.0.55_linux-x86_64.tar.bz2 
+bunzip2 Zotero-5.0.55_linux-x86_64.tar.bz2 
 ll
-mv ~/Downloads/print_and_delete/amy.mhtml .
+tar -xf Zotero-5.0.55_linux-x86_64.tar 
 ll
-pandoc -f html -t markdown amy.mhtml 
-whereis firefox
-exit
+rm Zotero-5.0.55_linux-x86_64.tar 
+cd Zotero_linux-x86_64/
 ll
-ps aux | grep tmux
-fg
-nvim pkill_tmux.sh 
-./pkill_tmux.sh 
-fg
+./zotero
+sudo apt-get zotero
+sudo apt-get install zotero
+sudo apt-get install Zotero
+sudo apt-get update
+sudo apt-get install zotero
+ll
+./zotero
+xiwi -T zotero
+xiwi -T ./zotero
+ll
 cd ..
-goDocs 
-cd reading/
-nvim 002_non_R_reading.md 
+ll
+ll /opt
+ll
+ll /opt/
+ll /opt
+ll /usr/
+ll /usr/share/
+ll
+fastboot
+fastboot | less
+man fastboot
+fastboot devices
+adb
+man adb
+adb devices
+man devices 
+man adb
+adb device
+adb devices
+adb reboot
+adb usb
+adb get-state
+adb devices
+adb
+man adb | grep devices
+adb devices -l
+adb devices
+fastboot devices
+adb usb
+man adb
+adb -d
+adb start-server
+adb -l
+adb devices
+adb reboot
+man fastboot
+fastboot devices
+fastboot devices -l
+adb devices
+adb attach
+adb devices
+adb kill-server
+adb start-server
+adb devices
+adb devices -l
+fastboot 
+fastboot devices -l
+man fastboot
+fastboot reboot
+fastboot devices
+fastboot devices -l
+fastboot devices 
+adb devices
+adb devices -l
+fastboot devices -l
 tmux kill-server
-ps aux | grep tmux
-kill -9 tmux
-pkill -9 tmux
-ps aux | grep tmux
+bin/start_tmux.sh 
+cd bin
+more start_tmux.sh 
+./start_tmux.sh 
+test -z $TMUX
+man test
+tmux attach
+tmux list-sessions
+tmux kill-server
+./start_tmux.sh 
+exit
+bin/start_tmux.sh 
+exit
+tmux
+tmux attach
+tmux list-sessions
+more bin/start_tmux.sh 
+tmux new-session -d -s jimSession
+exit
+start_tmux.sh 
+ll /usr/share/applications/defaults.list 
+gnome-control-center
+gnome-www-browser 
+cat /usr/share/applications/defaults.list 
+nvim /usr/share/applications/defaults.list 
+whereis gpodder
+sudo apt install gpodder
+whereis gpodder
+echo $GPODDER
+sudo apt update gpodder
+sudo apt gpodder
+sudo apt update
+apt list --upgradable
+less | apt list --upgradable
+less apt list --upgradable
+man apt
+sudo apt update gpodder
+man apt
+sudo apt-get gpodder
+sudo apt-get update gpodder
+sudo apt-get install gpodder
+sudo dpkg -i gpodder
+bin/gpo
+cd .config/
+ll
+cd gtk-2.0/
+ll
+cd ..
+ll
+cd gPodder/
+ll
+cd Downloads/
+ll
+ll Your\ Call/
+ll
+cd ..
+ll
+ll Logs/
+more Logs/2018-09-22.log 
+sh ~/Downloads/crouton -r list
+sudo sh ~/Downloads/crouton -t xiwi,xfce -u -n xenial
+cd ..
+sudo sh ~/Downloads/crouton -t xiwi,xfce -u -n xenial
+exit
+xiwi -T zotero
+ll
+cd Zotero/
+ll
+cd ..
+cd .zotero/
+ll
+cd zotero/
+ll
+cd ..
+cd Zotero/
+ll
+cd ..
+ll
 cd bin
 ll
-nvim start_tmux.sh 
+xiwi -T zotero
+cd ..
+cd Zotero/
 ll
-mv pkill_tmux pkill_tmux.sh
-chmod o+x pkill_tmux.sh 
+cd locate/
 ll
-./pkill_tmux.sh
-chmod o-x pkill_tmux.sh ; ll
-chmod u+x pkill_tmux.sh ; ll
-./pkill_tmux.sh ; ll
+cd ..
+whereis Zotero/
+whereis Zotero
+ll
+Zotero
+xiwi -T Zotero
+ll
+more temp
+rm temp
+cat history
+history
+history | grep zotero
+cd ~/Downloads/
+ll
+cd Zotero_linux-x86_64/
+ll
+xiwi -T ./zotero
+xiwi -T gpodder
+cd ~
+sudo sh ~/Downloads/crouton -t xfce,core,cli-extra,xiwi -u -n xenial
 exit
-./014_variables.sh 
-./014_variables.sh a
-./014_variables.sh a b
-echo ${-}
-echo ${_}
-ls
-echo ${_}
-./014_variables.sh a b
-late
-./014_variables.sh a b
-echo $my_name
-echo ${my_name}
-./014_variables.sh a b
-echo $PS1
-echo "${PS1}"
-./014_variables.sh a b
-echo $PS1
-./014_variables.sh 
+sudo apt install ocular
+sudo apt install okular
+okular
+xiwi -
+xiwi -T okular
+exit
+fg
 ll
-chmod u+x loop_thru_files.sh 
-./loop_thru_files.sh *
+goDocs 
 ll
-chmod u+x 018_tiff_pdf.sh 
+cd correspondence/
 ll
-./018_tiff_pdf.sh 
-./018_tiff_pdf.sh *
-rm loop_thru_files.sh 
-./018_tiff_pdf.sh ~/Downloads/print_and_delete/tif_test/*
+mv clinical_trials_hyperoxaluria.md hyperoxaluria.md
 ll
-tiff2pdf ~/Downloads/print_and_delete/tif_test/Letter\ 8-10-2018\ 10.26.38\ 64198908\ 76D11A51-8BFD-4F87-93E2-8BED9DFDE51C.tif -o junk.pdf
+nvim hyperoxaluria.md 
+xiwi -T zotero
+xiwi -T ~/Downloads/Zotero_linux-x86_64/zotero
+tmux kill-server
+bin/start_tmux.sh 
+exit
+vim
+sudo apt install chrome
+where is google
+whereis goodl
+whereis goodle
+apropos google
+apropos chrome
+apropos browser
+man update-alternatives
+cd /etc/alternatives
 ll
-view junk.pdf 
+ll | grep editor
+dpkg -L neovim
+dpkg -L nvim
+dpkg -L vim
+cd /usr/share/doc
+ll
+ll | less
+cd gpodder/
+ll
+less README.Debian 
+cd ..
+man dpkg
+dpkg
+dpkg -l
+dpkg -l | grep vm
+dpkg -l | grep vim
+dpkg -l | grep nvim
+dpkg -l | grep neovim
+wheris nvim
+whereis nvim
+
+dpkg -l | grep gpodder
+dpkg -L gpodder
+dpkg -L gpodder |  more
+dpkg -s gpodder
+man info
+man pinfo
+pinfo
+man man
+cd ~
+ll
+git clone https://github.com/gpodder/gpodder.git
+ll
+cd gpodder/
+ll
+python3 tools/localdepends.py 
+python3 tools/create-desktop-icon.py
+ll
+cd bin
+ll
+./gpodder
+cd ..
+bin/gpodder
+ll
+bin/gpodder
+python
+python3
+sudo apt install python3
+ll
+cd bin
+ll
+python3 gpodder
+python2 gpodder
+sudo apt-get install --reinstall software-center python3-dbus
+ll
+python3 gpodder
+cd ..
+bin/gpodder
+exit
+sudo apt install skype
+snap install skype --classicsnap install skype --classic
+skype
+skypeforlinux
+man skypeforlinux
+whereis skypeforlinux
+skypeforlinux 
+skypeforlinux &
+skypeforlinux
+xiwi -T skypeforlinux
+exit
+xiwi -T skypeforlinux
+whereis skype
+whereis skypeforlinux
+/usr/bin/skypeforlinux
+xiwi -T /usr/bin/skypeforlinux
+cd ~/Downloads/print_and_delete/
+ll
+dpkg -i skypeforlinux-64.deb 
+sudo dpkg -i skypeforlinux-64.deb 
+xiwi-T skypeforlinux
+xiwi -T skypeforlinux
+sudo apt remove skypeforlinux
+whereis skypeforlinux
+exit
+echo $TERM
+exit
+ll
+goLegal 
+ll
+cd ..
+ll
+cd legal_18CR/
+ll
+nvim zimmerman_notes.md 
+cd ..
+ll
+cd legal_18SC21468/
+ll
+more do_not_backup_files 
+ll
+more do_not_backup_files 
+ll
+rm test-.tar 
+more makefile 
+theDate=date
+echo theDate
+echo $(theDate)
+echo $theDate
+theDate=$(date)
+echo $theDate
+man tar
+tar -cvpzf test-"$theDate".tar -X exclude_files.txt *
+more exclude_files.txt 
+ll
+tar -cvpzf test-1.tar -X exclude_files.txt *
+ll
+tar -tf test-1.tar 
+tar -cvf test2.tar -X exclude_files.txt *
+more exclude_files.txt 
+ll
+more exclude_files.txt 
+fg
+tar -cvf test-3.tar -X exclude_fi
+fg
+tar -cvf test4.tar -X exclude_files.txt *
+tar -tf test4.tar
+fg
+make test
+echo theDate
+ll
+rm *.tar
+fg
+make test
+ll
+fg
+make test
+ll
+rm *.tar
+ll
+cd ..
+ll
+cd legal_18CR/
+ll
+more exclude_files.txt 
+mkdir dir1
+touch dir1/junk
+fg
+tar -cvf try1.tar -X exclude_files.txt *
+tar -cvf try1.tar -X --exclude="dir1/*"
+man tar
+tar -cvf try1.tar  --exclude="dir1/*" *
+tar -cvf try2.tar  --exclude="dir1/*" --exclude="*.tar" *
+tar -cvf try2.tar  --exclude="dir1/*" --exclude="*.tar" * --exclude="dir1"
+tar -cvf try2.tar  --exclude="dir1" --exclude="*.tar" * 
+fg
+tar -cvf try3.tar  -X exclude_files.txt *
+fg
+more make
+more makefile
+ll
+rm *.tar
+fg
+ll
+cd ../legal_18SC21468/
+ll
+more makefile 
+more exclude_files.txt 
+make test
+fg
+make test
+fg
+make test
+fg
+make test
+fg
+make test
+fg
+make test
+fg
+make test
+fg
+make begin
+fg
+make begin
+fg
+make begin
+fg
+make begin
+fg
+make begin
+fg
+make begin
+fg
+make begin
+fg
+make begin
+fg
+make date
+fg
+make date
+fg
+make date
+fg
+make date
+fg
+make manual
+fg
+ll
+man nvim
+nvim -r
+ll
+cd ..
+cd legal_18CR/
+ll
+nvim -r zimmerman_notes.md 
+nvim
+ll
+fg
+ll
+mv keep zimmerman_notes.md 
+nvim zimmerman_notes.md 
+mv ~/.config/nvim/backup/zimmerman_notes.md~ delete.md
+ll
+nvim zimmerman_notes.md 
+ll ~/.config/nvim/backup/zimmerman_notes.md~ 
+ll ~/.config/nvim/backup/
+ll *.swp
+nvim zimmerman_notes.md 
+nvim -r zimmerman_notes.md 
+more zimmerman_notes.md 
+ll
+more delete.md 
+nvim
+nvim 
+ll
+mv delete.md zimmerman_notes.md 
+nvim zimmerman_notes.md 
+ll
+cd ..
+ln -s legal_18CR/zimmerman_notes.md criminal.md
+ll
+cd reading
+touch tech_notes.md
+cd ..
+ln -s reading/tech_notes.md tech_notes.md
+ll
+nvim tech_notes.md 
+ll
+more tech_notes.md 
+more reading/tech_notes.md 
+fg
+top
+infocmp
+echo $TERM
+toe
+toe /usr/share/terminfo
+find ${TERMINFO:-/usr/share/terminfo}
+ls /lib/terminfo/x/
+man infocmp
+ll /lib/terminfo/
+ll /lib/terminfo/a/
+ll /lib/terminfo/b
+ll /lib/terminfo/c
+ll /lib/terminfo/w
+ll /lib/terminfo/x
+ll /etc/terminfo/
+more /etc/terminfo/README 
+tput
+tput Co
+man tput
+tput longname
+echo $TERM
+cd ~/.config/nvim/backup/
+ll
+more zimmerman_notes.md~ 
+cd ~
+cd bin
+ll
+cd ..
+goCode
+ll
+git status
+git add .
+git status
+git add scripts/
+ll
+git add scripts
+git add scripts/.
+cd scripts
+cd scripts_/
+git status
+git add .
+git status
+cd ..
+git status
+git add scripts_/
+git status
+git add scripts_/*
+git commit -m "24Sept"
+git add scripts_/
+git status
+man git add
+git add -v scripts_/
+git status
+git add -v scripts_/*
+ll
+cd scripts_/
+ll
+git status
+git add .
+git status
+git commit -m "24SEP"
+cd ..
+git status
+git commit -m "24SEP"
+cd scripts_/
+ll
+git push
+git status
+cd ..
+git status
+cd scripts_/
+ll
+cd make_play/
+ll
+cd unix_tools_make/
+ll
+more makefile 
+cd ..
+ll
+cd ..
+ll
+cd bash_script_play/
+ll
+more 008_arrays.sh 
+ll
+grep backup
+cat * | grep backup
+cd ..
+ll
+cd ..
+ll
+cd ..
+ll
+cd .config/nvim/
+ll
+cd backup/
+ll
+goLegal 
+ll
+more makefile 
+make
+ll
+more makefile 
+man tar
+ll ~/.config/nvim/backup/
+ll ~/.config/nvim/backup/legal_backup-Mon\ Sep\ 24\ 20\:24\:36\ PDT\ 2018.tar.gz 
+rm ~/.config/nvim/backup/legal_backup-Mon\ Sep\ 24\ 20\:24\:36\ PDT\ 2018.tar.gz 
+ll ~/.config/nvim/backup/legal_backup-Tue\ Aug\ 28\ 19\:17\:41\ PDT\ 2018.tar.gz 
+rm ~/.config/nvim/backup/legal_backup-Tue\ Aug\ 28\ 19\:17\:41\ PDT\ 2018.tar.gz 
+ll
+ll leg*
+ll
+man tar
+more makefile
+tar -cvpzf junk --exclude=airbnb_amy/ 15dr14800_dir/
+ll
+tar -cvpzf junk --exclude=airbnb_amy/ 15dr14800_dir/ Takeout_from_Google_*
+man tar
+nvim do_not_backup_files
+ll
+ll -d
+man ls
+ls -d
+ll
+man ls
+ls -rd
+ls 15dr14800_dir/ >> do_not_backup_files 
+ls airbnb_amy/ >> do_not_backup_files 
+more do_not_backup_files 
+ll
+man ls
+ls -d
+ls -d *
+man ls
+ls -lad
+ls -ladr
+ls -ladR
+ll
+more junk
+rm junk
+ll
+dir
+man dir
+ls -lad 15dr14800_dir/
+ls -lad *
+ls -lad
+ls 
+ls -d
+ll
+ll -d
+ll
+cd airbnb_amy/
+ll
+cd 2018_08_07/
+ll
+cd ok_delete/
+ll
+cd .
+goLegal
+ll
+cd ..
+ll
+cd legal_18CR/
+ll
+tar -cfv try1.tar *
+ll
+file v
+rm v
+tar -cfv try1.tar *
+ll
+rm v
+man tar
+cd ..
+tar -cfv try1.tar legal_18/*
+ll
+rm v
+tar -cfv try1.tar legal_18CR/*
+ll
+rm v
+cd legal_18CR/
+ll
+tar -c *
+tar -cf *
+ll
+tar -cf try1 *
+ll
+tar -cf try1.tar *
+ll
+rm try1*
+ll
+man tar
+tar -cfv try1.tar *
+tar -cvf try1.tar *
+ll
+rm v
+tar -cvf try1.tar --exclude="*.tar" --exclude="v" *
+ll
+nvim exclude_files
+ll
+more exclude_files 
+tar -cvf try1.tar -X exclude_files *
+tar -cvf try2.tar -X exclude_files *
+ll
+tar -lf try2.tar 
+tar -tf try2.tar 
+more exclude_files 
+ll *.tar
+rm *.tar
+ll
+more exclude_files 
+tar -cvf try2.tar -X exclude_files *
+tar -cvf try3.tar -X exclude_files *
+nvim exclude_files 
+ll
+tar -cvf try4.tar -X exclude_files *
+tar -cvf try5.tar --exclude-from=exclude_files *
+mv exclude_files exclude_files.txt
+nvim exclude_files.txt 
+tar -cvf try6.tar --exclude-from=exclude_files.txt *
+ll
+ll *.tar
+rm *.tar
+nvim exclude_files.txt 
+tar -cvf try7.tar --exclude-from=exclude_files.txt *
+ll
+rm try7.tar 
+ll
+cd ..
+cd legal_18SC21468/
+ll
+nvim exclude_files.txt
+tar -cvf try1.tar -X exclude_files.txt *
+ll
+rm try1.tar
+nvim exclude_files.txt 
+rm try1.tar
+tar -cvf try1.tar -X exclude_files.txt *
+ll
+rm try1.tar
+nvim exclude_files.txt 
+fg
+ll
+ll *.tar
+rm *.tar
+make test
+ll
+rm test-.tar 
+make test
+ll
+rm *.tar
+fg
+goCode
+ll
+cd r_try_things_here/
+ll
+more make_jimPackage 
+fg
+goLegal 
+ll
+make manual
+make test
+make date
+make test
+more exclude_files.txt 
+make test
+ll
+rm test-Wed 
+make test
+more makefile
+make backup
+make test
+make date
+make backup
+ll ~/Downloads/toGoogle/
+make backup list
+cd ~/.local/share/nvim/
+ll
+cd swap
+ll
+rm %home%jim%Downloads%documents%legal_18CR%zimmerman_notes.md.swp 
+rm %home%jim%Downloads%documents%legal_18CR%delete.md.swp 
+goDoc
+goDocs
+ll
+ll correspondence/
+mv correspondence/hyperoxaluria.md correspondence/hyperoxaluria_notes.md
+ln -s correspondence/hyperoxaluria_notes.md hyperoxaluria_notes.md
+ll
+tmux kill-server
+bin/start_tmux.sh 
+exit
+echo $TERM
+exit
+mupdf
+ll
+goDocs
+ll
+mupdf .pdf
+snap
+snapd
+service
+/usr/sbin/service snapd start
+/usr/sbin/service start snapd
+/usr/sbin/service snap
+/usr/sbin/service 
+/usr/sbin/service --status-all
+/usr/sbin/service 
+man /usr/sbin/service 
+man service
+/usr/sbin/service --full-restart
+man /usr/sbin/service
+man restart
+man service
+service --full-restart
+/usr/sbin/service --full-restart
+/usr/sbin/service --version
+man service
+service --help
+/usr/sbin/service --help
+/usr/sbin/service --full-restart
+sudo systemctl status snapd
+systemctl status snapd
+exit
+w3m google.com

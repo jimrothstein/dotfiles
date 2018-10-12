@@ -14,27 +14,6 @@ call vundle#begin('~/.config/nvim/bundle')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vimwiki/vimwiki'
-
-" g:vimwiki is a 'dictionary', one for each wiki?
-"
-"let g:vimwiki_list = [{'path': '~/Downloads/vimwiki/'}]
-
-    let wiki_1 = {}
-    let wiki_1.path = '~/Downloads/vimwiki/'
-	let wiki_1.path_html = '~/Downloads/vimwiki/html'
-	let wiki_1.ext = '.md'
-	let wiki_1.template_default = 'default'
-	let wiki_1.syntax = 'markdown'
-
-    let wiki_2 = {}
-    let wiki_2.path = '~/Downloads/vimwiki/jim'
-	let wiki_2.path_html = '~/Downloads/vimwiki/jim/html'
-	let wiki_2.ext = '.md'
-	let wiki_2.template_default = 'default'
-	let wiki_2.syntax = 'markdown'
-	
-	let g:vimwiki_list = [wiki_1,wiki_2]
 
 "
 " The following are examples of different formats supported.
@@ -72,16 +51,23 @@ filetype plugin indent on    " required
 "###### end Vundle  ##################
 "
 "
-"####  jim's stuff begin here ####
+"####  BEGIN:  jim's stuff ####
 "
 "
 "#### mapping ####
+" restart vim if mapleader changed
+let mapleader=","		" setting variable default = \ 
+map <Leader>A :echo "hi"<enter> " <Leader> is syntax, not variable:
+
 " avoid commnets on same line as mapping,   vim can get confused
 noremap <C-s> :w<Enter>		" save file
+
+" exit Insert mode
 inoremap jj <Esc>			" always use Xnoremap
-" IF change mapleader, must restart vim
-let mapleader=","		" setting variable default = \
-map <Leader>A :echo "hi"<enter> " <Leader> is syntax, not variable:
+inoremap jk <Esc>			" less damage if normal mode!
+"inoremap <Esc>	nop			" Stop using ESC!
+
+
 vnoremap <Leader>n :norm i#<enter>	" ,n comments the line
 "
 "#################
@@ -102,22 +88,32 @@ let localmapleader="\\"
 "
 
 "##### frequent files ####
+" $VIMRC
 nnoremap <Leader>ev	:vsplit $MYVIMRC<cr>
+nnoremap <Leader>sv	:source $VIMRC<cr>
+
 nnoremap <Leader>evb	:vsplit ~/dotfiles/.bashrc<cr>
 nnoremap <Leader>evbenv	:vsplit ~/dotfiles/.bash_env<cr>
-nnoremap <Leader>sv	:source $VIMRC<cr>
+
 nnoremap <Leader>el	:vsplit $legal
+
+nnoremap <Leader>"	viw<esc>a"<esc>lel
 "#### ####  
 "
-"
+"-----------------------
+"	use vim as MAN PAGER
+"	see ~/.bashrc
+"-----------------------
+
 "#### abbrev  #####
+"
 " insert mode, type j then r  
 abbr jr Jim:	
 abbr def Claim: 
+abbr <Leader># #####################
+"<Esc>oi#<Esc>oi#################<Esc>
 "
-"#################
-"
-
+"#####################
 "#### params ####
 set number				" nonumber to turn off
 " wrong:  statusline is what appears 
@@ -132,17 +128,30 @@ set showmatch			" highlights matching bracket, paran etc.
 "
 "################
 "
-"
-"##### colors #####
+"#####################
+"	navigation
+"#####################	
+nnoremap H	0			" go to beg of line
+nnoremap L	$			" go to end
+
+"#####################
+" 	colors & format
+"#####################
 "set background=dark			" easier to read on dark (black) background
 "set nohlsearch				" no highlight on search matches
 "set noh				" compare
 colorscheme darkblue		" till I figure out better
+"with darkblue color scheme, make Statusline readable 
+hi StatusLine ctermfg=0 ctermbg=15
+
 "set statusline+=%F		" display full paths - WRONG?
 set colorcolumn=81		" display right margin
-
+set title				" title of window?   where?
 set tabstop=4			" default=8
 set shiftwidth=4		" set to same as tabstop
+set wm=8				" 8 characters before end will begin new line
+" set ai				" default autoindent is ON
+set textwidth=79		" sets right margin!
 "####################
 
 "#### Backup ####

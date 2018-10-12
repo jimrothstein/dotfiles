@@ -122,3 +122,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+# ----------------------------
+#	use nvim as MAN PAGER
+# ----------------------------
+export MANPAGER="nvim +set\ filetype=man -"
+echo .bashrc
