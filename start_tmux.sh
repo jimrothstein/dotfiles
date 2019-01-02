@@ -18,7 +18,7 @@ tmux new-window -n win_nvim
 tmux new-window -n win_rstudio
 tmux new-window -n win_zotero
 tmux new-window -n win_bash
-tmux new-window -n win_other
+tmux new-window -n win_w3m
 tmux select-window -t jimSession:1	# win_nvim
 tmux attach-session	-t jimSession
 
