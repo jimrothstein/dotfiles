@@ -4,8 +4,7 @@
 " restart vim if mapleader changed
 let mapleader=","		" default = \ 
 map <Leader>A :echo "hi"<enter> " <Leader> is syntax, not variable:
-" 1st \ is escape variable
-let localmapleader="\\"
+let localmapleader="\\"		" note:  escaped
 
 " -----------------
 "  map for editing
@@ -17,16 +16,14 @@ noremap <C-s> :w<Enter>		" save file
 " exit Insert mode
 inoremap jj <Esc>			" always use Xnoremap
 inoremap jk <Esc>			" less damage if normal mode!
+inoremap kk <Esc>			" 
+
 
 " comments
-vnoremap <Leader>n :norm i#<enter>	" ,n comments the line
 nnoremap <Leader>#	0i#<esc>
-
 "
 "##### frequent files ####
-" cd to directory of current buffer (:h :%)
-nnoremap <Leader>cd  :cd %:p:h<Enter>
-"
+nnoremap <Leader>cd  :cd %:p:h<Enter>		" cd to current file %
 " $VIMRC
 nnoremap <Leader>ev	:e $MYVIMRC<cr>
 nnoremap <Leader>sv	:source $VIMRC<cr>
@@ -38,12 +35,12 @@ nnoremap <Leader>ez	:e ~/dotfiles/.zshrc<cr>
 "#### abbrev  #####
 " insert mode, type j then r  
 abbr jr Jim:	
-abbr <Leader># #####################
-"
+abbr <Leader># # ------------
+
 " ----- params ------
 autocmd TermOpen * startinsert			" begin term as insert
 set number" 	norelativenumber, nonumber to turn off
-set cmdheight=2			" avoids PRESS any Key to continue
+set cmdheight=4		"	 avoids PRESS any Key to continue
 set gdefault			" search global :%s/from/to/c
 set ignorecase			" search non-case sensitive
 set autowrite			" saves to disk when change buffers, :bn
@@ -72,7 +69,14 @@ set tabstop=4			" default=8
 set shiftwidth=4		" set to same as tabstop
 set wm=8				" 8 characters before end will begin new line
 set textwidth=79		" sets right margin!
-"####################
+" wrap (default: ON)
+" linebreak (default: OFF)
+"
+" ---- Tabs  ----
+"uncomment to show tabs
+"set list						" set nolis
+"set list listchars=tab:^\,eol:$
+"set tabstop=1					" number spaces
 " ---------------
 "	Backup
 " ---------------
@@ -103,3 +107,13 @@ nnoremap <Leader>k  <C-w>k
 tnoremap <Esc> <C-\><C-n>		" return to normal mode
 tnoremap <Leader>h <C-\><C-n><C-w>h		" (insert)jump to left screen
 tnoremap <Leader>l <C-\><C-n><C-w>l		" (insert) jump to right screen
+
+" -------------
+"  :set nopaste 
+"  WORKAROUND
+"  if get INSERT (paste) nusance
+"  Either
+"  	(1) :set nopaste
+"  	(2) au InsertLeave * set nopaste
+"  -------------
+au InsertLeave * set nopaste
