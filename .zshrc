@@ -2,8 +2,23 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#	confused WHERE   $PATH 1st set, start fresh here:
+PATH=/usr/local/bin:/usr/bin:/bin
+export PATH=$HOME/bin:$PATH
+
 # Path to your oh-my-zsh installation.
   export ZSH="/home/jim/.oh-my-zsh"
+# --------
+# fpath is array of directories zsh searches for all functions
+# my functions linked by ~.zfunctions
+# SEE:  https://unix.stackexchange.com/questions/33255/how-to-define-and-load-your-own-shell-function-in-zsh
+# --------
+fpath=( ~/.zfunctions "${fpath[@]}" )
+
+# --------
+# to autoload functions, hello, found in above fpath
+#
+autoload -Uz helloFile jim
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -15,12 +30,12 @@ ZSH_THEME="intheloop"
 
 #	Prompt is usually set in THEME
 #	this is from "intheloop"
+echo "set prompt in THEME"
 
-
-PROMPT='
-%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%}
-%{$fg_bold[blue]%}%10c%{$reset_color%} $(git_prompt_info) $(git_remote_status)
-%{$fg_bold[cyan]%}❯%{$reset_color%} '
+#PROMPT='
+#%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%}
+#%{$fg_bold[blue]%}%10c%{$reset_color%} $(git_prompt_info) $(git_remote_status)
+#%{$fg_bold[cyan]%}❯%{$reset_color%} '
 
 
 # Set list of themes to pick from when loading at random
