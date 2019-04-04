@@ -1,0 +1,14 @@
+"	Jim:	 created .cvimrc
+"	BE SURE COPY is here:
+"	file:///home/chronos/u-0723d76152925135507a733e56191f288ab81489/Downloads/documents/.cvimrc
+"
+"	then source: 
+"	
+let configpath='~/dotfiles/.cvimrc'
+set localconfig
+map h goBack
+
+" Use paste buffer in mappings
+map T :tabnew wikipedia @"<CR>
+map N	:open nytimes.com<CR>
+

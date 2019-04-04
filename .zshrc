@@ -1,10 +1,13 @@
 # ~/dotifles/.zsh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+#
 #	confused WHERE   $PATH 1st set, start fresh here:
 PATH=/usr/local/bin:/usr/bin:/bin
 export PATH=$HOME/bin:$PATH
+
+#	RANGER (load only ~/.config/ranger/rc.conf)
+#	RANGER_LOAD_DEFAULT_RC = FALSE
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/jim/.oh-my-zsh"
@@ -60,8 +63,11 @@ echo "set prompt in THEME"
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
+
+# (JR:)  Not sure why, but tmux windows names works with this "true"
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+ DISABLE_AUTO_TITLE="true"
+
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -168,7 +174,7 @@ export goCode goDot goR goBin
 alias goBackup='cd ~/.config/nvim/backup/'
 
 #	docs
-alias goDocs='cd $VISIBLE_DIR/documents/'
+alias goDocs='cd ~/Downloads/documents/'
 alias goLegal='cd ~/Downloads/documents/legal_18CR/'
 
 #	env var
