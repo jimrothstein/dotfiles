@@ -19,9 +19,11 @@ export PATH=$HOME/bin:$PATH
 fpath=( ~/.zfunctions "${fpath[@]}" )
 
 # --------
-# to autoload functions, hello, found in above fpath
-#
-autoload -Uz helloFile jim
+# to autoload functions put in directory found in fpath
+# 	avoids too many functions in .zshrc
+# EX:   use ~/.oh-my_zsh/functions/
+# USE:	example_function "jim"
+autoload -Uz helloFile jim example_function
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -152,19 +154,14 @@ set -o emacs		# default, and easier for edit zsh/bash command lines
 # #######################
 #	zsh help is  run-help
 alias help='run-help'
+alias man='run-help'
 
 #  	always use LESS
 alias more='less'
+alias -g L='| less'	# USE:  ll L <enter>
 
 #	coding
 alias goCode='cd ~/code/'
-alias goMake='cd ~/code/scripts_/make_play/'
-alias goScripts='cd ~/code/scripts_/'
-alias goBash='cd ~/code/scripts_/bash_script_play/'
-alias goMark='cd ~/code/scripts_/markdown_play/'
-alias goVim='cd ~/code/scripts_/nvim_play/'
-alias goGrep='cd ~/code/scripts_/grep_play/'
-alias goJim='goBash;cd ..'						# works!
 
 #	config
 alias goDot='cd ~/dotfiles'
@@ -172,7 +169,7 @@ alias goR='cd ~/code/'
 alias goBin='cd ~/bin'
 export goCode goDot goR goBin 
 alias goBackup='cd ~/.config/nvim/backup/'
-
+alias cx='chmod +x'				# USE:    cx  new_script.sh
 #	docs
 alias goDocs='cd ~/Downloads/documents/'
 alias goLegal='cd ~/Downloads/documents/legal_18CR/'
@@ -180,41 +177,37 @@ alias goLegal='cd ~/Downloads/documents/legal_18CR/'
 #	env var
 export VIMRC=~/.config/nvim/init.vim
 export V=$VIMRC
+export Z=~/.zshrc
 
-# ##################
-# 	vi mode
-# ##################
-# set VIMODE according to the current mode (default “[i]”)
-#VIMODE='[i]'
-#function zle-keymap-select {
-# VIMODE="${${KEYMAP/vicmd/[n]}/(main|viins)/[i]}"
-# zle reset-prompt
-#}
-#zle -N zle-keymap-select
+## move to ~/.Renviron
+#R_LIBS_USER=~/R/R_LIBS_USER
 
-# #################
-# 	set PS1
-# #################
-# Set the prompt to “[user]@[host[ [vi mode] $ ”
-#PROMPT="%n@%m ${VIMODE} \\$ "
-PROMPT=%h%~:$PROMPT		# history #, directory
 
+# example of setting PROMPT
+#PROMPT=%h%~:$PROMPT		# history #, directory
+#PROMPT='${PROMPT} ${status} > '
 # #################
 # 	set PS2 (when waiting for input)
 # #################
-PS2='wait for user'
+PS2='wait for user: '
 
 ############
-#  named directories
+#  named directories	# PURPOSE??
 ###########
 setopt AUTO_NAME_DIRS
-DOCS=~/Downloads/documents/
+setopt extendedglob
+docs=~/Downloads/documents/
 code=~/code
 mp3=~/Downloads/mp3/
 legal=~/Downloads/documents/legal_18CR/
+dotfiles=~/dotfiles
+bash_project=~/code/bash_project/
 
 # initialize
-:	~DOCS ~mp3 ~legal ~code		# ':'   does nothing
+:	~docs ~mp3 ~legal ~code ~dotfiles ~bash_project		# ':'   does nothing
 
 
 set NO_BEEP
+# need extendedglob
+bindkey '^z'  backward-delete-word
+

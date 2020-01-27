@@ -1,0 +1,10 @@
+R_BROWSER=croutonurlhandler
+
+## ~/R/x86....-library/3.6   ETC	
+R_LIBS_USER=~/R/%p-library/%v
+
+GITHUB_PAT=188debb765fa4bc5cff6aa8075baf68914d29128
+## obtained from git
+## https://github.com/settings/tokens
+
+test=.Renviron is located: ~/.Renviron
