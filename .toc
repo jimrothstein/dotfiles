@@ -1,8 +1,0 @@
-.toc
-~/Downloads/documents/reading/002_non_R_reading.md
-~/Downloads/documents/china_notes.md
-~/Downloads/documents/tech_notes.md
-~/Downloads/documents/current_medications.md
-~/Downloads/documents/hyperoxaluria_notes.md
-$VIMRC
-~/Downloads/documents/
