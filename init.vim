@@ -98,6 +98,12 @@ abbr true TRUE
 " --many options -------------	{{{
 autocmd TermOpen * startinsert			" begin term as insert
 
+" use ==#   compare strings
+"
+augroup myterm | au!
+	au TermOpen * if &buftype ==# 'terminal' | resize 20 | vert resize 50 | endif
+augroup end
+
 " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 " au CursorHoldI * stopinsert
 
