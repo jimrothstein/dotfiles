@@ -9,6 +9,10 @@ export PATH=$HOME/bin:$PATH
 #	RANGER (load only ~/.config/ranger/rc.conf)
 #	RANGER_LOAD_DEFAULT_RC = FALSE
 
+# NO BELL,  nvim/R annoying bell.
+# Unfortunately, this turns OFF bell everywhere in zsh
+setopt nobeep
+#
 # Path to your oh-my-zsh installation.
   export ZSH="/home/jim/.oh-my-zsh"
 # --------
@@ -149,6 +153,10 @@ set -o emacs		# default, and easier for edit zsh/bash command lines
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+# (jr) To find WHERE alias defined:
+# >which <alias>
+# >grep -r '<alias=xxxx>'
+#
 # #######################
 # 	alias
 # #######################
@@ -156,26 +164,35 @@ set -o emacs		# default, and easier for edit zsh/bash command lines
 alias help='run-help'
 alias man='run-help'
 
-#  	always use LESS
-alias more='less'
-alias -g L='| less'	# USE:  ll L <enter>
+# Uncomment, IF want 	always use LESS
+# alias more='less'
+#
+# Uncomment, to add flag for less?
+# alias -g L='| less'	# USE:  ll L <enter>
 
 #	coding
 alias goCode='cd ~/code/'
 
 #	config
 alias goDot='cd ~/dotfiles'
+alias goVim='cd ~/.config/nvim/'
+
 alias goR='cd ~/code/'
 alias goBin='cd ~/bin'
-export goCode goDot goR goBin 
+export goCode goDot goVim goR goBin 
 alias goBackup='cd ~/.config/nvim/backup/'
 alias cx='chmod +x'				# USE:    cx  new_script.sh
 #	docs
 alias goDocs='cd ~/Downloads/documents/'
 alias goLegal='cd ~/Downloads/documents/legal_18CR/'
 
+
+# Experiment
+# long, 1-per line, desc (size), no permissions, more
+# USAGE:   ll * m
+alias ll='ls -laphSog'
+alias -g m='| more'
 #	env var
-export VIMRC=~/.config/nvim/init.vim
 export V=$VIMRC
 export Z=~/.zshrc
 
@@ -202,9 +219,13 @@ mp3=~/Downloads/mp3/
 legal=~/Downloads/documents/legal_18CR/
 dotfiles=~/dotfiles
 bash_project=~/code/bash_project/
+linear=~/code/pkg_linear_algebra/
+try=~/code/r_try_things_here/
+
 
 # initialize
 :	~docs ~mp3 ~legal ~code ~dotfiles ~bash_project		# ':'   does nothing
+: ~linear
 
 
 set NO_BEEP

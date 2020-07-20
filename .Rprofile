@@ -1,8 +1,3 @@
-##						Emacs please make this -*- R -*-
-## empty Rprofile.site for R on Debian
-##
-## Copyright (C) 2008 - 2018  Dirk Eddelbuettel and GPL'ed
-##
 ## see help(Startup) for documentation on ~/.Rprofile and Rprofile.site
 
 # ## Example of .Rprofile
@@ -28,14 +23,41 @@ local({
     r["CRAN"] <- "https://cloud.r-project.org"
     options(repos = r)
 })
+
 ## Jim:	 set
-options(digits=3)
-options(usethis.protocol = "ssh")
-message(".Rprofile location ......~/.Rprofile")
+## ============
+options(
+	 digits=3,
+	 usethis.protocol = "ssh",
+	 lib="/home/jim/R/x86-64-pc-linux-gnu-library/4.0"
+
+	 # help_type = 'html',
+	 # width = 200,
+	 # browser = 'kfmclient newTab', 
+	 # repos = "http://debian.mc.vanderbilt.edu/R/CRAN/", 
+	 # warnPartialMatchDollar = TRUE,
+	 # warnPartialMatchArgs = TRUE,
+	 # show.error.locations = "top",      # this gives the location of the error. Source location highest on the stack (inside)
+	 # xdvicmd = 'okular'
+)
+
+
+message("This message is from  ~/.Rprofile")
 
 
 ## Reprex is workflow pkg, can place here:
 if (interactive()) {
 	suppressMessages(require(reprex))
 }
-
+## Devtools, usethis, rlang, lobstr etc ....
+## =====================
+## autoloads (i.e no need library(devtools))
+##  
+if (interactive()) {
+  suppressMessages(library(devtools))
+	suppressMessages(library(usethis))
+	suppressMessages(library(rlang))
+	suppressMessages(library(lobstr))
+	suppressMessages(library(here))
+	suppressMessages(library(sloop))
+}
