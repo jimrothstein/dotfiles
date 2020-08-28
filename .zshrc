@@ -1,13 +1,8 @@
 # ~/dotifles/.zsh
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
 #	confused WHERE   $PATH 1st set, start fresh here:
 PATH=/usr/local/bin:/usr/bin:/bin
 export PATH=$HOME/bin:$PATH
-
-#	RANGER (load only ~/.config/ranger/rc.conf)
-#	RANGER_LOAD_DEFAULT_RC = FALSE
 
 # NO BELL,  nvim/R annoying bell.
 # Unfortunately, this turns OFF bell everywhere in zsh
@@ -15,8 +10,10 @@ setopt nobeep
 #
 # Path to your oh-my-zsh installation.
   export ZSH="/home/jim/.oh-my-zsh"
-# --------
-# fpath is array of directories zsh searches for all functions
+
+# ==============================================================
+# fpath:   array of directories zsh searches for all functions
+# ==============================================================
 # my functions linked by ~.zfunctions
 # SEE:  https://unix.stackexchange.com/questions/33255/how-to-define-and-load-your-own-shell-function-in-zsh
 # --------
@@ -29,9 +26,6 @@ fpath=( ~/.zfunctions "${fpath[@]}" )
 # USE:	example_function "jim"
 autoload -Uz helloFile jim example_function
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 
@@ -46,12 +40,6 @@ echo "set prompt in THEME"
 #%{$fg_bold[blue]%}%10c%{$reset_color%} $(git_prompt_info) $(git_remote_status)
 #%{$fg_bold[cyan]%}❯%{$reset_color%} '
 
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -170,49 +158,65 @@ alias man='run-help'
 # Uncomment, to add flag for less?
 # alias -g L='| less'	# USE:  ll L <enter>
 
-#	coding
+#	coding, 
 alias goCode='cd ~/code/'
+alias goYoutube='cd ~/code/pkg_yt_api/'
+alias goMp3='cd ~/code/pkg_mp3_files/'
+alias goTry='cd ~/code/r_try_things_here/'
+alias goOpenSecrets='cd ~/code/opensecrets/'
+
 
 #	config
 alias goDot='cd ~/dotfiles'
 alias goVim='cd ~/.config/nvim/'
 
-alias goR='cd ~/code/'
 alias goBin='cd ~/bin'
-export goCode goDot goVim goR goBin 
 alias goBackup='cd ~/.config/nvim/backup/'
 alias cx='chmod +x'				# USE:    cx  new_script.sh
+
 #	docs
 alias goDocs='cd ~/Downloads/documents/'
 alias goLegal='cd ~/Downloads/documents/legal_18CR/'
 
+# export (so go<TAB> works)
+export goCode goDot goVim goBin 
+export goYoutube goTry
 
+# ============
 # Experiment
+# ============
+#
 # long, 1-per line, desc (size), no permissions, more
+# -S  to sort desc (size)
 # USAGE:   ll * m
-alias ll='ls -laphSog'
+#
+alias ll='ls -laphog'
 alias -g m='| more'
+
 #	env var
 export V=$VIMRC
 export Z=~/.zshrc
-
-## move to ~/.Renviron
-#R_LIBS_USER=~/R/R_LIBS_USER
+export G=~/code/.gitignore
 
 
 # example of setting PROMPT
 #PROMPT=%h%~:$PROMPT		# history #, directory
 #PROMPT='${PROMPT} ${status} > '
-# #################
+#
+# ===================================
 # 	set PS2 (when waiting for input)
-# #################
+# ===================================
 PS2='wait for user: '
 
-############
+# ================================
 #  named directories	# PURPOSE??
-###########
+# ================================
+
 setopt AUTO_NAME_DIRS
 setopt extendedglob
+# USAGE    > $docs<CR>
+# TO LIST:  > hash -d
+#
 docs=~/Downloads/documents/
 code=~/code
 mp3=~/Downloads/mp3/
@@ -220,12 +224,15 @@ legal=~/Downloads/documents/legal_18CR/
 dotfiles=~/dotfiles
 bash_project=~/code/bash_project/
 linear=~/code/pkg_linear_algebra/
-try=~/code/r_try_things_here/
-
+try_things_here=~/code/r_try_things_here/
 
 # initialize
 :	~docs ~mp3 ~legal ~code ~dotfiles ~bash_project		# ':'   does nothing
 : ~linear
+
+
+
+# More Experiments
 
 
 set NO_BEEP

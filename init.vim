@@ -1,40 +1,30 @@
 " ~/.config/nvim/init.vim -> ~/dotfiles/init.vim
 "
-"		 VIM-PLUG {{{
+"		 VIM-PLUG 
 " ------------------------
 " Specify a directory for plugins
 call plug#begin('~/.config/nvim/vim-plug')
 
-"	vim-plug (my plugin mgr)
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
-"	nerdtree
 Plug 'scrooloose/nerdtree'
 "	need?  vimux - interacts with tmux within vim
 Plug 'benmills/vimux'
-"	surround.vim (only need   NAME/program    as per git)
 Plug 'tpope/vim-surround' 
-" ncm2 = neovim completion mgr
-" Plug 'ncm2/ncm2' 
-" nvim-R and related
-" Plug 'roxma/nvim-yarp'
 Plug 'jalvesaq/Nvim-R'
-" Plug 'gaalcaras/ncm-R'
 "	my help (cloned from tinyheero)
 Plug 'jimrothstein/vim-myhelp'
-" render Markdown!
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " markdown syntax highligthing
 Plug 'plasticboy/vim-markdown'
 " use vim folding
 let g:vim_markdown_folding_disabled = 1
 " Initialize plugin system
-call plug#end()"}}}
+call plug#end()
 " ===================
 "
 "
 " ==========================
-"		MY CODE, mapleader:"{{{
+"		MY CODE, mapleader:"
 " ==========================
 "
 "	mapleader
@@ -42,7 +32,7 @@ let mapleader=","		" default = \
 
 "	maplocalleader
 let maplocalleader=","			" might be clashes
-"# }}}
+"
 
 " ======================
 "# keystoke DELAY?"{{{
@@ -56,7 +46,7 @@ let maplocalleader=","			" might be clashes
 " ======================
 "
 " avoid commnets on same line as mapping,   vim can get confused
-" SAVE 
+" SAVE
 nnoremap <Leader>s :w<Enter>
 
 " SAVE and exit insertmode,  
@@ -95,6 +85,9 @@ abbr false FALSE
 abbr true TRUE
 
 
+" ==========
+" TERMINAL
+" ==========
 " --many options -------------	{{{
 autocmd TermOpen * startinsert			" begin term as insert
 
@@ -107,13 +100,15 @@ augroup end
 " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 " au CursorHoldI * stopinsert
 
-syntax enable 		"  	colors? why this way?
+syntax enable 		"  	runs syntax.vim
 set history=50		"   last 50 commands (default 10000)
 set showmode			"   show mode
-set scrolloff=4   "   scroll, keep cursor 4 lines from top
+set cursorline		"   highlight current line
+set scrolloff=2   "   scroll, keep cursor 2 lines from top
 set number			"	nonumber
 set relativenumber	" 	norelativenumber, nonumber to turn off
-set cmdheight=4		"	 avoids PRESS any Key to continue
+" was 4, try 2
+set cmdheight=2		"	 avoids PRESS any Key to continue
 " set gdefault			" search global :%s/from/to/c
 set ignorecase			" search non-case sensitive
 set autowrite			" saves to disk when change buffers, :bn
@@ -149,9 +144,8 @@ set backupdir=~/.config/nvim/backup/	" do not surround with quotes!}}}
 hi Comment ctermfg=103
 "}}}
 "
-"---- netRW, required ----{{{
-" set nocp                    " 'compatible' is not set
-" filetype plugin on          " plugins are enabled}}}
+" activation plugin for filetype detection
+filetype plugin on         
 
 "  WINDOWS {{{
 " ==============
@@ -164,9 +158,10 @@ hi Comment ctermfg=103
 "
 " set rmarkdown file type for safety
 au BufNewFile,BufRead *.Rmd set filetype=rmd
+au BufNewFile,BufRead *.md  set filetype=md
 
-" enable ncm2 for all buffers
-" autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" completion: control popup menu, in insert mode
 set completeopt=noinsert,menu,noselect,preview
 "
 " Ref for init.vim for nvim-r
@@ -181,6 +176,7 @@ vmap <Space> <Plug>RDSendSelection
 
 
 " =============================================================
+" N O T E !!
 " :echo R_assign     to see value (no quotes)
 " :let R_assign=n     to change value (effectively immediate)
 " =============================================================
@@ -201,6 +197,7 @@ let R_min_editor_width=120
 " R wd same as vim directory (when R starts)
 let R_nvim_wd = 1
 
+
 " Use Ctrl-Space to do omnicompletion
 inoremap <C-Space> <C-x><C-o>
 
@@ -216,16 +213,7 @@ let R_args = [ '--no-save', '--no-restore-data'  ]
 
 "}}}
 
-"	SPELL{{{
-"------------------------
-"uncomment to have SPELL on always
-"otherwise,  in window :setlocal spell
-"set spell
 
-"}}}
-
-" THESAURAS{{{
-setlocal thesaurus+=~/.config/nvim/thesaurus/thesaurii.txt"}}}
 
 "	FUNCTIONS{{{
 "-----------------
@@ -255,7 +243,7 @@ nnoremap <Leader>t :call ToggleSpellCheck()<CR>"}}}
 
 "
 " ========
-" AUTCMD
+" AUTOCMD
 " ========
 "
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
@@ -263,8 +251,14 @@ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " match folds
 " autocmd FileType r,rmd,md set mps+={{{:}}}
 
-autocmd FileType r,rmd inoremap <leader>mm %*% 
-autocmd FileType r,rmd inoremap <leader>pp %>% 
+
+augroup help_files
+	au!
+	au filetype help nnoremap <buffer>q :q<CR>
+	au filetype help nnoremap <buffer> <CR> <C-]> 
+augroup END
+
+
 
 "	snippet to use skelton for .md, .sh, .Rmd
 augroup skeleton
@@ -272,8 +266,37 @@ augroup skeleton
 	autocmd BufNewFile *.md r ~/.config/nvim/templates/skeleton.md
 	autocmd BufNewFile *.sh r ~/.config/nvim/templates/skeleton.sh
   autocmd BufNewFile  *.Rmd	r ~/.config/nvim/templates/skeleton.Rmd
-
 augroup END"
+
+" HARD WRAP, experiment, :messages
+" To see effect, look what happens (live) to buffer if columns=40
+augroup md_specs
+	autocmd!
+	autocmd BufWrite *.md :echom "Good"
+	autocmd BufWrite *.md :echom "Bye"
+	autocmd BufNewFile *.md :echom "new md file"
+	autocmd FileType md :set formatoptions=tnqr
+	autocmd FileType md :setlocal nowrap spell linebreak tw=78 
+	autocmd BufRead,BufNewFile *.md :setlocal spell spelllang=en_us
+
+	autocmd BufRead,BufNewFile *.md :setlocal spellfile=~/.config/nvim/spell/en.utf-8.add
+	autocmd BufRead,BufNewFile *.md :setlocal thesaurus+=~/.config/nvim/thesaurus/thesaurii.txt
+	"
+augroup END
+
+augroup R_specs
+	autocmd!
+	" to be sure Comments repeat as expected
+	autocmd FileType r,rmd :set formatoptions+=ro
+	autocmd FileType r,rmd inoremap <leader>mm %*% 
+	autocmd FileType r,rmd inoremap <leader>pp %>% 
+augroup END
+
+
+augroup ALZ
+	autocmd! BufRead criminal.md abbr <buffer> PO PO Marcelina
+augroup END
+
 
 " workaround ?
 au InsertLeave * set nopaste
@@ -328,9 +351,6 @@ let @a = "^ifoo\<Esc>j"
 " ===================
 " insert completion
 " ===================
-"	replace <c-n>
-"
-"	l?   b/c near  to p
 
 inoremap <c-l> <c-n>
 " inoremap <c-f> <c-n>   " f? forward, but too far from p	 
@@ -345,3 +365,7 @@ set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 
 "  NOTE
 "  underline, maps vim is in ~/.config/nvim/plugin
+"  better:    exe 'source ....../*.vim'
+"
+"
+
