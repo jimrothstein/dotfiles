@@ -4,6 +4,8 @@
 .Rdata
 .DS_Store
 .Rprofile
+
+# exclude (has API codes, passwords)
 .Renviron
 
 
