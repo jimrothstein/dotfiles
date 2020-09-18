@@ -18,6 +18,9 @@ Plug 'jimrothstein/vim-myhelp'
 Plug 'plasticboy/vim-markdown'
 " use vim folding
 let g:vim_markdown_folding_disabled = 1
+
+" for YAML hightlighting
+let g:vim_markdown_frontmatter = 1
 " Initialize plugin system
 call plug#end()
 " ===================
@@ -58,6 +61,10 @@ inoremap jk <Esc>			" less damage if normal mode!
 inoremap kk <Esc>			" 
 
 
+" cursor forward/backward one full screen
+nnoremap <Leader>f <C-f>
+nnoremap <Leader>b <C-b>
+
 " comments , USAGE: <Leader>c
 nnoremap <Leader>c :call CommentThisLine()<cr>
 inoremap <Leader>c <esc>:call CommentThisLine()<cr>
@@ -84,7 +91,8 @@ nnoremap <Leader>sv	:source $VIMRC<cr>
 abbr false FALSE	
 abbr true TRUE
 
-
+" set tags  (ctags -R .)
+set tags=~/code/tags
 " ==========
 " TERMINAL
 " ==========

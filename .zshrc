@@ -1,13 +1,56 @@
-# ~/dotifles/.zsh
+# ~/dotifles/.zshrc
 #
-#	confused WHERE   $PATH 1st set, start fresh here:
+# =================================================
+# ARTICLE:
+# 		https://thevaluable.dev/zsh-install-configure/
+
+# 		Config files put in ~/.config/zsh/
+# =================================================
+#
+#
+# ==========================================================
+#  ~/.zshenv MUST remain in $HOME dir for system to start
+# ==========================================================
+#
+#
+
+# ALIAS
+source ~/.config/zsh/aliases
+
+# COMPLETION
+source ~/.config/zsh/completion.zsh
+
+# PATH and path
+#	Use typeset to set shell attribute to -U (maintain unique entries )
+#	zsh automatically syncs env $PATH and array $path
+typeset -U PATH path
 PATH=/usr/local/bin:/usr/bin:/bin
 export PATH=$HOME/bin:$PATH
 
-# NO BELL,  nvim/R annoying bell.
-# Unfortunately, this turns OFF bell everywhere in zsh
-setopt nobeep
+# ENV VAR	
+VIMRC=~/.config/nvim/init.vim
+export V=$VIMRC
+export Z=$ZDOTDIR/.zshrc
+export G=~/code/.gitignore
+
+
+# =================
+# PURPOSE:  
+# 	in $Z, segment sections into clear FUNCTIONS
+# 	Makes clearer when activating all the pieces of $Z.
 #
+# create function
+function hello  {
+	print hello $1
+}
+
+# do not run
+# hello "jim"
+# =================
+
+## LEGACY
+#
+
 # Path to your oh-my-zsh installation.
   export ZSH="/home/jim/.oh-my-zsh"
 
@@ -17,6 +60,8 @@ setopt nobeep
 # my functions linked by ~.zfunctions
 # SEE:  https://unix.stackexchange.com/questions/33255/how-to-define-and-load-your-own-shell-function-in-zsh
 # --------
+#
+# NOTE:   "$path[@]"  and $path  should be equivalent.
 fpath=( ~/.zfunctions "${fpath[@]}" )
 
 # --------
@@ -63,36 +108,27 @@ echo "set prompt in THEME"
  DISABLE_AUTO_TITLE="true"
 
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+
 #
-# ##################
-# 	HISTORY
-# ##################
-# export HISTFILE					# default=~/.zsh_history
-export HISTTIMEFORMAT='%F %T'
-export SAVEHIST=1000
-export HISTSIZE=1000
-export INC_IGNORE_DUPS="true"		# if adjacent
-export INC_APPEND_HISTORY="true"	# all zsh shells show same hist
-export HISTIGNORE='ll; ls -la;pwd'
+#  ================
+#			CORE CONFIG	
+#			REF: [archwiki]( https://wiki.archlinux.org/index.php/Zsh#Simple_.zshrc )
+#  ================
+#
+#	
+autoload -Uz compinit		# basic TAB completion
+bindkey -e   			# emacs
 
+# NOW:  prompt set in oh-my-zsh
+# FUTURE?  use standard zsh choices. 
+# autoload -Uz promptinit
+# promptinit
+
+#
+#
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -115,88 +151,13 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 set -o emacs		# default, and easier for edit zsh/bash command lines
 
-#	##################
-#	use emacs:
-#	if 'vi' is found in this env variable,  switches to vi mode
-#
-#	export EDITOR='nvim'
-#	#################
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# (jr) To find WHERE alias defined:
-# >which <alias>
-# >grep -r '<alias=xxxx>'
-#
-# #######################
-# 	alias
-# #######################
-#	zsh help is  run-help
-alias help='run-help'
-alias man='run-help'
 
-# Uncomment, IF want 	always use LESS
-# alias more='less'
-#
-# Uncomment, to add flag for less?
-# alias -g L='| less'	# USE:  ll L <enter>
-
-#	coding, 
-alias goCode='cd ~/code/'
-alias goYoutube='cd ~/code/pkg_yt_api/'
-alias goMp3='cd ~/code/pkg_mp3_files/'
-alias goTry='cd ~/code/r_try_things_here/'
-alias goOpenSecrets='cd ~/code/opensecrets/'
-
-
-#	config
-alias goDot='cd ~/dotfiles'
-alias goVim='cd ~/.config/nvim/'
-
-alias goBin='cd ~/bin'
-alias goBackup='cd ~/.config/nvim/backup/'
-alias cx='chmod +x'				# USE:    cx  new_script.sh
-
-#	docs
-alias goDocs='cd ~/Downloads/documents/'
-alias goLegal='cd ~/Downloads/documents/legal_18CR/'
-
-# export (so go<TAB> works)
-export goCode goDot goVim goBin 
-export goYoutube goTry
-
-# ============
-# Experiment
-# ============
-#
-# long, 1-per line, desc (size), no permissions, more
-# -S  to sort desc (size)
-# USAGE:   ll * m
-#
-alias ll='ls -laphog'
-alias -g m='| more'
-
-#	env var
-export V=$VIMRC
-export Z=~/.zshrc
-export G=~/code/.gitignore
 
 
 # example of setting PROMPT
@@ -229,10 +190,6 @@ try_things_here=~/code/r_try_things_here/
 # initialize
 :	~docs ~mp3 ~legal ~code ~dotfiles ~bash_project		# ':'   does nothing
 : ~linear
-
-
-
-# More Experiments
 
 
 set NO_BEEP
