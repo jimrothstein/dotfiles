@@ -1,4 +1,11 @@
 ## see help(Startup) for documentation on ~/.Rprofile and Rprofile.site
+# ==============================
+## ~/.Rprofile
+##
+## To Start R with ~/.Rprofile
+## R --vanilla
+## ?startup
+# ==============================
 
 # ## Example of .Rprofile
 # options(width=65, digits=5)
@@ -29,7 +36,17 @@ local({
 options(
 	 digits=3,
 	 usethis.protocol = "ssh",
-	 lib="/home/jim/R/x86-64-pc-linux-gnu-library/4.0"
+	 lib="/home/jim/R/x86-64-pc-linux-gnu-library/4.0",
+	 
+	 # display traceback on error, in simplifid or branch form.
+
+   rlang_backtrace_on_error = "branch",
+
+	 # turn base R errors into R lang errors
+   error = rlang::entrace
+
+
+	 #  QUESTION:    error=recover() # allows examination of stack?
 
 	 # help_type = 'html',
 	 # width = 200,
@@ -39,6 +56,7 @@ options(
 	 # warnPartialMatchArgs = TRUE,
 	 # show.error.locations = "top",      # this gives the location of the error. Source location highest on the stack (inside)
 	 # xdvicmd = 'okular'
+	 #
 )
 
 
@@ -60,4 +78,5 @@ if (interactive()) {
 	suppressMessages(library(lobstr))
 	suppressMessages(library(here))
 	suppressMessages(library(sloop))
+  suppressMessages(library(xfun)) # utils from Yihui
 }

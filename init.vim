@@ -93,6 +93,12 @@ abbr true TRUE
 
 " set tags  (ctags -R .)
 set tags=~/code/tags
+
+"  -f ~/code/tags   location for output files
+augroup ctags
+	autocmd  BufWritePost *.R,*.Rmd silent! :!ctags -f ~/code/tags -R ~/code 
+augroup end
+
 " ==========
 " TERMINAL
 " ==========
@@ -128,6 +134,7 @@ set foldcolumn=3		" adds visual clue in LEFT margin
 set nolist				"NO display TABS, and EOL}}}
 set wrap
 set noerrorbells 
+set expandtab 			" <TAB> expands as spaces,  NO BELLS will sound in R!
 set laststatus=2		" default=2, means all windows have statusline
 set statusline=
 set statusline+=%m[%{winnr()}-b%{bufnr()}][%F]%y    " modified, win#, full path filetype,
@@ -150,16 +157,17 @@ set backupdir=~/.config/nvim/backup/	" do not surround with quotes!}}}
 
 " Solarize, change so I can see "comments
 hi Comment ctermfg=103
+hi CursorLine ctermbg=4			" blue	
 "}}}
 "
 " activation plugin for filetype detection
 filetype plugin on         
 
-"  WINDOWS {{{
+"  WINDOWS 
 " ==============
 " see plugins/maps.vim
 
-" --- nvim-R ---- {{{
+" --- nvim-R ---- 
 " =====================
 "
 " FROM ercrema - github
@@ -223,7 +231,7 @@ let R_args = [ '--no-save', '--no-restore-data'  ]
 
 
 
-"	FUNCTIONS{{{
+"	FUNCTIONS
 "-----------------
 "
 "	insert dotline line 
@@ -257,7 +265,7 @@ nnoremap <Leader>t :call ToggleSpellCheck()<CR>"}}}
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " match folds
-" autocmd FileType r,rmd,md set mps+={{{:}}}
+" autocmd FileType r,rmd,md set mps+=:
 
 
 augroup help_files
@@ -354,7 +362,7 @@ augroup END"
 " 10@a will insert "foo"
 " @a is register a, same as yanking into reg a
 let @a = "^ifoo\<Esc>j"
-" }}}
+" 
  
 " ===================
 " insert completion
