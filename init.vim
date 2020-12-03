@@ -1,10 +1,19 @@
 " ~/.config/nvim/init.vim -> ~/dotfiles/init.vim
 "
+"
 "		 VIM-PLUG 
 " ------------------------
 " Specify a directory for plugins
 call plug#begin('~/.config/nvim/vim-plug')
 
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"  ALSO  .... uncomment source coc (last line)
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'dense-analysis/ale'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
@@ -25,7 +34,11 @@ let g:vim_markdown_frontmatter = 1
 call plug#end()
 " ===================
 "
-"
+
+" LanguageClient_
+let g:LanuageClient_serverCommands = {
+    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
+    \ }
 " ==========================
 "		MY CODE, mapleader:"
 " ==========================
@@ -59,6 +72,9 @@ inoremap <Leader>s <esc>:w<Enter>
 inoremap jj <Esc>			" always use Xnoremap
 inoremap jk <Esc>			" less damage if normal mode!
 inoremap kk <Esc>			" 
+
+" turnoff highlight
+noremap <silent> ./ :nohlsearch<CR>  
 
 
 " cursor forward/backward one full screen
@@ -384,4 +400,8 @@ set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 "  better:    exe 'source ....../*.vim'
 "
 "
+"============================
+" SOURCE ADD'N  Config files
+"============================
+"source $HOME/.config/nvim/plug-config/coc.vim
 
