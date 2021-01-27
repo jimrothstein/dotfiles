@@ -24,7 +24,7 @@ source ~/.config/zsh/completion.zsh
 #	Use typeset to set shell attribute to -U (maintain unique entries )
 #	zsh automatically syncs env $PATH and array $path
 typeset -U PATH path
-PATH=/usr/local/bin:/usr/bin:/bin
+PATH=/usr/local/bin:/usr/bin:/bin:~/.local/bin/
 export PATH=$HOME/bin:$PATH
 
 # ENV VAR	

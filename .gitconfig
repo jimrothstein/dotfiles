@@ -45,3 +45,5 @@
 
 #   List All git projects
 	all = "!find **/.git/config"
+[credential]
+	helper = cache

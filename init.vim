@@ -10,10 +10,13 @@ call plug#begin('~/.config/nvim/vim-plug')
 "  ALSO  .... uncomment source coc (last line)
 " Plug 'neovim/nvim-lspconfig'
 " Plug 'dense-analysis/ale'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"
+"    Uncomment to resume lsp  
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ }
+"
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
@@ -35,11 +38,15 @@ call plug#end()
 " ===================
 "
 
+" ACTIVATES REditorSupport/languageserver
+" UNCOMMENT TO USE
+"
 " LanguageClient_
-let g:LanuageClient_serverCommands = {
-    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
-    \ }
-" ==========================
+" let g:LanuageClient_serverCommands = {
+"     \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
+"     \ }
+"
+ " ==========================
 "		MY CODE, mapleader:"
 " ==========================
 "
@@ -107,13 +114,6 @@ nnoremap <Leader>sv	:source $VIMRC<cr>
 abbr false FALSE	
 abbr true TRUE
 
-" set tags  (ctags -R .)
-set tags=~/code/tags
-
-"  -f ~/code/tags   location for output files
-augroup ctags
-	autocmd  BufWritePost *.R,*.Rmd silent! :!ctags -f ~/code/tags -R ~/code 
-augroup end
 
 " ==========
 " TERMINAL
@@ -186,12 +186,6 @@ filetype plugin on
 " --- nvim-R ---- 
 " =====================
 "
-" FROM ercrema - github
-"
-" set rmarkdown file type for safety
-au BufNewFile,BufRead *.Rmd set filetype=rmd
-au BufNewFile,BufRead *.md  set filetype=md
-
 
 " completion: control popup menu, in insert mode
 set completeopt=noinsert,menu,noselect,preview
@@ -278,11 +272,20 @@ nnoremap <Leader>t :call ToggleSpellCheck()<CR>"}}}
 " AUTOCMD
 " ========
 "
-autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+" set tags  (ctags -R .)
+set tags=~/code/tags
 
-" match folds
-" autocmd FileType r,rmd,md set mps+=:
+"  -f ~/code/tags   location for output files
+augroup ctags
+	autocmd  BufWritePost *.R,*.Rmd silent! :!ctags -f ~/code/tags -R ~/code 
+augroup end
 
+" FROM ercrema - github
+"
+" keep filetypes consistent 
+au BufNewFile,BufRead *.Rmd set filetype=rmd
+au BufNewFile,BufRead *.md  set filetype=md
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 augroup help_files
 	au!
@@ -298,7 +301,7 @@ augroup skeleton
 	autocmd BufNewFile *.md r ~/.config/nvim/templates/skeleton.md
 	autocmd BufNewFile *.sh r ~/.config/nvim/templates/skeleton.sh
   autocmd BufNewFile  *.Rmd	r ~/.config/nvim/templates/skeleton.Rmd
-augroup END"
+augroup END
 
 " HARD WRAP, experiment, :messages
 " To see effect, look what happens (live) to buffer if columns=40
@@ -345,10 +348,6 @@ autocmd FileType help setlocal number relativenumber
 " confirm
 "autocmd QuitPre * let ans=call confirm("Are you sure ?", "&yes\n&Cancel",0)
 
-"if ans == 1
-"	quit()
-"else
-"endif
 
 " ---- yaml ----
 "  vice nice to align!
@@ -359,10 +358,14 @@ autocmd FileType yaml setlocal ai et sw=2 ts=2 cuc cul
 " autocmd BufNewFile,BufRead *.R 		nnoremap ,id I# ---------<esc>j 
 " autocmd BufNewFile,BufRead *.vim 	nnoremap ,id I" ---------<esc>j 
 
-" rmd, R files only
-augroup  r_code
-	"inoremap <leader>mm %*%<SP>
+
+
+" For .Rmd files, find next/previous 'chunk'
+augroup knitr
+  autocmd BufNewFile,BufRead *.Rmd nnoremap ]r /```{r<CR>
+  autocmd BufNewFile,BufRead *.Rmd nnoremap [r ?```{r<CR>
 augroup END
+
 
 
 
@@ -399,6 +402,17 @@ set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 "  underline, maps vim is in ~/.config/nvim/plugin
 "  better:    exe 'source ....../*.vim'
 "
+"
+" (1) first install, in R,  
+" devtools::install_github("REditorSupport/languageserver")
+" (2)
+" code below configers for lsp plugin called: LanguageClient-neovim (see
+" Plugins)
+" (3) be sure plugin autozimu/LanguageClient-neovim (at top)
+let g:LanguageClient_serverCommands = {
+    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
+    \ 'rmd': ['R', '--slave', '-e', 'languageserver::run()'],
+    \ }
 "
 "============================
 " SOURCE ADD'N  Config files
