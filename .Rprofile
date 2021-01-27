@@ -38,6 +38,9 @@ options(
 	 usethis.protocol = "ssh",
 	 lib="/home/jim/R/x86-64-pc-linux-gnu-library/4.0",
 	 
+   blogdown.author = "Jim",
+   blogdown.hugo.version = "0.79.0",
+
 	 # display traceback on error, in simplifid or branch form.
 
    rlang_backtrace_on_error = "branch",
