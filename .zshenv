@@ -31,7 +31,7 @@ export DOT_DIR="$HOME/dotfiles"
 # HISTORY
 export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
-export SAVEHIST=10000                   # Maximum events in history file
+export SAVEHIST=1000                   # Maximum events in history file
 export HISTTIMEFORMAT='%F %T'
 export HISTIGNORE='ll; ls -la;pwd'
 export INC_IGNORE_DUPS="true"		# if adjacent
