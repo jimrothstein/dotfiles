@@ -23,7 +23,7 @@ Plug 'scrooloose/nerdtree'
 "	need?  vimux - interacts with tmux within vim
 Plug 'benmills/vimux'
 Plug 'tpope/vim-surround' 
-Plug 'jalvesaq/Nvim-R'
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 "	my help (cloned from tinyheero)
 Plug 'jimrothstein/vim-myhelp'
 " markdown syntax highligthing
@@ -245,11 +245,12 @@ let R_args = [ '--no-save', '--no-restore-data'  ]
 "-----------------
 "
 "	insert dotline line 
+"	CONFLICT with ,id (insert date)
 "-----------------
-func! InsertDotLine()
-	exe "normal! I"."\"-----------------\<CR>\<esc>"
-endfunction
-nnoremap <Leader>id :call InsertDotLine()<CR>
+" func! InsertDotLine()
+" 	exe "normal! I"."\"-----------------\<CR>\<esc>"
+" endfunction
+" nnoremap <Leader>id :call InsertDotLine()<CR>
 "-----------------
 "
 "
