@@ -180,15 +180,14 @@ setopt extendedglob
 #
 docs=~/Downloads/documents/
 code=~/code
-mp3=~/Downloads/mp3/
+from_youtube=~/Downloads/mp3/from_youtube/
 legal=~/Downloads/documents/legal_18CR/
 dotfiles=~/dotfiles
-bash_project=~/code/bash_project/
 linear=~/code/pkg_linear_algebra/
 try_things_here=~/code/r_try_things_here/
 
 # initialize
-:	~docs ~mp3 ~legal ~code ~dotfiles ~bash_project		# ':'   does nothing
+:	~docs ~from_youtube ~legal ~code ~dotfiles # ':'   does nothing
 : ~linear
 
 
