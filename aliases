@@ -1,0 +1,77 @@
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# (jr) To find WHERE alias defined:
+# >which <alias>
+# >grep -r '<alias=xxxx>'
+# 
+#
+# TODO:  in this file, wrap all alias calls in a function()
+# from .zshrc,  call this function
+# benefit?  ctags will tag the function
+#
+# #######################
+# 	alias
+# #######################
+#	zsh help is  run-help
+alias help='run-help'
+alias man='run-help'
+
+# Uncomment, IF want 	always use LESS
+# alias more='less'
+#
+# Uncomment, to add flag for less?
+# alias -g L='| less'	# USE:  ll L <enter>
+
+#	coding, 
+alias goCode='cd ~/code/'
+alias goYoutube='cd ~/code/pkg_youtube_api/'
+alias goMp3='cd ~/code/pkg_mp3_files/'
+alias goTry='cd ~/code/r_try_things_here/'
+alias goOpenSecrets='cd ~/code/opensecrets/'
+alias goJim='cd ~/code/jimTools/'
+alias goAdv='cd ~/code/book_advanced_R/'
+alias goPost='cd ~/code/hugo_projects/blog/content/post'
+alias goHealth='cd ~/code/r_health_labs/'
+
+# boku, bookmarks manager
+alias b='~/.local/bin/buku --suggest'
+
+#	config
+alias goDot='cd ~/dotfiles'
+alias goVim='cd ~/.config/nvim/'
+alias goZHS='cd $ZDOTDIR'
+
+alias goBin='cd ~/bin'
+alias goConfig='cd ~/.config/'
+alias goBackup='cd ~/.config/nvim/backup/'
+alias cx='chmod +x'				# USE:    cx  new_script.sh
+
+#	docs
+alias goDocs='cd ~/Downloads/documents/'
+alias goLegal='cd ~/Downloads/documents/legal_18CR/'
+
+# export (so go<TAB> works)
+export goCode goDot goVim goBin 
+export goYoutube goTry
+
+# ============
+# Experiment
+# ============
+#
+# long, 1-per line, desc (size), no permissions, more
+# -S  to sort desc (size)
+# USAGE:   ll * m
+#
+alias ll='ls -laphog'
+alias -g m='| more'
+
+# show sym links only
+alias lsym='ls -l *(@)'
+
+# directories only
+alias ldir='ll -d *(/)'
+
