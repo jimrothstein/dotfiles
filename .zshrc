@@ -52,7 +52,7 @@ function hello  {
 #
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/jim/.oh-my-zsh"
+
 
 # ==============================================================
 # fpath:   array of directories zsh searches for all functions
@@ -80,12 +80,14 @@ ZSH_THEME="intheloop"
 #	this is from "intheloop"
 echo "set prompt in THEME"
 
-#PROMPT='
-#%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%}
+PROMPT='
+%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%}
 #%{$fg_bold[blue]%}%10c%{$reset_color%} $(git_prompt_info) $(git_remote_status)
 #%{$fg_bold[cyan]%}❯%{$reset_color%} '
 
-
+# history #, pwd
+PROMPT='%h %~> '
+# export PS1=" \W \$ "
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
