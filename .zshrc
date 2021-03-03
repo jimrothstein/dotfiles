@@ -20,6 +20,9 @@ source ~/.config/zsh/aliases
 # COMPLETION
 source ~/.config/zsh/completion.zsh
 
+# PROMPT
+source ~/.config/zsh/prompt.zsh
+
 # PATH and path
 #	Use typeset to set shell attribute to -U (maintain unique entries )
 #	zsh automatically syncs env $PATH and array $path
@@ -71,22 +74,7 @@ fpath=( ~/.zfunctions "${fpath[@]}" )
 # USE:	example_function "jim"
 autoload -Uz helloFile jim example_function
 
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
 
-ZSH_THEME="intheloop"
-
-#	Prompt is usually set in THEME
-#	this is from "intheloop"
-echo "set prompt in THEME"
-
-PROMPT='
-%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%}
-#%{$fg_bold[blue]%}%10c%{$reset_color%} $(git_prompt_info) $(git_remote_status)
-#%{$fg_bold[cyan]%}❯%{$reset_color%} '
-
-# history #, pwd
-PROMPT='%h %~> '
 # export PS1=" \W \$ "
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -144,7 +132,7 @@ plugins=(
 )
 
 #	manages universe of zsh plugins
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -197,3 +185,8 @@ set NO_BEEP
 # need extendedglob
 bindkey '^z'  backward-delete-word
 
+# apply Debian keyboard mappings (in ~/.xmodmap)
+# maps ccaps lock to ESC
+if [ -f ~/.xmodmap ]; then
+  xmodmap ~/.xmodmap
+fi
