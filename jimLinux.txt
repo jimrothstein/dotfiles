@@ -1,0 +1,45 @@
+*jimLinux.txt* For Neovim     Last change: 2020 FEB 28
+
+#  ~/.config/nvim/vim-plug/vim-myhelp/doc/jimLinux.txt
+# jimLinux.txt
+JIM's LINUX/zsh help notes
+  
+# points to:   ~/dotfiles/jimLinux.txt
+
+
+
+#
+# USAGE:  :h jimLinux.txt
+#         :h jim
+# 
+# if F = jimLinux.txt
+#
+# To add/modify:    just edit the this file 
+~/.config/nvim/vim-plug/vim-myhelp/doc/F
+#
+
+Here is a tag
+*jim-Linux*
+
+
+STEP #1
+add helpfile ....  ~/.config/nvim/vim-plug/vim-myhelp/doc/*.txt
+
+STEP #2 
+in this *.txt help file, add content.
+To a tag, put the tag between two asteriks
+
+STEP #3
+in `tags` file,  addd ..
+
+STEP #4
+```
+helpt ~/.config/nvim/vim-plug/vim-myhelp/
+```
+
+You can create a `tags` file that allows you to then type 
+`:h myhelp-cheatsheet` to quickly jump here. The command to do that is
+
+# ============
+bottom
+# vim: filetype=help:ts=2

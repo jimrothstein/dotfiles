@@ -1,0 +1,43 @@
+*jimlua.txt*
+
+
+#  ~/.config/nvim/vim-plug/vim-myhelp/doc/jimhelp.txt
+JIM's LUA help notes
+  
+
+# points to:   ~/dotfiles/jimlua.txt
+
+
+
+#
+# USAGE:  :h jimlua.txt
+#         :h jim-lua
+# 
+
+#
+# To add/modify:    just edit the this file 
+~/.config/nvim/vim-plug/vim-myhelp/doc/jimlua.txt
+#
+
+*jim-lua*
+
+In lua, nil or false evaluate to:  false
+0 or '', evaluate to: true
+
+*jimlua-lua*
+
+
+The contents of this cheatsheet should be stored at 
+`~/.config/nvim/plugged/vim-myhelp/doc/myhelp.txt`
+
+You can create a `tags` file that allows you to then type 
+`:h myhelp-cheatsheet` to quickly jump here. The command to do that is
+
+```
+helpt ~/.config/nvim/vim-help/vim-myhelp
+```
+
+|jimlua-lua|
+# ============
+bottom
+# vim: filetype=help:ts=2
