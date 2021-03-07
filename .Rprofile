@@ -36,31 +36,32 @@ local({
 options(
 	 digits=3,
 	 usethis.protocol = "ssh",
-	 lib="/home/jim/R/x86-64-pc-linux-gnu-library/4.0",
-	 
-   blogdown.author = "Jim",
-   blogdown.hugo.version = "0.79.0",
+	 lib="/home/jim/R/x86-64-pc-linux-gnu-library/4.0")
 
-	 # display traceback on error, in simplifid or branch form.
-
-   rlang_backtrace_on_error = "branch",
-
-	 # turn base R errors into R lang errors
-   error = rlang::entrace
-
-
-	 #  QUESTION:    error=recover() # allows examination of stack?
-
-	 # help_type = 'html',
-	 # width = 200,
-	 # browser = 'kfmclient newTab', 
-	 # repos = "http://debian.mc.vanderbilt.edu/R/CRAN/", 
-	 # warnPartialMatchDollar = TRUE,
-	 # warnPartialMatchArgs = TRUE,
-	 # show.error.locations = "top",      # this gives the location of the error. Source location highest on the stack (inside)
-	 # xdvicmd = 'okular'
-	 #
-)
+# options(	 
+#    blogdown.author = "Jim",
+#    blogdown.hugo.version = "0.79.0"
+# 
+# 	 # display traceback on error, in simplifid or branch form.
+# 
+#   # rlang_backtrace_on_error = "branch",
+# 
+# 	 # turn base R errors into R lang errors
+#   #  error = rlang::entrace
+# 
+# 
+# 	 #  QUESTION:    error=recover() # allows examination of stack?
+# 
+# 	 # help_type = 'html',
+# 	 # width = 200,
+# 	 # browser = 'kfmclient newTab', 
+# 	 # repos = "http://debian.mc.vanderbilt.edu/R/CRAN/", 
+# 	 # warnPartialMatchDollar = TRUE,
+# 	 # warnPartialMatchArgs = TRUE,
+# 	 # show.error.locations = "top",      # this gives the location of the error. Source location highest on the stack (inside)
+# 	 # xdvicmd = 'okular'
+# 	 #
+# )
 
 
 message("This message is from  ~/.Rprofile")
@@ -77,7 +78,7 @@ if (interactive()) {
 if (interactive()) {
   suppressMessages(library(devtools))
 	suppressMessages(library(usethis))
-	suppressMessages(library(rlang))
+	# suppressMessages(library(rlang))
 	suppressMessages(library(lobstr))
 	suppressMessages(library(here))
 	suppressMessages(library(sloop))
