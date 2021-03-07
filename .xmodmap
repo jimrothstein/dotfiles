@@ -1,0 +1,7 @@
+! This is a comment
+! .xmodmap is used by Debian command xmodmap to modify keyboard mappings
+!
+! This maps the control lock key to ESC  (for vim)
+clear Lock
+keycode 0x42 = Escape
+

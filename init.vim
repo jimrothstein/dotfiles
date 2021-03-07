@@ -17,6 +17,8 @@ call plug#begin('~/.config/nvim/vim-plug')
 "    \ 'do': 'bash install.sh',
 "    \ }
 "
+Plug 'tjdevries/nlua.nvim'
+Plug 'anott03/nvim-lspinstall'
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
@@ -111,8 +113,12 @@ nnoremap <Leader>sv	:source $VIMRC<cr>
 " ==========
 "	ABBREV  
 " ==========
-abbr false FALSE	
-abbr true TRUE
+
+augroup R_values
+	au!
+	au! FileType r,rmd abbr false FALSE 
+	au! FileType r,rmd abbr true TRUE 
+augroup END
 
 
 " ==========
@@ -124,7 +130,7 @@ autocmd TermOpen * startinsert			" begin term as insert
 " use ==#   compare strings
 "
 augroup myterm | au!
-	au TermOpen * if &buftype ==# 'terminal' | resize 20 | vert resize 50 | endif
+	au TermOpen * if &buftype ==# 'terminal' | resize q0 | vert resize 50 | endif
 augroup end
 
 " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
@@ -143,7 +149,7 @@ set cmdheight=2		"	 avoids PRESS any Key to continue
 set ignorecase			" search non-case sensitive
 set autowrite			" saves to disk when change buffers, :bn
 set autoread			" re-read if a file changed outside vim
-set shiftround			" indent will be multipe of shiftwidth
+set shiftround			" indents will be multipe of shiftwidth (keeps alignment)
 set showmatch			" highlights matching bracket, paran etc.
 set foldmethod=marker	" create fold with zf	
 set foldcolumn=3		" adds visual clue in LEFT margin
@@ -152,8 +158,10 @@ set wrap
 set noerrorbells 
 set expandtab 			" <TAB> expands as spaces,  NO BELLS will sound in R!
 set laststatus=2		" default=2, means all windows have statusline
+" %n = buffer number
 set statusline=
-set statusline+=%m[%{winnr()}-b%{bufnr()}][%F]%y    " modified, win#, full path filetype,
+set statusline+=%m[%{winnr()}-b%n]
+set statusline+=[%F]%y    
 set statusline+=[%l,%c%V]										" line, column (with tabs, maybe estimate)
 set colorcolumn=81		" display right margin
 set title 
@@ -169,7 +177,7 @@ set backupdir=~/.config/nvim/backup/	" do not surround with quotes!}}}
 
 " COLORS
 " ========
-" sourced from ./plugin/colors.vim (my code)
+" sourced from ./jim_code/colors.vim (my code)
 
 " Solarize, change so I can see "comments
 hi Comment ctermfg=103
@@ -181,7 +189,8 @@ filetype plugin on
 
 "  WINDOWS 
 " ==============
-" see plugins/maps.vim
+" see ./jim_code/maps.vim
+source ~/.config/nvim/jim_code/maps.vim
 
 " --- nvim-R ---- 
 " =====================
@@ -190,16 +199,8 @@ filetype plugin on
 " completion: control popup menu, in insert mode
 set completeopt=noinsert,menu,noselect,preview
 "
-" Ref for init.vim for nvim-r
-" https://gist.githubusercontent.com/tgirke/7a7c197b443243937f68c422e5471899/raw/init.vim
 "
-map <F2> <Plug>RStart
-map <Leader><F2> <Plug>RStop
-imap <Leader>d <Plug>RDSendLine
-
-" Send selection or line to R with space bar, respectively.
-vmap <Space> <Plug>RDSendSelection
-
+source ~/.config/nvim/jim_code/nvimR_config.vim
 
 " =============================================================
 " N O T E !!
@@ -400,8 +401,9 @@ hi ActiveWindow ctermfg=15 ctermbg=16 | hi InactiveWindow ctermbg=8
 set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 
 "  NOTE
-"  underline, maps vim is in ~/.config/nvim/plugin
+"  underline, maps vim is in ~/.config/nvim/jim_code/
 "  better:    exe 'source ....../*.vim'
+"exe 'source ~/.config/nvim/jim_code/underline.vim'
 "
 "
 " (1) first install, in R,  
@@ -419,4 +421,14 @@ let g:LanguageClient_serverCommands = {
 " SOURCE ADD'N  Config files
 "============================
 "source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/jim_code/underline.vim
+source $HOME/.config/nvim/jim_code/date.vim
+source $HOME/.config/nvim/jim_code/lua_inside_vim_file.vim
 
+
+" TO SOURCE .luafile ~/.config/nvim/lua/lua_file.lua
+" NOTE:   :luafile to source
+" NOTE:   lua_file, with NO EXTENSION
+"
+" pause for now.
+" :luafile ~/.config/nvim/lua/lua_file.lua
