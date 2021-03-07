@@ -20,6 +20,9 @@ source ~/.config/zsh/aliases
 # COMPLETION
 source ~/.config/zsh/completion.zsh
 
+# PROMPT
+source ~/.config/zsh/prompt.zsh
+
 # PATH and path
 #	Use typeset to set shell attribute to -U (maintain unique entries )
 #	zsh automatically syncs env $PATH and array $path
@@ -52,7 +55,7 @@ function hello  {
 #
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/jim/.oh-my-zsh"
+#  export ZSH="/home/jim/.oh-my-zsh"
 
 # ==============================================================
 # fpath:   array of directories zsh searches for all functions
@@ -75,16 +78,6 @@ autoload -Uz helloFile jim example_function
 #ZSH_THEME="robbyrussell"
 
 ZSH_THEME="intheloop"
-
-#	Prompt is usually set in THEME
-#	this is from "intheloop"
-echo "set prompt in THEME"
-
-#PROMPT='
-#%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%}
-#%{$fg_bold[blue]%}%10c%{$reset_color%} $(git_prompt_info) $(git_remote_status)
-#%{$fg_bold[cyan]%}❯%{$reset_color%} '
-
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -141,8 +134,9 @@ plugins=(
   git
 )
 
+# REMOVED oh-my-zsh
 #	manages universe of zsh plugins
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -160,14 +154,6 @@ set -o emacs		# default, and easier for edit zsh/bash command lines
 
 
 
-# example of setting PROMPT
-#PROMPT=%h%~:$PROMPT		# history #, directory
-#PROMPT='${PROMPT} ${status} > '
-#
-# ===================================
-# 	set PS2 (when waiting for input)
-# ===================================
-PS2='wait for user: '
 
 # ================================
 #  named directories	# PURPOSE??
