@@ -55,7 +55,11 @@ function hello  {
 #
 
 # Path to your oh-my-zsh installation.
+<<<<<<< HEAD
+#  export ZSH="/home/jim/.oh-my-zsh"
+=======
 
+>>>>>>> 9222441be7a830dcdee6280930fe71c34116175f
 
 # ==============================================================
 # fpath:   array of directories zsh searches for all functions
@@ -74,8 +78,16 @@ fpath=( ~/.zfunctions "${fpath[@]}" )
 # USE:	example_function "jim"
 autoload -Uz helloFile jim example_function
 
+<<<<<<< HEAD
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+
+ZSH_THEME="intheloop"
+
+=======
 
 # export PS1=" \W \$ "
+>>>>>>> 9222441be7a830dcdee6280930fe71c34116175f
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -131,6 +143,7 @@ plugins=(
   git
 )
 
+# REMOVED oh-my-zsh
 #	manages universe of zsh plugins
 # source $ZSH/oh-my-zsh.sh
 
@@ -150,14 +163,6 @@ set -o emacs		# default, and easier for edit zsh/bash command lines
 
 
 
-# example of setting PROMPT
-#PROMPT=%h%~:$PROMPT		# history #, directory
-#PROMPT='${PROMPT} ${status} > '
-#
-# ===================================
-# 	set PS2 (when waiting for input)
-# ===================================
-PS2='wait for user: '
 
 # ================================
 #  named directories	# PURPOSE??
