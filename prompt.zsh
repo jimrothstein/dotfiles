@@ -1,3 +1,30 @@
+<<<<<<< HEAD
+# Purity
+# by Kevin Lanni
+# https://github.com/therealklanni/purity
+# MIT License
+
+# For my own and others sanity
+# git:
+# %b => current branch
+# %a => current action (rebase/merge)
+# prompt:
+# %F => color dict
+# %f => reset color
+# %~ => current path
+# %* => time
+# %n => username
+# %m => shortname host
+# %(?..) => prompt conditional - %(condition.true.false)
+#
+#
+# install prompt widget?
+autoload -Uz promptinit; promptinit
+
+# prompt -p  # to see choices, select:
+prompt adam1
+
+=======
 
 
 ZSH_THEME="intheloop"
@@ -27,3 +54,4 @@ setopt prompt_subst
 PROMPT='%h %~> '
 PROMPT='${vcs_info_msg_0_}%h %~> '
 zstyle ':vcs_info:git*' actionformats "%s  %r/%S %b %m%u%c "
+>>>>>>> 9222441be7a830dcdee6280930fe71c34116175f
