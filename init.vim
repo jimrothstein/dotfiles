@@ -17,8 +17,8 @@ call plug#begin('~/.config/nvim/vim-plug')
 "    \ 'do': 'bash install.sh',
 "    \ }
 "
-Plug 'tjdevries/nlua.nvim'
-Plug 'anott03/nvim-lspinstall'
+" Plug 'tjdevries/nlua.nvim'
+" Plug 'anott03/nvim-lspinstall'
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
