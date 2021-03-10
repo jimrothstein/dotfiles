@@ -56,7 +56,6 @@ function hello  {
 
 # Path to your oh-my-zsh installation.
 #  export ZSH="/home/jim/.oh-my-zsh"
-=======
 
 
 # ==============================================================
@@ -81,7 +80,6 @@ autoload -Uz helloFile jim example_function
 
 ZSH_THEME="intheloop"
 
-=======
 
 # export PS1=" \W \$ "
 # Uncomment the following line to use case-sensitive completion.
