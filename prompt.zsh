@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Purity
 # by Kevin Lanni
 # https://github.com/therealklanni/purity
@@ -23,8 +22,6 @@ autoload -Uz promptinit; promptinit
 
 # prompt -p  # to see choices, select:
 prompt adam1
-
-=======
 
 
 ZSH_THEME="intheloop"
@@ -54,4 +51,3 @@ setopt prompt_subst
 PROMPT='%h %~> '
 PROMPT='${vcs_info_msg_0_}%h %~> '
 zstyle ':vcs_info:git*' actionformats "%s  %r/%S %b %m%u%c "
->>>>>>> 9222441be7a830dcdee6280930fe71c34116175f
