@@ -55,11 +55,9 @@ function hello  {
 #
 
 # Path to your oh-my-zsh installation.
-<<<<<<< HEAD
 #  export ZSH="/home/jim/.oh-my-zsh"
 =======
 
->>>>>>> 9222441be7a830dcdee6280930fe71c34116175f
 
 # ==============================================================
 # fpath:   array of directories zsh searches for all functions
@@ -78,7 +76,6 @@ fpath=( ~/.zfunctions "${fpath[@]}" )
 # USE:	example_function "jim"
 autoload -Uz helloFile jim example_function
 
-<<<<<<< HEAD
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 
@@ -87,7 +84,6 @@ ZSH_THEME="intheloop"
 =======
 
 # export PS1=" \W \$ "
->>>>>>> 9222441be7a830dcdee6280930fe71c34116175f
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
