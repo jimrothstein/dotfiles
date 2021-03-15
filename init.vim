@@ -6,19 +6,7 @@
 " Specify a directory for plugins
 call plug#begin('~/.config/nvim/vim-plug')
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"  ALSO  .... uncomment source coc (last line)
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'dense-analysis/ale'
 "
-"    Uncomment to resume lsp  
-"Plug 'autozimu/LanguageClient-neovim', {
-"    \ 'branch': 'next',
-"    \ 'do': 'bash install.sh',
-"    \ }
-"
-" Plug 'tjdevries/nlua.nvim'
-" Plug 'anott03/nvim-lspinstall'
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
@@ -193,7 +181,6 @@ filetype plugin on
 source ~/.config/nvim/jim_code/maps.vim
 
 " --- nvim-R ---- 
-" =====================
 "
 
 " completion: control popup menu, in insert mode
@@ -238,7 +225,6 @@ let R_args = [ '--no-save', '--no-restore-data'  ]
 "let R_applescript = 0
 "let R_tmux_close = 0
 
-"}}}
 
 
 
