@@ -1,0 +1,40 @@
+*.txt
+
+Original Location:
+
+#  ~/.config/nvim/vim-plug/vim-myhelp/doc/<FILE>
+#  MUST be *.txt file
+  
+
+# points to:   ~/dotfiles/
+
+
+
+#
+# USAGE:  :h <tag>
+# 
+
+#
+# To add/modify:    just edit the this file 
+~/.config/nvim/vim-plug/vim-myhelp/doc/<FILE>
+#
+
+*jim-tag-generic*
+place tag between two asteriks
+be certain help file (see modeline at bottom)
+
+The tag must be placed in tags file
+
+run:
+
+```
+helpt ~/.config/nvim/vim-help/vim-myhelp
+```
+Now  :h <tag> should bring this page
+<tag>   between two vertical lines should also
+|jim-|tag-generic|
+
+# ============
+bottom
+
+# vim: filetype=help:ts=2
