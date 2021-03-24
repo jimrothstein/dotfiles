@@ -11,10 +11,18 @@ JIM's LINUX/zsh help notes
   
 # points to:   ~/dotfiles/jimLinux.txt
 
+
+To Jump to File Under Cursor
+# ============================
+gf   (goto file)
+
 #
-# USAGE:  :h jimLinux.txt
-#         :h jim
-#         :h jim-Linu
+# USAGE:  :h jimLinux.txt   this file
+#         :h jimlua.txt
+#         :h jimhelp.txt
+#         :h generic_help.txt
+#         :h myhelp.txt (original plugin help)
+#         :h tags
 # 
 
 

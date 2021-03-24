@@ -184,8 +184,8 @@ set NO_BEEP
 # need extendedglob
 bindkey '^z'  backward-delete-word
 
-# apply Debian keyboard mappings (in ~/.xmodmap)
-# maps ccaps lock to ESC
-if [ -f ~/.xmodmap ]; then
-  xmodmap ~/.xmodmap
-fi
+# # apply Debian keyboard mappings (in ~/.xmodmap)
+# # maps ccaps lock to ESC
+# if [ -f ~/.xmodmap ]; then
+#   xmodmap ~/.xmodmap
+# fi

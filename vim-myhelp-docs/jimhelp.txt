@@ -1,6 +1,33 @@
+# =============
+# jimhelp.txt
+# =============
+
+MAIN HELP/Document file  for Jim
+
+Actual location:  
+# ~/dotfiles/vim-myhelp-docs/jimhelp.txt
+
+Pointer is here: (ln -s)
 #  ~/.config/nvim/vim-plug/vim-myhelp/doc/jimhelp.txt
+
+
+To Jump to OTHER Files , put Cursor underneath file name
+# ============================
+USAGE:  gf   (goto file, under cursor)
+
+#
+# USAGE:  :h jimLinux.txt   this file
+#         :h jimlua.txt
+#         :h jimhelp.txt (main jim help file)
+#         :h generic_help.txt
+#         :h myhelp.txt (original plugin help)
+#         :h tags
+
+TODO
+jimLXC.txt 
+jimVM.txt
+
   
-# points to:   ~/dotfiles/jimhelp.txt
 
 
 

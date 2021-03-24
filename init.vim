@@ -166,11 +166,11 @@ set backupdir=~/.config/nvim/backup/	" do not surround with quotes!}}}
 " COLORS
 " ========
 " sourced from ./jim_code/colors.vim (my code)
-
+" :colorscheme <pickone>   :colorscheme jimColor
+colo jimColor
+"
 " Solarize, change so I can see "comments
 hi Comment ctermfg=103
-hi CursorLine ctermbg=4			" blue	
-"}}}
 "
 " activation plugin for filetype detection
 filetype plugin on         
@@ -379,12 +379,6 @@ inoremap <c-l> <c-n>
 " inoremap <c-f> <c-n>   " f? forward, but too far from p	 
 " likewise ^n works, but too far
 "
-" obliterate InactiveWindow
-" 15=white
-" 16=black
-" 8 = grey
-hi ActiveWindow ctermfg=15 ctermbg=16 | hi InactiveWindow ctermbg=8
-set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 
 "  NOTE
 "  underline, maps vim is in ~/.config/nvim/jim_code/
