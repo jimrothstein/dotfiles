@@ -12,6 +12,9 @@ ln -sf ~/dotfiles/start_tmux.sh ~/start_tmux.sh
 
 ln -sf ~/dotfiles/init.vim 		~/.config/nvim/init.vim
 
+# in ~/docs
+ln -sf ~/docs/medical/2020/2020_medical_dds_notes.md    ~/docs/medical_notes
+
 #  directories
 #
 ln -sf ~/dotfiles/vim-myhelp-docs/ ~/vim-myhelp-docs
