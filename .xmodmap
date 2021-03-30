@@ -1,7 +1,26 @@
 ! This is a comment
 ! .xmodmap is used by Debian command xmodmap to modify keyboard mappings
 !
+!
+! LOCATION:    keep in ~/dotfiles
+! USAGE:   xmodmap .xmodmap
+!
+! ONE TIME TEST: > xmodmap -e "keycode 133 = Escape" 
+!
+! Procedure:   Run 'xev' and note carefully the CapsLock | Search keycode AND its keysym (in Ubuntu 'Super_L'), the  Escape keycode is 9 and its keysym is 'Escape'
+!
+! NOTE:   There is newer way, using kbx ?,  but this method method is fine for simple things.   See Archwiki Xmodmap
+!
 ! This maps the control lock key to ESC  (for vim)
 clear Lock
+
+! in pure Chrome env, Chrome allows the META key (ie caps lock) to set to Escape key
+!
+!
+! Forgot where is worked.
 keycode 0x42 = Escape
 
+
+! Makes caps lock (keycode 133) behave like Escape (keycode 9)
+! for Gallium | Ubuntu env
+keycode 133 = Escape
