@@ -27,7 +27,7 @@ The tag must be placed in tags file
 run:
 
 ```
-helpt ~/.config/nvim/vim-help/vim-myhelp
+helpt ~/.config/nvim/vim-plug/vim-myhelp
 ```
 Now  :h <tag> should bring this page
 <tag>   between two vertical lines should also
