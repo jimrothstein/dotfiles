@@ -14,6 +14,9 @@
 #
 #
 
+# INITIALIZE (set softlinks, set key changes - caps lock)
+source ~/.config/zsh/initalize.zsh
+
 # ALIAS
 source ~/.config/zsh/aliases
 
@@ -22,6 +25,8 @@ source ~/.config/zsh/completion.zsh
 
 # PROMPT
 source ~/.config/zsh/prompt.zsh
+
+
 
 # PATH and path
 #	Use typeset to set shell attribute to -U (maintain unique entries )
