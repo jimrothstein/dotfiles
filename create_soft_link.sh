@@ -9,6 +9,8 @@
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.Rprofile ~/.Rprofile
 ln -sf ~/dotfiles/start_tmux.sh ~/start_tmux.sh
+ln -sf ~/dotfiles/.Renviron  ~/.Renviron
+
 
 ln -sf ~/dotfiles/init.vim 		~/.config/nvim/init.vim
 

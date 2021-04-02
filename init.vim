@@ -14,8 +14,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-surround' 
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
-"	my help (cloned from tinyheero)
-Plug 'jimrothstein/vim-myhelp'
+
+"	my help (cloned & changed name from tinyheero)
+Plug 'jimrothstein/jimHelp'
+
 " markdown syntax highligthing
 Plug 'plasticboy/vim-markdown'
 " use vim folding
@@ -112,14 +114,13 @@ augroup END
 " ==========
 " TERMINAL
 " ==========
-" --many options -------------	{{{
 autocmd TermOpen * startinsert			" begin term as insert
 
 " use ==#   compare strings
 "
-augroup myterm | au!
-	au TermOpen * if &buftype ==# 'terminal' | resize q0 | vert resize 50 | endif
-augroup end
+" augroup myterm | au!
+" 	au TermOpen * if &buftype ==# 'terminal' | resize q0 | vert resize 50 | endif
+" augroup end
 
 " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 " au CursorHoldI * stopinsert
@@ -175,9 +176,10 @@ hi Comment ctermfg=103
 " activation plugin for filetype detection
 filetype plugin on         
 
-"  WINDOWS 
-" ==============
-" see ./jim_code/maps.vim
+
+"  windows, terminals, sizing, editor sizing
+source ~/.config/nvim/jim_code/windows.vim
+
 source ~/.config/nvim/jim_code/maps.vim
 
 " --- nvim-R ---- 
@@ -200,10 +202,6 @@ source ~/.config/nvim/jim_code/nvimR_config.vim
 " 2 requires two __ to produce <- 
 let R_assign = 2 
 
-" Always open in vertical (ie dividing line is vertical) split
-" was 57 and 18	
-let R_rconsole_with=47
-let R_min_editor_width=120
 
 " Ensures usage of your own ~/.tmux.conf file
 " let R_notmuxconf = 1
@@ -404,6 +402,7 @@ let g:LanguageClient_serverCommands = {
 source $HOME/.config/nvim/jim_code/underline.vim
 source $HOME/.config/nvim/jim_code/date.vim
 source $HOME/.config/nvim/jim_code/lua_inside_vim_file.vim
+source $HOME/.config/nvim/jim_code/maps.vim
 
 
 " TO SOURCE .luafile ~/.config/nvim/lua/lua_file.lua
