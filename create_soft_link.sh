@@ -12,14 +12,16 @@ ln -sf ~/dotfiles/start_tmux.sh ~/start_tmux.sh
 ln -sf ~/dotfiles/.Renviron  ~/.Renviron
 
 
+# from ~/.config  
+
 ln -sf ~/dotfiles/init.vim 		~/.config/nvim/init.vim
+ln -sf ~/dotfiles/theme.lua   ~/.config/awesome/theme.lua
+ln -sf ~/dotfiles/rc.lua      ~/.config/awesome/rc.lua
 
 # in ~/docs
 ln -sf ~/docs/medical/2020/2020_medical_dds_notes.md    ~/docs/medical_notes
 
 #  directories
-#
-ln -sf ~/dotfiles/vim-myhelp-docs/ ~/vim-myhelp-docs
 
 
 
