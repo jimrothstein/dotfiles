@@ -1,0 +1,916 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+$a	/home/jim/code/nvim_project/001_map_examples.vim	/^let $a = "one"$/;"	v
+,ic	/home/jim/code/nvim_project/009_first_vim_script.vim	/^nmap ,ic :call InsertComment()<CR>$/;"	m
+,id	/home/jim/code/nvim_project/012_functions_examples.vim	/^nnoremap ,id :call Insert_date()<CR>$/;"	m
+,ih	/home/jim/code/nvim_project/009_first_vim_script.vim	/^nmap ,ih :call Heading()<CR>$/;"	m
+,sp	/home/jim/code/nvim_project/009_first_vim_script.vim	/^nmap ,sp :call SavePosition()<CR>$/;"	m
+.f	/home/jim/code/r_row/003_read_all_row_records.R	/^	.f = ~ggsave(filename=paste0(".\/plots\/energy-",.x,".png")$/;"	v
+.f	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^	.f = ~ggsave(filename=paste0(".\/plots\/energy-",.x,".png")$/;"	v
+.headers	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^httr::add_headers(Accept: application\/json, ..., .headers = character())$/;"	v
+.keep_all	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^flights %>% distinct(dest, .keep_all = TRUE) %>% $/;"	v
+.keep_all	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^flights %>% distinct(dest, .keep_all = TRUE) %>% head() # keeps all fields$/;"	v
+.x	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^map2( .x = df, .y=countries, ~ggsave(.x, plot= , device="png")$/;"	v
+.y	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^map2(.x = df, .y = names, .f = f)$/;"	v
+.y	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^plots <- map2(.x = df, .y = names, .f = f)$/;"	v
+<F2>	/home/jim/code/nvim_project/001_map_examples.vim	/^map <F2> GoDate:<Esc>:read !date<CR>kJ$/;"	m
+<Leader>%%	:execute	/home/jim/code/nvim_project/012_functions_examples.vim	/^noremap <Leader>%%	:execute "w \\| so %"<CR>$/;"	m
+<Leader>xx	:execute	/home/jim/code/nvim_project/012_functions_examples.vim	/^noremap <Leader>xx	:execute ":set"<CR>$/;"	m
+<Leader>yy	:execute	/home/jim/code/nvim_project/012_functions_examples.vim	/^noremap <Leader>yy	:execute "normal gg"<CR>$/;"	m
+<Leader>zz	/home/jim/code/nvim_project/012_functions_examples.vim	/^noremap <Leader>zz :execute "echo 7>5 ? 'yes' : 'no' " <CR>$/;"	m
+<leader>m1	/home/jim/code/nvim_project/010_chris_toomey_vim_plugin.vim	/^nnoremap <leader>m1 :call MoveToTop()<cr>$/;"	m
+<leader>p	/home/jim/code/nvim_project/012_functions_examples.vim	/^nnoremap <leader>p :call Eval_example("foldmethod")<cr>"$/;"	m
+<leader>sp	/home/jim/code/nvim_project/010_chris_toomey_vim_plugin.vim	/^nnoremap <leader>sp  :call FixLastSpellingError()<cr>$/;"	m
+<leader>u1	/home/jim/code/nvim_project/010_chris_toomey_vim_plugin.vim	/^nnoremap <leader>u1 :call UnderlineHeading(1)<cr>$/;"	m
+<leader>u1	/home/jim/code/nvim_project/012_functions_examples.vim	/^nnoremap <leader>u1 :call UnderlineHeading(1)<cr>$/;"	m
+<leader>u2	/home/jim/code/nvim_project/010_chris_toomey_vim_plugin.vim	/^nnoremap <leader>u2 :call UnderlineHeading(2)<cr>$/;"	m
+<leader>u2	/home/jim/code/nvim_project/012_functions_examples.vim	/^nnoremap <leader>u2 :call UnderlineHeading(2)<cr>$/;"	m
+<leader>u3	/home/jim/code/nvim_project/010_chris_toomey_vim_plugin.vim	/^nnoremap <leader>u3 :call UnderlineHeading(3)<cr>$/;"	m
+<leader>u3	/home/jim/code/nvim_project/012_functions_examples.vim	/^nnoremap <leader>u3 :call UnderlineHeading(3)<cr>$/;"	m
+A1C	/home/jim/code/r_row/001_special_comparision.R	/^            A1C = c(4.6,5.1,5.0,5.7,5.6,5.7),$/;"	v
+As of 7 SEPT 2020	/home/jim/code/try_things_here/rmd/kidney_remove.tex	/^\\hypertarget{as-of-7-sept-2020}{%$/;"	u
+B0	/home/jim/code/pkg_mosaic/R/0040_mosaic_Ch4_groupwise.R	/^lm(gun ~ sex, data=Runners)  # B0 = 98.6,  a = -10.6$/;"	v
+B0	/home/jim/code/try_things_here/rmd/0031_Prabhakaran_linear_regression.R	/^linearMod <- lm(dist ~ speed, data=cars) # B0= -17.6, B1=3.9$/;"	v
+B0	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^B0 <- model$coefficients[[1]] # 0.785 (intercept)$/;"	g
+B1	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^B1 <- model$coefficients[[2]]$/;"	g
+BAR	/home/jim/code/nvim_project/makefile	/^	BAR = bar$/;"	m
+CPS	/home/jim/code/pkg_mosaic/R/0040_mosaic_Ch4_groupwise.R	/^CPS = read.csv("http:\/\/tiny.cc\/mosaic\/cps.csv")$/;"	g
+DF	/home/jim/code/r_row/000_examples_ggplot.R	/^DF <- data.frame(gp = sample(LETTERS[1:3], 1000, replace = TRUE),$/;"	g
+DF	/home/jim/code/r_row/000_examples_ggplot.R	/^DF <- data.frame(t = seq(40), y = rnorm(40))$/;"	g
+DF0	/home/jim/code/r_row/000_examples_ggplot.R	/^DF0 <- data.frame(f1 = gl(2, 3, labels = c("A", "B")),$/;"	g
+DF1	/home/jim/code/r_row/000_examples_ggplot.R	/^DF1 <- data.frame(x = rnorm(1000))$/;"	g
+DIR	/home/jim/code/make_project/0100_print_pandoc.mk	/^	DIR:="~\/code\/r_try_things_here\/"$/;"	m
+Date	/home/jim/code/r_row/002_study_2017-2018_season.R	/^                          Date =  col_datetime(),$/;"	v
+Date	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^	Date = ymd(ymd_hms(Date))$/;"	v
+Description	/home/jim/code/r_row/002_study_2017-2018_season.R	/^                          Description = col_character(),$/;"	v
+Distance	/home/jim/code/r_row/002_study_2017-2018_season.R	/^                          "Work Distance"= col_integer(),$/;"	v
+Distance	/home/jim/code/r_row/002_study_2017-2018_season.R	/^        Distance = "Work Distance",$/;"	v
+Distance	/home/jim/code/r_row/003_read_all_row_records.R	/^                Distance = "Work Distance",$/;"	v
+Distance	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^                Distance = "Work Distance",$/;"	v
+Energy	/home/jim/code/r_row/003_read_all_row_records.R	/^                Energy = Watts*Time\/3600)$/;"	v
+Energy	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^                Energy = Watts*Time\/3600)$/;"	v
+Eval_example	/home/jim/code/nvim_project/012_functions_examples.vim	/^fun! Eval_example(option)$/;"	f
+FINAL_WEIGHT	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^FINAL_WEIGHT <- rbind(WEIGHT1,WEIGHT2)$/;"	g
+FINAL_WEIGHT	/home/jim/code/health_labs/rmd/2000_plot_weight_data.R	/^FINAL_WEIGHT <- readRDS(file=".\/tidy_data\/FINAL_WEIGHT.rds")$/;"	g
+FOO	/home/jim/code/make_project/0050_echo_examples.mk	/^FOO="hello"$/;"	m
+FOO	/home/jim/code/make_project/0120_view_file_contents.mk	/^FOO="hello"$/;"	m
+FOOBAR	/home/jim/code/nvim_project/makefile	/^	FOOBAR = $(FOO) $(BAR)$/;"	m
+FUN	/home/jim/code/try_things_here/rmd/0006_dplyr_peng_article.R	/^#                 FUN = median) - 1st arg is factor, 2nd arg is numeric, 3rd is function $/;"	v
+FUN	/home/jim/code/try_things_here/rmd/0006_dplyr_peng_article.R	/^dat %>% mutate(group = reorder(dat$group, dat$value, FUN = median)) %>% $/;"	v
+FixLastSpellingError	/home/jim/code/nvim_project/010_chris_toomey_vim_plugin.vim	/^function! FixLastSpellingError()$/;"	f
+G	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^G <- 1e3    # groups$/;"	g
+G_change	/home/jim/code/try_things_here/rmd/0011_dplyr_windows_Lahman.R	/^mutate(players, G_change = (G - lag(G)) \/ (yearID - lag(yearID)))$/;"	v
+G_z	/home/jim/code/try_things_here/rmd/0011_dplyr_windows_Lahman.R	/^mutate(players, G_z = (G - mean(G)) \/ sd(G))$/;"	v
+HELLO	/home/jim/code/make_project/0080_make_jimPackage.mk	/^		HELLO=hello$/;"	m
+HELLO	/home/jim/code/make_project/0080_make_jimPackage.mk	/^HELLO=world$/;"	m
+HELLO	/home/jim/code/make_project/0200_dates_recurive.mk	/^HELLO=world$/;"	m
+HELLO_WORLD	/home/jim/code/make_project/0080_make_jimPackage.mk	/^HELLO_WORLD=$(HELLO) world!$/;"	m
+HELLO_WORLD	/home/jim/code/make_project/0200_dates_recurive.mk	/^HELLO_WORLD=$(HELLO) world!				# world world$/;"	m
+Heading	/home/jim/code/nvim_project/009_first_vim_script.vim	/^function! Heading()$/;"	f
+INDEX	/home/jim/code/try_things_here/rmd/0092_re_level.R	/^# use INDEX   <- --- Trick!$/;"	v
+InsertComment	/home/jim/code/nvim_project/009_first_vim_script.vim	/^function! InsertComment()$/;"	f
+Insert_date	/home/jim/code/nvim_project/012_functions_examples.vim	/^function!	Insert_date() $/;"	f
+Introduction	/home/jim/code/tex_project/0002_latex_section.tex	/^\\maketitle$/;"	s
+M.makeScratch	/home/jim/code/lua_project/0001_tools.lua	/^function M.makeScratch()$/;"	f
+M.makeScratch	/home/jim/code/lua_project/0002_tools.lua	/^function M.makeScratch()$/;"	f
+Misc Notes	/home/jim/code/try_things_here/rmd/kidney_remove.tex	/^\\hypertarget{misc-notes}{%$/;"	b
+Mon 07 Dec 2020  notes from Oxalate   Hyperoxaluria Non-Profit group 	/home/jim/code/try_things_here/rmd/kidney_remove.tex	/^\\hypertarget{mon-07-dec-2020-notes-from-oxalate-hyperoxaluria-non-profit-group}{%$/;"	b
+MoveToTop	/home/jim/code/nvim_project/010_chris_toomey_vim_plugin.vim	/^func!	MoveToTop()$/;"	f
+N	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^N <- 25 # obs per group$/;"	g
+OBJ	/home/jim/code/c_practice/makefile	/^OBJ=first.o$/;"	m
+OUT	/home/jim/code/make_project/0040_dpkg_tools.mk	/^OUT=.\/output\/$/;"	m
+OUT	/home/jim/code/make_project/0100_print_pandoc.mk	/^OUT=.\/output$/;"	m
+OUT	/home/jim/code/make_project/0110_unix_tools.mk	/^OUT=.\/output\/$/;"	m
+PROG	/home/jim/code/c_practice/makefile	/^PROG=run$/;"	m
+Pace	/home/jim/code/r_row/002_study_2017-2018_season.R	/^                          "Pace" = col_character(),$/;"	v
+R_packages_DIR	/home/jim/code/make_project/0032_disk_space_R_files_lib.mk	/^R_packages_DIR := ~\/R\/$/;"	m
+Runners	/home/jim/code/pkg_mosaic/R/0040_mosaic_Ch4_groupwise.R	/^Runners <- t %>% mutate(gun = net\/60) %>% select(-net)$/;"	g
+Runners	/home/jim/code/pkg_mosaic/R/0050_resample.R	/^	Runners <- readRDS(file=here("pkg_mosaic","data","Runners.RDS"))$/;"	v
+Runners	/home/jim/code/pkg_mosaic/R/0050_resample.R	/^	Runners = read.csv("http:\/\/tiny.cc\/mosaic\/Cherry-Blossom-2008.csv")$/;"	v
+SHELL	/home/jim/code/make_project/0030_disk_space.mk	/^SHELL := \/bin\/zsh$/;"	m
+SHELL	/home/jim/code/make_project/0032_disk_space_R_files_lib.mk	/^SHELL := \/bin\/zsh$/;"	m
+SHELL	/home/jim/code/make_project/0040_dpkg_tools.mk	/^SHELL := \/bin\/zsh$/;"	m
+SHELL	/home/jim/code/make_project/0100_print_pandoc.mk	/^SHELL :=\/bin\/zsh$/;"	m
+SHELL	/home/jim/code/make_project/0110_unix_tools.mk	/^SHELL := \/bin\/zsh$/;"	m
+SHELL	/home/jim/code/make_project/0220_ls_grep_examples.mk	/^SHELL:=\/bin\/zsh$/;"	m
+SHELL	/home/jim/code/make_project/0225_ls_grep_GLOB_QUANTIFIERS.mk	/^SHELL:=\/bin\/zsh$/;"	m
+SHELL	/home/jim/code/make_project/regex2/regex2.mk	/^SHELL:=\/bin\/zsh$/;"	m
+SOURCE1	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^#		- SOURCE1 = JUN 2012- MAY 2015, monthly summary, $/;"	v
+SOURCE1	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^SOURCE1 <- ".\/data_wt_bp\/2012_2015_Weight_SUMMARY.csv"$/;"	g
+SOURCE2	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^#		- SOURCE2 = JAN 20 - SEP 2017 (misc sources)$/;"	v
+SOURCE2	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^SOURCE2 <- ".\/data_wt_bp\/2012-2015_Weight_Monthly - 2008-2018 (misc sources).csv"$/;"	g
+SRC	/home/jim/code/c_practice/makefile	/^SRC=first.c$/;"	m
+SUPPORT	/home/jim/code/make_project/0100_print_pandoc.mk	/^SUPPORT=.\/support_files$/;"	m
+SavePosition	/home/jim/code/nvim_project/009_first_vim_script.vim	/^function! SavePosition()$/;"	f
+Sec	/home/jim/code/r_row/old_code/Row_TimeLine_zoo.R	/^w$"in Sec" <- ifelse(as.numeric(w$Meters) == 0, NA,as.numeric(w$"in Sec") )$/;"	v
+Second Section	/home/jim/code/tex_project/0002_latex_section.tex	/^Donec ullamcorper, felis non sodales...$/;"	s
+TAG_lines	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^TAG_lines  <- unlist(x)$/;"	g
+Time	/home/jim/code/r_row/002_study_2017-2018_season.R	/^        Time = "Work Time (Seconds)",$/;"	v
+Time	/home/jim/code/r_row/003_read_all_row_records.R	/^                Time = "Work Time",$/;"	v
+Time	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^                Time = "Work Time",$/;"	v
+Time	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^# W x Time = Energy (Watt-min)$/;"	v
+Time	/home/jim/code/r_row/old_code/Row_Version1.R	/^# W x Time = Energy (Watt-min)$/;"	v
+UnderlineHeading	/home/jim/code/nvim_project/010_chris_toomey_vim_plugin.vim	/^function! UnderlineHeading(level)$/;"	f
+UnderlineHeading	/home/jim/code/nvim_project/012_functions_examples.vim	/^function! UnderlineHeading(level)$/;"	f
+W	/home/jim/code/pkg_mosaic/R/0040_mosaic_Ch4_groupwise.R	/^W <- read.csv("http:\/\/tiny.cc\/mosaic\/whickham.csv")$/;"	g
+WEIGHT1	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^#		- WEIGHT1 = cleaned data from SOURCE$/;"	v
+WEIGHT2	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^#		- WEIGHT2 = cleaned data from SOURCE2$/;"	v
+Watts	/home/jim/code/r_row/002_study_2017-2018_season.R	/^                          "Avg Watts" = col_integer()$/;"	v
+Watts	/home/jim/code/r_row/002_study_2017-2018_season.R	/^        Watts = "Avg Watts")$/;"	v
+Watts	/home/jim/code/r_row/003_read_all_row_records.R	/^                Watts = "Avg Watts")$/;"	v
+Watts	/home/jim/code/r_row/003_read_all_row_records.R	/^                Watts = ifelse(is.na(Watts), 0,Watts),$/;"	v
+Watts	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^                Watts = "Avg Watts") %>%$/;"	v
+Watts	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^        mutate( Watts = ifelse(is.na(Watts), 0,Watts),$/;"	v
+X	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^                    X = rnorm(N*G), Y = rnorm(N*G) $/;"	v
+X	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^       #            X = rnorm(N*G), Y = 1+3*X + 0.5*rnorm(N*G)$/;"	v
+Z.x	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^Z.x <-  (x- m.x)\/sd.x$/;"	g
+Z.y	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^Z.y <-  (y - m.y)\/sd.y$/;"	g
+a	/home/jim/code/blog/public/post/reprex_reprex.R	/^a  <- function() {$/;"	f
+a	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^        a = sample(5), $/;"	v
+a	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^a <- c(1,3,1,2,1,1,5)$/;"	g
+a	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^a <- m.y - b*m.x  # 0.785 (intercept)$/;"	g
+a.Z	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^a.Z  <- mean(Z.y) - b.Z *mean(Z.x)$/;"	g
+academic_levels	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^ academic_levels	<- c(9:12,1:8)$/;"	v
+add_video	/home/jim/code/youtube_api/R/modify_playlists.R	/^add_video  <- function(url, query, body, config) {$/;"	f
+api	/home/jim/code/youtube_api/R/0010_get_api_codes.R	/^  api  <- list(api_key = Sys.getenv("API_KEY"),$/;"	v
+api	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^api  <- get_api_codes()$/;"	g
+app_secret	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^													app_secret = api$oauth2_secret)$/;"	v
+append_to_array	/home/jim/code/zsh_scripts_project/008_arrays.sh	/^	append_to_array(){$/;"	f
+approve	/home/jim/code/r_2020/001_step_plot.R	/^            approve = c(.99,.12, .45, .4))$/;"	v
+approve_2018	/home/jim/code/r_2020/001_step_plot.R	/^approve_2018 <- approve_2018 %>%$/;"	g
+approve_2018	/home/jim/code/r_2020/001_step_plot.R	/^approve_2018 <- readr::read_csv("data_raw\/data-FS3WI.csv")$/;"	g
+args	/home/jim/code/publish_project/rmd/0112_Rscript_two.R	/^args <- commandArgs(trailingOnly = F)$/;"	g
+args	/home/jim/code/try_things_here/rmd/0095_R_script.R	/^args <- commandArgs(trailingOnly = F)$/;"	g
+args	/home/jim/code/try_things_here/rmd/0112_Rscript_two.R	/^args <- commandArgs(trailingOnly = F)$/;"	g
+args	/home/jim/code/zsh_scripts_project/008_arrays.sh	/^	args()	{$/;"	f
+awards	/home/jim/code/try_things_here/rmd/0011_dplyr_windows_Lahman.R	/^awards  <- Lahman::AwardsPlayers$/;"	g
+axis.text	/home/jim/code/r_row/000_examples_ggplot.R	/^          axis.text = element_text(size = rel(1.2)),$/;"	v
+axis.text.y	/home/jim/code/r_row/000_examples_ggplot.R	/^          axis.text.y = element_text(face = "bold.italic"),$/;"	v
+b	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^        b = sample(5)$/;"	v
+b	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^v <- c(a = 100, b = 200, c = 300) # double[]$/;"	v
+b	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^b <- r*sd.y\/sd.x  # 0.45  (slope)$/;"	g
+b.Z	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^b.Z <- r.Z * (sd(Z.x)\/sd(Z.y))$/;"	g
+bar	/home/jim/code/make_project/0200_dates_recurive.mk	/^bar	=	$(ugh)$/;"	m
+base_url	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^base_url <- "https:\/\/www.googleapis.com\/youtube\/v3\/playlists"$/;"	g
+batting	/home/jim/code/try_things_here/rmd/0011_dplyr_windows_Lahman.R	/^batting <- Lahman::Batting # 101,332 x 22$/;"	g
+batting	/home/jim/code/try_things_here/rmd/0011_dplyr_windows_Lahman.R	/^batting <- Lahman::Batting %>%$/;"	g
+betas	/home/jim/code/r_row/000_examples_ggplot.R	/^betas <- round(coef(m), 3)   # extract fitted model coefficients$/;"	g
+binwidth	/home/jim/code/r_row/000_examples_ggplot.R	/^                   binwidth = 0.2, fill = "blue") +$/;"	v
+binwidth	/home/jim/code/r_row/000_examples_ggplot.R	/^    geom_histogram(aes(y = ..density..), binwidth = 0.2, fill = "skyblue") +$/;"	v
+blue	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^l  <- list(red = 1:4, blue = c(1,2,3), green= list(dark_green=c("a","b")))$/;"	v
+bmi	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^bmi <- m\/(h**2)$/;"	g
+by	/home/jim/code/try_things_here/rmd/0005_dplyr_summarize_vs_mutate.R	/^        left_join(mtcars, ., by = c ('cyl', 'gear')) %>%$/;"	v
+by	/home/jim/code/try_things_here/rmd/0011_dplyr_windows_Lahman.R	/^        semi_join(Lahman::AwardsPlayers, by = "playerID")$/;"	v
+by	/home/jim/code/try_things_here/rmd/0012_dplyr_two_table_hadley.R	/^# ---- by=   (specific values)$/;"	v
+by	/home/jim/code/try_things_here/rmd/0012_dplyr_two_table_hadley.R	/^df1 %>% left_join(df2, by = "x") # get all possible$/;"	v
+by_tailnum	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^by_tailnum <-   flights %>% group_by(tailnum)$/;"	g
+c_names	/home/jim/code/r_row/002_study_2017-2018_season.R	/^c_names <- colnames(data0)$/;"	g
+c_names	/home/jim/code/r_row/003_read_all_row_records.R	/^c_names <- colnames(data_list_tibbles[["2013"]])$/;"	g
+caller	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^info  <- function() list(current = current_env(), caller = caller_env(),$/;"	v
+caller	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^info  <- function() list(current = current_env(), caller = caller_env(),$/;"	v
+caller_parent	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^	caller_parent = caller_env(n=2))$/;"	v
+caller_parent	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^	caller_parent = caller_env(n=2))$/;"	v
+calling	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^			 calling = calling $/;"	v
+calling	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^			 calling = calling $/;"	v
+caption	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^              caption = "source: my records",$/;"	v
+caption	/home/jim/code/health_labs/rmd/2000_plot_weight_data.R	/^              caption = "source: my records",$/;"	v
+caption	/home/jim/code/r_2020/0031_hispanic.R	/^kable(state_hispanic[1:5,], caption = 'Percent Hispanic\/Latino, by state.') $/;"	v
+caption	/home/jim/code/r_row/000_examples_ggplot.R	/^caption <- paste(strwrap("Unemployment rates in the US have $/;"	g
+caption	/home/jim/code/r_row/002_study_2017-2018_season.R	/^                caption = "source: my records",$/;"	v
+caption	/home/jim/code/r_row/002_study_2017-2018_season.R	/^              caption = "source: my records",$/;"	v
+caption	/home/jim/code/r_row/003_read_all_row_records.R	/^              caption = "source: my records",$/;"	v
+caption	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^              caption = "source: my records",$/;"	v
+channelId	/home/jim/code/youtube_api/R/0020_get_typical_values.R	/^						channelId =  "UClB5qWyXejlAwwkDAzJis-Q", # my channel$/;"	v
+check_directories	/home/jim/code/zsh_scripts_project/045_youtube_tools.sh	/^		check_directories(){$/;"	f
+check_directories_v2	/home/jim/code/zsh_scripts_project/045_youtube_tools.sh	/^		check_directories_v2(){$/;"	f
+cig	/home/jim/code/try_things_here/rmd/0062_Zaiontz_regression.R	/^cig <- c(5,23,25,48,17,8,4,26,11,19,14,35,29,4,23)$/;"	g
+cleanup	/home/jim/code/zsh_scripts_project/022_callbacks.sh	/^cleanup() {                      # Declare a cleanup function$/;"	f
+col_names	/home/jim/code/health_labs/rmd/functions.R	/^        col_names = TRUE, # use 1st line$/;"	v
+col_names	/home/jim/code/r_row/002_study_2017-2018_season.R	/^         col_names = TRUE)   # use 1st line$/;"	v
+col_names	/home/jim/code/r_row/003_read_all_row_records.R	/^	col_names = TRUE)   # use 1st line$/;"	v
+col_names	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^	col_names = TRUE)   # use 1st line$/;"	v
+col_types	/home/jim/code/health_labs/rmd/functions.R	/^        col_types = type, # or cols( .default = col_guess() ), $/;"	v
+col_types	/home/jim/code/r_row/002_study_2017-2018_season.R	/^                  col_types = cols_only($/;"	v
+col_types	/home/jim/code/r_row/002_study_2017-2018_season.R	/^         col_types = cols(.default = col_character()), # everything char$/;"	v
+col_types	/home/jim/code/r_row/003_read_all_row_records.R	/^	col_types = cols(.default = col_character(),$/;"	v
+col_types	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^	col_types = cols(.default = col_character(),$/;"	v
+color	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^    geom_histogram(binwidth = 0.1, color = "black")$/;"	v
+color	/home/jim/code/r_row/000_examples_ggplot.R	/^               color = "grey50") +$/;"	v
+color	/home/jim/code/r_row/000_examples_ggplot.R	/^    stat_density(geom = "path", color = "darkorange", size = 1) +$/;"	v
+color	/home/jim/code/r_row/000_examples_ggplot.R	/^    stat_function(fun = dnorm, color = "blue", size = 1)$/;"	v
+color	/home/jim/code/r_row/000_examples_ggplot.R	/^pp1 <- pp + stat_density(geom = "path", color = "darkorange", size = 1)$/;"	v
+color	/home/jim/code/r_row/002_study_2017-2018_season.R	/^                   color = c('blue','red'), linetype=2) +$/;"	v
+color	/home/jim/code/r_row/002_study_2017-2018_season.R	/^        #           color = c('blue','red'), linetype=2) +$/;"	v
+color	/home/jim/code/r_row/003_read_all_row_records.R	/^                   color = c('blue','red'), linetype=2) +$/;"	v
+color	/home/jim/code/r_row/003_read_all_row_records.R	/^        #           color = c('blue','red'), linetype=2) +$/;"	v
+color	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^                   color = c('blue','red'), linetype=2) +$/;"	v
+colour	/home/jim/code/r_row/000_examples_ggplot.R	/^                 colour = "blue", size = 1)$/;"	v
+colour	/home/jim/code/r_row/000_examples_ggplot.R	/^qplot(x, data = DF, geom = "density", colour = I("blue"), size = I(1))$/;"	v
+colour	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^                  mapping=aes( colour = "yellow"), $/;"	v
+colour	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^g1<-ggplot(mpg, aes(displ, hwy, colour = class)) +$/;"	v
+combine	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^combine <- function(n=500){$/;"	f
+comment	/home/jim/code/blog/public/post/reprex_reprex.R	/^knitr::opts_chunk$set(collapse = TRUE, comment = "#>", error = TRUE)$/;"	v
+comment	/home/jim/code/r_row/001_special_comparision.R	/^            comment = c("","","","A1C=Jul no row","","")$/;"	v
+comments	/home/jim/code/youtube_api/R/0040_get_batches.R	/^#   comments  <- tibble::as_tibble(comments)$/;"	v
+compress_dir	/home/jim/code/jimTools/R/compress.R	/^compress_dir  <- function(prefix = NULL, out_file = NULL,$/;"	f
+config	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^config  <- set_config(google_token)$/;"	g
+create_pdf	/home/jim/code/zsh_scripts_project/029_create_pdf.sh	/^create_pdf() {$/;"	f
+create_pdf	/home/jim/code/zsh_scripts_project/030_md_to_pdf.sh	/^create_pdf() {$/;"	f
+create_plot	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^create_plot <- function(t,name_of_plot="") {$/;"	f
+criteria	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^criteria <- "r.2016$Meters > 1000"$/;"	g
+criteria	/home/jim/code/r_row/old_code/Row_Version1.R	/^criteria <- "r.2016$Meters > 1000"$/;"	g
+d	/home/jim/code/pkg_mosaic/R/0050_resample.R	/^d  <- data.table(Runners)$/;"	g
+d	/home/jim/code/r_row/old_code/ROW_Version2.R	/^d <- df[,c(3,4,6)]$/;"	g
+dat	/home/jim/code/try_things_here/rmd/0006_dplyr_peng_article.R	/^dat <- data.frame(group=c("A","B","C","D"),value=rnorm(2000))$/;"	g
+dat	/home/jim/code/try_things_here/rmd/0006_dplyr_peng_article.R	/^dat <- tibble::as.tibble(dat)$/;"	g
+data	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^    do(tidy(lm(Y ~ X, data = .))) # turn object to tibble (with tidy)$/;"	v
+data	/home/jim/code/r_row/000_examples_ggplot.R	/^                  data = data.frame(x = xrng[2], y = yrng[2]), $/;"	v
+data	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^data <- paste0(".\/data\/",files) %>% $/;"	g
+data	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^ggplot(aes(log(brainwt), log(bodywt)), data = msleep) + geom_point()$/;"	v
+data	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^data  <- c(1,2,3,1)  # double[]$/;"	g
+data0	/home/jim/code/r_row/002_study_2017-2018_season.R	/^data0 <- read_csv(file = ".\/data\/concept2-season-2018.csv",$/;"	g
+data00	/home/jim/code/r_row/003_read_all_row_records.R	/^data00  <- data_list_tibbles %>% $/;"	g
+data1	/home/jim/code/r_row/002_study_2017-2018_season.R	/^data1 <- read_csv(file = ".\/data\/concept2-season-2018.csv",$/;"	g
+data1	/home/jim/code/r_row/002_study_2017-2018_season.R	/^data1 <- select(data0,Date=Date,$/;"	g
+data1	/home/jim/code/r_row/003_read_all_row_records.R	/^data1  <- map(.x=data00, ~select(.x,Date=Date,$/;"	g
+data2	/home/jim/code/r_row/003_read_all_row_records.R	/^data2 <- data1 %>% map($/;"	g
+dataSum	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^# dataSum <- gss %>% group_by(Date) %>% summarise(Count=n())$/;"	v
+dataSum	/home/jim/code/r_row/old_code/Row_Version1.R	/^# dataSum <- gss %>% group_by(Date) %>% summarise(Count=n())$/;"	v
+data_labels	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^data_labels <- tibble(x=as.Date(c("2012-4-21","2012-9-21")),$/;"	g
+data_list_tibbles	/home/jim/code/r_row/003_read_all_row_records.R	/^data_list_tibbles <- map(seasons, readLog)$/;"	g
+date_breaks	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^		scale_x_date(date_labels = "%b %Y", date_breaks = "1 year ", $/;"	v
+date_breaks	/home/jim/code/health_labs/rmd/2000_plot_weight_data.R	/^		scale_x_date(date_labels = "%b %Y", date_breaks = "1 year ", $/;"	v
+date_breaks	/home/jim/code/r_row/003_read_all_row_records.R	/^          date_breaks = "3 months",$/;"	v
+date_breaks	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^          date_breaks = "1 year "$/;"	v
+date_minor_breaks	/home/jim/code/r_row/003_read_all_row_records.R	/^          date_minor_breaks = "1 month",$/;"	v
+delay	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^                   delay = mean(arr_delay, na.rm = TRUE))$/;"	v
+delay	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^        delay = mean(arr_delay, na.rm = TRUE))$/;"	v
+delay	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^delay <-        by_tailnum %>% summarise(         # 4044 x 4$/;"	g
+delay	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^delay <-        filter(delay, count > 20, dist < 2000)$/;"	g
+destdir	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^                 destdir = "~\/Downloads\/R_projects\/R_packages")$/;"	v
+destfile	/home/jim/code/try_things_here/rmd/0043_jennybc_make_file.R	/^              destfile = "words.txt", $/;"	v
+details	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^details <- function(x) {$/;"	f
+details	/home/jim/code/try_things_here/rmd/0092_re_level.R	/^details <- function(x) {$/;"	f
+df	/home/jim/code/r_row/old_code/ROW_Version2.R	/^df <- read.csv(file=f,$/;"	g
+df	/home/jim/code/r_row/old_code/ROW_Version3.R	/^df <- read.csv(file=f,$/;"	g
+df	/home/jim/code/r_row/old_code/Row_Version1.R	/^df <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/2016_10Sep_2016-2017_season.csv", $/;"	g
+df	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^df <- tibble(x = 1:3, y = 3:1)$/;"	g
+df	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^        df <- data.frame(x=rnorm(n))$/;"	v
+df	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^ df <- data.frame(x=rnorm(n))$/;"	v
+df	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^df <- data.frame(x=rnorm(n))$/;"	g
+df	/home/jim/code/try_things_here/rmd/0028_Z_ggplot_2010_SPIN_Hadley.R	/^df <- data_frame(x=c(3,1,5),$/;"	g
+df	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^df <- gap_split_small # list of 10 tibbles$/;"	g
+df	/home/jim/code/try_things_here/rmd/0093_state_population.R	/^df <- data.frame(yr = yr, state="ny", pop=ny)$/;"	g
+df	/home/jim/code/try_things_here/rmd/0093_state_population.R	/^df <- rbind(df, data.frame(yr=yr, state="ca", pop=ca))$/;"	g
+df	/home/jim/code/try_things_here/rmd/0093_state_population.R	/^df <- rbind(df, data.frame(yr=yr, state="fl", pop=fl))$/;"	g
+df	/home/jim/code/try_things_here/rmd/0093_state_population.R	/^df <- rbind(df, data.frame(yr=yr, state="tx", pop=tx))$/;"	g
+df1	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^df1 <- tibble(x = 1:3)$/;"	g
+df1	/home/jim/code/try_things_here/rmd/0012_dplyr_two_table_hadley.R	/^df1 <- data_frame(x = c(1,1,2),$/;"	g
+df1	/home/jim/code/try_things_here/rmd/0012_dplyr_two_table_hadley.R	/^df1 <- data_frame(x = c(1,2),    # NOT data.frame$/;"	g
+df2	/home/jim/code/try_things_here/rmd/0012_dplyr_two_table_hadley.R	/^df2 <- data_frame(x = c(1,1,2),$/;"	g
+df2	/home/jim/code/try_things_here/rmd/0012_dplyr_two_table_hadley.R	/^df2 <- data_frame(x = c(1,3),$/;"	g
+dg	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^ dg <- data.frame(x=x, y=dnorm(x) )$/;"	v
+dg	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^dg <- data.frame(x=x, y=dnorm(x) )$/;"	g
+dir2	/home/jim/code/make_project/0090_regex_ls_find_examples.mk	/^dir2=".\/bash_scripts_play\/"$/;"	m
+dir2	/home/jim/code/make_project/regex/makefile	/^dir2=".\/bash_scripts_play\/"$/;"	m
+dist	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^                   dist = mean(distance, na.rm = TRUE),$/;"	v
+dist	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^        dist = mean(distance, na.rm = TRUE),$/;"	v
+distance	/home/jim/code/r_2020/0020_Week1_elliot_blog.R	/^distance <- ideo %>%$/;"	g
+divide	/home/jim/code/make_project/git_play/makefile	/^divide="--------------"$/;"	m
+do_it	/home/jim/code/zsh_scripts_project/042_parallel.sh	/^		do_it () {$/;"	f
+do_something	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^	do_something  <- function() {$/;"	f
+do_something	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^	do_something  <- function() {$/;"	f
+do_something	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^do_something  <- function() {$/;"	f
+dsmall	/home/jim/code/try_things_here/rmd/0028_Z_ggplot_2010_SPIN_Hadley.R	/^dsmall <- diamonds[sample(nrow(diamonds), 100), ]$/;"	g
+dt	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^dt  <- data.table(file = file, $/;"	g
+dt	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^dt  <- data.table(res)$/;"	g
+dt	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^dt  <- data.table(file = file, $/;"	g
+dt	/home/jim/code/r_row/old_code/Row_TimeLine_zoo.R	/^# dt <- as.Date(df[,1], format="%Y\/%m\/%d")$/;"	v
+e	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^e <- rnorm(12,0,1)$/;"	g
+e	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^e  <- environment()$/;"	g
+e	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^e  <- parent.env(as.environment("package:rlang"))$/;"	g
+e	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^e  <- parent.env(as.environment(12))$/;"	g
+e	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^e  <- parent.env(environment())$/;"	g
+e	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^e  <- parent.env(globalenv())$/;"	g
+e.2015	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^e.2015 <- r.2015$Total.Time * 2.80\/(r.2015$Pace * 60\/500)**3$/;"	g
+e.2015	/home/jim/code/r_row/old_code/Row_Version1.R	/^e.2015 <- r.2015$Total.Time * 2.80\/(r.2015$Pace * 60\/500)**3$/;"	g
+energy	/home/jim/code/r_row/002_study_2017-2018_season.R	/^data2 <- mutate(data1, energy = Watts*Time\/3600)   # Watt-hours$/;"	v
+error	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^                       error = function(e) NULL)$/;"	f
+ex_tibble	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^ex_tibble <- tibble(a=c(1,2,3),$/;"	g
+exer	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^exer <- function(n){$/;"	f
+f	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^f  <- function() {$/;"	f
+f	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^f  <- function(){$/;"	f
+f	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^f  <- function() {$/;"	f
+f	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^f  <- function(){$/;"	f
+f	/home/jim/code/jimTools/what_is_it_function.R	/^f <- function(x,y) rlang::expr(x+y)$/;"	f
+f	/home/jim/code/make_project/0040_dpkg_tools.mk	/^	dpkg-query -W -f='$${binary:Package}...\\t $${Version}\\n' "q*"  $/;"	m
+f	/home/jim/code/r_row/old_code/ROW_Version2.R	/^f <- "~\/Downloads\/R_projects\/project_Row\/data\/2016_11Nov_2016-2017_season.csv"$/;"	g
+f	/home/jim/code/r_row/old_code/ROW_Version3.R	/^f <- "~\/Downloads\/R_projects\/project_Row\/data\/2016_11Nov_2016-2017_season.csv"$/;"	g
+f	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^f  <- function() h()$/;"	f
+f	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^f  <- function() {$/;"	f
+f	/home/jim/code/try_things_here/rmd/0000_here_experiment.R	/^f <- function(string) base::exists(string)$/;"	f
+f	/home/jim/code/try_things_here/rmd/0030_class_useMethod_functions.R	/^f  <- function(x) {$/;"	f
+f	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^f <- function(df,names) {$/;"	f
+f	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^f<- gl(n = 40,k = 10)           # generate 40 levels, each with 10 rows$/;"	g
+f	/home/jim/code/try_things_here/rmd/0084_jennybc_lists_json.R	/^f<- gl(n = 40,k = 10)           # generate 40 levels, each with 10 rows$/;"	g
+f	/home/jim/code/zsh_scripts_project/038_get_PID.sh	/^		f ()$/;"	f
+f.character	/home/jim/code/try_things_here/rmd/0030_class_useMethod_functions.R	/^f.character  <- function(x) print("f: character")$/;"	f
+f.default	/home/jim/code/try_things_here/rmd/0030_class_useMethod_functions.R	/^f.default  <- function(x) print("f:  default")$/;"	f
+f.list	/home/jim/code/try_things_here/rmd/0030_class_useMethod_functions.R	/^f.list  <- function(x) print("f:  list")$/;"	f
+f.me	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^f.me <- function(v, .l=levels(v),.la, ordered=FALSE) {$/;"	f
+f.numeric	/home/jim/code/try_things_here/rmd/0030_class_useMethod_functions.R	/^f.numeric  <- function(x) print("f:  numeric")$/;"	f
+f2	/home/jim/code/r_row/000_examples_ggplot.R	/^                  f2 = gl(3, 1, length = 6, labels = c("I", "II", "III")),$/;"	v
+f_mutate	/home/jim/code/r_row/003_read_all_row_records.R	/^f_mutate <- function (df) {$/;"	f
+f_mutate	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^f_mutate <- function (df) {$/;"	f
+f_object	/home/jim/code/jimTools/what_is_it_function.R	/^f_object <- function(o) {$/;"	f
+fetch_yaml	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^  fetch_yaml  <- function(f) {$/;"	f
+fetch_yaml	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^fetch_yaml = function(x) {$/;"	f
+fetch_yaml	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^fetch_yaml  <- function(f) {$/;"	f
+fetch_yaml	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^fetch_yaml = function(x) {$/;"	f
+file	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^# file  <- "011B_misc_fun_operators.Rmd"$/;"	v
+file	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^# ren_github( file = "011B_misc_fun_operators.Rmd", dir = "book_advanced_R\/R")# $/;"	v
+file	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^# ren_pdf( file = "011B_misc_fun_operators.Rmd", dir = "book_advanced_R\/R")$/;"	v
+file	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^file  <- "011B_misc_fun_operators.Rmd"$/;"	g
+file	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^	# file  <- "011B_misc_fun_operators.Rmd"$/;"	v
+file	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^# ren( file = "011B_misc_fun_operators.Rmd", dir = "book_advanced_R\/R")$/;"	v
+file	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^# ren2( file = "011B_misc_fun_operators.Rmd", dir = "book_advanced_R\/R")# $/;"	v
+file	/home/jim/code/make_project/regex2/regex2.mk	/^file="row_words"		# OFFICIAL makefile way:   $(VAR), but so does ${VAR}$/;"	m
+file	/home/jim/code/try_things_here/rmd/0075_basic_code_examples.R	/^save(x, file= "temp.RDATA")$/;"	v
+file1	/home/jim/code/make_project/regex2/regex2.mk	/^file1="letter_words"$/;"	m
+file_exists	/home/jim/code/zsh_scripts_project/002_loop_tests_find.sh	/^file_exists() { test -e "$1"; }$/;"	f
+file_exists	/home/jim/code/zsh_scripts_project/006_functions_style.sh	/^    file_exists() { test -e "$1"; }$/;"	f
+files	/home/jim/code/make_project/make_youtube/makefile	/^files=('file1' 'file2' 'file3' 'file4')$/;"	m
+files	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^     files  <- list.files(path  =  path, pattern = pattern, recursive = recursive)$/;"	v
+files	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^#  files  <- get_RMD_files(dir = ".", ) return char vector of file names$/;"	v
+files	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^files  <- get_RMD_files(path = ".", pattern = rmd_pattern)$/;"	g
+files	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^      files = list.files(dir, pattern, recursive = TRUE, full.names = TRUE)$/;"	v
+files	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^    files  <- tryCatch(list_rmds(pattern = rmd_pattern), $/;"	v
+files	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^files <- dir (path=".\/data\/",$/;"	g
+fill	/home/jim/code/r_row/000_examples_ggplot.R	/^    geom_density(color = "darkorange", fill = alpha("orange", 0.4))$/;"	v
+fill	/home/jim/code/r_row/000_examples_ggplot.R	/^    geom_histogram(binwidth = 0.2, fill = "purple") +$/;"	v
+fill	/home/jim/code/r_row/000_examples_ggplot.R	/^    geom_histogram(binwidth = 0.2, fill = "skyblue") $/;"	v
+fill	/home/jim/code/r_row/000_examples_ggplot.R	/^ggplot() + geom_bar(data = DF, aes(x = gp), fill = "darkorange")$/;"	v
+fill	/home/jim/code/r_row/000_examples_ggplot.R	/^ggplot(DF) + geom_bar(aes(x = gp), fill = "darkorange")$/;"	v
+fill	/home/jim/code/r_row/000_examples_ggplot.R	/^qplot(x, data = DF, geom = "histogram", fill = I("purple"),$/;"	v
+flights	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^                   flights = n()) %>%$/;"	v
+fn	/home/jim/code/zsh_scripts_project/023_test_zsh.sh	/^fn()	{print -- "Name of this function is $0";}$/;"	f
+foo	/home/jim/code/make_project/0200_dates_recurive.mk	/^foo	=	$(bar)							# bar unknown$/;"	m
+foo	/home/jim/code/r_row/000_examples_ggplot.R	/^foo <- function(d) $/;"	f
+format_single_string	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^format_single_string  <- function(l) {$/;"	f
+formdat	/home/jim/code/r_row/000_examples_ggplot.R	/^formdat <- ddply(mcoefs, .(cyl), formfun)$/;"	g
+formfun	/home/jim/code/r_row/000_examples_ggplot.R	/^formfun <- function(d)$/;"	f
+freq	/home/jim/code/r_row/000_examples_ggplot.R	/^                  freq = c(10, 16, 14, 20, 21, 18))$/;"	v
+full.names	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^list_files = function(..., full.names = TRUE, recursive = TRUE) {$/;"	v
+g	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^g <- ggplot(t, aes(x=x,y=y)) + geom_point(color="black") +$/;"	g
+g	/home/jim/code/r_row/001_special_comparision.R	/^g <- ggplot(t,aes(x=yr,y=`meters\/31`))$/;"	g
+g	/home/jim/code/r_row/002_study_2017-2018_season.R	/^g <- ggplot(data2, aes(Date, Time\/60)) +$/;"	g
+g	/home/jim/code/r_row/002_study_2017-2018_season.R	/^g <- ggplot(data2, aes(Date, energy)) +$/;"	g
+g	/home/jim/code/r_row/002_study_2017-2018_season.R	/^g <- ggplot(data2, aes(Date,energy)) +$/;"	g
+g	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^g <- ggplot(df, aes(x = Meters))$/;"	g
+g	/home/jim/code/r_row/old_code/Row_Version1.R	/^g <- ggplot(df, aes(x = 1, y=Distance))  # no grouping on x, use x=1 ??$/;"	g
+g	/home/jim/code/r_row/old_code/Row_Version1.R	/^g <- ggplot(df, aes(x = 1, y=Work.Distance))  # no grouping on x, use x=1 ??$/;"	g
+g	/home/jim/code/r_row/old_code/Row_Version1.R	/^g <- ggplot(df, aes(x = Distance))$/;"	g
+g	/home/jim/code/r_row/old_code/Row_Version1.R	/^g <- ggplot(df, aes(x = Work.Distance))$/;"	g
+g	/home/jim/code/r_row/old_code/Row_Version1.R	/^g <- ggplot(df, aes(x= Pace))$/;"	g
+g	/home/jim/code/r_row/old_code/Row_Version1.R	/^g<- ggplot(df,aes(x= v, y=Meters))$/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^g<- ggplot(df, aes(x=x,y= ..density..))  + $/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_Z_ggplot_2010_SPIN_Hadley.R	/^g <- ggplot(diamonds, aes(x= carat, y=x*y*z)) $/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_Z_ggplot_2010_SPIN_Hadley.R	/^g <- ggplot(diamonds, aes(x=carat, y=price)) # carat, wt,  is continuous$/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_Z_ggplot_2010_SPIN_Hadley.R	/^g <- ggplot(diamonds, aes(x=log(carat), y=log(price)))$/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_Z_ggplot_2010_SPIN_Hadley.R	/^g <- ggplot(dsmall, aes(x=carat, y=price, color=color))$/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_Z_ggplot_2010_SPIN_Hadley.R	/^g <- ggplot(dsmall, aes(x=carat, y=price, shape=cut))$/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^g <- g + xlim(55,70)$/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^g <- ggplot(diamonds, aes(depth)) $/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^g<- ggplot(data=class, mapping=aes(x=class,y=hwy, $/;"	g
+g	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^g<- ggplot(mpg, aes(displ, hwy)) +$/;"	g
+g	/home/jim/code/try_things_here/rmd/0031_Prabhakaran_linear_regression.R	/^g <- ggplot(cars)  # default, boxplot expected group, just set x=""$/;"	g
+g	/home/jim/code/try_things_here/rmd/0031_Prabhakaran_linear_regression.R	/^g <- ggplot(cars) $/;"	g
+g	/home/jim/code/try_things_here/rmd/0031_Prabhakaran_linear_regression.R	/^g <- ggplot(cars, aes(x=speed, y=dist)) $/;"	g
+g	/home/jim/code/try_things_here/rmd/0031_Prabhakaran_linear_regression.R	/^g <- ggplot(cars, aes(x=speed,y=dist))$/;"	g
+g	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^g <- ggplot(t,aes(x=x,y=y)) $/;"	g
+g	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^g <- ggplot(gap_split[[1]], aes(x=year,y = lifeExp) )$/;"	g
+g	/home/jim/code/try_things_here/rmd/0061_simple_regression_cars.R	/^g<- cars %>%$/;"	g
+g1	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^        g1 = c(1, 1, 2, 2, 2),$/;"	v
+g2	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^        g2 = c(1, 2, 1, 2, 1),$/;"	v
+g:mydate	/home/jim/code/nvim_project/012_functions_examples.vim	/^let g:mydate=strftime("%d %b %Y") $/;"	v
+g_by	/home/jim/code/try_things_here/rmd/0006_dplyr_peng_article.R	/^g_by <- dat %>% group_by(group)$/;"	g
+gap_split_small	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^gap_split_small <- gap_split[1:10]  # 10 countries only$/;"	g
+geom	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        geom = "point", geom_params = list(),  # I get errors$/;"	v
+get_RMD_files	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^   get_RMD_files  <- function (path = ".", pattern = NULL, recursive = FALSE) {$/;"	f
+get_TAGS_line	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^ get_TAGS_line  <- function (yaml = null) {$/;"	f
+get_api_codes	/home/jim/code/youtube_api/R/0010_get_api_codes.R	/^get_api_codes  <- function() {$/;"	f
+get_compressed_file_name	/home/jim/code/jimTools/R/compress.R	/^get_compressed_file_name  <- function(prefix = NULL, $/;"	f
+get_environment	/home/jim/code/try_things_here/env_code/environment.R	/^get_environment  <- function() {$/;"	f
+get_in_dir	/home/jim/code/zsh_scripts_project/032_find_for_PE_name_change.sh	/^	get_in_dir() {$/;"	f
+get_json	/home/jim/code/youtube_api/R/0030_get_json.R	/^get_json <- function(r) {$/;"	f
+get_name	/home/jim/code/zsh_scripts_project/032_find_for_PE_name_change.sh	/^	get_name(){$/;"	f
+get_oauth_endpoints	/home/jim/code/youtube_api/R/0080_get_endpoints.R	/^get_oauth_endpoints   <- function(x="google") {$/;"	f
+get_old_name	/home/jim/code/zsh_scripts_project/045_youtube_tools.sh	/^		get_old_name(){$/;"	f
+get_options	/home/jim/code/jimTools/R/options.R	/^get_options  <- function() {$/;"	f
+get_prefix	/home/jim/code/jimTools/R/compress.R	/^get_prefix  <- function() {$/;"	f
+get_typical_values	/home/jim/code/youtube_api/R/0020_get_typical_values.R	/^get_typical_values  <- function(){$/;"	f
+gg	/home/jim/code/r_2020/0030_shift_presidential_elections.R	/^gg <- ggplot(pres_map_change,$/;"	g
+gg	/home/jim/code/r_2020/0031_hispanic.R	/^gg <- ggplot(pres_hispanic,$/;"	g
+google_token	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^google_token = base::getOption("google_token")  # oauth info$/;"	g
+grid	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^grid <- data_frame(displ = seq(min(mpg$displ), max(mpg$displ), length = 50))$/;"	g
+group	/home/jim/code/r_row/old_code/Row_Version1.R	/^group <- c(2013,2014,2015,2016 ) #???? $/;"	g
+guide	/home/jim/code/r_row/000_examples_ggplot.R	/^# use guide = "legend"$/;"	v
+h	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^h  <- function(){$/;"	f
+h	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^h <- as.numeric(map(sw_people, ~.x$height))$/;"	g
+h	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^h <- ggplot(data=class, mapping=aes(x=class, y=hwy ))$/;"	g
+h2	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^h2 <- h1 + geom_point(data=mpg, $/;"	g
+has_arg	/home/jim/code/zsh_scripts_project/015_is_pdf.sh	/^has_arg() {$/;"	f
+hello	/home/jim/code/zsh_scripts_project/999_zsh_FUN_example.sh	/^hello () {$/;"	f
+hello2	/home/jim/code/zsh_scripts_project/999_zsh_FUN_example.sh	/^hello2 () {$/;"	f
+hjust	/home/jim/code/r_row/000_examples_ggplot.R	/^                  hjust = 1, vjust = 1, size = 4)$/;"	v
+hjust	/home/jim/code/r_row/000_examples_ggplot.R	/^p + geom_text(data = regout2, aes(label = txt), hjust = 0, size = 6,$/;"	v
+hjust	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^             hjust = 0, vjust = 1, size = 4)$/;"	v
+home  jim  documents  medical  kidney  _glossary.md	/home/jim/code/try_things_here/rmd/kidney_remove.tex	/^\\hypertarget{homejimdocumentsmedicalkidney_glossary.md}{%$/;"	P
+house_ideo	/home/jim/code/r_2020/0020_Week1_elliot_blog.R	/^house_ideo <- get_house_nominate(congress = 116)$/;"	g
+house_ideo	/home/jim/code/r_2020/0020_Week1_elliot_blog.R	/^house_ideo <- house_ideo %>%$/;"	g
+house_ideo	/home/jim/code/r_2020/0020_Week1_elliot_blog.R	/^house_ideo <- read_csv("https:\/\/voteview.com\/static\/data\/out\/members\/Hall_members.csv")$/;"	g
+hw	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^hw <- map(.x=sw_people,$/;"	g
+hwy	/home/jim/code/r_row/000_examples_ggplot.R	/^    data.frame(cty = 10, hwy = c(45, 40),$/;"	v
+hwy	/home/jim/code/r_row/000_examples_ggplot.R	/^regout <- data.frame(cty = 10, hwy = c(35, 45, 40),$/;"	v
+hwy	/home/jim/code/r_row/000_examples_ggplot.R	/^regout2 <- data.frame(cty = 10, hwy = c(45, 40),$/;"	v
+hwy	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        summarise(n = n(), hwy = mean(hwy))$/;"	v
+i_want_array	/home/jim/code/zsh_scripts_project/008_arrays.sh	/^	function i_want_array () {$/;"	f
+id	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^id <-  "PLbcglKxZP5PMezfs_y6WOXRaR1fK51_ae"$/;"	g
+ideo	/home/jim/code/r_2020/0020_Week1_elliot_blog.R	/^ideo <- house_ideo %>%$/;"	g
+index_of_first_match_from_left	/home/jim/code/zsh_scripts_project/008_arrays.sh	/^	index_of_first_match_from_left(){$/;"	f
+info	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^info  <- function() list(current = current_env(), caller = caller_env(),$/;"	f
+info	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^info  <- function() list(current = current_env(), caller = caller_env(),$/;"	f
+intercept	/home/jim/code/r_2020/001_step_plot.R	/^    geom_abline(slope = 0, intercept = 50, color = "red")$/;"	v
+is_equal_string	/home/jim/code/zsh_scripts_project/011_function_tests.sh	/^is_equal_string() { [[ "$1" == "$2" ]];}$/;"	f
+is_length_zero	/home/jim/code/zsh_scripts_project/011_function_tests.sh	/^is_length_zero() { test -z "$1"; }			# true if 0, null, not set$/;"	f
+is_length_zero_v2	/home/jim/code/zsh_scripts_project/011_function_tests.sh	/^is_length_zero_v2() { [[ -z "$1" ]]; }			# same$/;"	f
+is_param_null	/home/jim/code/zsh_scripts_project/000_PE_examples.sh	/^is_param_null(){$/;"	f
+is_param_set	/home/jim/code/zsh_scripts_project/000_PE_examples.sh	/^is_param_set() {$/;"	f
+is_param_set	/home/jim/code/zsh_scripts_project/000_PE_examples.sh	/^is_param_set(){$/;"	f
+is_pdf	/home/jim/code/zsh_scripts_project/015_is_pdf.sh	/^is_pdf()	{$/;"	f
+jim_str	/home/jim/code/jimTools/R/040_jim_str.R	/^jim_str  <- function(X=NULL, max.level =1 , vec.len =1 ){$/;"	f
+jr_get_env	/home/jim/code/jimTools/R/jr_wrappers.R	/^jr_get_env  <- function(key) {$/;"	f
+jr_install.packages	/home/jim/code/jimTools/R/jr_wrappers.R	/^jr_install.packages  <- function(pkg_names=NULL) {$/;"	f
+jr_package_dependencies	/home/jim/code/jimTools/R/jr_wrappers.R	/^jr_package_dependencies  <- function(package = NULL) {$/;"	f
+jr_package_dependencies_reverse	/home/jim/code/jimTools/R/jr_wrappers.R	/^jr_package_dependencies_reverse  <- function(package = NULL) {$/;"	f
+jr_set_env	/home/jim/code/jimTools/R/jr_wrappers.R	/^jr_set_env  <- function(key = NULL, value=NULL) {$/;"	f
+jr_update_packages	/home/jim/code/jimTools/R/jr_wrappers.R	/^jr_update_packages  <- function() {$/;"	f
+k	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^k <- h +  geom_smooth(data=s, mapping=aes(x=x,y=y), method="lm", se = FALSE, alpha=0.2, linetype=3)$/;"	g
+l	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^l  <- list(a="apple", b="banana", c="carrot")$/;"	g
+l	/home/jim/code/jimTools/tests/testthat/test_single.R	/^#             l  <- list(one="a", two="b", three="c")$/;"	v
+l	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^l  <- list(NULL, c(1,2), NULL, c(3,4))$/;"	g
+l	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^l  <- list(red = 1:4, blue = c(1,2,3), green= list(dark_green=c("a","b")))$/;"	g
+l	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^l <- list(a=c(1,2,3),$/;"	g
+l	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^l  <- list(a="1", b="2")$/;"	g
+l	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^l  <- list(list("1","2","3","4"))$/;"	g
+l	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^l  <- list(title = "some Title")$/;"	g
+l	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^l <- list(a=c(1), b="jim", c=c(3,2))$/;"	g
+l	/home/jim/code/try_things_here/rmd/0084_jennybc_lists_json.R	/^l <- list(a=c(1), b="jim", c=c(3,2))$/;"	g
+label	/home/jim/code/r_row/000_examples_ggplot.R	/^    geom_text(data = ypos, aes(y = yrelpos, label = 100 * yrelval), size = 6) +$/;"	v
+label	/home/jim/code/r_row/000_examples_ggplot.R	/^    geom_text(data = ypos, aes(y = yrelpos, label = yrelval), size = 6)$/;"	v
+label	/home/jim/code/r_row/000_examples_ggplot.R	/^unemp + geom_text(aes(x, y, label = caption), $/;"	v
+label	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        geom_text(data = outlier, aes( label = paste0(model,class), vjust=1,$/;"	v
+label	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^g+ annotate("text" , label = caption,$/;"	v
+labels	/home/jim/code/r_row/000_examples_ggplot.R	/^DF0 <- data.frame(f1 = gl(2, 3, labels = c("A", "B")),$/;"	v
+labels	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^gl(2, 8, labels = c("Control", "Treat"))$/;"	v
+labels	/home/jim/code/try_things_here/rmd/0084_jennybc_lists_json.R	/^gl(2, 8, labels = c("Control", "Treat"))$/;"	v
+labels	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^rdata <- factor(data, labels = c("A","B","C"))$/;"	v
+level1	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^level1 <- list(a="first", b= level2)$/;"	g
+level2	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^level2 <- list(A="second", B= level3)$/;"	g
+level3	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^level3 <- list("last", z = letters)$/;"	g
+levels	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^	factor(v, levels= .l, labels= .la,  ordered = ordered)$/;"	v
+levels	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^v  <- factor(v, levels= c("Blah4", "Blah3", "Blah2", "Blah1"),$/;"	v
+levels	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^v1  <- factor(v, levels  = academic_levels, ordered=TRUE)$/;"	v
+limits	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^					 limits =  mdy(c("1\/1\/2008","12\/31\/2018"))) $/;"	v
+limits	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^					 limits =  mdy(c("1\/1\/2012","12\/31\/2015"))) $/;"	v
+limits	/home/jim/code/health_labs/rmd/2000_plot_weight_data.R	/^					 limits =  mdy(c("1\/1\/2008","12\/31\/2018"))) $/;"	v
+limits	/home/jim/code/r_row/003_read_all_row_records.R	/^          limits = as.Date(c(paste0(as.integer(.y)-1,"-05-01"), $/;"	v
+line	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^  line  <- grep("^TAGS:", yaml)$/;"	v
+line	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^line  <- get_TAGS_line(yaml)$/;"	g
+line	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^         line  <- grep("^TAGS:", f)$/;"	v
+linearMod	/home/jim/code/try_things_here/rmd/0031_Prabhakaran_linear_regression.R	/^linearMod <- lm(dist ~ speed, data=cars) # B0= -17.6, B1=3.9$/;"	g
+lines	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^lines  <- unlist(lines)$/;"	g
+lines	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^lines <- lapply(yaml, get_TAGS_line)$/;"	g
+list_files	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^list_files = function(..., full.names = TRUE, recursive = TRUE) {$/;"	f
+list_files	/home/jim/code/zsh_scripts_project/021_bash_experiments.sh	/^	function list_files () $/;"	f
+list_files1	/home/jim/code/zsh_scripts_project/021_bash_experiments.sh	/^		function list_files1 () $/;"	f
+list_rmds	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^  list_rmds = function(dir = ".", pattern = NULL, check = FALSE) {$/;"	f
+load_packages	/home/jim/code/health_labs/rmd/functions.R	/^load_packages <- function() {$/;"	f
+luke	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^luke <- sw_people[[1]]$/;"	g
+m	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^m<- lm(s.y ~ s.x)$/;"	g
+m	/home/jim/code/r_row/000_examples_ggplot.R	/^    m <- lm(hwy ~ cty, data = d)$/;"	v
+m	/home/jim/code/r_row/000_examples_ggplot.R	/^m <- lm(hwy ~ cty, data = mpg0)$/;"	g
+m	/home/jim/code/try_things_here/rmd/0023_USmap_Tidyverse.R	/^m <- map_data("usa")$/;"	g
+m	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^m <- as.numeric(map(sw_people, ~.x$mass))  # remove non-numeric$/;"	g
+m.y.hat	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^m.y.hat <- mean(y.hat) # 2.06$/;"	g
+main	/home/jim/code/c_practice/002_CES.cpp	/^int main (void)$/;"	f
+main	/home/jim/code/c_practice/first.c	/^int main (void)$/;"	f
+main	/home/jim/code/c_practice/hello.c	/^int main() { printf("hello. \\n"); }$/;"	f
+main	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^with(subset(r.2013,Meters>1000), boxplot(Meters,  main = "2013"))$/;"	v
+main	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^with(subset(r.2014,Meters>1000), boxplot(Meters,  main = "2014"))$/;"	v
+main	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^with(subset(r.2015,Meters>1000), boxplot(Meters,  main = "2015"))$/;"	v
+main	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^with(subset(r.2016,Meters>1000), boxplot(Meters,  main = "2016"))$/;"	v
+main	/home/jim/code/r_row/old_code/Row_Version1.R	/^with(subset(r.2013,Meters>1000), boxplot(Meters,  main = "2013"))$/;"	v
+main	/home/jim/code/r_row/old_code/Row_Version1.R	/^with(subset(r.2014,Meters>1000), boxplot(Meters,  main = "2014"))$/;"	v
+main	/home/jim/code/r_row/old_code/Row_Version1.R	/^with(subset(r.2015,Meters>1000), boxplot(Meters,  main = "2015"))$/;"	v
+main	/home/jim/code/r_row/old_code/Row_Version1.R	/^with(subset(r.2016,Meters>1000), boxplot(Meters,  main = "2016"))$/;"	v
+main_dir	/home/jim/code/make_project/0065_grep_examples.mk	/^main_dir=~\/code$/;"	m
+mapping	/home/jim/code/r_row/000_examples_ggplot.R	/^p1 <- ggplot(DF, mapping = aes(x = x, y = y)) +$/;"	v
+mapping	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        geom_smooth(data = mpg, mapping = aes(cty, hwy))$/;"	v
+mapping	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^ggplot(data=mpg, mapping = aes(x=cty, y=hwy)) +$/;"	v
+mar	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^par(mfrow = c(1, 4), mar = c(5, 4, 2, 1))$/;"	v
+mar	/home/jim/code/r_row/old_code/Row_Version1.R	/^par(mfrow = c(1, 4), mar = c(5, 4, 2, 1))$/;"	v
+match_dashes	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^match_dashes = function(x) grep('^---\\\\s*$', x)$/;"	f
+match_dashes	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^match_dashes = function(x) grep('^---\\\\s*$', x)$/;"	f
+max.level	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^str(new_people, max.level = 1)  # names!$/;"	v
+max.level	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^str(sw_people, max.level = 1)  #87 objects$/;"	v
+max.level	/home/jim/code/try_things_here/rmd/0040_basic_str_examples.R	/^str(got_chars[1]$titles, max.level = 2)        # 1st character, $/;"	v
+max.level	/home/jim/code/try_things_here/rmd/0040_basic_str_examples.R	/^str(got_chars[1], max.level = 2)        # 1st character, $/;"	v
+max.level	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^str(gap_split, max.level = 1, list.len = 10) # limit to 10 entries$/;"	v
+mcoefs	/home/jim/code/r_row/000_examples_ggplot.R	/^mcoefs <- ddply(mpg0, .(cyl), foo)$/;"	g
+md_pattern	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^md_pattern  <- '[.][Rr]?(md|markdown)$'$/;"	g
+md_pattern	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^  md_pattern  <- '[.][Rr]?(md|markdown)$'$/;"	v
+mean_disp	/home/jim/code/try_things_here/rmd/0005_dplyr_summarize_vs_mutate.R	/^                  mean_disp = mean(disp))  %>%$/;"	v
+mean_disp	/home/jim/code/try_things_here/rmd/0005_dplyr_summarize_vs_mutate.R	/^                  mean_disp = mean(disp)) $/;"	v
+mean_disp	/home/jim/code/try_things_here/rmd/0005_dplyr_summarize_vs_mutate.R	/^                  mean_disp = mean(disp)) %>%$/;"	v
+mean_disp	/home/jim/code/try_things_here/rmd/0005_dplyr_summarize_vs_mutate.R	/^               mean_disp = mean(disp)) $/;"	v
+mean_disp	/home/jim/code/try_things_here/rmd/0005_dplyr_summarize_vs_mutate.R	/^               mean_disp = mean(disp)) %>%$/;"	v
+meters	/home/jim/code/r_row/001_special_comparision.R	/^            meters = c(190.5,127.6,155.1,129.8,54.0,53.1),$/;"	v
+method	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        geom_smooth(aes(colour = "lm"), method = "lm", se = FALSE) +$/;"	v
+method	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        geom_smooth(aes(colour = "loess"), method = "loess", se = FALSE) +$/;"	v
+mid	/home/jim/code/r_row/000_examples_ggplot.R	/^    scale_color_gradient2(low = "blue", mid = "darkorange", high = "yellow")$/;"	v
+mid	/home/jim/code/r_row/000_examples_ggplot.R	/^    scale_color_gradient2(low = "blue", mid = "darkorange", high = "yellow",$/;"	v
+mod	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^mod <- loess(hwy ~ displ, data = mpg)$/;"	g
+model	/home/jim/code/r_penn_state/001_linear_regression.R	/^model <- lm (x$ht ~ x$wt)$/;"	g
+model	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^model <- lm(Time ~ Meters, season.2015)$/;"	g
+model	/home/jim/code/r_row/old_code/Row_Version1.R	/^model <- lm(Time ~ Meters, season.2015)$/;"	g
+model	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^model <- lm(y ~ x, t)$/;"	g
+model	/home/jim/code/try_things_here/rmd/0062_Zaiontz_regression.R	/^model <- lm (yrs ~ cig)$/;"	g
+month	/home/jim/code/r_row/001_special_comparision.R	/^            month = c(x,x,x,x,x,x),$/;"	v
+mp3	/home/jim/code/make_project/make_youtube/makefile	/^mp3=~\/Downloads\/mp3\/from_youtube$/;"	m
+mp3_create_path	/home/jim/code/pkg_mp3/R/mp3_functions.R	/^mp3_create_path  <- function(dir="tmp") path <-fs::path(dir)$/;"	f
+mp3_dir	/home/jim/code/make_project/0060_find_examples.mk	/^mp3_dir=~\/Downloads\/mp3\/09NOV2018\/$/;"	m
+mp3_dir	/home/jim/code/make_project/0110_unix_tools.mk	/^mp3_dir=~\/Downloads\/mp3\/09NOV2018\/$/;"	m
+mp3_dir	/home/jim/code/make_project/0220_ls_grep_examples.mk	/^mp3_dir=~\/Downloads\/mp3\/from_youtube$/;"	m
+mp3_dir	/home/jim/code/make_project/0225_ls_grep_GLOB_QUANTIFIERS.mk	/^mp3_dir=~\/Downloads\/mp3\/from_youtube$/;"	m
+mp3_tibble	/home/jim/code/pkg_mp3/R/mp3_functions.R	/^mp3_tibble  <- function(path) {$/;"	f
+mp3_tibble_clean	/home/jim/code/pkg_mp3/R/mp3_functions.R	/^mp3_tibble_clean <- function (t) {$/;"	f
+mp3_tibble_move_files	/home/jim/code/pkg_mp3/R/mp3_functions.R	/^mp3_tibble_move_files <- function(t,path) {$/;"	f
+mp3_tibble_move_files_TEST	/home/jim/code/pkg_mp3/R/mp3_functions.R	/^mp3_tibble_move_files_TEST <- function(t,path) {$/;"	f
+mp3_tibble_propose_new_name	/home/jim/code/pkg_mp3/R/mp3_functions.R	/^mp3_tibble_propose_new_name  <- function(t) {$/;"	f
+mutate_y	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^mutate_y <- function(df) { $/;"	f
+mutate_y	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^mutate_y <- function(df){$/;"	f
+my_name	/home/jim/code/zsh_scripts_project/011_function_tests.sh	/^my_name(){$/;"	f
+my_sample	/home/jim/code/pkg_mosaic/R/0050_resample.R	/^my_sample  <- resample(my_sample)$/;"	g
+my_var	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^my_var <- x             # error$/;"	g
+n	/home/jim/code/try_things_here/rmd/0021_RCPP.R	/^  int n = x.size();$/;"	v
+n	/home/jim/code/try_things_here/rmd/0022_Rcpp.R	/^  int n = x.size();$/;"	v
+n	/home/jim/code/try_things_here/rmd/0022_Rcpp.R	/^  int n = ys.size();$/;"	v
+n	/home/jim/code/try_things_here/rmd/0039_jennybc_stat545_gapminder.R	/^is_list(table3$rate %>% str_split_fixed(pattern = "\/", n = 2)) # not tibble, not list$/;"	v
+na	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^wt2 <- read_csv(SOURCE2, na = c(0,"","NA"))$/;"	v
+na	/home/jim/code/health_labs/rmd/functions.R	/^        na = c("NA", "N\/A")  # these entries remain numbers$/;"	v
+na.rm	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^		#geom_col(fill="darkorange", na.rm =  TRUE)  +$/;"	v
+na.rm	/home/jim/code/health_labs/rmd/2000_plot_weight_data.R	/^		#geom_col(fill="darkorange", na.rm =  TRUE)  +$/;"	v
+na.rm	/home/jim/code/r_row/old_code/Row_TimeLine_zoo.R	/^u3 <- mean(as.numeric(w$Watts), na.rm = TRUE) # OK?$/;"	v
+name	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^set_env_name  <- function(env, name = deparse(substitute(env) ) ){# $/;"	v
+name	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^set_env_name  <- function(env, name = deparse(substitute(env) ) ){$/;"	v
+names	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^names <- names(gap_split)	# vector of chr (names)$/;"	g
+names	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^names <- names(gap_split_small) # character vector of 10 country names$/;"	g
+ncol	/home/jim/code/r_row/000_examples_ggplot.R	/^pp1 + facet_wrap(~ gp, ncol = 2, scales = "free")$/;"	v
+ncol	/home/jim/code/r_row/000_examples_ggplot.R	/^pp1 + facet_wrap(~ gp, ncol = 2, scales = "free_y")$/;"	v
+new1	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^new1 <- new %>% group_by(new$YearMonth)$/;"	g
+new1	/home/jim/code/r_row/old_code/Row_Version1.R	/^new1 <- new %>% group_by(new$YearMonth)$/;"	g
+new_labels	/home/jim/code/try_things_here/rmd/0092_re_level.R	/^new_labels  <- c("I","II","III", "IV", "V")$/;"	g
+new_levels	/home/jim/code/try_things_here/rmd/0092_re_level.R	/^new_levels  <- levels(v)[c(4:5,1:3)]$/;"	g
+new_people	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^new_people <- sw_people %>% set_names(map_chr(.x=sw_people,.f="name"))$/;"	g
+num_outliners	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^num_outliners <- function(n=N,g=G,q=c(0,1.0,2.0,3.0,4.0)){$/;"	f
+oauth2_id	/home/jim/code/youtube_api/R/0010_get_api_codes.R	/^               oauth2_id = Sys.getenv("OAUTH2_ID"),$/;"	v
+oauth2_secret	/home/jim/code/youtube_api/R/0010_get_api_codes.R	/^               oauth2_secret = Sys.getenv("OAUTH2_SECRET"))$/;"	v
+one	/home/jim/code/try_things_here/rmd/0021_RCPP.R	/^one <- function() 1L$/;"	f
+other_function	/home/jim/code/ctags_nvim_test/test_function_1.R	/^other_function <- function() {$/;"	f
+other_function	/home/jim/code/test_function_1.R	/^other_function <- function() {$/;"	f
+out_file	/home/jim/code/jimTools/R/compress.R	/^	out_file  <- paste0(prefix , $/;"	v
+output_dir	/home/jim/code/jimTools/R/020_printing.R	/^#'    output_dir = "~\/Downloads\/print_and_delete")$/;"	v
+output_dir	/home/jim/code/jimTools/R/020_printing.R	/^ren_github  <- function(x=NULL, output_dir= ".\/md") {$/;"	v
+output_dir	/home/jim/code/jimTools/R/compress.R	/^    output_dir = "~\/Downloads\/toGoogle"$/;"	v
+p	/home/jim/code/r_row/000_examples_ggplot.R	/^p <- ggplot(mpg0, aes(x = cty, y = hwy)) +$/;"	g
+p	/home/jim/code/r_row/old_code/ROW_Version3.R	/^p <- ggplot(d1, aes(x=Meters)) +$/;"	g
+p	/home/jim/code/r_row/old_code/ROW_Version3.R	/^p<- ggplot(d1, aes(x=Date, y=Meters)) +$/;"	g
+p	/home/jim/code/try_things_here/rmd/0028_Z_ggplot_2010_SPIN_Hadley.R	/^p <- ggplot(df, aes(x,y,label=label)) + xlab(NULL) + ylab(NULL)$/;"	g
+p	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^p <- ggplot(mpg, aes(displ, hwy))  # data, but no layer, presentation$/;"	g
+p1	/home/jim/code/r_row/000_examples_ggplot.R	/^p1 <- ggplot(DF, mapping = aes(x = x, y = y)) +$/;"	g
+p2	/home/jim/code/r_row/000_examples_ggplot.R	/^p2 <- p1 + theme_bw()$/;"	g
+p3	/home/jim/code/r_row/000_examples_ggplot.R	/^p3 <- p2 + geom_line()$/;"	g
+p4	/home/jim/code/r_row/000_examples_ggplot.R	/^p4 <- p3 + geom_point()$/;"	g
+p5	/home/jim/code/r_row/000_examples_ggplot.R	/^p5 <- p4 + ggtitle("White noise series") +$/;"	g
+pace	/home/jim/code/r_row/001_special_comparision.R	/^#       Ex:    pace = 180 sec (3:00) <=> Watts=60.0$/;"	v
+parent	/home/jim/code/jimTools/R/100_show_env.R	/^    parent = parent.env(environment()),# parent $/;"	v
+parent	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^    parent = parent.env(environment()),# parent $/;"	v
+pattern	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^   get_RMD_files  <- function (path = ".", pattern = NULL, recursive = FALSE) {$/;"	v
+pattern	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^files  <- get_RMD_files(path = ".", pattern = rmd_pattern)$/;"	v
+pattern	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^  list_rmds = function(dir = ".", pattern = NULL, check = FALSE) {$/;"	v
+pdistR	/home/jim/code/try_things_here/rmd/0022_Rcpp.R	/^pdistR <- function(x, ys) {$/;"	f
+piece	/home/jim/code/try_things_here/rmd/pull_off.R	/^    piece <- str_match(url, pattern)[, 2]$/;"	v
+players	/home/jim/code/try_things_here/rmd/0011_dplyr_windows_Lahman.R	/^players <- batting %>% group_by(playerID)   # 19,113 x 7$/;"	g
+playlistId	/home/jim/code/youtube_api/R/0020_get_typical_values.R	/^						playlistId = "PLbcglKxZP5PMU2rNPBpYIzLTgzd5aOHw2")$/;"	v
+playlistId	/home/jim/code/youtube_api/R/0020_get_typical_values.R	/^#' playlistId <- "PLbcglKxZP5PMBoG1VfCqlWZ1Nx4FBBOn6"  # 60s - female (300+)$/;"	v
+plot	/home/jim/code/r_2020/0025_presidential_elections.R	/^pres_map <- maps::map("state", plot = FALSE, fill = TRUE) # acquirig the data frame$/;"	v
+plot	/home/jim/code/r_2020/0025_remove.R	/^pres_map <- maps::map("state", plot = FALSE, fill = TRUE) # acquirig the data frame$/;"	v
+plot.title	/home/jim/code/r_row/000_examples_ggplot.R	/^          plot.title = element_text(size = 20, face = "italic", $/;"	v
+plot_	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^plot_ <- function (t){$/;"	f
+plots	/home/jim/code/r_row/003_read_all_row_records.R	/^plots  <- map (.x=data2, ~ggplot(.x,aes(Date,Energy)) + geom_point())$/;"	g
+plots	/home/jim/code/try_things_here/rmd/0041_c_wickham_purrr_map2.R	/^plots <- map2(.x = df, .y = names, .f = f)$/;"	g
+plots1	/home/jim/code/r_row/003_read_all_row_records.R	/^plots1 <- map2 (.x=data2,.y=yr, ~ggplot(.x, aes(Date, Energy)) +$/;"	g
+plots2	/home/jim/code/r_row/003_read_all_row_records.R	/^plots2  <- map2(.x=data2,.y=yr, ~ggplot(.x, aes(Date, Time\/60)) +$/;"	g
+plots2	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^plots2  <- map2(.x=data2,.y=yr, ~ggplot(.x, aes(Date, Time\/60)) +$/;"	g
+position	/home/jim/code/r_row/000_examples_ggplot.R	/^    geom_bar(stat = "identity", position = "dodge") +$/;"	v
+position	/home/jim/code/r_row/000_examples_ggplot.R	/^    geom_bar(stat = "identity", position = "fill") +$/;"	v
+position	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        position = "identity"$/;"	v
+pp	/home/jim/code/r_row/000_examples_ggplot.R	/^pp <- ggplot(DF, aes(x = x, y = ..density..)) +$/;"	g
+pp1	/home/jim/code/r_row/000_examples_ggplot.R	/^pp1 <- pp + stat_density(geom = "path", color = "darkorange", size = 1)$/;"	g
+pres	/home/jim/code/r_2020/0025_presidential_elections.R	/^pres <- pres %>% $/;"	g
+pres	/home/jim/code/r_2020/0025_remove.R	/^pres <- pres %>% $/;"	g
+pres_hispanic	/home/jim/code/r_2020/0031_hispanic.R	/^pres_hispanic <- pres_map_change %>% $/;"	g
+pres_map	/home/jim/code/r_2020/0025_presidential_elections.R	/^pres_map <- maps::map("state", plot = FALSE, fill = TRUE) # acquirig the data frame$/;"	g
+pres_map	/home/jim/code/r_2020/0025_presidential_elections.R	/^pres_map <- pres_map %>% $/;"	g
+pres_map	/home/jim/code/r_2020/0025_presidential_elections.R	/^pres_map <- pres_map %>% filter(state_name != 'district of columbia')$/;"	g
+pres_map	/home/jim/code/r_2020/0025_presidential_elections.R	/^pres_map <- sf::st_as_sf(pres_map) # changing the lat-long format to a simple feature object$/;"	g
+pres_map	/home/jim/code/r_2020/0025_remove.R	/^pres_map <- maps::map("state", plot = FALSE, fill = TRUE) # acquirig the data frame$/;"	g
+pres_map	/home/jim/code/r_2020/0025_remove.R	/^pres_map <- pres_map %>% $/;"	g
+pres_map	/home/jim/code/r_2020/0025_remove.R	/^pres_map <- pres_map %>% filter(state_name != 'district of columbia')$/;"	g
+pres_map	/home/jim/code/r_2020/0025_remove.R	/^pres_map <- sf::st_as_sf(pres_map) # changing the lat-long format to a simple feature object$/;"	g
+pres_map_change	/home/jim/code/r_2020/0030_shift_presidential_elections.R	/^pres_map_change <- pres_map %>% $/;"	g
+print	/home/jim/code/zsh_scripts_project/057_zsh_PROMPT.sh	/^function print-array-collection() {$/;"	f
+print_length	/home/jim/code/zsh_scripts_project/011_function_tests.sh	/^print_length()	{$/;"	f
+print_me	/home/jim/code/nvim_project/02000_lua.lua	/^function print_me(x)$/;"	f
+pull_off	/home/jim/code/try_things_here/rmd/pull_off.R	/^pull_off <- function(pattern) {$/;"	f
+q	/home/jim/code/try_things_here/rmd/0057_googledrive_examples.R	/^	   q = "modifiedTime > '2017-07-21T12:00:00'")$/;"	v
+query	/home/jim/code/try_things_here/rmd/pull_off.R	/^    query <- httr::parse_query(query)$/;"	v
+query	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^query <- list(part="snippet,status") $/;"	g
+quit	/home/jim/code/zsh_scripts_project/071_run_R_to_update_packages.sh	/^quit()$/;"	f
+r	/home/jim/code/try_things_here/rmd/0027_reprex_reproduce.R	/^r  <- reprex({$/;"	g
+r	/home/jim/code/try_things_here/rmd/0027_reprex_reproduce.R	/^r <- reprex( {$/;"	g
+r	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^r <- cor(x,y)# .627$/;"	g
+r	/home/jim/code/youtube_api/R/0040_get_batches.R	/^  #   r <- httr::GET(base_url, $/;"	v
+r	/home/jim/code/youtube_api/R/0040_get_batches.R	/^#       r <- httr::GET(url = base_url, $/;"	v
+r	/home/jim/code/youtube_api/R/modify_playlists.R	/^r <- httr::POST(url=base_url, $/;"	g
+r	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^r <- httr::DELETE(url=base_url,$/;"	g
+r	/home/jim/code/youtube_api/rmd/013_create_playlist.R	/^r <- httr::POST(url=base_url, $/;"	g
+r.2013	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^r.2013 <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/11Nov2015_2013_season.csv", as.is=TRUE)$/;"	g
+r.2013	/home/jim/code/r_row/old_code/Row_Version1.R	/^r.2013 <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/11Nov2015_2013_season.csv", as.is=TRUE)$/;"	g
+r.2014	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^r.2014 <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/11Nov2015_2014_season.csv", as.is=TRUE)$/;"	g
+r.2014	/home/jim/code/r_row/old_code/Row_Version1.R	/^r.2014 <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/11Nov2015_2014_season.csv", as.is=TRUE)$/;"	g
+r.2015	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^r.2015 <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/11Nov2015_2015_season.csv", as.is=TRUE)$/;"	g
+r.2015	/home/jim/code/r_row/old_code/Row_Version1.R	/^r.2015 <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/11Nov2015_2015_season.csv", as.is=TRUE)$/;"	g
+r.2016	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^r.2016 <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/15Nov2015_2016_season.csv", as.is=TRUE)$/;"	g
+r.2016	/home/jim/code/r_row/old_code/Row_Version1.R	/^r.2016 <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/2016_4May_concept2-season-2016_COMPLETE.csv", as.is=TRUE)$/;"	g
+r.2017	/home/jim/code/r_row/old_code/Row_TimeLine_zoo.R	/^# r.2017 <- read.csv("~\/Downloads\/R_projects\/project_Row\/data\/2016_10Sep_2016-2017_season.csv", as.is=TRUE)$/;"	v
+r.Z	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^r.Z <- cor(Z.x,Z.y) # 0.627 (no change)$/;"	g
+r2	/home/jim/code/r_row/000_examples_ggplot.R	/^r2 <- round(summary(m)$r.square, 3)$/;"	g
+readLog	/home/jim/code/r_row/003_read_all_row_records.R	/^readLog <- function(t) {$/;"	f
+readLog	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^readLog <- function(t) {$/;"	f
+read_data_from_local_drive	/home/jim/code/health_labs/rmd/functions.R	/^read_data_from_local_drive <- function(){$/;"	f
+recursive	/home/jim/code/jimTools/R/jr_wrappers.R	/^                   recursive = TRUE, lib.loc = NULL,$/;"	v
+recursive	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^  list.files(..., full.names = full.names, recursive = recursive, no.. = TRUE)$/;"	v
+regout	/home/jim/code/r_row/000_examples_ggplot.R	/^regout <- data.frame(cty = 10, hwy = c(35, 45, 40),$/;"	g
+regout2	/home/jim/code/r_row/000_examples_ggplot.R	/^regout2 <- data.frame(cty = 10, hwy = c(45, 40),$/;"	g
+remove_null	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^remove_null  <- function (l = NULL) {$/;"	f
+remove_null2	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^remove_null2 <- function(x = NULL) {$/;"	f
+remove_number	/home/jim/code/zsh_scripts_project/032_find_for_PE_name_change.sh	/^	remove_number() {$/;"	f
+ren	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^ren  <- function(file, dir) {$/;"	f
+ren2	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^ren2  <- function(file, dir) {$/;"	f
+ren_file	/home/jim/code/jimTools/R/020_printing.R	/^ren_file <- function(file, $/;"	f
+ren_github	/home/jim/code/jimTools/R/020_printing.R	/^ren_github  <- function(x=NULL, output_dir= ".\/md") {$/;"	f
+ren_github	/home/jim/code/youtube_api/R/printing.R	/^ren_github  <- function(file, dir) {$/;"	f
+ren_pdf	/home/jim/code/jimTools/R/020_printing.R	/^ren_pdf  <- function(file, dir) {$/;"	f
+ren_pdf	/home/jim/code/youtube_api/R/printing.R	/^ren_pdf  <- function(file, dir) {$/;"	f
+report_info	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^report_info  <- function(f , calling, current) {$/;"	f
+report_info	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^report_info  <- function(f , calling, current) {$/;"	f
+res	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^      res  <- lapply(files, function(f) {$/;"	v
+res	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^res  <- setNames(res, files)$/;"	g
+res	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^res <- sim_data %>% $/;"	g
+result	/home/jim/code/jimTools/what_is_it_function.R	/^	result <- c(mode(o),$/;"	v
+rmd_pattern	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^rmd_pattern  <- '[.][Rr](md|markdown)$'$/;"	g
+rmd_pattern	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^  rmd_pattern  <- '[.][Rr](md|markdown)$'$/;"	v
+s	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^s <- tibble(x=s.x,y=s.y)$/;"	g
+s	/home/jim/code/try_things_here/rmd/0001_explore-libraries_spartan.R	/^s <- t %>% select(Package, LibPath, Version, Priority) %>% $/;"	g
+s	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^s <- t %>% count(key, sort=TRUE)$/;"	g
+s.x	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^s.x <- rep(x,3)$/;"	g
+s.y	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^s.y <- rep(y,3) + e$/;"	g
+s:var	/home/jim/code/nvim_project/012_functions_examples.vim	/^let s:var =1$/;"	v
+save_norm_to_local	/home/jim/code/health_labs/rmd/functions.R	/^save_norm_to_local<- function(t=tibble){$/;"	f
+scan_yaml	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^  scan_yaml  <- function(warn = TRUE) {$/;"	f
+script1	/home/jim/code/make_project/0120_view_file_contents.mk	/^script1 = $(wildcard *.R)$/;"	m
+scripts	/home/jim/code/make_project/0120_view_file_contents.mk	/^scripts = *.R$/;"	m
+se	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^k <- h +  geom_smooth(data=s, mapping=aes(x=x,y=y), method="lm", se = FALSE, alpha=0.2, linetype=3)$/;"	v
+se	/home/jim/code/r_row/000_examples_ggplot.R	/^    geom_smooth(aes(group = year, color = factor(year)), se = FALSE, size = 1)$/;"	v
+se	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        geom_smooth(method = "lm", se = FALSE) +$/;"	v
+seasons	/home/jim/code/r_row/003_read_all_row_records.R	/^seasons <- paste0(".\/data\/concept2-season-",yr, ".csv")$/;"	g
+senate_ideo	/home/jim/code/r_2020/0020_Week1_elliot_blog.R	/^senate_ideo <- get_senate_nominate(congress = 116)$/;"	g
+set_body	/home/jim/code/youtube_api/R/modify_playlists.R	/^set_body  <- function(video_id, playlist_id){$/;"	f
+set_env_name	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^set_env_name  <- function(env, name = deparse(substitute(env) ) ){# $/;"	f
+set_env_name	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^set_env_name  <- function(env, name = deparse(substitute(env) ) ){$/;"	f
+shape	/home/jim/code/r_row/000_examples_ggplot.R	/^         shape = "Year", size = "Cylinders", color = "Year") $/;"	v
+shape	/home/jim/code/r_row/000_examples_ggplot.R	/^         shape = "Year", size = "Cylinders", color = "Year") +$/;"	v
+show_env	/home/jim/code/jimTools/R/100_show_env.R	/^show_env <- function(){$/;"	f
+show_env	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^show_env <- function(){$/;"	f
+sim_data	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^sim_data <- tibble(group = rep(1:G, each = N),$/;"	g
+sim_data	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^sim_data<- add_row(sim_data,group=G+1,X=100,Y=100)$/;"	g
+size	/home/jim/code/r_row/000_examples_ggplot.R	/^              data = presidents, size = 4, vjust = 0) +$/;"	v
+size	/home/jim/code/r_row/000_examples_ggplot.R	/^              size = 6, parse = TRUE, hjust = 0)$/;"	v
+sort_on_column_n	/home/jim/code/zsh_scripts_project/045_youtube_tools.sh	/^		sort_on_column_n(){$/;"	f
+stat	/home/jim/code/r_row/000_examples_ggplot.R	/^# Use stat = "identity" when the frequencies are provided$/;"	v
+stat	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        stat = "identity", stat_params = list(),$/;"	v
+state_data	/home/jim/code/r_2020/001_step_plot.R	/^## state_data <- readr::read_rds(".\/data_clean\/state_data.rds")$/;"	v
+state_data	/home/jim/code/r_2020/001_step_plot.R	/^state_data <- approve_2018 %>%$/;"	g
+state_electorial_votes	/home/jim/code/r_2020/001_step_plot.R	/^state_electorial_votes <- read_tsv("data_raw\/state_electorial_votes",$/;"	g
+state_hispanic	/home/jim/code/r_2020/0031_hispanic.R	/^state_hispanic <- read.csv("data\/acs_hispanic_pct.csv")$/;"	g
+state_hispanic	/home/jim/code/r_2020/0032_hispanic_reprex_no_data.R	/^state_hispanic <- read.csv("data\/acs_hispanic_pct.csv")$/;"	g
+std_resid	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^std_resid <- resid(mod) \/ mod$s$/;"	g
+str	/home/jim/code/make_project/regex2/regex2.mk	/^str="x xx xxa xxx xxxx"$/;"	m
+subtitle	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^              subtitle = "60 = maximum, 40 = typical\\n60 = 1 lightbulb for 1 hour",$/;"	v
+subtitle	/home/jim/code/health_labs/rmd/2000_plot_weight_data.R	/^              subtitle = "60 = maximum, 40 = typical\\n60 = 1 lightbulb for 1 hour",$/;"	v
+subtitle	/home/jim/code/r_row/001_special_comparision.R	/^             subtitle = "OCT 2012-2017",$/;"	v
+subtitle	/home/jim/code/r_row/002_study_2017-2018_season.R	/^                subtitle = "60 = maximum, 40 = typical\\n60 = 1 lightbulb for 1 hour",$/;"	v
+subtitle	/home/jim/code/r_row/002_study_2017-2018_season.R	/^             subtitle = "OCT 2012-2017",$/;"	v
+subtitle	/home/jim/code/r_row/003_read_all_row_records.R	/^              subtitle = "60 = maximum, 40 = typical\\n60 = 1 lightbulb for 1 hour",$/;"	v
+subtitle	/home/jim/code/r_row/003_read_all_row_records.R	/^              subtitle = .y, #"",$/;"	v
+subtitle	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^              subtitle = "60 = maximum, 40 = typical\\n60 = 1 lightbulb for 1 hour",$/;"	v
+subtitle	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^              subtitle = .y, #"",$/;"	v
+sum	/home/jim/code/try_things_here/rmd/0021_RCPP.R	/^  int sum = x + y + z;$/;"	v
+sumR	/home/jim/code/try_things_here/rmd/0022_Rcpp.R	/^sumR <- function(x) {$/;"	f
+t	/home/jim/code/health_labs/rmd/3000_fun_with_dates.R	/^t  <- tibble(x2,y)$/;"	g
+t	/home/jim/code/jimTools/R/options.R	/^t <- tibble::tibble(options = options())$/;"	g
+t	/home/jim/code/pkg_mosaic/R/0040_mosaic_Ch4_groupwise.R	/^t  <- as_tibble(CPS)$/;"	g
+t	/home/jim/code/pkg_mosaic/R/0040_mosaic_Ch4_groupwise.R	/^t  <- as_tibble(W)$/;"	g
+t	/home/jim/code/pkg_mosaic/R/0040_mosaic_Ch4_groupwise.R	/^t <- as_tibble(Runners)$/;"	g
+t	/home/jim/code/pkg_mp3/R/mp3_functions.R	/^	t <- tibble::tibble(OLD = fs::path_file(files))$/;"	v
+t	/home/jim/code/r_2020/001_step_plot.R	/^t <- tibble(EV = c(2,36,14,1),$/;"	g
+t	/home/jim/code/r_2020/001_step_plot.R	/^t <- tibble(y = c(2,2,4,1))$/;"	g
+t	/home/jim/code/r_2020/0031_hispanic.R	/^t  <- as_tibble(state_hispanic) $/;"	g
+t	/home/jim/code/r_2020/0031_hispanic.R	/^t  <- t %>% select(state_name, hispanic.pct) %>%$/;"	g
+t	/home/jim/code/r_2020/0032_hispanic_reprex_no_data.R	/^t <- tibble (package=v, location=w, dataset=x, description=y) $/;"	g
+t	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^t <- tibble(x=rank(x),y=rank(y))$/;"	g
+t	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^t <- tibble(x=x,y=y)$/;"	g
+t	/home/jim/code/r_row/001_special_comparision.R	/^t <- tibble(yr = c(2012,2013,2014,2015,2016,2017) + 10\/12,$/;"	g
+t	/home/jim/code/r_row/001_special_comparision.R	/^t<- tibble(x=hms::as.hms(pace),y=watts)   # convert sec back to min:sec (to label)$/;"	g
+t	/home/jim/code/r_row/005_TEST_area.R	/^t <- tibble(x = c(1,2,3),$/;"	g
+t	/home/jim/code/try_things_here/env_code/environment.R	/^t <- tibble::tibble(environment = Sys.getenv())$/;"	g
+t	/home/jim/code/try_things_here/rmd/0001_explore-libraries_spartan.R	/^t <- as_tibble(installed.packages())$/;"	g
+t	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^t <- tibble(x=x,y=y)$/;"	g
+t	/home/jim/code/try_things_here/rmd/0044_make_histogram.R	/^t <- as_tibble(readLines("words.txt"))	# t is tibble$/;"	g
+t	/home/jim/code/try_things_here/rmd/0062_Zaiontz_regression.R	/^t <- tibble(cig, yrs)$/;"	g
+t	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^t  <- tribble($/;"	g
+t	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^t <- tribble($/;"	g
+t1	/home/jim/code/try_things_here/rmd/0044_make_histogram.R	/^t1 <- tibble(readLines("words.txt"))	# t1 is tibble$/;"	g
+tags	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^                  tags = tags[1])$/;"	v
+tags	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^                  tags = tags[1])$/;"	v
+tags	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^tags  <- unlist(z)$/;"	g
+tail_num	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^rename(flights, tail_num = tailnum) # renames AND keeps all fields$/;"	v
+tail_num	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^select(flights, tail_num = tailnum) # drops other fields$/;"	v
+tarfile	/home/jim/code/jimTools/R/compress.R	/^	  tar( 	tarfile = here("compressed", out_file),$/;"	v
+tarfile	/home/jim/code/jimTools/R/compress.R	/^    tar( tarfile = paste0(output_dir, "\/", out_file),$/;"	v
+targets	/home/jim/code/zsh_scripts_project/046_pipes_as_arrays.sh	/^targets() {$/;"	f
+test_function_1	/home/jim/code/ctags_nvim_test/test_function_1.R	/^test_function_1 <- function() {$/;"	f
+test_function_1	/home/jim/code/test_function_1.R	/^test_function_1 <- function() {$/;"	f
+test_function_2	/home/jim/code/ctags_nvim_test/test_function_2.R	/^test_function_2 <- function() {$/;"	f
+text_content	/home/jim/code/youtube_api/R/0030_get_json.R	/^  text_content <- httr::content(r,"text")$/;"	v
+theDate	/home/jim/code/make_project/0200_dates_recurive.mk	/^theDate	:=	$(shell date +"%^a %d%b%Y")				# simple, no recurse - set once$/;"	m
+theDate	/home/jim/code/make_project/make_backup/0999_backup_legal.mk	/^theDate	:=	$(shell date +"%^a %d%b%Y")				# simple, no recurse - set once$/;"	m
+theDate	/home/jim/code/make_project/make_backup/0999_backup_legal.mk	/^theDate	:=	$(shell date +"%^a_%d%b%Y")$/;"	m
+the_dir	/home/jim/code/make_project/0030_disk_space.mk	/^the_dir = \/var\/host\/media\/fuse\/drivefs-34a039d82ac00e8c8d62cd30042f3741\/root\/$/;"	m
+time	/home/jim/code/pkg_mosaic/R/0050_resample.R	/^# gun time = race time?	$/;"	v
+time	/home/jim/code/r_row/001_special_comparision.R	/^            time = c(20+41\/60,$/;"	v
+title	/home/jim/code/r_row/000_examples_ggplot.R	/^         title = "Box plots of insect spray distributions") $/;"	v
+total	/home/jim/code/try_things_here/rmd/0022_Rcpp.R	/^                total <- total + x[i]$/;"	v
+txt	/home/jim/code/r_row/000_examples_ggplot.R	/^                      txt = c(paste0("hat(y) == ",$/;"	v
+txt	/home/jim/code/r_row/000_examples_ggplot.R	/^                     txt = c("R^2 ==", "b[0] ==", "b[1] =="),$/;"	v
+txt	/home/jim/code/r_row/000_examples_ggplot.R	/^               txt = c(paste0("hat(y) == ",$/;"	v
+type	/home/jim/code/health_labs/rmd/functions.R	/^    type <- cols_only(Date = col_date(format="%d%b%Y"),   # parse 09APR2010$/;"	v
+type	/home/jim/code/jimTools/R/compress.R	/^                                      type = c("project", "system"),$/;"	v
+u1	/home/jim/code/r_row/old_code/Row_TimeLine_zoo.R	/^u1 <- mean(as.numeric(w$Meters), na.rm=TRUE)  # X$/;"	g
+u2	/home/jim/code/r_row/old_code/Row_TimeLine_zoo.R	/^u2 <- mean(as.numeric(w$sec_500m), na.rm=TRUE) # X$/;"	g
+u3	/home/jim/code/r_row/old_code/Row_TimeLine_zoo.R	/^u3 <- mean(as.numeric(w$Watts), na.rm = TRUE) # OK?$/;"	g
+ugh	/home/jim/code/make_project/0200_dates_recurive.mk	/^ugh	=	Huh?$/;"	m
+unemp	/home/jim/code/r_row/000_examples_ggplot.R	/^unemp <- ggplot(economics, aes(x = date, y = uempmed)) +$/;"	g
+uppercase_file_names_zmv_dry_run	/home/jim/code/zsh_scripts_project/058_zmv.sh	/^		uppercase_file_names_zmv_dry_run(){$/;"	f
+url	/home/jim/code/try_things_here/rmd/pull_off.R	/^url  <- "https:\/\/tools.ietf.org:80\/html\/rfc3986?a=hello;b=jim"$/;"	g
+us	/home/jim/code/try_things_here/rmd/0093_state_population.R	/^us  <- c(150.7,$/;"	g
+v	/home/jim/code/r_2020/0032_hispanic_reprex_no_data.R	/^v  <- z$results[,1]  # ah, each is vector$/;"	g
+v	/home/jim/code/r_row/000_examples_ggplot.R	/^    v <- round(c(coef(m), summary(m)$r.square), 3)$/;"	v
+v	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^v<- c(r.2013,r.2014, r.2015,r.2016)$/;"	g
+v	/home/jim/code/r_row/old_code/Row_TimeLine_zoo.R	/^v <- !is.nan(x$sec_500m)$/;"	g
+v	/home/jim/code/r_row/old_code/Row_Version1.R	/^v<- c(r.2013,r.2014, r.2015,r.2016)$/;"	g
+v	/home/jim/code/try_things_here/rmd/0024_purrr_c_wickham.R	/^v <- c(a = 100, b = 200, c = 300) # double[]$/;"	g
+v	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^v <- c(m.x, m.y, sd.x, sd.y, r)$/;"	g
+v	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^v  <- c("A","B","B")$/;"	g
+v	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^v  <- c("Red","Blue","Blue","Green")$/;"	g
+v	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^v <- sample(letters[1:5],B, replace=TRUE)$/;"	g
+v	/home/jim/code/try_things_here/rmd/0092_re_level.R	/^v <- sample(letters[1:5],15, replace=TRUE)$/;"	g
+v2	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^v2  <- sort(v1)$/;"	g
+v_char	/home/jim/code/try_things_here/rmd/0039_jennybc_stat545_gapminder.R	/^v_char <- c("aaa","bbb")$/;"	g
+val	/home/jim/code/r_row/000_examples_ggplot.R	/^                     val = c(r2, betas),$/;"	v
+values	/home/jim/code/r_row/000_examples_ggplot.R	/^                      values =  alpha(c("blue", "red"), 0.2)) +$/;"	v
+values	/home/jim/code/try_things_here/rmd/0039_jennybc_stat545_gapminder.R	/^values <- c(1.8,22.6,39.3,108.6,10.6,19.0,10.1,3.0,25.2,155.1)$/;"	g
+var	/home/jim/code/try_things_here/rmd/0007_Hadley_dplyr_vignette_1.R	/^var <- seq(1,nrow(flights))$/;"	g
+videoId	/home/jim/code/youtube_api/R/0020_get_typical_values.R	/^						videoId = "bMaCoxOGXPM",   # You Made me Love You)$/;"	v
+videoId	/home/jim/code/youtube_api/R/0020_get_typical_values.R	/^#' videoId <- "UCVdHFHpFBg"   # Tex Ritter Range Party$/;"	v
+w	/home/jim/code/r_2020/0032_hispanic_reprex_no_data.R	/^w  <- z$results[,2]$/;"	g
+watts	/home/jim/code/r_row/001_special_comparision.R	/^watts <- 2.8\/(pace\/500)^3       # calc uses pace (in seconds)$/;"	g
+where	/home/jim/code/jimTools/R/000_useful_rlang_functions.R	/^where  <- function(name, env=caller_env()){# $/;"	f
+where	/home/jim/code/jimTools/rmd/0007_env_functions.R	/^where  <- function(name, env=caller_env()){$/;"	f
+wt1	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^wt1 <- read_csv(SOURCE1)$/;"	g
+wt2	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^wt2 <- read_csv(SOURCE2, na = c(0,"","NA"))$/;"	g
+wt_lb	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^		    wt_lb = `Avg Wt`$/;"	v
+wt_with_clothes	/home/jim/code/health_labs/rmd/1001_wt_bp_wt_July_2014.R	/^wt_with_clothes= c (146.2,147.5,146.0,145.8,146.8,148.2, 148.2, 147.0,146.5,148.0,148.8, 149.6,149.6)$/;"	g
+wt_without_clothes	/home/jim/code/health_labs/rmd/1001_wt_bp_wt_July_2014.R	/^wt_without_clothes = wt_with_clothes - adj$/;"	g
+x	/home/jim/code/health_labs/rmd/1000_wt_bp_READ.R	/^x <- readRDS(".\/tidy_data\/FINAL_WEIGHT.rds")$/;"	g
+x	/home/jim/code/make_project/0200_dates_recurive.mk	/^x	:=	foo$/;"	m
+x	/home/jim/code/make_project/0200_dates_recurive.mk	/^x	:=	later$/;"	m
+x	/home/jim/code/nvim_project/012_functions_examples.vim	/^let x = strftime("%d %b %Y")$/;"	v
+x	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^# USAGE:   x  <-  c('---', 'a;lkdjf;asl ' , '999', 'af---', '---')$/;"	v
+x	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^x  <-  c('---', 'a;lkdjf;asl ' , '999', 'af---', '---')$/;"	g
+x	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^x  <- c(NULL, 1:10, NULL)$/;"	g
+x	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^# USAGE:   x  <-  c('---', 'a;lkdjf;asl ' , '999', 'af---', '---')$/;"	v
+x	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^x  <-  c('---', 'a;lkdjf;asl ' , '999', 'af---', '---')$/;"	g
+x	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^x  <- lapply(res, function(f) {$/;"	g
+x	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^x  <- strsplit(TAG_line, split=":")$/;"	g
+x	/home/jim/code/r_2020/0032_hispanic_reprex_no_data.R	/^x  <- z$results[,3]$/;"	g
+x	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^x <- rnorm(100,100,1)$/;"	g
+x	/home/jim/code/r_penn_state/001_linear_regression.R	/^x <- read.delim(".\/data\/index.txt")$/;"	g
+x	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^x <- c(1,2,3,4)   # gpa, 4 levels$/;"	g
+x	/home/jim/code/r_row/000_examples_ggplot.R	/^                 x = rnorm(1000))$/;"	v
+x	/home/jim/code/r_row/000_examples_ggplot.R	/^p6 <- p5 + annotate("text", x = 0, y = 2, label = "Some text")$/;"	v
+x	/home/jim/code/r_row/old_code/ROW_Version2.R	/^x <- xts(x = d, order.by =t)$/;"	g
+x	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^x<- season.2015$/;"	g
+x	/home/jim/code/r_row/old_code/Row_Version1.R	/^x<- season.2015$/;"	g
+x	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^ x <- seq(-3,3,.05)$/;"	v
+x	/home/jim/code/try_things_here/rmd/0028_Y_ggplot_exercises_begin.R	/^x <- seq(-3,3,.05)$/;"	g
+x	/home/jim/code/try_things_here/rmd/0028_hadley_ggplot_3_11_001.R	/^        geom_point(mapping = aes(y = hwy, x = cty), data = mpg) +$/;"	v
+x	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^x<- c(1,2,3,4,5)$/;"	g
+x	/home/jim/code/try_things_here/rmd/0075_basic_code_examples.R	/^x <- ifelse("a" %in% c("a","b"),$/;"	g
+x	/home/jim/code/try_things_here/rmd/0075_basic_code_examples.R	/^x <- ifelse(5>3, TRUE,FALSE)$/;"	g
+x	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^x<- rnorm(100,0,1)      # mean 0, sd=1    100 values$/;"	g
+x	/home/jim/code/try_things_here/rmd/0084_jennybc_lists_json.R	/^x<- rnorm(100,0,1)      # mean 0, sd=1    100 values$/;"	g
+x	/home/jim/code/try_things_here/rmd/0092_re_level.R	/^	cat("internally x = ", x, "\\n")$/;"	v
+x1	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^x1  <- c(1,2,3,4)$/;"	g
+x1	/home/jim/code/try_things_here/rmd/0092_factor_re_level.R	/^x1 <- c("Dec", "Apr", "Jan", "Mar")$/;"	g
+xlim	/home/jim/code/r_row/old_code/Row_Records_main_code.R	/^plot(season.2015$Meters, season.2015$Time , type="n", xlim = c(0,11000))  # basic plot, no points?$/;"	v
+xlim	/home/jim/code/r_row/old_code/Row_Version1.R	/^plot(season.2015$Meters, season.2015$Time , type="n", xlim = c(0,11000))  # basic plot, no points?$/;"	v
+xmax	/home/jim/code/r_row/000_examples_ggplot.R	/^                  xmin = start, xmax = end, fill = party), $/;"	v
+xrng	/home/jim/code/r_row/000_examples_ggplot.R	/^xrng <- with(presidents, c(min(start), max(end)))     # range of dates$/;"	g
+y	/home/jim/code/make_project/0200_dates_recurive.mk	/^y	:=	$(x) bar$/;"	m
+y	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^y  <- unlist(x)$/;"	g
+y	/home/jim/code/r_2020/001_step_plot.R	/^         y = "Trump Approval %") +$/;"	v
+y	/home/jim/code/r_2020/0032_hispanic_reprex_no_data.R	/^y  <- z$results[,4]$/;"	g
+y	/home/jim/code/r_jhu-adv_class/012_skeptism.R	/^y <- rnorm(100,84,1)$/;"	g
+y	/home/jim/code/r_penn_state/002_categorical_simple_regession.R	/^y <- B0 + B1*x$/;"	g
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^    labs(x = "", y = "No. unemployed (1000s)", fill = "Party") + $/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^    labs(x = "Engine Displacement", y = "Highway Mileage") +$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^    labs(x = "Engine displacement", y = "Highway mileage",$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^    labs(x = "Factor 1", y = "Relative Frequency", fill = "Factor 2") +$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^    labs(x = "Factor 1", y = "Relative frequency", fill = "Factor 2")$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^    labs(x = "Treatment", y = "Count", fill = "Spray",$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^DF <- data.frame(t = seq(40), y = rnorm(40))$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^ggplot(ChickWeight, aes(x = Time, y = weight, group = Chick)) +$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^ggplot(ChickWeight, aes(x = Time, y = weight, group = Chick, color = Diet)) +$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^ggplot(DF, aes(x = gp, y = x, fill = gp)) +$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^ggplot(mpg, aes(x = displ, y = hwy, shape = factor(year), size = cyl)) +$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^pp <- ggplot(DF, aes(x = x, y = ..density..)) +$/;"	v
+y	/home/jim/code/r_row/000_examples_ggplot.R	/^unemp <- ggplot(economics, aes(x = date, y = uempmed)) +$/;"	v
+y	/home/jim/code/r_row/002_study_2017-2018_season.R	/^              y = "Time (min) ") $/;"	v
+y	/home/jim/code/r_row/003_read_all_row_records.R	/^              y = "Time (min) ") +$/;"	v
+y	/home/jim/code/r_row/004_read_all_row_records_single_tibble.R	/^              y = "Time (min) ") +$/;"	v
+y	/home/jim/code/r_row/005_TEST_area.R	/^            y = c(0.5,0,-1),$/;"	v
+y	/home/jim/code/try_things_here/env_code/01200_SCRATCH_Ch8_Golemund.R	/^  y  <- environment()$/;"	v
+y	/home/jim/code/try_things_here/rmd/0004_dplyr_programming_vignette.R	/^        mutate(df, y = .data$a + .data$x)$/;"	v
+y	/home/jim/code/try_things_here/rmd/0012_dplyr_two_table_hadley.R	/^                  y = c(1,2,3))$/;"	v
+y	/home/jim/code/try_things_here/rmd/0023_USmap_Tidyverse.R	/^        ggplot(aes(x = long, y = lat, group = group)) +$/;"	v
+y	/home/jim/code/try_things_here/rmd/0033_Lane_regression.R	/^y<- c(1,2,1.3,3.75,2.25)$/;"	g
+y	/home/jim/code/try_things_here/rmd/0075_basic_code_examples.R	/^y <- ifelse("c" %in% c("a","b"),$/;"	g
+yaml	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^  yaml = yaml[-c(1, length(yaml))]$/;"	v
+yaml	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^yaml  <- lapply(files, fetch_yaml)$/;"	g
+yaml	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^                       yaml = yaml[-c(1, length(yaml))]$/;"	v
+ypos	/home/jim/code/r_row/000_examples_ggplot.R	/^ypos <- ddply(DF0, .(f1), mutate, $/;"	g
+yr	/home/jim/code/r_row/003_read_all_row_records.R	/^yr  <- list("2013","2014","2015","2016","2017","2018")$/;"	g
+yrelpos	/home/jim/code/r_row/000_examples_ggplot.R	/^              yrelpos = round(ypos\/sum(freq), 3),$/;"	v
+yrelval	/home/jim/code/r_row/000_examples_ggplot.R	/^              yrelval = round(freq\/sum(freq), 3))$/;"	v
+yrs	/home/jim/code/try_things_here/rmd/0062_Zaiontz_regression.R	/^yrs <- c(80,78,60,53,85,84,73,79,81,75,68,72,58,92,65)$/;"	g
+z	/home/jim/code/jimTools/R/options.R	/^z  <- tibble::tibble(option_name=names(t$options),$/;"	g
+z	/home/jim/code/publish_project/rmd/0399A_yaml_utils.R	/^z  <- list(NULL, 2, 3, c(1:3), NULL)$/;"	g
+z	/home/jim/code/publish_project/rmd/0399_yaml_utils.R	/^z  <- strsplit(y[2], split=",")$/;"	g
+z	/home/jim/code/r_2020/0032_hispanic_reprex_no_data.R	/^z  <- data(package=package)$/;"	g
+z	/home/jim/code/r_row/005_TEST_area.R	/^                 z = c(NA,1,2)) %>%$/;"	v
+z	/home/jim/code/r_row/005_TEST_area.R	/^            z = c(NA,1,2)) %>%$/;"	v
+z	/home/jim/code/r_row/005_TEST_area.R	/^            z = c(NA,1,2))$/;"	v
+z	/home/jim/code/r_row/old_code/ROW_Version3.R	/^z <- d1[,c(3,4,6)]$/;"	g
+z	/home/jim/code/r_row/old_code/Row_Version1.R	/^z<- zoo(u.df,order.by = u.df$Date)$/;"	g
+z	/home/jim/code/try_things_here/env_code/environment.R	/^# z  <- tibble::tibble(env=names(t$environment),$/;"	v
+z	/home/jim/code/try_things_here/rmd/0012_dplyr_two_table_hadley.R	/^                  z = c('a', 'b', 'c'))$/;"	v
+z	/home/jim/code/try_things_here/rmd/0081_recursive_lists.R	/^level3 <- list("last", z = letters)$/;"	v
+zle	/home/jim/code/zsh_scripts_project/023_test_zsh.sh	/^function zle-keymap-select {$/;"	f
+zzz	/home/jim/code/nvim_project/001_map_examples.vim	/^map zzz GoDate:<Esc>:read !date<CR>kJ$/;"	m

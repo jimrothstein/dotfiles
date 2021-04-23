@@ -78,7 +78,7 @@ if (interactive()) {
 if (interactive()) {
   suppressMessages(library(devtools))
 	suppressMessages(library(usethis))
-	# suppressMessages(library(rlang))
+  suppressMessages(library(rlang))
 	suppressMessages(library(lobstr))
 	suppressMessages(library(here))
 	suppressMessages(library(sloop))

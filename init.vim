@@ -6,7 +6,6 @@
 " Specify a directory for plugins
 call plug#begin('~/.config/nvim/vim-plug')
 
-"
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
@@ -20,14 +19,15 @@ Plug 'jimrothstein/jimHelp'
 
 " markdown syntax highligthing
 Plug 'plasticboy/vim-markdown'
+
 " use vim folding
 let g:vim_markdown_folding_disabled = 1
 
 " for YAML hightlighting
 let g:vim_markdown_frontmatter = 1
+
 " Initialize plugin system
 call plug#end()
-" ===================
 "
 
 " ACTIVATES REditorSupport/languageserver
@@ -49,16 +49,10 @@ let mapleader=","		" default = \
 let maplocalleader=","			" might be clashes
 "
 
-" ======================
-"# keystoke DELAY?"{{{
-" ======================
-"
-"# set timeoutlen=1000 (or even 10) 
-"# set ttimeoutlen=0    (defaut=50)}}}
-"
-" ======================
-"  maps for editing{{{
-" ======================
+" Hit ESC (or my case: CapsLock) vim leave insert mode AND save
+"    but ONLY if I made an actual change.
+:autocmd InsertLeave * silent! update
+
 "
 " avoid commnets on same line as mapping,   vim can get confused
 " SAVE
@@ -122,14 +116,21 @@ autocmd TermOpen * startinsert			" begin term as insert
 " 	au TermOpen * if &buftype ==# 'terminal' | resize q0 | vert resize 50 | endif
 " augroup end
 
+
+" ==========
+"  OPTIONS
+" ==========
+
+
 " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 " au CursorHoldI * stopinsert
 
+set nohidden      "   [default=no] do not open 2nd buffer till work saved.
 syntax enable 		"  	runs syntax.vim
 set history=50		"   last 50 commands (default 10000)
 set showmode			"   show mode
 set cursorline		"   highlight current line
-set scrolloff=2   "   scroll, keep cursor 2 lines from top
+set scrolloff=5   "   scroll, keep cursor 5 lines from top
 set number			"	nonumber
 set relativenumber	" 	norelativenumber, nonumber to turn off
 " was 4, try 2
@@ -142,16 +143,22 @@ set shiftround			" indents will be multipe of shiftwidth (keeps alignment)
 set showmatch			" highlights matching bracket, paran etc.
 set foldmethod=marker	" create fold with zf	
 set foldcolumn=3		" adds visual clue in LEFT margin
-set nolist				"NO display TABS, and EOL}}}
+set nolist				"NO display TABS, and EOL
 set wrap
 set noerrorbells 
 set expandtab 			" <TAB> expands as spaces,  NO BELLS will sound in R!
 set laststatus=2		" default=2, means all windows have statusline
 " %n = buffer number
 set statusline=
-set statusline+=%m[%{winnr()}-b%n]
-set statusline+=[%F]%y    
-set statusline+=[%l,%c%V]										" line, column (with tabs, maybe estimate)
+set statusline+=%m
+set statusline+=[%{winnr()}-b%n]
+" :highlight,  insert color inside # #
+set statusline+=%#Title#%y[%F]    
+
+" begin from right margin
+set statusline+=%=
+set statusline+=%c:%l/%L 			" line, column (with tabs, maybe estimate)
+set statusline+=[%n]
 set colorcolumn=81		" display right margin
 set title 
 set tabstop=2			" default=8
@@ -161,8 +168,7 @@ set textwidth=79		" sets right margin!
 set nolist          " do NOT show tabs
 "set list listchars=tab:^\,eol:$
 set backup 
-set backupdir=~/.config/nvim/backup/	" do not surround with quotes!}}}
-"set columns=80  "default, leave it alone
+set backupdir=~/.config/nvim/backup/	" do not surround with quotes!
 
 " COLORS
 " ========
@@ -190,6 +196,8 @@ set completeopt=noinsert,menu,noselect,preview
 "
 "
 source ~/.config/nvim/jim_code/nvimR_config.vim
+" ctags - R .    needs:
+source ~/.config/nvim/jim_code/ctags.vim
 
 " =============================================================
 " N O T E !!
@@ -223,7 +231,9 @@ let R_args = [ '--no-save', '--no-restore-data'  ]
 "let R_applescript = 0
 "let R_tmux_close = 0
 
-
+" NERDTree
+" open nerdtree
+nnoremap <C-N> :NERDTreeFocus<CR>
 
 
 "	FUNCTIONS
@@ -238,19 +248,45 @@ let R_args = [ '--no-save', '--no-restore-data'  ]
 " nnoremap <Leader>id :call InsertDotLine()<CR>
 "-----------------
 "
+" ===========
+" S P E L L
+" ===========
+" Default:  spell is OFF
+set nospell 
+
+
+" For activation, use
+" :setlocal spell 
+" :set spell "always ON
 "
+
+" set language region
+set spelllang=en_us
+"
+" Or, use au
+autocmd BufRead,BufNewFile *.md,markdown :setlocal spelllang=en_us
+
+
+" spellfile, english + medical
+"
+set spellfile=
+"built-in
+set spellfile+=~/.config/nvim/spell/en.utf-8.add   
+set spellfile+=~/.config/nvim/spell/spell.utf-8.add
+set spellfile+=~/.config/nvim/spell/medical.utf-8.add
+
 " toggle localspell
-"-----------------
 func! ToggleSpellCheck()
 	exe "normal! :setlocal spell! spelllang=en_us\<CR>"
-" SpellBad words look nice!:w
-hi clear SpellBad
-hi SpellBad cterm=underline,bold
-hi SpellBad ctermfg=blue
+  " SpellBad words look nice!:w
+  " CONFLICT?   see  ./colors.vim
+  hi clear SpellBad
+  hi SpellBad cterm=underline,bold
+  hi SpellBad ctermfg=blue
 endfunction
-"-----------------
-"
-nnoremap <Leader>t :call ToggleSpellCheck()<CR>"}}}
+
+"  USAGE:
+nnoremap <Leader>t :call ToggleSpellCheck()<CR>
 
 
 "
@@ -269,16 +305,23 @@ augroup end
 " FROM ercrema - github
 "
 " keep filetypes consistent 
-au BufNewFile,BufRead *.Rmd set filetype=rmd
+au BufNewFile,BufRead *.Rmd,*.rmd set filetype=rmd
 au BufNewFile,BufRead *.md  set filetype=md
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+
+au BufNewFile,BufRead *.tex, set filetype=tex
+
+au FileType tex,latex,markdown setlocal spell spelllang=en_us
+
+" all files, center when entering insert
+au InsertEnter * norm zz
 
 augroup help_files
 	au!
 	au filetype help nnoremap <buffer>q :q<CR>
 	au filetype help nnoremap <buffer> <CR> <C-]> 
 augroup END
-
 
 
 "	snippet to use skelton for .md, .sh, .Rmd
@@ -288,6 +331,7 @@ augroup skeleton
 	autocmd BufNewFile *.sh r ~/.config/nvim/templates/skeleton.sh
   autocmd BufNewFile  *.Rmd	r ~/.config/nvim/templates/skeleton.Rmd
 augroup END
+
 
 " HARD WRAP, experiment, :messages
 " To see effect, look what happens (live) to buffer if columns=40
@@ -300,7 +344,7 @@ augroup md_specs
 	autocmd FileType md :setlocal nowrap spell linebreak tw=78 
 	autocmd BufRead,BufNewFile *.md :setlocal spell spelllang=en_us
 
-	autocmd BufRead,BufNewFile *.md :setlocal spellfile=~/.config/nvim/spell/en.utf-8.add
+" next line gives errors and no needed;  spellfile is already done
 	autocmd BufRead,BufNewFile *.md :setlocal thesaurus+=~/.config/nvim/thesaurus/thesaurii.txt
 	"
 augroup END
