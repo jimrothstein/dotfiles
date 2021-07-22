@@ -13,8 +13,12 @@
 
 
 ## BEST WAY, use alias to .ctagsignore
+# -R recursive
+# --exclude   use file to identify files/dir to exclude
+# -f  dir to put resuling tagss file
+# ~/code   target directory
 
-ctags -R  --exclude=@.ctagsignore ~/code
+ctags -R  --exclude=~/.ctagsignore -f ~/code/tags ~/code
 # ctags -R  --exclude=.ctagsignore ~/code
 
 ## WHY?   ctags is verbose!
@@ -24,13 +28,3 @@ then
   ctags -R --exclude=dir1 --exclude=dir2 --exclude=dir3 .
 fi
 
-#   if [ -z $PS1 ] # no prompt?
-# ### if [ -v PS1 ]   # On Bash 4.2+ ...
-# then
-#   # non-interactive
-#     echo "no prompt"  ...
-# else
-#   # interactive					# this one
-#     echo "yes prompt"
-# fi
-# exit

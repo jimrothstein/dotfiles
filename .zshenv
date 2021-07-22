@@ -42,6 +42,13 @@ VIMRC=~/.config/nvim/init.vim
 export V=$VIMRC
 export Z=$ZDOTDIR/.zshrc
 export G=~/code/.gitignore
+# for printing
+export OUT="~/Downloads/print_and_delete"
+
+## When using /tmp/rebase-sandbox (GIT practice)
+  export SANDBOX=/tmp/rebase-sandbox
+
+
 # =====END CUT ===================================================
 
 

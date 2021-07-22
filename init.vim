@@ -1,5 +1,6 @@
 " ~/.config/nvim/init.vim -> ~/dotfiles/init.vim
 "
+"  [./jim_code/experimental.vim]
 "
 "		 VIM-PLUG 
 " ------------------------
@@ -9,7 +10,6 @@ call plug#begin('~/.config/nvim/vim-plug')
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
-"	need?  vimux - interacts with tmux within vim
 Plug 'benmills/vimux'
 Plug 'tpope/vim-surround' 
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
@@ -17,16 +17,21 @@ Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 "	my help (cloned & changed name from tinyheero)
 Plug 'jimrothstein/jimHelp'
 
+" AM I USING this?
 " markdown syntax highligthing
 Plug 'plasticboy/vim-markdown'
 
-" use vim folding
-let g:vim_markdown_folding_disabled = 1
+" use vim folding (default = 1, disable)
+" let g:vim_markdown_folding_disabled = 1
 
 " for YAML hightlighting
-let g:vim_markdown_frontmatter = 1
+" let g:vim_markdown_frontmatter = 1
+
+" PURPOSE ?? Turn on markdown for these languges
+" let g:markdown_fenced_languages = ['html',   'vim', 'md', 'rmd' ]
 
 " Initialize plugin system
+"
 call plug#end()
 "
 
@@ -49,14 +54,15 @@ let mapleader=","		" default = \
 let maplocalleader=","			" might be clashes
 "
 
+" silent - no messages, except error
+" silent! - also no error msgs
 " Hit ESC (or my case: CapsLock) vim leave insert mode AND save
 "    but ONLY if I made an actual change.
-:autocmd InsertLeave * silent! update
-
+:autocmd InsertLeave *  update
 "
 " avoid commnets on same line as mapping,   vim can get confused
 " SAVE
-nnoremap <Leader>s :w<Enter>
+"nnoremap <Leader>s :w<Enter>
 
 " SAVE and exit insertmode,  
 inoremap <Leader>s <esc>:w<Enter>
@@ -122,6 +128,7 @@ autocmd TermOpen * startinsert			" begin term as insert
 " ==========
 
 
+ 
 " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 " au CursorHoldI * stopinsert
 
@@ -129,12 +136,14 @@ set nohidden      "   [default=no] do not open 2nd buffer till work saved.
 syntax enable 		"  	runs syntax.vim
 set history=50		"   last 50 commands (default 10000)
 set showmode			"   show mode
+
+" should next line be setlocal cursorline?
 set cursorline		"   highlight current line
 set scrolloff=5   "   scroll, keep cursor 5 lines from top
 set number			"	nonumber
 set relativenumber	" 	norelativenumber, nonumber to turn off
 " was 4, try 2
-set cmdheight=2		"	 avoids PRESS any Key to continue
+set cmdheight=3		"	 avoids PRESS any Key to continue
 " set gdefault			" search global :%s/from/to/c
 set ignorecase			" search non-case sensitive
 set autowrite			" saves to disk when change buffers, :bn
@@ -186,50 +195,25 @@ filetype plugin on
 "  windows, terminals, sizing, editor sizing
 source ~/.config/nvim/jim_code/windows.vim
 
-source ~/.config/nvim/jim_code/maps.vim
 
-" --- nvim-R ---- 
-"
 
 " completion: control popup menu, in insert mode
 set completeopt=noinsert,menu,noselect,preview
 "
 "
+" --- nvim-R ---- 
 source ~/.config/nvim/jim_code/nvimR_config.vim
+
+
+
 " ctags - R .    needs:
 source ~/.config/nvim/jim_code/ctags.vim
-
-" =============================================================
-" N O T E !!
-" :echo R_assign     to see value (no quotes)
-" :let R_assign=n     to change value (effectively immediate)
-" =============================================================
-"
-" Shortcut for R assignment operator: 0 turns it off; 
-" 1 requires one _ to produce <- 
-" 2 requires two __ to produce <- 
-let R_assign = 2 
-
-
-" Ensures usage of your own ~/.tmux.conf file
-" let R_notmuxconf = 1
-
-" R wd same as vim directory (when R starts)
-let R_nvim_wd = 1
 
 
 " Use Ctrl-Space to do omnicompletion
 inoremap <C-Space> <C-x><C-o>
 
 
-" R startup args (do not use .RData)
-let R_args = [ '--no-save', '--no-restore-data'  ]
-
-
-"let R_in_buffer = 0
-"let R_tmux_split = 1
-"let R_applescript = 0
-"let R_tmux_close = 0
 
 " NERDTree
 " open nerdtree
@@ -297,10 +281,15 @@ nnoremap <Leader>t :call ToggleSpellCheck()<CR>
 " set tags  (ctags -R .)
 set tags=~/code/tags
 
-"  -f ~/code/tags   location for output files
+
+" ~/bin/run_ctags.sh does everything
+" Trigger:   Write Buffer to FILE
 augroup ctags
-	autocmd  BufWritePost *.R,*.Rmd silent! :!ctags -f ~/code/tags -R ~/code 
+"	autocmd  BufWritePost *.R,*.Rmd :!~/bin/run_ctags.sh 
 augroup end
+   
+" manually
+nnoremap ,s :!~/bin/run_ctags.sh <CR>
 
 " FROM ercrema - github
 "
@@ -315,7 +304,8 @@ au BufNewFile,BufRead *.tex, set filetype=tex
 au FileType tex,latex,markdown setlocal spell spelllang=en_us
 
 " all files, center when entering insert
-au InsertEnter * norm zz
+" 7/2021 ... too confusing, turned off.
+"au InsertEnter * norm zz
 
 augroup help_files
 	au!
@@ -324,30 +314,17 @@ augroup help_files
 augroup END
 
 
-"	snippet to use skelton for .md, .sh, .Rmd
+"	snippet to use skelton for .md, .sh, .Rmd, .R
 augroup skeleton
 	au!
-	autocmd BufNewFile *.md r ~/.config/nvim/templates/skeleton.md
-	autocmd BufNewFile *.sh r ~/.config/nvim/templates/skeleton.sh
-  autocmd BufNewFile  *.Rmd	r ~/.config/nvim/templates/skeleton.Rmd
+  autocmd BufNewfile Read.me r ~/skeletons/skeleton.readme
+	autocmd BufNewFile *.md   r ~/.config/nvim/templates/skeleton.md
+	autocmd BufNewFile *.sh   r ~/.config/nvim/templates/skeleton.sh
+  autocmd BufNewFile *.Rmd	r ~/.config/nvim/templates/skeleton.Rmd
+  autocmd BufNewFile *.R    r ~/.config/nvim/templates/skeleton.R
 augroup END
 
 
-" HARD WRAP, experiment, :messages
-" To see effect, look what happens (live) to buffer if columns=40
-augroup md_specs
-	autocmd!
-	autocmd BufWrite *.md :echom "Good"
-	autocmd BufWrite *.md :echom "Bye"
-	autocmd BufNewFile *.md :echom "new md file"
-	autocmd FileType md :set formatoptions=tnqr
-	autocmd FileType md :setlocal nowrap spell linebreak tw=78 
-	autocmd BufRead,BufNewFile *.md :setlocal spell spelllang=en_us
-
-" next line gives errors and no needed;  spellfile is already done
-	autocmd BufRead,BufNewFile *.md :setlocal thesaurus+=~/.config/nvim/thesaurus/thesaurii.txt
-	"
-augroup END
 
 augroup R_specs
 	autocmd!
@@ -403,7 +380,8 @@ augroup END
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
-augroup END"
+augroup END
+"
 "-----------------
 " MACRO- reg a, @a
 "-----------------
@@ -434,19 +412,28 @@ inoremap <c-l> <c-n>
 " code below configers for lsp plugin called: LanguageClient-neovim (see
 " Plugins)
 " (3) be sure plugin autozimu/LanguageClient-neovim (at top)
-let g:LanguageClient_serverCommands = {
-    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
-    \ 'rmd': ['R', '--slave', '-e', 'languageserver::run()'],
-    \ }
+"let g:LanguageClient_serverCommands = {
+"    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
+"    \ 'rmd': ['R', '--slave', '-e', 'languageserver::run()'],
+"    \ }
 "
+"
+" as variable, ~/.config/nvim
+let g:nvim_config_root = stdpath('config')
+"  FUTURE:
+"  source g:nvim_config_root . '/' . 'jim_code' . '/' . 'underline.vim'
+
 "============================
 " SOURCE ADD'N  Config files
 "============================
+" CLAIM:  just put these *.vim in vim-plug/
+"
 "source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/jim_code/underline.vim
 source $HOME/.config/nvim/jim_code/date.vim
 source $HOME/.config/nvim/jim_code/lua_inside_vim_file.vim
-source $HOME/.config/nvim/jim_code/maps.vim
+source $HOME/.config/nvim/jim_code/clipboard.vim
+source $HOME/.config/nvim/jim_code/experimental.vim
 
 
 " TO SOURCE .luafile ~/.config/nvim/lua/lua_file.lua
