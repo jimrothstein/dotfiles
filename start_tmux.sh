@@ -14,9 +14,9 @@ tmux new-window -n 'win_code'
 # tmux split-window -h
 
 tmux new-window -n win_docs
-tmux new-window -n win_rstudio
-tmux new-window -n win_calibre
-tmux new-window -n win_extra
+tmux new-window -n win_A
+tmux new-window -n win_B
+tmux new-window -n win_C
 
 
 

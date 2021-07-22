@@ -28,17 +28,17 @@ alias man='run-help'
 
 #	coding, 
 alias goCode='cd ~/code/'
-alias goYoutube='cd ~/code/pkg_youtube_api/'
-alias goMp3='cd ~/code/pkg_mp3_files/'
+alias goBlog='cd ~/code/blog4'
+alias goYoutube='cd ~/code/youtube_api/'
 alias goTry='cd ~/code/try_things_here/'
-alias goOpenSecrets='cd ~/code/opensecrets/'
-alias goJim='cd ~/code/jimTools/'
-alias goAdv='cd ~/code/book_advanced_R/'
-alias goPost='cd ~/code/hugo_projects/blog/content/post'
-alias goBlog='cd ~/code/blog/content/post/'
+alias goTools='cd ~/code/jimTools/'
 alias goHealth='cd ~/code/r_health_labs/'
 alias goLua='cd ~/code/lua_projects/'
 alias goTex='cd ~/code/tex_projects/'
+alias goTAGS='cd ~/code/TAGS/'
+alias goOUT='cd ~/Downloads/print_and_delete'
+alias goZSH='cd ~/code/zsh_scripts_project/'
+alias gomp3='cd ~/code/mp3/'
 
 # boku, bookmarks manager
 alias b='~/.local/bin/buku --suggest'
@@ -46,7 +46,6 @@ alias b='~/.local/bin/buku --suggest'
 #	config
 alias goDot='cd ~/dotfiles'
 alias goVim='cd ~/.config/nvim/'
-alias goZHS='cd $ZDOTDIR'
 
 alias goBin='cd ~/bin'
 alias goConfig='cd ~/.config/'
