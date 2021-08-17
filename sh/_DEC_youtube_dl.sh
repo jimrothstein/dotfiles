@@ -1,6 +1,7 @@
 #!/bin/zsh
 # ------------------------
-#	WOKRING!
+#	WORKING!
+#
 #	EX:	-o FORMAT
 #	for	 text xxx
 #	for var  ${day}

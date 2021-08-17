@@ -1,10 +1,101 @@
+# .gitignore
+# ~/code/.gitignore   ($G)
+#
+# IF file has been put into index
+# =================================
+#   adding it into .gitignore later is NOT enough
+#   must do:
+#   git rm --cached <file>
+#
+#
+# ========
+## RULES
+# ========
+#  *.a    files (anywhere) end in .a
+#   .a    the file ".a"  (anywhere) 
+#
+# .R overhead (these exact files, in any directory)
+# =============
 .Rproj.user
+.Rproj
 .Rhistory
-.Rdata
-.DS_Store
+.RData
+.Ruserdata
 .Rprofile
+.Renviron   # has codes
 
-# exclude (has API codes, passwords)
-.Renviron
+# files ending in .RDS or .Rd (anywhere) 
+*.RDS
+*.Rd
 
+
+# directories inside R projects
+# =============
+man/*
+pdf/
+data/*
+
+#
+# ignore these directories
+# ==========================
+r_legal/
+spoon-knife/
+bookclub-Advanced_R/
+vim-myhelp/
+dev/
+r_try_things_here/
+PPPloans/
+pkg_youtube_api/
+jimTools/
+rtweet/
+PPP/
+genentech-build-tidy-tools/
+make_project/
+BMRSr/
+hugo_projects/
+AoC/
+out/
+output/
+md/
+
+
+# ignore these separate projects
+# ================================
+pkg_linear_algebra/
+pkg_mp3_files/
+pkg_yt_api/
+r_rafael/
+r_health_labs/
+book_modern_dive/
+opensecrets/
+test_opensecrets/
+CARES/
+
+# Files that end with .RDS, .rds. .Rdata, .csv, .pdf, .html (all directories)
+# ================================
+*.RDS
+*.rds
+*.Rdata
+*.csv
+*.pdf
+*.html
+
+
+# Google API
+# ============
+.httr-oauth   # in any directory
+r_mp3/R/.httr-oauth
+r_mp3/.httr-oauth
+r_mp3/R/021_api_codes.R
+r_mp3/R/021_api_codes.Rmd
+
+
+# Special
+# =========
+# plugin "jimrothstein/myhelp" - separate from rest of code/ 
+vim-myhelp/
+*.html
+*.tar.gz
+
+tags
 
