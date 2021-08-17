@@ -33,10 +33,14 @@ local({
 
 ## Jim:	 set
 ## ============
+
+## set 4 AUG 2021
+jim_lib  <- '/home/jim/R/x86-64-linux-gnu-library/4.1'
+
 options(
 	 digits=3,
 	 usethis.protocol = "ssh",
-	 lib="/home/jim/R/x86-64-pc-linux-gnu-library/4.0")
+	 lib=jim_lib)
 
 # options(	 
 #    blogdown.author = "Jim",

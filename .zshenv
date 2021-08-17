@@ -43,10 +43,14 @@ export V=$VIMRC
 export Z=$ZDOTDIR/.zshrc
 export G=~/code/.gitignore
 # for printing
-export OUT="~/Downloads/print_and_delete"
+export OUT=~/Downloads/print_and_delete
 
 ## When using /tmp/rebase-sandbox (GIT practice)
   export SANDBOX=/tmp/rebase-sandbox
+
+## env var for R (August 2021)
+  export R_HOME='/usr/lib/R'
+  export R_LIBS_SITE='/usr/lib/R/library'
 
 
 # =====END CUT ===================================================

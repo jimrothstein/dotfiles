@@ -132,7 +132,7 @@ autocmd TermOpen * startinsert			" begin term as insert
 " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 " au CursorHoldI * stopinsert
 
-set nohidden      "   [default=no] do not open 2nd buffer till work saved.
+set hidden      "   [default=no] 
 syntax enable 		"  	runs syntax.vim
 set history=50		"   last 50 commands (default 10000)
 set showmode			"   show mode
@@ -185,8 +185,6 @@ set backupdir=~/.config/nvim/backup/	" do not surround with quotes!
 " :colorscheme <pickone>   :colorscheme jimColor
 colo jimColor
 "
-" Solarize, change so I can see "comments
-hi Comment ctermfg=103
 "
 " activation plugin for filetype detection
 filetype plugin on         
@@ -434,6 +432,9 @@ source $HOME/.config/nvim/jim_code/date.vim
 source $HOME/.config/nvim/jim_code/lua_inside_vim_file.vim
 source $HOME/.config/nvim/jim_code/clipboard.vim
 source $HOME/.config/nvim/jim_code/experimental.vim
+
+
+"  colors/jimColor.vim
 
 
 " TO SOURCE .luafile ~/.config/nvim/lua/lua_file.lua

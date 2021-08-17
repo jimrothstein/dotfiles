@@ -27,6 +27,10 @@ source ~/.config/zsh/completion.zsh
 # PROMPT
 source ~/.config/zsh/prompt.zsh
 
+# FUNCTIONS
+source ~/.config/zsh/functions.zsh
+
+
 
 # =========================================================
 ##   PATH and path
@@ -45,22 +49,6 @@ source ~/.config/zsh/prompt.zsh
 ## SEE:  https://unix.stackexchange.com/questions/33255/how-to-define-and-load-your-own-shell-function-in-zsh
 ## NOTE:   "$path[@]"  and $path  should be equivalent.
     fpath=( ~/.zfunctions "${fpath[@]}" )
-
-# =================
-# PURPOSE:  
-# 	in $Z, segment sections into clear FUNCTIONS
-# 	Makes clearer when activating all the pieces of $Z.
-#
-# create function
-function hello  {
-	print hello $1
-}
-
-# do not run
-# hello "jim"
-# =================
-
-
 
 # ========================================================
 #   autoload  (see man zshbuiltins)
@@ -101,7 +89,10 @@ ZSH_THEME="intheloop"
 #  ================
 #
 #	
-autoload -Uz compinit		# basic TAB completion
+# TAB completion
+autoload -Uz compinit		
+compinit
+
 bindkey -e   			# emacs
 
 
@@ -143,17 +134,13 @@ setopt NO_CASE_GLOB
 # TO LIST:  > hash -d
 #
 #
-docs=~/Downloads/documents/
 code=~/code
 mp3=~/mp3_files
-legal=~/Downloads/documents/legal_18CR/
-dotfiles=~/dotfiles
-linear=~/code/pkg_linear_algebra/
-try_things_here=~/code/r_try_things_here/
+# dotfiles=~/dotfiles
+
 
 # initialize
-:	~docs ~from_youtube ~legal ~code ~dotfiles # ':'   does nothing
-: ~linear ~try_things_here
+# ~dotfiles # ':'   does nothing
 
 
 set NO_BEEP
@@ -170,7 +157,7 @@ bindkey '^z'  backward-delete-word
 #  LEGACY
 # =========================================================
 #
-# export PS1=" \W \$ "
+# export PS1=' \W \$ '
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
