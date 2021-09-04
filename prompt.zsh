@@ -16,14 +16,18 @@
 # REF:  Z Shell manual: Ch 13 prompt.
 #                     : Ch 26 user contribution (for vcs_info)
 #
+
+#   Both PS1 and PROMPT will work
+#   Claim:  use PROMPT (?)
+#
 ## include colors
 autoload -U colors && colors 
 
-## method 1 (works)
+## method 1 (works) , but duplicates in zstyle
 
 # PS1='%h_%n@%m %F{red}%/%f $ '
-#
-# works, but duplicated in zstyle
+# exit
+
 
 # %h  = comand no
 # %n@%m = user@machine
@@ -63,7 +67,11 @@ autoload -U colors && colors
 
 ## Don't Need?  
 #  zstyle ':vcs_info:*' enable git svn
-#  setopt prompt_subst
+#
+#
+## Works better WITH this line (activates $vcs...)
+    setopt prompt_subst
+
 
 ## Put all together:
   # PROMPT='%h_${vcs_info_msg_0_}%# '  # minimal

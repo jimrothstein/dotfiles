@@ -10,7 +10,26 @@
 #   NOTES
 #   * use `setopt` , not `set`
 #  ~/.zshenv MUST remain in $HOME dir for system to start
-
+#
+# ===================
+#  output of setopt (Aug 2021)
+# ===================
+#
+## autocd
+## autonamedirs
+## autopushd
+## nobeep
+## nocaseglob
+## emacs
+## extendedglob
+## interactive
+## login
+## monitor
+## promptsubst
+## shinstdin
+## zle
+#
+#
 # =========================================================
 #  SOURCING
 # =========================================================
@@ -30,6 +49,9 @@ source ~/.config/zsh/prompt.zsh
 # FUNCTIONS
 source ~/.config/zsh/functions.zsh
 
+# BINDKEY
+## SEE ALSO file <- 410_bindkey_examples.Rmd
+source ~/.config/zsh/bindkey.zsh
 
 
 # =========================================================
@@ -89,11 +111,14 @@ ZSH_THEME="intheloop"
 #  ================
 #
 #	
+# ================
 # TAB completion
+# ================
 autoload -Uz compinit		
 compinit
 
-bindkey -e   			# emacs
+
+
 
 
 
@@ -111,8 +136,16 @@ set -o emacs		# default, and easier for edit zsh/bash command lines
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 
+# ===============
+#   directory stack
+# ===============
 
+# autopush dirs on to stack
+# dirs -lpv
+  setopt autopushd
 
+# limit to last 5 
+  DIRSTACKSIZE=5
 
 # ================================
 #  named directories,  
@@ -145,7 +178,6 @@ mp3=~/mp3_files
 
 set NO_BEEP
 # need extendedglob
-bindkey '^z'  backward-delete-word
 
 # # apply Debian keyboard mappings (in ~/.xmodmap)
 # # maps ccaps lock to ESC

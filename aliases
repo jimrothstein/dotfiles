@@ -28,7 +28,7 @@ alias man='run-help'
 
 #	coding, 
 alias goCode='cd ~/code/'
-alias goBlog='cd ~/code/blog4'
+alias goBlog='cd ~/code/blog5'
 alias goYoutube='cd ~/code/youtube_api/'
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'

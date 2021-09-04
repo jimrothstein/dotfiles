@@ -7,6 +7,11 @@
 " Specify a directory for plugins
 call plug#begin('~/.config/nvim/vim-plug')
 
+" ----- lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+" ----- lsp
+
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
@@ -20,7 +25,11 @@ Plug 'jimrothstein/jimHelp'
 " AM I USING this?
 " markdown syntax highligthing
 Plug 'plasticboy/vim-markdown'
-
+"
+" Initialize plugin system
+"
+call plug#end()
+"
 " use vim folding (default = 1, disable)
 " let g:vim_markdown_folding_disabled = 1
 
@@ -30,10 +39,16 @@ Plug 'plasticboy/vim-markdown'
 " PURPOSE ?? Turn on markdown for these languges
 " let g:markdown_fenced_languages = ['html',   'vim', 'md', 'rmd' ]
 
-" Initialize plugin system
-"
-call plug#end()
-"
+
+" source (COLLECT here) ------------
+" lsp ----------
+"     luafile ~/.config/nvim/lua/plugins/compe-config.lua
+
+" source ~/.config/nvim/plug-config/lsp-config.vim
+
+" lsp ----- start bash language server
+lua require'lspconfig'.bashls.setup{}
+
 
 " ACTIVATES REditorSupport/languageserver
 " UNCOMMENT TO USE
@@ -145,7 +160,6 @@ set relativenumber	" 	norelativenumber, nonumber to turn off
 " was 4, try 2
 set cmdheight=3		"	 avoids PRESS any Key to continue
 " set gdefault			" search global :%s/from/to/c
-set ignorecase			" search non-case sensitive
 set autowrite			" saves to disk when change buffers, :bn
 set autoread			" re-read if a file changed outside vim
 set shiftround			" indents will be multipe of shiftwidth (keeps alignment)
@@ -170,8 +184,24 @@ set statusline+=%c:%l/%L 			" line, column (with tabs, maybe estimate)
 set statusline+=[%n]
 set colorcolumn=81		" display right margin
 set title 
-set tabstop=2			" default=8
-set shiftwidth=2		" set to same as tabstop
+" add 31 AUG 21, Insert Mode completion options
+set cot=menuone,noinsert,noselect
+" reduce msgs user must respond to
+set shm+=c
+
+" -----------------------
+"  Replace vim with LUA
+" -----------------------
+lua << EOF
+-- Lua
+local opt = vim.o
+opt.tabstop = 4
+opt.ignorecase = true
+EOF
+                                           
+" set tabstop=2			" default=8
+" set ignorecase			" search non-case sensitive
+set shiftwidth=4		" set to same as tabstop
 set wm=4				" 8 characters before end will begin new line
 set textwidth=79		" sets right margin!
 set nolist          " do NOT show tabs
@@ -404,6 +434,9 @@ inoremap <c-l> <c-n>
 "exe 'source ~/.config/nvim/jim_code/underline.vim'
 "
 "
+" ========================
+" LEGACY LSP/R  autozimu
+" ========================
 " (1) first install, in R,  
 " devtools::install_github("REditorSupport/languageserver")
 " (2)
@@ -414,6 +447,7 @@ inoremap <c-l> <c-n>
 "    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
 "    \ 'rmd': ['R', '--slave', '-e', 'languageserver::run()'],
 "    \ }
+"
 "
 "
 " as variable, ~/.config/nvim
@@ -429,7 +463,6 @@ let g:nvim_config_root = stdpath('config')
 "source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/jim_code/underline.vim
 source $HOME/.config/nvim/jim_code/date.vim
-source $HOME/.config/nvim/jim_code/lua_inside_vim_file.vim
 source $HOME/.config/nvim/jim_code/clipboard.vim
 source $HOME/.config/nvim/jim_code/experimental.vim
 
