@@ -23,6 +23,7 @@
 .Ruserdata
 
 ## no need to hide .Rprofile, but DO NEED to hide .Renviron (codes)
+# .Rprofile
 .Renviron   
 
 # files ending in .RDS or .Rd (anywhere) 
