@@ -26,6 +26,12 @@ alias man='run-help'
 # Uncomment, to add flag for less?
 # alias -g L='| less'	# USE:  ll L <enter>
 
+#   ZHS , dirstack, dirs cmd
+#   l = full path
+#   p = 1 per line
+#   v = number
+alias dirs='dirs -lpv'
+
 #	coding, 
 alias goCode='cd ~/code/'
 alias goBlog='cd ~/code/blog5'

@@ -1,23 +1,32 @@
 " ~/.config/nvim/init.vim -> ~/dotfiles/init.vim
 "
 "  [./jim_code/experimental.vim]
+"  
 "
 "		 VIM-PLUG 
 " ------------------------
-" Specify a directory for plugins
 call plug#begin('~/.config/nvim/vim-plug')
 
 " ----- lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 " ----- lsp
+"
+"(FUTURE) We recommend updating the parsers on update
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 
+"
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-surround' 
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+
+" Experiment:  should popup as soon as type, not need <C-P>
+" SEP 2021 - turn off, driving me crazy.  Pops up words (not R)
+" Plug 'vim-scripts/AutoComplPop'
+
 
 "	my help (cloned & changed name from tinyheero)
 Plug 'jimrothstein/jimHelp'
@@ -39,34 +48,27 @@ call plug#end()
 " PURPOSE ?? Turn on markdown for these languges
 " let g:markdown_fenced_languages = ['html',   'vim', 'md', 'rmd' ]
 
-
-" source (COLLECT here) ------------
-" lsp ----------
-"     luafile ~/.config/nvim/lua/plugins/compe-config.lua
-
-" source ~/.config/nvim/plug-config/lsp-config.vim
-
-" lsp ----- start bash language server
-lua require'lspconfig'.bashls.setup{}
-
-
-" ACTIVATES REditorSupport/languageserver
-" UNCOMMENT TO USE
-"
-" LanguageClient_
-" let g:LanuageClient_serverCommands = {
-"     \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
-"     \ }
+" For LSP  == see ./jim_code/lsp_experimental.lua
 "
  " ==========================
 "		MY CODE, mapleader:"
 " ==========================
 "
-"	mapleader
-let mapleader=","		" default = \ 
+" -----------------------
+"  Replace vim with LUA
+" -----------------------
+lua << EOF
+-- Lua
+
+vim.g.mapleader=','         --  default = \
+vim.g.maplocalleader=","    --  might be clashes
+EOF
+
+
+
 
 "	maplocalleader
-let maplocalleader=","			" might be clashes
+"   let maplocalleader=","			" might be clashes
 "
 
 " silent - no messages, except error
@@ -184,8 +186,11 @@ set statusline+=%c:%l/%L 			" line, column (with tabs, maybe estimate)
 set statusline+=[%n]
 set colorcolumn=81		" display right margin
 set title 
+
+"### "  OMNICOMPLETE:   Default, insert mode, press <C-P>
+"# --------------------------------------------------------
 " add 31 AUG 21, Insert Mode completion options
-set cot=menuone,noinsert,noselect
+set completeopt=menuone,noinsert,noselect
 " reduce msgs user must respond to
 set shm+=c
 
@@ -195,14 +200,12 @@ set shm+=c
 lua << EOF
 -- Lua
 local opt = vim.o
-opt.tabstop = 4
-opt.ignorecase = true
+opt.tabstop = 4                 --      default=8
+opt.shiftwidth = 4              --      sames as ts
+opt.ignorecase = true           --      make search case insensitive
+opt.wm = 4                      --      begin new line 4 chars before end of line.
 EOF
                                            
-" set tabstop=2			" default=8
-" set ignorecase			" search non-case sensitive
-set shiftwidth=4		" set to same as tabstop
-set wm=4				" 8 characters before end will begin new line
 set textwidth=79		" sets right margin!
 set nolist          " do NOT show tabs
 "set list listchars=tab:^\,eol:$
@@ -225,8 +228,6 @@ source ~/.config/nvim/jim_code/windows.vim
 
 
 
-" completion: control popup menu, in insert mode
-set completeopt=noinsert,menu,noselect,preview
 "
 "
 " --- nvim-R ---- 
@@ -434,21 +435,6 @@ inoremap <c-l> <c-n>
 "exe 'source ~/.config/nvim/jim_code/underline.vim'
 "
 "
-" ========================
-" LEGACY LSP/R  autozimu
-" ========================
-" (1) first install, in R,  
-" devtools::install_github("REditorSupport/languageserver")
-" (2)
-" code below configers for lsp plugin called: LanguageClient-neovim (see
-" Plugins)
-" (3) be sure plugin autozimu/LanguageClient-neovim (at top)
-"let g:LanguageClient_serverCommands = {
-"    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
-"    \ 'rmd': ['R', '--slave', '-e', 'languageserver::run()'],
-"    \ }
-"
-"
 "
 " as variable, ~/.config/nvim
 let g:nvim_config_root = stdpath('config')
@@ -466,6 +452,10 @@ source $HOME/.config/nvim/jim_code/date.vim
 source $HOME/.config/nvim/jim_code/clipboard.vim
 source $HOME/.config/nvim/jim_code/experimental.vim
 
+" start lsp for R
+source $HOME/.config/nvim/jim_code/lsp_experimental.lua
+
+
 
 "  colors/jimColor.vim
 
@@ -473,6 +463,7 @@ source $HOME/.config/nvim/jim_code/experimental.vim
 " TO SOURCE .luafile ~/.config/nvim/lua/lua_file.lua
 " NOTE:   :luafile to source
 " NOTE:   lua_file, with NO EXTENSION
+"
 "
 " pause for now.
 " :luafile ~/.config/nvim/lua/lua_file.lua
