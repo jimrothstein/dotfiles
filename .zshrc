@@ -144,8 +144,12 @@ set -o emacs		# default, and easier for edit zsh/bash command lines
 # dirs -lpv
   setopt autopushd
 
-# limit to last 5 
-  DIRSTACKSIZE=5
+# changes stackdir navigation to - (default is +)
+# ie cd -2  now means go back 2 directories in history
+    setopt PUSHD_MINUS
+
+# limit to last 7 
+  DIRSTACKSIZE=7
 
 # ================================
 #  named directories,  

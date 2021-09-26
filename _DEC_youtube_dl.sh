@@ -11,7 +11,7 @@
 #
 #
 # ====================
-##  Fri  09 Apr 2021
+# UPDATED:   6 SEPT 2021
 
 # FORK
 # USE yt-dlp
@@ -23,9 +23,6 @@
 #	DOWNLOADS  music in .ogg format
 #	list	must be "public"
 #
-# ------------
-#  07 DEC 2019	
-# ------------
 #
 #	Step #1, UPDATE
 #	youtube-dl -U
@@ -37,13 +34,13 @@
 ##
 
 day=""
-list=PLbcglKxZP5PMDe2rhvTaahCV3BzFurnYJ
-dir=from_youtube/
+list="PLbcglKxZP5PMBtlk6c_jDAvvAN0R_EVDd"
+dir=~/mp3_files/
 
 mylist=https://www.youtube.com/playlist?list="${list}"
 
 youtube-dl -x -i --audio-format vorbis \
-	--autonumber-start 03000 \
+	--autonumber-start 02000 \
 	-o '${dir}''%(autonumber)s_%(artist)s_%(title)s_'$(date -I)_${day}'.%(ext)s' \
 	 ${mylist}
 exit	

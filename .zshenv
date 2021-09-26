@@ -38,10 +38,9 @@ export INC_IGNORE_DUPS="true"		# if adjacent
 export INC_APPEND_HISTORY="true"	# all zsh shells show same hist
 
 #	env var
-VIMRC=~/.config/nvim/init.vim
-export V=$VIMRC
+export V=~/.config/nvim/init.vim
 export Z=$ZDOTDIR/.zshrc
-export G=~/code/.gitignore
+export C=~/code/
 # for printing
 export OUT=~/Downloads/print_and_delete
 
