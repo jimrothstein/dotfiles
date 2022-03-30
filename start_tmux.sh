@@ -27,7 +27,10 @@ tmux attach-session	-t jimSession
 # set 29 JUNE 2018 because :checkhealth said to
 # set 28 NOV 2019  :checkhealth said to set escape-time to 10
 tmux set-option -sg escape-time 10
-tmux set-option -g  default-terminal "color-256color"
+
+# set 30 OCT 2021 because :checkhealth nows "screen-256color"
+tmux set-option -g  default-terminal "screen-256color"
+tmux set-option -g focus-events on
 # but then checkhealth dislikes $TERM and TMUX
 
 

@@ -54,6 +54,13 @@ source ~/.config/zsh/functions.zsh
 source ~/.config/zsh/bindkey.zsh
 
 
+# PLUGINS
+# 'friendlier' vi-mode
+# jeffreytse/zsh-vi-mode
+# see $HOME/.zsh-vi-mode/
+source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+
 # =========================================================
 ##   PATH and path
 # =========================================================
@@ -86,13 +93,10 @@ source ~/.config/zsh/bindkey.zsh
 # =========================================================
 #     ENV VAR	
 # =========================================================
-    VIMRC=~/.config/nvim/init.vim
-    export V=$VIMRC
+    export V=~/.config/nvim/init.vim
     export Z=$ZDOTDIR/.zshrc
     export G=~/code/.gitignore
     export TEMPLATES=~/.config/nvim/templates/
-
-
 
 
 ZSH_THEME="intheloop"
@@ -117,20 +121,8 @@ ZSH_THEME="intheloop"
 autoload -Uz compinit		
 compinit
 
-
-
-
-
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-set -o emacs		# default, and easier for edit zsh/bash command lines
-
+#set -o emacs		# default, and easier for edit zsh/bash command lines
+bindkey -v          # @CLI  use vi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -173,6 +165,7 @@ setopt NO_CASE_GLOB
 #
 code=~/code
 mp3=~/mp3_files
+export dot=~/dotfiles
 # dotfiles=~/dotfiles
 
 
@@ -181,7 +174,6 @@ mp3=~/mp3_files
 
 
 set NO_BEEP
-# need extendedglob
 
 # # apply Debian keyboard mappings (in ~/.xmodmap)
 # # maps ccaps lock to ESC
@@ -189,24 +181,3 @@ set NO_BEEP
 #   xmodmap ~/.xmodmap
 # fi
 #
-# =========================================================
-#  LEGACY
-# =========================================================
-#
-# export PS1=' \W \$ '
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-

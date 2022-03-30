@@ -17,8 +17,9 @@
 # --exclude   use file to identify files/dir to exclude
 # -f  dir to put resuling tagss file
 # ~/code   target directory
-
-ctags -R  --exclude=~/.ctagsignore -f ~/code/tags ~/code
+#
+ctags -R  --exclude=~/.ctagsignore -f  ~/code
+#  ctags -R  --exclude=~/.ctagsignore -f ~/code/tags ~/code
 # ctags -R  --exclude=.ctagsignore ~/code
 
 ## WHY?   ctags is verbose!

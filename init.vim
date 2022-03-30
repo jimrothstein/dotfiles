@@ -1,21 +1,72 @@
+-- file <- "/home/jim/.config/nvim/init.vim"
+
+vim.cmd [[
 " ~/.config/nvim/init.vim -> ~/dotfiles/init.vim
+"----------------------------
+"   FILES, sourced at BOTTOM
+"----------------------------
 "
-"  [./jim_code/experimental.vim]
-"  
+" -- legacy --
+" $HOME/.config/nvim/jim_code/windows.vim
+" $HOME/.config/nvim/jim_code/underline.vim
+" $HOME/.config/nvim/jim_code/date.vim
+" $HOME/.config/nvim/jim_code/clipboard.vim
+" ~/.config/nvim/jim_code/nvimR_config.vim
+" ~/.config/nvim/jim_code/ctags.vim
 "
+"  -- lua --
+" $HOME/.config/nvim/lua/jim/lsp_experimental.lua
+" $HOME/.config/nvim/lua/jim/telescope.lua
+" $HOME/.config/nvim/lua/jim/treesitter.lua
+" $HOME/.config/nvim/lua/jim/init.lua
+" $HOME/.config/nvim/lua/jim/bufferline.lua
+"
+"
+"
+" 3 MARCH 2022:   Move Lua things to ~/.config/lua/lua.init and source at
+" bottom of this file.
+"
+"
+" for ZSH
+" $HOME/.config/zsh/
+"
+" --------------------------
 "		 VIM-PLUG 
 " ------------------------
 call plug#begin('~/.config/nvim/vim-plug')
 
 " ----- lsp
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
-" ----- lsp
-"
-"(FUTURE) We recommend updating the parsers on update
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 
+" ----- completion engine
+Plug 'hrsh7th/nvim-cmp'   
 "
+" ----- completion sources
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lua'
+"  ----- nvim-lsp-installe
+Plug 'williamboman/nvim-lsp-installer'
+" ----- treesitter
+"(FUTURE) We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+"------
+
+"------ telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'sharkdp/fd'
+" next line is installed via apt
+Plug 'BurntSushi/ripgrep'
+"------ for telescope-bookmarks (firefox needs sqlite)
+Plug 'dhruvmanila/telescope-bookmarks.nvim'
+Plug 'tami5/sqlite.lua'
+"------
+"
+Plug 'akinsho/bufferline.nvim'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-plug'	
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
@@ -23,79 +74,57 @@ Plug 'benmills/vimux'
 Plug 'tpope/vim-surround' 
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
-" Experiment:  should popup as soon as type, not need <C-P>
-" SEP 2021 - turn off, driving me crazy.  Pops up words (not R)
-" Plug 'vim-scripts/AutoComplPop'
-
-
+"
+"------
 "	my help (cloned & changed name from tinyheero)
-Plug 'jimrothstein/jimHelp'
+"   Plug 'jimrothstein/jimHelp'
 
-" AM I USING this?
-" markdown syntax highligthing
-Plug 'plasticboy/vim-markdown'
-"
-" Initialize plugin system
-"
 call plug#end()
 "
-" use vim folding (default = 1, disable)
-" let g:vim_markdown_folding_disabled = 1
-
-" for YAML hightlighting
-" let g:vim_markdown_frontmatter = 1
-
-" PURPOSE ?? Turn on markdown for these languges
-" let g:markdown_fenced_languages = ['html',   'vim', 'md', 'rmd' ]
-
-" For LSP  == see ./jim_code/lsp_experimental.lua
 "
- " ==========================
-"		MY CODE, mapleader:"
-" ==========================
+" ================
+"       SETTINGS
+" ================
 "
-" -----------------------
-"  Replace vim with LUA
-" -----------------------
-lua << EOF
--- Lua
-
-vim.g.mapleader=','         --  default = \
-vim.g.maplocalleader=","    --  might be clashes
-EOF
+let mapleader=","
 
 
+" --------------
+"  MOVE TO LUA
+"  OMNICOMPLETE
+" --------------
 
-
-"	maplocalleader
-"   let maplocalleader=","			" might be clashes
+"### "  OMNICOMPLETE:   Default, insert mode, press <C-P>
+" Rmk:   What does next line do?
+" Rmk:   set omnifunc = v:lua.vim.lsp.omnifunc
+" Rmk:   omnifunc is function that responds to insert ^X^O
+"  {
+"   set omnifunc = v:lua.vim.lsp.omnifunc
+      autocmd FileType Rmd,R, rmd set completefunc=CompleteR
+"  
+"  }
 "
 
-" silent - no messages, except error
-" silent! - also no error msgs
-" Hit ESC (or my case: CapsLock) vim leave insert mode AND save
-"    but ONLY if I made an actual change.
-:autocmd InsertLeave *  update
+
+" ================================================================
+"   Terminal mode:  Copy current line and run in Terminal Buffer
+" ================================================================
 "
-" avoid commnets on same line as mapping,   vim can get confused
-" SAVE
-"nnoremap <Leader>s :w<Enter>
-
-" SAVE and exit insertmode,  
-inoremap <Leader>s <esc>:w<Enter>
-
-" exit Insert mode
-inoremap jj <Esc>			" always use Xnoremap
-inoremap jk <Esc>			" less damage if normal mode!
-inoremap kk <Esc>			" 
-
-" turnoff highlight
-noremap <silent> ./ :nohlsearch<CR>  
+nnoremap <leader>tl Vy<C-w>wpa<CR><C-\><C-n><C-w>pj
+" Vy  yank line
+" <C-w>w  move to right
+" p paste
+" a<CR> append line (which runs)
+" exit terminal mode (to normal)
+" <C-w>p prior window
+" j  move down line ##
+"
+" ERROR in LUA,  why?
+"vim.api.nvim_set_keymap('n', '<leader>tl', 'Vy<C-w>wpa<CR><C-\><C-n><C-w>pj', {})
+" ================================================================
 
 
-" cursor forward/backward one full screen
-nnoremap <Leader>f <C-f>
-nnoremap <Leader>b <C-b>
+
 
 " comments , USAGE: <Leader>c
 nnoremap <Leader>c :call CommentThisLine()<cr>
@@ -117,141 +146,20 @@ nnoremap <Leader>cd  :cd %:p:h<Enter>
 " $VIMRC
 nnoremap <Leader>sv	:source $VIMRC<cr>
 
-" ==========
-"	ABBREV  
-" ==========
-
-augroup R_values
-	au!
-	au! FileType r,rmd abbr false FALSE 
-	au! FileType r,rmd abbr true TRUE 
-augroup END
-
-
-" ==========
-" TERMINAL
-" ==========
-autocmd TermOpen * startinsert			" begin term as insert
-
-" use ==#   compare strings
-"
-" augroup myterm | au!
-" 	au TermOpen * if &buftype ==# 'terminal' | resize q0 | vert resize 50 | endif
-" augroup end
-
-
-" ==========
-"  OPTIONS
-" ==========
-
-
- 
-" after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
-" au CursorHoldI * stopinsert
-
-set hidden      "   [default=no] 
-syntax enable 		"  	runs syntax.vim
-set history=50		"   last 50 commands (default 10000)
-set showmode			"   show mode
-
-" should next line be setlocal cursorline?
-set cursorline		"   highlight current line
-set scrolloff=5   "   scroll, keep cursor 5 lines from top
-set number			"	nonumber
-set relativenumber	" 	norelativenumber, nonumber to turn off
-" was 4, try 2
-set cmdheight=3		"	 avoids PRESS any Key to continue
-" set gdefault			" search global :%s/from/to/c
-set autowrite			" saves to disk when change buffers, :bn
-set autoread			" re-read if a file changed outside vim
-set shiftround			" indents will be multipe of shiftwidth (keeps alignment)
-set showmatch			" highlights matching bracket, paran etc.
-set foldmethod=marker	" create fold with zf	
-set foldcolumn=3		" adds visual clue in LEFT margin
-set nolist				"NO display TABS, and EOL
-set wrap
-set noerrorbells 
-set expandtab 			" <TAB> expands as spaces,  NO BELLS will sound in R!
-set laststatus=2		" default=2, means all windows have statusline
-" %n = buffer number
-set statusline=
-set statusline+=%m
-set statusline+=[%{winnr()}-b%n]
-" :highlight,  insert color inside # #
-set statusline+=%#Title#%y[%F]    
-
-" begin from right margin
-set statusline+=%=
-set statusline+=%c:%l/%L 			" line, column (with tabs, maybe estimate)
-set statusline+=[%n]
-set colorcolumn=81		" display right margin
-set title 
-
-"### "  OMNICOMPLETE:   Default, insert mode, press <C-P>
-"# --------------------------------------------------------
-" add 31 AUG 21, Insert Mode completion options
-set completeopt=menuone,noinsert,noselect
-" reduce msgs user must respond to
-set shm+=c
-
-" -----------------------
-"  Replace vim with LUA
-" -----------------------
-lua << EOF
--- Lua
-local opt = vim.o
-opt.tabstop = 4                 --      default=8
-opt.shiftwidth = 4              --      sames as ts
-opt.ignorecase = true           --      make search case insensitive
-opt.wm = 4                      --      begin new line 4 chars before end of line.
-EOF
-                                           
-set textwidth=79		" sets right margin!
-set nolist          " do NOT show tabs
-"set list listchars=tab:^\,eol:$
-set backup 
-set backupdir=~/.config/nvim/backup/	" do not surround with quotes!
-
-" COLORS
-" ========
-" sourced from ./jim_code/colors.vim (my code)
-" :colorscheme <pickone>   :colorscheme jimColor
-colo jimColor
-"
-"
-" activation plugin for filetype detection
-filetype plugin on         
-
-
-"  windows, terminals, sizing, editor sizing
-source ~/.config/nvim/jim_code/windows.vim
 
 
 
-"
-"
-" --- nvim-R ---- 
-source ~/.config/nvim/jim_code/nvimR_config.vim
 
 
-
-" ctags - R .    needs:
-source ~/.config/nvim/jim_code/ctags.vim
 
 
 " Use Ctrl-Space to do omnicompletion
 inoremap <C-Space> <C-x><C-o>
 
 
-
-" NERDTree
-" open nerdtree
-nnoremap <C-N> :NERDTreeFocus<CR>
-
-
+"-----------------
 "	FUNCTIONS
 "-----------------
-"
 "	insert dotline line 
 "	CONFLICT with ,id (insert date)
 "-----------------
@@ -300,25 +208,17 @@ endfunction
 
 "  USAGE:
 nnoremap <Leader>t :call ToggleSpellCheck()<CR>
-
-
 "
 " ========
 " AUTOCMD
 " ========
 "
-" set tags  (ctags -R .)
-set tags=~/code/tags
-
-
-" ~/bin/run_ctags.sh does everything
-" Trigger:   Write Buffer to FILE
-augroup ctags
-"	autocmd  BufWritePost *.R,*.Rmd :!~/bin/run_ctags.sh 
-augroup end
-   
 " manually
-nnoremap ,s :!~/bin/run_ctags.sh <CR>
+"
+" USE Ctrl-S (like R-studio) to save
+nnoremap <C-S> :wa <CR>
+inoremap <C-S> <esc>:wa<CR>
+
 
 " FROM ercrema - github
 "
@@ -326,7 +226,6 @@ nnoremap ,s :!~/bin/run_ctags.sh <CR>
 au BufNewFile,BufRead *.Rmd,*.rmd set filetype=rmd
 au BufNewFile,BufRead *.md  set filetype=md
 autocmd BufNewFile,BufRead *.md set filetype=markdown
-
 
 au BufNewFile,BufRead *.tex, set filetype=tex
 
@@ -354,7 +253,6 @@ augroup skeleton
 augroup END
 
 
-
 augroup R_specs
 	autocmd!
 	" to be sure Comments repeat as expected
@@ -377,13 +275,6 @@ au InsertLeave * set nopaste
 au InsertEnter * hi Statusline cterm=reverse 					 ctermbg=5
 au InsertLeave * hi Statusline cterm=reverse ctermfg=0 ctermbg=2     
 
-" number help files!
-autocmd FileType help setlocal number relativenumber
-
-" autcmd QuitPre * confirm
-" confirm
-"autocmd QuitPre * let ans=call confirm("Are you sure ?", "&yes\n&Cancel",0)
-
 
 " ---- yaml ----
 "  vice nice to align!
@@ -395,7 +286,6 @@ autocmd FileType yaml setlocal ai et sw=2 ts=2 cuc cul
 " autocmd BufNewFile,BufRead *.vim 	nnoremap ,id I" ---------<esc>j 
 
 
-
 " For .Rmd files, find next/previous 'chunk'
 augroup knitr
   autocmd BufNewFile,BufRead *.Rmd nnoremap ]r /```{r<CR>
@@ -403,12 +293,14 @@ augroup knitr
 augroup END
 
 
-
-
 "	vim hard way -- ch18
 augroup filetype_vim
     autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
+    "original:
+    "autocmd FileType vim setlocal foldmethod=marker
+    "
+    "for treesitter:
+    autocmd FileType vim setlocal foldmethod=expr
 augroup END
 "
 "-----------------
@@ -419,7 +311,6 @@ augroup END
 " @a is register a, same as yanking into reg a
 let @a = "^ifoo\<Esc>j"
 " 
- 
 " ===================
 " insert completion
 " ===================
@@ -427,13 +318,6 @@ let @a = "^ifoo\<Esc>j"
 inoremap <c-l> <c-n>
 " inoremap <c-f> <c-n>   " f? forward, but too far from p	 
 " likewise ^n works, but too far
-"
-
-"  NOTE
-"  underline, maps vim is in ~/.config/nvim/jim_code/
-"  better:    exe 'source ....../*.vim'
-"exe 'source ~/.config/nvim/jim_code/underline.vim'
-"
 "
 "
 " as variable, ~/.config/nvim
@@ -444,26 +328,81 @@ let g:nvim_config_root = stdpath('config')
 "============================
 " SOURCE ADD'N  Config files
 "============================
-" CLAIM:  just put these *.vim in vim-plug/
-"
-"source $HOME/.config/nvim/plug-config/coc.vim
+"  windows, terminals, sizing, editor sizing
+source ~/.config/nvim/jim_code/windows.vim
 source $HOME/.config/nvim/jim_code/underline.vim
 source $HOME/.config/nvim/jim_code/date.vim
 source $HOME/.config/nvim/jim_code/clipboard.vim
-source $HOME/.config/nvim/jim_code/experimental.vim
+" --- nvim-R ---- 
+source ~/.config/nvim/jim_code/nvimR_config.vim
+" ctags - R .    needs:
+source ~/.config/nvim/jim_code/ctags.vim
 
-" start lsp for R
-source $HOME/.config/nvim/jim_code/lsp_experimental.lua
-
-
-
-"  colors/jimColor.vim
-
-
-" TO SOURCE .luafile ~/.config/nvim/lua/lua_file.lua
 " NOTE:   :luafile to source
 " NOTE:   lua_file, with NO EXTENSION
 "
-"
-" pause for now.
-" :luafile ~/.config/nvim/lua/lua_file.lua
+
+
+]]
+
+---------------
+--			BEGIN LUA 
+---------------
+--
+--   SOURCED from ~/.config/nvim/init.vim
+
+-----------------------------------
+--    FUTURE:    Global Status Line
+-----------------------------------
+-- > version 0.7
+-- creates one global status line;  removes status for each window
+--- vim.opt.laststatus=3
+-- :hi WinSeparator guibg=None
+
+-----------------------
+--          LUA MODULES
+-----------------------
+--  list all *.lua files here (aka modules)
+--  actual location ~/.config/nvim/lua/jim.* 
+require('jim.telescope')
+require('jim.treesitter')
+require('jim.lsp_cmp')
+require('jim.bufferline')
+-- require('jim_code.lightline')
+
+
+--  keybindings
+require('jim.keymaps')
+
+require('jim.options')
+
+vim.g.mapleader=','         --  default = \
+vim.g.maplocalleader=','    --  might be clashes
+
+
+---------
+--    LSP
+---------
+--
+--  configure LSP installer 
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+  server:setup(opts)
+  end
+)
+
+
+-----------------------------
+---     FUTURE:   reset ctags
+-----------------------------
+
+--- " set tags  (ctags -R .)
+--- set tags=~/code/tags
+--- " ~/bin/run_ctags.sh does everything
+--- " Trigger:   Write Buffer to FILE
+--- augroup ctags
+--- 	autocmd  BufWritePost *.R,*.Rmd :!~/bin/run_ctags.sh 
+--- augroup end
+
+
