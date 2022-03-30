@@ -36,6 +36,7 @@
 man/*
 pdf/
 data/*
+inst/
 
 #
 # ignore these directories
@@ -58,7 +59,6 @@ hugo_projects/
 AoC/
 out/
 output/
-md/
 
 
 # ignore these separate projects
@@ -72,6 +72,12 @@ book_modern_dive/
 opensecrets/
 test_opensecrets/
 CARES/
+ALZ_legal/
+medical/
+JOB/
+correspondence/
+backup*/
+.git/
 
 # Files that end with .RDS, .rds. .Rdata, .csv, .pdf, .html (all directories)
 # ================================
@@ -79,17 +85,22 @@ CARES/
 *.rds
 *.Rdata
 *.csv
-*.pdf
+#   *.pdf
 *.html
+
+# Ignore Files that BEGIN with _ (_script, _file.txt, etc.)
+# does NOT ignore my_file
+_*
 
 
 # Google API
 # ============
-.httr-oauth   # in any directory
+.httr-oauth
 r_mp3/R/.httr-oauth
 r_mp3/.httr-oauth
 r_mp3/R/021_api_codes.R
 r_mp3/R/021_api_codes.Rmd
+zsh_project/CURL_examples/.secret
 
 
 # Special
@@ -98,6 +109,7 @@ r_mp3/R/021_api_codes.Rmd
 vim-myhelp/
 *.html
 *.tar.gz
+~/code/jimHelp/doc/*
 
 tags
 

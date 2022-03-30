@@ -38,7 +38,7 @@ export INC_IGNORE_DUPS="true"		# if adjacent
 export INC_APPEND_HISTORY="true"	# all zsh shells show same hist
 
 #	env var
-export V=~/.config/nvim/init.vim
+export V=~/.config/nvim/init.lua
 export Z=$ZDOTDIR/.zshrc
 export C=~/code/
 # for printing

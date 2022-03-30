@@ -39,12 +39,17 @@ alias goYoutube='cd ~/code/youtube_api/'
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'
 alias goHealth='cd ~/code/r_health_labs/'
-alias goLua='cd ~/code/lua_projects/'
+alias goLua='cd ~/code/lua_project/'
 alias goTex='cd ~/code/tex_projects/'
 alias goTAGS='cd ~/code/TAGS/'
 alias goOUT='cd ~/Downloads/print_and_delete'
-alias goZSH='cd ~/code/zsh_scripts_project/'
-alias gomp3='cd ~/code/mp3/'
+
+alias goMp3='cd ~/code/mp3/'
+alias goHelp='cd ~/code/jimHelp/doc/'
+alias goNSE='cd ~/code/NSE_project/'
+alias goCurl='cd ~/code/zsh_scripts_project/CURL_examples/'
+alias goPublish='cd ~/code/publish_project/'
+alias goZsh='cd ~/code/zsh_scripts_project/'
 
 # boku, bookmarks manager
 alias b='~/.local/bin/buku --suggest'
@@ -83,3 +88,6 @@ alias lsym='ls -l *(@)'
 # directories only
 alias ldir='ll -d *(/)'
 
+
+# GREP
+alias grep='grep --color=always'

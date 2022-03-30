@@ -150,4 +150,8 @@ autoload -U colors && colors
 
 
 
-
+### MOVE to new file:  autoload or equivalent
+#   <X-x><X-e> at CLI will edit text in vim
+autoload -U edit-command-line
+zle -N edit-command-line 
+bindkey -M vicmd v edit-command-line

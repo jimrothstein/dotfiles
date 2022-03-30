@@ -88,3 +88,11 @@ if (interactive()) {
 	suppressMessages(library(sloop))
   suppressMessages(library(xfun)) # utils from Yihui
 }
+
+##  REditor/languageserver
+##  set 27 SEP 2021
+##  options in ~/.Rprofile will overwrite configuration in LSPConfig
+##
+##
+##  turn off lintr - driving me nuts
+options(languageserver.diagnostics = FALSE)

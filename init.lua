@@ -1,7 +1,7 @@
--- file <- "/home/jim/.config/nvim/init.vim"
+-- file <- "/home/jim/.config/nvim/init.lua"
+
 
 vim.cmd [[
-" ~/.config/nvim/init.vim -> ~/dotfiles/init.vim
 "----------------------------
 "   FILES, sourced at BOTTOM
 "----------------------------
@@ -349,7 +349,6 @@ source ~/.config/nvim/jim_code/ctags.vim
 --			BEGIN LUA 
 ---------------
 --
---   SOURCED from ~/.config/nvim/init.vim
 
 -----------------------------------
 --    FUTURE:    Global Status Line
