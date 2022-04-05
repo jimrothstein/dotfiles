@@ -1,5 +1,6 @@
 -- file <- "/home/jim/.config/nvim/init.lua"
-
+require("jim.options")
+require("jim.keymaps")
 
 vim.cmd [[
 "----------------------------
@@ -20,14 +21,13 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/treesitter.lua
 " $HOME/.config/nvim/lua/jim/init.lua
 " $HOME/.config/nvim/lua/jim/bufferline.lua
+" $HOME/.config/nvim/lua/jim/options.lua
+" $HOME/.config/nvim/lua/jim/keymaps.lua
+" $HOME/.config/nvim/lua/jim/functions.lua
+" $HOME/.config/nvim/lua/jim/tools.lua
 "
 "
-"
-" 3 MARCH 2022:   Move Lua things to ~/.config/lua/lua.init and source at
-" bottom of this file.
-"
-"
-" for ZSH
+"  --	 ZSH --	
 " $HOME/.config/zsh/
 "
 " --------------------------
@@ -81,14 +81,12 @@ Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
 call plug#end()
 "
-"
-" ================
-"       SETTINGS
-" ================
-"
+"vim.g.mapleader=','         --  default = \
+"vim.g.maplocalleader=','    --  might be clashes
+
 let mapleader=","
 
-
+"
 " --------------
 "  MOVE TO LUA
 "  OMNICOMPLETE
@@ -145,11 +143,6 @@ nnoremap <Leader>cd  :cd %:p:h<Enter>
 
 " $VIMRC
 nnoremap <Leader>sv	:source $VIMRC<cr>
-
-
-
-
-
 
 
 
@@ -353,9 +346,6 @@ source ~/.config/nvim/jim_code/ctags.vim
 -----------------------------------
 --    FUTURE:    Global Status Line
 -----------------------------------
--- > version 0.7
--- creates one global status line;  removes status for each window
---- vim.opt.laststatus=3
 -- :hi WinSeparator guibg=None
 
 -----------------------
@@ -369,14 +359,11 @@ require('jim.lsp_cmp')
 require('jim.bufferline')
 -- require('jim_code.lightline')
 
-
---  keybindings
+--  keybindings and autocmd
 require('jim.keymaps')
 
 require('jim.options')
 
-vim.g.mapleader=','         --  default = \
-vim.g.maplocalleader=','    --  might be clashes
 
 
 ---------
