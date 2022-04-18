@@ -90,14 +90,6 @@ source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
     autoload -Uz helloFile jim example_function
 
 
-# =========================================================
-#     ENV VAR	
-# =========================================================
-    export V=~/.config/nvim/init.vim
-    export Z=$ZDOTDIR/.zshrc
-    export G=~/code/.gitignore
-    export TEMPLATES=~/.config/nvim/templates/
-
 
 ZSH_THEME="intheloop"
 
@@ -163,10 +155,6 @@ setopt NO_CASE_GLOB
 # TO LIST:  > hash -d
 #
 #
-code=~/code
-mp3=~/mp3_files
-export dot=~/dotfiles
-# dotfiles=~/dotfiles
 
 
 # initialize
