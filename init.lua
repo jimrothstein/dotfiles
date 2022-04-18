@@ -1,6 +1,4 @@
 -- file <- "/home/jim/.config/nvim/init.lua"
-require("jim.options")
-require("jim.keymaps")
 
 vim.cmd [[
 "----------------------------
@@ -8,7 +6,6 @@ vim.cmd [[
 "----------------------------
 "
 " -- legacy --
-" $HOME/.config/nvim/jim_code/windows.vim
 " $HOME/.config/nvim/jim_code/underline.vim
 " $HOME/.config/nvim/jim_code/date.vim
 " $HOME/.config/nvim/jim_code/clipboard.vim
@@ -19,12 +16,14 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/lsp_experimental.lua
 " $HOME/.config/nvim/lua/jim/telescope.lua
 " $HOME/.config/nvim/lua/jim/treesitter.lua
-" $HOME/.config/nvim/lua/jim/init.lua
+" $HOME/.config/nvim/lua/jim/cleanup.lua
 " $HOME/.config/nvim/lua/jim/bufferline.lua
 " $HOME/.config/nvim/lua/jim/options.lua
 " $HOME/.config/nvim/lua/jim/keymaps.lua
 " $HOME/.config/nvim/lua/jim/functions.lua
 " $HOME/.config/nvim/lua/jim/tools.lua
+" $HOME/.config/nvim/lua/jim/windows.lua
+" $HOME/.config/nvim/lua/jim/colors.lua
 "
 "
 "  --	 ZSH --	
@@ -73,6 +72,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-surround' 
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+Plug 'EdenEast/nightfox.nvim' 
 
 "
 "------
@@ -202,99 +202,6 @@ endfunction
 "  USAGE:
 nnoremap <Leader>t :call ToggleSpellCheck()<CR>
 "
-" ========
-" AUTOCMD
-" ========
-"
-" manually
-"
-" USE Ctrl-S (like R-studio) to save
-nnoremap <C-S> :wa <CR>
-inoremap <C-S> <esc>:wa<CR>
-
-
-" FROM ercrema - github
-"
-" keep filetypes consistent 
-au BufNewFile,BufRead *.Rmd,*.rmd set filetype=rmd
-au BufNewFile,BufRead *.md  set filetype=md
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-
-au BufNewFile,BufRead *.tex, set filetype=tex
-
-au FileType tex,latex,markdown setlocal spell spelllang=en_us
-
-" all files, center when entering insert
-" 7/2021 ... too confusing, turned off.
-"au InsertEnter * norm zz
-
-augroup help_files
-	au!
-	au filetype help nnoremap <buffer>q :q<CR>
-	au filetype help nnoremap <buffer> <CR> <C-]> 
-augroup END
-
-
-"	snippet to use skelton for .md, .sh, .Rmd, .R
-augroup skeleton
-	au!
-  autocmd BufNewfile Read.me r ~/skeletons/skeleton.readme
-	autocmd BufNewFile *.md   r ~/.config/nvim/templates/skeleton.md
-	autocmd BufNewFile *.sh   r ~/.config/nvim/templates/skeleton.sh
-  autocmd BufNewFile *.Rmd	r ~/.config/nvim/templates/skeleton.Rmd
-  autocmd BufNewFile *.R    r ~/.config/nvim/templates/skeleton.R
-augroup END
-
-
-augroup R_specs
-	autocmd!
-	" to be sure Comments repeat as expected
-	autocmd FileType r,rmd :set formatoptions+=ro
-	autocmd FileType r,rmd inoremap <leader>mm %*% 
-	autocmd FileType r,rmd inoremap <leader>pp %>% 
-augroup END
-
-
-augroup ALZ
-	autocmd! BufRead criminal.md abbr <buffer> PO PO Marcelina
-augroup END
-
-
-" workaround ?
-au InsertLeave * set nopaste
-
-" Insert mode - change status line color!
-" Prior?    ctermfg=245 ctermbg=235
-au InsertEnter * hi Statusline cterm=reverse 					 ctermbg=5
-au InsertLeave * hi Statusline cterm=reverse ctermfg=0 ctermbg=2     
-
-
-" ---- yaml ----
-"  vice nice to align!
-"  specific setttings for .yml files
-autocmd FileType yaml setlocal ai et sw=2 ts=2 cuc cul 
-
-" EXAMPLE:   mapping based on file .ext	
-" autocmd BufNewFile,BufRead *.R 		nnoremap ,id I# ---------<esc>j 
-" autocmd BufNewFile,BufRead *.vim 	nnoremap ,id I" ---------<esc>j 
-
-
-" For .Rmd files, find next/previous 'chunk'
-augroup knitr
-  autocmd BufNewFile,BufRead *.Rmd nnoremap ]r /```{r<CR>
-  autocmd BufNewFile,BufRead *.Rmd nnoremap [r ?```{r<CR>
-augroup END
-
-
-"	vim hard way -- ch18
-augroup filetype_vim
-    autocmd!
-    "original:
-    "autocmd FileType vim setlocal foldmethod=marker
-    "
-    "for treesitter:
-    autocmd FileType vim setlocal foldmethod=expr
-augroup END
 "
 "-----------------
 " MACRO- reg a, @a
@@ -322,7 +229,6 @@ let g:nvim_config_root = stdpath('config')
 " SOURCE ADD'N  Config files
 "============================
 "  windows, terminals, sizing, editor sizing
-source ~/.config/nvim/jim_code/windows.vim
 source $HOME/.config/nvim/jim_code/underline.vim
 source $HOME/.config/nvim/jim_code/date.vim
 source $HOME/.config/nvim/jim_code/clipboard.vim
@@ -333,8 +239,6 @@ source ~/.config/nvim/jim_code/ctags.vim
 
 " NOTE:   :luafile to source
 " NOTE:   lua_file, with NO EXTENSION
-"
-
 
 ]]
 
@@ -343,14 +247,6 @@ source ~/.config/nvim/jim_code/ctags.vim
 ---------------
 --
 
------------------------------------
---    FUTURE:    Global Status Line
------------------------------------
--- :hi WinSeparator guibg=None
-
------------------------
---          LUA MODULES
------------------------
 --  list all *.lua files here (aka modules)
 --  actual location ~/.config/nvim/lua/jim.* 
 require('jim.telescope')
@@ -361,34 +257,16 @@ require('jim.bufferline')
 
 --  keybindings and autocmd
 require('jim.keymaps')
-
 require('jim.options')
+require("jim.lsp_experimental")
+require("jim.functions")
+require("jim.tools")
+require("jim.cleanup")
+require("jim.globals")
+require("jim.windows")
+require("jim.colors")
 
 
 
----------
---    LSP
----------
---
---  configure LSP installer 
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  server:setup(opts)
-  end
-)
-
-
------------------------------
----     FUTURE:   reset ctags
------------------------------
-
---- " set tags  (ctags -R .)
---- set tags=~/code/tags
---- " ~/bin/run_ctags.sh does everything
---- " Trigger:   Write Buffer to FILE
---- augroup ctags
---- 	autocmd  BufWritePost *.R,*.Rmd :!~/bin/run_ctags.sh 
---- augroup end
 
 
