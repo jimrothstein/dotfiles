@@ -1,13 +1,18 @@
 # /home/jim/.zshenv
 #
 # =================================================
-# KEEP .zshenv in $HOME/
+# ~/.zshenv
+# KEEP .zshenv in $HOME/; 1st file sourced 
+#  - keep ENV variables here
+#
 # =================================================
 # ARTICLE:
 # 		https://thevaluable.dev/zsh-install-configure/
-# 		Suggests, ~/.zshrc only contain env!
+# 		Suggests, ~/.zshenv only contain env!
 # 		Config files put in ~/.config/zsh/
+# 		(~/.config/zsh/.zshrc used for functions, paths, options, alias)
 # =================================================
+
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -41,9 +46,12 @@ export INC_APPEND_HISTORY="true"	# all zsh shells show same hist
 export V=~/.config/nvim/init.lua
 export Z=$ZDOTDIR/.zshrc
 export C=~/code/
+export G=~/code/.gitignore
+export TEMPLATES=~/.config/nvim/templates/
 # for printing
 export OUT=~/Downloads/print_and_delete
 
+# dotfiles=~/dotfiles
 ## When using /tmp/rebase-sandbox (GIT practice)
   export SANDBOX=/tmp/rebase-sandbox
 
