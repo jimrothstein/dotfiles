@@ -32,54 +32,54 @@ vim.cmd [[
 " --------------------------
 "		 VIM-PLUG 
 " ------------------------
-call plug#begin('~/.config/nvim/vim-plug')
+"call plug#begin('~/.config/nvim/vim-plug')
 
 " ----- lsp
-Plug 'neovim/nvim-lspconfig'
+"Plug 'neovim/nvim-lspconfig'
 
 " ----- completion engine
-Plug 'hrsh7th/nvim-cmp'   
+"Plug 'hrsh7th/nvim-cmp'   
 "
 " ----- completion sources
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-nvim-lua'
-"  ----- nvim-lsp-installe
-Plug 'williamboman/nvim-lsp-installer'
-" ----- treesitter
-"(FUTURE) We recommend updating the parsers on update
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
-"------
-
-"------ telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'sharkdp/fd'
-" next line is installed via apt
-Plug 'BurntSushi/ripgrep'
-"------ for telescope-bookmarks (firefox needs sqlite)
-Plug 'dhruvmanila/telescope-bookmarks.nvim'
-Plug 'tami5/sqlite.lua'
-"------
-"
-Plug 'akinsho/bufferline.nvim'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/vim-plug'	
-Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree'
-Plug 'benmills/vimux'
-Plug 'tpope/vim-surround' 
-Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
-Plug 'EdenEast/nightfox.nvim' 
-
-"
-"------
-"	my help (cloned & changed name from tinyheero)
-"   Plug 'jimrothstein/jimHelp'
-
-call plug#end()
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/cmp-nvim-lua'
+" "  ----- nvim-lsp-installe
+" Plug 'williamboman/nvim-lsp-installer'
+" " ----- treesitter
+" "(FUTURE) We recommend updating the parsers on update
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+" "------
+" 
+" "------ telescope
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'sharkdp/fd'
+" " next line is installed via apt
+" Plug 'BurntSushi/ripgrep'
+" "------ for telescope-bookmarks (firefox needs sqlite)
+" Plug 'dhruvmanila/telescope-bookmarks.nvim'
+" Plug 'tami5/sqlite.lua'
+" "------
+" "
+" Plug 'akinsho/bufferline.nvim'
+" Plug 'itchyny/lightline.vim'
+" Plug 'junegunn/vim-plug'	
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'scrooloose/nerdtree'
+" Plug 'benmills/vimux'
+" Plug 'tpope/vim-surround' 
+" Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+" Plug 'EdenEast/nightfox.nvim' 
+" 
+" "
+" "------
+" "	my help (cloned & changed name from tinyheero)
+" "   Plug 'jimrothstein/jimHelp'
+" 
+" call plug#end()
 "
 "vim.g.mapleader=','         --  default = \
 "vim.g.maplocalleader=','    --  might be clashes
@@ -229,13 +229,16 @@ let g:nvim_config_root = stdpath('config')
 " SOURCE ADD'N  Config files
 "============================
 "  windows, terminals, sizing, editor sizing
-source $HOME/.config/nvim/jim_code/underline.vim
-source $HOME/.config/nvim/jim_code/date.vim
-source $HOME/.config/nvim/jim_code/clipboard.vim
+
+" TODO
+"	source $HOME/.config/nvim/jim_code/underline.vim
+"	source $HOME/.config/nvim/jim_code/date.vim
+"	source $HOME/.config/nvim/jim_code/clipboard.vim
+
 " --- nvim-R ---- 
-source ~/.config/nvim/jim_code/nvimR_config.vim
+"source ~/.config/nvim/jim_code/nvimR_config.vim
 " ctags - R .    needs:
-source ~/.config/nvim/jim_code/ctags.vim
+" source ~/.config/nvim/jim_code/ctags.vim
 
 " NOTE:   :luafile to source
 " NOTE:   lua_file, with NO EXTENSION
@@ -249,22 +252,23 @@ source ~/.config/nvim/jim_code/ctags.vim
 
 --  list all *.lua files here (aka modules)
 --  actual location ~/.config/nvim/lua/jim.* 
+require('jim.packer')
 require('jim.telescope')
-require('jim.treesitter')
-require('jim.lsp_cmp')
-require('jim.bufferline')
+-- require('jim.treesitter')
+-- require('jim.lsp_cmp')
+-- require('jim.bufferline')
 -- require('jim_code.lightline')
 
 --  keybindings and autocmd
 require('jim.keymaps')
 require('jim.options')
-require("jim.lsp_experimental")
-require("jim.functions")
-require("jim.tools")
-require("jim.cleanup")
-require("jim.globals")
+-- require("jim.lsp_experimental")
+-- require("jim.functions")
+-- require("jim.tools")
+-- require("jim.cleanup")
+-- require("jim.globals")
 require("jim.windows")
-require("jim.colors")
+-- require("jim.colors")
 
 
 
