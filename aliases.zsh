@@ -64,8 +64,8 @@ alias goBackup='cd ~/.config/nvim/backup/'
 alias cx='chmod +x'				# USE:    cx  new_script.sh
 
 #	docs
-alias goDocs='cd ~/docs'
-alias goLegal='cd ~/docs'
+alias goDocs='cd ~/code/docs'
+alias goLegal='cd ~/code/docs'
 
 # export (so go<TAB> works)
 export goCode goDot goVim goBin 
