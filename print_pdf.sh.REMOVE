@@ -18,7 +18,7 @@
 #
 pandoc "$1" \
 				-f markdown \
-				--include-in-header geometry.tex \
+				--include-in-header ~/dotfiles/geometry.tex \
 				-o "$2"
 
 exit
