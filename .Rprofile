@@ -78,13 +78,13 @@ if (interactive()) {
 ## Devtools, usethis, rlang, lobstr etc ....
 ## =====================
 ## autoloads (i.e no need library(devtools))
-##  
+## 11MAY 2022; jr removed some packages; if need just uncomment	  
 if (interactive()) {
-  suppressMessages(library(devtools))
-	suppressMessages(library(usethis))
+  #suppressMessages(library(devtools))
+	#suppressMessages(library(usethis))
   suppressMessages(library(rlang))
 	suppressMessages(library(lobstr))
-	suppressMessages(library(here))
+	#suppressMessages(library(here))
 	suppressMessages(library(sloop))
   suppressMessages(library(xfun)) # utils from Yihui
 }

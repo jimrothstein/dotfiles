@@ -5,7 +5,14 @@ return require('packer').startup(function()
   use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
-} 
+}
+
+	
+ 
+ 
+  use 'scrooloose/nerdtree'
+	use 'tpope/vim-surround'
+	use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
 
   end)
   

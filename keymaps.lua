@@ -10,6 +10,12 @@ local opts = {noremap = true}
 vim.api.nvim_set_keymap('n', '<leader>f', '<C-f>', opts )
 vim.api.nvim_set_keymap('n', '<leader>b', '<C-b>', opts )
 
+
+vim.api.nvim_set_keymap('n', '<C-L>', ':wincmd l<CR>', opts )
+vim.api.nvim_set_keymap('n', '<C-H>', ':wincmd h<CR>', opts )
+vim.api.nvim_set_keymap('n', '<C-J>', ':wincmd j<CR>', opts )
+vim.api.nvim_set_keymap('n', '<C-K>', ':wincmd k<CR>', opts )
+
 --  FUTURE
 --
 -- vim.api.nvim_set_keymap('n', '<leader>e', 'vim.cmd("echo init.vim")', {})

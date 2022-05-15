@@ -13,6 +13,8 @@ vim.cmd [[
 " ~/.config/nvim/jim_code/ctags.vim
 "
 "  -- lua --
+
+" $HOME/.config/nvim/lua/jim/packer.lua
 " $HOME/.config/nvim/lua/jim/lsp_experimental.lua
 " $HOME/.config/nvim/lua/jim/telescope.lua
 " $HOME/.config/nvim/lua/jim/treesitter.lua
@@ -235,8 +237,6 @@ let g:nvim_config_root = stdpath('config')
 "	source $HOME/.config/nvim/jim_code/date.vim
 "	source $HOME/.config/nvim/jim_code/clipboard.vim
 
-" --- nvim-R ---- 
-"source ~/.config/nvim/jim_code/nvimR_config.vim
 " ctags - R .    needs:
 " source ~/.config/nvim/jim_code/ctags.vim
 
@@ -269,6 +269,7 @@ require('jim.options')
 -- require("jim.globals")
 require("jim.windows")
 -- require("jim.colors")
+require("jim.Nvim-R")
 
 
 

@@ -47,12 +47,10 @@ alias goOUT='cd ~/Downloads/print_and_delete'
 alias goMp3='cd ~/code/mp3/'
 alias goHelp='cd ~/code/jimHelp/doc/'
 alias goNSE='cd ~/code/NSE_project/'
-alias goCurl='cd ~/code/zsh_scripts_project/CURL_examples/'
+alias goCurl='cd ~/code/zsh_project/CURL_examples/'
 alias goPublish='cd ~/code/publish_project/'
-alias goZsh='cd ~/code/zsh_scripts_project/'
+alias goZsh='cd ~/code/zsh_project/'
 
-# boku, bookmarks manager
-alias b='~/.local/bin/buku --suggest'
 
 #	config
 alias goDot='cd ~/dotfiles'

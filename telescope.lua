@@ -4,6 +4,7 @@
         -- Default configuration for telescope goes here:
         -- config_key = value,
         -- ..
+				cwd = "/"
       },
       pickers = {
         -- Default configuration for builtin pickers goes here:
