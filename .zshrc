@@ -95,13 +95,16 @@ source ~/.config/zsh/functions.zsh
 ## SEE ALSO file <- 410_bindkey_examples.Rmd
 source ~/.config/zsh/bindkey.zsh
 
-
+#	==============
+#		PREFER EMACS
+#
 # PLUGINS
 # 'friendlier' vi-mode
 # jeffreytse/zsh-vi-mode
 # see $HOME/.zsh-vi-mode/
-source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
+#
+#source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# =============
 
 # =========================================================
 ##   PATH and path
@@ -109,8 +112,8 @@ source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ##	Use typeset to set shell attribute to -U (maintain unique entries )
 ##	zsh automatically syncs env $PATH and array $path
     typeset -U PATH path
-    PATH=/usr/local/bin:/usr/bin:/bin:~/.local/bin/
-    PATH+=:~/code/zsh_scripts_project/
+    PATH=/usr/local/bin:/usr/bin:/bin:~/.local/bin
+    PATH+=:~/code/zsh_scripts_project
     export PATH=$HOME/bin:$PATH
 
 ## ==============================================================
@@ -156,7 +159,7 @@ autoload -Uz compinit
 compinit
 
 #set -o emacs		# default, and easier for edit zsh/bash command lines
-bindkey -v          # @CLI  use vi
+# bindkey -v          # @CLI  use vi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"

@@ -56,7 +56,11 @@ alias goZsh='cd ~/code/zsh_project/'
 alias goDot='cd ~/dotfiles'
 alias goVim='cd ~/.config/nvim/'
 
-alias goBin='cd ~/bin'
+# ~/bin too crowded
+# use ~/.local/bin for scripts
+#
+alias goBin='cd ~/.local/bin/'
+alias go.local.bin='cd ~/.local/bin/'
 alias goConfig='cd ~/.config/'
 alias goBackup='cd ~/.config/nvim/backup/'
 alias cx='chmod +x'				# USE:    cx  new_script.sh
