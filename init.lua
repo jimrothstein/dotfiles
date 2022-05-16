@@ -1,5 +1,7 @@
 -- file <- "/home/jim/.config/nvim/init.lua"
 
+--	TODO
+
 vim.cmd [[
 "----------------------------
 "   FILES, sourced at BOTTOM

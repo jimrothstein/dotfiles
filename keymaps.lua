@@ -1,4 +1,7 @@
-
+--
+-- Sun May 15 17:58:01 PDT 2022
+--	Date format - remove time (get fouled up in syntax)
+--
 -- these 2 work
 vim.api.nvim_set_keymap('n', '<leader>p', ':<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>e', ':echo "hi"<CR> ', {})
@@ -35,8 +38,15 @@ vim.api.nvim_set_keymap('n', '<leader>pr', ':<C-R>',  opts)
 --	yank visual text to SYSTEM	clipboard  ( <C-v> to paste)
 vim.api.nvim_set_keymap('v', '<C-c>', '"+y', opts)
 
+
+
+--	insert date	
+vim.api.nvim_set_keymap('n', '<leader>d', ':r !date <CR>',  opts)
+
 --  SAVE FILE
 vim.api.nvim_set_keymap('n', '<leader>s', ':w<CR>',  opts)
+
+vim.api.nvim_set_keymap('n', '<C-S>', ':w<CR>',  opts)
 vim.api.nvim_set_keymap('i', '<leader>s', '<esc>:w<CR>',  opts)
 
 
