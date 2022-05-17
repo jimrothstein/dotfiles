@@ -188,8 +188,21 @@ local opts = { noremap = true }
 ------------------------------
 vim.cmd [[
 
-"  allow user to pick buffer
+" ==============================
+"			PURPOSE:		Command to update (write if changed) buffers, delete all buffers, finally edit last buffer
+"			USAGE:			:Bd
+
+command Bd :up | %bd | e#
+" ==============================
+
+
+
+
+" ==============================
+"  PURPOSE:		allow user to pick buffer
    nnoremap <F5> :buffers<CR>:buffer<Space>
+" ==============================
+
 
 " ==============================
 "  insert quoted filename in R
