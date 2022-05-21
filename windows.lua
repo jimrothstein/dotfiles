@@ -20,5 +20,6 @@ tabnew  ~/code/docs/300_tech_notes.md
 tabnew	~/code/docs/001_tech_reading.md
 tabfirst
 
+vsplit $V
 
 ]]

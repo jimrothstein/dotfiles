@@ -17,7 +17,9 @@ vim.api.nvim_set_keymap('n', '<leader>b', '<C-b>', opts )
 vim.api.nvim_set_keymap('n', '<C-L>', ':wincmd l<CR>', opts )
 vim.api.nvim_set_keymap('n', '<C-H>', ':wincmd h<CR>', opts )
 vim.api.nvim_set_keymap('n', '<C-J>', ':wincmd j<CR>', opts )
-vim.api.nvim_set_keymap('n', '<C-K>', ':wincmd k<CR>', opts )
+
+--	1st exit insert mode; then jump
+vim.api.nvim_set_keymap('t', '<C-K>', '<C-\\><C-N>:wincmd k<CR>', opts )
 
 --  FUTURE
 --
@@ -41,7 +43,7 @@ vim.api.nvim_set_keymap('v', '<C-c>', '"+y', opts)
 
 
 --	insert date	
-vim.api.nvim_set_keymap('n', '<leader>d', ':r !date <CR>',  opts)
+vim.api.nvim_set_keymap('n', '<leader>id', ':r !date <CR>',  opts)
 
 --  SAVE FILE
 vim.api.nvim_set_keymap('n', '<leader>s', ':w<CR>',  opts)
@@ -192,7 +194,7 @@ vim.cmd [[
 "			PURPOSE:		Command to update (write if changed) buffers, delete all buffers, finally edit last buffer
 "			USAGE:			:Bd
 
-command Bd :up | %bd | e#
+command! Bd :up | %bd | e#
 " ==============================
 
 

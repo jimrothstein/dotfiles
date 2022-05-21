@@ -22,6 +22,7 @@
 .RData
 .Ruserdata
 
+# ignore these FILES
 ## no need to hide .Rprofile, but DO NEED to hide .Renviron (codes)
 # .Rprofile
 .Renviron   
@@ -29,6 +30,15 @@
 # files ending in .RDS or .Rd (anywhere) 
 *.RDS
 *.Rd
+*.rds
+*.csv
+#   *.pdf
+*.html
+
+# Ignore Files that BEGIN with _ (_script, _file.txt, etc.)
+# (NOT ignore my_file)
+_*
+
 
 
 # directories inside R projects
@@ -42,8 +52,6 @@ inst/
 # ignore these directories
 # ==========================
 r_legal/
-spoon-knife/
-bookclub-Advanced_R/
 vim-myhelp/
 dev/
 r_try_things_here/
@@ -61,8 +69,6 @@ out/
 output/
 
 
-# ignore these separate projects
-# ================================
 pkg_linear_algebra/
 pkg_mp3_files/
 pkg_yt_api/
@@ -78,19 +84,6 @@ JOB/
 correspondence/
 backup*/
 .git/
-
-# Files that end with .RDS, .rds. .Rdata, .csv, .pdf, .html (all directories)
-# ================================
-*.RDS
-*.rds
-*.Rdata
-*.csv
-#   *.pdf
-*.html
-
-# Ignore Files that BEGIN with _ (_script, _file.txt, etc.)
-# does NOT ignore my_file
-_*
 
 
 # Google API
