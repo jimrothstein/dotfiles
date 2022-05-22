@@ -209,8 +209,7 @@ setopt NO_CASE_GLOB
 set NO_BEEP
 
 # # apply Debian keyboard mappings (in ~/.xmodmap)
-# # maps ccaps lock to ESC
-# if [ -f ~/.xmodmap ]; then
-#   xmodmap ~/.xmodmap
-# fi
+#  ~/.xinitrc contains xmodmap statment to make CAPS LOCK behave like ESC
+#  (many other ways to do this)
+source ~/.xinitrc
 #
