@@ -1,5 +1,11 @@
 # .gitignore
-# ~/code/.gitignore   ($G)
+# ~/dotfiles/.gitignore   ($G)
+#
+#	TODO:
+#		-	Fri May 20 22:24:14 PDT 2022
+#		-	.Renviron (API keys) - how to save this file, but NOT to github?
+#
+#
 #
 # IF file has been put into index
 # =================================
@@ -26,6 +32,10 @@
 ## no need to hide .Rprofile, but DO NEED to hide .Renviron (codes)
 # .Rprofile
 .Renviron   
+
+#	vim backups .Renviron~
+.Renviron*
+/home/jim/.config/nvim/backup/.Renviron*
 
 # files ending in .RDS or .Rd (anywhere) 
 *.RDS
