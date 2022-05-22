@@ -11,7 +11,7 @@ vim.cmd [[
 " $HOME/.config/nvim/jim_code/underline.vim
 " $HOME/.config/nvim/jim_code/date.vim
 " $HOME/.config/nvim/jim_code/clipboard.vim
-" ~/.config/nvim/jim_code/nvimR_config.vim
+" ~/.config/nvim/old_vim/nvimR_config.vim
 " ~/.config/nvim/jim_code/ctags.vim
 "
 "  -- lua --
