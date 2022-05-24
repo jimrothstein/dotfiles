@@ -21,5 +21,6 @@ tabnew	~/code/docs/001_tech_reading.md
 tabfirst
 
 vsplit $V
+wincmd R
 
 ]]

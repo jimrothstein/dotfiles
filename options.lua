@@ -1,4 +1,8 @@
 -- $HOME/.config/nvim/init.lua
+-- TODO:
+-- Mon May 23 22:10:02 PDT 2022
+-- do want backup, but backupdir is screwy ; so removed dir to see what default
+-- is.
 -----------------
 --        OPTIONS
 -----------------
@@ -80,7 +84,7 @@ set.relativenumber = true
 
 set.textwidth=79	--	" sets right margin!
 set.backup = true
-set.backupdir='~/.config/nvim/backup/'	-- do not surround with quotes!
+-- set.backupdir='~/.config/nvim/backup/'	-- do not surround with quotes!
 
 -- vim.cmd [[colo jimColor]]
 

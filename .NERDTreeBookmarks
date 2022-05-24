@@ -1,0 +1,12 @@
+.LOCAL_BIN ~/.local/bin
+CODE ~/code
+CONFIG_LUA_JIM ~/.config/nvim/lua/jim
+CONFIG_VIM ~/.config/nvim/init.lua
+CONFIG_ZSH ~/.config/zsh
+DOCS ~/code/docs
+HTTR2-Youtube ~/code/youtube_api/httr2_pkg
+MAKE ~/code/make_project
+ZSH ~/code/zsh_project
+RSCRIPTS ~/code/jimTools/Rscripts
+PUBLISH_MATH ~/code/publish_project/MATH
+
