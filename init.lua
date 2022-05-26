@@ -11,7 +11,6 @@ vim.cmd [[
 " $HOME/.config/nvim/jim_code/underline.vim
 " $HOME/.config/nvim/jim_code/date.vim
 " $HOME/.config/nvim/jim_code/clipboard.vim
-" ~/.config/nvim/old_vim/nvimR_config.vim
 " ~/.config/nvim/jim_code/ctags.vim
 "
 "  -- lua --
@@ -28,6 +27,7 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/tools.lua
 " $HOME/.config/nvim/lua/jim/windows.lua
 " $HOME/.config/nvim/lua/jim/colors.lua
+" $HOME/.config/nvim/lua/jim/Nvim-R.lua
 "
 "
 "  --	 ZSH --	
@@ -89,6 +89,7 @@ vim.cmd [[
 "vim.g.maplocalleader=','    --  might be clashes
 
 let mapleader=","
+let localmapleader=","
 
 "
 " --------------

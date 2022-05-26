@@ -82,9 +82,14 @@ set.number= true
 set.relativenumber = true
 
 
+
 set.textwidth=79	--	" sets right margin!
 set.backup = true
--- set.backupdir='~/.config/nvim/backup/'	-- do not surround with quotes!
+
+-- FAILED set.backupdir='~/.config/nvim/backup/'	-- do not surround with quotes!
+-- FAILED set.backupdir=~/.backup/
+-- FAILED vim.opt.backupdir=/home/jim/.backup/
+vim.opt.backupdir = "/home/jim/.backup/"
 
 -- vim.cmd [[colo jimColor]]
 
