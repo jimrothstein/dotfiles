@@ -33,57 +33,6 @@ vim.cmd [[
 "  --	 ZSH --	
 " $HOME/.config/zsh/
 "
-" --------------------------
-"		 VIM-PLUG 
-" ------------------------
-"call plug#begin('~/.config/nvim/vim-plug')
-
-" ----- lsp
-"Plug 'neovim/nvim-lspconfig'
-
-" ----- completion engine
-"Plug 'hrsh7th/nvim-cmp'   
-"
-" ----- completion sources
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/cmp-cmdline'
-" Plug 'hrsh7th/cmp-nvim-lua'
-" "  ----- nvim-lsp-installe
-" Plug 'williamboman/nvim-lsp-installer'
-" " ----- treesitter
-" "(FUTURE) We recommend updating the parsers on update
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
-" "------
-" 
-" "------ telescope
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
-" Plug 'sharkdp/fd'
-" " next line is installed via apt
-" Plug 'BurntSushi/ripgrep'
-" "------ for telescope-bookmarks (firefox needs sqlite)
-" Plug 'dhruvmanila/telescope-bookmarks.nvim'
-" Plug 'tami5/sqlite.lua'
-" "------
-" "
-" Plug 'akinsho/bufferline.nvim'
-" Plug 'itchyny/lightline.vim'
-" Plug 'junegunn/vim-plug'	
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'scrooloose/nerdtree'
-" Plug 'benmills/vimux'
-" Plug 'tpope/vim-surround' 
-" Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
-" Plug 'EdenEast/nightfox.nvim' 
-" 
-" "
-" "------
-" "	my help (cloned & changed name from tinyheero)
-" "   Plug 'jimrothstein/jimHelp'
-" 
-" call plug#end()
 "
 "vim.g.mapleader=','         --  default = \
 "vim.g.maplocalleader=','    --  might be clashes
@@ -246,6 +195,66 @@ let g:nvim_config_root = stdpath('config')
 " NOTE:   :luafile to source
 " NOTE:   lua_file, with NO EXTENSION
 
+" FROM ercrema - github
+"
+" keep filetypes consistent 
+au BufNewFile,BufRead *.Rmd,*.rmd set filetype=rmd
+au BufNewFile,BufRead *.md  set filetype=md
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+au BufNewFile,BufRead *.tex, set filetype=tex
+
+au FileType tex,latex,markdown setlocal spell spelllang=en_us
+
+"	close help files
+augroup help_files
+	au!
+	au filetype help nnoremap <buffer>q :q<CR>
+	au filetype help nnoremap <buffer> <CR> <C-]> 
+augroup END
+
+"	snippet to use skelton for .md, .sh, .Rmd, .R
+augroup skeleton
+	au!
+  autocmd BufNewfile Read.me r ~/skeletons/skeleton.readme
+	autocmd BufNewFile *.md   r ~/.config/nvim/templates/skeleton.md
+	autocmd BufNewFile *.sh   r ~/.config/nvim/templates/skeleton.sh
+  autocmd BufNewFile *.Rmd	r ~/.config/nvim/templates/skeleton.Rmd
+  autocmd BufNewFile *.R    r ~/.config/nvim/templates/skeleton.R
+augroup END
+
+augroup R_specs
+	autocmd!
+	" to be sure Comments repeat as expected
+	autocmd FileType r,rmd :set formatoptions+=ro
+	autocmd FileType r,rmd inoremap <leader>mm %*% 
+	autocmd FileType r,rmd inoremap <leader>pp %>% 
+augroup END
+
+" For .Rmd files, find next/previous 'chunk'
+augroup knitr
+  autocmd BufNewFile,BufRead *.Rmd nnoremap ]r /```{r<CR>
+  autocmd BufNewFile,BufRead *.Rmd nnoremap [r ?```{r<CR>
+augroup END
+
+
+"	vim hard way -- ch18
+augroup filetype_vim
+    autocmd!
+    "original:
+    "autocmd FileType vim setlocal foldmethod=marker
+    "
+    "for treesitter:
+    autocmd FileType vim setlocal foldmethod=expr
+augroup END
+
+
+
+" as variable, ~/.config/nvim
+let g:nvim_config_root = stdpath('config')
+"  FUTURE:
+"  source g:nvim_config_root . '/' . 'jim_code' . '/' . 'underline.vim'
+
 ]]
 
 ---------------
@@ -274,6 +283,17 @@ require("jim.windows")
 -- require("jim.colors")
 require("jim.Nvim-R")
 
+---------
+--    LSP
+---------
+--
+--  configure LSP installer 
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+  server:setup(opts)
+  end
+)
 
 
 
