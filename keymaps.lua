@@ -34,7 +34,7 @@ vim.api.nvim_set_keymap('i', 'jk', '<Esc>',  opts)
 
 
 --  FUTURE: (inserts :>)   paste * reg on command line
-vim.api.nvim_set_keymap('n', '<leader>pr', ':<C-R>',  opts)
+vim.api.nvim_set_keymap('n', '<leader>pr', ':<C-R>"',  opts)
 
 
 --	yank visual text to SYSTEM	clipboard  ( <C-v> to paste)
@@ -64,7 +64,7 @@ vim.api.nvim_set_keymap('n', '<C-N>', ':NERDTreeFocus<CR>',  opts)
 --  autocmd WORKS
 -----------------
 --  event is "FileType"
---  :messages to retrieve 
+--  USAGE:  :messages (to retrieve )
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {"lua", "text"},
   callback = function()
@@ -228,9 +228,11 @@ au! filetype r,rmd   :inoremap <leader>%  %>%
 
 
 
+"	 =====================
 "  see :h cmdline.txt
-"  Use emacs line editng shortcuts,   FOR vim cmdline
+"  PURPOSE:  Use emacs line editng shortcuts,   FOR vim cmdline
 
+" =====================
 	" start of line
 	:cnoremap <C-A>		<Home>
 
@@ -264,7 +266,8 @@ au! filetype r,rmd   :inoremap <leader>%  %>%
 " https://vim.fandom.com/wiki/Automatically_append_closing_characters#A_simple_solution
 " more details in above link.
 "
-inoremap {      {}<Left>
+" dislike !
+"inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 
 

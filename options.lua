@@ -103,6 +103,8 @@ vim.opt.backupdir = "/home/jim/.backup/"
 -- netrw
 vim.cmd [[
 
+"	connect vim and system clipboard (xsel )
+	set clipboard+=unnamedplus
 	:let g:loaded_netrw       = 1
 	:let g:loaded_netrwPlugin = 1
 	]]

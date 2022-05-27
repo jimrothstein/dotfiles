@@ -6,7 +6,6 @@
 #		-	rename, improve shell fcts test, test2  
 #
 #
-#
 # =========================================================
 #	PURPOSE:	Not a shell script, this is a shell function
 #	USAGE:	at CLI > test <cR>  will print date
@@ -23,3 +22,12 @@ test() { echo $(date +"%a_%d%b%Y") }
 # =========================================================
 #
 test2() { source ~/.local/bin/git_add_push.sh . }
+
+#  sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin
+# 
+# 
+#   sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin
+# sudo apt-get install docker-ce=18.03.1~ce~3-0~ubuntu docker-ce-cli=18.03.1~ce~3-0~ubuntu containerd.io docker-compose-plugin
+# 18.03.1~ce~3-0~ubuntu
+# 18.03.1~ce~3-0~ubuntu
+
