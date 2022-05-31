@@ -60,6 +60,13 @@ vim.api.nvim_set_keymap('n', './', ':nohlsearch<CR>',  opts)
 vim.api.nvim_set_keymap('n', '<C-N>', ':NERDTreeFocus<CR>',  opts)
 
 
+--	vsplit term
+--
+--	in terminal mode (ie type into shell) return to NORMAL
+vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-N>', opts)
+
+vim.api.nvim_set_keymap('n', '<Leader>tt', ':vsplit term://zsh<CR>',  opts)
+
 -----------------
 --  autocmd WORKS
 -----------------

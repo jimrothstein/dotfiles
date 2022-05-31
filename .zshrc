@@ -1,15 +1,29 @@
-# from default zshrc (mine is at bottom)
+##	file <- "/home/jim/.config/zsh/.zshrc
+#
+# ~/dotifles/.zshrc
+#
+# =================================================
+# ARTICLE:
+# 		https://thevaluable.dev/zsh-install-configure/
+
+# 		Config files put in ~/.config/zsh/
+# =================================================
+#
+#   NOTES
+#   * use `setopt` , not `set`
+#  ~/.zshenv MUST remain in $HOME dir for system to start
 #
 # Set up the prompt
 #
 
+# =================================================
 autoload -Uz promptinit
 promptinit
 prompt adam1
 
 setopt histignorealldups sharehistory
 
-# Use emacs keybindings even if our EDITOR is set to vi
+# Use emacs keybindings (prefer) even if our EDITOR is set to vi
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
@@ -39,20 +53,6 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-#	my .zshrc
-# ~/dotifles/.zshrc
-#
-# =================================================
-# ARTICLE:
-# 		https://thevaluable.dev/zsh-install-configure/
-
-# 		Config files put in ~/.config/zsh/
-# =================================================
-#
-#   NOTES
-#   * use `setopt` , not `set`
-#  ~/.zshenv MUST remain in $HOME dir for system to start
-#
 # ===================
 #  output of setopt (Aug 2021)
 # ===================
@@ -88,23 +88,13 @@ source ~/.config/zsh/completion.zsh
 # PROMPT
 source ~/.config/zsh/prompt.zsh
 
-# FUNCTIONS
+# FUNCTIONS (my shell functions)
 source ~/.config/zsh/functions.zsh
 
 # BINDKEY
 ## SEE ALSO file <- 410_bindkey_examples.Rmd
 source ~/.config/zsh/bindkey.zsh
 
-#	==============
-#		PREFER EMACS
-#
-# PLUGINS
-# 'friendlier' vi-mode
-# jeffreytse/zsh-vi-mode
-# see $HOME/.zsh-vi-mode/
-#
-#source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
-# =============
 
 # =========================================================
 ##   PATH and path
@@ -112,7 +102,8 @@ source ~/.config/zsh/bindkey.zsh
 ##	Use typeset to set shell attribute to -U (maintain unique entries )
 ##	zsh automatically syncs env $PATH and array $path
     typeset -U PATH path
-    PATH=/usr/local/bin:/usr/bin:/bin:~/.local/bin
+    PATH=/usr/local/bin:/usr/bin:/bin
+		PATH+=:~/.local/bin
     PATH+=:~/code/zsh_scripts_project
     export PATH=$HOME/bin:$PATH
 
@@ -158,8 +149,6 @@ ZSH_THEME="intheloop"
 autoload -Uz compinit		
 compinit
 
-#set -o emacs		# default, and easier for edit zsh/bash command lines
-# bindkey -v          # @CLI  use vi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"

@@ -4,6 +4,8 @@
 #	Sun May 22 00:54:12 PDT 2022
 #	TODO:
 #		-	rename, improve shell fcts test, test2  
+#		- trim() :  add 2 inputs begin/end columns
+#		- trim() :  echo 'trim in effect' to use
 #
 #
 # =========================================================
@@ -22,6 +24,10 @@ test() { echo $(date +"%a_%d%b%Y") }
 # =========================================================
 #
 test2() { source ~/.local/bin/git_add_push.sh . }
+
+
+#	trim: keep 1st 20 lines;  1st 20 characters from std input
+trim() {head -20 | cut -c 1-20}
 
 #  sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin
 # 
