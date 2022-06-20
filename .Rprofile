@@ -7,7 +7,11 @@
 ## ?startup
 # ==============================
 
+
+
+# ==============================
 # ## Example of .Rprofile
+# ==============================
 # options(width=65, digits=5)
 # options(show.signif.stars=FALSE)
 # setHook(packageEvent("grDevices", "onLoad"),
@@ -23,15 +27,20 @@
 #  r["CRAN"] <- "http://my.local.cran"
 #  options(defaultPackages = c(old, "MASS"), repos = r)
 #})
-
-## We set the cloud mirror, which is 'network-close' to everybody, as default
+# ==============================
+#
+#
+# ==============================
+	## Set cloud mirror, which is 'network-close' to everybody, as default
+# ==============================
 local({
     r <- getOption("repos")
     r["CRAN"] <- "https://cloud.r-project.org"
     options(repos = r)
 })
 
-## Jim:	 set
+## ============
+		## Jim:	 set
 ## ============
 
 ## set 4 AUG 2021
@@ -68,28 +77,30 @@ options(
 # )
 
 
-message("This message is from  ~/.Rprofile")
+message("..... reading ~/.Rprofile  .....")
 
 
-## Reprex is workflow pkg, can place here:
-if (interactive()) {
-	suppressMessages(require(reprex))
-}
-## Devtools, usethis, rlang, lobstr etc ....
+## =====================
+##		Devtools, usethis, rlang, lobstr etc ....
 ## =====================
 ## autoloads (i.e no need library(devtools))
 ## 11MAY 2022; jr removed some packages; if need just uncomment	  
 if (interactive()) {
-  #suppressMessages(library(devtools))
-	#suppressMessages(library(usethis))
+	suppressMessages(library(reprex))
+  suppressMessages(library(devtools))
+	suppressMessages(library(usethis))
   suppressMessages(library(rlang))
 	suppressMessages(library(lobstr))
 	#suppressMessages(library(here))
 	suppressMessages(library(sloop))
   suppressMessages(library(xfun)) # utils from Yihui
+	suppressMessages(library(rmarkdown))
 }
 
-##  REditor/languageserver
+## =====================
+##			REditor/languageserver
+## =====================
+##
 ##  set 27 SEP 2021
 ##  options in ~/.Rprofile will overwrite configuration in LSPConfig
 ##

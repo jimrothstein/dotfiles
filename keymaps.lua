@@ -1,7 +1,8 @@
 --
 -- Sun May 15 17:58:01 PDT 2022
 --	Date format - remove time (get fouled up in syntax)
---
+--	TODO:	-	foldmethod for markdown, now: vimscript want: lua
+--				-	for .md, setlocal nospell (till I figure out latex & spell)
 -- these 2 work
 vim.api.nvim_set_keymap('n', '<leader>p', ':<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>e', ':echo "hi"<CR> ', {})
@@ -45,6 +46,9 @@ vim.api.nvim_set_keymap('v', '<C-c>', '"+y', opts)
 --	insert date	
 vim.api.nvim_set_keymap('n', '<leader>id', ':r !date <CR>',  opts)
 
+--  bold a word (cursor at beginning of word)
+vim.api.nvim_set_keymap('n', '<leader>bo', 'i**<Esc>Ea**<Esc>',  opts)
+
 --  SAVE FILE
 vim.api.nvim_set_keymap('n', '<leader>s', ':w<CR>',  opts)
 
@@ -67,6 +71,12 @@ vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-N>', opts)
 
 vim.api.nvim_set_keymap('n', '<Leader>tt', ':vsplit term://zsh<CR>',  opts)
 
+
+--	render md file with LATEX to pdf
+--	first remove old pdf; error if DNE;  but will continue
+--	NOTE:  rm -f <file>  will give no error if DNE
+vim.api.nvim_set_keymap('n', '<Leader>pdf', ':!rm out.pdf; print_pdf.sh % out.pdf; zathura out.pdf', opts)
+
 -----------------
 --  autocmd WORKS
 -----------------
@@ -86,6 +96,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   }  -- end opts
 )    -- end autocmd
+
+--	foldmethod for .md
+vim.cmd [[
+	autocmd FileType markdown :setlocal foldmethod=manual
+	]]
 
 
 -- TODO:  event FileType ?  correct?
@@ -125,8 +140,8 @@ augroup md_specs
 	autocmd BufWrite *.md :echom "Bye"
 	autocmd BufNewFile *.md :echom "new md file"
 	autocmd FileType md :set formatoptions=tnqr
-	autocmd FileType md :setlocal nowrap spell linebreak tw=78 
-	autocmd BufRead,BufNewFile *.md :setlocal spell spelllang=en_us
+	autocmd FileType md :setlocal nowrap nospell linebreak tw=78 
+	autocmd BufRead,BufNewFile *.md :setlocal nospell spelllang=en_us
 
 " next line gives errors and no needed;  spellfile is already done
 	autocmd BufRead,BufNewFile *.md :setlocal thesaurus+=~/.config/nvim/thesaurus/thesaurii.txt
@@ -205,6 +220,11 @@ command! Bd :up | %bd | e#
 " ==============================
 
 
+" ==============================
+"			PURPOSE:	USER COMMAND;    generate PDF via Latex, pandoc
+"			USAGE:			:Pdf
+ command! Pdf  :!print_pdf.sh % out.pdf; zathura out.pdf
+" ==============================
 
 
 " ==============================

@@ -32,6 +32,12 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 # ~/dotfiles
 export DOT_DIR="$HOME/dotfiles"
 
+# TMUX
+#export TMUX_TMPDIR="/tmp/tmux"
+
+#	TMUX expects to find .tmux.conf in HOME
+export T=/home/jim/.tmux.conf
+#export T="/home/jim/.config/tmux/.tmux.conf"
 
 # HISTORY
 export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
