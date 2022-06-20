@@ -9,7 +9,7 @@ vim.cmd [[
 map <F2> <Plug>RStart
 map <Leader><F2> <Plug>RStop
 nmap <Leader>d <Plug>RDSendLine
-nnoremap <Leader>o <Plug>Rinsert
+"nnoremap <Leader>o <Plug>Rinsert
 "nnoremap <Leader>o \o<CR>
 
 " Send selection or line to R with space bar, respectively.
@@ -71,8 +71,8 @@ let rmd_syn_hl_chunk=1      " highlight chunk as R code
 " enable r_syntax_folding (vim style)
 let r_syntax_folding=1
 
+" open unfolded
 set nofoldenable
-    " open UNfolded
 
 let R_clear_line = 1
     " clear buffer before sending code to R
@@ -105,6 +105,5 @@ let R_clear_line = 1
 " let R_rconsole_width = 
 " let R_rconsole_height
 " ==================================================
-
 
 ]]

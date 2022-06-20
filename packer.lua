@@ -4,7 +4,7 @@ return require('packer').startup(function()
 
   use 'neovim/nvim-lspconfig'
 
-	use 'hrsh7th/nvim-cmp'   
+use 	'hrsh7th/nvim-cmp'   
 use	'hrsh7th/cmp-nvim-lsp'
 use	'hrsh7th/cmp-buffer'
 use	'hrsh7th/cmp-path'
@@ -14,19 +14,12 @@ use	'hrsh7th/cmp-nvim-lua'
 use 'williamboman/nvim-lsp-installer'
 
 ----- treesitter
-
---use {
-	-- 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
--- }
-
-
-
-  use {
-  'nvim-telescope/telescope.nvim',
-  requires = { {'nvim-lua/plenary.nvim'} }
+use {
+'nvim-treesitter/nvim-treesitter',
+run = ':TSUpdate'
 }
 
-  use 'sharkdp/fd'
+use 'sharkdp/fd'
 
 -- next line is installed via apt
 use 'BurntSushi/ripgrep'
@@ -39,8 +32,12 @@ use 'BurntSushi/ripgrep'
  
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround' 
-	use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
+use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
 
+use {
+  'nvim-telescope/telescope.nvim',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
   
 vim.cmd [[
 

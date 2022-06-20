@@ -52,9 +52,11 @@ alias goPublish='cd ~/code/publish_project/'
 alias goZsh='cd ~/code/zsh_project/'
 
 
+
 #	config
 alias goDot='cd ~/dotfiles'
 alias goVim='cd ~/.config/nvim/'
+alias goTmux='cd ~/.config/tmux/'
 
 # ~/bin too crowded
 # use ~/.local/bin for scripts

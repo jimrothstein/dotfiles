@@ -3,6 +3,9 @@
 -- Mon May 23 22:10:02 PDT 2022
 -- do want backup, but backupdir is screwy ; so removed dir to see what default
 -- is.
+--
+--Thu Jun  2 00:19:31 PDT 2022
+-- change indent per !so 51995128
 -----------------
 --        OPTIONS
 -----------------
@@ -11,10 +14,15 @@
 --  here appear to be setting as a default global (don't understand)
 
 local set = vim.opt -- set options
-set.expandtab = true
-set.tabstop = 2
-set.softtabstop = 2
-set.shiftwidth = 2
+set.expandtab = true					--	expands as spaces
+set.tabstop = 2								--	width of \t
+
+set.shiftwidth = 0						--	use tabstop, width when using << >> 
+set.softtabstop = -1					--	use tabstop
+set.shiftround= true					--	indents will be multipe of shiftwidth (keeps alignment)
+set.autoindent =  true				--	keep same identent as prior line
+set.smartindent = true				--	increase indent with {
+
 set.ignorecase = true           --      make search case insensitive
 set.wm = 4                      --      begin new line 4 chars before end of line.
 set.number=true
@@ -46,7 +54,6 @@ set.cmdheight=3		-- "	 avoids PRESS any Key to continue
 set.autowrite= true	--		" saves to disk when change buffers, :bn
 set.autowriteall = true  --     " ...in addition, saves all after :e :n :q
 set.autoread= true		--	" re-read if a file changed outside vim
-set.shiftround= true	--		" indents will be multipe of shiftwidth (keeps alignment)
 set.showmatch=true		--	" highlights matching bracket, paran etc.
 
 --  "   For TRESITTER
@@ -84,7 +91,11 @@ set.relativenumber = true
 
 
 set.textwidth=79	--	" sets right margin!
+--		BACKUP
 set.backup = true
+set.writebackup	= true				-- backup before saving changes
+-- setupext (default = "~")
+--
 
 -- FAILED set.backupdir='~/.config/nvim/backup/'	-- do not surround with quotes!
 -- FAILED set.backupdir=~/.backup/
@@ -109,3 +120,4 @@ vim.cmd [[
 	:let g:loaded_netrwPlugin = 1
 	]]
 
+		

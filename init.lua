@@ -1,6 +1,7 @@
 -- file <- "/home/jim/.config/nvim/init.lua"
 
 --	TODO
+--	a lot to do.
 
 vim.cmd [[
 "----------------------------
@@ -38,7 +39,7 @@ vim.cmd [[
 "vim.g.maplocalleader=','    --  might be clashes
 
 let mapleader=","
-let localmapleader=","
+let maplocalleader=","
 
 "
 " --------------
@@ -239,13 +240,11 @@ augroup END
 
 
 "	vim hard way -- ch18
+"
+
 augroup filetype_vim
     autocmd!
-    "original:
-    "autocmd FileType vim setlocal foldmethod=marker
-    "
-    "for treesitter:
-    autocmd FileType vim setlocal foldmethod=expr
+    autocmd FileType md setlocal foldmethod=expr
 augroup END
 
 

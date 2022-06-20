@@ -3,13 +3,14 @@
 #file <- "functions.zsh"
 #	Sun May 22 00:54:12 PDT 2022
 #	TODO:
+#		- differnce:  source this file vs using autoload
 #		-	rename, improve shell fcts test, test2  
 #		- trim() :  add 2 inputs begin/end columns
 #		- trim() :  echo 'trim in effect' to use
 #
 #
 # =========================================================
-#	PURPOSE:	Not a shell script, this is a shell function
+#	PURPOSE:	SHELL FUNCTIONS:  Not  shell script. 
 #	USAGE:	at CLI > test <cR>  will print date
 #					ie just type function name at CLI
 # =========================================================
