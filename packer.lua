@@ -39,6 +39,9 @@ use {
   requires = { {'nvim-lua/plenary.nvim'} }
 }
   
+--	bufferline.nvim
+use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+
 vim.cmd [[
 
 "	Wed May 25 17:49:52 PDT 2022
