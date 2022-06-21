@@ -267,7 +267,7 @@ require('jim.packer')
 require('jim.telescope')
 -- require('jim.treesitter')
 -- require('jim.lsp_cmp')
--- require('jim.bufferline')
+require('jim.bufferline')
 -- require('jim_code.lightline')
 
 --  keybindings and autocmd

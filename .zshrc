@@ -18,10 +18,26 @@
 
 # =================================================
 #
+#		TODO
+#			Tue Jun 21 02:47:20 PDT 2022
+#			-	fix prompt, stop call to prompt sh
+#
+#		no need for promptinit
+autoload -Uz vcs_info # enable vcs_info
+precmd () { vcs_info } # always load before displaying the prompt
+setopt prompt_subst    # need this
 
-autoload -Uz promptinit
-promptinit
-prompt adam1
+#	create variable vcs_info_msg_0_
+#	start|stop a sqquence with %F...%f
+#	All codes here:		https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
+#
+zstyle ':vcs_info:*' formats ' %s(%F{red}%b%f)' # git(main)
+PS1='%n@%m %F{cyan}%/%f$vcs_info_msg_0_ $ ' # david@macbook /tmp/repo (main) $
+
+
+#	on the far RIGHT
+RPROMPT='%w::$(date +%b)::%t::$vcs_info_msg_0_'
+
 
 setopt histignorealldups sharehistory
 
@@ -88,7 +104,7 @@ source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/completion.zsh
 
 # PROMPT
-source ~/.config/zsh/prompt.zsh
+# source ~/.config/zsh/prompt.zsh
 
 # FUNCTIONS (my shell functions)
 source ~/.config/zsh/functions.zsh

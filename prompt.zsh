@@ -8,6 +8,17 @@
 
 
 
+#####################################################################################################
+#	STOLE this from 
+#	!so https://stackoverflow.com/questions/1128496/to-get-a-prompt-which-indicates-git-branch-in-zsh
+#
+# parse_git_branch() {
+#    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+#####################################################################################################
+#
+# setopt PROMPT_SUBST
+# PROMPT='%9c%{%F{green}%}$(parse_git_branch)%{%F{none}%} $ '
 
 # =========
 ## PROMPT
@@ -86,70 +97,13 @@ autoload -U colors && colors
 ## make clearer?
   #zstyle ':vcs_info:git*' actionformats "%s  %r/%S %b %m%u%c "
 
-#
-#
-#
-# ========
-# LEGACY (not used)
-# ========
-# Purity
-#
-# by Kevin Lanni
-# https://github.com/therealklanni/purity
-# MIT License
-
-# For my own and others sanity
-# git:
-# %b => current branch
-# %a => current action (rebase/merge)
-# prompt:
-# %F => color dict
-# %f => reset color
-# %~ => current path
-# %* => time
-# %n => username
-# %m => shortname host
-# %(?..) => prompt conditional - %(condition.true.false)
-#
-## %s
-##     The current version control system, like git or svn.
-## %r
-##     The name of the root directory of the repository
-## %S
-##     The current path relative to the repository root directory
-## %b
-##     Branch information, like master
-## %m
-##     In case of Git, show information about stashes
-## %u
-##     Show unstaged changes in the repository
-## %c
-##     Show staged changes in the repository 
-#
-#
-#
-# install 'standard prompt widget' ?
-# afterwards  | prompt -p | lists all installed themes
-#  autoload -Uz promptinit; promptinit
-
-# prompt -p  # to see choices, select:
-#  prompt adam1
-
-
-#  ZSH_THEME="intheloop"
 
 
 
 
-# PROMPT='
-# %{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%}
-#%{$fg_bold[blue]%}%10c%{$reset_color%} $(git_prompt_info) $(git_remote_status)
-#%{$fg_bold[cyan]%}❯%{$reset_color%} '
-#
-#
 
 
-
+#############################################
 ### MOVE to new file:  autoload or equivalent
 #   <X-x><X-e> at CLI will edit text in vim
 autoload -U edit-command-line
