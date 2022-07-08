@@ -92,6 +92,7 @@ alias lsym='ls -l *(@)'
 # directories only
 alias ldir='ll -d *(/)'
 
-
+#	R --no-save
+alias R='R --no-save'
 # GREP
 alias grep='grep --color=always'

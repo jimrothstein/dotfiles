@@ -63,6 +63,8 @@ vim.api.nvim_set_keymap('n', './', ':nohlsearch<CR>',  opts)
 -- open nerdtree
 vim.api.nvim_set_keymap('n', '<C-N>', ':NERDTreeFocus<CR>',  opts)
 
+--	nvim-R
+vim.api.nvim_set_keymap('n', '<leader>rstop', ':RStop<CR>',  opts)
 
 --	vsplit term
 --

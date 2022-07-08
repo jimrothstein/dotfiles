@@ -13,14 +13,13 @@
 #   * use `setopt` , not `set`
 #  ~/.zshenv MUST remain in $HOME dir for system to start
 #
-# Set up the prompt
 #
 
 # =================================================
 #
 #		TODO
 #			Tue Jun 21 02:47:20 PDT 2022
-#			-	fix prompt, stop call to prompt sh
+#			- prompt fixed
 #
 #		no need for promptinit
 autoload -Uz vcs_info # enable vcs_info
@@ -205,8 +204,6 @@ setopt extendedglob
 setopt NO_CASE_GLOB   
 # USAGE    > $docs<CR>
 # TO LIST:  > hash -d
-#
-#
 
 
 # initialize
