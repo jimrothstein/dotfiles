@@ -5,12 +5,13 @@ CONFIG_LUA_JIM ~/.config/nvim/lua/jim
 CONFIG_VIM ~/.config/nvim/init.lua
 CONFIG_ZSH ~/.config/zsh
 DOCS ~/code/docs
+DOTFILES ~/dotfiles
 HTTR2-Youtube ~/code/youtube_api/httr2_pkg
 lualatex-doc ~/code/publish_project/LUALATEX/lualatex-doc.tex
 MAKE ~/code/make_project
 PUBLISH_MATH ~/code/publish_project/MATH
 RSCRIPTS ~/code/jimTools/Rscripts
 TRY ~/code/try_things_here
+YOUTUBE ~/code/youtube_api
 ZSH ~/code/zsh_project
-DOTFILES ~/dotfiles
 

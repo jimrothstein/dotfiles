@@ -6,7 +6,9 @@
 ## R --vanilla
 ## ?startup
 # ==============================
-
+##	PURPOSE:	~/.Rprofile is runs for EVERY R process, regardless whether 
+##						user or R initiated.   Use if (interactive()) for things ONLY
+##						user would want.
 
 
 # ==============================
@@ -43,6 +45,8 @@ local({
 		## Jim:	 set
 ## ============
 
+
+if (interactive()) {
 ## set 4 AUG 2021
 jim_lib  <- '/home/jim/R/x86-64-linux-gnu-library/4.1'
 
@@ -55,6 +59,9 @@ options(
 #    blogdown.author = "Jim",
 #    blogdown.hugo.version = "0.79.0"
 # 
+# )
+#
+# options(
 # 	 # display traceback on error, in simplifid or branch form.
 # 
 #   # rlang_backtrace_on_error = "branch",
@@ -79,7 +86,7 @@ options(
 
 message("..... reading ~/.Rprofile  .....")
 
-
+}
 ## =====================
 ##		Devtools, usethis, rlang, lobstr etc ....
 ## =====================

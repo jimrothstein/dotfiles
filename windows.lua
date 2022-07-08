@@ -18,6 +18,7 @@ nnoremap <leader>u3 :call UnderlineHeading(3)<cr>
 
 tabnew  ~/code/docs/300_tech_notes.md
 tabnew	~/code/docs/001_tech_reading.md
+tabnew	~/code/docs/medical_notes.md
 tabfirst
 
 vsplit $V
