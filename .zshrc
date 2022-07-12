@@ -48,9 +48,24 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-# Use modern completion system
+#================
+#			COMPLETION:	
+#
+#			Use modern completion system: compinit
+#			compsys:	collection of functions; scripts; 1 more 'completers'
+#			man zshcompsys
+#
+#			In given context, specific zstyles run to effect the completion
+#			`zstyle` is ZSH module useful in settings based on PATTERN.
+#			zstyle <pattern> <style> <values>
+#			man zshcompsys
+#================
 autoload -Uz compinit
 compinit
+
+
+# EXAMPLE
+zstyle ':completion:*:*:cp:*' file-sort size
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
