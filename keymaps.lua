@@ -43,8 +43,9 @@ vim.api.nvim_set_keymap('v', '<C-c>', '"+y', opts)
 
 
 
---	insert date	
-vim.api.nvim_set_keymap('n', '<leader>id', ':r !date <CR>',  opts)
+--	insert date	 (put as regular vim for now)
+--	vim.api.nvim_set_keymap('n', '<leader>id', ':r !date +"\%a \%d\%b\%Y" <CR>',  opts)
+--- vim.api.nvim_set_keymap('n', '<leader>id', ':r !date \+\%a <CR>',  opts)
 
 --  bold a word (cursor at beginning of word)
 vim.api.nvim_set_keymap('n', '<leader>bo', 'i**<Esc>Ea**<Esc>',  opts)
@@ -68,16 +69,45 @@ vim.api.nvim_set_keymap('n', '<leader>rstop', ':RStop<CR>',  opts)
 
 --	vsplit term
 --
---	in terminal mode (ie type into shell) return to NORMAL
+--	TERMINAL
+--	:terminal opens terminal buffer, can scroll, not enter text
+--	i,a,I, A   allows typing (last line only)
+--
+--	to stop entering text and return to scrolling in same window
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-N>', opts)
+
+--	Hop between terminal window and other windows
+vim.api.nvim_set_keymap('t', '<A-h>', '<C-\\><C-N><C-W>h', opts)
+vim.api.nvim_set_keymap('t', '<A-j>', '<C-\\><C-N><C-W>j', opts)
+vim.api.nvim_set_keymap('t', '<A-k>', '<C-\\><C-N><C-W>k', opts)
+vim.api.nvim_set_keymap('t', '<A-l>', '<C-\\><C-N><C-W>l', opts)
+
 
 vim.api.nvim_set_keymap('n', '<Leader>tt', ':vsplit term://zsh<CR>',  opts)
 
+vim.cmd[[
+" ================================================================
+"   Terminal mode:  Copy current line and run in Terminal Buffer
+" ================================================================
+"
+nnoremap <leader>tl Vy<C-w>wpa<CR><C-\><C-n><C-w>pj
+" Vy  yank line
+" <C-w>w  move to right
+" p paste
+" a<CR> append line (which runs)
+" exit terminal mode (to normal)
+" <C-w>p prior window
+" j  move down line ##
+"
+" ERROR in LUA,  why?
+"vim.api.nvim_set_keymap('n', '<leader>tl', 'Vy<C-w>wpa<CR><C-\><C-n><C-w>pj', {})
+" ================================================================
 
+]]
 --	render md file with LATEX to pdf
 --	first remove old pdf; error if DNE;  but will continue
 --	NOTE:  rm -f <file>  will give no error if DNE
-vim.api.nvim_set_keymap('n', '<Leader>pdf', ':!rm out.pdf; print_pdf.sh % out.pdf; zathura out.pdf', opts)
+vim.api.nvim_set_keymap('n', '<Leader>pdf', ':!rm -f out.pdf; print_pdf.sh % out.pdf; zathura out.pdf', opts)
 
 -----------------
 --  autocmd WORKS
@@ -334,7 +364,10 @@ inoremap {<CR>  {<CR>}<Esc>O
 "  This makes yank visible!
 :au TextYankPost * silent! lua vim.highlight.on_yank() 
 
+"		insert date   (note:  vim requires percent sign be escaped)
+nnoremap ,id :r !date +"\%a \%d\%b\%Y"<CR>
 ]]
+
 
 
 

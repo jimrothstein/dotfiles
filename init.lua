@@ -59,23 +59,6 @@ let maplocalleader=","
 "
 
 
-" ================================================================
-"   Terminal mode:  Copy current line and run in Terminal Buffer
-" ================================================================
-"
-nnoremap <leader>tl Vy<C-w>wpa<CR><C-\><C-n><C-w>pj
-" Vy  yank line
-" <C-w>w  move to right
-" p paste
-" a<CR> append line (which runs)
-" exit terminal mode (to normal)
-" <C-w>p prior window
-" j  move down line ##
-"
-" ERROR in LUA,  why?
-"vim.api.nvim_set_keymap('n', '<leader>tl', 'Vy<C-w>wpa<CR><C-\><C-n><C-w>pj', {})
-" ================================================================
-
 
 
 
