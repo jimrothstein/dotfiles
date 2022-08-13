@@ -109,6 +109,11 @@ nnoremap <leader>tl Vy<C-w>wpa<CR><C-\><C-n><C-w>pj
 --	NOTE:  rm -f <file>  will give no error if DNE
 vim.api.nvim_set_keymap('n', '<Leader>pdf', ':!rm -f out.pdf; print_pdf.sh % out.pdf; zathura out.pdf', opts)
 
+--	USE THIS:  display not save a pdf.	 (later, in zathura can save, if
+--	desired)
+--	testing?   see ZSH 029A
+vim.api.nvim_set_keymap('n', '<Leader>pdf1', ':!pandoc % -f markdown -t pdf -o - | zathura - ', opts)
+
 -----------------
 --  autocmd WORKS
 -----------------
