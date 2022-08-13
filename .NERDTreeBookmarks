@@ -7,12 +7,14 @@ CONFIG_ZSH ~/.config/zsh
 DOCS ~/code/docs
 DOTFILES ~/dotfiles
 HTTR2-Youtube ~/code/youtube_api/httr2_pkg
+LUA ~/code/lua_project
 lualatex-doc ~/code/publish_project/LUALATEX/lualatex-doc.tex
 MAKE ~/code/make_project
 PUBLISH_MATH ~/code/publish_project/MATH
 RSCRIPTS ~/code/jimTools/Rscripts
 TRY ~/code/try_things_here
+YOUTBE_MP3 ~/code/mp3
 YOUTUBE ~/code/youtube_api
 ZSH ~/code/zsh_project
-YOUTBE_MP3 ~/code/mp3
+UrOx ~/code/health_labs/rmd
 
