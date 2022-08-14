@@ -13,8 +13,8 @@ MAKE ~/code/make_project
 PUBLISH_MATH ~/code/publish_project/MATH
 RSCRIPTS ~/code/jimTools/Rscripts
 TRY ~/code/try_things_here
+UrOx ~/code/health_labs/rmd
 YOUTBE_MP3 ~/code/mp3
 YOUTUBE ~/code/youtube_api
 ZSH ~/code/zsh_project
-UrOx ~/code/health_labs/rmd
 
