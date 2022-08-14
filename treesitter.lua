@@ -12,12 +12,6 @@
 --
 -- SETUP:       follow :h telescope (SAME:  github.com/ ..telescope)
 ----------------------------
----------------------
--- Where to put this?
----------------------
---  fold is buffer? specific (default is close)
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 
 require'nvim-treesitter.configs'.setup {
