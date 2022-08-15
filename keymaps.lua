@@ -1,8 +1,16 @@
+----------------
+
+--	TODO
 --
+--	Sun 14Aug2022
+--	remove all foldmethod in TREESITTER (R didn't work)
+--	when pro, can review
 -- Sun May 15 17:58:01 PDT 2022
---	Date format - remove time (get fouled up in syntax)
+--
 --	TODO:	-	foldmethod for markdown, now: vimscript want: lua
 --				-	for .md, setlocal nospell (till I figure out latex & spell)
+----------------
+--
 -- these 2 work
 vim.api.nvim_set_keymap('n', '<leader>p', ':<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>e', ':echo "hi"<CR> ', {})
