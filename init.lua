@@ -225,6 +225,7 @@ augroup END
 "	vim hard way -- ch18
 "
 
+" 8/2022  - am I using?   .md has fold type manual
 augroup filetype_vim
     autocmd!
     autocmd FileType md setlocal foldmethod=expr

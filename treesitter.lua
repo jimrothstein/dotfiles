@@ -44,8 +44,15 @@ require'nvim-treesitter.configs'.setup {
 
 
 
+------------------------------------------------------
+-- FOLDS
+-- Sun 14Aug2022:  fold Does not work in R (return to manual, old way)
+-- When expert, return to using TREESITTER for folding
+------------------------------------------------------
+--
 --  turn on folding, using treesitter
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
+------------------------------------------------------
 
