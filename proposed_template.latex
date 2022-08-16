@@ -400,7 +400,6 @@ $endif$
 $if(csquotes)$
 \usepackage{csquotes}
 $endif$
-% \small{small- jr added}
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
@@ -455,8 +454,11 @@ $if(toc)$
 %
 %
 %   jr added:  prints TOC in tiny print
-\tiny{tiny text}
+\tiny{tiny text}\par
+\par
+
 \footnotesize{footnotesize}
+
 %
 %
 $if(toc-title)$

@@ -1,6 +1,7 @@
 .LOCAL_BIN ~/.local/bin
 BAYES_RULES ~/code/bookclub-bayes_rules
 CODE ~/code
+code_publish ~/code/code_publish
 CONFIG_LUA_JIM ~/.config/nvim/lua/jim
 CONFIG_VIM ~/.config/nvim/init.lua
 CONFIG_ZSH ~/.config/zsh
@@ -15,7 +16,6 @@ UrOx ~/code/health_labs/rmd
 YOUTBE_MP3 ~/code/mp3
 YOUTUBE ~/code/youtube_api
 ZSH ~/code/zsh_project
-code_publish ~/code/code_publish
 
 lualatex-doc ~/code/publish_project/LUALATEX/lualatex-doc.tex
 PUBLISH_MATH ~/code/publish_project/MATH
