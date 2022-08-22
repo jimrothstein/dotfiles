@@ -24,12 +24,7 @@
 cd /home/jim/code/mp3
 /home/jim/.local/bin/git_add_push.sh .
 
-cd /home/jim/code/youtube-api
-/home/jim/.local/bin/git_add_push.sh .
-
-
-
-cd /home/jim/code/publish_project
+cd /home/jim/code/youtube_api
 /home/jim/.local/bin/git_add_push.sh .
 
 cd /home/jim/code/zsh_project
