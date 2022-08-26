@@ -171,6 +171,20 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function() print("file saved") end }
 )
 
+vim.cmd [[
+
+	augroup mkview
+		au!
+		au BufWinLeave ?* :mkview
+		"au BufWinLeave ?* :echom "mkview saved"
+		au BufWinEnter ?* :silent loadview
+	augroup end
+	]]
+
+vim.api.nvim_create_autocmd("BufCreate", {
+  callback = function() print("Buffer Created") end }
+	)
+
 --	legacy (TDO)
 vim.cmd [[
 " ==================================
