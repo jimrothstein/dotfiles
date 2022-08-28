@@ -226,10 +226,13 @@ augroup END
 "
 
 " 8/2022  - am I using?   .md has fold type manual
-augroup filetype_vim
-    autocmd!
-    autocmd FileType md setlocal foldmethod=expr
-augroup END
+
+" augroup filetype_vim
+"     autocmd!
+"     autocmd FileType md setlocal foldmethod=expr
+" augroup END
+
+
 
 
 

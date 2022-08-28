@@ -7,7 +7,8 @@
 --	when pro, can review
 -- Sun May 15 17:58:01 PDT 2022
 --
---	TODO:	-	foldmethod for markdown, now: vimscript want: lua
+--	TODO:	-	foldmethod for markdown,R, Rmd now: mnaual;  
+--				-	set in keymaps.lua
 --				-	for .md, setlocal nospell (till I figure out latex & spell)
 ----------------
 --
@@ -142,9 +143,14 @@ vim.api.nvim_create_autocmd("FileType", {
   }  -- end opts
 )    -- end autocmd
 
---	foldmethod for .md
+--	8/2022 foldmethods set HERE (for now)
+--					do not set anywhere else (for now)
+--	foldmethod for .md, R, Rmd
 vim.cmd [[
+	au!
 	autocmd FileType markdown :setlocal foldmethod=manual
+	au FileType R :setlocal foldmethod=manual
+	au FileType Rmd :setlocal foldmethod=manual
 	]]
 
 
@@ -175,11 +181,12 @@ vim.cmd [[
 
 	augroup mkview
 		au!
-		au BufWinLeave ?* :mkview
-		"au BufWinLeave ?* :echom "mkview saved"
-		au BufWinEnter ?* :silent loadview
+		au BufWinLeave ?* :mkview | echom "mkview saved"
+		"au BufWinLeave ?*  :echom "mkview saved"
+		au BufWinEnter ?* :silent loadview | echom "loadview"
 	augroup end
 	]]
+
 
 vim.api.nvim_create_autocmd("BufCreate", {
   callback = function() print("Buffer Created") end }
