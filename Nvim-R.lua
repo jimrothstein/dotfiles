@@ -68,6 +68,7 @@ let R_openhtml = 1
 
 let rmd_syn_hl_chunk=1      " highlight chunk as R code
 
+"	August 2022 - TURN OFF, want regular vim folding (manual)
 " enable r_syntax_folding (vim style)
 let r_syntax_folding=1
 
