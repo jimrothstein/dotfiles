@@ -51,6 +51,8 @@ vim.api.nvim_set_keymap('n', '<leader>pr', ':<C-R>"',  opts)
 vim.api.nvim_set_keymap('v', '<C-c>', '"+y', opts)
 
 
+--	spell (see ~/.config/nvim/lua/jim/utils.lua)
+		vim.api.nvim_set_keymap('n', '<leader>s', ':call Spell_word<CR>', opts)
 
 --	insert date	 (put as regular vim for now)
 --	vim.api.nvim_set_keymap('n', '<leader>id', ':r !date +"\%a \%d\%b\%Y" <CR>',  opts)
@@ -179,11 +181,12 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 vim.cmd [[
 
-	augroup mkview
+	augroup mkview_gp
 		au!
 		au BufWinLeave ?* :mkview | echom "mkview saved"
-		"au BufWinLeave ?*  :echom "mkview saved"
+		au BufWinLeave *.R :mkview
 		au BufWinEnter ?* :silent loadview | echom "loadview"
+		au BufWinEnter *.R :silent loadview 
 	augroup end
 	]]
 
