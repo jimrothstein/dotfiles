@@ -2,6 +2,7 @@ vim.cmd [[
 
 " nvimR_config.vim
 "
+"-----------------------------
 " Ref for init.vim for nvim-r
 " https://gist.githubusercontent.com/tgirke/7a7c197b443243937f68c422e5471899/raw/init.vim
 "
@@ -41,12 +42,11 @@ let R_assign = 2
 
 " working dir
   " let R_nvim_wd = 1;  R wd same as vim directory (when R starts)
-  " let R_nvim-wd - -1  no change to wd (when R starts)
+  " let R_nvim-wd = -1  no change to wd (when R starts)
   " :h R_nvim_wd
   "
-  "
-  "   let R_nvim_wd = 1
 let R_nvim_wd = -1
+
 
 
 " R startup args (do not use .RData)
@@ -68,16 +68,18 @@ let R_openhtml = 1
 
 let rmd_syn_hl_chunk=1      " highlight chunk as R code
 
-"	August 2022 - TURN OFF, want regular vim folding (manual)
+"	August 2022 
+"	GOAL: TURN OFF syntax folding, want regular vim folding (manual)
+"	but NOT working, so stay:
 " enable r_syntax_folding (vim style)
 let r_syntax_folding=1
 
 " open unfolded
 set nofoldenable
 
+"	When R console in emacs mode; this sends <C-a> (beg) and <C-k> (delete all chars to right)
+"	BEFOPE the R code is send to terminal.  So cleans any stray stuff sitting on console line.
 let R_clear_line = 1
-    " clear buffer before sending code to R
-    " (sometimes terminals holds stray characters, producing R error)
 
 
 " let R_editing_mode = "vi"

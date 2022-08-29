@@ -36,3 +36,11 @@ if pcall(require, "plenary") then
   end
 end
 
+--	Spell_word function
+vim.cmd [[
+function! Spell_word()
+  set spell
+  normal ]s
+  normal 1z=
+endfunction
+]]

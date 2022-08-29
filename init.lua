@@ -23,7 +23,7 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/cleanup.lua
 " $HOME/.config/nvim/lua/jim/bufferline.lua
 " $HOME/.config/nvim/lua/jim/options.lua
-" $HOME/.config/nvim/lua/jim/keymaps.lua
+" $HOME/.config/nvim/lua/jim/keymaps.lua " autocmds, keymappings
 " $HOME/.config/nvim/lua/jim/functions.lua
 " $HOME/.config/nvim/lua/jim/tools.lua
 " $HOME/.config/nvim/lua/jim/windows.lua
