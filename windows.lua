@@ -1,4 +1,5 @@
-vim.cmd [[
+vim.cmd (
+[[
 function! UnderlineHeading(level)
   if a:level == 1
     normal! yypVr=
@@ -21,7 +22,9 @@ tabnew	~/code/docs/001_tech_reading.md
 tabnew	~/code/docs/medical_notes.md
 tabfirst
 
-"vsplit $V
-"wincmd R
+"	vsplit $V
+"	wincmd R
 
 ]]
+)
+

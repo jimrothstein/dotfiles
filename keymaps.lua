@@ -179,14 +179,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function() print("file saved") end }
 )
 
+--	?* as pattern for files, does NOT appear to work
 vim.cmd [[
 
 	augroup mkview_gp
 		au!
-		au BufWinLeave ?* :mkview | echom "mkview saved"
-		au BufWinLeave *.R :mkview
-		au BufWinEnter ?* :silent loadview | echom "loadview"
-		au BufWinEnter *.R :silent loadview 
+		au BufWinLeave *.md,*.R,*.Rmd mkview | echom "mkview saved"
+		au BufWinEnter *.md,*.R,*.Rmd silent loadview | echom "loadview"
 	augroup end
 	]]
 
