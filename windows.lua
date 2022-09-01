@@ -22,7 +22,8 @@ tabnew	~/code/docs/001_tech_reading.md
 tabnew	~/code/docs/medical_notes.md
 tabfirst
 
-"	vsplit $V
+"	split and load $V
+vsplit $V
 "	wincmd R
 
 ]]
