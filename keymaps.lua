@@ -182,11 +182,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 --	?* as pattern for files, does NOT appear to work
 vim.cmd [[
 
-	augroup mkview_gp
-		au!
-		au BufWinLeave *.md,*.R,*.Rmd mkview | echom "mkview saved"
-		au BufWinEnter *.md,*.R,*.Rmd silent loadview | echom "loadview"
-	augroup end
 	]]
 
 
@@ -204,8 +199,7 @@ vim.cmd [[
 " To see effect, look what happens (live) to buffer if columns=40
 augroup md_specs
 	autocmd!
-	autocmd BufWrite *.md :echom "Good"
-	autocmd BufWrite *.md :echom "Bye"
+	autocmd BufWrite *.md :echom "buffer written!"
 	autocmd BufNewFile *.md :echom "new md file"
 	autocmd FileType md :set formatoptions=tnqr
 	autocmd FileType md :setlocal nowrap nospell linebreak tw=78 
@@ -215,6 +209,21 @@ augroup md_specs
 	autocmd BufRead,BufNewFile *.md :setlocal thesaurus+=~/.config/nvim/thesaurus/thesaurii.txt
 	"
 augroup END
+
+augroup mkview_gp
+		au!
+		"au BufWinLeave *.md,*.R,*.Rmd :mkview 
+		" some people put (silent) before loadview
+		"au BufWinEnter *.md,*.R,*.Rmd :loadview 
+
+		au BufWrite *.md,*.R,*.Rmd mkview 
+		" some people put (silent) before loadview
+		"au BufRead *.md,*.R,*.Rmd silent! loadview 
+
+		au BufRead *.md silent! loadview 
+		au BufRead *.R silent! loadview 
+		au BufRead *.Rmd silent! loadview 
+augroup end
 
 ]]
 
@@ -398,6 +407,7 @@ inoremap {<CR>  {<CR>}<Esc>O
 "
 "  This is .vim code that uses a lua expression.
 "  This makes yank visible!
+"	 NOTE:	silent means no messages;  the (!) means NO error msgs either
 :au TextYankPost * silent! lua vim.highlight.on_yank() 
 
 "		insert date   (note:  vim requires percent sign be escaped)
