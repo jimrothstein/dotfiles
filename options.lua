@@ -28,12 +28,10 @@ set.wm = 4                      --      begin new line 4 chars before end of lin
 set.number=true
 set.relativenumber=true
 set.laststatus=3
-set.cmdheight=2
 
 --   " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 --  au CursorHoldI * stopinsert
 
-set.showmode = false  --"   12JAN22 Lightline Plugin will dispplay mode (INSERT, NORMAL etc)
 set.hidden = false    --    "   [default=no] 
 
 --  syntax enable 		on by default
@@ -48,7 +46,7 @@ set.cursorline = true		--   highlight current line
 set.scrolloff=  5   --  "   scroll, keep cursor 5 lines from top
 
 
-set.cmdheight=3		-- "	 avoids PRESS any Key to continue
+set.cmdheight=4		-- "	 avoids PRESS any Key to continue
 
 -- set gdefault			" search global :%s/from/to/c
 set.autowrite= true	--		" saves to disk when change buffers, :bn
