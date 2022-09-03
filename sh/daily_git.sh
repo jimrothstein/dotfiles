@@ -49,6 +49,9 @@ cd /home/jim/code/SHINY
 /home/jim/.local/bin/git_add_push.sh .
 
 
+cd /home/jim/code/health_labs
+/home/jim/.local/bin/git_add_push.sh .
+
 #	---------------------
 #	BEGIN:			non - code REPOS 
 #	---------------------
