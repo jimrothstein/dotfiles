@@ -29,6 +29,8 @@ set.number=true
 set.relativenumber=true
 set.laststatus=3
 
+set.splitright=true							-- vsplit puts new window to the right
+
 --   " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 --  au CursorHoldI * stopinsert
 
