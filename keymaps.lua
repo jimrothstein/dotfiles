@@ -153,6 +153,10 @@ vim.cmd [[
 	autocmd FileType markdown :setlocal foldmethod=manual
 	au FileType R :setlocal foldmethod=manual
 	au FileType Rmd :setlocal foldmethod=manual
+
+"  R:  map for magrittr %>%
+	au FileType R,rmd   :nnoremap <leader>%  i%>% <esc>
+	au FileType r,rmd   :inoremap <leader>%  %>% 
 	]]
 
 
@@ -179,11 +183,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function() print("file saved") end }
 )
 
---	?* as pattern for files, does NOT appear to work
-vim.cmd [[
-
-	]]
-
 
 vim.api.nvim_create_autocmd("BufCreate", {
   callback = function() print("Buffer Created") end }
@@ -204,22 +203,13 @@ augroup md_specs
 	autocmd FileType md :set formatoptions=tnqr
 	autocmd FileType md :setlocal nowrap nospell linebreak tw=78 
 	autocmd BufRead,BufNewFile *.md :setlocal nospell spelllang=en_us
-
 " next line gives errors and no needed;  spellfile is already done
 	autocmd BufRead,BufNewFile *.md :setlocal thesaurus+=~/.config/nvim/thesaurus/thesaurii.txt
-	"
 augroup END
 
 augroup mkview_gp
 		au!
-		"au BufWinLeave *.md,*.R,*.Rmd :mkview 
-		" some people put (silent) before loadview
-		"au BufWinEnter *.md,*.R,*.Rmd :loadview 
-
 		au BufWrite *.md,*.R,*.Rmd mkview 
-		" some people put (silent) before loadview
-		"au BufRead *.md,*.R,*.Rmd silent! loadview 
-
 		au BufRead *.md silent! loadview 
 		au BufRead *.R silent! loadview 
 		au BufRead *.Rmd silent! loadview 
@@ -233,7 +223,6 @@ augroup end
 --  	au TermOpen * if &buftype ==# 'terminal' | resize q0 | vert resize 50 | endif
 --  augroup end
 --
-
 
 
 local opts = {noremap = true}
@@ -271,18 +260,6 @@ local opts = { noremap = true }
     vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 
------------------------------
----     FUTURE:   reset ctags
------------------------------
-
---- " set tags  (ctags -R .)
---- set tags=~/code/tags
---- " ~/bin/run_ctags.sh does everything
---- " Trigger:   Write Buffer to FILE
---- augroup ctags
---- 	autocmd  BufWritePost *.R,*.Rmd :!~/bin/run_ctags.sh 
---- augroup end
---
 --
 ------------------------------
 --				LEGACY  -- DO NOT DELETE
@@ -322,21 +299,20 @@ noremap ,if ifile <- <esc>"<C-%>pBi"<esc>A"<esc><CR>
 " R, insert current file name, no path
 " map <leader>na "%p
 " ,naME
-au! filetype r,rmd   :nnoremap <leader>na  "%p
+au! FileType r   :nnoremap <leader>na  "%p
+au! FileType r  :nnoremap <leader>j iHELLO<esc>
 " ==============================
 
-"  R:  map for magrittr %>%
-au! filetype r,rmd   :nnoremap <leader>%  i%>% <esc>
-au! filetype r,rmd   :inoremap <leader>%  %>% 
 
 
 
 
-"	 =====================
+"---------------------------------------------------------------
 "  see :h cmdline.txt
 "  PURPOSE:  Use emacs line editng shortcuts,   FOR vim cmdline
+"	 USAGE:   emacs commands
+"---------------------------------------------------------------
 
-" =====================
 	" start of line
 	:cnoremap <C-A>		<Home>
 
@@ -395,15 +371,6 @@ inoremap {<CR>  {<CR>}<Esc>O
 "
 :nnoremap q :echo "FAT FINGER"<CR>
 
-"-----
-" LUA
-"-----
-"
-" This is .vim file
-"   But it contains   some lua code.
-"   :so %
-"
-"
 "
 "  This is .vim code that uses a lua expression.
 "  This makes yank visible!
