@@ -13,7 +13,6 @@
 ----------------
 --
 -- these 2 work
-vim.api.nvim_set_keymap('n', '<leader>p', ':<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>e', ':echo "hi"<CR> ', {})
 
 
@@ -145,20 +144,13 @@ vim.api.nvim_create_autocmd("FileType", {
   }  -- end opts
 )    -- end autocmd
 
---	8/2022 foldmethods set HERE (for now)
---					do not set anywhere else (for now)
---	foldmethod for .md, R, Rmd
-vim.cmd [[
-	au!
-	autocmd FileType markdown :setlocal foldmethod=manual
-	au FileType R :setlocal foldmethod=manual
-	au FileType Rmd :setlocal foldmethod=manual
 
-"  R:  map for magrittr %>%
-	au FileType R,rmd   :nnoremap <leader>%  i%>% <esc>
-	au FileType r,rmd   :inoremap <leader>%  %>% 
-	]]
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {"r","R"},
+		callback = function() print("FileType is r or R") end
+	}
+)
 
 -- TODO:  event FileType ?  correct?
 vim.api.nvim_create_autocmd("FileType", {
@@ -302,7 +294,6 @@ noremap ,if ifile <- <esc>"<C-%>pBi"<esc>A"<esc><CR>
 au! FileType r   :nnoremap <leader>na  "%p
 au! FileType r  :nnoremap <leader>j iHELLO<esc>
 " ==============================
-
 
 
 
