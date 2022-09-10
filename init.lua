@@ -2,6 +2,8 @@
 
 --	TODO
 --	a lot to do.
+--	MOVE autocommands to keymaps.lua
+--	:TSBufEnable highlight
 
 vim.cmd [[
 "----------------------------
@@ -20,12 +22,15 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/lsp_experimental.lua
 " $HOME/.config/nvim/lua/jim/telescope.lua
 " $HOME/.config/nvim/lua/jim/treesitter.lua
+" $HOME/.config/nvim/lua/treesitter-config/
+"
 " $HOME/.config/nvim/lua/jim/cleanup.lua
 " $HOME/.config/nvim/lua/jim/bufferline.lua
 " $HOME/.config/nvim/lua/jim/options.lua
 " $HOME/.config/nvim/lua/jim/keymaps.lua " autocmds, keymappings
 " $HOME/.config/nvim/lua/jim/functions.lua
 " $HOME/.config/nvim/lua/jim/tools.lua
+" $HOME/.config/nvim/lua/jim/utils.lua
 " $HOME/.config/nvim/lua/jim/windows.lua  " tabs, underline ??
 " $HOME/.config/nvim/lua/jim/colors.lua
 " $HOME/.config/nvim/lua/jim/Nvim-R.lua
@@ -181,11 +186,13 @@ let g:nvim_config_root = stdpath('config')
 
 " FROM ercrema - github
 "
-" keep filetypes consistent 
+"----------------------------
+"				keep filetypes consistent 
+"----------------------------
+
 au BufNewFile,BufRead *.Rmd,*.rmd set filetype=rmd
 au BufNewFile,BufRead *.md  set filetype=md
 autocmd BufNewFile,BufRead *.md set filetype=markdown
-
 au BufNewFile,BufRead *.tex, set filetype=tex
 
 au FileType tex,latex,markdown setlocal spell spelllang=en_us
@@ -213,6 +220,8 @@ augroup R_specs
 	autocmd FileType r,rmd :set formatoptions+=ro
 	autocmd FileType r,rmd inoremap <leader>mm %*% 
 	autocmd FileType r,rmd inoremap <leader>pp %>% 
+	autocmd FileType markdown :setlocal foldmethod=manual
+	autocmd FileType r,rmd :setlocal foldmethod=manual
 augroup END
 
 " For .Rmd files, find next/previous 'chunk'
@@ -220,19 +229,6 @@ augroup knitr
   autocmd BufNewFile,BufRead *.Rmd nnoremap ]r /```{r<CR>
   autocmd BufNewFile,BufRead *.Rmd nnoremap [r ?```{r<CR>
 augroup END
-
-
-"	vim hard way -- ch18
-"
-
-" 8/2022  - am I using?   .md has fold type manual
-
-" augroup filetype_vim
-"     autocmd!
-"     autocmd FileType md setlocal foldmethod=expr
-" augroup END
-
-
 
 
 
@@ -263,11 +259,13 @@ require('jim.options')
 -- require("jim.lsp_experimental")
 -- require("jim.functions")
 -- require("jim.tools")
+require('jim.utils')
 -- require("jim.cleanup")
 -- require("jim.globals")
 require("jim.windows")
 -- require("jim.colors")
 require("jim.Nvim-R")
+require("treesitter-config")
 
 ---------
 --    LSP

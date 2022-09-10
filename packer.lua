@@ -14,10 +14,7 @@ use	'hrsh7th/cmp-nvim-lua'
 use 'williamboman/nvim-lsp-installer'
 
 ----- treesitter
-use {
-'nvim-treesitter/nvim-treesitter',
-run = ':TSUpdate'
-}
+use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 use 'sharkdp/fd'
 
