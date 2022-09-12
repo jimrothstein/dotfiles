@@ -14,9 +14,7 @@
 
 
 require'nvim-treesitter.configs'.setup {
-  -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  -- jr:   is this what downloads ALL maintained?
-  --	ensure_installed = "maintained",
+	-- require is pointing to install  treesitter in runtimepath
   ensure_installed = {"lua", "r", "markdown" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
