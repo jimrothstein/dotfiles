@@ -12,9 +12,6 @@
 --				-	for .md, setlocal nospell (till I figure out latex & spell)
 ----------------
 --
--- these 2 work
-vim.api.nvim_set_keymap('n', '<leader>e', ':echo "hi"<CR> ', {})
-
 
 local opts = {noremap = true}
 
@@ -22,33 +19,24 @@ local opts = {noremap = true}
 vim.api.nvim_set_keymap('n', '<leader>f', '<C-f>', opts )
 vim.api.nvim_set_keymap('n', '<leader>b', '<C-b>', opts )
 
-
 vim.api.nvim_set_keymap('n', '<C-L>', ':wincmd l<CR>', opts )
 vim.api.nvim_set_keymap('n', '<C-H>', ':wincmd h<CR>', opts )
 vim.api.nvim_set_keymap('n', '<C-J>', ':wincmd j<CR>', opts )
+vim.api.nvim_set_keymap('n', '<C-K>', ':wincmd k<CR>', opts )
 
---	1st exit insert mode; then jump
-vim.api.nvim_set_keymap('t', '<C-K>', '<C-\\><C-N>:wincmd k<CR>', opts )
 
---  FUTURE
---
--- vim.api.nvim_set_keymap('n', '<leader>e', 'vim.cmd("echo init.vim")', {})
--- vim.api.nvim_set_keymap('n', '<leader>x', '<cmd>lua require("jim_code.tools").makeScratch()<CR>', {})
---
---
 --  exit insert mode  
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>',  opts)
 vim.api.nvim_set_keymap('i', 'kk', '<Esc>',  opts)
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>',  opts)
 
 
---  FUTURE: (inserts :>)   paste * reg on command line
+--  paste contents of reg "  on command line 
 vim.api.nvim_set_keymap('n', '<leader>pr', ':<C-R>"',  opts)
 
 
 --	yank visual text to SYSTEM	clipboard  ( <C-v> to paste)
 vim.api.nvim_set_keymap('v', '<C-c>', '"+y', opts)
-
 
 --	spell (see ~/.config/nvim/lua/jim/utils.lua)
 		vim.api.nvim_set_keymap('n', '<leader>s', ':call Spell_word<CR>', opts)
@@ -62,7 +50,6 @@ vim.api.nvim_set_keymap('n', '<leader>bo', 'i**<Esc>Ea**<Esc>',  opts)
 
 --  SAVE FILE
 vim.api.nvim_set_keymap('n', '<leader>s', ':w<CR>',  opts)
-
 vim.api.nvim_set_keymap('n', '<C-S>', ':w<CR>',  opts)
 vim.api.nvim_set_keymap('i', '<leader>s', '<esc>:w<CR>',  opts)
 
@@ -70,14 +57,14 @@ vim.api.nvim_set_keymap('i', '<leader>s', '<esc>:w<CR>',  opts)
 --  clear highlight
 vim.api.nvim_set_keymap('n', './', ':nohlsearch<CR>',  opts)
 
---  NERDTree
--- open nerdtree
+--  open NERDTree
 vim.api.nvim_set_keymap('n', '<C-N>', ':NERDTreeFocus<CR>',  opts)
 
 --	nvim-R
 vim.api.nvim_set_keymap('n', '<leader>rstop', ':RStop<CR>',  opts)
 
 --	vsplit term
+vim.api.nvim_set_keymap('n', '<Leader>tt', ':vsplit term://zsh<CR>',  opts)
 --
 --	TERMINAL
 --	:terminal opens terminal buffer, can scroll, not enter text
@@ -86,14 +73,25 @@ vim.api.nvim_set_keymap('n', '<leader>rstop', ':RStop<CR>',  opts)
 --	to stop entering text and return to scrolling in same window
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-N>', opts)
 
---	Hop between terminal window and other windows
+--	PICK ONE:  ALT  or CTRL
+--	Hop between terminal window and other windows ('tnoremap')
 vim.api.nvim_set_keymap('t', '<A-h>', '<C-\\><C-N><C-W>h', opts)
 vim.api.nvim_set_keymap('t', '<A-j>', '<C-\\><C-N><C-W>j', opts)
 vim.api.nvim_set_keymap('t', '<A-k>', '<C-\\><C-N><C-W>k', opts)
 vim.api.nvim_set_keymap('t', '<A-l>', '<C-\\><C-N><C-W>l', opts)
 
 
-vim.api.nvim_set_keymap('n', '<Leader>tt', ':vsplit term://zsh<CR>',  opts)
+vim.api.nvim_set_keymap('t', '<C-h>', '<C-\\><C-N><C-W>h', opts)
+vim.api.nvim_set_keymap('t', '<C-j>', '<C-\\><C-N><C-W>j', opts)
+vim.api.nvim_set_keymap('t', '<C-k>', '<C-\\><C-N><C-W>k', opts)
+vim.api.nvim_set_keymap('t', '<C-l>', '<C-\\><C-N><C-W>l', opts)
+
+--OLD
+--  use ==#   compare strings
+--  augroup myterm | au!
+--  	au TermOpen * if &buftype ==# 'terminal' | resize q0 | vert resize 50 | endif
+--  augroup end
+--
 
 vim.cmd[[
 " ================================================================
@@ -161,17 +159,19 @@ vim.api.nvim_create_autocmd("FileType", {
 	}
 )
 
--- TermEnter
+-- TermEnter (see vim.cmd[[  BELOW ...)
 --
-vim.api.nvim_create_autocmd("TermEnter", {
-  callback = function()
+-- -- vim.api.nvim_create_autocmd("TermEnter", {
+  -- -- callback = function()
 -- What do I want?
 -- autocmd TermOpen * startinsert			" begin term as insert
-  end,
-}
-)
+  -- end,
+--	}
+--	)
 
+--	not working with once=true
 vim.api.nvim_create_autocmd("BufWritePost", {
+	once=true,
   callback = function() print("file saved") end }
 )
 
@@ -207,42 +207,27 @@ augroup mkview_gp
 		au BufRead *.Rmd silent! loadview 
 augroup end
 
+"	  put in lua (see above)
+augroup term_gp
+	au!
+	" au TermOpen,TermEnter *   startinsert
+	" au TermOpen,TermEnter scratch  startinsert
+	"	THIS works:
+	au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+augroup END
+
 ]]
 
---OLD
---  use ==#   compare strings
---  augroup myterm | au!
---  	au TermOpen * if &buftype ==# 'terminal' | resize q0 | vert resize 50 | endif
---  augroup end
---
-
-
-local opts = {noremap = true}
-
--- cursor forward/backward one full screen
-vim.api.nvim_set_keymap('n', '<leader>f', '<C-f>', opts )
-vim.api.nvim_set_keymap('n', '<leader>b', '<C-b>', opts )
-
---  FUTURE
---
--- vim.api.nvim_set_keymap('n', '<leader>e', 'vim.cmd("echo init.vim")', {})
--- vim.api.nvim_set_keymap('n', '<leader>x', '<cmd>lua require("jim_code.tools").makeScratch()<CR>', {})
---
---
 
 --  'gd' is working !   BEGIN HERE   LSP for lua
-local opts = { noremap = true } 
 
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     vim.api.nvim_set_keymap('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
-
     vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-
     vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-
     vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     vim.api.nvim_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
 

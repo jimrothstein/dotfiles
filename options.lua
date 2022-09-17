@@ -16,38 +16,26 @@
 local set = vim.opt -- set options
 set.expandtab = true					--	expands as spaces
 set.tabstop = 2								--	width of \t
-
 set.shiftwidth = 0						--	use tabstop, width when using << >> 
 set.softtabstop = -1					--	use tabstop
 set.shiftround= true					--	indents will be multipe of shiftwidth (keeps alignment)
 set.autoindent =  true				--	keep same identent as prior line
 set.smartindent = true				--	increase indent with {
-
 set.ignorecase = true           --      make search case insensitive
 set.wm = 4                      --      begin new line 4 chars before end of line.
 set.number=true
 set.relativenumber=true
 set.laststatus=3
-
 set.splitright=true							-- vsplit puts new window to the right
 
 --   " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 --  au CursorHoldI * stopinsert
 
 set.hidden = false    --    "   [default=no] 
-
---  syntax enable 		on by default
---
-
---  set history=50		"   last 50 commands (default 10000)
 set.history=50
-set.showmode = true			--   show mode
-
+set.showmode = true			--   show mode (insert etc )
 set.cursorline = true		--   highlight current line
-
 set.scrolloff=  5   --  "   scroll, keep cursor 5 lines from top
-
-
 set.cmdheight=4		-- "	 avoids PRESS any Key to continue
 
 -- set gdefault			" search global :%s/from/to/c
