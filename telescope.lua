@@ -13,14 +13,11 @@
 local actions = require("telescope.actions")
 
 require("telescope").setup {
-    defaults = { 
-        prompt_prefix = "$ ", 
-        --path_display = "absolute",
+    defaults = {
+        prompt_prefix = "$ ",
         file_ignore_patterns = {"^.git", "%.pdf", "%.jpeg", ".html$", "~/config/nvim/backup/" },
 				dynamic_preview_title= true,
-				
         cwd = "~/code"},
---  find_command= {"rg", "--with-filename }
 
     mappings = {
         -- insert mode  
@@ -37,10 +34,6 @@ require("telescope").setup {
  --     }
   }
 }
--- What does this do?
--- hmmm,  works
--- require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{
-         -- Previewer = true  gave errors  (false did not!)
 --[[
 local M = {}
 
@@ -91,20 +84,13 @@ require('telescope').setup {
 --     },
   }
 }
-------------
 
---  MAPPINGS
---  SEE also nvim.init
---
--- To see all mappings:
--- :lua print(vim.inspect(vim.api.nvim_get_keymap('n')))
---------------------------------------------------------
 
--- mapping:     Compare lua way vs old, vim way below it:
---
 --------------------
 --  Telescope mappings
 -- --------------------
+--
+-- mapping:    Had trouble with lua way,  old vim way seems most succinct 
 --   Cut & pasted this:
 vim.cmd [[
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
@@ -113,12 +99,7 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 ]]
 
--- NOT working, Above DOES WORK
--------------------------------
---vim.api.nvim_set_keymap('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true}  )
 
--- vim.api.nvim_set_keymap('n', '<leader>fg',  "<cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true})
--- example of options { noremap = true, silent = true }
 
 
 -- -- for interactive, to call picker
@@ -131,6 +112,18 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 -- MISC Lua commands:
 ---------------------
 --print NAME of current Buffer
+--use buffer number (from :ls) to get name of other buffers
 --: lua print(vim.inspect(vim.api.nvim_buf_get_name(0)))
 --------------------------------------------------------
 --
+--
+-- To see all mappings:
+-- :lua print(vim.inspect(vim.api.nvim_get_keymap('n')))
+--------------------------------------------------------
+--
+-- -- for interactive, to call picker
+--   :lua require('telescope.builtin').live_grep({
+--     prompt_title = 'find string in open buffers...',
+--     grep_open_files = true
+--   })
+-- 

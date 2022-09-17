@@ -5,6 +5,7 @@
 --	MOVE autocommands to keymaps.lua
 --	:TSBufEnable highlight
 
+
 vim.cmd [[
 "----------------------------
 "   FILES, sourced at BOTTOM
