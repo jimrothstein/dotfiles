@@ -3,7 +3,7 @@
 --	TODO
 --	a lot to do.
 --	MOVE autocommands to keymaps.lua
---	:TSBufEnable highlight
+--	:TSBufEnable highlight (does nothing)
 
 
 vim.cmd [[

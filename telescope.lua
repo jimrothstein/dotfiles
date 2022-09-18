@@ -61,8 +61,9 @@ end
 ------------------------
 --  Telescope Extensions
 ------------------------
---
--- require('telescope').load_extension('bookmarks')
+--	USAGE:   :telescope bookmarks
+require('telescope').load_extension('bookmarks')
+
 require('telescope').setup {
   extensions = {
 -- --    bookmarks = {
