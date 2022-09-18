@@ -1,16 +1,13 @@
 return require('packer').startup(function()
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-
-  use 'neovim/nvim-lspconfig'
-
-use 	'hrsh7th/nvim-cmp'   
+use 'wbthomason/packer.nvim'
+use 'neovim/nvim-lspconfig'
+use	'hrsh7th/nvim-cmp'   
 use	'hrsh7th/cmp-nvim-lsp'
 use	'hrsh7th/cmp-buffer'
 use	'hrsh7th/cmp-path'
 use	'hrsh7th/cmp-cmdline'
 use	'hrsh7th/cmp-nvim-lua'
-
 use 'williamboman/nvim-lsp-installer'
 
 ----- treesitter
@@ -22,8 +19,15 @@ use 'sharkdp/fd'
 use 'BurntSushi/ripgrep'
 
 ------ for telescope-bookmarks (firefox needs sqlite)
---" Plug 'dhruvmanila/telescope-bookmarks.nvim'
--- Plug 'tami5/sqlite.lua'
+use 'kkharji/sqlite.lua'
+use {'dhruvmanila/telescope-bookmarks.nvim',
+ tag = '*',
+  -- Uncomment if the selected browser is Firefox, Waterfox or buku
+  requires = {
+    'kkharji/sqlite.lua',
+  }
+}
+
 
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround' 
@@ -42,6 +46,13 @@ use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
 })
+
+
+--	make packer sync()
+local install_plugins = false	-- driving me crazy
+if install_plugins then
+		require('packer').sync()
+end
 
 --	end packer
 end )

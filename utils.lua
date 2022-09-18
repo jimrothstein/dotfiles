@@ -14,7 +14,7 @@ P = function(v)
   return v
 end
 
-P("helo")
+P("helo - from utils.lua")
 
 
 --	RELOAD A MODULE 
@@ -42,5 +42,12 @@ function! Spell_word()
   set spell
   normal ]s
   normal 1z=
+endfunction
+
+"	PURPOSE:	Auto insert date	at bottom of file (works, NOT ACTIVE)
+"	USAGE:	:call DateInsert(), OR	
+"	  autocmd FileWritePre *.md :call DateInsert()
+function DateInsert()
+	$read !date
 endfunction
 ]]
