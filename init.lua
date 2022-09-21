@@ -5,7 +5,6 @@
 --	MOVE autocommands to keymaps.lua
 --	:TSBufEnable highlight (does nothing)
 
-
 vim.cmd [[
 "----------------------------
 "   FILES, sourced at BOTTOM
@@ -25,6 +24,7 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/treesitter.lua
 " $HOME/.config/nvim/lua/treesitter-config/
 "
+" $HOME/.config/nvim/lua/jim/cmp.lua
 " $HOME/.config/nvim/lua/jim/cleanup.lua
 " $HOME/.config/nvim/lua/jim/bufferline.lua
 " $HOME/.config/nvim/lua/jim/options.lua
@@ -267,6 +267,7 @@ require("jim.windows")
 -- require("jim.colors")
 require("jim.Nvim-R")
 require("treesitter-config")
+require("jim.cmp")
 
 ---------
 --    LSP
