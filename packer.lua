@@ -38,6 +38,8 @@ use {'dhruvmanila/telescope-bookmarks.nvim',
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround' 
 use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
+use 'latex-lsp/texlab'
+
 
 use {
   'nvim-telescope/telescope.nvim',
