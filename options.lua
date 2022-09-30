@@ -113,6 +113,9 @@ vim.cmd [[
 	set clipboard+=unnamedplus
 	:let g:loaded_netrw       = 1
 	:let g:loaded_netrwPlugin = 1
+	" checkhealth:  turns off python & perl warning
+	:let g:loaded_python3_provider = 0
+	:let g:loaded_perl_provider = 0
 	]]
 
 		
