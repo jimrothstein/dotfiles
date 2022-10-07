@@ -80,6 +80,8 @@ vim.api.nvim_set_keymap('t', '<A-j>', '<C-\\><C-N><C-W>j', opts)
 vim.api.nvim_set_keymap('t', '<A-k>', '<C-\\><C-N><C-W>k', opts)
 vim.api.nvim_set_keymap('t', '<A-l>', '<C-\\><C-N><C-W>l', opts)
 
+vim.api.nvim_set_keymap('n', '<A-k>', 'a<C-\\><C-N><C-W>k', opts)
+
 
 vim.api.nvim_set_keymap('t', '<C-h>', '<C-\\><C-N><C-W>h', opts)
 vim.api.nvim_set_keymap('t', '<C-j>', '<C-\\><C-N><C-W>j', opts)
