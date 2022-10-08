@@ -33,6 +33,10 @@ use {'dhruvmanila/telescope-bookmarks.nvim',
     'kkharji/sqlite.lua',
   }
 }
+--	for QUARTO support in neovim
+use { 'quarto-dev/quarto-nvim',
+  requires = {'neovim/nvim-lspconfig'}
+}
 
 
 use 'scrooloose/nerdtree'
