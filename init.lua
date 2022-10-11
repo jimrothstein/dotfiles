@@ -272,15 +272,7 @@ require("jim.cmp")
 ---------
 --    LSP
 ---------
---
---  configure LSP installer 
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  server:setup(opts)
-  end
-)
 
 
-
-
+--	ATTEMPT to run r_language_server (works)
+require'lspconfig'.r_language_server.setup{}

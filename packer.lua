@@ -2,7 +2,8 @@ return require('packer').startup(function()
   -- Packer can manage itself
 use 'wbthomason/packer.nvim'
 use 'neovim/nvim-lspconfig'
-use 'williamboman/nvim-lsp-installer'
+-- OLD: use 'williamboman/nvim-lsp-installer'
+use { "williamboman/mason.nvim" }
 
 --	completion
 use	'hrsh7th/nvim-cmp'   
