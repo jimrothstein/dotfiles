@@ -1,7 +1,10 @@
 return require('packer').startup(function()
   -- Packer can manage itself
 use 'wbthomason/packer.nvim'
+
+--	common config that langage servers need
 use 'neovim/nvim-lspconfig'
+
 -- OLD: use 'williamboman/nvim-lsp-installer'
 use { "williamboman/mason.nvim" }
 
