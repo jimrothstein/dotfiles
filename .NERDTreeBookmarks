@@ -16,6 +16,7 @@ UrOx ~/code/health_labs/rmd
 YOUTBE_MP3 ~/code/mp3
 YOUTUBE ~/code/youtube_api
 ZSH ~/code/zsh_project
+EASYSTATS_DEV ~/code/easystats/parameters
 
 lualatex-doc ~/code/publish_project/LUALATEX/lualatex-doc.tex
 PUBLISH_MATH ~/code/publish_project/MATH
