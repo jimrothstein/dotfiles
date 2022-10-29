@@ -10,7 +10,9 @@ vim.cmd [[
 map <F2> <Plug>RStart
 map <Leader><F2> <Plug>RStop
 nmap <Leader>d <Plug>RDSendLine
-"nnoremap <Leader>o <Plug>Rinsert
+
+"	turn on:  insert console outputka
+nnoremap <Leader>o <Plug>Rinsert
 "nnoremap <Leader>o \o<CR>
 
 " Send selection or line to R with space bar, respectively.

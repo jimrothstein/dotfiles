@@ -70,6 +70,8 @@ vim.api.nvim_set_keymap('n', '<Leader>tt', ':vsplit term://zsh<CR>',  opts)
 --	:terminal opens terminal buffer, can scroll, not enter text
 --	i,a,I, A   allows typing (last line only)
 --
+--	t = in terminal, able to enter text	
+--	n = in terminal, can only scroll
 --	to stop entering text and return to scrolling in same window
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-N>', opts)
 
