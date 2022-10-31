@@ -249,25 +249,25 @@ let g:nvim_config_root = stdpath('config')
 --  actual location ~/.config/nvim/lua/jim.* 
 require('jim.packer')
 require('jim.telescope')
+require('jim.bufferline')
 -- require('jim.treesitter')
 -- require('jim.lsp_cmp')
-require('jim.bufferline')
 -- require('jim_code.lightline')
 
 --  keybindings and autocmd
 require('jim.keymaps')
 require('jim.options')
--- require("jim.lsp_experimental")
--- require("jim.functions")
--- require("jim.tools")
 require('jim.utils')
--- require("jim.cleanup")
--- require("jim.globals")
 require("jim.windows")
--- require("jim.colors")
 require("jim.Nvim-R")
 require("treesitter-config")
 require("jim.cmp")
+-- require("jim.lsp_experimental")
+-- require("jim.functions")
+-- require("jim.tools")
+-- require("jim.cleanup")
+-- require("jim.globals")
+-- require("jim.colors")
 
 ---------
 --    LSP
