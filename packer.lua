@@ -74,6 +74,9 @@ use({
     run = function() vim.fn["mkdp#util#install"]() end,
 })
 
+-----  luapad, for practice
+use 'rafcamlet/nvim-luapad'
+
 
 --	make packer sync()
 local install_plugins = false	-- driving me crazy
