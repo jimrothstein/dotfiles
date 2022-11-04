@@ -1,14 +1,9 @@
-return require('packer').startup(function()
-  -- Packer can manage itself
-use 'wbthomason/packer.nvim'
+return require('packer').startup(function(use)
+use 'wbthomason/packer.nvim'                                       -- Packer can manage itself
+use 'neovim/nvim-lspconfig'                                        --	common config that langage servers need
+use { "williamboman/mason.nvim" }                                  -- replaces 'williamboman/nvim-lsp-installer'
 
---	common config that langage servers need
-use 'neovim/nvim-lspconfig'
-
--- OLD: use 'williamboman/nvim-lsp-installer'
-use { "williamboman/mason.nvim" }
-
---	completion
+--	completion sources
 use	'hrsh7th/nvim-cmp'   
 use	'hrsh7th/cmp-nvim-lsp'
 use	'hrsh7th/cmp-buffer'
