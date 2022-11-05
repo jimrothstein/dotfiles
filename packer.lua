@@ -48,11 +48,23 @@ use { 'quarto-dev/quarto-nvim',
   requires = {'neovim/nvim-lspconfig'}
 }
 
+--  which-key
+use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
 
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround' 
 use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
-use 'latex-lsp/texlab'
+-- use 'latex-lsp/texlab'
+use 'lervag/vimtex'
 
 
 use {
