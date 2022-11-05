@@ -114,6 +114,8 @@ vim-myhelp/
 *.html
 *.tar.gz
 ~/code/jimHelp/doc/*
+#  ignore large files
+*.appimage
 
 tags
 
