@@ -256,17 +256,12 @@ require("jim.windows")
 require("jim.Nvim-R")
 require("treesitter-config")
 require("jim.cmp")
--- require("jim.lsp_experimental")
--- require("jim.functions")
--- require("jim.tools")
--- require("jim.cleanup")
--- require("jim.globals")
--- require("jim.colors")
 
+--		REMVOED
 ---------
 --    LSP
 ---------
 
 
 --	ATTEMPT to run r_language_server (works)
-require'lspconfig'.r_language_server.setup{}
+--	require'lspconfig'.r_language_server.setup{}
