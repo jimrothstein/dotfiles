@@ -270,5 +270,3 @@ require("jim.cmp")
 
 --	ATTEMPT to run r_language_server (works)
 require'lspconfig'.r_language_server.setup{}
-
-
