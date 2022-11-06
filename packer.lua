@@ -1,7 +1,11 @@
+
+
+vim.g.completeopt="menu,menuone,noselect"
 return require('packer').startup(function(use)
 use 'wbthomason/packer.nvim'                                       -- Packer can manage itself
 use 'neovim/nvim-lspconfig'                                        --	common config that langage servers need
 use { "williamboman/mason.nvim" }                                  -- replaces 'williamboman/nvim-lsp-installer'
+	require("mason").setup()
 
 --	completion sources
 use	'hrsh7th/nvim-cmp'   
@@ -11,20 +15,34 @@ use	'hrsh7th/cmp-path'
 use	'hrsh7th/cmp-cmdline'
 use	'hrsh7th/cmp-nvim-lua'
 
---	For luasnip users.
-use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 
--- use { 
---   'hrsh7th/nvim-cmp',
---   config = function() require('config.cmp') end,
--- }
--- use { 'saadparwaiz1/cmp_luasnip' }
--- use {
---     'L3MON4D3/LuaSnip', tag="v<CurrentMajor>.*",
---     after = 'nvim-cmp',
---     config = function() require('config.snippets') end
--- }
--- 
+
+use { 'L3MON4D3/LuaSnip' }
+use {
+  'hrsh7th/nvim-cmp',
+  config = function ()
+    require'cmp'.setup {
+    snippet = {
+      expand = function(args)
+        require'luasnip'.lsp_expand(args.body)
+      end
+    },
+
+    sources = {
+      { name = 'luasnip' },
+      -- more sources
+    },
+  }
+  end
+}
+use { 'saadparwaiz1/cmp_luasnip' }      -- snip completion
+
+--  Seup lspconfig (for nvim_cmp)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+  require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+    capabilities = capabilities
+  }
 
 ----- treesitter
 use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }

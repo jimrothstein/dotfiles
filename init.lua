@@ -1,9 +1,5 @@
 -- file <- "/home/jim/.config/nvim/init.lua"
 
---	TODO
---	a lot to do.
---	MOVE autocommands to keymaps.lua
---	:TSBufEnable highlight (does nothing)
 
 vim.cmd [[
 "----------------------------
@@ -19,7 +15,6 @@ vim.cmd [[
 "  -- lua --
 
 " $HOME/.config/nvim/lua/jim/packer.lua
-" $HOME/.config/nvim/lua/jim/lsp_experimental.lua
 " $HOME/.config/nvim/lua/jim/telescope.lua
 " $HOME/.config/nvim/lua/jim/treesitter.lua
 " $HOME/.config/nvim/lua/treesitter-config/
@@ -251,7 +246,6 @@ require('jim.packer')
 require('jim.telescope')
 require('jim.bufferline')
 -- require('jim.treesitter')
--- require('jim.lsp_cmp')
 -- require('jim_code.lightline')
 
 --  keybindings and autocmd
@@ -276,3 +270,5 @@ require("jim.cmp")
 
 --	ATTEMPT to run r_language_server (works)
 require'lspconfig'.r_language_server.setup{}
+
+
