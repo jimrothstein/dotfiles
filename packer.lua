@@ -1,4 +1,4 @@
---  packer.lua
+--  packer.lua only
 
 vim.g.completeopt="menu,menuone,noselect"
 
