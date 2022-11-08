@@ -192,7 +192,6 @@ require('jim.packer')
 require('jim.telescope')
 require('jim.bufferline')
 -- require('jim.treesitter')
--- require('jim_code.lightline')
 
 --  keybindings and autocmd
 require('jim.keymaps')
@@ -202,13 +201,12 @@ require("jim.windows")
 require("jim.Nvim-R")
 require("treesitter-config")
 
---		REMVOED
 ---------
 --    LSP
 ---------
 
 
-------- BASIC SETUP kickstart --------------------------------------------------------------------------------
+------- BASIC SETUP kickstart ----------------------------------------------------------------
 ---------------------------------------------------------------------------------------
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
@@ -367,9 +365,13 @@ cmp.setup {
 
 	--
 ---------------------------------------------------------------------------------------
+-- VimTex confiuration
 ---------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------
+vim.cmd [[
+    let g:vimtex_view_method= 'zathura'
+  ]]
 
+--
 
 --	make packer sync()
 local install_plugins = false	-- driving me crazy
