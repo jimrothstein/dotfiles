@@ -384,3 +384,8 @@ end
 -- vim: ts=2 sts=2 sw=2 et
 --	ATTEMPT to run r_language_server (works)
 --	require'lspconfig'.r_language_server.setup{}
+  
+
+
+
+

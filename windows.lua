@@ -1,4 +1,5 @@
 --  windows.lua
+--
 vim.cmd (
 [[
 function! UnderlineHeading(level)
