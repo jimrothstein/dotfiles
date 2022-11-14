@@ -3,6 +3,9 @@
 # USAGE:   ./create_soft_links.sh
 # PURPOSE:   This script creates soft links that point to ~/dotilfes.
 #							Then git (as backup) ~/dotfiles.
+#
+#		Updated Nov 2022		
+#		---------------------------------------------------------------------
 
 # -f forces, in event a link aleady exists.  This will overwrite.
 #
@@ -10,7 +13,6 @@
 # 	TODO:
 # 	~/.ssh 
 # 	any cron jobs
-# 	neovim plugins - any config info NOT in one of my ~/dotfiles?
 # 	-	~/.Renviron - what to do?
 # 	include SPELL  (en.utf-8.add, medical.utf-8.add)
 #
@@ -59,6 +61,7 @@ ln -sf ~/dotfiles/telescope.lua ~/.config/nvim/lua/jim/telescope.lua
 ln -sf ~/dotfiles/Nvim-R.lua ~/.config/nvim/lua/jim/Nvim-R.lua
 ln -sf ~/dotfiles/treesitter.lua ~/.config/nvim/lua/jim/treesitter.lua
 ln -sf ~/dotfiles/utils.lua ~/.config/nvim/lua/jim/utils.lua
+ln -sf ~/dotfiles/bufferline.lua ~/.config/nvim/lua/bufferline.lua		
 
 
 # ~/.config/nvim/spell ??
