@@ -9,7 +9,7 @@ vim.cmd [[
 "  -- lua --
 " $HOME/.config/nvim/lua/jim/packer.lua
 " $HOME/.config/nvim/lua/jim/telescope.lua
-" $HOME/.config/nvim/lua/treesitter-config/
+" $HOME/.config/nvim/lua/jim/treesitter.lua
 " $HOME/.config/nvim/lua/jim/cmp.lua
 " $HOME/.config/nvim/lua/jim/bufferline.lua
 " $HOME/.config/nvim/lua/jim/options.lua
@@ -191,7 +191,7 @@ augroup END
 require('jim.packer')
 require('jim.telescope')
 require('jim.bufferline')
--- require('jim.treesitter')
+require('jim.treesitter')
 
 --  keybindings and autocmd
 require('jim.keymaps')
@@ -199,7 +199,6 @@ require('jim.options')
 require('jim.utils')
 require("jim.windows")
 require("jim.Nvim-R")
-require("treesitter-config")
 
 ---------
 --    LSP
