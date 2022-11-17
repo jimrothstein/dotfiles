@@ -17,7 +17,8 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/utils.lua
 " $HOME/.config/nvim/lua/jim/windows.lua  " tabs, underline ??
 " $HOME/.config/nvim/lua/jim/Nvim-R.lua
-"
+
+"	$HOME/.local/share/nvim/lsp_servers/
 "
 "  --	 ZSH --	
 " $HOME/.config/zsh/
