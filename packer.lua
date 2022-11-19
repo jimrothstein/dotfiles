@@ -9,13 +9,44 @@ use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }       
 use 'nvim-treesitter/nvim-treesitter'                                                -- Highlight, edit, and navigate code
 use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } } -- Additional textobjects for treesitter
 
+----------------------------------------------------------------------------
+-- SEE :h lspconfig.txt
+-- nvim-lspconfig is a collection of community-contributed configurations...
+	-- lanuage servers need 
+
 use 'neovim/nvim-lspconfig'                                        --	common config that langage servers need
+----------------------------------------------------------------------------
+	--
 use { "williamboman/mason.nvim" }                                  -- replaces 'williamboman/nvim-lsp-installer'
 	require("mason").setup()
  use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
 
 --	completion sources
 use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
+
+use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
+
+local cmp = require'cmp'
+
+cmp.setup {
+	sources={
+		name='nvim_lsp', max_item_count=10 },
+
+	on_attach= function() print("I just attached")
+		end
+
+	}
+
+-- 	cmp-config{
+--   		completion = {
+--     			autocomplete = false,
+-- 	-- 		:h cmp.txt, cmp-config.completion.keyword_length
+-- 			keyword_length =  4
+--   }
+--  }
+-- }
+
+
 -- use	'hrsh7th/cmp-buffer'
 -- use	'hrsh7th/cmp-path'
 use	'hrsh7th/cmp-cmdline'
