@@ -55,12 +55,6 @@ options(
 	 usethis.protocol = "ssh",
 	 lib=jim_lib)
 
-# options(	 
-#    blogdown.author = "Jim",
-#    blogdown.hugo.version = "0.79.0"
-# 
-# )
-#
 # options(
 # 	 # display traceback on error, in simplifid or branch form.
 # 
@@ -93,7 +87,7 @@ message("..... reading ~/.Rprofile  .....")
 ## autoloads (i.e no need library(devtools))
 ## 11MAY 2022; jr removed some packages; if need just uncomment	  
 if (interactive()) {
-	suppressMessages(library(reprex))
+	#suppressMessages(library(reprex))
   suppressMessages(library(devtools))
 	suppressMessages(library(usethis))
   suppressMessages(library(rlang))
@@ -104,13 +98,12 @@ if (interactive()) {
 	suppressMessages(library(rmarkdown))
 }
 
-## =====================
+##	--------------------------------------------------------------------
 ##			REditor/languageserver
-## =====================
-##
+##	--------------------------------------------------------------------
 ##  set 27 SEP 2021
 ##  options in ~/.Rprofile will overwrite configuration in LSPConfig
-##
+#	--------------------------------------------------------------------
 ##
 ##  turn off lintr - driving me nuts
 options(languageserver.diagnostics = FALSE)
