@@ -42,7 +42,8 @@ let maplocalleader=","
 " Rmk:   omnifunc is function that responds to insert ^X^O
 "  {
 "   set omnifunc = v:lua.vim.lsp.omnifunc
-      autocmd FileType Rmd,R, rmd set completefunc=CompleteR
+" jr removed  Nov 2022
+      "autocmd FileType Rmd,R, rmd set completefunc=CompleteR
 "  
 "  }
 "
@@ -73,8 +74,9 @@ nnoremap <Leader>sv	:source $VIMRC<cr>
 
 
 
+" jr stopped Nov 2022
 " Use Ctrl-Space to do omnicompletion
-inoremap <C-Space> <C-x><C-o>
+" inoremap <C-Space> <C-x><C-o>
 
 
 
@@ -122,13 +124,14 @@ nnoremap <Leader>t :call ToggleSpellCheck()<CR>
 " if lines exist,
 " 10@a will insert "foo"
 " @a is register a, same as yanking into reg a
-let @a = "^ifoo\<Esc>j"
+" let @a = "^ifoo\<Esc>j"
 " 
 " ===================
 " insert completion
 " ===================
 
-inoremap <c-l> <c-n>
+" jr stopped Nov 2022
+" inoremap <c-l> <c-n>
 " inoremap <c-f> <c-n>   " f? forward, but too far from p	 
 " likewise ^n works, but too far
 "
