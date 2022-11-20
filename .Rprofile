@@ -19,9 +19,13 @@
 # setHook(packageEvent("grDevices", "onLoad"),
 #         function(...) grDevices::ps.options(horizontal=FALSE))
 # set.seed(1234)
-# .First <- function() cat("\n   Welcome to R!\n\n")
-# .Last <- function()  cat("\n   Goodbye!\n\n")
-
+#
+#	----------------------------------------------------------------------
+	.First <- function() cat("\n  ~/.Rprofile:  has .First function \n\n")
+	# .Last <- function()  cat("\n   Goodbye!\n\n")
+	message("..... ~/.Rprofile message ..")
+#----------------------------------------------------------------------
+#
 # ## Example of Rprofile.site
 # local({
 #  # add MASS to the default packages, set a CRAN mirror
@@ -78,7 +82,6 @@ options(
 # )
 
 
-message("..... reading ~/.Rprofile  .....")
 
 }
 ## =====================
