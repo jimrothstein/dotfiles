@@ -184,7 +184,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 
 vim.api.nvim_create_autocmd("BufCreate", {
-  callback = function() print("Buffer Created") end }
+  callback = function() print("Buffer Created. SEE keymaps.lua") end }
 	)
 
 --	legacy (TDO)
@@ -226,7 +226,9 @@ augroup END
 ]]
 
 
+------------------------------------------------
 --  'gd' is working !   BEGIN HERE   LSP for lua
+------------------------------------------------
 
 
     -- Mappings.
