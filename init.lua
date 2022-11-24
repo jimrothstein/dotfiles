@@ -21,30 +21,13 @@ vim.cmd [[
 "  --	 ZSH --	
 " $HOME/.config/zsh/
 "
-"
-"vim.g.mapleader=','         --  default = \
-"vim.g.maplocalleader=','    --  might be clashes
 
 let mapleader=","
 let maplocalleader=","
 
-"
-" --------------
-"  MOVE TO LUA
-"  OMNICOMPLETE
-" --------------
-
-"### "  OMNICOMPLETE:   Default, insert mode, press <C-P>
-" Rmk:   What does next line do?
-" Rmk:   set omnifunc = v:lua.vim.lsp.omnifunc
-" Rmk:   omnifunc is function that responds to insert ^X^O
-"  {
-"   set omnifunc = v:lua.vim.lsp.omnifunc
+" With LSP, nvim-cmp for autocomplete no use for omnifunction
 " jr removed  Nov 2022
       "autocmd FileType Rmd,R, rmd set completefunc=CompleteR
-"  
-"  }
-"
 
 
 " -----------------------------
@@ -67,14 +50,7 @@ endfunction
 " -----------------------------
 nnoremap <Leader>cd  :cd %:p:h<Enter>		
 
-" $VIMRC
 nnoremap <Leader>sv	:source $VIMRC<cr>
-
-
-
-" jr stopped Nov 2022
-" Use Ctrl-Space to do omnicompletion
-" inoremap <C-Space> <C-x><C-o>
 
 
 
@@ -230,7 +206,7 @@ local on_attach = function(_, bufnr)
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('gr', require('telescope.builtin').lsp_references)
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  umap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
@@ -349,11 +325,11 @@ cmp.setup {
       end
     end, { 'i', 's' }),
   },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'r_language_server'},
-  },
+  --sources = {
+  --  { name = 'nvim_lsp' },
+  -- { name = 'luasnip' },
+  --  { name = 'r_language_server'},
+  --},
 }
   -- Set configuration for specific filetype.
 --   cmp.setup.filetype('gitcommit', {
