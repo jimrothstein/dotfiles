@@ -116,6 +116,7 @@ vim-myhelp/
 ~/code/jimHelp/doc/*
 #  ignore large files
 *.appimage
+~/bin/nvim.appimage
 
 tags
 

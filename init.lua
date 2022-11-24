@@ -1,6 +1,5 @@
 -- file <- "/home/jim/.config/nvim/init.lua"
 
-
 vim.cmd [[
 "----------------------------
 "   FILES, sourced at BOTTOM
@@ -10,7 +9,6 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/packer.lua
 " $HOME/.config/nvim/lua/jim/telescope.lua
 " $HOME/.config/nvim/lua/jim/treesitter.lua
-" $HOME/.config/nvim/lua/jim/cmp.lua
 " $HOME/.config/nvim/lua/jim/bufferline.lua
 " $HOME/.config/nvim/lua/jim/options.lua
 " $HOME/.config/nvim/lua/jim/keymaps.lua " autocmds, keymappings
@@ -177,10 +175,11 @@ augroup R_specs
 augroup END
 
 " For .Rmd files, find next/previous 'chunk'
-augroup knitr
-  autocmd BufNewFile,BufRead *.Rmd nnoremap ]r /```{r<CR>
-  autocmd BufNewFile,BufRead *.Rmd nnoremap [r ?```{r<CR>
-augroup END
+"  Nov 2022; works but it is needed?
+"  augroup knitr
+"    autocmd BufNewFile,BufRead *.Rmd nnoremap ]r /```{r<CR>
+"    autocmd BufNewFile,BufRead *.Rmd nnoremap [r ?```{r<CR>
+"  augroup END
 
 
 ]]
@@ -212,11 +211,8 @@ require("jim.Nvim-R")
 ------- BASIC SETUP kickstart ----------------------------------------------------------------
 ---------------------------------------------------------------------------------------
 -- LSP settings.
---  This function gets run when an LSP connects to a particular buffer.
+-- on_attach() runs run when an LSP server connects to a particular buffer.
 local on_attach = function(_, bufnr)
-  -- NOTE: Remember that lua is a real programming language, and as such it is possible
-  -- to define small helper and utility functions so you don't have to repeat yourself
-  -- many times.
   --
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
@@ -282,8 +278,9 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- Example custom configuration for lua
---
+---------------------------------------
+-- LSP & LUA  
+---------------------------------------
 -- Make runtime files discoverable to the server
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
@@ -327,7 +324,7 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    -- ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
@@ -355,6 +352,7 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'r_language_server'},
   },
 }
   -- Set configuration for specific filetype.
@@ -376,18 +374,19 @@ vim.cmd [[
 
 --
 
---	make packer sync()
-local install_plugins = false	-- driving me crazy
-if install_plugins then
-		require('packer').sync()
-end
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 --	ATTEMPT to run r_language_server (works)
---	require'lspconfig'.r_language_server.setup{}
-  
+require'lspconfig'.r_language_server.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+  }
+
+
+  }
 
 
 

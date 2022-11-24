@@ -2,6 +2,12 @@
 
 vim.g.completeopt="menu,menuone,noselect"
 
+--	HELPER:  make packer sync()
+local install_plugins = false	-- driving me crazy
+if install_plugins then
+		require('packer').sync()
+end
+
 require('packer').startup(function(use)
 use 'wbthomason/packer.nvim'                                       -- Packer can manage itself
 use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }            -- Add git related info in the signs columns and popups
@@ -19,19 +25,23 @@ use 'neovim/nvim-lspconfig'                                        --	common con
 	--
 use { "williamboman/mason.nvim" }                                  -- replaces 'williamboman/nvim-lsp-installer'
 	require("mason").setup()
- use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
+
+use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
 
 --	completion sources
 use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
-
-use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
-
 local cmp = require'cmp'
 
+--`keyword_lenght=5 completion actives on 5 character typed
 cmp.setup {
 	sources={
-		name='nvim_lsp', max_item_count=10 },
-
+	{name='nvim_lsp', max_item_count=10, keyword_length=5 },
+	-- for lua api?
+	{name='nvim_lua', keyword_length=5 },
+	{name='nvim_lsp', keyword_length=5 },
+  { name = 'r_language_server', keyword_length=5},
+	{name='buffer', keyword_length=5 }
+		},
 	on_attach= function() print("I just attached")
 		end
 
@@ -91,7 +101,6 @@ require("indent_blankline").setup {
 -----  luapad, for practice
 use 'rafcamlet/nvim-luapad'
 
-use { 'L3MON4D3/LuaSnip' }
 use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
 
   -- Fuzzy Finder (files, lsp, etc)

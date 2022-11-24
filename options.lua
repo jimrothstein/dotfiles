@@ -52,19 +52,14 @@ set.showmatch=true		--	" highlights matching bracket, paran etc.
 --  "   For TRESITTER
 -- set.foldmethod='expr'
 --	set.foldexpr='nvim_treesitter#foldexpr()'
-
-
 --   set foldmethod=marker	" create fold with zf	
 -- set.foldcolumn=3		--" adds visual clue in LEFT margin
 --------------------------------------------------------
---
 set.list=false	--			"NO display TABS, and EOL
 set.wrap = true
 set.errorbells = false
-set.expandtab=false --			" <TAB> expands as spaces,  NO BELLS will sound in R!
 
-set.laststatus=2		--" default=2, means all windows have statusline
-
+-------------------------------------------------------------------------
 -- " %n = buffer number
 -- set statusline=
 -- set statusline+=%m
@@ -76,15 +71,13 @@ set.laststatus=2		--" default=2, means all windows have statusline
 -- set statusline+=%=
 -- set statusline+=%c:%l/%L 			" line, column (with tabs, maybe estimate)
 -- set statusline+=[%n]
-
 -- set.colorcolumn=81		-- " display right margin
+-------------------------------------------------------------------------
+
 
 set.title=true
 set.number= true
 set.relativenumber = true
-
-
-
 set.textwidth=79	--	" sets right margin!
 --		BACKUP
 set.backup = true

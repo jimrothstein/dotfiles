@@ -19,10 +19,10 @@ local opts = {noremap = true}
 vim.api.nvim_set_keymap('n', '<leader>f', '<C-f>', opts )
 vim.api.nvim_set_keymap('n', '<leader>b', '<C-b>', opts )
 
-vim.api.nvim_set_keymap('n', '<C-L>', ':wincmd l<CR>', opts )
-vim.api.nvim_set_keymap('n', '<C-H>', ':wincmd h<CR>', opts )
-vim.api.nvim_set_keymap('n', '<C-J>', ':wincmd j<CR>', opts )
-vim.api.nvim_set_keymap('n', '<C-K>', ':wincmd k<CR>', opts )
+vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', opts )
+vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<CR>', opts )
+vim.api.nvim_set_keymap('n', '<C-j>', ':wincmd j<CR>', opts )
+vim.api.nvim_set_keymap('n', '<C-k>', ':wincmd k<CR>', opts )
 
 
 --  exit insert mode  
@@ -66,6 +66,7 @@ vim.api.nvim_set_keymap('n', '<leader>rstop', ':RStop<CR>',  opts)
 --	vsplit term
 vim.api.nvim_set_keymap('n', '<Leader>tt', ':vsplit term://zsh<CR>',  opts)
 --
+--------------------------------------------------------------
 --	TERMINAL
 --	:terminal opens terminal buffer, can scroll, not enter text
 --	i,a,I, A   allows typing (last line only)
@@ -73,6 +74,8 @@ vim.api.nvim_set_keymap('n', '<Leader>tt', ':vsplit term://zsh<CR>',  opts)
 --	t = in terminal, able to enter text	
 --	n = in terminal, can only scroll
 --	to stop entering text and return to scrolling in same window
+--	NOTE: can use   autocmd WinEnter term://* startinsert
+--------------------------------------------------------------
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-N>', opts)
 
 --	PICK ONE:  ALT  or CTRL
@@ -232,7 +235,7 @@ augroup END
     vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    vim.api.nvim_set_keymap('n', '<leader><C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     vim.api.nvim_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
 
     vim.api.nvim_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
