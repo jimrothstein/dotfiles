@@ -36,10 +36,9 @@ local cmp = require'cmp'
 cmp.setup {
 	sources={
 	{name='nvim_lsp', max_item_count=10, keyword_length=5 },
-	-- for lua api?
-	{name='nvim_lua', keyword_length=5 },
-	{name='nvim_lsp', keyword_length=5 },
-  { name = 'r_language_server', keyword_length=5},
+	{name='nvim_lua', keyword_length=5 },     -- lua api
+	{name='luasnipe', keyword_length=5 },
+  {name = 'r_language_server', keyword_length=5},
 	{name='buffer', keyword_length=5 }
 		},
 	on_attach= function() print("I just attached")
@@ -143,7 +142,7 @@ use {
       -- refer to the configuration section below
 				-- neovim timeoutlen defaults to 1000
 			spelling = {
-						enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+						enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
       suggestions = 20, -- how many suggestions should be shown in the list?
     },
     }
