@@ -157,9 +157,31 @@ use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
 -- use 'latex-lsp/texlab'
 use 'lervag/vimtex'
 
+--   should git/branch clearly
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+}
+
+ require('lualine').setup({
+   options = {
+     icons_enabled = false,
+     component_separators = { left = '|', right = '|'},
+     section_separators  = { left = '|', right = '|'},
+   },
+   sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch'},-- 'diff', 'diagnostics'},
+        lualine_c = {'filename', 'encoding', 'fileformat', 'filetype' },
+        lualine_x = {},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+      },
+ })
 
 --	bufferline.nvim
-use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+--	Nov 23, purpose?
+-- use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
 -- experimental
 use({
