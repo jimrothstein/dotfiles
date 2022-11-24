@@ -47,7 +47,7 @@ let R_assign = 2
   " let R_nvim-wd = -1  no change to wd (when R starts)
   " :h R_nvim_wd
   "
-let R_nvim_wd = -1
+let R_nvim_wd = 1
 
 
 
