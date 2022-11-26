@@ -10,7 +10,11 @@ end
 
 require('packer').startup(function(use)
 use 'wbthomason/packer.nvim'                                       -- Packer can manage itself
-use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }            -- Add git related info in the signs columns and popups
+use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+  config = function()
+    require('gitsigns').setup()
+  end
+}            -- Add git related info in the signs columns and popups
 
 use 'nvim-treesitter/nvim-treesitter'                                                -- Highlight, edit, and navigate code
 use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } } -- Additional textobjects for treesitter
@@ -182,6 +186,10 @@ use {
 --	bufferline.nvim
 --	Nov 23, purpose?
 -- use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+
+use { "ellisonleao/gruvbox.nvim" }
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
 
 -- experimental
 use({
