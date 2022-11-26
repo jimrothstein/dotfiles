@@ -1,5 +1,4 @@
 -- file <- "/home/jim/.config/nvim/init.lua"
-
 vim.cmd [[
 "----------------------------
 "   FILES, sourced at BOTTOM
@@ -21,7 +20,6 @@ vim.cmd [[
 "  --	 ZSH --	
 " $HOME/.config/zsh/
 "
-
 let mapleader=","
 let maplocalleader=","
 
@@ -29,30 +27,11 @@ let maplocalleader=","
 " jr removed  Nov 2022
       "autocmd FileType Rmd,R, rmd set completefunc=CompleteR
 
-
-" -----------------------------
-" comments , USAGE: <Leader>c
-" -----------------------------
-nnoremap <Leader>c :call CommentThisLine()<cr>
-inoremap <Leader>c <esc>:call CommentThisLine()<cr>
-
-function! CommentThisLine()
-		if &filetype  == "vim"
-			"  insert " (must escape); also escape to exit
-			execute "normal I\" \<esc>"
-		else
-			exe "normal I# \<esc>"
-		endif
-endfunction
-
 " -----------------------------
 " set working dir to same as active file
 " -----------------------------
 nnoremap <Leader>cd  :cd %:p:h<Enter>		
-
 nnoremap <Leader>sv	:source $VIMRC<cr>
-
-
 
 " ------------------------------------------------------------------
 "		SPELL
@@ -103,7 +82,6 @@ nnoremap <Leader>t :call ToggleSpellCheck()<CR>
 " ===================
 " insert completion
 " ===================
-
 " jr stopped Nov 2022
 " inoremap <c-l> <c-n>
 " inoremap <c-f> <c-n>   " f? forward, but too far from p	 
@@ -150,40 +128,25 @@ augroup R_specs
 	autocmd FileType r,rmd :setlocal foldmethod=manual
 augroup END
 
-" For .Rmd files, find next/previous 'chunk'
-"  Nov 2022; works but it is needed?
-"  augroup knitr
-"    autocmd BufNewFile,BufRead *.Rmd nnoremap ]r /```{r<CR>
-"    autocmd BufNewFile,BufRead *.Rmd nnoremap [r ?```{r<CR>
-"  augroup END
-
-
 ]]
 
 ---------------
---			BEGIN LUA 
+--			BEGIN LUA
 ---------------
---
-
---  list all *.lua files here (aka modules)
---  actual location ~/.config/nvim/lua/jim.* 
+--  actual location ~/.config/nvim/lua/jim.*
 require('jim.packer')
 require('jim.telescope')
-require('jim.bufferline')
+--require('jim.bufferline')
 --Nov 25, turn off, giving errors
 --require('jim.treesitter')
 
 --  keybindings and autocmd
 require('jim.keymaps')
 require('jim.options')
-require('jim.utils')
+require('jim.utils')        --  my functions
 require("jim.windows")
 require("jim.Nvim-R")
 
----------
---    LSP
----------
- 
 
 ------- BASIC SETUP kickstart ----------------------------------------------------------------
 ---------------------------------------------------------------------------------------
@@ -191,24 +154,26 @@ require("jim.Nvim-R")
 -- on_attach() runs run when an LSP server connects to a particular buffer.
 local on_attach = function(_, bufnr)
   --
-  -- In this case, we create a function that lets us more easily define mappings specific
-  -- for LSP related items. It sets the mode, buffer and description for us each time.
+  -- nmap HELPER function for LSP related items.
+  -- It sets the mode, buffer and description for us each time.
   local nmap = function(keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
     end
-
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
+  -- :h vim.lsp.buf.rename
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('gr', require('telescope.builtin').lsp_references)
   nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  nmap('<leader>df', vim.diagnostic.goto_next, '[G]oto ')   -- not lsp
+  nmap('<leader>dl', '<Cmd>Telescope diagnostics<cr>','[G]oto List ')   -- not lsp
+
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -237,7 +202,7 @@ end
 -- nvim-cmp supports additional completion capabilities
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- Setup mason so it can manage external tooling
+-- Setup mason so it can manage external tooling (LSP, plugins ..)
 require('mason').setup()
 
 -- Enable the following language servers
@@ -256,7 +221,7 @@ for _, lsp in ipairs(servers) do
 end
 
 ---------------------------------------
--- LSP & LUA  
+-- LSP & LUA
 ---------------------------------------
 -- Make runtime files discoverable to the server
 local runtime_path = vim.split(package.path, ';')
@@ -294,15 +259,15 @@ cmp.setup {
       luasnip.lsp_expand(args.body)
     end,
   },
-    window = {
-     -- completion = cmp.config.window.bordered(),
-     --  documentation = cmp.config.window.bordered(),
-    },
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    --  documentation = cmp.config.window.bordered(),
+  },
   mapping = cmp.mapping.preset.insert {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     -- ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
+    ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
@@ -332,7 +297,7 @@ cmp.setup {
   --  { name = 'r_language_server'},
   --},
 }
-  -- Set configuration for specific filetype.
+-- Set configuration for specific filetype.
 --   cmp.setup.filetype('gitcommit', {
 --     sources = cmp.config.sources({
 --       { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
@@ -341,7 +306,7 @@ cmp.setup {
 --     })
 --   })
 
-	--
+--
 ---------------------------------------------------------------------------------------
 -- VimTex confiuration
 ---------------------------------------------------------------------------------------
@@ -355,16 +320,13 @@ vim.cmd [[
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
---	ATTEMPT to run r_language_server (works)
-require'lspconfig'.r_language_server.setup{
+--	ATTEMPT to run r_language_server (works), 
+--	code inside setup will run each buffer, as r_language_server attaches
+require 'lspconfig'.r_language_server.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
   }
 
 
-  }
-
-
-
-
+}
