@@ -1,6 +1,8 @@
 # .gitignore
 # ~/dotfiles/.gitignore   ($G)
 #
+# Updte Nov 28, 2022
+
 #	TODO:
 #		-	Fri May 20 22:24:14 PDT 2022
 #		-	.Renviron (API keys) - how to save this file, but NOT to github?
@@ -28,9 +30,7 @@
 .RData
 .Ruserdata
 
-# ignore these FILES
-## no need to hide .Rprofile, but DO NEED to hide .Renviron (codes)
-# .Rprofile
+# .Renviron has codes;  do NOT put on Github.   (Rprofile is ok on Github)
 .Renviron   
 
 #	vim backups .Renviron~
@@ -70,16 +70,12 @@ pkg_youtube_api/
 jimTools/
 rtweet/
 PPP/
-genentech-build-tidy-tools/
 make_project/
-BMRSr/
-hugo_projects/
 AoC/
 out/
 output/
 
 
-pkg_linear_algebra/
 pkg_mp3_files/
 pkg_yt_api/
 r_rafael/
@@ -114,7 +110,7 @@ vim-myhelp/
 *.html
 *.tar.gz
 ~/code/jimHelp/doc/*
-#  ignore large files
+# should ignore nvim.appimage 
 *.appimage
 ~/bin/nvim.appimage
 
