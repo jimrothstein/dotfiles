@@ -22,6 +22,18 @@ end
 P("helo - from utils.lua")
 
 
+
+-----------------------------------------------------------------------------
+-- runtime directories
+-- vim.api.nvim_list_runtime_paths())
+-----------------------------------------------------------------------------
+Show_runtimepath = function()
+  local p = vim.api.nvim_list_runtime_paths()
+  for i,j in pairs(p) do
+    print(i, j)
+  end
+end
+
 --------------------------------------------------------------------------
 --	RELOAD A MODULE 
 --------------------------------------------------------------------------
@@ -59,7 +71,7 @@ endfunction
 "--------------------------------------------------------------------------
 "	USAGE:	:call DateInsert(), OR	
 "	  autocmd FileWritePre *.md :call DateInsert()
-function DateInsert()
+function! DateInsert()
 	$read !date
 endfunction
 ]]

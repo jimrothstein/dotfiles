@@ -1,0 +1,25 @@
+---
+title: "using easystats notes"
+date:  \today 
+format:
+  pdf: 
+    include-in-header: 
+      text: |
+        \usepackage[top=.5in, bottom=.5in, left=.5in, right=.5in]{geometry}
+        \usepackage{amsmath,amssymb,amstext,amsfonts}
+        \usepackage{lipsum}
+---
+
+
+To run:
+
+- quarto preview <file> --to pdf    # (opens in a viewer)
+- quarto render %	; zathura         # not quite right cli
+
+- math mode latex,  seems to work if *outside* R chunk
+$$
+x^2
+$$
+
+## Air Quality
+
