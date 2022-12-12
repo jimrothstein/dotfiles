@@ -139,7 +139,7 @@ require('jim.packer')
 require('jim.telescope')
 --require('jim.bufferline')
 --Nov 25, turn off, giving errors
---require('jim.treesitter')
+require('jim.treesitter')
 
 --  keybindings and autocmd
 require('jim.keymaps')

@@ -2,12 +2,9 @@
 
 --	TODO
 --
---	Sun 14Aug2022
---	remove all foldmethod in TREESITTER (R didn't work)
---	when pro, can review
--- Sun May 15 17:58:01 PDT 2022
 --
---	TODO:	-	foldmethod for markdown,R, Rmd now: mnaual;  
+--	TODO:	-foldmethod for markdown,R, Rmd now: mnaual;  
+--	      - 
 --				-	set in keymaps.lua
 --				-	for .md, setlocal nospell (till I figure out latex & spell)
 ----------------
