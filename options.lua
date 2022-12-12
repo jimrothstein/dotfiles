@@ -46,14 +46,8 @@ set.showmatch=true		--	" highlights matching bracket, paran etc.
 
 
 --------------------------------------------------------
---					foldmethod
+--					foldmethod  - OFF still figureout Treesitter
 --	Sun 14Aug2022
---	TURNED OFF, does not work with R. see also treesiter settngs
---  "   For TRESITTER
--- set.foldmethod='expr'
---	set.foldexpr='nvim_treesitter#foldexpr()'
---   set foldmethod=marker	" create fold with zf	
--- set.foldcolumn=3		--" adds visual clue in LEFT margin
 --------------------------------------------------------
 set.list=false	--			"NO display TABS, and EOL
 set.wrap = true

@@ -16,7 +16,25 @@ use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
   end
 }            -- Add git related info in the signs columns and popups
 
-use 'nvim-treesitter/nvim-treesitter'                                                -- Highlight, edit, and navigate code
+----------------------------------------------------------------------------------------
+use {
+  'nvim-treesitter/nvim-treesitter',                                                -- Highlight, edit, and navigate code
+  run= 'TSUpdate'
+}
+
+--  Treesittter suggests this WORKAROUND with Packer
+--  TODO:   move to treesitter setup when stable.
+-- vim.opt.foldmethod     = 'expr'
+-- vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+---WORKAROUND
+vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
+  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+  callback = function()
+    vim.opt.foldmethod     = 'expr'
+    vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+  end
+})
+----------------------------------------------------------------------------------------
 use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } } -- Additional textobjects for treesitter
 
 ----------------------------------------------------------------------------
