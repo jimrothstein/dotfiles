@@ -22,18 +22,19 @@ use {
   run= 'TSUpdate'
 }
 
+--  TODO:   move to treesitter setup when stable.  Otherwise, use manual.
+
 --  Treesittter suggests this WORKAROUND with Packer
---  TODO:   move to treesitter setup when stable.
 -- vim.opt.foldmethod     = 'expr'
 -- vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
 ---WORKAROUND
-vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
-  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
-  callback = function()
-    vim.opt.foldmethod     = 'expr'
-    vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
-  end
-})
+-- vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
+--   group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+--   callback = function()
+--     vim.opt.foldmethod     = 'expr'
+--     vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+--   end
+-- })
 ----------------------------------------------------------------------------------------
 use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } } -- Additional textobjects for treesitter
 
@@ -52,7 +53,9 @@ use 'williamboman/mason-lspconfig.nvim'                                         
 
 --	completion sources
 use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
+use {'hrsh7th/cmp-omni'}
 local cmp = require'cmp'
+
 
 --`keyword_lenght=5 completion actives on 5 character typed
 cmp.setup {
@@ -61,8 +64,9 @@ cmp.setup {
 	{name='nvim_lua', keyword_length=5 },     -- lua api
 	{name='luasnipe', keyword_length=5 },
   {name = 'r_language_server', keyword_length=5},
-	{name='buffer', keyword_length=5 }
-		},
+	{name='buffer', keyword_length=5 },
+  {name='omni', }
+	},
 	on_attach= function() print("I just attached")
 		end
 
@@ -176,7 +180,8 @@ use {
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround' 
 use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
--- use 'latex-lsp/texlab'
+-- activiate latex autocomplete .tex files
+use 'latex-lsp/texlab'
 use 'lervag/vimtex'
 
 --   should git/branch clearly

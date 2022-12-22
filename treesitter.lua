@@ -15,7 +15,7 @@
 
 require'nvim-treesitter.configs'.setup {
 	-- require is pointing to install  treesitter in runtimepath
-  ensure_installed = {"lua", "R",  "r", "markdown" },
+  ensure_installed = {"lua",  "r", "markdown" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
