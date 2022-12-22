@@ -63,7 +63,7 @@ alias goTmux='cd ~/.config/tmux/'
 # ~/bin too crowded
 # use ~/.local/bin for scripts
 #
-alias goBin='cd ~/.local/bin/'
+alias goBin='cd ~/bin/'
 alias go.local.bin='cd ~/.local/bin/'
 alias goConfig='cd ~/.config/'
 alias goBackup='cd ~/.config/nvim/backup/'
