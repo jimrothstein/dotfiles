@@ -117,6 +117,7 @@ augroup skeleton
   autocmd BufNewFile *.Rmd	r ~/.config/nvim/templates/skeleton.Rmd
   autocmd BufNewFile *.R    r ~/.config/nvim/templates/skeleton.R
   autocmd BufNewfile *.qmd  r ~/.config/nvim/templates/skeleton.qmd
+  autocmd BufNewfile *.tex  r ~/.config/nvim/templates/skeleton.tex
 augroup END
 
 augroup R_specs
