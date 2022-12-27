@@ -71,10 +71,8 @@ let R_openhtml = 1
 let rmd_syn_hl_chunk=1      " highlight chunk as R code
 
 "	August 2022 
-"	GOAL: TURN OFF syntax folding, want regular vim folding (manual)
-"	but NOT working, so stay:
-" enable r_syntax_folding (vim style)
-let r_syntax_folding=1
+"	GOAL: TURN OFF `syntax` folding, want regular manual vim folding 
+let r_syntax_folding=0
 
 " open unfolded
 set nofoldenable
