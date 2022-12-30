@@ -20,7 +20,7 @@
 ## RULES
 # ========
 #  *.a    files (anywhere) end in .a
-#   .a    the file ".a"  (anywhere) 
+#   .a    the file ".a"  (anywhere)
 #
 # .R overhead (these exact files, in any directory)
 # =============
@@ -31,13 +31,13 @@
 .Ruserdata
 
 # .Renviron has codes;  do NOT put on Github.   (Rprofile is ok on Github)
-.Renviron   
+.Renviron
 
 #	vim backups .Renviron~
 .Renviron*
 /home/jim/.config/nvim/backup/.Renviron*
 
-# files ending in .RDS or .Rd (anywhere) 
+# files ending in .RDS or .Rd (anywhere)
 *.RDS
 *.Rd
 *.rds
@@ -45,9 +45,10 @@
 #   *.pdf
 *.html
 
-# Ignore Files that BEGIN with _ (_script, _file.txt, etc.)
+# Ignore Files/dir that BEGIN with _ (_dir/ _script, _file.txt, etc.)
 # (NOT ignore my_file)
 _*
+
 
 
 
@@ -57,6 +58,7 @@ man/*
 pdf/
 data/*
 inst/
+.quarto/
 
 #
 # ignore these directories
@@ -105,14 +107,16 @@ zsh_project/CURL_examples/.secret
 
 # Special
 # =========
-# plugin "jimrothstein/myhelp" - separate from rest of code/ 
+# plugin "jimrothstein/myhelp" - separate from rest of code/
 vim-myhelp/
 *.html
 *.tar.gz
 ~/code/jimHelp/doc/*
-# should ignore nvim.appimage 
+# should ignore nvim.appimage
 *.appimage
 ~/bin/nvim.appimage
 
 tags
 
+
+/.quarto/
