@@ -45,6 +45,7 @@ alias goLua='cd ~/code/lua_project/'
 alias goTAGS='cd ~/code/TAGS/'
 alias goOUT='cd ~/Downloads/print_and_delete'
 alias goShiny='cd ~/code/SHINY'
+alias goSimple='cd ~/code/simple_examples'
 
 alias goMp3='cd ~/code/mp3/'
 alias goHelp='cd ~/code/jimHelp/doc/'
