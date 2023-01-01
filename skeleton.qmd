@@ -1,17 +1,23 @@
 ---
 title: "using easystats notes"
 date:  \today 
+pdf-engine: lualatex
 format:
   pdf: 
+    toc: false
+    toc_depth:  4   
+    number-sections: false
+    colorlinks: true
+    keep_tex:  false
     include-in-header: 
       text: |
         \usepackage[top=.5in, bottom=.5in, left=.5in, right=.5in]{geometry}
         \usepackage{amsmath,amssymb,amstext,amsfonts}
         \usepackage{lipsum}
+        \usepackage{setspace}
 ---
 
-
-To run:
+\section{To run:}
 
 - quarto preview <file> --to pdf    # (opens in a viewer)
 - quarto render %	; zathura         # not quite right cli
