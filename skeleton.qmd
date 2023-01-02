@@ -15,6 +15,12 @@ format:
         \usepackage{amsmath,amssymb,amstext,amsfonts}
         \usepackage{lipsum}
         \usepackage{setspace}
+#   YAML comment
+#   2nd way, use file
+#format:
+#  pdf: 
+#    include-in-header: 
+#        -   geometry.tex
 ---
 
 \section{To run:}
