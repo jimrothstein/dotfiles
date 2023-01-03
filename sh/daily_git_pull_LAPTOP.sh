@@ -38,6 +38,9 @@ cd /home/jim/code/nvim_project
 cd /home/jim/code/lua_project
 git pull
 
+cd /home/jim/code/NSE_project
+git pull
+
 cd /home/jim/code/SHINY
 
 
