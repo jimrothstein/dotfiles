@@ -108,5 +108,19 @@ let R_clear_line = 1
 " let R_rconsole_width = 
 " let R_rconsole_height
 " ==================================================
+" EXPERIMENTAL
+" Wed 04Jan2023
 
+function! s:customNvimRMappings()
+   nmap <buffer> <Leader>sr <Plug>RStart
+   imap <buffer> <Leader>sr <Plug>RStart
+   vmap <buffer> <Leader>sr <Plug>RStart
+
+" match vim's
+  nmap <buffer> <Leader>wd <Plug>RSetwd
+endfunction
+augroup myNvimR
+   au!
+   autocmd filetype r call s:customNvimRMappings()
+augroup end
 ]]
