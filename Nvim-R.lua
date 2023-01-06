@@ -117,7 +117,7 @@ function! s:customNvimRMappings()
    vmap <buffer> <Leader>sr <Plug>RStart
 
 " match vim's
-  nmap <buffer> <Leader>wd <Plug>RSetwd
+ nmap <buffer> <Leader>wd <Plug>RSetwd
 endfunction
 augroup myNvimR
    au!
