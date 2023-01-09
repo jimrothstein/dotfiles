@@ -1,4 +1,3 @@
-## see help(Startup) for documentation on ~/.Rprofile and Rprofile.site
 # ==============================
 ## ~/.Rprofile
 ##
@@ -8,7 +7,7 @@
 # ==============================
 ##	PURPOSE:	~/.Rprofile is runs for EVERY R process, regardless whether 
 ##						user or R initiated.   Use if (interactive()) for things ONLY
-##						user would want.
+##						user would want.  .Rprofile is akin .zshrc.
 
 
 # ==============================
@@ -20,20 +19,16 @@
 #         function(...) grDevices::ps.options(horizontal=FALSE))
 # set.seed(1234)
 #
+# 
+##  ----------------------------------------------------------------
+# options() # list currently set
+# .Options, names(.Options)  # same, as pairlist | 2nd is character vector
+##
 #	----------------------------------------------------------------------
-	.First <- function() cat("\n  ~/.Rprofile:  has .First function \n\n")
+	.First <- function() cat("\n  -----------------------------------------  \n\n")
 	# .Last <- function()  cat("\n   Goodbye!\n\n")
 	message("..... ~/.Rprofile message ..")
 #----------------------------------------------------------------------
-#
-# ## Example of Rprofile.site
-# local({
-#  # add MASS to the default packages, set a CRAN mirror
-#  old <- getOption("defaultPackages"); r <- getOption("repos")
-#  r["CRAN"] <- "http://my.local.cran"
-#  options(defaultPackages = c(old, "MASS"), repos = r)
-#})
-# ==============================
 #
 #
 # ==============================
@@ -45,49 +40,21 @@ local({
     options(repos = r)
 })
 
-## ============
-		## Jim:	 set
-## ============
-
 
 if (interactive()) {
-## set 4 AUG 2021
-jim_lib  <- '/home/jim/R/x86-64-linux-gnu-library/4.1'
+## set Sun 08Jan2023
+jim_lib  <- '/home/jim/R/x86-64-linux-gnu-library/4.2'
 
 options(
 	 digits=3,
 	 usethis.protocol = "ssh",
 	 lib=jim_lib)
 
-# options(
-# 	 # display traceback on error, in simplifid or branch form.
-# 
-#   # rlang_backtrace_on_error = "branch",
-# 
-# 	 # turn base R errors into R lang errors
-#   #  error = rlang::entrace
-# 
-# 
-# 	 #  QUESTION:    error=recover() # allows examination of stack?
-# 
-# 	 # help_type = 'html',
-# 	 # width = 200,
-# 	 # browser = 'kfmclient newTab', 
-# 	 # repos = "http://debian.mc.vanderbilt.edu/R/CRAN/", 
-# 	 # warnPartialMatchDollar = TRUE,
-# 	 # warnPartialMatchArgs = TRUE,
-# 	 # show.error.locations = "top",      # this gives the location of the error. Source location highest on the stack (inside)
-# 	 # xdvicmd = 'okular'
-# 	 #
-# )
-
-
 
 }
 ## =====================
 ##		Devtools, usethis, rlang, lobstr etc ....
 ## =====================
-## autoloads (i.e no need library(devtools))
 ## 11MAY 2022; jr removed some packages; if need just uncomment	  
 if (interactive()) {
 	#suppressMessages(library(reprex))
@@ -95,7 +62,6 @@ if (interactive()) {
 	suppressMessages(library(usethis))
   suppressMessages(library(rlang))
 	suppressMessages(library(lobstr))
-	#suppressMessages(library(here))
 	suppressMessages(library(sloop))
   suppressMessages(library(xfun)) # utils from Yihui
 	suppressMessages(library(rmarkdown))
