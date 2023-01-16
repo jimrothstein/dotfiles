@@ -20,6 +20,7 @@ set.shiftwidth = 0						--	use tabstop, width when using << >>
 set.softtabstop = -1					--	use tabstop
 set.shiftround= true					--	indents will be multipe of shiftwidth (keeps alignment)
 set.autoindent =  true				--	keep same identent as prior line
+set.breakindent = true        --  2nd line indents 
 set.smartindent = true				--	increase indent with {
 set.ignorecase = true           --      make search case insensitive
 set.wm = 4                      --      begin new line 4 chars before end of line.
