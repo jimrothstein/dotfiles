@@ -1,5 +1,4 @@
 .LOCAL_BIN ~/.local/bin
-BAYES_RULES ~/code/bookclub-bayes_rules
 CODE ~/code
 code_publish ~/code/code_publish
 CONFIG_LUA_JIM ~/.config/nvim/lua/jim
@@ -7,7 +6,6 @@ CONFIG_VIM ~/.config/nvim/init.lua
 CONFIG_ZSH ~/.config/zsh
 DOCS ~/code/docs
 DOTFILES ~/dotfiles
-EASYSTATS_DEV ~/code/easystats/parameters
 HTTR2-Youtube ~/code/youtube_api/httr2_pkg
 LUA ~/code/lua_project
 MAKE ~/code/make_project
@@ -18,5 +16,7 @@ YOUTBE_MP3 ~/code/mp3
 YOUTUBE ~/code/youtube_api
 ZSH ~/code/zsh_project
 
+BAYES_RULES ~/code/bookclub-bayes_rules
+EASYSTATS_DEV ~/code/easystats/parameters
 lualatex-doc ~/code/publish_project/LUALATEX/lualatex-doc.tex
 PUBLISH_MATH ~/code/publish_project/MATH
