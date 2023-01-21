@@ -65,6 +65,8 @@ if (interactive()) {
 	suppressMessages(library(sloop))
   suppressMessages(library(xfun)) # utils from Yihui
 	suppressMessages(library(rmarkdown))
+	suppressMessages(library(tibble))
+	suppressMessages(library(kableExtra))
 }
 
 ##	--------------------------------------------------------------------
