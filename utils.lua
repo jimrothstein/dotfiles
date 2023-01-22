@@ -20,6 +20,8 @@ P = function(v)
 end
 
 P("helo - from utils.lua")
+--- :lua P("HI") from cli
+--  :lua P(vim.o.formatoptions)
 
 
 
