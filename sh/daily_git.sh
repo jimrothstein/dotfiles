@@ -48,8 +48,8 @@ cd /home/jim/code/lua_project
 cd /home/jim/code/SHINY
 /home/jim/bin/git_add_push.sh .
 
-cd /home/jim/code/NSE_project
-/home/jim/bin/git_add_push.sh .
+# cd /home/jim/code/NSE_project
+# /home/jim/bin/git_add_push.sh .
 
 cd /home/jim/code/health_labs
 /home/jim/bin/git_add_push.sh .
