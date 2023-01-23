@@ -11,7 +11,7 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/bufferline.lua
 " $HOME/.config/nvim/lua/jim/options.lua
 " $HOME/.config/nvim/lua/jim/keymaps.lua " autocmds, keymappings
-" $HOME/.config/nvim/lua/jim/utils.lua
+" $HOME/.config/nvim/lua/jim/utils.lua   " spell, comment
 " $HOME/.config/nvim/lua/jim/windows.lua  " tabs, underline ??
 " $HOME/.config/nvim/lua/jim/Nvim-R.lua
 
