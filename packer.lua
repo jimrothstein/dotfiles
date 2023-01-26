@@ -41,7 +41,7 @@ use {
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = {  'lua', 'rust', 'r', 'help', 'vim' },
+  ensure_installed = {  'lua',  'r', 'help', 'vim' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -125,14 +125,16 @@ cmp.setup {
 	{name='nvim_lsp', max_item_count=10, keyword_length=5 },
 	{name='nvim_lua', keyword_length=5 },     -- lua api
 	{name='luasnipe', keyword_length=5 },
-  {name = 'r_language_server', keyword_length=5},
+  {name = 'r_language_server', max_item_count=10,
+        keyword_length=5},
 	{name='buffer', keyword_length=5 },
-  {name='omni', }
+  {name='omni', keyword_length = 5 }
 	},
 	on_attach= function() print("I just attached")
 		end
 
 	}
+
 
 -- 	cmp-config{
 --   		completion = {
