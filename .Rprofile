@@ -57,7 +57,6 @@ options(
 ## =====================
 ## 11MAY 2022; jr removed some packages; if need just uncomment	  
 if (interactive()) {
-	#suppressMessages(library(reprex))
   suppressMessages(library(devtools))
 	suppressMessages(library(usethis))
   suppressMessages(library(rlang))
@@ -67,6 +66,17 @@ if (interactive()) {
 	suppressMessages(library(rmarkdown))
 	suppressMessages(library(tibble))
 	suppressMessages(library(kableExtra))
+
+
+##  Fri 27Jan2023 (esp for JSON, unnesting)
+	suppressMessages(library(tidyr))
+	suppressMessages(library(jsonlite))
+	suppressMessages(library(purrr))
+	suppressMessages(library(dplyr))
+
+
+
+
 }
 
 ##	--------------------------------------------------------------------

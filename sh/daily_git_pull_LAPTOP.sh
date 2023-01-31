@@ -26,14 +26,18 @@ cd /home/jim/code/mp3
 cd /home/jim/code/youtube_api
 
 cd /home/jim/code/zsh_project
+git pull
 
 
 cd /home/jim/code/docs
 git pull
 
 cd /home/jim/code/try_things_here
+git pull
+
 
 cd /home/jim/code/nvim_project
+git pull
 
 cd /home/jim/code/lua_project
 git pull
@@ -42,6 +46,7 @@ git pull
 # git pull
 
 cd /home/jim/code/SHINY
+git pull
 
 
 cd /home/jim/code/health_labs
