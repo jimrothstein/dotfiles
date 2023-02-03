@@ -17,17 +17,23 @@ use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
 }            -- Add git related info in the signs columns and popups
 
 ----------------------------------------------------------------------------------------
-use {
-  'nvim-treesitter/nvim-treesitter',                                                -- Highlight, edit, and navigate code
-  run= 'TSUpdate'
-}
+----------------------------------------------------------------------------------------
+  use { -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+  }
+
+  use { -- Additional text objects via treesitter
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  }---------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 
 --  TODO:   move to treesitter setup when stable.  Otherwise, use manual.
 
---  Treesittter suggests this WORKAROUND with Packer
--- vim.opt.foldmethod     = 'expr'
--- vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
----WORKAROUND
 -- vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
 --   group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
 --   callback = function()
@@ -36,9 +42,6 @@ use {
 --   end
 -- })
 ----------------------------------------------------------------------------------------
--- use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } } -- Additional textobjects for treesitter
--- [[ Configure Treesitter ]]
--- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = {  'lua',  'r', 'help', 'vim' },
@@ -234,25 +237,8 @@ require'quarto'.setup{
   }
 }
 --------------------------------------
---  which-key
+--  which-key   SEE ~/.config/nvim/lua/jim/which-key.lua
 --------------------------------------
-use {
-  "folke/which-key.nvim",
-  config = function()
-    require("which-key").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-				-- neovim timeoutlen defaults to 1000
-			spelling = {
-						enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-      suggestions = 20, -- how many suggestions should be shown in the list?
-    },
-    }
-
-				--
-  end
-}
 
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround' 
@@ -288,7 +274,7 @@ use {
 -- use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
 use { "ellisonleao/gruvbox.nvim" }
-vim.o.background = "dark" -- or "light" for light mode
+vim.o.background = "light" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
 -- experimental

@@ -1,4 +1,7 @@
 -- file <- "/home/jim/.config/nvim/init.lua"
+-- TODO  ... ,id
+-- Tue 31Jan2023, Treesitter config in packer.lua;
+--  when stable, move to treesitter.lua
 vim.cmd [[
 "----------------------------
 "   FILES, sourced at BOTTOM
@@ -140,7 +143,7 @@ require('jim.packer')
 require('jim.telescope')
 --require('jim.bufferline')
 --Nov 25, turn off, giving errors
-require('jim.treesitter')
+-- require('jim.treesitter')
 
 --  keybindings and autocmd
 require('jim.keymaps')
@@ -244,7 +247,8 @@ require('lspconfig').sumneko_lua.setup {
       diagnostics = {
         globals = { 'vim' },
       },
-      workspace = { library = vim.api.nvim_get_runtime_file('', true) },
+      workspace = { library = vim.api.nvim_get_runtime_file('', true) ,
+           checkThirdParty = false},
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = { enable = false },
     },
@@ -324,7 +328,7 @@ vim.cmd [[
 -- vim: ts=2 sts=2 sw=2 et
 --	ATTEMPT to run r_language_server (works), 
 --	code inside setup will run each buffer, as r_language_server attaches
-require 'lspconfig'.r_language_server.setup {
+require'lspconfig'.r_language_server.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {

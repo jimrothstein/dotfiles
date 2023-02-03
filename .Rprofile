@@ -10,24 +10,14 @@
 ##						user would want.  .Rprofile is akin .zshrc.
 
 
-# ==============================
-# ## Example of .Rprofile
-# ==============================
-# options(width=65, digits=5)
-# options(show.signif.stars=FALSE)
-# setHook(packageEvent("grDevices", "onLoad"),
-#         function(...) grDevices::ps.options(horizontal=FALSE))
-# set.seed(1234)
-#
 # 
-##  ----------------------------------------------------------------
-# options() # list currently set
+#  options() # list currently set
 # .Options, names(.Options)  # same, as pairlist | 2nd is character vector
 ##
 #	----------------------------------------------------------------------
 	.First <- function() cat("\n  -----------------------------------------  \n\n")
 	# .Last <- function()  cat("\n   Goodbye!\n\n")
-	message("..... ~/.Rprofile message ..")
+	# message("..... ~/.Rprofile message ..")
 #----------------------------------------------------------------------
 #
 #
