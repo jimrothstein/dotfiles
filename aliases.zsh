@@ -36,7 +36,6 @@ alias dirs='dirs -lpv'
 alias goCode='cd ~/code/'
 alias goBlog='cd ~/code/blog5'
 alias goYoutube='cd ~/code/youtube_api/'
-alias goParameters='cd ~/code/easystats/parameters/'
 alias goScripts='cd ~/code/bin'
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'
@@ -72,7 +71,6 @@ alias cx='chmod +x'				# USE:    cx  new_script.sh
 
 #	docs
 alias goDocs='cd ~/code/docs'
-alias goLegal='cd ~/code/docs'
 
 # export (so go<TAB> works)
 export goCode goDot goVim goBin 

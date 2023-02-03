@@ -7,6 +7,7 @@
 # 		https://thevaluable.dev/zsh-install-configure/
 
 # 		Config files put in ~/.config/zsh/
+#     alias: ~/.config/zsh/aliases.zsh
 # =================================================
 #
 #   NOTES

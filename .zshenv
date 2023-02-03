@@ -62,8 +62,16 @@ export OUT=~/Downloads/print_and_delete
   export SANDBOX=/tmp/rebase-sandbox
 
 ## env var for R (August 2021)
-  export R_HOME='/usr/lib/R'
-  export R_LIBS_SITE='/usr/lib/R/library'
+  # export R_HOME='/usr/lib/R'
+
+#
+# if unset, R will use subdirectory of $R_HOME
+  export R_LIBS_SITE=
+
+##  From manual:  By default R_LIBS is unset, and if R_LIBS_USER is unset or
+#empty, it is set to directory ‘R/R.version$platform-library/x.y’ of the home
+#directory on Unix-alike systems 
+  export R_LIBS_USER
 
 
 # =====END CUT ===================================================
