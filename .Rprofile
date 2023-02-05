@@ -33,12 +33,11 @@ local({
 
 if (interactive()) {
 ## set Sun 08Jan2023
-jim_lib  <- '/home/jim/R/x86-64-linux-gnu-library/4.2'
 
 options(
 	 digits=3,
-	 usethis.protocol = "ssh",
-	 lib=jim_lib)
+	 usethis.protocol = "ssh"
+	 )
 
 
 }
@@ -78,3 +77,4 @@ if (interactive()) {
 ##
 ##  turn off lintr - driving me nuts
 options(languageserver.diagnostics = FALSE)
+

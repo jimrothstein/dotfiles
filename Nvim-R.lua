@@ -1,7 +1,6 @@
 vim.cmd [[
 
-" nvimR_config.vim
-"
+" file <- "/home/jim/dotfiles/Nvim-R.lua""
 "-----------------------------
 " Ref for init.vim for nvim-r
 " https://gist.githubusercontent.com/tgirke/7a7c197b443243937f68c422e5471899/raw/init.vim
@@ -21,7 +20,7 @@ vmap <Space> <Plug>RDSendSelection
 
 "
 " 15 May 2021:   with next line  <C-spacebar> activaes omni-completion
-let R_auto_omni=["r","rmd","rhelp"]
+" let R_auto_omni=["r","rmd","rhelp"]
 
 
 
@@ -40,7 +39,7 @@ let R_assign = 2
 
 
 " when set to 1, Nvim-R knows you are running Tmux
-let R_notmuxconf = 1
+" let R_notmuxconf = 1
 
 
 " working dir
@@ -53,9 +52,9 @@ let R_nvim_wd = 1
 
 
 " R startup args (do not use .RData)
-let R_args = [ '--no-save', '--no-restore-data'  ]
-
-" fails
+" let R_args = [ '--no-save', '--no-restore-data'  ]
+let R_args = [ '--vanilla']
+" fail
 " open pdf when pdflatex run?
 " 0 never
 " 1 only first
@@ -119,21 +118,21 @@ let R_clear_line = 1
 
 " Wed 04Jan2023
 
-function! s:customNvimRMappings()
-   nmap <buffer> <Leader>sr <Plug>RStart
-   imap <buffer> <Leader>sr <Plug>RStart
-   vmap <buffer> <Leader>sr <Plug>RStart
-
-" match vim's
- nmap <buffer> <Leader>wd <Plug>RSetwd
-endfunction
-
-"  not working
-augroup myNvimR
-   au!
-"   autocmd filetype r call s:customNvimRMappings()
-augroup end
+"  function! s:customNvimRMappings()
+"    nmap <buffer> <Leader>sr <Plug>RStart
+"    imap <buffer> <Leader>sr <Plug>RStart
+"    vmap <buffer> <Leader>sr <Plug>RStart
+" 
+" " match vim's
+"  nmap <buffer> <Leader>wd <Plug>RSetwd
+" endfunction
+" 
+" "  not working
+" augroup myNvimR
+"    au!
+" "   autocmd filetype r call s:customNvimRMappings()
+" augroup end
 ]]
 
 --- Wed 01Feb2023
-vim.g.R_pdfviewer = "zathura"
+-- vim.g.R_pdfviewer = "zathura"
