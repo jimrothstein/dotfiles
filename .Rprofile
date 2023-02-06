@@ -78,3 +78,5 @@ if (interactive()) {
 ##  turn off lintr - driving me nuts
 options(languageserver.diagnostics = FALSE)
 
+##  autmagically added by startup::
+tryCatch(startup::startup(), error=function(ex) message(".Rprofile error: ", conditionMessage(ex)))
