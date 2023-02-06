@@ -236,9 +236,19 @@ require'quarto'.setup{
     }
   }
 }
---------------------------------------
---  which-key   SEE ~/.config/nvim/lua/jim/which-key.lua
---------------------------------------
+  --
+use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
 
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround' 
@@ -278,6 +288,7 @@ vim.o.background = "light" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
 -- experimental
+use({'rcarriga/nvim-notify'})
 use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
