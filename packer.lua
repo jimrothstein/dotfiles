@@ -251,8 +251,16 @@ use {
 }
 
 use 'scrooloose/nerdtree'
-use  'tpope/vim-surround' 
-use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
+use  'tpope/vim-surround'
+--  use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
+  --
+  -- for MOST recent Nvim-R 
+use { 'jalvesaq/Nvim-R', branch = 'master' }
+
+
+--  for stable Nvim-R
+--  use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
+  --
 -- activiate latex autocomplete .tex files
 use 'latex-lsp/texlab'
 use 'lervag/vimtex'
