@@ -52,8 +52,8 @@ let R_nvim_wd = 1
 
 
 " R startup args (do not use .RData)
-" let R_args = [ '--no-save', '--no-restore-data'  ]
-let R_args = [ '--vanilla']
+let R_args = [ '--no-save', '--no-restore-data'   ]
+"let R_args = [ '--vanilla']
 " fail
 " open pdf when pdflatex run?
 " 0 never
