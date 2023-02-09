@@ -227,16 +227,38 @@ require'quarto'.setup{
     }
   }
 }
---------------------------------------
---  which-key   SEE ~/.config/nvim/lua/jim/which-key.lua
---------------------------------------
+  --
+use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
 
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround'
+<<<<<<< HEAD
 use {'jalvesaq/Nvim-R',  {branch = 'master'} }  -- most recentl
 
 --use 'jalvesaq/Nvim-R' -- {'branch': 'stable'} -- older, stable
     --
+=======
+--  use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
+  --
+  -- for MOST recent Nvim-R 
+use { 'jalvesaq/Nvim-R', branch = 'master' }
+
+
+--  for stable Nvim-R
+--  use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
+  --
+>>>>>>> a7ce0d57cabd8282f6905445f4c7466c12c7204a
 -- activiate latex autocomplete .tex files
 use 'latex-lsp/texlab'
 use 'lervag/vimtex'
@@ -272,6 +294,7 @@ vim.o.background = "light" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
 -- experimental
+use({'rcarriga/nvim-notify'})
 use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
