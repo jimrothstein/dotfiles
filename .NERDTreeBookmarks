@@ -11,11 +11,11 @@ LUA ~/code/lua_project
 MAKE ~/code/make_project
 RSCRIPTS ~/code/jimTools/Rscripts
 TRY ~/code/try_things_here
-UrOx ~/code/health_labs/rmd
 YOUTBE_MP3 ~/code/mp3
 YOUTUBE ~/code/youtube_api
 ZSH ~/code/zsh_project
 
+UrOx ~/code/health_labs/rmd
 BAYES_RULES ~/code/bookclub-bayes_rules
 EASYSTATS_DEV ~/code/easystats/parameters
 lualatex-doc ~/code/publish_project/LUALATEX/lualatex-doc.tex
