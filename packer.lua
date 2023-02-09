@@ -1,6 +1,6 @@
 --  packer.lua only
 
-vim.g.completeopt="menu,menuone,noselect"
+vim.g.completeopt="menu,menuone,noselect,noinsert"
 
 --	HELPER:  make packer sync()
 local install_plugins = false	-- driving me crazy
@@ -116,22 +116,21 @@ use { "williamboman/mason.nvim" }                                  -- replaces '
 
 use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
 
---	completion sources
+--	completion sources, nvim-cmp replaces built-in omnicomplete AND does
+  --	autocompetion!   To connect to LSP source, requires cmp-nvim-lsp.u
 use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
-use {'hrsh7th/cmp-omni'}
+-- use {'hrsh7th/cmp-omni'}  NO, NO, NO ... 
 local cmp = require'cmp'
-
 
 --`keyword_lenght=5 completion actives on 5 character typed
 cmp.setup {
 	sources={
-	{name='nvim_lsp', max_item_count=10, keyword_length=5 },
-	{name='nvim_lua', keyword_length=5 },     -- lua api
-	{name='luasnipe', keyword_length=5 },
-  {name = 'r_language_server', max_item_count=10,
-        keyword_length=5},
-	{name='buffer', keyword_length=5 },
-  {name='omni', keyword_length = 5 }
+    {name='nvim_lsp', max_item_count=10  },
+    {name='nvim_lua' },     -- lua api
+    {name='luasnipe' },
+    {name = 'r_language_server', max_item_count=10},
+    {name='buffer', keyword_length=5 },
+--  {name='omni', keyword_length = 5 }   NONONO
 	},
 	on_attach= function() print("I just attached")
 		end
@@ -139,14 +138,6 @@ cmp.setup {
 	}
 
 
--- 	cmp-config{
---   		completion = {
---     			autocomplete = false,
--- 	-- 		:h cmp.txt, cmp-config.completion.keyword_length
--- 			keyword_length =  4
---   }
---  }
--- }
 
 
 -- use	'hrsh7th/cmp-buffer'
@@ -241,8 +232,11 @@ require'quarto'.setup{
 --------------------------------------
 
 use 'scrooloose/nerdtree'
-use  'tpope/vim-surround' 
-use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
+use  'tpope/vim-surround'
+use {'jalvesaq/Nvim-R',  {branch = 'master'} }  -- most recentl
+
+--use 'jalvesaq/Nvim-R' -- {'branch': 'stable'} -- older, stable
+    --
 -- activiate latex autocomplete .tex files
 use 'latex-lsp/texlab'
 use 'lervag/vimtex'
