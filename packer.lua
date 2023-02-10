@@ -243,8 +243,15 @@ use {
 
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround'
+
+local status_ok, ver = pcall(require, "jalvesaq/Nvim-R")
+if not status_ok then
+    vim.notify("WARNING: vim-expand-region.lua failed to load.")
+    return
+end
+
   -- for MOST recent Nvim-R 
-use { 'jalvesaq/Nvim-R', branch = 'master' }
+--use { 'jalvesaq/Nvim-R', branch = 'master' }
 --use 'jalvesaq/Nvim-R' -- {'branch': 'stable'} -- older, stable
 
 -- activiate latex autocomplete .tex files
