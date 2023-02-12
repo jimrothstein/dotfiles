@@ -252,19 +252,20 @@ use { 'quarto-dev/quarto-nvim',
   requires = {'neovim/nvim-lspconfig',
               "jmbuhr/otter.nvim"}
 }
-  -- from:  quarto github 
 require'quarto'.setup{
   lspFeatures = {
     enabled = true,
-    languages = {'r', 'python'},
+    languages = {'r' },
     diagnostics = {
-      enabled = false
+      enabled = true,
+      triggers = { "BufWrite" }
     },
-    cmpSource = {
+    completion = { 
       enabled = true
     }
   }
 }
+
   --
 use {
   "folke/which-key.nvim",
@@ -284,12 +285,12 @@ use  'tpope/vim-surround'
 
 local status_ok, ver = pcall(require, "jalvesaq/Nvim-R")
 if not status_ok then
-    vim.notify("WARNING: vim-expand-region.lua failed to load.")
+    vim.notify("WARNING: Nvim-R failed to load.")
     return
 end
 
   -- for MOST recent Nvim-R 
---use { 'jalvesaq/Nvim-R', branch = 'master' }
+use { 'jalvesaq/Nvim-R', branch = 'master' }
 --use 'jalvesaq/Nvim-R' -- {'branch': 'stable'} -- older, stable
 
 -- activiate latex autocomplete .tex files
