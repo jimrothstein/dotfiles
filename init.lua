@@ -139,10 +139,9 @@ augroup END
 --			BEGIN LUA
 ---------------
 --  actual location ~/.config/nvim/lua/jim.*
-require('jim.packer')
-require('jim.telescope')
+--require('jim.packer')
+--require('jim.telescope')
 --require('jim.bufferline')
---Nov 25, turn off, giving errors
 -- require('jim.treesitter')
 
 --  keybindings and autocmd
@@ -207,8 +206,6 @@ end
 -- nvim-cmp supports additional completion capabilities
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- Setup mason so it can manage external tooling (LSP, plugins ..)
-require('mason').setup()
 
 -- Enable the following language servers
 local servers = { 'r_language_server', 'sumneko_lua' }
@@ -255,64 +252,6 @@ require('lspconfig').sumneko_lua.setup {
   },
 }
 
--- nvim-cmp setup
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  window = {
-    -- completion = cmp.config.window.bordered(),
-    --  documentation = cmp.config.window.bordered(),
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    -- ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  },
-  --sources = {
-  --  { name = 'nvim_lsp' },
-  -- { name = 'luasnip' },
-  --  { name = 'r_language_server'},
-  --},
-}
--- Set configuration for specific filetype.
---   cmp.setup.filetype('gitcommit', {
---     sources = cmp.config.sources({
---       { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
---     }, {
---       { name = 'buffer' },
---     })
---   })
-
---
 ---------------------------------------------------------------------------------------
 -- VimTex confiuration
 ---------------------------------------------------------------------------------------
@@ -324,15 +263,6 @@ vim.cmd [[
 
 
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
---	ATTEMPT to run r_language_server (works), 
---	code inside setup will run each buffer, as r_language_server attaches
-require'lspconfig'.r_language_server.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-  }
 
 
-}
+

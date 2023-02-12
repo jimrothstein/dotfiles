@@ -102,7 +102,7 @@ vim.cmd [[
 
 "	connect vim and system clipboard (xsel )
 	set clipboard+=unnamedplus
-  set clipboard+=unnamed
+  "set clipboard+=unnamed
 	:let g:loaded_netrw       = 1
 	:let g:loaded_netrwPlugin = 1
 	"checkhealth:  turns off python & perl warning
