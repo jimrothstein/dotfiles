@@ -139,7 +139,7 @@ augroup END
 --			BEGIN LUA
 ---------------
 --  actual location ~/.config/nvim/lua/jim.*
---require('jim.packer')
+require('jim.packer')
 --require('jim.telescope')
 --require('jim.bufferline')
 -- require('jim.treesitter')
