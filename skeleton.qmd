@@ -1,5 +1,5 @@
 ---
-title: "using easystats notes"
+title: "using .qmd "
 date:  \today 
 pdf-engine: lualatex
 format:
