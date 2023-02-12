@@ -111,6 +111,7 @@ require('nvim-treesitter.configs').setup {
 use 'neovim/nvim-lspconfig'                                        --	common config that langage servers need
 ----------------------------------------------------------------------------
 	--
+-- Setup mason so it can manage external tooling (LSP, plugins ..)
 use { "williamboman/mason.nvim" }                                  -- replaces 'williamboman/nvim-lsp-installer'
 	require("mason").setup()
 
@@ -120,10 +121,49 @@ use 'williamboman/mason-lspconfig.nvim'                                         
   --	autocompetion!   To connect to LSP source, requires cmp-nvim-lsp.u
 use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
 -- use {'hrsh7th/cmp-omni'}  NO, NO, NO ... 
+--
+local luasnip = require 'luasnip'
 local cmp = require'cmp'
 
 --`keyword_lenght=5 completion actives on 5 character typed
 cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    --  documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert {
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    -- ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  },
 	sources={
     {name='nvim_lsp', max_item_count=10  },
     {name='nvim_lua' },     -- lua api
@@ -136,8 +176,6 @@ cmp.setup {
 		end
 
 	}
-
-
 
 
 -- use	'hrsh7th/cmp-buffer'
@@ -296,7 +334,14 @@ use({
 })
 
 end)
-
+--	ATTEMPT to run r_language_server (works), 
+--	code inside setup will run each buffer, as r_language_server attaches
+--
+--require'lspconfig'.r_language_server.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   settings = {
+--   }
 --   END packer
 -----------------------------------------------------
 
