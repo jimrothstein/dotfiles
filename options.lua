@@ -13,7 +13,7 @@
 --  expandtab is actually a buffer local 
 --  here appear to be setting as a default global (don't understand)
 
-local set = vim.opt -- set options
+local set = vim.o -- set options
 -- set.rtp = "/home/jim/.config/nvim"       -- errors
 set.timeoutlen = 500          -- which-key suggestion
 set.background = "dark"       --  for DESKTOP

@@ -3,7 +3,7 @@
 vim.g.completeopt="menu,menuone,noselect,noinsert"
 
 --	HELPER:  make packer sync()
-local install_plugins = false	-- driving me crazy
+local install_plugins = true
 if install_plugins then
 		require('packer').sync()
 end
@@ -250,28 +250,30 @@ use {'dhruvmanila/telescope-bookmarks.nvim',
 --	for QUARTO support in neovim
 use { 'quarto-dev/quarto-nvim',
   requires = {'neovim/nvim-lspconfig',
-              "jmbuhr/otter.nvim"}
-}
-require'quarto'.setup{
-  lspFeatures = {
-    enabled = true,
-    languages = {'r' },
-    diagnostics = {
-      enabled = true,
-      triggers = { "BufWrite" }
-    },
-    completion = { 
-      enabled = true
+             "jmbuhr/otter.nvim"
+},
+  config= function()
+    require'quarto'.setup{
+      lspFeatures = {
+        enabled = true,
+        languages = {'r' },
+        diagnostics = {
+          enabled = true,
+          triggers = { "BufWrite" }
+        },
+        completion = {
+          enabled = true
+        }
+      }
     }
+  end
   }
-}
-
   --
 use {
   "folke/which-key.nvim",
   config = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 300
+    vim.o.timeoutlen = 500
     require("which-key").setup {
       -- your configuration comes here
       -- or leave it empty to use the default settings
@@ -295,7 +297,17 @@ use { 'jalvesaq/Nvim-R', branch = 'master' }
 
 -- activiate latex autocomplete .tex files
 use 'latex-lsp/texlab'
-use 'lervag/vimtex'
+
+--  copy from lervag/vimtex
+use{ 'lervag/vimtex',
+    vim.cmd([[
+    " # let g:vimtex_view_method = 'skim'
+    "  let g:vimtex_view_automatic = 0
+    "  let g:vimtex_compiler_latexmk = {'continuous': 0}
+    "  let g:vimtex_quickfix_open_on_warning = 0
+    "  let g:vimtex_view_method= 'zathura'
+      ]])
+}
 
 --   should git/branch clearly
 use {
@@ -335,6 +347,7 @@ use({
 })
 
 end)
+
 --	ATTEMPT to run r_language_server (works), 
 --	code inside setup will run each buffer, as r_language_server attaches
 --

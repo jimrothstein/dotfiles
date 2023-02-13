@@ -207,8 +207,8 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 
--- Enable the following language servers
-local servers = { 'r_language_server', 'sumneko_lua' }
+-- Enable the following language servers (sumneeo_lua is NOW lua_ls
+local servers = { 'r_language_server', 'lua-language-server' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
@@ -216,7 +216,7 @@ require('mason-lspconfig').setup {
 }
 
 for _, lsp in ipairs(servers) do
-  require('lspconfig')[lsp].setup {
+  require('lspconfig')[lsp].setup{
     on_attach = on_attach,
     capabilities = capabilities,
   }
@@ -230,7 +230,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').lua_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -250,16 +250,8 @@ require('lspconfig').sumneko_lua.setup {
       telemetry = { enable = false },
     },
   },
-}
+})
 
----------------------------------------------------------------------------------------
--- VimTex confiuration
----------------------------------------------------------------------------------------
-vim.cmd [[
-    let g:vimtex_view_method= 'zathura'
-  ]]
-
---
 
 
 
