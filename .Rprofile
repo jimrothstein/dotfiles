@@ -1,9 +1,9 @@
 # ==============================
 ## ~/.Rprofile
 ##
-## To Start R with ~/.Rprofile
+## To Start R without ~/.Rprofile
 ## R --vanilla
-## ?startup
+## SEE ?startup
 # ==============================
 ##	PURPOSE:	~/.Rprofile is runs for EVERY R process, regardless whether 
 ##						user or R initiated.   Use if (interactive()) for things ONLY
@@ -12,6 +12,8 @@
 
 # 
 #  options() # list currently set
+#  set option?     options(x = "value")
+#
 # .Options, names(.Options)  # same, as pairlist | 2nd is character vector
 ##
 #	----------------------------------------------------------------------
