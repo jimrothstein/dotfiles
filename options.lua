@@ -14,6 +14,7 @@
 --  here appear to be setting as a default global (don't understand)
 
 local set = vim.opt -- set options
+set.timeoutlen = 500          -- which_key
 set.background = "dark"       --  for DESKTOP
 set.expandtab = true					--	expands as spaces
 set.tabstop = 2								--	width of \t
