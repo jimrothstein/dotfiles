@@ -208,7 +208,13 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 
 -- Enable the following language servers (sumneeo_lua is NOW lua_ls
-local servers = { 'r_language_server', 'lua-language-server' }
+-- for MasonInstall
+local servers = { 'texlab',
+  'r-languageserver', 'lua-language-server' }
+
+--  for LspInstall  
+local servers = { 'texlab',
+  'r_language_server', 'lua_ls' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {

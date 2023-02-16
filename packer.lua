@@ -5,7 +5,7 @@ vim.g.completeopt="menu,menuone,noselect,noinsert"
 --	HELPER:  make packer sync()
 local install_plugins = true
 if install_plugins then
-		require('packer').sync()
+--		require('packer').sync()
 end
 
 require('packer').startup(function(use)
@@ -285,15 +285,16 @@ use {
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround'
 
+  -- for MOST recent Nvim-R 
+use { 'jalvesaq/Nvim-R', branch = 'master' }
+
+--use 'jalvesaq/Nvim-R' -- {'branch': 'stable'} -- older, stable
 local status_ok, ver = pcall(require, "jalvesaq/Nvim-R")
 if not status_ok then
     vim.notify("WARNING: Nvim-R failed to load.")
     return
 end
 
-  -- for MOST recent Nvim-R 
-use { 'jalvesaq/Nvim-R', branch = 'master' }
---use 'jalvesaq/Nvim-R' -- {'branch': 'stable'} -- older, stable
 
 -- activiate latex autocomplete .tex files
 use 'latex-lsp/texlab'
