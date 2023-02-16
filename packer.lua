@@ -1,9 +1,9 @@
 --  packer.lua only
 
-vim.g.completeopt="menu,menuone,noselect"
+vim.g.completeopt="menu,menuone,noselect,noinsert"
 
 --	HELPER:  make packer sync()
-local install_plugins = false	-- driving me crazy
+local install_plugins = true
 if install_plugins then
 		require('packer').sync()
 end
@@ -111,42 +111,71 @@ require('nvim-treesitter.configs').setup {
 use 'neovim/nvim-lspconfig'                                        --	common config that langage servers need
 ----------------------------------------------------------------------------
 	--
+-- Setup mason so it can manage external tooling (LSP, plugins ..)
 use { "williamboman/mason.nvim" }                                  -- replaces 'williamboman/nvim-lsp-installer'
 	require("mason").setup()
 
 use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
 
---	completion sources
+--	completion sources, nvim-cmp replaces built-in omnicomplete AND does
+  --	autocompetion!   To connect to LSP source, requires cmp-nvim-lsp.u
 use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
-use {'hrsh7th/cmp-omni'}
+-- use {'hrsh7th/cmp-omni'}  NO, NO, NO ... 
+--
+local luasnip = require 'luasnip'
 local cmp = require'cmp'
-
 
 --`keyword_lenght=5 completion actives on 5 character typed
 cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    --  documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert {
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    -- ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  },
 	sources={
-	{name='nvim_lsp', max_item_count=10, keyword_length=5 },
-	{name='nvim_lua', keyword_length=5 },     -- lua api
-	{name='luasnipe', keyword_length=5 },
-  {name = 'r_language_server', max_item_count=10,
-        keyword_length=5},
-	{name='buffer', keyword_length=5 },
-  {name='omni', keyword_length = 5 }
+    {name='nvim_lsp', max_item_count=10  },
+    {name='nvim_lua' },     -- lua api
+    {name='luasnipe' },
+    {name = 'r_language_server', max_item_count=10},
+    {name='buffer', keyword_length=5 },
+--  {name='omni', keyword_length = 5 }   NONONO
 	},
 	on_attach= function() print("I just attached")
 		end
 
 	}
-
-
--- 	cmp-config{
---   		completion = {
---     			autocomplete = false,
--- 	-- 		:h cmp.txt, cmp-config.completion.keyword_length
--- 			keyword_length =  4
---   }
---  }
--- }
 
 
 -- use	'hrsh7th/cmp-buffer'
@@ -221,21 +250,24 @@ use {'dhruvmanila/telescope-bookmarks.nvim',
 --	for QUARTO support in neovim
 use { 'quarto-dev/quarto-nvim',
   requires = {'neovim/nvim-lspconfig',
-              "jmbuhr/otter.nvim"}
-}
-  -- from:  quarto github 
-require'quarto'.setup{
-  lspFeatures = {
-    enabled = true,
-    languages = {'r', 'python'},
-    diagnostics = {
-      enabled = false
-    },
-    cmpSource = {
-      enabled = true
+             "jmbuhr/otter.nvim"
+},
+  config= function()
+    require'quarto'.setup{
+      lspFeatures = {
+        enabled = true,
+        languages = {'r' },
+        diagnostics = {
+          enabled = true,
+          triggers = { "BufWrite" }
+        },
+        completion = {
+          enabled = true
+        }
+      }
     }
+  end
   }
-}
   --
 use {
   "folke/which-key.nvim",
@@ -252,18 +284,30 @@ use {
 
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround'
---  use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
-  --
+
+local status_ok, ver = pcall(require, "jalvesaq/Nvim-R")
+if not status_ok then
+    vim.notify("WARNING: Nvim-R failed to load.")
+    return
+end
+
   -- for MOST recent Nvim-R 
 use { 'jalvesaq/Nvim-R', branch = 'master' }
+--use 'jalvesaq/Nvim-R' -- {'branch': 'stable'} -- older, stable
 
-
---  for stable Nvim-R
---  use 'jalvesaq/Nvim-R' -- {'branch': 'stable'}
-  --
 -- activiate latex autocomplete .tex files
 use 'latex-lsp/texlab'
-use 'lervag/vimtex'
+
+--  copy from lervag/vimtex
+use{ 'lervag/vimtex',
+    vim.cmd([[
+    " # let g:vimtex_view_method = 'skim'
+    "  let g:vimtex_view_automatic = 0
+    "  let g:vimtex_compiler_latexmk = {'continuous': 0}
+    "  let g:vimtex_quickfix_open_on_warning = 0
+    "  let g:vimtex_view_method= 'zathura'
+      ]])
+}
 
 --   should git/branch clearly
 use {
@@ -304,6 +348,14 @@ use({
 
 end)
 
+--	ATTEMPT to run r_language_server (works), 
+--	code inside setup will run each buffer, as r_language_server attaches
+--
+--require'lspconfig'.r_language_server.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   settings = {
+--   }
 --   END packer
 -----------------------------------------------------
 
