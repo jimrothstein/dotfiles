@@ -5,7 +5,7 @@ vim.g.completeopt="menu,menuone,noselect,noinsert"
 --	HELPER:  make packer sync()
 local install_plugins = true
 if install_plugins then
---		require('packer').sync()
+	--		require('packer').sync()
 end
 
 require('packer').startup(function(use)
@@ -122,7 +122,8 @@ use 'williamboman/mason-lspconfig.nvim'                                         
 use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
 -- use {'hrsh7th/cmp-omni'}  NO, NO, NO ... 
 --
-local luasnip = require 'luasnip'
+--
+--local luasnip = require 'luasnip'
 local cmp = require'cmp'
 
 --`keyword_lenght=5 completion actives on 5 character typed
