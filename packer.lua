@@ -122,16 +122,18 @@ use 'williamboman/mason-lspconfig.nvim'                                         
 use	{'hrsh7th/nvim-cmp', requires=  {	'hrsh7th/cmp-nvim-lsp'}}
 -- use {'hrsh7th/cmp-omni'}  NO, NO, NO ... 
 --
---
---local luasnip = require 'luasnip'
+use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
+
+local luasnip = require 'luasnip'
 local cmp = require'cmp'
 
---`keyword_lenght=5 completion actives on 5 character typed
+-- `keyword_lenght=5 completion actives on 5 character typed
+
 cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
+   snippet = {
+     expand = function(args)
+       luasnip.lsp_expand(args.body)
+     end,
   },
   window = {
     -- completion = cmp.config.window.bordered(),
@@ -149,8 +151,8 @@ cmp.setup {
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
+       elseif luasnip.expand_or_jumpable() then
+         luasnip.expand_or_jump()
       else
         fallback()
       end
@@ -223,7 +225,6 @@ require("indent_blankline").setup {
 -----  luapad, for practice
 use 'rafcamlet/nvim-luapad'
 
-use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
