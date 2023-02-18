@@ -17,6 +17,8 @@ vim.cmd [[
 " $HOME/.config/nvim/lua/jim/utils.lua   " spell, comment
 " $HOME/.config/nvim/lua/jim/windows.lua  " tabs, underline ??
 " $HOME/.config/nvim/lua/jim/Nvim-R.lua
+" $HOME/.config/nvim/lua/jim/luasnip.lua
+
 
 "	$HOME/.local/share/nvim/lsp_servers/
 "
@@ -150,6 +152,7 @@ require('jim.options')
 require('jim.utils')        --  my functions
 require("jim.windows")
 require("jim.Nvim-R")
+-- require("jim.luasnip")
 
 
 ------- BASIC SETUP kickstart ----------------------------------------------------------------
