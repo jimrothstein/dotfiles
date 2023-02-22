@@ -280,6 +280,13 @@ use {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
+        --
+      -- disable the WhichKey popup for certain buf types and file types.
+      -- Disabled by deafult for Telescope
+      disable = {
+        buftypes = { },
+        filetypes = { "TelescopePrompt, r" },
+        }
     }
   end
 }
