@@ -2,15 +2,19 @@
 #
 # =================================================
 # ~/.zshenv
-# KEEP .zshenv in $HOME/; 1st file sourced 
-#  - keep ENV variables here
+# PURPOSE:  - 1st zsh file to be sourced.
+#           - must be in ~/.zshenv
+#           - keep ENV (only) variables here    
 #
+# NOTE:     
+#
+# config:   ~/.config/zsh/.zshrc,  for functions, paths, options, alias
+# alias:    ~/.config/zsh/aliases.zsh
 # =================================================
 # ARTICLE:
 # 		https://thevaluable.dev/zsh-install-configure/
 # 		Suggests, ~/.zshenv only contain env!
 # 		Config files put in ~/.config/zsh/
-# 		(~/.config/zsh/.zshrc used for functions, paths, options, alias)
 # =================================================
 
 
@@ -32,12 +36,9 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 # ~/dotfiles
 export DOT_DIR="$HOME/dotfiles"
 
-# TMUX
-#export TMUX_TMPDIR="/tmp/tmux"
 
 #	TMUX expects to find .tmux.conf in HOME
 export T=/home/jim/.tmux.conf
-#export T="/home/jim/.config/tmux/.tmux.conf"
 
 # HISTORY
 export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
@@ -51,15 +52,12 @@ export INC_APPEND_HISTORY="true"	# all zsh shells show same hist
 #	env var
 export V=~/.config/nvim/init.lua
 export Z=$ZDOTDIR/.zshrc
-export C=~/code/
 export G=~/code/.gitignore
 export TEMPLATES=~/.config/nvim/templates/
 # for printing
 export OUT=~/Downloads/print_and_delete
 
 # dotfiles=~/dotfiles
-## When using /tmp/rebase-sandbox (GIT practice)
-  export SANDBOX=/tmp/rebase-sandbox
 
 ## env var for R (August 2021)
  export R_HOME='/usr/lib/R'

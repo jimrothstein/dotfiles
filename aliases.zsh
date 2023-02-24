@@ -33,24 +33,27 @@ alias man='run-help'
 alias dirs='dirs -lpv'
 
 #	coding, 
+alias goADVANCED_R='cd ~/code/try_things_here/ADVANCED_R'
+alias goBASE='cd ~/code/try_things_here/BASE/'
 alias goCode='cd ~/code/'
-alias goBlog='cd ~/code/blog5'
-alias goYoutube='cd ~/code/youtube_api/'
-alias goScripts='cd ~/code/bin'
-alias goTry='cd ~/code/try_things_here/'
-alias goTools='cd ~/code/jimTools/'
+alias goDT='cd ~/code/try_things_here/DT/'
+
 alias goHealth='cd ~/code/health_labs/'
 alias goLua='cd ~/code/lua_project/'
-alias goTAGS='cd ~/code/TAGS/'
-alias goOUT='cd ~/Downloads/print_and_delete'
+alias goMp3='cd ~/code/mp3/'
+alias goNSE='cd ~/code/NSE_project/'
+alias goPublish='cd ~/code/code_publish/'
+
+alias goTry='cd ~/code/try_things_here/'
+alias goTools='cd ~/code/jimTools/'
+alias goScripts='cd ~/code/bin'
 alias goShiny='cd ~/code/SHINY'
 alias goSimple='cd ~/code/simple_examples'
+# alias goRscripts=kk
 
-alias goMp3='cd ~/code/mp3/'
-alias goHelp='cd ~/code/jimHelp/doc/'
-alias goNSE='cd ~/code/NSE_project/'
-alias goCurl='cd ~/code/zsh_project/CURL_examples/'
-alias goPublish='cd ~/code/code_publish/'
+alias goVECTOR='cd ~/code/try_things_here/VECTOR'
+alias goYoutube='cd ~/code/youtube_api/'
+
 alias goZsh='cd ~/code/zsh_project/'
 
 
@@ -58,10 +61,7 @@ alias goZsh='cd ~/code/zsh_project/'
 #	config
 alias goDot='cd ~/dotfiles'
 alias goVim='cd ~/.config/nvim/'
-alias goTmux='cd ~/.config/tmux/'
 
-# ~/bin too crowded
-# use ~/.local/bin for scripts
 #
 alias goBin='cd ~/bin/'
 alias go.local.bin='cd ~/.local/bin/'
