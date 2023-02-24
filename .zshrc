@@ -110,7 +110,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # =========================================================
 
 # INITIALIZE (set softlinks, set key changes - caps lock)
-source ~/.config/zsh/initalize.zsh
+source ~/.config/zsh/initialize.zsh
 
 # ALIAS (not env)
 source ~/.config/zsh/aliases.zsh
