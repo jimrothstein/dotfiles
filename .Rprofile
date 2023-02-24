@@ -83,9 +83,10 @@ options(languageserver.diagnostics = FALSE)
 # ---------------------------------------------- STARTUP::------------------------------------------------
 #
 #
-# To activate DEBUG   (lists dots_values)
+# To activate DEBUG   (Lots info when R starts)
 # Can also be done in ~/.Renviron, but nice to keep in ONE place:  here, ~/.Rprofile
-  Sys.setenv("R_STARTUP_DEBUG" =TRUE)
+#
+#    Sys.setenv("R_STARTUP_DEBUG" =TRUE)
 
 ##  autmagically added by startup::
   tryCatch(startup::startup(), error=function(ex) message(".Rprofile error: ", conditionMessage(ex)))
