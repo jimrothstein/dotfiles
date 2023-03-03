@@ -271,25 +271,27 @@ use { 'quarto-dev/quarto-nvim',
   end
   }
   --
-use {
-  "folke/which-key.nvim",
-  config = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 500
-    require("which-key").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-        --
-      -- disable the WhichKey popup for certain buf types and file types.
-      -- Disabled by deafult for Telescope
-      disable = {
-        buftypes = { },
-        filetypes = { "TelescopePrompt, r" },
-        }
-    }
-  end
-}
+
+--  which-key  Turn OFF till disable for .r files 
+-- use {
+--   "folke/which-key.nvim",
+--   config = function()
+--     vim.o.timeout = true
+--     vim.o.timeoutlen = 500
+--       -- disable the WhichKey popup for certain buf types and file types.
+--       -- Disabled by deafult for Telescope
+--     require("which-key").setup {
+--       -- your configuration comes here
+--       -- or leave it empty to use the default settings
+--       -- refer to the configuration section below
+--       disable = {
+--         buftypes = { },
+--         filetypes = { "TelescopePrompt, r" },
+--         }
+--         --
+--     }
+--   end
+-- }
 
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround'
