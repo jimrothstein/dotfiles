@@ -64,12 +64,12 @@ export OUT=~/Downloads/print_and_delete
 
 #
 # if unset, R will use subdirectory of $R_HOME
-  export R_LIBS_SITE=
+  # export R_LIBS_SITE=
 
 ##  From manual:  By default R_LIBS is unset, and if R_LIBS_USER is unset or
 #empty, it is set to directory ‘R/R.version$platform-library/x.y’ of the home
 #directory on Unix-alike systems 
-  export R_LIBS_USER
+  # export R_LIBS_USER
 
 
 # =====END CUT ===================================================
