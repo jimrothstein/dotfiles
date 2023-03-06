@@ -42,8 +42,10 @@
 *.Rd
 *.rds
 *.csv
-#   *.pdf
+*.pdf
 *.html
+*.log
+*.json
 
 # Ignore Files/dir that BEGIN with _ (_dir/ _script, _file.txt, etc.)
 # (NOT ignore my_file)
