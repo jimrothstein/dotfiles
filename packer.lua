@@ -170,6 +170,7 @@ cmp.setup {
 	sources={
     {name='nvim_lsp', max_item_count=10  },
     {name='nvim_lua' },     -- lua api
+  {name='luasnip'},
     {name='luasnipe' },
     {name = 'r_language_server', max_item_count=10},
     {name='buffer', keyword_length=5 },
@@ -252,8 +253,7 @@ use {'dhruvmanila/telescope-bookmarks.nvim',
 --	for QUARTO support in neovim
 use { 'quarto-dev/quarto-nvim',
   requires = {'neovim/nvim-lspconfig',
-             "jmbuhr/otter.nvim"
-},
+             "jmbuhr/otter.nvim" },
   config= function()
     require'quarto'.setup{
       lspFeatures = {
