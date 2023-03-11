@@ -170,6 +170,10 @@ cmp.setup {
 	sources={
     {name='nvim_lsp', max_item_count=10  },
     {name='nvim_lua' },     -- lua api
+<<<<<<< HEAD
+=======
+  {name='luasnip'},
+>>>>>>> 96fc08f7229b3f2eb38662de029ee258c2a86a19
     {name='luasnipe' },
     {name = 'r_language_server', max_item_count=10},
     {name='buffer', keyword_length=5 },
@@ -252,8 +256,12 @@ use {'dhruvmanila/telescope-bookmarks.nvim',
 --	for QUARTO support in neovim
 use { 'quarto-dev/quarto-nvim',
   requires = {'neovim/nvim-lspconfig',
+<<<<<<< HEAD
              "jmbuhr/otter.nvim"
 },
+=======
+             "jmbuhr/otter.nvim" },
+>>>>>>> 96fc08f7229b3f2eb38662de029ee258c2a86a19
   config= function()
     require'quarto'.setup{
       lspFeatures = {
@@ -271,6 +279,7 @@ use { 'quarto-dev/quarto-nvim',
   end
   }
   --
+<<<<<<< HEAD
 use {
   "folke/which-key.nvim",
   config = function()
@@ -290,6 +299,29 @@ use {
     }
   end
 }
+=======
+
+--  which-key  Turn OFF till disable for .r files 
+-- use {
+--   "folke/which-key.nvim",
+--   config = function()
+--     vim.o.timeout = true
+--     vim.o.timeoutlen = 500
+--       -- disable the WhichKey popup for certain buf types and file types.
+--       -- Disabled by deafult for Telescope
+--     require("which-key").setup {
+--       -- your configuration comes here
+--       -- or leave it empty to use the default settings
+--       -- refer to the configuration section below
+--       disable = {
+--         buftypes = { },
+--         filetypes = { "TelescopePrompt, r" },
+--         }
+--         --
+--     }
+--   end
+-- }
+>>>>>>> 96fc08f7229b3f2eb38662de029ee258c2a86a19
 
 use 'scrooloose/nerdtree'
 use  'tpope/vim-surround'

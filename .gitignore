@@ -1,0 +1,124 @@
+# .gitignore
+# ~/dotfiles/.gitignore   ($G)
+#
+# Updte Nov 28, 2022
+
+#	TODO:
+#		-	Fri May 20 22:24:14 PDT 2022
+#		-	.Renviron (API keys) - how to save this file, but NOT to github?
+#
+#
+#
+# IF file has been put into index
+# =================================
+#   adding it into .gitignore later is NOT enough
+#   must do:
+#   git rm --cached <file>
+#
+#
+# ========
+## RULES
+# ========
+#  *.a    files (anywhere) end in .a
+#   .a    the file ".a"  (anywhere)
+#
+# .R overhead (these exact files, in any directory)
+# =============
+.Rproj.user
+.Rproj
+.Rhistory
+.RData
+.Ruserdata
+
+# .Renviron has codes;  do NOT put on Github.   (Rprofile is ok on Github)
+.Renviron
+
+#	vim backups .Renviron~
+.Renviron*
+/home/jim/.config/nvim/backup/.Renviron*
+
+# files ending in .RDS or .Rd (anywhere)
+*.RDS
+*.Rd
+*.rds
+*.csv
+*.pdf
+*.html
+*.log
+*.json
+
+# Ignore Files/dir that BEGIN with _ (_dir/ _script, _file.txt, etc.)
+# (NOT ignore my_file)
+_*
+
+
+
+
+# directories inside R projects
+# =============
+man/*
+pdf/
+data/*
+inst/
+.quarto/
+
+#
+# ignore these directories
+# ==========================
+r_legal/
+vim-myhelp/
+dev/
+r_try_things_here/
+PPPloans/
+pkg_youtube_api/
+jimTools/
+rtweet/
+PPP/
+make_project/
+AoC/
+out/
+output/
+
+
+pkg_mp3_files/
+pkg_yt_api/
+r_rafael/
+r_health_labs/
+book_modern_dive/
+opensecrets/
+test_opensecrets/
+CARES/
+ALZ_legal/
+ALZ/
+medical/
+JOB/
+correspondence/
+backup*/
+.git/
+
+
+# Google API
+# ============
+.httr-oauth
+r_mp3/R/.httr-oauth
+r_mp3/.httr-oauth
+r_mp3/R/021_api_codes.R
+r_mp3/R/021_api_codes.Rmd
+zsh_project/CURL_examples/.secret
+
+
+# Special
+# =========
+# plugin "jimrothstein/myhelp" - separate from rest of code/
+vim-myhelp/
+*.html
+*.tar.gz
+~/code/jimHelp/doc/*
+# should ignore nvim.appimage
+*.appimage
+~/bin/nvim.appimage
+
+tags
+
+
+/.quarto/
