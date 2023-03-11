@@ -1,0 +1,73 @@
+---
+title: "using .qmd "
+author: "Norah Jones"
+date: "5/22/2021"
+pdf-engine: lualatex
+format:
+  pdf: 
+    toc: false
+    include-in-header: 
+      text: |
+        \usepackage[top=.5in, bottom=.5in, left=.7in, right=.5in]{geometry}
+        \usepackage{amsmath,amssymb,amstext,amsfonts}
+        \usepackage{lipsum}
+---
+
+
+<!--
+
+:!quarto render %
+:!quarto render % -o - | zathura -
+
+
+        toc: false
+        toc_depth:  4   
+        number-sections: false
+        colorlinks: true
+        keep-tex:  false
+        include-in-header: 
+        text: |
+            \usepackage[top=.5in, bottom=.5in, left=.5in, right=.5in]{geometry}
+            \usepackage{amsmath,amssymb,amstext,amsfonts}
+            \usepackage{lipsum}
+            \usepackage{setspace}
+            -->
+
+
+To run:	quarto render *.qmd   (default is html)
+
+$$
+x^2
+$$
+
+## Air Quality
+
+@fig-airquality further explores the impact of temperature on ozone level.
+
+```{r}
+#| label: fig-airquality
+#| fig-cap: Temperature and ozone level.
+#| warning: false
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+\section{To run:}
+
+- quarto preview <file> --to pdf    # (opens in a viewer)
+- quarto render %	; zathura         # not quite right cli
+
+- math mode latex,  seems to work if *outside* R chunk
+$$
+x^2
+$$
+
+## Air Quality
+
+---
+
+\footnotesize
+as of \today

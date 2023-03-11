@@ -1,0 +1,31 @@
+%		file <- "header_footer.tex	"
+
+%		PURPOSE:	adjust geometry  AND add header/footer
+%		USAGE:		pandoc .....   -H header_footer.tex
+
+%		ALTERNATIVE USAGE:
+%			add to yaml inside .md document, inside yaml block, --header-includes
+
+
+%			GEOMETRY
+\usepackage[top=1in, bottom=1.2in, left=1in, right=1in]{geometry}
+%	.5in bit too small for Left margin (with holes)
+\usepackage{amsmath,amssymb,amstext,amsfonts}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\usepackage{lastpage}
+
+
+
+%			HEADER/Footer
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+		\fancyhead[L,C,R]{}
+		\fancyfoot[L,C,R]{}
+    \fancyhead[L]{18CR66984 DRAFT}
+    \fancyhead[R]{as of \today}
+    \fancyfoot[L]{18CR66984}
+		\fancyfoot[R]{as of \today}
+		\fancyfoot[R]{Page \thepage of \pageref{LastPage} }
