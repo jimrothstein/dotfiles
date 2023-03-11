@@ -1,0 +1,57 @@
+[user]
+	email = jimrothstein@gmail.com
+	name = jimrothstein
+[push]
+	default = simple
+[core]
+	editor = nvim
+[alias]
+#	NOTE:
+#	use git wants double quotes, not single
+#	USAGE:   git co production
+#						git cob newBranch
+#
+	s = status
+	ss = status -s
+
+	#a = "!git s ; git add . ; git commit -m \"$1\; git push;" 
+	#a = "!git s ; git add . ; git commit -m "test"; git push;" 
+
+	a = add .
+	cm = commit -m
+
+	# amend without a new ms (be sure NOT yet pushed) 
+	can = commit --amend --no-edit
+	cana = commit --amend --no-edit -a
+	
+  co = checkout
+	cob = checkout -b
+	db = "branch -d"
+	size = "! git ls-files | xargs du -sh --threshold=1M | less"  # ! = run in shell
+
+# %T = full SHA
+# %h = short SHA
+# %r = relative (2 days ago)
+#
+# l = "log --decorate --oneline --graph -5 --pretty=format:'%h-%T'"
+	l = "log --decorate --oneline --graph -5"
+# display min <SHA>  - difference
+	l1 = "log --decorate --oneline --graph -5 --abbrev-commit"
+# display SHA - minutes ago
+  ll = "log --pretty=format:'%h_ %ar'"
+
+# 	last commit		
+	last = "log -1 HEAD"
+
+#   List All git projects
+	all = "!find **/.git/config"
+[credential]
+	helper = cache
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[pull]
+	ff = only

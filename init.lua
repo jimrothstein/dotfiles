@@ -152,7 +152,11 @@ require('jim.options')
 require('jim.utils')        --  my functions
 require("jim.windows")
 require("jim.Nvim-R")
+<<<<<<< HEAD
 -- require("jim.luasnip")
+=======
+require("jim.luasnip")
+>>>>>>> 96fc08f7229b3f2eb38662de029ee258c2a86a19
 
 
 ------- BASIC SETUP kickstart ----------------------------------------------------------------

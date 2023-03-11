@@ -1,0 +1,5 @@
+.git
+*.html
+*.js
+blog_distill/**/site_libs/*
+

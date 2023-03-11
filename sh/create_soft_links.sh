@@ -4,6 +4,10 @@
 # PURPOSE:   This script creates soft links that point to ~/dotilfes.
 #							Then git (as backup) ~/dotfiles.
 #
+<<<<<<< HEAD
+=======
+#   Updated FEB 2023
+>>>>>>> 96fc08f7229b3f2eb38662de029ee258c2a86a19
 #		Updated Nov 2022		
 #		---------------------------------------------------------------------
 
@@ -66,7 +70,17 @@ ln -sf ~/dotfiles/bufferline.lua ~/.config/nvim/lua/bufferline.lua
 
 # ~/.config/nvim/spell ??
 
+<<<<<<< HEAD
 
+=======
+# ~/.config/nvim/templates
+ln -sf ~/dotfiles/tex/skeleton.tex ~/.config/nvim/templates/skeleton.tex
+ln -sf ~/dotfiles/skeleton.sh ~/.config/nvim/templates/skeleton.sh
+ln -sf ~/dotfiles/skeleton.R ~/.config/nvim/templates/skeleton.R
+ln -sf ~/dotfiles/skeleton.qmd ~/.config/nvim/templates/skeleton.qmd
+ln -sf ~/dotfiles/skeleton.md ~/.config/nvim/templates/skeleton.md
+ln -sf ~/dotfiles/skeleton.Rmd ~/.config/nvim/templates/skeleton.Rmd
+>>>>>>> 96fc08f7229b3f2eb38662de029ee258c2a86a19
 
 #
 #  directories
