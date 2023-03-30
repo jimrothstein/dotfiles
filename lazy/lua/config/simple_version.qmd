@@ -1,0 +1,57 @@
+
+---
+title: "An Introduction to the Tidyverse"
+author: "Brittany Barker"
+date: 3/16/23
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(here) # Start in R project directory
+library(dplyr) # Data wrangling
+library(tidyr) # Data re-structuring
+library(ggplot2) # Plotting model outputs
+library(ggh4x) # For strip text in plots
+library(ggsignif) # Showing significant differences between groups in plots
+library(knitr) # Including graphics
+library(agridat) # Agricultural data
+```
+
+## About me
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+:::
+
+::: {.column width="60%"}
+**Current position**  
+- Research Associate, Oregon IPM Center, OSU  
+<br/>
+**Research interests**  
+- Modeling, ecology, biogeography, conservation, biological invasions, and genetics  
+<br/>
+**Hobbies**  
+- Running, hiking, biking, moving!  
+- Gardening, native habitat restoration  
+<br/>
+**PDX R User Group**  
+- Helped organize Aggregate since ~2021  
+<br/>
+  
+:::
+
+::::
+
+## Cascadia R Conference 2023
+
+Abstract submission is open until 3/30/23
+
+```{r, echo = FALSE}
+```
+
+## This is one of my first presentations in `revealjs`!
+
