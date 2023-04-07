@@ -231,5 +231,6 @@ set NO_BEEP
 # # apply Debian keyboard mappings (in ~/.xmodmap)
 #  ~/.xinitrc contains xmodmap statment to make CAPS LOCK behave like ESC
 #  (many other ways to do this)
+#  SEE  https://wiki.archlinux.org/title/Xmodmap
 source ~/.xinitrc
 #
