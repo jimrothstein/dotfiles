@@ -2,14 +2,6 @@
 
 # USAGE:   ./create_soft_links.sh
 # PURPOSE:   This script creates soft links that point to ~/dotilfes.
-#							Then git (as backup) ~/dotfiles.
-#
-<<<<<<< HEAD
-=======
-#   Updated FEB 2023
->>>>>>> 96fc08f7229b3f2eb38662de029ee258c2a86a19
-#		Updated Nov 2022		
-#		---------------------------------------------------------------------
 
 # -f forces, in event a link aleady exists.  This will overwrite.
 #
@@ -21,6 +13,7 @@
 # 	include SPELL  (en.utf-8.add, medical.utf-8.add)
 #
 
+lazy=1      # use lazyvim
 # in  ~/    $HOME
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore ~/.gitignore
@@ -28,8 +21,8 @@ ln -sf ~/dotfiles/.Rprofile ~/.Rprofile
 ln -sf ~/dotfiles/.Renviron  ~/.Renviron
 ln -sf ~/dotfiles/.zshenv  ~/.zshenv
 
-#	LAPTOP:  no need
-#ln -sf ~/dotfiles/.xinitrc  ~/.xinitrc
+#	Lenovo T480  NEED
+ln -sf ~/dotfiles/.xinitrc  ~/.xinitrc
 
 # .gitignore should block 
 ln -sf ~/dotfiles/.Renviron  ~/.Renviron
@@ -41,7 +34,7 @@ ln -sf ~/dotfiles/.Renviron  ~/.Renviron
 # from ~/.config  
 
 # ~/.config/tmux/
-ln -sf ~/dotfiles/.tmux.conf 		~/.config/tmux/.tmux.conf
+ln -sf ~/dotfiles/.tmux.conf 		~/.tmux.conf
 
 # ~/.config/zsh
 ln -sf ~/dotfiles/.zshrc 		~/.config/zsh/.zshrc
@@ -54,7 +47,13 @@ ln -sf ~/dotfiles/functions.zsh		~/.config/zsh/functions.zsh
 
 
 # ~/.config/nvim/
-ln -sf ~/dotfiles/init.lua ~/.config/nvim/init.lua
+# no init.lua with lazyivm 
+# ln -sf ~/dotfiles/init.lua ~/.config/nvim/init.lua
+ln -sf ~/dotfiles/lazy/lua/config/ ~/.config/nvim/lua/config  
+ln -sf ~/dotfiles/lazy/lua/plugins/ ~/.config/nvim/lua/plugins  
+
+if [ $lazy -eq 1 ]; then echo " using lazyvim"
+else
 #
 # ~/.config/nvim/lua/jim
 ln -sf ~/dotfiles/keymaps.lua ~/.config/nvim/lua/jim/keymaps.lua
@@ -67,12 +66,11 @@ ln -sf ~/dotfiles/treesitter.lua ~/.config/nvim/lua/jim/treesitter.lua
 ln -sf ~/dotfiles/utils.lua ~/.config/nvim/lua/jim/utils.lua
 ln -sf ~/dotfiles/bufferline.lua ~/.config/nvim/lua/bufferline.lua		
 
+fi
 
 # ~/.config/nvim/spell ??
 
-<<<<<<< HEAD
 
-=======
 # ~/.config/nvim/templates
 ln -sf ~/dotfiles/tex/skeleton.tex ~/.config/nvim/templates/skeleton.tex
 ln -sf ~/dotfiles/skeleton.sh ~/.config/nvim/templates/skeleton.sh
@@ -80,7 +78,6 @@ ln -sf ~/dotfiles/skeleton.R ~/.config/nvim/templates/skeleton.R
 ln -sf ~/dotfiles/skeleton.qmd ~/.config/nvim/templates/skeleton.qmd
 ln -sf ~/dotfiles/skeleton.md ~/.config/nvim/templates/skeleton.md
 ln -sf ~/dotfiles/skeleton.Rmd ~/.config/nvim/templates/skeleton.Rmd
->>>>>>> 96fc08f7229b3f2eb38662de029ee258c2a86a19
 
 #
 #  directories
