@@ -18,12 +18,12 @@ clear Lock
 !
 !
 ! Forgot where is worked.
-keycode 0x42 = Escape
-
+!keycode 0x42 = Escape
 
 ! Makes caps lock (keycode 133) behave like Escape (keycode 9)
 ! for Gallium | Ubuntu env
-keycode 133 = Escape
+!keycode 133 = Escape
 
-# Lenovo T480, linux mint
+! Lenovo T480, linux mint;    actual `Esc` is 9;   actual `CapsLock` (66) now points to Escape
 keycode 9 = Escape
+keycode 66 = Escape
