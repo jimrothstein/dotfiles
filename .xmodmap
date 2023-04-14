@@ -25,5 +25,5 @@ clear Lock
 !keycode 133 = Escape
 
 ! Lenovo T480, linux mint;    actual `Esc` is 9;   actual `CapsLock` (66) now points to Escape
-keycode 9 = Escape
+! keycode 9 = Escape
 keycode 66 = Escape

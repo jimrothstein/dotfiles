@@ -43,6 +43,7 @@ alias goLua='cd ~/code/lua_project/'
 alias goMp3='cd ~/code/mp3/'
 alias goNSE='cd ~/code/NSE_project/'
 alias goPublish='cd ~/code/code_publish/'
+alias goPretty='cd ~/code/PrettyPDF'
 
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'
