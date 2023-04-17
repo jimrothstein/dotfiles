@@ -69,6 +69,7 @@ alias go.local.bin='cd ~/.local/bin/'
 alias goConfig='cd ~/.config/'
 alias goBackup='cd ~/.config/nvim/backup/'
 alias goMyFiles='cd ~/MyFiles/'      # soft link to Linux files 
+alias goDownloads='cd ~/Downloads/'
 alias cx='chmod +x'				# USE:    cx  new_script.sh
 
 #	docs

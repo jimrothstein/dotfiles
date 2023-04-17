@@ -1,8 +1,9 @@
 # ==============================
 ## ~/.Rprofile
 ##
-## To Start R without ~/.Rprofile
-## R --vanilla
+##    To Start R without ~/.Rprofile
+##    R --vanilla
+##
 ## SEE ?startup
 # ==============================
 ##	PURPOSE:	~/.Rprofile is runs for EVERY R process, regardless whether 
@@ -12,7 +13,7 @@
 
 # 
 #  options() # list currently set
-#  set option?     options(x = "value")
+#  set option x?     options(x = "value")
 #
 # .Options, names(.Options)  # same, as pairlist | 2nd is character vector
 ##
@@ -22,6 +23,10 @@
 	# message("..... ~/.Rprofile message ..")
 #----------------------------------------------------------------------
 #
+##  check if .Rprofile.site exists
+  site_path=R.home(component = "home")
+  fname = file.path(site_path, "etc", ".Rprofile.site")
+  if (file.exists(fname)) { print (".Rprofile.site exists!!")}
 #
 # ==============================
 	## Set cloud mirror, which is 'network-close' to everybody, as default

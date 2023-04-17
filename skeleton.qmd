@@ -4,6 +4,9 @@ author: "Norah Jones"
 date: "5/22/2021"
 pdf-engine: lualatex
 format:
+  html: 
+    toc: true
+    html-math-method: katex
   pdf: 
     toc: false
     include-in-header: 
@@ -11,8 +14,20 @@ format:
         \usepackage[top=.5in, bottom=.5in, left=.7in, right=.5in]{geometry}
         \usepackage{amsmath,amssymb,amstext,amsfonts}
         \usepackage{lipsum}
+editor:  source
+output-dir:  output
+editor_options: 
+  chunk_output_type: console
 ---
 
+title: "030_quarto_katex_html_references.qmd"
+format: 
+  html:
+    toc: true
+    html-math-method: katex
+editor: source
+editor_options: 
+  chunk_output_type: console
 
 <!--
 
