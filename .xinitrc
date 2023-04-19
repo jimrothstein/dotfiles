@@ -1,10 +1,18 @@
-#		PURPOSE:	maps ChromeBox "capslock" key to Escape.
+#		PURPOSE:	maps "capslock" key to Escape.
+#		.xinitrc is one (of many) ways to configure X11
 #
-#		-	133 is escape; to find this use > kev...
+#		
+#
+#		-	USE kev to find keycode for "capslock" and "escape"
 #		- xmodmap is older, but simpler.
 #		- newer is kxb... but I find more effort to figure out simple things. -	SEE  tech_notes
 #
-xmodmap -e "keycode 133 = Escape"
+# xmodmap -e "keycode 133 = Escape"
 
 # lenvovo T480
-xmodmap -e "keycode 66 = Escape"
+#
+# ONE Method
+# xmodmap -e "keycode 66 = Escape"
+
+# SECOND Method
+xmodmap ~/.xmodmap
