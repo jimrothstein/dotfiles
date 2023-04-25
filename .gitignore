@@ -61,6 +61,7 @@ pdf/
 data/*
 inst/
 .quarto/
+.Rprog.user/*
 
 #
 # ignore these directories

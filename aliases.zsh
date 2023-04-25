@@ -50,6 +50,7 @@ alias goTools='cd ~/code/jimTools/'
 alias goScripts='cd ~/code/bin'
 alias goShiny='cd ~/code/SHINY'
 alias goSimple='cd ~/code/simple_examples'
+alias goQuartoExp='cd ~/code/quarto_experiments'
 # alias goRscripts=kk
 
 alias goVECTOR='cd ~/code/try_things_here/VECTOR'

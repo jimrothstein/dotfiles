@@ -10,49 +10,49 @@
 --        OPTIONS
 -----------------
 --  ignore (for now) global 'vim' warnings
---  expandtab is actually a buffer local 
+--  expandtab is actually a buffer local
 --  here appear to be setting as a default global (don't understand)
 
 local set = vim.opt -- set options
-set.timeoutlen = 500          -- which_key
-set.background = "dark"       --  for DESKTOP
-set.expandtab = true					--	expands as spaces
-set.tabstop = 2								--	width of \t
-set.shiftwidth = 0						--	use tabstop, width when using << >> 
-set.softtabstop = -1					--	use tabstop
-set.shiftround= true					--	indents will be multipe of shiftwidth (keeps alignment)
-set.autoindent =  true				--	keep same identent as prior line
-set.breakindent = true        --  2nd line indents 
-set.smartindent = true				--	increase indent with {
-set.ignorecase = true           --      make search case insensitive
-set.wm = 4                      --      begin new line 4 chars before end of line.
-set.number=true
-set.relativenumber=true
-set.laststatus=3
-set.splitright=true							-- vsplit puts new window to the right
+set.timeoutlen = 500 -- which_key
+set.background = "dark" --  for DESKTOP
+set.background = "light" --  for Lenovo
+set.expandtab = true --	expands as spaces
+set.tabstop = 2 --	width of \t
+set.shiftwidth = 0 --	use tabstop, width when using << >>
+set.softtabstop = -1 --	use tabstop
+set.shiftround = true --	indents will be multipe of shiftwidth (keeps alignment)
+set.autoindent = true --	keep same identent as prior line
+set.breakindent = true --  2nd line indents
+set.smartindent = true --	increase indent with {
+set.ignorecase = true --      make search case insensitive
+set.wm = 4 --      begin new line 4 chars before end of line.
+set.number = true
+set.relativenumber = true
+set.laststatus = 3
+set.splitright = true -- vsplit puts new window to the right
 
 --   " after 'updateime' millisecs (1500?) INSERT mode reverts to NORMAL
 --  au CursorHoldI * stopinsert
 
-set.hidden = false    --    "   [default=no] 
-set.history=50
-set.showmode = true			--   show mode (insert etc )
-set.cursorline = true		--   highlight current line
-set.scrolloff=  5   --  "   scroll, keep cursor 5 lines from top
-set.cmdheight=4		-- "	 avoids PRESS any Key to continue
+set.hidden = false --    "   [default=no]
+set.history = 50
+set.showmode = true --   show mode (insert etc )
+set.cursorline = true --   highlight current line
+set.scrolloff = 5 --  "   scroll, keep cursor 5 lines from top
+set.cmdheight = 4 -- "	 avoids PRESS any Key to continue
 
 -- set gdefault			" search global :%s/from/to/c
-set.autowrite= true	--		" saves to disk when change buffers, :bn
-set.autowriteall = true  --     " ...in addition, saves all after :e :n :q
-set.autoread= true		--	" re-read if a file changed outside vim
-set.showmatch=true		--	" highlights matching bracket, paran etc.
-
+set.autowrite = true --		" saves to disk when change buffers, :bn
+set.autowriteall = true --     " ...in addition, saves all after :e :n :q
+set.autoread = true --	" re-read if a file changed outside vim
+set.showmatch = true --	" highlights matching bracket, paran etc.
 
 --------------------------------------------------------
 --					foldmethod  - OFF still figureout Treesitter
 --	Sun 14Aug2022
 --------------------------------------------------------
-set.list=false	--			"NO display TABS, and EOL
+set.list = false --			"NO display TABS, and EOL
 set.wrap = true
 set.errorbells = false
 
@@ -62,8 +62,8 @@ set.errorbells = false
 -- set statusline+=%m
 -- set statusline+=[%{winnr()}-b%n]
 -- " :highlight,  insert color inside # #
--- set statusline+=%#Title#%y[%F]    
--- 
+-- set statusline+=%#Title#%y[%F]
+--
 -- --  " begin from right margin
 -- set statusline+=%=
 -- set statusline+=%c:%l/%L 			" line, column (with tabs, maybe estimate)
@@ -71,14 +71,13 @@ set.errorbells = false
 -- set.colorcolumn=81		-- " display right margin
 -------------------------------------------------------------------------
 
-
-set.title=true
-set.number= true
+set.title = true
+set.number = true
 set.relativenumber = true
-set.textwidth=79	--	" sets right margin!
+set.textwidth = 79 --	" sets right margin!
 --		BACKUP
 set.backup = true
-set.writebackup	= true				-- backup before saving changes
+set.writebackup = true -- backup before saving changes
 -- setupext (default = "~")
 --
 
@@ -89,15 +88,15 @@ vim.opt.backupdir = "/home/jim/.backup/"
 
 -- vim.cmd [[colo jimColor]]
 
--- on by default: 
--- filetype plugin on         
+-- on by default:
+-- filetype plugin on
 
 ------------------
 -- disable plugins
 ------------------
 --
 -- netrw
-vim.cmd [[
+vim.cmd([[
 
 "	connect vim and system clipboard (xsel )
 	set clipboard+=unnamedplus
@@ -107,6 +106,4 @@ vim.cmd [[
 	"checkhealth:  turns off python & perl warning
     :let g:loaded_python3_provider = 0
     :let g:loaded_perl_provider = 0
-	]]
-
-		
+	]])
