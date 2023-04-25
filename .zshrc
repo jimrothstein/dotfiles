@@ -3,25 +3,21 @@
 # ~/dotifles/.zshrc
 #
 # =================================================
-# ARTICLE:
+#   ARTICLE:
 # 		https://thevaluable.dev/zsh-install-configure/
-
 # 		Config files put in ~/.config/zsh/
-#     alias: ~/.config/zsh/aliases.zsh
+#     **alias:** ~/.config/zsh/aliases.zsh
 # =================================================
-#
 #   NOTES
 #   * use `setopt` , not `set`
 #  ~/.zshenv MUST remain in $HOME dir for system to start
-#
-#
-
 # =================================================
-#
-#		TODO
-#			Tue Jun 21 02:47:20 PDT 2022
-#			- prompt fixed
-#
+#   CORE CONFIG	
+#			REF: [archwiki]( https://wiki.archlinux.org/index.php/Zsh#Simple_.zshrc )
+# =================================================
+#   TODO
+#       -  04/24/2023  clean up !
+# =================================================
 #		no need for promptinit
 autoload -Uz vcs_info # enable vcs_info
 precmd () { vcs_info } # always load before displaying the prompt
@@ -38,13 +34,12 @@ PS1='%n@%m %F{cyan}%/%f$vcs_info_msg_0_ $ ' # david@macbook /tmp/repo (main) $
 #	on the far RIGHT
 RPROMPT='%w::$(date +%b)::%t::$vcs_info_msg_0_'
 
-
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings (prefer) even if our EDITOR is set to vi
 bindkey -e
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+# History:   keep 1000 lines of shell history;  save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
@@ -87,22 +82,9 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # ===================
-#  output of setopt (Aug 2021)
+#  >setopt    # output of setopt (Aug 2021)
 # ===================
 #
-## autocd
-## autonamedirs
-## autopushd
-## nobeep
-## nocaseglob
-## emacs
-## extendedglob
-## interactive
-## login
-## monitor
-## promptsubst
-## shinstdin
-## zle
 #
 #
 # =========================================================
@@ -136,8 +118,9 @@ source ~/.config/zsh/bindkey.zsh
 ##	zsh automatically syncs env $PATH and array $path
     typeset -U PATH path
     PATH=/usr/local/bin:/usr/bin:/bin
-		PATH+=:~/.local/bin
+	PATH+=:~/.local/bin
     PATH+=:~/code/zsh_scripts_project
+    PATH+=:~/.TinyTeX/bin/x86_64-linux
     export PATH=$HOME/bin:$PATH
 
 ## ==============================================================
@@ -158,8 +141,6 @@ source ~/.config/zsh/bindkey.zsh
 ## USE:	example_function "jim"
     autoload -Uz helloFile jim example_function
 
-
-
 ZSH_THEME="intheloop"
 
 
@@ -167,13 +148,6 @@ ZSH_THEME="intheloop"
 # Uncomment the following line to disable auto-setting terminal title.
  DISABLE_AUTO_TITLE="true"
 
-
-
-#
-#  ================
-#			CORE CONFIG	
-#			REF: [archwiki]( https://wiki.archlinux.org/index.php/Zsh#Simple_.zshrc )
-#  ================
 #
 #	
 # ================
