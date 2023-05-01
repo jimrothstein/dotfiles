@@ -41,7 +41,7 @@ alias goDT='cd ~/code/try_things_here/DT/'
 alias goHealth='cd ~/code/health_labs/'
 alias goLua='cd ~/code/lua_project/'
 alias goMp3='cd ~/code/mp3/'
-alias goNSE='cd ~/code/NSE_project/'
+alias goNSE='cd ~/code/try_things_here/NSE_project/'
 alias goPublish='cd ~/code/code_publish/'
 alias goPretty='cd ~/code/PrettyPDF'
 
@@ -51,6 +51,8 @@ alias goScripts='cd ~/code/bin'
 alias goShiny='cd ~/code/SHINY'
 alias goSimple='cd ~/code/simple_examples'
 alias goQuartoExp='cd ~/code/quarto_experiments'
+alias goQE='cd ~/code/quarto_experiments'
+alias goTech='cd ~/code/docs/tech_notes'
 # alias goRscripts=kk
 
 alias goVECTOR='cd ~/code/try_things_here/VECTOR'
