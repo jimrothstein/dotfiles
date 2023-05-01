@@ -1,21 +1,27 @@
 # ==============================
 ## ~/.Rprofile
+
+##  NEWS
+##  24 APR 23 - remove startup:: package
 ##
+##
+##  USAGE:
 ##    To Start R without ~/.Rprofile
 ##    R --vanilla
 ##
-## SEE ?startup
+##    SEE ?startup
 # ==============================
 ## 	PURPOSE:	~/.Rprofile is runs for EVERY R process, regardless whether
 ## 						user or R initiated.   Use if (interactive()) for things ONLY
 ## 						user would want.  .Rprofile is akin .zshrc.
 
 
-#
-#  options() # list currently set
-#  set option x?     options(x = "value")
+# 	----------------------------------------------------------------------
+#  options()                        # list currently set
+#  options(x = "value")             #   set option x
 #
 # .Options, names(.Options)  # same, as pairlist | 2nd is character vector
+#
 ##
 # 	----------------------------------------------------------------------
 .First <- function() cat("\n  -----------------------------------------  \n\n")
@@ -43,8 +49,6 @@ local({
 
 
 if (interactive()) {
-    ## set Sun 08Jan2023
-
     options(
         digits = 3,
         usethis.protocol = "ssh"
@@ -53,7 +57,6 @@ if (interactive()) {
 ## =====================
 ## 		Devtools, usethis, rlang, lobstr etc ....
 ## =====================
-## 11MAY 2022; jr removed some packages; if need just uncomment
 if (interactive()) {
     suppressMessages(library(devtools))
     suppressMessages(library(usethis))
@@ -92,4 +95,4 @@ options(languageserver.diagnostics = FALSE)
 #    Sys.setenv("R_STARTUP_DEBUG" =TRUE)
 
 ##  autmagically added by startup::
-tryCatch(startup::startup(), error = function(ex) message(".Rprofile error: ", conditionMessage(ex)))
+## tryCatch(startup::startup(), error = function(ex) message(".Rprofile error: ", conditionMessage(ex)))
