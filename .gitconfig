@@ -5,6 +5,7 @@
 	default = simple
 [core]
 	editor = nvim
+	excludesfile = "~/.gitignore"
 [alias]
 #	NOTE:
 #	use git wants double quotes, not single
