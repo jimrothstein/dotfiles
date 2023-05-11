@@ -55,4 +55,5 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [pull]
-	ff = only
+    ff = only
+
