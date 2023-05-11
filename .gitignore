@@ -1,11 +1,13 @@
 # .gitignore
 # ~/dotfiles/.gitignore   ($G)
 #
-# Updte Nov 28, 2022
 
+# Updte MAY 8, 2023
+#
 #	TODO:
 #		-	Fri May 20 22:24:14 PDT 2022
 #		-	.Renviron (API keys) - how to save this file, but NOT to github?
+#		-   Add quarto /docs/*html  but not other *html
 #
 #
 #
@@ -43,7 +45,7 @@
 *.rds
 *.csv
 *.pdf
-*.html
+#   *.html       leave:  for quarto
 *.log
 *.json
 
@@ -112,7 +114,6 @@ zsh_project/CURL_examples/.secret
 # =========
 # plugin "jimrothstein/myhelp" - separate from rest of code/
 vim-myhelp/
-*.html
 *.tar.gz
 ~/code/jimHelp/doc/*
 # should ignore nvim.appimage
