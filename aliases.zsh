@@ -24,48 +24,45 @@ alias man='run-help'
 # alias more='less'
 #
 # Uncomment, to add flag for less?
-# alias -g L='| less'	# USE:  ll L <enter>
 
+# alias -g L='| less'	# USE:  ll L <enter>
 #   ZHS , dirstack, dirs cmd
 #   l = full path
 #   p = 1 per line
 #   v = number
 alias dirs='dirs -lpv'
 
+# --------------------------------------------------------------------------------
+#   ALIAS - KEEP ALPHA order
+# --------------------------------------------------------------------------------
+
+
 #	coding, 
 alias goADVANCED_R='cd ~/code/try_things_here/ADVANCED_R'
 alias goBASE='cd ~/code/try_things_here/BASE/'
 alias goCode='cd ~/code/'
+alias goDocs='cd ~/code/docs'
 alias goDT='cd ~/code/try_things_here/DT/'
-
 alias goHealth='cd ~/code/health_labs/'
 alias goLua='cd ~/code/lua_project/'
 alias goMp3='cd ~/code/mp3/'
 alias goNSE='cd ~/code/try_things_here/NSE_project/'
 alias goPublish='cd ~/code/code_publish/'
 alias goPretty='cd ~/code/PrettyPDF'
-
+alias goQE='cd ~/code/quarto_experiments'
+alias goRscripts='cd ~/code/jimTools/Rscripts'
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'
-alias goScripts='cd ~/code/bin'
 alias goShiny='cd ~/code/SHINY'
-alias goSimple='cd ~/code/simple_examples'
-alias goQuartoExp='cd ~/code/quarto_experiments'
-alias goQE='cd ~/code/quarto_experiments'
 alias goTech='cd ~/code/docs/tech_notes'
-# alias goRscripts=kk
-
 alias goVECTOR='cd ~/code/try_things_here/VECTOR'
 alias goYoutube='cd ~/code/youtube_api/'
-
 alias goZsh='cd ~/code/zsh_project/'
-
-
+alias goZC='cd ~/.config/zsh'               # go Zsh Config
 
 #	config
 alias goDot='cd ~/dotfiles'
 alias goVim='cd ~/.config/nvim/'
-
 #
 alias goBin='cd ~/bin/'
 alias go.local.bin='cd ~/.local/bin/'
@@ -76,7 +73,6 @@ alias goDownloads='cd ~/Downloads/'
 alias cx='chmod +x'				# USE:    cx  new_script.sh
 
 #	docs
-alias goDocs='cd ~/code/docs'
 
 # export (so go<TAB> works)
 export goCode goDot goVim goBin 
