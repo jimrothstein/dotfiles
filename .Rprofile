@@ -67,6 +67,7 @@ if (interactive()) {
     suppressMessages(library(rmarkdown))
     suppressMessages(library(tibble))
     suppressMessages(library(kableExtra))
+    suppressMessages(library(lookup)) # jim hester, returns source code
 
 
     ##  Fri 27Jan2023 (esp for JSON, unnesting)
