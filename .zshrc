@@ -208,3 +208,5 @@ set NO_BEEP
 #  SEE  https://wiki.archlinux.org/title/Xmodmap
 source ~/.xinitrc
 #
+##  open terminal - infinite LOOP   do not do this !!!
+## $(wezterm)
