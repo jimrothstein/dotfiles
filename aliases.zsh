@@ -52,6 +52,7 @@ alias goPretty='cd ~/code/PrettyPDF'
 alias goQE='cd ~/code/quarto_experiments'
 alias goRacket='cd ~/code/racket_project'
 alias goRscripts='cd ~/code/jimTools/Rscripts'
+alias goRRapply='cd ~/code/try_things_here/rrapply'
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'
 alias goShiny='cd ~/code/SHINY'
@@ -79,6 +80,7 @@ alias cx='chmod +x'				# USE:    cx  new_script.sh
 # export (so go<TAB> works)
 export goCode goDot goVim goBin 
 export goYoutube goTry
+export goRRapply  
 
 # ============
 # Experiment
