@@ -26,7 +26,6 @@ setopt prompt_subst    # need this
 #	create variable vcs_info_msg_0_
 #	start|stop a sqquence with %F...%f
 #	All codes here:		https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
-#
 zstyle ':vcs_info:*' formats ' %s(%F{red}%b%f)' # git(main)
 PS1='%n@%m %F{cyan}%/%f$vcs_info_msg_0_ $ ' # david@macbook /tmp/repo (main) $
 
@@ -43,7 +42,6 @@ bindkey -e
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
-
 #================
 #			COMPLETION:	
 #
@@ -119,8 +117,6 @@ source ~/.config/zsh/bindkey.zsh
     typeset -U PATH path
     PATH=/usr/local/bin:/usr/bin:/bin
 	PATH+=:~/.local/bin
-    PATH+=:~/code/zsh_scripts_project
-    PATH+=:~/.TinyTeX/bin/x86_64-linux
     export PATH=$HOME/bin:$PATH
 
 ## ==============================================================
