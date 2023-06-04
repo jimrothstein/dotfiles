@@ -10,8 +10,7 @@
 #	NOTE:
 #	use git wants double quotes, not single
 #	USAGE:   git co production
-#						git cob newBranch
-#
+#            git cob newBranch
 	s = status
 	ss = status -s
 
@@ -36,10 +35,12 @@
 #
 # l = "log --decorate --oneline --graph -5 --pretty=format:'%h-%T'"
 	l = "log --decorate --oneline --graph -5"
+
 # display min <SHA>  - difference
-	l1 = "log --decorate --oneline --graph -5 --abbrev-commit"
+    l1 = "log --decorate --oneline --graph -20 --abbrev-commit" --pretty=format:'%h_ %ar'
+
 # display SHA - minutes ago
-  ll = "log --pretty=format:'%h_ %ar'"
+  ll = "log --pretty=format:'%h_ %ar'"  -10
 
 # 	last commit		
 	last = "log -1 HEAD"
