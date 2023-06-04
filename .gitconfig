@@ -6,6 +6,13 @@
 [core]
 	editor = nvim
 	excludesfile = "~/.gitignore"
+##
+### SEE  https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date/1441062#1441062
+#   USAGE:  git log   (jr: 2023-06-03)
+[log]
+    date=relative
+[format]
+# pretty = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
 [alias]
 #	NOTE:
 #	use git wants double quotes, not single
@@ -41,6 +48,9 @@
 
 # display SHA - minutes ago
   ll = "log --pretty=format:'%h_ %ar'"  -10
+
+    pretty = log --pretty=\"format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D\"
+
 
 # 	last commit		
 	last = "log -1 HEAD"
