@@ -44,6 +44,7 @@ alias goCode='cd ~/code/'
 alias goDocs='cd ~/code/docs'
 alias goDT='cd ~/code/try_things_here/DT/'
 alias goHealth='cd ~/code/health_labs/'
+alias goLazy='cd ~/.local/share/nvim'
 alias goLua='cd ~/code/lua_project/'
 alias goMp3='cd ~/code/mp3/'
 alias goNSE='cd ~/code/try_things_here/NSE_project/'
@@ -53,6 +54,9 @@ alias goQE='cd ~/code/quarto_experiments'
 alias goRacket='cd ~/code/racket_project'
 alias goRscripts='cd ~/code/jimTools/Rscripts'
 alias goRRapply='cd ~/code/try_things_here/rrapply'
+
+alias goRHome='cd /usr/share/R/'              # R_HOME
+
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'
 alias goShiny='cd ~/code/SHINY'
