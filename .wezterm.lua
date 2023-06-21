@@ -17,5 +17,9 @@ end
 -- config.color_scheme = 'AdventureTime'
 print("set cwd")
 config.default_cwd = "~/code"
+config.initial_rows = 100
+
+-- Spawn a fish shell in login mode
+config.default_prog = { "stmux_sh" }
 -- and finally, return the configuration to wezterm
 return config
