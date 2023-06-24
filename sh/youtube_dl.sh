@@ -2,35 +2,34 @@
 # ------------------------
 #	file <- "/home/jim/dotfiles/sh/youtube_dl.sh#"
 #
-#
 ##  Update:
 #
 ##===========================================================================================
+#       20 JUNE 2023 
+#       BE SURE to use ~/dotfiles version!
+#    x-
+#
 #		23 AUG 2022
 #		-	source file is 
 #		"/home/jim/dotfiles/sh/youtube_dl.sh"
 #
 #		5 AUG 2022
 #		-	fix some notes
-##===========================================================================================
-#
-##  Update:
+##      Update:
 #		4 JULY 2022
 #
-##	Update rules have changed:
+##	    Update rules have changed:
 ##		REF:		http://ytdl-org.github.io/youtube-dl/download.html
-##	FIRST:	
 ##	
+#   DO FIRST !
 ##  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 ##	sudo chmod a+rx /usr/local/bin/youtube-dl
 #
 ##	Then proceed
-##===========================================================================================
 #
-#
-
-
+# -------------------------------------------------------------------------------------------
 #	youtube_dl.sh
+# -------------------------------------------------------------------------------------------
 #
 #	USAGE:   zsh youtube_dl.sh
 #	DOWNLOADS  music in .ogg format
@@ -49,17 +48,24 @@
 #	-- audio-format  best (default), aac, vorbis ...
 #	-F  list all formats of requested video
 ##
-
-
-
 #
-list=PLbcglKxZP5POb1urZdM7wgIG0IgEXTeWz
+#list=PLbcglKxZP5POb1urZdM7wgIG0IgEXTeWz
+list=PLbcglKxZP5PMzNbrnMtdwtoPkkCi64cbw
 
-dir=/home/jim/mp3_files/
+# dir=/home/jim/mp3_files/
+
+# On Acer Chromebox?
+dir='/mnt/chromeos/removable/USB\ Drive/home/jim/mp3_files/'
 
 mylist=https://www.youtube.com/playlist?list="${list}"
 
-youtube-dl -x -v -i --audio-format vorbis \
+#youtube-dl -x -v -i --audio-format vorbis \
+#	-o ${dir}'%(autonumber)s_%(artist)s_%(title)s_'$(date +%d%b%Y)'.%(ext)s' \
+#	 ${mylist}
+
+
+
+yt-dlp -x -v -i --audio-format vorbis \
 	-o ${dir}'%(autonumber)s_%(artist)s_%(title)s_'$(date +%d%b%Y)'.%(ext)s' \
 	 ${mylist}
 exit	
