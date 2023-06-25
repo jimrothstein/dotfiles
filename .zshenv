@@ -59,8 +59,12 @@ export OUT=~/Downloads/print_and_delete
 
 # dotfiles=~/dotfiles
 
+# 22JUNE 2023 (R 4.3.1 from source)
+ export R_HOME='/opt/R/4.3.1'
+ export R_VERSION='4.3.1'
+
 ## env var for R (August 2021)
- export R_HOME='/usr/lib/R'
+ #export R_HOME='/usr/lib/R'
 
 #
 
