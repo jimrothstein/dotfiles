@@ -86,6 +86,10 @@ export goCode goDot goVim goBin
 export goYoutube goTry
 export goRRapply  
 
+##
+#   Added 24JUNE 2023
+export R_VERSION=4.3.1
+
 # ============
 # Experiment
 # ============

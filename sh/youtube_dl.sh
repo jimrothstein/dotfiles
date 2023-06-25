@@ -2,12 +2,9 @@
 # ------------------------
 #	file <- "/home/jim/dotfiles/sh/youtube_dl.sh#"
 #
-##  Update:
-#
-##===========================================================================================
+# ---------------------------------------------------------------------------------------------
 #       20 JUNE 2023 
-#       BE SURE to use ~/dotfiles version!
-#    x-
+#   -   now using yt-dtl       BE SURE to use ~/dotfiles version!
 #
 #		23 AUG 2022
 #		-	source file is 
@@ -21,16 +18,14 @@
 ##	    Update rules have changed:
 ##		REF:		http://ytdl-org.github.io/youtube-dl/download.html
 ##	
+# -------------------------------------------------------------------------------------------
 #   DO FIRST !
 ##  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 ##	sudo chmod a+rx /usr/local/bin/youtube-dl
-#
-##	Then proceed
-#
+# -------------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------------
 #	youtube_dl.sh
 # -------------------------------------------------------------------------------------------
-#
 #	USAGE:   zsh youtube_dl.sh
 #	DOWNLOADS  music in .ogg format
 #	youtube list	must be "public"
@@ -54,11 +49,12 @@ list=PLbcglKxZP5PMzNbrnMtdwtoPkkCi64cbw
 
 # dir=/home/jim/mp3_files/
 
-# On Acer Chromebox?
+# On Acer Chromebox?  [ problems with this dir]
 dir='/mnt/chromeos/removable/USB\ Drive/home/jim/mp3_files/'
 
 mylist=https://www.youtube.com/playlist?list="${list}"
 
+# old
 #youtube-dl -x -v -i --audio-format vorbis \
 #	-o ${dir}'%(autonumber)s_%(artist)s_%(title)s_'$(date +%d%b%Y)'.%(ext)s' \
 #	 ${mylist}
