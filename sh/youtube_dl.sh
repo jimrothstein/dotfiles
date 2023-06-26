@@ -5,28 +5,17 @@
 # ---------------------------------------------------------------------------------------------
 #       20 JUNE 2023 
 #   -   now using yt-dtl       BE SURE to use ~/dotfiles version!
+#   -   Lenovo:   apt remove all youtube-dl from machine
+#   -   REF:    https://github.com/yt-dlp/yt-dlp/wiki/Installation
 #
-#		23 AUG 2022
-#		-	source file is 
-#		"/home/jim/dotfiles/sh/youtube_dl.sh"
-#
-#		5 AUG 2022
-#		-	fix some notes
-##      Update:
-#		4 JULY 2022
-#
-##	    Update rules have changed:
-##		REF:		http://ytdl-org.github.io/youtube-dl/download.html
-##	
 # -------------------------------------------------------------------------------------------
 #   DO FIRST !
 ##  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 ##	sudo chmod a+rx /usr/local/bin/youtube-dl
+#
+#   THEN
+#   yt-dtl -U
 # -------------------------------------------------------------------------------------------
-# -------------------------------------------------------------------------------------------
-#	youtube_dl.sh
-# -------------------------------------------------------------------------------------------
-#	USAGE:   zsh youtube_dl.sh
 #	DOWNLOADS  music in .ogg format
 #	youtube list	must be "public"
 #
@@ -47,10 +36,11 @@
 #list=PLbcglKxZP5POb1urZdM7wgIG0IgEXTeWz
 list=PLbcglKxZP5PMzNbrnMtdwtoPkkCi64cbw
 
-# dir=/home/jim/mp3_files/
+## on lenvo
+ dir=/home/jim/mp3_files/
 
 # On Acer Chromebox?  [ problems with this dir]
-dir='/mnt/chromeos/removable/USB\ Drive/home/jim/mp3_files/'
+# dir='/mnt/chromeos/removable/USB\ Drive/home/jim/mp3_files/'
 
 mylist=https://www.youtube.com/playlist?list="${list}"
 
