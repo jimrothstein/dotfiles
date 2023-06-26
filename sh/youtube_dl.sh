@@ -8,6 +8,11 @@
 #   -   Lenovo:   apt remove all youtube-dl from machine
 #   -   REF:    https://github.com/yt-dlp/yt-dlp/wiki/Installation
 #
+#   USAGE:  (on youtube)
+#   - Use `dl` playlist, for all videos to download (select from `to_Download`)
+#   - download using this script.
+#   - move all videos to `all music`
+#   - then empty `dl`, but do not delete it
 # -------------------------------------------------------------------------------------------
 #   DO FIRST !
 ##  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
