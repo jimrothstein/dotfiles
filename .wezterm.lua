@@ -16,10 +16,22 @@ end
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
 print("set cwd")
-config.default_cwd = "~/code"
+config.default_cwd = "/home/jim/code" -- must use absolute path
 config.initial_rows = 100
 
 -- Spawn a fish shell in login mode
 config.default_prog = { "stmux_sh" }
 -- and finally, return the configuration to wezterm
+--
+--
+--      EXPERIMENT
+---------------------------------------
+local mux = wezterm.mux
+
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
+
+---------------------------------------
 return config
