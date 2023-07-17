@@ -206,4 +206,3 @@ source ~/.xinitrc
 #
 ##  open terminal - infinite LOOP   do not do this !!!
 
-## $(wezterm)
