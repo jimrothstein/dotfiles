@@ -53,7 +53,8 @@
 # (NOT ignore my_file)
 _*
 
-
+#   no AppImages
+*.AppImage
 
 
 # directories inside R projects
