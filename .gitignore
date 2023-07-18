@@ -117,8 +117,13 @@ zsh_project/CURL_examples/.secret
 vim-myhelp/
 *.tar.gz
 ~/code/jimHelp/doc/*
+
+# ------------
+# *.appimage
+# ------------
 # should ignore nvim.appimage
 *.appimage
+*.AppImage
 ~/bin/nvim.appimage
 
 tags
