@@ -65,6 +65,7 @@ data/*
 inst/
 .quarto/
 .Rprog.user/*
+quarto_experiments/docs/
 
 #
 # ignore these directories
