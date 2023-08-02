@@ -125,7 +125,9 @@ source ~/.config/zsh/bindkey.zsh
 ## my functions linked by ~.zfunctions
 ## SEE:  https://unix.stackexchange.com/questions/33255/how-to-define-and-load-your-own-shell-function-in-zsh
 ## NOTE:   "$path[@]"  and $path  should be equivalent.
-    fpath=( ~/.zfunctions "${fpath[@]}" )
+#
+#    fpath=( ~/.zfunctions "${fpath[@]}" )
+     fpath=( ~/zsh_TAB_completion/ $fpath)
 
 # ========================================================
 #   autoload  (see man zshbuiltins)
@@ -150,7 +152,7 @@ ZSH_THEME="intheloop"
 # TAB completion
 # ================
 # autoload -Uz compinit		
-# compinit
+compinit
 
 
 # ssh
