@@ -58,7 +58,7 @@ alias goRscripts='cd ~/code/jimTools/Rscripts'
 alias goRRapply='cd ~/code/try_things_here/rrapply'
 
 alias goRHome='cd /usr/share/R/'              # R_HOME
-
+alias goShaina='cd ~/code/try_things_here/STATS/shaina' 
 alias goStats='cd ~/code/try_things_here/STATS'
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'
