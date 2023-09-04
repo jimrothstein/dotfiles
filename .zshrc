@@ -208,8 +208,10 @@ source ~/.xinitrc
 #
 ##  open terminal - infinite LOOP   do not do this !!!
 
-## 2023-08-19 - experiment
-## nvims :  switch between nvim configs
+## 2023-08-19 - experiment  WORKS
+## video : https://www.youtube.com/watch?v=LkHjJlSgKZY      Elijahmanor
+## nvims :  switch between nvim configs  REF: https://gist.github.com/elijahmanor/b279553c0132bfad7eae23e34ceb593b
+## 
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias nvim-chad="NVIM_APPNAME=NvChad nvim"
@@ -222,7 +224,8 @@ function nvims() {
     echo "Nothing selected"
     return 0
   elif [[ $config == "default" ]]; then
-    config=""
+#   config=""
+    config="kickstart"    # jim's default
   fi
   NVIM_APPNAME=$config nvim $@
 }
