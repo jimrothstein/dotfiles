@@ -5,13 +5,12 @@
 # Updte MAY 8, 2023
 #
 #	TODO:
-#		-	Fri May 20 22:24:14 PDT 2022
-#		-	.Renviron (API keys) - how to save this file, but NOT to github?
-#		-   Add quarto /docs/*html  but not other *html
+#	-	.Renviron (API keys) - how to save this file, but NOT to github?
+#	-   Add quarto /docs/*html  but not other *html
 #
 #
 #
-# IF file has been put into index
+# To remove file has been put into index (and not pushed)
 # =================================
 #   adding it into .gitignore later is NOT enough
 #   must do:
@@ -53,7 +52,9 @@
 # (NOT ignore my_file)
 _*
 
-#   no AppImages
+#---------------
+#   do not include AppImages
+#---------------
 *.AppImage
 
 
@@ -70,15 +71,9 @@ quarto_experiments/docs/
 #
 # ignore these directories
 # ==========================
-r_legal/
-vim-myhelp/
 dev/
-r_try_things_here/
-PPPloans/
-pkg_youtube_api/
 jimTools/
 rtweet/
-PPP/
 make_project/
 AoC/
 out/
@@ -131,3 +126,7 @@ tags
 
 
 /.quarto/
+
+# EXCEPTIONS:
+# DO back up _quarto.yml files
+!_quarto.yml
