@@ -23,7 +23,7 @@ format:
   html:
     css: styles.css
     html-math-method: katex
-    code-fold: true
+    code-fold: false
     toc: true 
     toc_depth: 3
       #    toc-location: body
@@ -31,7 +31,7 @@ format:
     embed-resources:  true
     code-block-bg: true
     code-block-border-left: "#31BAE9"       
-    indent: true
+    indent: false
     number-sections: true
     number-depth: 3
     number-offset: 2
