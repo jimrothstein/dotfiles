@@ -33,8 +33,8 @@ format:
     code-block-border-left: "#31BAE9"       
     indent: false
     number-sections: true
-    number-depth: 3
-    number-offset: 2
+      #number-depth: 5   book feature only?
+      #number-offset: 2
     code-link: true             # hyperlink R functions
   pdf:
     documentclass: report
