@@ -67,7 +67,10 @@ export OUT=~/Downloads/print_and_delete
  #export R_HOME='/usr/lib/R'
 
 #
-
+#	NEOVIM
+# REF: https://nanotipsforvim.prose.sh/list-all-your-installed-plugins
+#
+export location_of_installed_plugins="$HOME/.local/share/nvim/lazy" 
 
 # =====END CUT ===================================================
 
