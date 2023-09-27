@@ -3,6 +3,8 @@
 #
 project:
   #  output-dir: _output
+  title: misc
+  type: default
   output-dir: docs            ## NO indent, also _quarto.yml for entier project
 
 ## global
