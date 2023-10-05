@@ -24,7 +24,9 @@ execute:
 format:
   html:
     #css: styles.css
-    theme: custom.scss
+    theme: 
+      - cosmo
+      - custom.scss
     html-math-method: katex
     code-fold: false
     toc: true 
