@@ -6,7 +6,8 @@
 #   ARTICLE:
 # 		https://thevaluable.dev/zsh-install-configure/
 # 		Config files put in ~/.config/zsh/
-#     **alias:** ~/.config/zsh/aliases.zsh
+#
+#   ~/.config/zsh/aliases.zsh
 # =================================================
 #   NOTES
 #   * use `setopt` , not `set`
