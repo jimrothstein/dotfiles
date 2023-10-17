@@ -1,3 +1,6 @@
+-- TODO:
+--	TMUX vs WEZTERM mux?
+--
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
@@ -19,9 +22,19 @@ print("set cwd")
 config.default_cwd = "/home/jim/code" -- must use absolute path
 config.initial_rows = 100
 
--- Spawn a fish shell in login mode
-config.default_prog = { "stmux_sh" }
+ ----------------------------------------------------------------------------
+-- For TMUX:   CHOOSE A or B (B is default)
+ ----------------------------------------------------------------------------
+-- A
+-- jr: bin/stmux_sh is shell script to start tmux and create several windows
+-- config.default_prog = { "stmux_sh" }
+--
+ ----------------------------------------------------------------------------
+-- B 
+-- manually, after .werzterm.lua finishes, RUN tmux to use tmux.conf
+--
 -- and finally, return the configuration to wezterm
+ ----------------------------------------------------------------------------
 --
 --
 --      EXPERIMENT
