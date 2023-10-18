@@ -100,6 +100,11 @@ autoload -U colors && colors
 
 
 
+# -------------------------------------------------
+#	RPROPMT, on the far RIGHT
+# -------------------------------------------------
+# Works, but can take up too much space
+# RPROMPT='%w::$(date +%b)::%t::$vcs_info_msg_0_'
 
 
 
