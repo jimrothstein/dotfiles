@@ -30,10 +30,6 @@ setopt prompt_subst    # need this
 zstyle ':vcs_info:*' formats ' %s(%F{red}%b%f)' # git(main)
 PS1='%n@%m %F{cyan}%/%f$vcs_info_msg_0_ $ ' # david@macbook /tmp/repo (main) $
 
-
-#	on the far RIGHT
-RPROMPT='%w::$(date +%b)::%t::$vcs_info_msg_0_'
-
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings (prefer) even if our EDITOR is set to vi

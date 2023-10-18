@@ -21,7 +21,8 @@
 ##	sudo chmod a+rx /usr/local/bin/youtube-dl
 #
 #   THEN update
-#   yt-dtl -U
+#   yt-dlp -U
+#
 # -------------------------------------------------------------------------------------------
 #	DOWNLOADS  music in .ogg format
 #	youtube list	must be "public"
@@ -37,11 +38,11 @@
 #	-- audio-format  best (default), aac, vorbis ...
 #	-F  list all formats of requested video
 # ----------------------------------------
-# ----------------------------------------
+#
 list=PLbcglKxZP5PMzNbrnMtdwtoPkkCi64cbw
 
 ## on lenvo  (but the MASTER COPY is on external SATA SSD. 240GB)
- dir=/home/jim/mp3_files/
+ dir=/home/jim/latest_mp3_downloads/
 
 mylist=https://www.youtube.com/playlist?list="${list}"
 
