@@ -8,13 +8,11 @@
 # 		Config files put in ~/.config/zsh/
 #
 #   ~/.config/zsh/aliases.zsh
+#  ~/.zshenv MUST remain in $HOME dir for system to start
 # =================================================
 #   NOTES
 #   * use `setopt` , not `set`
-#  ~/.zshenv MUST remain in $HOME dir for system to start
-# =================================================
-#   CORE CONFIG	
-#			REF: [archwiki]( https://wiki.archlinux.org/index.php/Zsh#Simple_.zshrc )
+# REF: [archwiki]( https://wiki.archlinux.org/index.php/Zsh#Simple_.zshrc )
 # =================================================
 #   TODO
 #       -  04/24/2023  clean up !
