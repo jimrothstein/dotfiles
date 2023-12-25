@@ -3,16 +3,16 @@
 #
 project:
   #  output-dir: _output
+  type: website
   title: misc
-  type: default
   output-dir: docs            ## NO indent, also _quarto.yml for entier project
+  render:
+    - 010*.qmd                ## render ONLY these files
 
 ## global
 author: "jim"  
-date: "5/22/2021"  
-pdf-engine: lualatex  
-number-sections: true
-toc: true
+date: "12/20/2023"
+# pdf-engine: lualatex  
 # bibliography: references.bib  
   
 execute:
@@ -30,16 +30,17 @@ format:
     html-math-method: katex
     code-fold: false
     toc: true 
-    toc_depth: 3
-      #    toc-location: body
-    toc_float: true
+    toc_depth: 5
+    toc-location: body
+    #toc_float: true
+    number-sections: true
+    number-depth: 3   #book feature only?
+      #number-offset: 2
+    toc_location: body
     embed-resources:  true
     code-block-bg: true
     code-block-border-left: "#31BAE9"       
     indent: false
-    number-sections: true
-      #number-depth: 5   book feature only?
-      #number-offset: 2
     code-link: true             # hyperlink R functions
   pdf:
     documentclass: report
