@@ -1,17 +1,16 @@
 ## project level
 #  all *.qmd files inherit
+#  review r4ds Chapter 28, 29  + quarto webpage
 #
 project:
-  #  output-dir: _output
   type: website
   title: misc
   output-dir: docs            ## NO indent, also _quarto.yml for entier project
   render:
     - 010*.qmd                ## render ONLY these files
 
-## global
 author: "jim"  
-date: "12/20/2023"
+date: "12/20/2023"      # date started project
 # pdf-engine: lualatex  
 # bibliography: references.bib  
   
