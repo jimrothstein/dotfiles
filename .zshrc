@@ -100,7 +100,6 @@ source ~/.config/zsh/completion.zsh
 source ~/.config/zsh/functions.zsh
 
 # BINDKEY
-## SEE ALSO file <- 410_bindkey_examples.Rmd
 source ~/.config/zsh/bindkey.zsh
 
 
@@ -211,16 +210,18 @@ alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+alias nvim-play="NVIM_APPNAME=nvim_play nvim"   # quarto-nvim,  ~/.config/nvim_play/
 
 function nvims() {
-  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+  items=("default" "nvim_play" "kickstart" "LazyVim" "NvChad" "AstroNvim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
     return 0
   elif [[ $config == "default" ]]; then
 #   config=""
-    config="kickstart"    # jim's default
+   # config="nvim_play"    # 30/12/2023 Use for quarto-nvim testing 
+    config="kickstart"    # Use for regular work
   fi
   NVIM_APPNAME=$config nvim $@
 }
