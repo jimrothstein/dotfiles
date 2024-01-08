@@ -172,6 +172,7 @@ compinit
 #  named directories,  
 #    if export DIR=~/path/to/dir/
 #    then cd $DIR will display `~DIR` and not actual path
+epi=~/code/epinowcast/
 # ================================
  setopt AUTO_NAME_DIRS
 
