@@ -6,8 +6,8 @@ project:
   type: website
   title: misc
   output-dir: docs            ## NO indent, also _quarto.yml for entier project
-  render:
-    - 010*.qmd                ## render ONLY these files
+    #render:
+    #- 010*.qmd                ## render ONLY these files
 
 author: "jim"  
 date: "12/20/2023"      # date started project
@@ -41,7 +41,7 @@ format:
     code-block-border-left: "#31BAE9"       
     indent: false
     code-link: true             # hyperlink R functions
-  pdf:
-    documentclass: report
-    margin-left: 30mm
-    margin-right: 30mm
+#   pdf:
+#     documentclass: report
+#     margin-left: 30mm
+#     margin-right: 30mm
