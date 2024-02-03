@@ -4,10 +4,10 @@
 #
 # =================================================
 #   ARTICLE:
-# 		https://thevaluable.dev/zsh-install-configure/
-# 		Config files put in ~/.config/zsh/
+#   https://thevaluable.dev/zsh-install-configure/
 #
-#   ~/.config/zsh/aliases.zsh
+#   Config files put in ~/.config/zsh/
+#  ~/.config/zsh/aliases.zsh
 #  ~/.zshenv MUST remain in $HOME dir for system to start
 # =================================================
 #   NOTES
