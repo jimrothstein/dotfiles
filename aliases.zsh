@@ -26,8 +26,6 @@ alias man='run-help'
 
 # alias -g L='| less'	# USE:  ll L <enter>
 #   ZHS , dirstack, dirs cmd
-#   l = full path
-#   p = 1 per line
 #   v = number
 alias dirs='dirs -lpv'
 
@@ -48,7 +46,7 @@ alias goHealth='cd ~/code/health_labs/'
 alias goHTTR2='cd ~/code/httr2_project/'
 alias goJimrothstein='cd ~/code/jimrothstein.github.io'
 alias goJobs='cd ~/code/docs/jobs/'
-alias goJon='cd ~/code/httr2_project/youtubeR_jon/'
+alias goJon='cd ~/code/youtubeR/R/'		# FORK of jon's and kevin's work on youtubeR
 alias goKickstart='cd ~/.config/kickstart/'
 alias goLazy='cd ~/.local/share/nvim'
 alias goLua='cd ~/code/lua_project/'
