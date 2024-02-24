@@ -69,7 +69,6 @@ if (interactive()) {
     suppressMessages(library(kableExtra))
     suppressMessages(library(lookup)) # jim hester, returns source code
 
-
     ##  Fri 27Jan2023 (esp for JSON, unnesting)
     suppressMessages(library(tidyr))
     suppressMessages(library(jsonlite))
