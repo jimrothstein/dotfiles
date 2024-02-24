@@ -38,8 +38,7 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# Open terminal on wk3
-exec --no-startup-id i3-msg 'workspace 3; exec $myTerm; workspace 1'
+#       STARTUP   - SEE after workspaces are named
 
 
 # ---------------
@@ -50,8 +49,6 @@ exec --no-startup-id i3-msg 'workspace 3; exec $myTerm; workspace 1'
 ## for_window [class = "Firefox"] move to workspace $ws2
 ## assign [class="Firefox"] 2
 
-##      ALMOST ... $mod+d wezterm but loads in $ws9 ... BUT then you must manually $mod+9
-## for_window [class="org.wezfurlong.wezterm"] move to workspace $ws9
 
 
 #killers
@@ -83,7 +80,6 @@ floating_modifier $mod
 # -------------------------------------
 
 bindsym $mod+Return exec $myTerm 
-# bindsym $mod+Return exec wezterm
 
 # ----------------------------------
 # kill focused window
@@ -173,8 +169,8 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+set $ws8 "8: Extra Term"
+set $ws9 "9: Extra Term"
 set $ws10 "10"
 
 # ---------------------
@@ -277,9 +273,15 @@ mode "$mode_launcher" {
 # ---------------
 #       STARTUP: firefox on ws2 (may need to reboot after change )
 # ---------------
-exec --no-startup-id i3-msg 'workspace $ws1; exec Xfce4-terminal; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
+#exec --no-startup-id i3-msg 'workspace $ws8; exec Wezterm; workspace $ws1'
+# exec --no-startup-id i3-msg 'workspace $ws9; exec $myTerm'
 
+## works, BUT  adding myTerm ALWAYS adds to 5 ???
+
+#for_window [class="org.wezfurlong.wezterm"] move to workspace $ws5      
+ 
 
 
 # -------------------------------
