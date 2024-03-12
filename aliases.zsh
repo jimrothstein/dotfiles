@@ -37,6 +37,7 @@ alias dirs='dirs -lpv'
 #	coding, 
 alias goADVANCED_R='cd ~/code/try_things_here/ADVANCED_R'
 alias goBASE='cd ~/code/try_things_here/BASE/'
+alias goBee='cd ~/code/beekeeper/'
 alias goBlog='cd ~/code/jimrothstein.github.io/'   # same as goJimrothstein
 alias goBUILD='cd ~/code/QUARTO/BUILD_qmd/'
 alias goCode='cd ~/code/'
@@ -50,16 +51,15 @@ alias goKevin='cd ~/code/youtubeR/R/'		# FORK of jon's and kevin's work on youtu
 alias goKickstart='cd ~/.config/kickstart/'
 alias goLazy='cd ~/.local/share/nvim'
 alias goLua='cd ~/code/lua_project/'
+alias goNectar='cd ~/code/nectar/'
 alias goMp3='cd ~/code/mp3/'
 alias goNSE='cd ~/code/try_things_here/NSE_project/'
 alias goPartD='cd ~/code/SHINY/PART_D'
 alias goPublish='cd ~/code/QUARTO'  
 alias goQuarto='cd ~/code/QUARTO'  
-
 alias goRacket='cd ~/code/racket_project'
 alias goRscripts='cd ~/code/jimTools/Rscripts'
 alias goRRapply='cd ~/code/try_things_here/rrapply'
-
 alias goRHome='cd /usr/share/R/'              # R_HOME
 alias goShaina='cd ~/code/stats_project/shaina/' 
 alias goStats='cd ~/code/stats_project/'
@@ -70,6 +70,7 @@ alias goTech='cd ~/code/docs/tech_notes'
 alias goTT='cd ~/code/TIDY_TUESDAY/'
 alias goVECTOR='cd ~/code/try_things_here/VECTORS_LISTS/'
 alias goYoutube='cd ~/code/youtube_api/'
+alias goWapir='cd ~/code/httr2_project/WAPIR/'
 alias goZsh='cd ~/code/zsh_project/'
 alias goZC='cd ~/.config/zsh'               # go Zsh Config
 
@@ -78,10 +79,8 @@ alias goDot='cd ~/dotfiles'
 alias goVim='cd ~/.config/nvim/'
 #
 alias goBin='cd ~/bin/'
-alias go.local.bin='cd ~/.local/bin/'
 alias goConfig='cd ~/.config/'
 alias goBackup='cd ~/.config/nvim/backup/'
-alias goMyFiles='cd ~/MyFiles/'      # soft link to Linux files 
 alias goDownloads='cd ~/Downloads/'
 alias cx='chmod +x'				# USE:    cx  new_script.sh
 
