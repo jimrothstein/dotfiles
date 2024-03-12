@@ -56,6 +56,7 @@ _*
 #   do not include AppImages
 #---------------
 *.AppImage
+*.appimage
 
 
 # directories inside R projects
