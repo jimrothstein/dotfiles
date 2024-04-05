@@ -13,15 +13,11 @@
 #   - download using this script.
 #   - move all videos to `all music`
 #   - then empty `dl`, but do not delete it
-#   - ACER CHROMEBOOK:  do not use (issues with directories)
 #   - MASTER COPY:  external BX500 SSD, 240GB
 # -------------------------------------------------------------------------------------------
-#   DO FIRST ! (download)
-##  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-##	sudo chmod a+rx /usr/local/bin/youtube-dl
 #
-#   THEN update
-#   yt-dlp -U
+#   MUST update
+#   sudo yt-dlp -U
 #
 # -------------------------------------------------------------------------------------------
 #	DOWNLOADS  music in .ogg format
@@ -38,6 +34,7 @@
 #	-- audio-format  best (default), aac, vorbis ...
 #	-F  list all formats of requested video
 # ----------------------------------------
+#
 #
 list=PLbcglKxZP5PMzNbrnMtdwtoPkkCi64cbw
 
