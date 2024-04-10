@@ -6,7 +6,7 @@
 #
 # NOTES:
 #       REF: https://i3wm.org/docs/userguide.html for a complete reference!
-#       NOTE:   Do NOT put comments (#) on same line as a command !!!
+#       ** NOTE:   Do NOT put comments (#) on same line as a command **
 #       Mod4 is 'windows' key on Lenovo
 #       -       exec  runs 1st load only
 #       -       exec_always  runs on reload as well.
