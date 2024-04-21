@@ -47,7 +47,6 @@ alias goHealth='cd ~/code/health_labs/'
 alias goHTTR2='cd ~/code/httr2_project/'
 alias goJimrothstein='cd ~/code/jimrothstein.github.io'
 alias goJobs='cd ~/code/docs/jobs/'
-alias goKevin='cd ~/code/youtubeR/R/'		# FORK of jon's and kevin's work on youtubeR
 alias goKickstart='cd ~/.config/kickstart/'
 alias goLazy='cd ~/.local/share/nvim'
 alias goLua='cd ~/code/lua_project/'
@@ -59,7 +58,7 @@ alias goPublish='cd ~/code/QUARTO'
 alias goQuarto='cd ~/code/QUARTO'  
 alias goRacket='cd ~/code/racket_project'
 alias goRscripts='cd ~/code/jimTools/Rscripts'
-alias goRRapply='cd ~/code/try_things_here/rrapply'
+alias goRapid='cd ~/code/rapid/'
 alias goRHome='cd /usr/share/R/'              # R_HOME
 alias goShaina='cd ~/code/stats_project/shaina/' 
 alias goStats='cd ~/code/stats_project/'
@@ -69,7 +68,7 @@ alias goShiny='cd ~/code/SHINY'
 alias goTech='cd ~/code/docs/tech_notes'
 alias goTT='cd ~/code/TIDY_TUESDAY/'
 alias goVECTOR='cd ~/code/try_things_here/VECTORS_LISTS/'
-alias goYoutube='cd ~/code/youtube_api/'
+alias goYoutubeR='cd ~/code/youtubeR/R/'
 alias goWapir='cd ~/code/httr2_project/WAPIR/'
 alias goZsh='cd ~/code/zsh_project/'
 alias goZC='cd ~/.config/zsh'               # go Zsh Config
@@ -88,7 +87,7 @@ alias cx='chmod +x'				# USE:    cx  new_script.sh
 
 # export (so go<TAB> works)
 export goCode goDot goVim goBin 
-export goYoutube goTry
+export goYoutubeR goTry
 export goRRapply  
 
 ##
