@@ -64,7 +64,8 @@ _*
 man/*
 pdf/
 data/*
-inst/
+# 2024-04-21  as I understand, some files which do not belong elsewhere are to put here (inst/).  (example:  a mermaid diagram for beekeeper ecosystem)
+#inst/
 .quarto/
 .Rprog.user/*
 quarto_experiments/docs/
