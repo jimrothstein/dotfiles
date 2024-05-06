@@ -1,14 +1,7 @@
 # ---------------------
 #       i3 config file (v4)
 # ---------------------
-# 6MAY 2024
-# installing emacs;   remove i3?
-# i3 starts automatically
-# - remove i3 completely
-# - exit i3 immediately
-# - delete file config - NO i3wm will generate a default config file
-#
-#       TODO
+#       TODO 
 #       i3bar vs polybar (better control?) 
 #
 # NOTES:
