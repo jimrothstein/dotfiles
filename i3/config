@@ -1,9 +1,13 @@
 # ---------------------
 #       i3 config file (v4)
 # ---------------------
+
 # 6MAY 2024
-# installing emacs;   remove i3?
-# i3 starts automatically
+
+
+
+
+# i3 starts automatically; if in xfce4 logout; at login screen;  be sure to choose  i3 AND not XFCE4
 # - remove i3 completely
 # - exit i3 immediately
 # - delete file config - NO i3wm will generate a default config file
