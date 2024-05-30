@@ -38,6 +38,8 @@
       company-tooltip-limit 10)
 
 
+;;  always follow symlinks to actual file (and don't ask)
+(setq vc-follow-symlinks t)
 
 ;;  line numbers
 (global-display-line-numbers-mode 1)
