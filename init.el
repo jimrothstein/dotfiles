@@ -1,6 +1,25 @@
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
+(require 'package)
+(require 'use-package)
+
+
+(package-initialize)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://stable.melpa.org/packages/"))
+
+(use-package org
+  :ensure t)
+
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
+
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
+
+
+                         
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -18,11 +37,10 @@
       company-minimum-prefix-length 3
       company-tooltip-limit 10)
 
-;; Download Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
+
+;;  line numbers
+(global-display-line-numbers-mode 1)
+;; now relative
+(setq display-line-numbers-type 'relative)
 
