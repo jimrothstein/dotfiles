@@ -1,6 +1,9 @@
 
-(require 'package)
+;; a macro  aids config of packages.
+;; thereafter use-package loads packages
 (require 'use-package)
+
+(require 'package)
 
 
 (package-initialize)
@@ -46,3 +49,10 @@
 ;; now relative
 (setq display-line-numbers-type 'relative)
 
+
+;; org mode
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+ 

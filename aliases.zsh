@@ -42,6 +42,7 @@ alias goBlog='cd ~/code/jimrothstein.github.io/'   # same as goJimrothstein
 alias goBUILD='cd ~/code/QUARTO/BUILD_qmd/'
 alias goCode='cd ~/code/'
 alias goDocs='cd ~/code/docs'
+alias goEmacs='cd ~/.config/emacs'
 alias goDT='cd ~/code/try_things_here/DT/'
 alias goHealth='cd ~/code/health_labs/'
 alias goHTTR2='cd ~/code/httr2_project/'
