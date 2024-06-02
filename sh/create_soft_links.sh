@@ -43,6 +43,7 @@ ln -sf ~/dotfiles/prompt.zsh 		~/.config/zsh/prompt.zsh
 ln -sf ~/dotfiles/aliases.zsh 		~/.config/zsh/aliases.zsh
 ln -sf ~/dotfiles/bindkey.zsh		~/.config/zsh/bindkey.zsh
 ln -sf ~/dotfiles/functions.zsh		~/.config/zsh/functions.zsh
+ln -sf ~/dotfiles/initialize.zsh	~/.config/zsh/initialize.zsh 
 
 
 
@@ -83,4 +84,12 @@ ln -sf ~/dotfiles/skeleton.Rmd ~/.config/nvim/templates/skeleton.Rmd
 #  directories
 
 
+#  quarto
+ln -sf ~/dotfiles/_quarto.yml ???
+ln -sf ~/dotfiles/styles.css
+
+
+
+#  swaps CAPLOCKS into   ESC
+ln -sf ~/dotfiles/swap_2_escape.conf  /etc/X11/xorg.conf.d/
 

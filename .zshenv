@@ -50,18 +50,21 @@ export INC_IGNORE_DUPS="true"		# if adjacent
 export INC_APPEND_HISTORY="true"	# all zsh shells show same hist
 
 #	env var
+export A=~/dotfiles/aliases.zsh
+export G=~/dotfiles/.gitignore
 export V=~/.config/nvim/init.lua
 export Z=$ZDOTDIR/.zshrc
-export G=~/code/.gitignore
 export TEMPLATES=~/.config/nvim/templates/
+
+#       code files
+
 # for printing
-export OUT=~/Downloads/print_and_delete
 
 # dotfiles=~/dotfiles
 
 # 22JUNE 2023 (R 4.3.1 from source)
- export R_HOME='/opt/R/4.3.1'
- export R_VERSION='4.3.1'
+# export R_HOME='/opt/R/4.3.1'
+# export R_VERSION='4.3.1'
 
 ## env var for R (August 2021)
  #export R_HOME='/usr/lib/R'
