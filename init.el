@@ -43,12 +43,20 @@
 
 ;;  always follow symlinks to actual file (and don't ask)
 (setq vc-follow-symlinks t)
+;; no backup files
+(setq make-backup-files nil)
 
 ;;  line numbers
 (global-display-line-numbers-mode 1)
 ;; now relative
 (setq display-line-numbers-type 'relative)
 
+;; global parathesis matching
+(show-paren-mode)
+
+;; font-lock highlight
+(setq ess-R-font-lock-keywords
+      '((ess-fl-keyword:fun-calls . t)))
 
 ;; org mode
 (require 'org)
