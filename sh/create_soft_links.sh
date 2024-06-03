@@ -3,23 +3,29 @@
 # USAGE:   ./create_soft_links.sh
 # PURPOSE:   This script creates soft links that point to ~/dotilfes.
 
+
 # -f forces, in event a link aleady exists.  This will overwrite.
+
 #
 #
 # 	TODO:
+# 3 JULY 2024
+# - replace .Renviron  with keyring
 # 	~/.ssh 
 # 	any cron jobs
 # 	-	~/.Renviron - what to do?
 # 	include SPELL  (en.utf-8.add, medical.utf-8.add)
 #
 
-lazy=1      # use lazyvim
 # in  ~/    $HOME
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore ~/.gitignore
 ln -sf ~/dotfiles/.Rprofile ~/.Rprofile
 ln -sf ~/dotfiles/.Renviron  ~/.Renviron
 ln -sf ~/dotfiles/.zshenv  ~/.zshenv
+
+#  emacs
+ln -sf ~/dotfiles/init.el ~/.emacs.d/init.el
 
 #	Lenovo T480  NEED
 ln -sf ~/dotfiles/.xinitrc  ~/.xinitrc
@@ -30,8 +36,14 @@ ln -sf ~/dotfiles/.Renviron  ~/.Renviron
 # in ~/dotfiles			 (backup with git)
 # in ~/.local/bin    (backup with git)
 
+#i3
+ln -sf ~/dotfiles/i3/i3status.conf ~/.config/i3/i3status.conf
+ln -sf ~/dotfiles/i3/config ~/.config/i3/config
 
-# from ~/.config  
+
+#  gh  (gihub cli)
+ln -sf ~/dotfiles/gh/hosts.yml  ~/.config/gh/hosts.yml
+ln -sf ~/dotfiles/gh/config.yml ~/.config/gh/config.yml
 
 # ~/.config/tmux/
 ln -sf ~/dotfiles/.tmux.conf 		~/.tmux.conf
@@ -80,12 +92,15 @@ ln -sf ~/dotfiles/skeleton.qmd ~/.config/nvim/templates/skeleton.qmd
 ln -sf ~/dotfiles/skeleton.md ~/.config/nvim/templates/skeleton.md
 ln -sf ~/dotfiles/skeleton.Rmd ~/.config/nvim/templates/skeleton.Rmd
 
+# wezterm
+ln -sf ~/dotfiles/.wezterm.lua ~/.config/wezterm/.wezterm.lua
 #
 #  directories
 
 
-#  quarto
-ln -sf ~/dotfiles/_quarto.yml ???
+#  quarto (probably need to  do manually)
+ln -sf ~/dotfiles/_quarto.yml ~/code/docs/health_notes/_quarto.yml
+ln -sf ~/dotfiles/_quarto.yml ~/code/docs/jobs/_quarto.yml
 ln -sf ~/dotfiles/styles.css
 
 
