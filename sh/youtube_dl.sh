@@ -3,6 +3,9 @@
 #	file <- "/home/jim/dotfiles/sh/youtube_dl.sh#"
 #
 # ---------------------------------------------------------------------------------------------
+#       03 JUNE 2024
+#   -   needed to download AGAIiN, use   apt did not work, nor  yt-dlp -U
+#
 #       20 JUNE 2023 
 #   -   now using yt-dtl       BE SURE to use ~/dotfiles version!
 #   -   *youtube-dl*  do NOT USE.
@@ -16,8 +19,8 @@
 #   - MASTER COPY:  external BX500 SSD, 240GB
 # -------------------------------------------------------------------------------------------
 #
-#   MUST update
-#   sudo yt-dlp -U
+#   MUST update /  get latest
+#   sudo yt-dlp -U  NO,   see NOTE above.
 #
 # -------------------------------------------------------------------------------------------
 #	DOWNLOADS  music in .ogg format

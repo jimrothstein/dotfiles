@@ -42,7 +42,7 @@ ln -sf ~/dotfiles/i3/config ~/.config/i3/config
 
 
 #  gh  (gihub cli)
-ln -sf ~/dotfiles/gh/hosts.yml  ~/.config/gh/hosts.yml
+# ln -sf ~/dotfiles/gh/hosts.yml  ~/.config/gh/hosts.yml   NO - holds key and  can  not  git push
 ln -sf ~/dotfiles/gh/config.yml ~/.config/gh/config.yml
 
 # ~/.config/tmux/
