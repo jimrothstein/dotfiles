@@ -64,3 +64,7 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
  
+;; kbd macro make_section (separate with -----)
+;; M-x make_section  (to run)
+(fset 'make_section
+   (kmacro-lambda-form [?k ?i ?# ?  ?- ?- ?- ?- ?- ?- ?- escape ?y ?y ?j ?j ?k ?p ?o escape] 0 "%d"))
