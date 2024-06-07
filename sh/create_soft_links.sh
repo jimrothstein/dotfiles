@@ -28,15 +28,19 @@ ln -sf ~/dotfiles/.zshenv  ~/.zshenv
 ln -sf ~/dotfiles/init.el ~/.emacs.d/init.el
 
 #	Lenovo T480  NEED
-ln -sf ~/dotfiles/.xinitrc  ~/.xinitrc
+# ln -sf ~/dotfiles/.xinitrc  ~/.xinitrc
 
+# -------
 # .gitignore should block 
+# -------
 ln -sf ~/dotfiles/.Renviron  ~/.Renviron
 
 # in ~/dotfiles			 (backup with git)
 # in ~/.local/bin    (backup with git)
 
+# -------
 #i3
+# -------
 ln -sf ~/dotfiles/i3/i3status.conf ~/.config/i3/i3status.conf
 ln -sf ~/dotfiles/i3/config ~/.config/i3/config
 
@@ -45,7 +49,10 @@ ln -sf ~/dotfiles/i3/config ~/.config/i3/config
 # ln -sf ~/dotfiles/gh/hosts.yml  ~/.config/gh/hosts.yml   NO - holds key and  can  not  git push
 ln -sf ~/dotfiles/gh/config.yml ~/.config/gh/config.yml
 
+# ----------
 # ~/.config/tmux/
+# ----------
+
 ln -sf ~/dotfiles/.tmux.conf 		~/.tmux.conf
 
 # ~/.config/zsh

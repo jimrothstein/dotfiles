@@ -1,6 +1,9 @@
 echo "this is initialize.zsh"
-xmodmap ~/.xmodmap
 
+# xmodmap is ancient
+# xmodmap ~/.xmodmap
+
+# On HP,  see X11  config
 
 ## print OS
 echo $OSTYPE
@@ -18,5 +21,5 @@ if [[ $(hostname) == "jim-ThinkPad-T480" ]]
 	then
 		echo "You are working on lenovo"
 	else
-		echo "You are working on acer desktop"
+		echo "Are you working on HP laptop?"
 	fi
