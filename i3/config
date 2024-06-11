@@ -1,3 +1,5 @@
+
+
 # ---------------------
 #       i3 config file (v4)
 # ---------------------
@@ -178,11 +180,11 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Terminal"
 set $ws2 "2: Firefox"
-set $ws3 "3: wezterm"
+set $ws3 "3: emacs"
 set $ws4 "4: Thunar"
 set $ws5 "5: rstudio"
 set $ws6 "6: R (cli)"
-set $ws7 "7"
+set $ws7 "7  Extra Term 7"
 set $ws8 "8"
 set $ws9 "9: Extra Term"
 set $ws10 "10"
@@ -279,6 +281,7 @@ mode "$mode_launcher" {
 # ---------------
 exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws4; exec thunar; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
 
