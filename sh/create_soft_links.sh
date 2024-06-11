@@ -6,14 +6,11 @@
 
 # -f forces, in event a link aleady exists.  This will overwrite.
 
-#
-#
 # 	TODO:
 # 3 JULY 2024
 # - replace .Renviron  with keyring
 # 	~/.ssh 
 # 	any cron jobs
-# 	-	~/.Renviron - what to do?
 # 	include SPELL  (en.utf-8.add, medical.utf-8.add)
 #
 
@@ -113,5 +110,10 @@ ln -sf ~/dotfiles/styles.css
 
 
 #  swaps CAPLOCKS into   ESC
-ln -sf ~/dotfiles/swap_2_escape.conf  /etc/X11/xorg.conf.d/
+# June 9, 2024 - fails 
+#ln -sf ~/dotfiles/swap_1_escape.conf  /etc/X11/xorg.conf.d/
+
+
+# as root,  June 9, 2024 - works
+ln -sf ~/dotfiles/keyboard /etc/default/keyboard
 
