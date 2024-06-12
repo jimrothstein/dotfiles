@@ -35,8 +35,11 @@
   :ensure t
   :config
   (evil-mode 1))
+;; jj is esc, return to normal mode
+  (define-key evil-insert-state-map "jj" 'evil-normal-state)
+  (define-key evil-normal-state-map ",w" 'save-buffer)
 
-
+;;
                          
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -99,3 +102,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; CLAIM:  in R,  finds the repl buffer, empties it
+(defun my-r-clear-buffer ()
+  (interactive)
+  (let ((r-repl-buffer (seq-find (lambda (buf)
+                                   (string-prefix-p "*R" (buffer-name buf)))
+                                 (buffer-list))))
+    (if r-repl-buffer
+        (with-current-buffer r-repl-buffer
+          (comint-clear-buffer))
+      (user-error "No R REPL buffers found"))))
+
+(global-set-key (kbd "C-c l") #'my-r-clear-buffer)
