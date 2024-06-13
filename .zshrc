@@ -199,7 +199,7 @@ set NO_BEEP
 #  ~/.xinitrc contains xmodmap statment to make CAPS LOCK behave like ESC
 #  (many other ways to do this)
 #  SEE  https://wiki.archlinux.org/title/Xmodmap
-source ~/.xinitrc
+# source ~/.xinitrc
 #
 ##  open terminal - infinite LOOP   do not do this !!!
 
