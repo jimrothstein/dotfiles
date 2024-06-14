@@ -179,8 +179,8 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Terminal"
-set $ws2 "2: Firefox"
-set $ws3 "3: emacs"
+set $ws2 "2: emacs"
+set $ws3 "3: Firefox"
 set $ws4 "4: Thunar"
 set $ws5 "5: rstudio"
 set $ws6 "6: R (cli)"
@@ -280,8 +280,8 @@ mode "$mode_launcher" {
 #       STARTUP: firefox on ws2 (may need to reboot after change )
 # ---------------
 exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws2; exec emacs; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws3; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws4; exec thunar; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
 
