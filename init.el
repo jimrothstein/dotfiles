@@ -17,8 +17,12 @@
   (setq use-package-always-ensure t
         use-package-expand-minimally t))
 
+;; FUTURE
+;(org-babel-load-file "path/to/this/file.org")
 
-
+; switches:
+;(global-visual-line-mode +1)    turn on
+; (tool-bar-mode -1)   ;; toggle on/off
 
 
 ;;(add-to-list 'package-archives '("melpa" . "http://stable.melpa.org/packages/"))
@@ -36,7 +40,8 @@
   :config
   (evil-mode 1))
 ;; jj is esc, return to normal mode
-  (define-key evil-insert-state-map "jj" 'evil-normal-state)
+;;
+;;  (define-key evil-insert-state-map "jj" 'evil-normal-state)
   (define-key evil-normal-state-map ",w" 'save-buffer)
 
 ;;
@@ -80,11 +85,16 @@
       '((ess-fl-keyword:fun-calls . t)))
 
 ;; org mode
+
+
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
  
+;(org-babel-load-file "path/to/this/file.org")
+
+
 ;; kbd macro make_section (separate with -----)
 ;; M-x make_section  (to run)
 (fset 'make_section
