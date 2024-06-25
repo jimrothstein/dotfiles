@@ -27,7 +27,8 @@
 
 ;;(add-to-list 'package-archives '("melpa" . "http://stable.melpa.org/packages/"))
 
-
+(use-package yasnippet
+  :ensure t)
 
 (use-package org
   :ensure t)
@@ -105,7 +106,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ess-smart-underscore use-package-ensure-system-package evil ess company)))
+   '(yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -124,4 +125,14 @@
           (comint-clear-buffer))
       (user-error "No R REPL buffers found"))))
 
+; To Use (in R)
 (global-set-key (kbd "C-c l") #'my-r-clear-buffer)
+
+;; ^C. = go other window;   ^C, = return  [Hold ctrl key, press ,]
+
+(global-set-key (kbd "C-.") #'other-window)
+(global-set-key (kbd "C-,") #'prev-window)
+
+(defun prev-window ()
+  (interactive)
+  (other-window -1))
