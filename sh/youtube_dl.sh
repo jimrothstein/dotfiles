@@ -3,11 +3,12 @@
 #	file <- "/home/jim/dotfiles/sh/youtube_dl.sh#"
 #
 # ---------------------------------------------------------------------------------------------
-#       03 JUNE 2024
-#   -   needed to download AGAIiN, use   apt did not work, nor  yt-dlp -U
-#
+#       24 JUNE 2024
+#       to upgrade:  use detailed instructions:   https://github.com/yt-dlp/yt-dlp/wiki/Installation
+#       NO-Upgrade?   run sudo apt install yt-dlp
+
 #       20 JUNE 2023 
-#   -   now using yt-dtl       BE SURE to use ~/dotfiles version!
+#   -   now using yt-dtl       BE SURE to use ~/sh/dotfiles version!
 #   -   *youtube-dl*  do NOT USE.
 #   -   REF:    https://github.com/yt-dlp/yt-dlp/wiki/Installation
 # -------------------------------------------------------------------------------

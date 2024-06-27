@@ -61,6 +61,15 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
+
+;; which-key [ can not find in melpa]
+
+
+;;(use-package which-key
+;;:ensure t
+;;:config 
+;;(which-key-mode))
+
 (setq company-selection-wrap-around t
       company-tooltip-align-annotations t
       company-idle-delay 0.45
@@ -106,7 +115,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company)))
+   '(which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
