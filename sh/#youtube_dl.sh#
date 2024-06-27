@@ -5,7 +5,7 @@
 # ---------------------------------------------------------------------------------------------
 #       24 JUNE 2024
 #       to upgrade:  use detailed instructions:   https://github.com/yt-dlp/yt-dlp/wiki/Installation
-#       NO-Upgrade?   run sudo apt install yt-dlp
+#       NO-Upgrade?   run sudo apt install yt-dlp (no!)
 
 #       20 JUNE 2023 
 #   -   now using yt-dtl       BE SURE to use ~/sh/dotfiles version!
