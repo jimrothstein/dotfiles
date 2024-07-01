@@ -6,6 +6,7 @@
 ;; This is only needed once, near the top of the file
 
 (require 'package)
+;;; Code:
 (add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
@@ -16,16 +17,6 @@
 (eval-and-compile
   (setq use-package-always-ensure t
         use-package-expand-minimally t))
-
-;; FUTURE
-;(org-babel-load-file "path/to/this/file.org")
-
-; switches:
-;(global-visual-line-mode +1)    turn on
-; (tool-bar-mode -1)   ;; toggle on/off
-
-
-;;(add-to-list 'package-archives '("melpa" . "http://stable.melpa.org/packages/"))
 
 (use-package yasnippet
   :ensure t)
@@ -40,35 +31,40 @@
   :ensure t
   :config
   (evil-mode 1))
-;; jj is esc, return to normal mode
-;;
+
+;; TODO: jj is esc, return to normal mode
 ;;  (define-key evil-insert-state-map "jj" 'evil-normal-state)
   (define-key evil-normal-state-map ",w" 'save-buffer)
 
-;;
-                         
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(setq use-package-always-ensure t)
 
 (use-package ess)
 
-;; single underscore becomes <- (I want to change to double underscore)
-;; (use-package ess-smart-underscore)
+;; replace flymake with flycheck
+(setq ess-use-flymake nil)
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode t))
+  
+(setq ess-style 'RStudio)
 
+;; y/n   (not yes/no)
+(setq use-short-answers t)
+
+;; leaving?   don't ask to kill, just do it.
+(setq confirm-kill-processes nil)
+
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+
+;; completion
 (use-package company
   :config
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 2)
   (add-hook 'after-init-hook 'global-company-mode))
-
-
-;; which-key [ can not find in melpa]
-
-
-;;(use-package which-key
-;;:ensure t
-;;:config 
-;;(which-key-mode))
 
 (setq company-selection-wrap-around t
       company-tooltip-align-annotations t
@@ -79,11 +75,13 @@
 
 ;;  always follow symlinks to actual file (and don't ask)
 (setq vc-follow-symlinks t)
+
 ;; no backup files
 (setq make-backup-files nil)
 
 ;;  line numbers
 (global-display-line-numbers-mode 1)
+
 ;; now relative
 (setq display-line-numbers-type 'relative)
 
@@ -95,7 +93,6 @@
       '((ess-fl-keyword:fun-calls . t)))
 
 ;; org mode
-
 
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
@@ -115,7 +112,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company)))
+   '(flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -123,7 +120,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; CLAIM:  in R,  finds the repl buffer, empties it
+;; CLAIM:  in R,  finds the repl (minor mode) buffer, empties it
 (defun my-r-clear-buffer ()
   (interactive)
   (let ((r-repl-buffer (seq-find (lambda (buf)
@@ -145,3 +142,13 @@
 (defun prev-window ()
   (interactive)
   (other-window -1))
+
+
+;;(use-package ess-smart-underscore
+;;  :ensure t
+;; )
+
+;; (define-key ess-r-mode-hook "_" #'ess-insert-assign)
+;; (define-key inferior-ess-r-mode-hook "_" #'ess-insert-assign)
+
+;; FUTURE

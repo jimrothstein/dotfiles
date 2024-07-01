@@ -5,6 +5,7 @@
 # =================================================
 #   ARTICLE:
 #   https://thevaluable.dev/zsh-install-configure/
+#   (not zsh specific, but great ClI) https://jeroenjanssens.com/dsatcl/foreword
 #
 #   Config files put in ~/.config/zsh/
 #  ~/.config/zsh/aliases.zsh
@@ -14,10 +15,12 @@
 #   * use `setopt` , not `set`
 # REF: [archwiki]( https://wiki.archlinux.org/index.php/Zsh#Simple_.zshrc )
 # =================================================
-#   TODO
-#       -  04/24/2023  clean up !
+# News
+# 6/30/2024
+# -  .zshrc is working, but badly need tune-up;
+# -  using emacs, NOT vim or neovim
 # =================================================
-#		no need for promptinit
+# no need for promptinit
 autoload -Uz vcs_info # enable vcs_info
 precmd () { vcs_info } # always load before displaying the prompt
 setopt prompt_subst    # need this
@@ -174,6 +177,7 @@ compinit
 #    then cd $DIR will display `~DIR` and not actual path
 epi=~/code/epinowcast/
 # ================================
+# TODO:  re-read
  setopt AUTO_NAME_DIRS
 
 # ================================
@@ -203,6 +207,7 @@ set NO_BEEP
 #
 ##  open terminal - infinite LOOP   do not do this !!!
 
+# 6/30/2024 - using emacs;  no longer use vim, neovim
 ## 2023-08-19 - experiment  WORKS
 ## video : https://www.youtube.com/watch?v=LkHjJlSgKZY      Elijahmanor
 ## nvims :  switch between nvim configs  REF: https://gist.github.com/elijahmanor/b279553c0132bfad7eae23e34ceb593b

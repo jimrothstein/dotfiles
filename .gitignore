@@ -2,6 +2,8 @@
 # ~/dotfiles/.gitignore   ($G)
 #
 
+# JUNE 28, 2024
+# update man and .rd files (past were ignored;  now included)
 # Updte MAY 8, 2023
 #
 #	TODO:
@@ -40,7 +42,7 @@
 
 # files ending in .RDS or .Rd (anywhere)
 *.RDS
-*.Rd
+# *.Rd   (admiral project requires)
 *.rds
 *.csv
 *.pdf
@@ -61,7 +63,8 @@ _*
 
 # directories inside R projects
 # =============
-man/*
+# man/*  (admiral project requires)
+!admiral/man/
 pdf/
 data/*
 # 2024-04-21  as I understand, some files which do not belong elsewhere are to put here (inst/).  (example:  a mermaid diagram for beekeeper ecosystem)
