@@ -92,6 +92,9 @@
 (setq ess-R-font-lock-keywords
       '((ess-fl-keyword:fun-calls . t)))
 
+;; log my commands = ERRPRS
+(use-package command-log-mode)
+
 ;; org mode
 
 (require 'org)
