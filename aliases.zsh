@@ -34,7 +34,10 @@ alias dirs='dirs -lpv'
 # --------------------------------------------------------------------------------
 
 
+#  Using ex as editor
+
 #	coding, 
+alias goADMIRAL='cd ~/code/admiral/R'
 alias goADMIRAL_adam='cd ~/code/pharmaverseadam/R'
 alias goADVANCED_R='cd ~/code/try_things_here/ADVANCED_R'
 alias goBASE='cd ~/code/try_things_here/BASE/'
