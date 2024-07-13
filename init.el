@@ -20,9 +20,11 @@
 
 (use-package yasnippet
   :ensure t)
+(yas-global-mode 1)
 
 (use-package org
   :ensure t)
+
 
 (unless (package-installed-p 'evil)
   (package-install 'evil))
@@ -72,6 +74,12 @@
       company-minimum-prefix-length 3
       company-tooltip-limit 10)
 
+;; should associate .qmd files with quarto-mode
+;; AND  files such as .Rmd
+(use-package quarto-mode
+  :mode (("\\.Rmd" . poly-quarto-mode))
+  )
+
 
 ;;  always follow symlinks to actual file (and don't ask)
 (setq vc-follow-symlinks t)
@@ -115,7 +123,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company)))
+   '(ess-r-insert-obj yaml-mode org-modern markdown-preview-mode yasnippet-snippets quarto-mode flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
