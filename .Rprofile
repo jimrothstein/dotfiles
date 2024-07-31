@@ -19,7 +19,9 @@
 # 	----------------------------------------------------------------------
 #  options()                        # list currently set
 #  options(x = "value")             #   set option x
-# options(help_type="text")           #  EMACS - sends help to emacs, not browser?
+
+# EMACS
+options(help_type="text")           #  EMACS - sends help to emacs, not browser?
 
 # .Options, names(.Options)  # same, as pairlist | 2nd is character vector
 #
