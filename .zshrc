@@ -106,6 +106,8 @@ source ~/.config/zsh/functions.zsh
 source ~/.config/zsh/bindkey.zsh
 
 
+
+
 # =========================================================
 ##   PATH and path
 # =========================================================
@@ -235,3 +237,4 @@ function nvims() {
 bindkey -s ^a "nvims\n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
