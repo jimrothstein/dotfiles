@@ -1,0 +1,50 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("admiral"
+ (filename . "~/code/admiral/")
+ (front-context-string . "data\n  drwxr-xr-")
+ (rear-context-string . "96 Aug  5 17:07 ")
+ (position . 267))
+("dotfiles"
+ (filename . "~/dotfiles/")
+ (front-context-string . "adb_push_mp3_dev")
+ (rear-context-string . "64 Jul 22 14:01 ")
+ (position . 209))
+("medical_notes.org"
+ (filename . "~/code/docs/health_notes/medical_notes.org")
+ (front-context-string . "---\ntitle: \"medi")
+ (rear-context-string)
+ (position . 1))
+("all_repos.R"
+ (filename . "~/code/jimTools/Rscripts/all_repos.R")
+ (front-context-string . "s_project\",\n  \"/")
+ (rear-context-string . "me/jim/code/stat")
+ (position . 584))
+("2024_07_26_Kiaser.org"
+ (filename . "~/code/docs/health_notes/2024_07_26_Kiaser.org")
+ (front-context-string . "** Purpose\n1. To")
+ (rear-context-string)
+ (position . 1))
+("810_pharmaverse_NOTES.org"
+ (filename . "~/code/docs/tech_notes/810_pharmaverse_NOTES.org")
+ (front-context-string . "[[*PHARMAVERSE*]")
+ (rear-context-string)
+ (position . 1))
+("300_tech_notes.org"
+ (filename . "~/code/docs/tech_notes/300_tech_notes.org")
+ (front-context-string . "**  TODO\n- Note ")
+ (rear-context-string)
+ (position . 1))
+("try_things_here"
+ (filename . "~/code/try_things_here/")
+ (front-context-string . "admiral_PLAY\n  d")
+ (rear-context-string . "96 Jul 23 16:27 ")
+ (position . 213))
+("derive_locf_records.R"
+ (filename . "~/code/admiral/R/derive_locf_records.R")
+ (front-context-string . "#' Derive LOCF (")
+ (rear-context-string)
+ (position . 1))
+)
