@@ -22,11 +22,6 @@
  (front-context-string . "s_project\",\n  \"/")
  (rear-context-string . "me/jim/code/stat")
  (position . 584))
-("2024_07_26_Kiaser.org"
- (filename . "~/code/docs/health_notes/2024_07_26_Kiaser.org")
- (front-context-string . "** Purpose\n1. To")
- (rear-context-string)
- (position . 1))
 ("810_pharmaverse_NOTES.org"
  (filename . "~/code/docs/tech_notes/810_pharmaverse_NOTES.org")
  (front-context-string . "[[*PHARMAVERSE*]")
@@ -42,9 +37,4 @@
  (front-context-string . "admiral_PLAY\n  d")
  (rear-context-string . "96 Jul 23 16:27 ")
  (position . 213))
-("derive_locf_records.R"
- (filename . "~/code/admiral/R/derive_locf_records.R")
- (front-context-string . "#' Derive LOCF (")
- (rear-context-string)
- (position . 1))
 )

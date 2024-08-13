@@ -3,10 +3,13 @@
 #	file <- "/home/jim/dotfiles/sh/youtube_dl.sh#"
 #
 # ---------------------------------------------------------------------------------------------
+#       10 AUG 2024
+#         ffmpeg, install via apt
+# ---------------------------------------------------------------------------------------------
 #       24 JUNE 2024
-#       to upgrade:  use detailed instructions:   https://github.com/yt-dlp/yt-dlp/wiki/Installation
-#       NO-Upgrade?   run sudo apt install yt-dlp
-
+#         to upgrade:  use detailed instructions:   https://github.com/yt-dlp/yt-dlp/wiki/Installation
+#         NO-Upgrade?   run sudo apt install yt-dlp
+# ---------------------------------------------------------------------------------------------
 #       20 JUNE 2023 
 #   -   now using yt-dtl       BE SURE to use ~/sh/dotfiles version!
 #   -   *youtube-dl*  do NOT USE.
@@ -40,6 +43,8 @@
 # ----------------------------------------
 #
 #
+mkdir -p ~/latest_mp3_downloads/
+
 list=PLbcglKxZP5PMzNbrnMtdwtoPkkCi64cbw
 
 ## on lenvo  (but the MASTER COPY is on external SATA SSD. 240GB)
