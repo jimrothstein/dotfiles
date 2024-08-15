@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: separate 
+# key:<sep 
+# --
+
+------------------------ ${1: separate}
+$0

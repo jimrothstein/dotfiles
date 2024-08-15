@@ -61,7 +61,7 @@
   :config
   (which-key-mode))
 
-;; completion
+;; text completion
 (use-package company
   :config
   (setq company-idle-delay 0)
