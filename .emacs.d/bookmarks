@@ -2,12 +2,7 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("admiral"
- (filename . "~/code/admiral/")
- (front-context-string . "data\n  drwxr-xr-")
- (rear-context-string . "96 Aug  5 17:07 ")
- (position . 267))
-("dotfiles"
+(("dotfiles"
  (filename . "~/dotfiles/")
  (front-context-string . "adb_push_mp3_dev")
  (rear-context-string . "64 Jul 22 14:01 ")
@@ -37,4 +32,9 @@
  (front-context-string . "admiral_PLAY\n  d")
  (rear-context-string . "96 Jul 23 16:27 ")
  (position . 213))
+("admiral"
+ (filename . "~/code/admiral/")
+ (front-context-string . "data\n  drwxr-xr-")
+ (rear-context-string . "96 Aug  5 17:07 ")
+ (position . 267))
 )

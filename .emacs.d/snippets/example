@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: example
+# key:<ex 
+# --
+
+#+ BEGIN_SRC
+$0
+#+ END_SRC

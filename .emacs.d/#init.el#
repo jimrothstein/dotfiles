@@ -81,6 +81,7 @@
   )
 
 
+
 ;;  always follow symlinks to actual file (and don't ask)
 (setq vc-follow-symlinks t)
 

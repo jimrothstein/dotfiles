@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: example
+# key:<ex 
+# --
+
+
+#+ BEGIN_SRC
+$0
+;; Put .emacs.d/snippets/fundamental-mode    (or org-mode if only for org-mode)
+;; same file name (example) same as name above
+;; $0 cursor ends up here
+#+ END_SRC
