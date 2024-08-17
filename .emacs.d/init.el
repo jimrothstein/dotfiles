@@ -61,7 +61,7 @@
   :config
   (which-key-mode))
 
-;; text completion
+;; text completio
 (use-package company
   :config
   (setq company-idle-delay 0)
@@ -80,6 +80,12 @@
   :mode (("\\.Rmd" . poly-quarto-mode))
   )
 
+;; registers (short-cuts to files)
+
+
+(set-register ?i (cons 'file "~/.emacs.d/init.el"))
+(set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.org"))
+(set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.org"))
 
 ;;  always follow symlinks to actual file (and don't ask)
 (setq vc-follow-symlinks t)
