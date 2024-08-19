@@ -81,8 +81,6 @@
   )
 
 ;; registers (short-cuts to files)
-
-
 (set-register ?i (cons 'file "~/.emacs.d/init.el"))
 (set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.org"))
 (set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.org"))
@@ -116,6 +114,7 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
  
+
 ;(org-babel-load-file "path/to/this/file.org")
 
 
@@ -180,3 +179,7 @@
 ;; (define-key inferior-ess-r-mode-hook "_" #'ess-insert-assign)
 
 ;; FUTURE
+
+;; clipboard, use + register in Evil 
+(setq x-select-enable-clipboard nil)
+
