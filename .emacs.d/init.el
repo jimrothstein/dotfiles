@@ -53,6 +53,9 @@
 ;; y/n   (not yes/no)
 (setq use-short-answers t)
 
+;; cut & past  - emacs reports an error with next line
+;; (xclip-mode 1)
+
 ;; leaving?   don't ask to kill, just do it.
 (setq confirm-kill-processes nil)
 
@@ -128,7 +131,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ess-r-insert-obj yaml-mode org-modern markdown-preview-mode yasnippet-snippets quarto-mode flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company)))
+   '(exwm ess-r-insert-obj yaml-mode org-modern markdown-preview-mode yasnippet-snippets quarto-mode flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
