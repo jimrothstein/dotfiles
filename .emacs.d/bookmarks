@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("dotfiles"
+(("m"
+ (filename . "~/code/docs/health_notes/medical_notes.org")
+ (front-context-string . "---\ntitle: \"medi")
+ (rear-context-string)
+ (position . 1))
+("dotfiles"
  (filename . "~/dotfiles/")
  (front-context-string . "adb_push_mp3_dev")
  (rear-context-string . "64 Jul 22 14:01 ")
