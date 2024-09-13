@@ -85,6 +85,7 @@
 
 ;; registers (short-cuts to files)
 (set-register ?i (cons 'file "~/.emacs.d/init.el"))
+(set-register ?j (cons 'file "~/code/docs/jobs/310_job_notes.qmd"))
 (set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.org"))
 (set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.org"))
 
