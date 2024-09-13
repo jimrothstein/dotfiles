@@ -6,29 +6,32 @@ project:
   type: website
   title: misc
   output-dir: docs            ## NO indent, also _quarto.yml for entier project
+  render:
+  - 9009*.qmd
     #render:
     #- 010*.qmd                ## render ONLY these files
 
-author: "jim"  
+author: "jim"
 date: "12/20/2023"      # date started project
-# pdf-engine: lualatex  
-# bibliography: references.bib  
-  
+# pdf-engine: lualatex
+# bibliography: references.bib
+
 execute:
-    error: true 
+    error: true
     warning: true
-    collapse: true 
+    collapse: true
     standalone: true
+    enabled: true    ##false: do not run chunks
 
 format:
   html:
     #css: styles.css
-    theme: 
+    theme:
       - cosmo
       - custom.scss
     html-math-method: katex
     code-fold: false
-    toc: true 
+    toc: true
     toc_depth: 5
     toc-location: body
     #toc_float: true
@@ -38,7 +41,7 @@ format:
     toc_location: body
     embed-resources:  true
     code-block-bg: true
-    code-block-border-left: "#31BAE9"       
+    code-block-border-left: "#31BAE9"
     indent: false
     code-link: true             # hyperlink R functions
 #   pdf:
