@@ -89,6 +89,7 @@
 
 (set-register ?j (cons 'file "~/code/docs/jobs/310_job_notes.qmd"))
 (set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.org"))
+(set-register ?r (cons 'file "~/code/docs/tech_notes/310_R_notes.qmd"))
 (set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.org"))
 
 ;;  always follow symlinks to actual file (and don't ask)
