@@ -22,6 +22,7 @@ execute:
     collapse: true
     standalone: true
     enabled: true    ##false: do not run chunks
+    cache: true     ## knitr caches R chunks
 
 format:
   html:
@@ -33,12 +34,12 @@ format:
     code-fold: false
     toc: true
     toc_depth: 5
-    toc-location: body
-    #toc_float: true
+    #toc-location: body
+    toc_float: true
     number-sections: true
     number-depth: 3   #book feature only?
       #number-offset: 2
-    toc_location: body
+    #toc_location: body
     embed-resources:  true
     code-block-bg: true
     code-block-border-left: "#31BAE9"
