@@ -24,7 +24,7 @@ $code-block-font-size: 0.9em;   // default font size inside r code chunks
 $code-block-bg: $off-white;
 
 /*--    Works  --*/
-$body-bg:            $baby-blue;
+$body-bg:            $off-white;
 //$body-bg:            $teal;   #  (too dark)
 //$body-bg:            $green;
 
@@ -39,9 +39,9 @@ $body-bg:            $baby-blue;
 /* an experiment */
 .small {
   font-size: 12px;
-  //color: lightblue;
+  color: lightblue;
 }
 .very_small {
   font-size: 10px;
-  //color: lightblue;
+  color: lightred;
 }

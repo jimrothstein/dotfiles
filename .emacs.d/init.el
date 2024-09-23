@@ -59,12 +59,19 @@
 ;; leaving?   don't ask to kill, just do it.
 (setq confirm-kill-processes nil)
 
+;; which-key
 (use-package which-key
   :ensure t
   :config
   (which-key-mode))
 
-;; text completio
+;; Evil 'state' colors (mode in vim)
+(setq evil-mode-line-format nil                 ;; normal = black
+      evil-insert-state-cursor '(bar "White")   ;; insert = thin bar
+      evil-visual-state-cursor '(box "#F86155"));; visulal =  red 
+
+
+;; text completion
 (use-package company
   :config
   (setq company-idle-delay 0)
@@ -86,9 +93,9 @@
 ;; registers (short-cuts to files)
 (set-register ?i (cons 'file "~/.emacs.d/init.el"))
 (set-register ?e (cons 'file "~/code/docs/tech_notes/280_emacs_notes.qmd"))
-
 (set-register ?j (cons 'file "~/code/docs/jobs/310_job_notes.qmd"))
 (set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.org"))
+(set-register ?q (cons 'file "~/code/docs/tech_notes/250_quarto_knitr_SCSS_NOTES.qmd"))
 (set-register ?r (cons 'file "~/code/docs/tech_notes/310_R_notes.qmd"))
 (set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.org"))
 

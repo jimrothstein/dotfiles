@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: R_separate 
+# key:<R_sep 
+# --
+
+## ${1: <text>} ------------------------ 
+$0
