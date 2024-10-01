@@ -1,13 +1,11 @@
 
-
 # ---------------------
 #       i3 config file (v4)
 # ---------------------
 
+#	REF: https://wiki.archlinux.org/title/I3
+#       REF: https://i3wm.org/docs/userguide.html for a complete reference!
 # 6MAY 2024
-
-
-
 
 # i3 starts automatically; if in xfce4 logout; at login screen;  be sure to choose  i3 AND not XFCE4
 # - remove i3 completely
@@ -18,7 +16,6 @@
 #       i3bar vs polybar (better control?) 
 #
 # NOTES:
-#       REF: https://i3wm.org/docs/userguide.html for a complete reference!
 #       ** NOTE:   Do NOT put comments (#) on same line as a command **
 #       Mod4 is 'windows' key on Lenovo
 #       -       exec  runs 1st load only
@@ -55,8 +52,8 @@ font pango:DejaVu Sans Mono 12
 #       XDG autostart?
 # ----------------------
 # Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+# SEE https://wiki.archlinux.org/index.php/XDG_Autostart
+#     exec --no-startup-id dex --autostart --environment i3
 
 # ----------------
 #       Applets?
@@ -104,7 +101,6 @@ bindsym $mod+Return exec $myTerm
 # kill focused window
 # ----------------------------------
 bindsym $mod+q kill
-#bindsym $mod+Shift+q kill
 
 # ----------------------------------
 # start dmenu (a program launcher) (compare dmenu | rofi )
@@ -179,8 +175,8 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Terminal"
-set $ws2 "2: emacs"
-set $ws3 "3: Firefox"
+set $ws2 "2: Firefox"
+set $ws3 "3: emacs"
 set $ws4 "4: Thunar"
 set $ws5 "5: rstudio"
 set $ws6 "6: R (cli)"
@@ -214,6 +210,15 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# ---------------
+#       STARTUP: firefox on ws2 (may need to reboot after change )
+# ---------------
+exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm 
 
 # -------------------------------
 # reload the configuration file, restart, exit
@@ -276,17 +281,7 @@ mode "$mode_launcher" {
 }
 
 
-# ---------------
-#       STARTUP: firefox on ws2 (may need to reboot after change )
-# ---------------
-exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws2; exec emacs; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws3; exec firefox; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws4; exec thunar; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
 
-# This puts wezterm on $ws1 in TWO windows
-#exec --no-startup-id i3-msg 'workspace $ws3; exec wezterm; workspace $ws1'
 
 # -------------------------------
 #       FIREFOX, manually open 
@@ -295,9 +290,11 @@ bindsym $mod+b  exec firefox   # open firefox
 
 
 # i3bar to display a workspace bar, i3status
+# tray_output makes room vlc, applet icons
 bar {
         position top
         status_command i3status --config ~/.config/i3/i3status.conf
+	tray_output primary
 }
 
 # -----------
@@ -305,17 +302,3 @@ bar {
 # -----------
 bindsym $mod+m bar mode toggle
 
-#       DO NOT WORK, all below:
-# -------------------------------
-#      NEOVIM, open  - NONE work
-# -------------------------------
-# mod+Ctrl+9  does NOT do anything
-# bindsym $mod+Ctrl+KP_9  exec nvims 
-# ALMOST works;  throws errors; wants something at far right
-#bindsym $mod+bracketleft exec --no-startup-id workspace $ws9; exec Xfce4-terminal; workspace $ws1
-# bindsym $mod+bracketleft exec --no-startup-id workspace $ws9; exec Xfce4-terminal; workspace $ws1
-#bindsym $mod+bracketleft exec --no-startup-id workspace $ws9; exec Xfce4-terminal
-#bindsym $mod+bracketleft exec workspace $ws9; exec Xfce4-terminal
-
-# bindsym $mod+F3 exec wezterm -h
-# bindsym $mod+Ctrl+KP_9  exec wezterm -e nvims 
