@@ -30,7 +30,7 @@
 
 ## Any rstudio instance manually created will appear on wk5 
 ## assign [class="rstudio"] 5
-for_window [class="rstudio"] move to workspace $ws5 
+## for_window [class="rstudio"] move to workspace $ws5 
 
 # ---------------------------------------
 set $mod Mod4
@@ -177,8 +177,8 @@ bindsym $mod+a focus parent
 set $ws1 "1: Terminal"
 set $ws2 "2: Firefox"
 set $ws3 "3: emacs"
-set $ws4 "4: Thunar"
-set $ws5 "5: rstudio"
+set $ws4 "4: Rstudio"
+set $ws5 "5: Thunar"
 set $ws6 "6: R (cli)"
 set $ws7 "7  Extra Term 7"
 set $ws8 "8"
@@ -217,6 +217,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
+#exec --no-startup-id i3-msg 'workspace $ws4; exec Rstudio; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm 
 
