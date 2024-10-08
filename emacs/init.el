@@ -91,7 +91,7 @@
   )
 
 ;; registers (short-cuts to files)
-(set-register ?i (cons 'file "~/.emacs.d/init.el"))
+(set-register ?i (cons 'file "~/.config/emacs/init.el"))
 (set-register ?e (cons 'file "~/code/docs/tech_notes/280_emacs_notes.qmd"))
 (set-register ?j (cons 'file "~/code/docs/jobs/310_job_notes.qmd"))
 (set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.org"))
@@ -199,6 +199,7 @@
 
 
 ;; EXPERIMENT - magit
+(custom-set-variables '(x-select-enable-clipboard-manager t))
 
 
 (require 'package)
