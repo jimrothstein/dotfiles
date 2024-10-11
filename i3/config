@@ -61,7 +61,8 @@ font pango:DejaVu Sans Mono 12
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# jr removed
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # -----------------
 # NetworkManager 
@@ -84,6 +85,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # ---------------
 #killers
 bindsym --release $mod+shift+f exec "killall firefox"
+bindsym $mod+z exec "rstudio"  
+
+# kill focused window
+bindsym $mod+q kill 
+bindsym $mod+Return exec $myTerm   # start term
 
 # ------------------------------------------------------------------
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -93,12 +99,7 @@ floating_modifier $mod
 # -------------------------------------
 # start a terminal (uses $TERMINAL ?)
 # -------------------------------------
-bindsym $mod+Return exec $myTerm 
 
-# ----------------------------------
-# kill focused window
-# ----------------------------------
-bindsym $mod+q kill
 
 # ----------------------------------
 # start dmenu (a program launcher) (compare dmenu | rofi )
@@ -110,7 +111,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # ----------------------------------
-#  use vim motions to change focus
+#  use vim motions to change focused window
 # ----------------------------------
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -148,14 +149,15 @@ bindsym $mod+Ctrl+v split h
 # ---------------------
 # enter fullscreen mode for the focused container
 # ---------------------
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f11 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating   (cute little window !)
+# toggle tiling / floating   (centers as a little window !)
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows

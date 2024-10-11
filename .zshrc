@@ -205,36 +205,10 @@ set NO_BEEP
 #  ~/.xinitrc contains xmodmap statment to make CAPS LOCK behave like ESC
 #  (many other ways to do this)
 #  SEE  https://wiki.archlinux.org/title/Xmodmap
-# source ~/.xinitrc
+source ~/.xinitrc
 #
 ##  open terminal - infinite LOOP   do not do this !!!
 
-# 6/30/2024 - using emacs;  no longer use vim, neovim
-## 2023-08-19 - experiment  WORKS
-## video : https://www.youtube.com/watch?v=LkHjJlSgKZY      Elijahmanor
-## nvims :  switch between nvim configs  REF: https://gist.github.com/elijahmanor/b279553c0132bfad7eae23e34ceb593b
-## 
-alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-kick="NVIM_APPNAME=kickstart nvim"
-alias nvim-chad="NVIM_APPNAME=NvChad nvim"
-alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
-alias nvim-play="NVIM_APPNAME=nvim_play nvim"   # quarto-nvim,  ~/.config/nvim_play/
-
-function nvims() {
-  items=("default" "nvim_play" "kickstart" "LazyVim" "NvChad" "AstroNvim")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-#   config=""
-   # config="nvim_play"    # 30/12/2023 Use for quarto-nvim testing 
-    config="kickstart"    # Use for regular work
-  fi
-  NVIM_APPNAME=$config nvim $@
-}
-
-bindkey -s ^a "nvims\n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
