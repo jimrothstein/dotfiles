@@ -1,38 +1,41 @@
-
 # ---------------------
 #       i3 config file (v4)
 # ---------------------
-
 #	REF: https://wiki.archlinux.org/title/I3
 #       REF: https://i3wm.org/docs/userguide.html for a complete reference!
-
-
 #
 #       TODO
 #       i3bar vs polybar (better control?) 
 #
 # NOTES:
-#       ** NOTE:   Do NOT put comments (#) on same line as a command **
-#       Mod4 is 'windows' key on Lenovo
-#       -       exec  runs 1st load only
-#	-	exec --no-startup-id  # some knd of window appears?
-#       -       exec_always  runs on reload as well.
+# Do NOT put comments (#) on same line as a command **
+# -  Mod4 is 'windows' key 
+# -  exec				runs 1st load only
+# -  exec --no-startup-id  	# some knd of window appears?
+# -  exec_always  		runs on reload as well.
 #
-##      Move Current container (window) $ws9; then focus with move to 9
-##      bindsym $mod+x  move container to workspace 9; workspace 9
+# -  Move Current container (window) $ws9; then focus with move to 9
+#         bindsym $mod+x  move container to workspace 9; workspace 9
 
-## Every instance of wezterm will move to $ws5
-## First, must find class    
+# Match on class, not title
+
+## Every instance of wezterm on $ws5;  First, must find class    
 ##       for_window [class="org.wezfurlong.wezterm"] move to workspace $ws5      
 
 
-## Any rstudio instance manually created will appear on wk5 
-## assign [class="rstudio"] 5
-## for_window [class="rstudio"] move to workspace $ws5 
+## Any rstudio instance manually created will appear on wk4 
+## assign [class="rstudio"] 4
+#  for_window [class="rstudio"] move to workspace $ws4 
 
 # ---------------------------------------
 set $mod Mod4
 set $myTerm wezterm
+
+# Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
+workspace_auto_back_and_forth yes
+
+#  manually start rstudio?   it will appear wks4
+assign [class="rstudio"] 4
 
 # --------------------------
 #       FONT FOR WINDOW TITLES. 

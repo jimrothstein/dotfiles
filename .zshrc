@@ -200,15 +200,15 @@ setopt NO_CASE_GLOB
 
 
 set NO_BEEP
-
+# ------------------------  separate
+#
 # # apply Debian keyboard mappings (in ~/.xmodmap)
 #  ~/.xinitrc contains xmodmap statment to make CAPS LOCK behave like ESC
-#  (many other ways to do this)
 #  SEE  https://wiki.archlinux.org/title/Xmodmap
 source ~/.xinitrc
 #
+#
 ##  open terminal - infinite LOOP   do not do this !!!
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
