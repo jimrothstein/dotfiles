@@ -12,7 +12,7 @@ setxkbmap -option caps:escape
 #   - on HP845 G7/linuxmint  21.3
 #   - TODO:  i  made  an addition to  /etc/X11/xorg.conf.d/swap_2_escape.conf
 #   -        works,  but do not understand
-------------------------  separate
+# ------------------------  separate
 #  USE kev to find keycode for "capslock" and "escape"
 #		- xmodmap is older, but simpler.
 #		- newer is kxb... but I find more effort to figure out simple things. -	SEE  tech_notes
@@ -22,7 +22,7 @@ setxkbmap -option caps:escape
 #   REF <archwiki setxkbmap>
 # ------------------------  
 # xmodmap -e "keycode 133 = Escape"
-------------------------  
+#------------------------  
 
 # lenvovo T480
 #
