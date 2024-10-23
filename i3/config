@@ -8,6 +8,9 @@
 #       i3bar vs polybar (better control?) 
 #
 # NOTES:
+# SUSPEND = put info into RAM, then low-power (sleep)
+# HIBERNATE = put info on DISK, then power-off (shutdown?)
+
 # Do NOT put comments (#) on same line as a command **
 # -  Mod4 is 'windows' key 
 # -  exec				runs 1st load only
@@ -54,7 +57,8 @@ font pango:DejaVu Sans Mono 12
 # ----------------------
 # Start XDG autostart .desktop files using dex. See also
 # SEE https://wiki.archlinux.org/index.php/XDG_Autostart
-#     exec --no-startup-id dex --autostart --environment i3
+
+exec --no-startup-id dex --autostart --environment i3
 
 # ----------------
 #       Applets?
@@ -64,8 +68,9 @@ font pango:DejaVu Sans Mono 12
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-# jr removed
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# LOCK laptop before SUSPEND
+exec --no-startup-id \
+     xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # -----------------
 # NetworkManager 
