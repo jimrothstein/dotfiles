@@ -1,4 +1,4 @@
-# ---------------------
+## ---------------------
 #       i3 config file (v4)
 # ---------------------
 #	REF: https://wiki.archlinux.org/title/I3
@@ -27,8 +27,8 @@
 
 
 ## Any rstudio instance manually created will appear on wk4 
-## assign [class="rstudio"] 4
-#  for_window [class="rstudio"] move to workspace $ws4 
+assign [class="rstudio"] 4
+##for_window [class="rstudio"] move to workspace $ws4 
 
 # ---------------------------------------
 set $mod Mod4
@@ -36,10 +36,6 @@ set $myTerm wezterm
 
 # Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
 workspace_auto_back_and_forth yes
-
-#  manually start rstudio?   it will appear wks4
-assign [class="rstudio"] 4
-
 # --------------------------
 #       FONT FOR WINDOW TITLES. 
 # --------------------------
@@ -93,7 +89,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # ---------------
 #killers
 bindsym --release $mod+shift+f exec "killall firefox"
-bindsym $mod+z exec "rstudio"  
 
 # kill focused window
 bindsym $mod+q kill 
@@ -103,11 +98,6 @@ bindsym $mod+Return exec $myTerm   # start term
 # Use Mouse+$mod to drag floating windows to their wanted position
 # ------------------------------------------------------------------
 floating_modifier $mod
-
-# -------------------------------------
-# start a terminal (uses $TERMINAL ?)
-# -------------------------------------
-
 
 # ----------------------------------
 # start dmenu (a program launcher) (compare dmenu | rofi )
@@ -146,23 +136,19 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split  horizontal   (reverse of neovim !?!) like = 
-# Look for BLUE LINE (either at right/bottom)
-bindsym $mod+Ctrl+h split v    
-
-# split in vertical orientation
-#bindsym $mod+- split vertical   like ||
-bindsym $mod+Ctrl+v split h    
+# split orientation
+bindsym $mod+z split h;exec notify-send 'tile horizontally'			# this one
+bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+t split toggle
 
 # ---------------------
 # enter fullscreen mode for the focused container
 # ---------------------
-bindsym $mod+f11 fullscreen toggle
+bindsym $mod+F11 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating   (centers as a little window !)
@@ -177,11 +163,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# ---------------------
-# Names for Default Workspaces
-# ---------------------
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+# set variables for named workspaces   ---------------------
 set $ws1 "1: Terminal"
 set $ws2 "2: Firefox"
 set $ws3 "3: emacs"
@@ -193,9 +175,7 @@ set $ws8 "8"
 set $ws9 "9: Extra Term"
 set $ws10 "10"
 
-# ---------------------
 # switch to workspace
-# ---------------------
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -225,7 +205,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
-#exec --no-startup-id i3-msg 'workspace $ws4; exec Rstudio; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws4; exec Rstudio; workspace $ws1'
 #exec_always i3-msg 'workspace $ws5; exec thunar; workspace $ws1'
 #exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm 
