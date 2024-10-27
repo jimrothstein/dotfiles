@@ -1,68 +1,53 @@
+\footnotesize
+
+```
+#	TO PRINT; put entire text inside verbatim (```) tags
+#       pandoc -f markdown -V geometry:margin=2cm    -o out.pdf
 ## ---------------------
 #       i3 config file (v4)
 # ---------------------
 #	REF: https://wiki.archlinux.org/title/I3
 #       REF: https://i3wm.org/docs/userguide.html for a complete reference!
-#
-#       TODO
+#	REF CARD ! (in i3 docs)
+#	VIDEO:  Chris Titus Tech
 #       i3bar vs polybar (better control?) 
 #
-# NOTES:
 # SUSPEND = put info into RAM, then low-power (sleep)
+# CLOSE LID = should trigger SUSPEND
 # HIBERNATE = put info on DISK, then power-off (shutdown?)
-
+#
+# i3lock, service, handles details
+#
 # Do NOT put comments (#) on same line as a command **
 # -  Mod4 is 'windows' key 
 # -  exec				runs 1st load only
 # -  exec --no-startup-id  	# some knd of window appears?
 # -  exec_always  		runs on reload as well.
 #
-# -  Move Current container (window) $ws9; then focus with move to 9
-#         bindsym $mod+x  move container to workspace 9; workspace 9
-
-# Match on class, not title
-
+#       TODO
 ## Every instance of wezterm on $ws5;  First, must find class    
 ##       for_window [class="org.wezfurlong.wezterm"] move to workspace $ws5      
-
-
-## Any rstudio instance manually created will appear on wk4 
-assign [class="rstudio"] 4
-##for_window [class="rstudio"] move to workspace $ws4 
-
 # ---------------------------------------
 set $mod Mod4
 set $myTerm wezterm
 
 # Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
 workspace_auto_back_and_forth yes
-# --------------------------
-#       FONT FOR WINDOW TITLES. 
-# --------------------------
-# Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 
-#       DEFAULT font
+# ------------------------  font
 # font pango:monospace 8   
-
-# try unicode glymphs, scales .... try (2024-02-09)
 font pango:DejaVu Sans Mono 12
 
-# ----------------------
-#       XDG autostart?
-# ----------------------
-# Start XDG autostart .desktop files using dex. See also
+ # ------------------------ XDG autostart
+# Start XDG autostart .desktop files using dex. dex uses .desktop files(?)
 # SEE https://wiki.archlinux.org/index.php/XDG_Autostart
-
 exec --no-startup-id dex --autostart --environment i3
 
 # ----------------
 #       Applets?
 # ----------------
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# GOAL:  lock laptop BEFORE SUSPEND
+# xss-lock grabs a logind suspend ????; then  use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # LOCK laptop before SUSPEND
 exec --no-startup-id \
@@ -71,8 +56,7 @@ exec --no-startup-id \
 # -----------------
 # NetworkManager 
 # -----------------
-# is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
+# manage wifi with nm-applet,  a desktop environment-independent system tray GUI.
 exec --no-startup-id nm-applet
 
 # -------------------------------------------
@@ -87,16 +71,12 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # ---------------
 #       Bindsym
 # ---------------
-#killers
-bindsym --release $mod+shift+f exec "killall firefox"
+bindsysm $mod+Shift+q
+bindsysm $mod+q
 
-# kill focused window
-bindsym $mod+q kill 
 bindsym $mod+Return exec $myTerm   # start term
 
-# ------------------------------------------------------------------
 # Use Mouse+$mod to drag floating windows to their wanted position
-# ------------------------------------------------------------------
 floating_modifier $mod
 
 # ----------------------------------
@@ -108,9 +88,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# ----------------------------------
-#  use vim motions to change focused window
-# ----------------------------------
+#  vim motions to change focused window  ----------------------------------
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -122,9 +100,7 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# ----------------------------------
-# move focused window
-# ----------------------------------
+# move focused window ------ 
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
@@ -136,17 +112,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split orientation
-bindsym $mod+z split h;exec notify-send 'tile horizontally'			# this one
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+t split toggle
-
-# ---------------------
 # enter fullscreen mode for the focused container
-# ---------------------
 bindsym $mod+F11 fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# change container layout (stacked, tabbed, toggle split = defaut)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -199,9 +168,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# ---------------
-#       STARTUP: firefox on ws2 (may need to reboot after change )
-# ---------------
+# STARTUP apps ----
 exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
@@ -210,10 +177,8 @@ exec --no-startup-id i3-msg 'workspace $ws4; exec Rstudio; workspace $ws1'
 #exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm 
 
-# -------------------------------
 # reload the configuration file, restart, exit
 # -------------------------------
-
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 
@@ -224,10 +189,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
-# -----------------------------------------------------
-# resize window (you can also use the mouse for that)
-# -----------------------------------------------------
+# mode "resize" ------------------------  
+# resize window (you can also use the mouse for that) -----------------------------------------------------
 #       step #1  $mod+r to enter mode "resize"
+#
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         bindsym j resize shrink width 10 px or 10 ppt
@@ -247,21 +212,11 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-# ---------------------
-#       RESIZE
-# ---------------------
+# ------------------------ activate mode "resize"
 bindsym $mod+r mode "resize"
 
-# --------------
-#       BINDING MODE
-# --------------
-# Press $mod+o followed by either f, t, Escape or Return to launch firefox,
-# thunderbird or return to the default mode, respectively.
+# -------------- mode "mode_launcher"
 set $mode_launcher Launch: [f]irefox [t]hunar
-
-#       PRESS $mod+o to active the special mode
-bindsym $mod+o mode "$mode_launcher"
-
 mode "$mode_launcher" {
     bindsym f exec firefox
     bindsym t exec thunar 
@@ -269,16 +224,13 @@ mode "$mode_launcher" {
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
+# -----		   active mode "mode_launcher"   
+bindsym $mod+o mode "$mode_launcher"
 
-
-
-
-# -------------------------------
-#       FIREFOX, manually open 
-# -------------------------------
+#       FIREFOX, manually open (needed?)  -------------------------------
 bindsym $mod+b  exec firefox   # open firefox
 
-
+# ------------------------ i3bar
 # i3bar to display a workspace bar, i3status
 # tray_output makes room vlc, applet icons
 bar {
@@ -292,3 +244,11 @@ bar {
 # -----------
 bindsym $mod+m bar mode toggle
 
+
+# ------------------------ autolaunch
+exec --no-startup-id  	rstudio 
+
+## Any rstudio instance manually created will appear on wk4 
+assign [class="rstudio"] $ws4
+##for_window [class="rstudio"] move to workspace $ws4 
+```
