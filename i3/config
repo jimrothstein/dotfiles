@@ -1,6 +1,6 @@
-\footnotesize
+# \footnotesize
 
-```
+# ```
 #	TO PRINT; put entire text inside verbatim (```) tags
 #       pandoc -f markdown -V geometry:margin=2cm    -o out.pdf
 ## ---------------------
@@ -251,4 +251,4 @@ exec --no-startup-id  	rstudio
 ## Any rstudio instance manually created will appear on wk4 
 assign [class="rstudio"] $ws4
 ##for_window [class="rstudio"] move to workspace $ws4 
-```
+# ```
