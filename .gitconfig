@@ -4,7 +4,7 @@
 [push]
 	default = simple
 [core]
-	editor = nvim
+	editor = vim.tiny
 	excludesfile = "~/.gitignore"
 ##
 ### SEE  https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date/1441062#1441062
