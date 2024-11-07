@@ -97,7 +97,8 @@ medical/
 JOB/
 correspondence/
 backup*/
-.git/
+# jr removed;  need workflows, hooks etc
+#.git/
 
 
 # Google API
