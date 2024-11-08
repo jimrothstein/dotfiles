@@ -6,13 +6,14 @@
 [core]
 	editor = vim.tiny
 	excludesfile = "~/.gitignore"
-##
+
 ### SEE  https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date/1441062#1441062
 #   USAGE:  git log   (jr: 2023-06-03)
 [log]
     date=relative
 [format]
 # pretty = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
+
 [alias]
 #	NOTE:
 #	use git wants double quotes, not single
@@ -20,7 +21,6 @@
 #            git cob newBranch
 	s = status
 	ss = status -s
-
 	#a = "!git s ; git add . ; git commit -m \"$1\; git push;" 
 	#a = "!git s ; git add . ; git commit -m "test"; git push;" 
 
@@ -30,7 +30,6 @@
 	# amend without a new ms (be sure NOT yet pushed) 
 	can = commit --amend --no-edit
 	cana = commit --amend --no-edit -a
-	
   co = checkout
 	cob = checkout -b
 	db = "branch -d"
@@ -39,7 +38,9 @@
 # %T = full SHA
 # %h = short SHA
 # %r = relative (2 days ago)
-#
+# ------------------------  git log
+
+# git l 
 # l = "log --decorate --oneline --graph -5 --pretty=format:'%h-%T'"
 	l = "log --decorate --oneline --graph -5"
 
@@ -48,9 +49,7 @@
 
 # display SHA - minutes ago
   ll = "log --pretty=format:'%h_ %ar'"  -10
-
-    pretty = log --pretty=\"format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D\"
-
+  pretty = log --pretty=\"format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D\"
 
 # 	last commit		
 	last = "log -1 HEAD"
