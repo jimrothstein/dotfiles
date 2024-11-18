@@ -1,6 +1,4 @@
 
-;; a macro  aids config of packages.
-
 ;; thereafter use-package loads packages
 
 ;; This is only needed once, near the top of the file
@@ -90,6 +88,7 @@
   :mode (("\\.Rmd" . poly-quarto-mode))
   )
 
+;; M-x jump-to-register (SAME ^x r j)
 ;; registers (short-cuts to files)
 (set-register ?i (cons 'file "~/.config/emacs/init.el"))
 (set-register ?e (cons 'file "~/code/docs/tech_notes/280_emacs_notes.qmd"))
