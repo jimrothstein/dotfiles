@@ -172,7 +172,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws4; exec Rstudio; workspace $ws1'
+#  rstudio is NOT capitalized
+exec --no-startup-id i3-msg 'workspace $ws4; exec rstudio; workspace $ws1'
 #exec_always i3-msg 'workspace $ws5; exec thunar; workspace $ws1'
 #exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm 
@@ -246,7 +247,6 @@ bindsym $mod+m bar mode toggle
 
 
 # ------------------------ autolaunch
-exec --no-startup-id  	rstudio 
 
 ## Any rstudio instance manually created will appear on wk4 
 assign [class="rstudio"] $ws4
