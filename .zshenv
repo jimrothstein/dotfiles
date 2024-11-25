@@ -23,12 +23,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # nvim expects this:
 export XDG_DATA_HOME="$HOME/.local/share"
 #
-# nvim DOES NOT expect this:
-#export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
 
 export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
-
-export EDITOR="nvim"
 
 # ~/.config/zsh
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
@@ -54,27 +50,4 @@ export A=~/dotfiles/aliases.zsh
 export G=~/dotfiles/.gitignore
 export V=~/.config/nvim/init.lua
 export Z=$ZDOTDIR/.zshrc
-export TEMPLATES=~/.config/nvim/templates/
-
-#       code files
-
-# for printing
-
-# dotfiles=~/dotfiles
-
-# 22JUNE 2023 (R 4.3.1 from source)
-# export R_HOME='/opt/R/4.3.1'
-# export R_VERSION='4.3.1'
-
-## env var for R (August 2021)
- #export R_HOME='/usr/lib/R'
-
-#
-#	NEOVIM
-# REF: https://nanotipsforvim.prose.sh/list-all-your-installed-plugins
-#
-export location_of_installed_plugins="$HOME/.local/share/nvim/lazy" 
-
-# =====END CUT ===================================================
-
 
