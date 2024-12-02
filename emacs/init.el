@@ -51,8 +51,11 @@
 ;; y/n   (not yes/no)
 (setq use-short-answers t)
 
-;; cut & past  - emacs reports an error with next line
+;; cut & past  - emacs reports an error with next line | could NOT get this to work.
 ;; (xclip-mode 1)
+
+;; try simpleclip
+(simpleclip-mode 1)
 
 ;; leaving?   don't ask to kill, just do it.
 (setq confirm-kill-processes nil)
@@ -142,7 +145,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(paredit vertico magit exwm ess-r-insert-obj yaml-mode org-modern markdown-preview-mode yasnippet-snippets quarto-mode flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company))
+   '(simpleclip xclip paredit vertico magit exwm ess-r-insert-obj yaml-mode org-modern markdown-preview-mode yasnippet-snippets quarto-mode flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company))
  '(x-select-enable-clipboard-manager t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -206,4 +209,5 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
+
 
