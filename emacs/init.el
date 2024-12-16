@@ -97,7 +97,7 @@
 (set-register ?e (cons 'file "~/code/docs/tech_notes/280_emacs_notes.qmd"))
 (set-register ?j (cons 'file "~/code/docs/jobs/310_job_notes.qmd"))
 (set-register ?m (cons 'file "~/code/docs/health_notes/medical_notes.org"))
-(set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.org"))
+(set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.qmd"))
 (set-register ?q (cons 'file "~/code/docs/tech_notes/250_quarto_knitr_SCSS_NOTES.qmd"))
 (set-register ?r (cons 'file "~/code/docs/tech_notes/310_R_notes.qmd"))
 (set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.org"))
