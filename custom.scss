@@ -4,7 +4,7 @@
 //	-	both compile to same; MUCH CONFUSION
 //	-	SASS is indented; without punctuation (; {})
 //	-	SCSS uses punctutation
-// Colors
+// Colors (ie create variables)
 $baby-blue: #d2e3f3;
 $teal: #047C90;
 $dark-blue: #003660;
@@ -41,7 +41,27 @@ $body-bg:            $off-white;
   font-size: 12px;
   color: lightblue;
 }
+
 .very_small {
   font-size: 10px;
   color: lightred;
+}
+
+.custombox {
+  background-color: pink;
+}
+
+.custombox_blue {
+  color: blue;
+  background-color: white;
+}
+
+.teal {
+  color: teal;
+  background-color: yellow;
+}
+}
+.custombox_black {
+  color: black; 
+  background-color: lightblue;
 }
