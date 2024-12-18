@@ -64,6 +64,7 @@ alias goRapid='cd ~/code/rapid/'
 alias goRHome='cd /usr/share/R/'              # R_HOME
 alias goShaina='cd ~/code/stats_project/shaina/' 
 alias goStats='cd ~/code/stats_project/'
+alias goTeal='cd ~/code/TEAL/'
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'
 alias goShiny='cd ~/code/SHINY'
