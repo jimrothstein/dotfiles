@@ -6,8 +6,8 @@ project:
   type: website
   title: misc
   output-dir: docs            ## NO indent, also _quarto.yml for entier project
-  render:
-  - 250*.qmd                  ## render ONLY these files
+#  render:
+#  - 250*.qmd                  ## render ONLY these files
   #- 9009*.qmd
     #render:
     #- 010*.qmd                ## render ONLY these files
