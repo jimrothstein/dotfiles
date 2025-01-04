@@ -1,22 +1,16 @@
-## project level
-#  all *.qmd files inherit
-#  review r4ds Chapter 28, 29  + quarto webpage
-#
 project:
   type: website
   title: misc
   output-dir: docs            ## NO indent, also _quarto.yml for entier project
-#  render:
-#  - 250*.qmd                  ## render ONLY these files
-  #- 9009*.qmd
-    #render:
-    #- 010*.qmd                ## render ONLY these files
+  render:
+    -  "*.qmd"
 
 author: "jim"
 date: "12/20/2023"      # date started project
 # pdf-engine: lualatex
 # bibliography: references.bib
 
+#      - custom.scss
 execute:
     error: true
     warning: true
@@ -27,15 +21,12 @@ execute:
 
 format:
   html:
-    #css: styles.css
     theme:
-#      - cosmo
       - custom.scss
     html-math-method: katex
     code-fold: false
     toc: true
     toc_depth: 5
-    #toc-location: body
     toc_float: true
     number-sections: true
     number-depth: 3   #book feature only?
