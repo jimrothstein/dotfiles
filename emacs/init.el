@@ -17,6 +17,20 @@
         use-package-expand-minimally t))
 
 
+;;; experimental ----------------
+(setq inhibit-startup-screen t)
+(menu-bar-mode 0)  ;; remove
+(menu-bar-mode 1)  ;; restore
+
+(tool-bar-mode 0)  ;; remove
+;; (tool-bar-mode 1)  ;; restore
+
+(set-default-font "Ubuntu Mono-18")
+
+;; location for backups
+(setq backup-directory-alist '( ("." . "~/.emacs_saves")))
+
+;;; ----
 (use-package yasnippet
   :ensure t)
 (yas-global-mode 1)
