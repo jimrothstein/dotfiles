@@ -1,4 +1,3 @@
-
 ;; thereafter use-package loads packages
 
 ;; This is only needed once, near the top of the file
@@ -18,14 +17,6 @@
 
 
 ;;; experimental ----------------
-(setq inhibit-startup-screen t)
-(menu-bar-mode 0)  ;; remove
-(menu-bar-mode 1)  ;; restore
-
-(tool-bar-mode 0)  ;; remove
-;; (tool-bar-mode 1)  ;; restore
-
-(set-default-font "Ubuntu Mono-18")
 
 ;; location for backups
 (setq backup-directory-alist '( ("." . "~/.emacs_saves")))
@@ -217,8 +208,6 @@
 
 
 ;; EXPERIMENT - magit
-
-
 
 (require 'package)
 (add-to-list 'package-archives
