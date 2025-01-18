@@ -45,6 +45,7 @@ alias goBlog='cd ~/code/jimrothstein.github.io/'   # same as goJimrothstein
 alias goCode='cd ~/code/'
 alias goDocs='cd ~/code/docs'
 alias goEmacs='cd ~/.config/emacs'
+alias goElisp='cd ~/code/elisp_project/'
 alias goDT='cd ~/code/try_things_here/DT/'
 alias goHealth='cd ~/code/health_labs/'
 alias goHTTR2='cd ~/code/httr2_project/'
@@ -54,7 +55,6 @@ alias goghactions='cd ~/code/gh_actions_project/'
 alias goLSR='cd ~/code/LSR_rbook/'
 alias goMp3='cd ~/code/mp3/'
 alias goNSE='cd ~/code/try_things_here/NSE_project/'
-alias goPartD='cd ~/code/SHINY/PART_D'
 alias goPublish='cd ~/code/code_publish/'
 alias goQuarto='cd ~/code/code_publish/'
 alias goSdtm='cd ~/code/sdtmchecks/'
@@ -64,10 +64,10 @@ alias goRapid='cd ~/code/rapid/'
 alias goRHome='cd /usr/share/R/'              # R_HOME
 alias goShaina='cd ~/code/stats_project/shaina/' 
 alias goStats='cd ~/code/stats_project/'
-alias goTeal='cd ~/code/TEAL/'
+alias goTeal='cd ~/code/teal_project/'
 alias goTry='cd ~/code/try_things_here/'
 alias goTools='cd ~/code/jimTools/'
-alias goShiny='cd ~/code/SHINY'
+alias goShiny='cd ~/code/shiny_project/'
 alias goTech='cd ~/code/docs/tech_notes'
 alias goVECTOR='cd ~/code/try_things_here/VECTORS_LISTS/'
 alias goYoutubeR='cd ~/code/youtubeR/R/'
@@ -92,14 +92,13 @@ export goYoutubeR goTry
 export goRRapply  
 
 ##
-#   Added 24JUNE 2023
-export R_VERSION=4.3.1
-
 # ============
-# Experiment
+# ll alias
 # ============
-#
-# long, 1-per line, desc (size), no permissions, more
+# long,
+# 1-per line,
+# desc (size),
+# no permissions, more
 # -S  to sort desc (size)
 # USAGE:   ll * m
 #
@@ -114,5 +113,6 @@ alias ldir='ll -d *(/)'
 
 #	R --no-save
 alias R='R --no-save'
+
 # GREP
 alias grep='grep --color=always'
