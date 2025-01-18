@@ -98,6 +98,7 @@
 
 ;; M-x jump-to-register (SAME ^x r j)
 ;; registers (short-cuts to files)
+(set-register ?a (cons 'file "~/.config/zsh/aliases.zsh"))
 (set-register ?i (cons 'file "~/.config/emacs/init.el"))
 (set-register ?e (cons 'file "~/code/docs/tech_notes/280_emacs_notes.qmd"))
 (set-register ?j (cons 'file "~/code/docs/jobs/310_job_notes.qmd"))
