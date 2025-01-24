@@ -89,6 +89,27 @@ h3 {
     text-decoration: underline red;
 }
     
+/* nested, used & to indicate child of above */
+.nested_class {
+    background_color: white;
+    &:hover {
+	background_color: orange;
+    }
+}
+
+@mixin btnContainerBlack {
+  background-color: orange;
+  color: white;
+  &:hover {
+    background-color: gray;
+    color: black;
+  }
+}
+
+/* actual element */
+.button-container {
+  @include btnContainerBlack;
+}
 
 /*  from in-line CSS
 
