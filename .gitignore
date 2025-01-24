@@ -1,17 +1,19 @@
 # .gitignore
 # ~/dotfiles/.gitignore   ($G)
 #
-
+#
 # JUNE 28, 2024
 # update man and .rd files (past were ignored;  now included)
 # Updte MAY 8, 2023
 #
 #	TODO:
-#	-	.Renviron (API keys) - how to save this file, but NOT to github?
-#	-   Add quarto /docs/*html  but not other *html
+# - .Renviron (API keys) - how to save this file, but NOT to github?
+# -  Add quarto /docs/*html  but not other *html
 #
 #
 #
+## CAUTION:  if file already in index, MUST remove it ---- 
+
 # To remove file has been put into index (and not pushed)
 # =================================
 #   adding it into .gitignore later is NOT enough
@@ -28,7 +30,8 @@
 # .R overhead (these exact files, in any directory)
 # =============
 .Rproj.user
-.Rproj
+# goal:  ignore these files, esp when working on branch of existing github REPO
+*.Rproj
 .Rhistory
 .RData
 .Ruserdata
@@ -71,7 +74,6 @@ data/*
 #inst/
 .quarto/
 .Rprog.user/*
-quarto_experiments/docs/
 
 #
 # ignore these directories
