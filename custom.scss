@@ -53,6 +53,11 @@ h3 {
   color: black;
 
 }
+.center {
+    text-align: right;
+    font-size: 25px;
+    color: red;
+}
 
 .very_small {
   font-size: 10px;
@@ -121,3 +126,31 @@ h3 {
   border-radius: 10px;
 }
 */
+
+// ------------------------  @mixin
+
+@mixin absolute-center() {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+.element-1 {
+  @include absolute-center();
+  left: 40%;
+  color:green;
+}
+.element-2 {
+  @include absolute-center();
+  color:blue;
+}
+
+@mixin square($size) {
+  width:$size;
+  height:$size;
+  color:yellow;
+}
+.square {
+  @include square(60px);
+  background-color:#000;
+}
