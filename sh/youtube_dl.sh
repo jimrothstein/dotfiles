@@ -2,6 +2,10 @@
 # ------------------------
 #	file <- "/home/jim/dotfiles/sh/youtube_dl.sh#"
 # ---------------------------------------------------------------------------------------------
+#       27 JAN 2025
+#       adb sync - do not use
+#       easiest:   use Thunar file mngr (offers to skip duplicates)
+
 #       03 OCT 2024
 #       Update:  yt-dlp -U   (# ignore prior update instructions, below)
 # ---------------------------------------------------------------------------------------------
