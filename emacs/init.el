@@ -1,4 +1,4 @@
-;; thereafter use-package loads packages
+:;; package -- summary: thereafter use-package loads packages
 
 ;; This is only needed once, near the top of the file
 
