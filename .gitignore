@@ -35,6 +35,7 @@
 .Rhistory
 .RData
 .Ruserdata
+.Rproj
 
 # .Renviron has codes;  do NOT put on Github.   (Rprofile is ok on Github)
 .Renviron
@@ -43,7 +44,7 @@
 .Renviron*
 /home/jim/.config/nvim/backup/.Renviron*
 
-# files ending in .RDS or .Rd (anywhere)
+# files ending in .RDS or .Rd  .json (anywhere,  except mainfest.json (connect.cloud posit needs)
 *.RDS
 # *.Rd   (admiral project requires)
 *.rds
@@ -52,6 +53,7 @@
 #   *.html       leave:  for quarto
 *.log
 *.json
+!manifest.json
 
 # Ignore Files/dir that BEGIN with _ (_dir/ _script, _file.txt, etc.)
 # (NOT ignore my_file)

@@ -18,6 +18,9 @@
 
 ;;; experimental ----------------
 
+;; jump to other window
+(global-set-key [C-tab] 'other-window)
+
 ;; location for backups
 (setq backup-directory-alist '( ("." . "~/.emacs_saves")))
 
@@ -147,7 +150,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(simpleclip xclip paredit vertico magit exwm ess-r-insert-obj yaml-mode org-modern markdown-preview-mode yasnippet-snippets quarto-mode flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company))
+   '(gptel simpleclip xclip paredit vertico magit exwm ess-r-insert-obj yaml-mode org-modern markdown-preview-mode yasnippet-snippets quarto-mode flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company))
  '(x-select-enable-clipboard-manager t))
 ;; ------------------------  
 
