@@ -34,6 +34,9 @@ set $myTerm wezterm
 # Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
 workspace_auto_back_and_forth yes
 
+#------------------------ include 
+include ~/dotfiles/i3/config_extra
+
 # ------------------------  font
 # font pango:monospace 8   
 font pango:DejaVu Sans Mono 12
@@ -88,60 +91,18 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-#  vim motions to change focused window  ----------------------------------
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window ------ 
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# enter fullscreen mode for the focused container
-bindsym $mod+F11 fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split = defaut)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating   (centers as a little window !)
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
+#------------------------  naviagation, SEE config_extra
 
 # set variables for named workspaces   ---------------------
 set $ws1 "1: Terminal"
 set $ws2 "2: Firefox"
-set $ws3 "3: emacs"
-set $ws4 "4: Rstudio"
+set $ws3 "3: emacs3"
+set $ws4 "4: Rstudio4"
 set $ws5 "5: Thunar"
 set $ws6 "6: R (cli)"
 set $ws7 "7  Extra Term 7"
-set $ws8 "8"
-set $ws9 "9: Extra Term"
+set $ws8 "8  Zotero8"
+set $ws9 "9: Slack9"
 set $ws10 "10"
 
 # switch to workspace
@@ -173,10 +134,14 @@ exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
 #  rstudio is NOT capitalized
-exec --no-startup-id i3-msg 'workspace $ws4; exec rstudio; workspace $ws1'
+#exec --no-startup-id i3-msg 'workspace $ws4; exec rstudio; workspace $ws1'
 #exec_always i3-msg 'workspace $ws5; exec thunar; workspace $ws1'
 #exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm 
+
+# next line will create 2 zsh instances
+#exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm'
+exec --no-startup-id i3-msg 'workspace $ws8; exec zotero; workspace $ws1'
+#exec --no-startup-id i3-msg 'workspace $ws9; exec slack; workspace $ws1'
 
 # reload the configuration file, restart, exit
 # -------------------------------
@@ -250,5 +215,6 @@ bindsym $mod+m bar mode toggle
 
 ## Any rstudio instance manually created will appear on wk4 
 assign [class="rstudio"] $ws4
+#assign [class="slack"] $ws9
 ##for_window [class="rstudio"] move to workspace $ws4 
 # ```
