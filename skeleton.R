@@ -1,5 +1,0 @@
-
-\footnotesize{this is footnotesize}
-
-
-

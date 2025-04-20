@@ -1,4 +1,4 @@
-:;; package -- summary: thereafter use-package loads packages
+;; package -- summary: thereafter use-package loads packages
 
 ;; This is only needed once, near the top of the file
 
@@ -20,6 +20,12 @@
 
 ;; jump to other window
 (global-set-key [C-tab] 'other-window)
+ 
+;; (4/25) modern completion
+;;
+;;(use-package vertico
+  ;; :ensure t
+  
 
 ;; location for backups
 (setq backup-directory-alist '( ("." . "~/.emacs_saves")))
@@ -176,8 +182,11 @@
 ; To Use (in R)
 (global-set-key (kbd "C-c l") #'my-r-clear-buffer)
 
-;; ^C. = go other window;   ^C, = return  [Hold ctrl key, press ,]
+; ESS, R  use <-
+(eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "C-_") " <- "))
+(eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "C-_") " <- "))
 
+;; ^C. = go other window;   ^C, = return  [Hold ctrl key, press ,]
 (global-set-key (kbd "C-.") #'other-window)
 (global-set-key (kbd "C-,") #'prev-window)
 
@@ -216,4 +225,23 @@
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 
+
+;; (April 2025) fixed buffers ?
+(setq display-buffer-alist
+      `(("^\\*R Dired"
+         (display-buffer-reuse-window display-buffer-in-side-window)
+         (side . right)
+         (slot . -1)
+         (window-width . 0.33)
+         (reusable-frames . nil))
+        ("^\\*R"
+         (display-buffer-reuse-window display-buffer-at-bottom)
+         (window-width . 0.5)
+         (reusable-frames . nil))
+        ("^\\*Help"
+         (display-buffer-reuse-window display-buffer-in-side-window)
+         (side . right)
+         (slot . 1)
+         (window-width . 0.33)
+         (reusable-frames . nil))))
 
