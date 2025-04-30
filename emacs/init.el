@@ -61,6 +61,8 @@
   (global-flycheck-mode t))
   
 (setq ess-style 'RStudio)
+;; permanently enable syntax check
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; y/n   (not yes/no)
 (setq use-short-answers t)
@@ -226,22 +228,22 @@
              '("melpa" . "https://melpa.org/packages/") t)
 
 
-;; (April 2025) fixed buffers ?
-(setq display-buffer-alist
-      `(("^\\*R Dired"
-         (display-buffer-reuse-window display-buffer-in-side-window)
-         (side . right)
-         (slot . -1)
-         (window-width . 0.33)
-         (reusable-frames . nil))
-        ("^\\*R"
-         (display-buffer-reuse-window display-buffer-at-bottom)
-         (window-width . 0.5)
-         (reusable-frames . nil))
-        ("^\\*Help"
-         (display-buffer-reuse-window display-buffer-in-side-window)
-         (side . right)
-         (slot . 1)
-         (window-width . 0.33)
-         (reusable-frames . nil))))
+;; (April 2025) fixed buffers ?   Window keep appearing!
+;;(setq display-buffer-alist
+      ;;(("^\\*R Dired"
+         ;;(display-buffer-reuse-window display-buffer-in-side-window)
+         ;;(side . right)
+         ;;(slot . -1)
+         ;;(window-width . 0.33)
+         ;;(reusable-frames . nil))
+        ;;("^\\*R"
+         ;;(display-buffer-reuse-window display-buffer-at-bottom)
+         ;;(window-width . 0.5)
+         ;;(reusable-frames . nil))
+        ;;("^\\*Help"
+         ;;(display-buffer-reuse-window display-buffer-in-side-window)
+         ;;(side . right)
+         ;;(slot . 1)
+         ;;(window-width . 0.33)
+         ;;(reusable-frames . nil))))
 
