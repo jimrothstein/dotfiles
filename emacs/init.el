@@ -1,9 +1,8 @@
 ;; package -- summary: thereafter use-package loads packages
 
-;; This is only needed once, near the top of the file
 
+;;------------------------ setup
 (require 'package)
-;;; Code:
 (add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
@@ -15,43 +14,37 @@
   (setq use-package-always-ensure t
         use-package-expand-minimally t))
 
+;;------------------------  backup
+(setq backup-directory-alist '( ("." . "~/.emacs_saves")))
 
-;;; experimental ----------------
 
 ;; jump to other window
 (global-set-key [C-tab] 'other-window)
  
-;; (4/25) modern completion
-;;
-;;(use-package vertico
-  ;; :ensure t
-  
-
-;; location for backups
-(setq backup-directory-alist '( ("." . "~/.emacs_saves")))
-
-;;; ----
+;;------------------------  ysasnippet
 (use-package yasnippet
   :ensure t)
 (yas-global-mode 1)
 (use-package org
   :ensure t)
 
-;; evil
+;; ------------------------  evil
 (unless (package-installed-p 'evil)
   (package-install 'evil))
 (use-package evil
   :ensure t
   :config
-  (evil-mode 1))
+  (evil-mode 1)) ; one
+
+;; clipboard, use + register in Evil 
+(setq x-select-enable-clipboard nil)
 
 ;; TODO: jj is esc, return to normal mode
 ;;  (define-key evil-insert-state-map "jj" 'evil-normal-state)
   (define-key evil-normal-state-map ",w" 'save-buffer)
 
-;; use-package
+;;------------------------ ess
 (use-package ess)
-
 
 ;; replace flymake with flycheck
 (setq ess-use-flymake nil)
@@ -101,12 +94,14 @@
       company-minimum-prefix-length 3
       company-tooltip-limit 10)
 
+;;------------------------  quarto
 ;; should associate .qmd files with quarto-mode
 ;; AND  files such as .Rmd
 (use-package quarto-mode
   :mode (("\\.Rmd" . poly-quarto-mode))
   )
 
+;;------------------------  shortcut use registers
 ;; M-x jump-to-register (SAME ^x r j)
 ;; registers (short-cuts to files)
 (set-register ?a (cons 'file "~/.config/zsh/aliases.zsh"))
@@ -141,8 +136,7 @@
 ;; log my commands = ERRPRS
 (use-package command-log-mode)
 
-;; org mode
-
+;;------------------------  org mode
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
@@ -168,6 +162,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
 ;; ------------------------  R
 
 ;; CLAIM:  in R,  finds the repl (minor mode) buffer, empties it
@@ -181,8 +176,8 @@
           (comint-clear-buffer))
       (user-error "No R REPL buffers found"))))
 
-; To Use (in R)
-(global-set-key (kbd "C-c l") #'my-r-clear-buffer)
+; ESS, R clear console (console MUST have focus)
+(global-set-key (kbd "C-l") 'comint-clear-buffer) ; clear R console/process buffer
 
 ; ESS, R  use <-
 (eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "C-_") " <- "))
@@ -217,16 +212,22 @@
 
 ;; FUTURE
 
-;; clipboard, use + register in Evil 
-(setq x-select-enable-clipboard nil)
 
 
-;; EXPERIMENT - magit
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+;;------------------------  experiments (at bottom)
 
+;; ------------------------  evil cursor fonts
+
+;; normal cursor = purple
+(setq evil-normal-state-cursor '(box "purple"))
+
+;; insert cursor = bar, blue
+(setq evil-insert-state-cursor '((bar . 5)  "green"))
+
+;; USE:  M-x shell
+;; opens shell in SAME window, not new one (default)
+(setq display-buffer-alist '(("\\*shell" (display-buffer-same-window))))
 
 ;; (April 2025) fixed buffers ?   Window keep appearing!
 ;;(setq display-buffer-alist
@@ -247,3 +248,8 @@
          ;;(window-width . 0.33)
          ;;(reusable-frames . nil))))
 
+
+;; (4/25) modern completion
+;;
+;;(use-package vertico
+  ;; :ensure t
