@@ -66,7 +66,7 @@ if (interactive()) {
     suppressMessages(library(rlang))
     suppressMessages(library(lobstr))
     suppressMessages(library(sloop))
-    suppressMessages(library(xfun)) # utils from Yihui
+#    suppressMessages(library(xfun)) # utils from Yihui
     suppressMessages(library(rmarkdown))
     suppressMessages(library(tibble))
     suppressMessages(library(kableExtra))

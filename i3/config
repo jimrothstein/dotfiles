@@ -215,6 +215,8 @@ bindsym $mod+m bar mode toggle
 
 ## Any rstudio instance manually created will appear on wk4 
 assign [class="rstudio"] $ws4
-#assign [class="slack"] $ws9
+
+## Any slack instance .... will appear on wk9
+assign [class="slack"] $ws9
 ##for_window [class="rstudio"] move to workspace $ws4 
 # ```
