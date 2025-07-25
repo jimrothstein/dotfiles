@@ -41,7 +41,7 @@
 #	-F  list all formats of requested video
 # ----------------------------------------
 #
-mkdir -p ~/latest_mp3_downloads/
+mkdir -p ~/mp3_latest_downloads/
 
 # setup
 list=PLbcglKxZP5PMzNbrnMtdwtoPkkCi64cbw

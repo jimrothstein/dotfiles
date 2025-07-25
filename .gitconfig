@@ -42,19 +42,22 @@
 
 # git l 
 # l = "log --decorate --oneline --graph -5 --pretty=format:'%h-%T'"
-	l = "log --decorate --oneline --graph -5"
+l = "log --decorate --oneline --graph -5"
 
 # display min <SHA>  - difference
-    l1 = "log --decorate --oneline --graph -20 --abbrev-commit" --pretty=format:'%h_ %ar'
+l1 = "log --decorate --oneline --graph -20 --abbrev-commit" --pretty=format:'%h %ar'
 
 # display SHA - minutes ago
   ll = "log --pretty=format:'%h_ %ar'"  -10
+
+# ------------------------ add color
   pretty = log --pretty=\"format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D\"
+
 
 # 	last commit		
 	last = "log -1 HEAD"
 
-#   List All git projects
+# ------------------------  list all git projects	
 	all = "!find **/.git/config"
 [credential]
 	helper = cache

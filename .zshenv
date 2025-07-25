@@ -18,6 +18,9 @@
 # =================================================
 
 
+# 
+export GEMINI_API_KEY="AIzaSyByqDSI6T-n3PuM3ayV-fIL8iwthCKYMoE"
+
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # nvim expects this:
