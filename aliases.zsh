@@ -1,7 +1,7 @@
 # Set personal zsh aliases
 # For a full list of active aliases, run `alias`.
 #
-# (jr) To find WHERE alias defined:
+# ------------------------  To find WHERE alias defined:
 # >which <alias>
 # >grep -r '<alias=xxxx>'
 #
@@ -34,14 +34,14 @@ alias dirs='dirs -lpv'
 #  Using ex as editor
 
 #	coding, 
-alias goADMIRAL='cd ~/code/admiral/R'
+alias goAdmiral='cd ~/code/admiral/R'
 alias goADVANCED_R='cd ~/code/try_things_here/ADVANCED_R'
 alias goBASE='cd ~/code/try_things_here/BASE/'
 alias goBee='cd ~/code/beekeeper/'
 alias goBlog='cd ~/code/jimrothstein.github.io/'   # same as goJimrothstein
 alias goCode='cd ~/code/'
 alias goDocs='cd ~/code/docs'
-alias goEmacs='cd ~/.config/emacs'
+alias goEmacs='cd ~/code/elisp_project/'
 alias goElisp='cd ~/code/elisp_project/'
 alias goDT='cd ~/code/try_things_here/DT/'
 alias goHealth='cd ~/code/health_labs/'
@@ -77,7 +77,6 @@ alias goDot='cd ~/dotfiles'
 #
 alias goBin='cd ~/bin/'
 alias goConfig='cd ~/.config/'
-alias goBackup='cd ~/.config/nvim/backup/'
 alias goDownloads='cd ~/Downloads/'
 alias cx='chmod +x'				# USE:    cx  new_script.sh
 

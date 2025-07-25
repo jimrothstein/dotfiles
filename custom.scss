@@ -33,9 +33,31 @@ $body-bg:            $off-white;
 
 /*-- scss:rules --*/
 
+h2 {
+    font-size: 1.1 em;
+}
+
 h3 {
     color: red;
     font-size: 1.1 em;
+}
+
+h4 {
+    color: blue;
+    font-size: 1.1 em;
+}
+    
+
+p {
+  font-size: 1em;
+}
+
+h4 {
+    font-size: 11px;
+}
+
+.regular_text {
+    font-size: 9px;
 }
 
 .postbox {

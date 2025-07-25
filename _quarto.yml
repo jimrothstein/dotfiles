@@ -6,8 +6,9 @@ project:
     -  "*.qmd"
 
 author: "jim"
-date: "12/20/2023"      # date started project
-# pdf-engine: lualatex
+#date: "12/20/2023"      # date started project
+date: last-modified      # date started project
+pdf-engine: lualatex
 # bibliography: references.bib
 
 #      - custom.scss
@@ -17,7 +18,7 @@ execute:
     collapse: true
     standalone: true
     enabled: true    ##false: do not run chunks
-    cache: true     ## knitr caches R chunks
+    cache: false     ## knitr caches R chunks
 
 format:
   html:
@@ -37,7 +38,7 @@ format:
     code-block-border-left: "#31BAE9"
     indent: false
     code-link: true             # hyperlink R functions
-#   pdf:
-#     documentclass: report
-#     margin-left: 30mm
-#     margin-right: 30mm
+  pdf:
+    documentclass: report
+    margin-left: 30mm
+    margin-right: 30mm
