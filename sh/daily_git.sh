@@ -21,8 +21,6 @@
 #	FIRST, all the code repos
 #	---------------------
 #
-cd /home/jim/code/mp3
-/home/jim/bin/git_add_push.sh .
 
 cd /home/jim/code/youtube_api
 /home/jim/bin/git_add_push.sh .
@@ -30,26 +28,28 @@ cd /home/jim/code/youtube_api
 cd /home/jim/code/zsh_project
 /home/jim/bin/git_add_push.sh .
 
-cd /home/jim/code/code_publish
+cd /home/jim/code/publish_project/
 /home/jim/bin/git_add_push.sh .
 
 cd /home/jim/code/docs
 /home/jim/bin/git_add_push.sh .
 
+cd /home/jim/code/elisp_project/
+/home/jim/bin/git_add_push.sh .
+
+
 cd /home/jim/code/try_things_here
 /home/jim/bin/git_add_push.sh .
 
-cd /home/jim/code/nvim_project
-/home/jim/bin/git_add_push.sh .
-
-cd /home/jim/code/lua_project
-/home/jim/bin/git_add_push.sh .
 
 cd /home/jim/code/SHINY
 /home/jim/bin/git_add_push.sh .
 
 # cd /home/jim/code/NSE_project
 # /home/jim/bin/git_add_push.sh .
+
+cd /home/jim/code/github_actions_project/
+/home/jim/bin/git_add_push.sh .
 
 cd /home/jim/code/health_labs
 /home/jim/bin/git_add_push.sh .
