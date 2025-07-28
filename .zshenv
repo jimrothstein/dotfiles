@@ -17,9 +17,11 @@
 # 		Config files put in ~/.config/zsh/
 # =================================================
 
+## DO NOT SEND to GITHUB !!!
 
 # 
 export GEMINI_API_KEY="AIzaSyByqDSI6T-n3PuM3ayV-fIL8iwthCKYMoE"
+export key="AIzaSyBW7YFOeje58b-KADLR65vxMUej9BqkpWU"    # July 25, 2025
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -36,8 +38,6 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export DOT_DIR="$HOME/dotfiles"
 
 
-#	TMUX expects to find .tmux.conf in HOME
-export T=/home/jim/.tmux.conf
 
 # HISTORY
 export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
