@@ -31,8 +31,8 @@
 ;; global tab line  ON
 (setq global-tab-line-mode t)
 
-;; use spaces, not tabs
-(setq indent-tabs-mode nil)
+;; use spaces, not tabs; as default (esp good for yaml)
+(setq-default indent-tabs-mode nil)
 
 ;; jump to other window (still need?)
 (global-set-key [C-tab] 'other-window)
@@ -284,7 +284,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ess-r-mode indent-bars ## whitespace-cleanup-mode whitespace-mode request-deferred racket-mode gptel simpleclip xclip paredit vertico magit exwm ess-r-insert-obj yaml-mode org-modern markdown-preview-mode yasnippet-snippets quarto-mode flycheck which-key yasnippet ess-smart-underscore use-package-ensure-system-package evil ess company))
+   '(## company ess ess-r-insert-obj ess-r-mode ess-smart-underscore evil
+	evil-collection exwm flycheck gptel indent-bars magit
+	markdown-preview-mode org-modern paredit quarto-mode
+	racket-mode request-deferred simpleclip
+	use-package-ensure-system-package vertico which-key
+	whitespace-cleanup-mode whitespace-mode xclip yaml-mode
+	yasnippet yasnippet-snippets))
  '(x-select-enable-clipboard-manager t))
 ;; ------------------------  
 
@@ -370,3 +376,4 @@
 ; ESS, R  use <-
 (eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "C-_") " <- "))
 (eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "C-_") " <- "))
+
