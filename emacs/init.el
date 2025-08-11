@@ -321,25 +321,25 @@
 ;; opens shell in SAME window, not new one (default)
 (setq display-buffer-alist '(("\\*shell" (display-buffer-same-window))))
 
-;; (April 2025) fixed buffers ?   Window keep appearing!
-;;(setq display-buffer-alist
-      ;;(("^\\*R Dired"
-         ;;(display-buffer-reuse-window display-buffer-in-side-window)
-         ;;(side . right)
-         ;;(slot . -1)
-         ;;(window-width . 0.33)
-         ;;(reusable-frames . nil))
-        ;;("^\\*R"
-         ;;(display-buffer-reuse-window display-buffer-at-bottom)
-         ;;(window-width . 0.5)
-         ;;(reusable-frames . nil))
-        ;;("^\\*Help"
-         ;;(display-buffer-reuse-window display-buffer-in-side-window)
-         ;;(side . right)
-         ;;(slot . 1)
-         ;;(window-width . 0.33)
-         ;;(reusable-frames . nil))))
-
+;; (April 2025) 
+(setq display-buffer-alist
+      '(("*R Dired"
+         (display-buffer-reuse-window display-buffer-at-bottom)
+         (window-width . 0.5)
+         (window-height 0.25)
+         (reusable-frames . nil))
+        ("*R"
+         (display-buffer-reuse-window display-buffer-in-side-window)
+         (side . right)
+         (slot . -1) ;; left 1/3
+         (window-width . 0.5)
+         (reusable-frames . nil))
+        ("^\\*Help"
+         (display-buffer-reuse-window display-buffer-in-side-window)
+         (side . right)
+         (slot . 1) ;; right 1/3
+         (window-width . 0.5)
+         (reusable-frames . nil))))
 
 ;; (4/25) modern completion
 ;;

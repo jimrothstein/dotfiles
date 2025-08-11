@@ -13,6 +13,7 @@ WORKFLOW="900_simple_thollander.yml"
 WORKFLOW="verify_templates_experimental.yml"
 WORKFLOW="verify_version3.yml"
 WORKFLOW="verify_templates_experimental.yml"
+WORKFLOW="test.yml"
 
 
 gh run ls \
