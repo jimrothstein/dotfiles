@@ -271,9 +271,15 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
- 
 
-;(org-babel-load-file "path/to/this/file.org")
+;; allow bash to run in org mode blocks
+ (org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (shell . t)
+   ;; Add other languages as needed
+   ))
+
 
 ;; ------------------------  custom - why?
 
