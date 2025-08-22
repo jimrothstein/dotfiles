@@ -329,7 +329,7 @@
 
 ;; (April 2025) 
 (setq display-buffer-alist
-      '(("*R Dired"
+      '(("*R Dired ogg"
          (display-buffer-reuse-window display-buffer-at-bottom)
          (window-width . 0.5)
          (window-height 0.25)
@@ -349,8 +349,11 @@
 
 ;; (4/25) modern completion
 ;;
-;;(use-package vertico
-  ;; :ensure t
+(use-package vertico
+   :ensure t
+   :init
+   (vertico-mode)
+   (setq vertico-cycle t))
 
 
 ;; ------------------------  consult

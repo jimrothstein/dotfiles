@@ -70,3 +70,5 @@ l1 = "log --decorate --oneline --graph -20 --abbrev-commit" --pretty=format:'%h 
 [pull]
     ff = only
 
+[init]
+	defaultBranch = main
