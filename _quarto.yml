@@ -33,7 +33,7 @@ format:
     number-depth: 3   #book feature only?
       #number-offset: 2
     #toc_location: body
-    embed-resources:  true
+    embed-resources: false # shinylive wants false; otherwise use true
     code-block-bg: true
     code-block-border-left: "#31BAE9"
     indent: false
