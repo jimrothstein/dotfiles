@@ -10,12 +10,13 @@
 
 ;; (6/24/2025) r 
 
+;; ------------------------  package
 
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
- (package-initialize)
+(package-initialize)
 
 ;; "bootstrap"
 (unless (package-installed-p 'use-package)
@@ -25,8 +26,8 @@
   (setq use-package-always-ensure t
         use-package-expand-minimally t))
 
+;; ------------------------  config
 (setq backup-directory-alist '( ("." . "~/.emacs_saves")))
-
 
 ;; global tab line  ON
 (setq global-tab-line-mode t)
@@ -48,6 +49,8 @@
   (package-install 'evil))
 (use-package evil
   :ensure t
+  :init
+  (setq evil-want-keybinding nil)   ;; related to evil-collection
   :config
   (evil-mode 1)) ; 1 = on,active
 
@@ -163,7 +166,6 @@
   :init
   (global-flycheck-mode t))
   
-
 ;; ------------------------ YAML
 
 ;; (define-key apply-yaml (kbd "C-y") 'yaml-mode)
@@ -187,6 +189,8 @@
 ;; another way?
 (global-set-key "\C-cw" 'whitespace-mode)
 ;; ------------------------  misc params
+
+;; ------------------------  config
 
 ;; y/n   (not yes/no)
 (setq use-short-answers t)
@@ -282,6 +286,7 @@
 
 
 ;; ------------------------  custom - why?
+;; ------------------------  
 
 ;; lists all user installed pacakges?
 (custom-set-variables
@@ -291,12 +296,12 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(## company ess ess-r-insert-obj ess-r-mode ess-smart-underscore evil
-	evil-collection exwm flycheck gptel indent-bars magit
-	markdown-preview-mode org-modern paredit quarto-mode
-	racket-mode request-deferred simpleclip
-	use-package-ensure-system-package vertico which-key
-	whitespace-cleanup-mode whitespace-mode xclip yaml-mode
-	yasnippet yasnippet-snippets))
+        evil-collection exwm flycheck gptel gptel-aibo indent-bars
+        magit markdown-preview-mode org-modern paredit quarto-mode
+        racket-mode request-deferred simpleclip
+        use-package-ensure-system-package vertico which-key
+        whitespace-cleanup-mode whitespace-mode xclip yaml-mode
+        yasnippet yasnippet-snippets))
  '(x-select-enable-clipboard-manager t))
 ;; ------------------------  
 
@@ -366,6 +371,21 @@
 
 ;; ------------------------ ESS 
 ;; M-x ess-version = 20240821 
+
+
+
+;; ------------------------  magit
+;; 9/2025
+(use-package magit
+  :ensure t)
+
+;; useful to magit?
+(use-package evil-collection
+  :ensure t
+  :after evil
+  :init
+  (evil-collection-init))
+
 
 ;; ------------------------  R
 ;; CLAIM:  in R,  finds the repl (minor mode) buffer, empties it
