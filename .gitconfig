@@ -4,8 +4,9 @@
 [push]
 	default = simple
 [core]
-	editor = vim.tiny
+	editor = ex
 	excludesfile = "~/.gitignore"
+        abbrev = 4    # need more?
 
 ### SEE  https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date/1441062#1441062
 #   USAGE:  git log   (jr: 2023-06-03)
@@ -38,11 +39,13 @@
 # %T = full SHA
 # %h = short SHA
 # %r = relative (2 days ago)
+# %ar = author relative data
+# %s = subject
 # ------------------------  git log
 
 # git l 
 # l = "log --decorate --oneline --graph -5 --pretty=format:'%h-%T'"
-l = "log --decorate --oneline --graph -5"
+l = "log --decorate --oneline --graph -10 --pretty=format:'%h %ar %s'"
 
 # display min <SHA>  - difference
 l1 = "log --decorate --oneline --graph -20 --abbrev-commit" --pretty=format:'%h %ar'
