@@ -41,11 +41,12 @@
 # %r = relative (2 days ago)
 # %ar = author relative data
 # %s = subject
+# %cn = committer name
 # ------------------------  git log
 
 # git l 
 # l = "log --decorate --oneline --graph -5 --pretty=format:'%h-%T'"
-l = "log --decorate --oneline --graph -10 --pretty=format:'%h %ar %s'"
+l = "log --decorate --oneline --graph -10 --pretty=format:'%h %ar [ %an ] %s'"
 
 # display min <SHA>  - difference
 l1 = "log --decorate --oneline --graph -20 --abbrev-commit" --pretty=format:'%h %ar'
