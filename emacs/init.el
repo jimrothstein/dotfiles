@@ -98,65 +98,72 @@
 (global-set-key "\C-y" 'clipboard-yank)
 
 
+;;------------------------  Polymode, ESS, Quarto, R
+;;
+;; Polymode, ESS, and Quarto/Rmd Setup
+;;
 
-;; ------------------------  ess (via gemini)
-;; ess = package
-;; ess-r-mode = major mode (from pkg ess)
-;; my-start-r() = function
-(use-package ess
-  :ensure t ; Ensure ESS is installed if not already
+;; Use-package declarations
+(use-package polymode)
+(use-package poly-R)
+(use-package poly-markdown)
+(use-package quarto-mode)
+
+(use-package polymode
+  :ensure t
   :config
-  ;; Load the ess-site file (VERY IMPORTANT for proper ESS setup)
+  ;; Correctly associate .Rmd and .qmd files with poly-R-markdown-mode
+  (add-to-list 'auto-mode-alist '("\\.Rmd\\'" . poly-R-markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.qmd\\'" . poly-R-markdown-mode))
+  
+  ;; Define keybindings that work specifically within the poly-R-markdown-mode
+  (with-eval-after-load 'poly-R-markdown-mode
+    ;; Keybinding for chunk evaluation
+    (define-key poly-R-markdown-mode-map (kbd "C-c C-e") 'poly-R-chunk-eval)
+    (define-key poly-R-markdown-mode-map (kbd "C-c r") 'my-start-r)))
+
+;;
+;; ESS Setup
+;;
+
+(use-package ess
+  :ensure t
+  :config
   (require 'ess-site)
   
-
-  ;; Associate ESS with R and R Markdown/Quarto files
-  ;; The order matters: Rmd/qmd before .R
-  (add-to-list 'auto-mode-alist '("\\.qmd\\'" . Rmd-mode)) ; Quarto documents
-  (add-to-list 'auto-mode-alist '("\\.Rmd\\'" . Rmd-mode)) ; R Markdown documents
-  (add-to-list 'auto-mode-alist '("\\.[RrSs]\\'" . ess-r-mode)) ; .R and .S files
-
   ;; R-specific settings
   (setq
-   ;; Args for R when starting ESS process (e.g., --no-save --no-restore)
-   ess-R-args "--no-save --no-restore"
-   ess-use-auto-completion t       ; auto-complete
-   ess-indent-offset 2             ; Use 2 spaces for indentation
-   ess-nuke-buffer-on-exit t       ; Kill the ESS process buffer when done
-   ess-eval-visibly-p nil          ; Don't show evaluation output in a separate buffer immediately
-   ess-local-process-name "R"      ; Default process name for R
-   ;; Prompt settings if you customize your R prompt
-   ess-set-procs-buffer-regexp (rx bos (or "R " "r") "[>+] ")
-   ess-smart-S-assign-key (kbd "_") ; convert _ to <-
-   ess-use-flycheck t              ; for linting
-   )
+    ess-R-args "--no-save --no-restore"
+    ess-use-auto-completion t
+    ess-indent-offset 2
+    ess-nuke-buffer-on-exit t
+    ess-eval-visibly-p nil
+    ess-local-process-name "R"
+    ess-set-procs-buffer-regexp (rx bos (or "R " "r") "[>+] ")
+    ess-smart-S-assign-key (kbd "_")
+    ess-use-flycheck t
+    ess-style 'RStudio)
 
-  ;; WORK?
-   (setq ess_style 'RStudio)
-
-  ;; Define your custom function within the ESS config (ie :config)
+  ;; Define a custom function to start R in a split window
   (defun my-start-r ()
     (interactive)
-    (split-window-right) ; Splits the window to the right
-    (R)                  ; Starts the R process
-    (other-window 1))    ; Switches back to the original window (your script)
+    (split-window-right)
+    (R)
+    (other-window 1))
 
-  ;; Keybindings for ESS (ess-r-mode)
-  ;; We use `with-eval-after-load 'ess-r-mode'` to ensure ess-r-mode-map is defined
+  ;; Keybindings for ess-r-mode (for plain R files)
   (with-eval-after-load 'ess-r-mode
-    (define-key ess-r-mode-map (kbd "C-c r") 'my-start-r) ; Your custom keybinding
+    (define-key ess-r-mode-map (kbd "C-c r") 'my-start-r)
     (define-key ess-r-mode-map (kbd "C-c C-e") 'ess-eval-line-and-step)
     (define-key ess-r-mode-map (kbd "C-c C-c") 'ess-eval-buffer)
     (define-key ess-r-mode-map (kbd "C-c C-r") 'ess-eval-region)
     (define-key ess-r-mode-map (kbd "C-c C-z") 'ess-switch-to-ESS)
     (define-key ess-r-mode-map (kbd "C-c C-s") 'ess-load-file)
-    (define-key ess-r-mode-map (kbd "C-c C-k") 'ess-kill-buffer-and-process)
-  )
+    (define-key ess-r-mode-map (kbd "C-c C-k") 'ess-kill-buffer-and-process)))
 
-  ;; Hooks for Rmd mode
-  (with-eval-after-load 'Rmd-mode
-    (define-key Rmd-mode-map (kbd "C-c C-v") 'poly-R-chunk-eval))
-)
+;; ------------------------  separate
+
+
 
 ;; ------------------------  flycheck
 ;; replace flymake with flycheck
@@ -297,8 +304,8 @@
  '(package-selected-packages
    '(## company ess ess-r-insert-obj ess-r-mode ess-smart-underscore evil
         evil-collection exwm flycheck gptel gptel-aibo indent-bars
-        magit markdown-preview-mode org-modern paredit quarto-mode
-        racket-mode request-deferred simpleclip
+        magit markdown-preview-mode org-modern paredit poly-R polymode
+        quarto-mode racket-mode request-deferred simpleclip
         use-package-ensure-system-package vertico which-key
         whitespace-cleanup-mode whitespace-mode xclip yaml-mode
         yasnippet yasnippet-snippets))
@@ -405,4 +412,3 @@
 ; ESS, R  use <-
 (eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "C-_") " <- "))
 (eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "C-_") " <- "))
-
