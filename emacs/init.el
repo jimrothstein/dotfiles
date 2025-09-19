@@ -160,6 +160,8 @@
     (define-key ess-r-mode-map (kbd "C-c C-z") 'ess-switch-to-ESS)
     (define-key ess-r-mode-map (kbd "C-c C-s") 'ess-load-file)
     (define-key ess-r-mode-map (kbd "C-c C-k") 'ess-kill-buffer-and-process)))
+; <-
+(eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "C-_") "<-"))
 
 ;; ------------------------  separate
 
