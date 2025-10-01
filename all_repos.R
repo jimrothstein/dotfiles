@@ -15,7 +15,7 @@ x <- c(
   "/home/jim/code/LLM_project",
   "/home/jim/code/make_project",
   "/home/jim/code/mp3/",
-  "/home/jim/code/publish_projec",
+  "/home/jim/code/publish_project",
   "/home/jim/code/shiny_project",
   "/home/jim/code/shiny_live_project",
   "/home/jim/code/stats_project/",
