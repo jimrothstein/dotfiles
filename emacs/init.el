@@ -29,6 +29,9 @@
 ;; ------------------------  config
 (setq backup-directory-alist '( ("." . "~/.emacs_saves")))
 
+;; automatically upgrade built-in packages
+(setq package-install-upgrade-built-in t)
+
 ;; global tab line  ON
 (setq global-tab-line-mode t)
 
@@ -123,14 +126,23 @@
     (define-key poly-R-markdown-mode-map (kbd "C-c r") 'my-start-r)))
 
 ;;
-;; ESS Setup
+;; ------------------------  ESS SETUP
+
 ;;
 
 (use-package ess
   :ensure t
   :config
   (require 'ess-site)
-  
+
+  ;; ADD 2nd binding to eval line -WORKS !!
+
+;;  (use-package ess
+;;  :bind (
+;;  :map ess-mode-map 
+;;  ("C-q" . 'ess-eval-region-or-line-and-step)))
+;;
+
   ;; R-specific settings
   (setq
     ess-R-args "--no-save --no-restore"
@@ -305,10 +317,10 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(## company ess ess-r-insert-obj ess-r-mode ess-smart-underscore evil
-        evil-collection exwm flycheck gptel gptel-aibo indent-bars
-        magit markdown-preview-mode org-modern paredit poly-R polymode
-        quarto-mode racket-mode request-deferred simpleclip
-        use-package-ensure-system-package vertico which-key
+        evil-collection exwm flycheck gptel gptel-aibo gptel-magit
+        indent-bars magit markdown-preview-mode org-modern paredit
+        poly-R polymode quarto-mode racket-mode request-deferred
+        simpleclip use-package-ensure-system-package vertico which-key
         whitespace-cleanup-mode whitespace-mode xclip yaml-mode
         yasnippet yasnippet-snippets))
  '(x-select-enable-clipboard-manager t))
@@ -369,18 +381,37 @@
    (vertico-mode)
    (setq vertico-cycle t))
 
+;; adds description to vertico's list
+(use-package marginalia
+  :ensure t
+  :config
+  (marginalia-mode 1))
 
 ;; ------------------------  consult
 ;; removed july 7, 2025
-;; see consult.el
-;; ------------------------  separate
+;; see consult.el   -  short version is below
+(use-package consult
+  :ensure t
+  :bind (;; A recursive grep
+         ("M-s M-g" . consult-grep)
+         ;; Search for files names recursively
+         ("M-s M-f" . consult-find)
+         ;; Search through the outline (headings) of the file
+         ("M-s M-o" . consult-outline)
+         ;; Search the current buffer
+         ("M-s M-l" . consult-line)
+         ;; Switch to another buffer, or bookmarked file, or recently
+         ;; opened file.
+         ("M-s M-b" . consult-buffer)))
+;; ------------------------  gptel with DeepSeek API
+;; gptel IS installed
+;; waiting:  API key is free?
 
 
 ;; ------------------------  LEGACY, WHAT is needed?
 
 ;; ------------------------ ESS 
 ;; M-x ess-version = 20240821 
-
 
 
 ;; ------------------------  magit
