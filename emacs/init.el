@@ -316,13 +316,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(## company ess ess-r-insert-obj ess-r-mode ess-smart-underscore evil
-        evil-collection exwm flycheck gptel gptel-aibo gptel-magit
-        indent-bars magit markdown-preview-mode org-modern paredit
-        poly-R polymode quarto-mode racket-mode request-deferred
-        simpleclip use-package-ensure-system-package vertico which-key
-        whitespace-cleanup-mode whitespace-mode xclip yaml-mode
-        yasnippet yasnippet-snippets))
+   '(## company denote ess ess-r-insert-obj ess-r-mode
+        ess-smart-underscore evil evil-collection exwm flycheck gptel
+        gptel-aibo gptel-magit indent-bars magit markdown-preview-mode
+        org-modern paredit poly-R polymode quarto-mode racket-mode
+        request-deferred simpleclip use-package-ensure-system-package
+        vertico which-key whitespace-cleanup-mode whitespace-mode
+        xclip yaml-mode yasnippet yasnippet-snippets))
  '(x-select-enable-clipboard-manager t))
 ;; ------------------------  
 
