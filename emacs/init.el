@@ -173,7 +173,10 @@
     (define-key ess-r-mode-map (kbd "C-c C-s") 'ess-load-file)
     (define-key ess-r-mode-map (kbd "C-c C-k") 'ess-kill-buffer-and-process)))
 ; <-
-(eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "C-_") "<-"))
+
+; ESS, R  use <-
+(eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "C-_") " <- "))
+(eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "C-_") " <- "))
 
 ;; ------------------------  separate
 
@@ -442,6 +445,3 @@
 ; ESS, R clear console (console MUST have focus)
 (global-set-key (kbd "C-l") 'comint-clear-buffer) ; clear R console/process buffer
 
-; ESS, R  use <-
-(eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "C-_") " <- "))
-(eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "C-_") " <- "))
