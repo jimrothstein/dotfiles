@@ -1,6 +1,3 @@
-# \footnotesize
-
-# ```
 #	TO PRINT; put entire text inside verbatim (```) tags
 #       pandoc -f markdown -V geometry:margin=2cm    -o out.pdf
 ## ---------------------
@@ -75,9 +72,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # ---------------
 #       Bindsym
 # ---------------
-bindsysm $mod+Shift+q
-bindsysm $mod+q
-
+bindsym $mod+Shift+q kill                               # close the current window
+bindsym $mod+q exec --no-startup-id i3-msg exit         # exit i3
 bindsym $mod+Return exec $myTerm   # start term
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -136,13 +132,10 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
 #  rstudio is NOT capitalized
 exec --no-startup-id i3-msg 'workspace $ws4; exec rstudio; workspace $ws1'
-#exec_always i3-msg 'workspace $ws5; exec thunar; workspace $ws1'
-#exec --no-startup-id i3-msg 'workspace $ws6; exec R; workspace $ws1'
 
 # next line will create 2 zsh instances
 #exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm'
 exec --no-startup-id i3-msg 'workspace $ws8; exec zotero; workspace $ws1'
-#exec --no-startup-id i3-msg 'workspace $ws9; exec slack; workspace $ws1'
 
 # reload the configuration file, restart, exit
 # -------------------------------
@@ -199,16 +192,3 @@ bindsym $mod+o mode "$mode_launcher"
 ## Any rstudio instance manually created will appear on wk4 
 ## class is one way to identify a program (see gemini LLM)
 assign [class="rstudio"] $ws4
-
-## Any slack instance .... will appear on wk9
-## PROBLEM ... is it [Ss]lack ?  which?
-# assign [class="slack"] $ws9
-# assign [class="Slack"] $ws9
-
-# ---- programs that don't play nice:
-# ffloat
-# super + mouse(drag) to move window
-#for_window [title="Preferences$"] floating enable
-#for_window [title="^Calculator"] floating enable
-for_window [class="rstudio"] move container to workspace $ws4 
-# for_window [title="Slack"] move to workspace $ws9 
