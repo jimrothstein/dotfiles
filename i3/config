@@ -136,6 +136,9 @@ exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws8; exec zotero; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws9; exec slack; workspace $ws1'
 
+# Focus workspace 1 (Terminal) after all startup is complete
+exec --no-startup-id i3-msg 'workspace $ws1'
+
 # mode "resize" ------------------------  
 # resize window (you can also use the mouse for that) -----------------------------------------------------
 #       step #1  $mod+r to enter mode "resize"
