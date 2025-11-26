@@ -136,18 +136,6 @@ exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws8; exec zotero; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws9; exec slack; workspace $ws1'
 
-# reload the configuration file, restart, exit
-# -------------------------------
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-
-# $mod+E  Completely exit X11
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-
 # mode "resize" ------------------------  
 # resize window (you can also use the mouse for that) -----------------------------------------------------
 #       step #1  $mod+r to enter mode "resize"
