@@ -88,7 +88,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-#------------------------  naviagation, SEE config_extra
+#------------------------  navigation, SEE config_extra
 
 # set variables for named workspaces   ---------------------
 set $ws1 "1: Terminal"
@@ -152,8 +152,8 @@ mode "resize" {
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindssym Up resize shrink height 10 px or 10 ppt
+        bindssym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
@@ -175,7 +175,7 @@ mode "$mode_launcher" {
     bindsym z exec zotero
     bindsym w exec wezterm
 
-    bindssym Escape mode "default"
+    bindsym Escape mode "default"
     bindsym Return mode "default"
 }
 # -----		   active mode "mode_launcher"   
