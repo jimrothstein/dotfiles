@@ -138,3 +138,4 @@ tags
 # EXCEPTIONS:
 # DO back up _quarto.yml files
 !_quarto.yml
+.aider*
