@@ -93,14 +93,14 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # set variables for named workspaces   ---------------------
 set $ws1 "1: Terminal"
 set $ws2 "2: Firefox"
-set $ws3 "3: emacs3"
-set $ws4 "4: Rstudio4"
+set $ws3 "3: Emacs"
+set $ws4 "4: RStudio"
 set $ws5 "5: Thunar"
-set $ws6 "6: R (cli)"
-set $ws7 "7  Extra Term 7"
-set $ws8 "8  Zotero8"
-set $ws9 "9: Slack9"
-set $ws10 "10"
+set $ws6 "6: R"
+set $ws7 "7: Terminal"
+set $ws8 "8: Zotero"
+set $ws9 "9: Slack"
+set $ws10 "10: Browser"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -132,6 +132,7 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
 #  rstudio is NOT capitalized
 exec --no-startup-id i3-msg 'workspace $ws4; exec rstudio; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws5; exec thunar; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws8; exec zotero; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws9; exec slack; workspace $ws1'
@@ -173,12 +174,12 @@ mode "$mode_launcher" {
     bindsym z exec zotero
     bindsym w exec wezterm
 
-    bindsym Escape mode "default"
+    bindssym Escape mode "default"
     bindsym Return mode "default"
 }
 # -----		   active mode "mode_launcher"   
 bindsym $mod+o mode "$mode_launcher"
 
-## Any rstudio instance manually created will appear on wk4 
-## class is one way to identify a program (see gemini LLM)
+## Assign applications to workspaces
 assign [class="rstudio"] $ws4
+assign [class="thunar"] $ws5
