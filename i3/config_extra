@@ -21,7 +21,7 @@ bar {
         focused_workspace       #2f343f #bf616a #d8dee8
         active_workspace        #2f343f #2f343f #d8dee8
         inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
+        urgent_workspace        #2f343f #ebcb8b #2f343f
     }
     #height 25
 }
@@ -81,9 +81,5 @@ bindsym $mod+Shift+f fullscreen toggle          # toggle fullscreen
 bindsym $mod+Shift+c kill                        # close window
 bindsym $mod+Shift+r restart                     # restart i3
 
-# quick workspace switching
-bindsym $mod+exclam workspace 1: Terminal        # mod+!
-bindsym $mod+at workspace 2: Firefox            # mod+@
-bindsym $mod+numbersign workspace 3: emacs3     # mod+#
-bindsym $mod+dollar workspace 4: Rstudio4       # mod+$
-bindsym $mod+percent workspace 5: Thunar        # mod+%
+# quick workspace switching - REMOVED to avoid conflicts with main config
+# Keep workspace bindings in main config file only
