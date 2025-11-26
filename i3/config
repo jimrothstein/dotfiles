@@ -136,6 +136,7 @@ exec --no-startup-id i3-msg 'workspace $ws4; exec rstudio; workspace $ws1'
 # next line will create 2 zsh instances
 #exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm'
 exec --no-startup-id i3-msg 'workspace $ws8; exec zotero; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws9; exec slack; workspace $ws1'
 
 # reload the configuration file, restart, exit
 # -------------------------------
@@ -176,12 +177,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # ------------------------- mode "mode_launcher"
-set $mode_launcher Launch: [f]irefox [t]hunar
+set $mode_launcher Launch: [f]irefox [t]hunar [s]lack
 mode "$mode_launcher" {
     bindsym f exec firefox
     bindsym t exec thunar 
-#    bindsym s exec slack
-
+    bindsym s exec slack
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
