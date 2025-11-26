@@ -50,6 +50,12 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# navigate to adjacent workspaces
+bindsym $mod+bracketleft workspace prev
+bindsym $mod+bracketright workspace next
+bindsym $mod+Control+h workspace prev
+bindsym $mod+Control+l workspace next
+
 # enter fullscreen mode for the focused container
 bindsym $mod+F11 fullscreen toggle
 
@@ -69,3 +75,15 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# window operations
+bindsym $mod+Shift+f fullscreen toggle          # toggle fullscreen
+bindsym $mod+Shift+c kill                        # close window
+bindsym $mod+Shift+r restart                     # restart i3
+
+# quick workspace switching
+bindsym $mod+exclam workspace 1: Terminal        # mod+!
+bindsym $mod+at workspace 2: Firefox            # mod+@
+bindsym $mod+numbersign workspace 3: emacs3     # mod+#
+bindsym $mod+dollar workspace 4: Rstudio4       # mod+$
+bindsym $mod+percent workspace 5: Thunar        # mod+%
