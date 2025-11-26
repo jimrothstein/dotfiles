@@ -132,9 +132,7 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
 #  rstudio is NOT capitalized
 exec --no-startup-id i3-msg 'workspace $ws4; exec rstudio; workspace $ws1'
-
-# next line will create 2 zsh instances
-#exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm'
+exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws8; exec zotero; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws9; exec slack; workspace $ws1'
 
@@ -177,11 +175,15 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # ------------------------- mode "mode_launcher"
-set $mode_launcher Launch: [f]irefox [t]hunar [s]lack
+set $mode_launcher Launch: [f]irefox [t]hunar [s]lack [e]macs [r]studio [z]otero [w]eaterm
 mode "$mode_launcher" {
     bindsym f exec firefox
     bindsym t exec thunar 
     bindsym s exec slack
+    bindsym e exec emacs
+    bindsym r exec rstudio
+    bindsym z exec zotero
+    bindsym w exec wezterm
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
