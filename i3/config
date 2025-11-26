@@ -95,7 +95,7 @@ set $ws1 "1: Terminal"
 set $ws2 "2: Firefox"
 set $ws3 "3: Emacs"
 set $ws4 "4: RStudio"
-set $ws5 "5: Thunar"
+set $ws5 "5: Files"
 set $ws6 "6: R"
 set $ws7 "7: Terminal"
 set $ws8 "8: Zotero"
@@ -132,7 +132,6 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
 #  rstudio is NOT capitalized
 exec --no-startup-id i3-msg 'workspace $ws4; exec rstudio; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws5; exec thunar; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws8; exec zotero; workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws9; exec slack; workspace $ws1'
@@ -164,10 +163,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # ------------------------- mode "mode_launcher"
-set $mode_launcher Launch: [f]irefox [t]hunar [s]lack [e]macs [r]studio [z]otero [w]eaterm
+set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]eaterm
 mode "$mode_launcher" {
     bindsym f exec firefox
-    bindsym t exec thunar 
     bindsym s exec slack
     bindsym e exec emacs
     bindsym r exec rstudio
@@ -182,4 +180,3 @@ bindsym $mod+o mode "$mode_launcher"
 
 ## Assign applications to workspaces
 assign [class="rstudio"] $ws4
-assign [class="thunar"] $ws5
