@@ -1,5 +1,3 @@
-#	TO PRINT; put entire text inside verbatim (```) tags
-#       pandoc -f markdown -V geometry:margin=2cm    -o out.pdf
 ## ---------------------
 #       i3 config file (v4)
 # ---------------------
@@ -23,7 +21,8 @@
 #
 #       TODO
 ## Every instance of wezterm on $ws5;  First, must find class    
-##       for_window [class="org.wezfurlong.wezterm"] move to workspace $ws5      
+assign [class="org.wezfurlong.wezterm"] $ws5      
+assign [class="org.wezfurlong.wezterm"] $ws7
 # ---------------------------------------
 set $mod Mod4
 set $myTerm wezterm
@@ -75,6 +74,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+Shift+q kill                               # close the current window
 bindsym $mod+q exec --no-startup-id i3-msg exit         # exit i3
 bindsym $mod+Return exec $myTerm   # start term
+# Exit i3 with a confirmation prompt
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -126,18 +127,22 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# STARTUP apps ----
-exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws3; exec emacs; workspace $ws1'
-#  rstudio is NOT capitalized
-exec --no-startup-id i3-msg 'workspace $ws4; exec rstudio; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws7; exec $myTerm; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws8; exec zotero; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws9; exec slack; workspace $ws1'
+# STARTUP apps ---- (exec_always runs on 1st startup AND after $mod Shift r)
+# exec_always --no-startup-id i3-msg 'workspace $ws1; exec $myTerm'
+exec_always --no-startup-id i3-msg 'workspace $ws2; exec firefox'
+exec_always --no-startup-id i3-msg 'workspace $ws3; exec emacs'
+exec_always --no-startup-id i3-msg 'workspace $ws4; exec rstudio'    # low-case r
+exec_always --no-startup-id i3-msg 'workspace $ws5; exec $myTerm'
+exec_always --no-startup-id i3-msg 'workspace $ws7; exec $myTerm'
+exec_always --no-startup-id i3-msg 'workspace $ws8; exec zotero'
+#exec --no-startup-id i3-msg 'workspace $ws9; exec slack'
 
-# Focus workspace 1 (Terminal) after all startup is complete
-exec --no-startup-id i3-msg 'workspace $ws1'
+
+# FINAL STEP: Ensure focus is $ws1 and WezTerm is launched on it
+# This single command switches the workspace AND launches the terminal.
+# Because it's last, this is the final state.
+# The delay insures that the prior command (slack) is able to finish
+exec --no-startup-id zsh -c "sleep 1.5 && i3-msg 'workspace $ws1; exec $myTerm'"
 
 # mode "resize" ------------------------  
 # resize window (you can also use the mouse for that) -----------------------------------------------------
@@ -166,7 +171,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # ------------------------- mode "mode_launcher"
-set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]eaterm
+set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]ezterm
 mode "$mode_launcher" {
     bindsym f exec firefox
     bindsym s exec slack
