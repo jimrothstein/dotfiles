@@ -16,17 +16,16 @@
 # Do NOT put comments (#) on same line as a command **
 # -  Mod4 is 'windows' key 
 # -  exec				runs 1st load only
-# -  exec --no-startup-id  	# some knd of window appears?
+# -  exec --no-startup-id  	# registers window?
 # -  exec_always  		runs on reload as well.
 #
 #       TODO
-## Every instance of wezterm on $ws5;  First, must find class    
-assign [class="org.wezfurlong.wezterm"] $ws5      
-assign [class="org.wezfurlong.wezterm"] $ws7
 # ---------------------------------------
 set $mod Mod4
 set $myTerm wezterm
 workspace_layout stacking   
+
+bindsym $mod+y border normal  3 
 
 # Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
 workspace_auto_back_and_forth yes
@@ -71,10 +70,15 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # ---------------
 #       Bindsym
 # ---------------
-bindsym $mod+Shift+q kill                               # close the current window
+# System commands
+#bindsym $mod+Shift+c  reload
+# to get to zsh prompt
+#bindsym $mod+Shift+r restart
+
+# close the current window
+bindsym $mod+Shift+q 
+
 bindsym $mod+q exec --no-startup-id i3-msg exit         # exit i3
-bindsym $mod+Return exec $myTerm   # start term
-# Exit i3 with a confirmation prompt
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -84,10 +88,6 @@ floating_modifier $mod
 # start dmenu (a program launcher) (compare dmenu | rofi )
 # ----------------------------------
 bindsym $mod+d exec --no-startup-id dmenu_run
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 #------------------------  navigation, SEE config_extra
 
@@ -128,21 +128,15 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # STARTUP apps ---- (exec_always runs on 1st startup AND after $mod Shift r)
-# exec_always --no-startup-id i3-msg 'workspace $ws1; exec $myTerm'
-exec_always --no-startup-id i3-msg 'workspace $ws2; exec firefox'
-exec_always --no-startup-id i3-msg 'workspace $ws3; exec emacs'
-exec_always --no-startup-id i3-msg 'workspace $ws4; exec rstudio'    # low-case r
-exec_always --no-startup-id i3-msg 'workspace $ws5; exec $myTerm'
-exec_always --no-startup-id i3-msg 'workspace $ws7; exec $myTerm'
-exec_always --no-startup-id i3-msg 'workspace $ws8; exec zotero'
+#exec_always --no-startup-id i3-msg 'workspace $ws1; exec $myTerm'
+#exec_always --no-startup-id i3-msg 'workspace $ws2; exec firefox'
+#exec_always --no-startup-id i3-msg 'workspace $ws3; exec emacs'
+#exec_always --no-startup-id i3-msg 'workspace $ws4; exec rstudio'    # low-case r
+#exec_always --no-startup-id i3-msg 'workspace $ws8; exec zotero'
 #exec --no-startup-id i3-msg 'workspace $ws9; exec slack'
 
-
-# FINAL STEP: Ensure focus is $ws1 and WezTerm is launched on it
-# This single command switches the workspace AND launches the terminal.
-# Because it's last, this is the final state.
-# The delay insures that the prior command (slack) is able to finish
-exec --no-startup-id zsh -c "sleep 1.5 && i3-msg 'workspace $ws1; exec $myTerm'"
+exec --no-startup-id i3-msg 'workspace $ws1; exec $myTerm; workspace $ws1'
+#for_window [class="wezterm"] move container to workspace 1
 
 # mode "resize" ------------------------  
 # resize window (you can also use the mouse for that) -----------------------------------------------------
