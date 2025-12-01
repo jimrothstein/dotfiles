@@ -35,9 +35,9 @@ alias dirs='dirs -lpv'
 
 #	coding, 
 alias goAdmiral='cd ~/code/admiral/R'
+alias goad='cd ~/code/admiraldev/R'
 alias goADVANCED_R='cd ~/code/try_things_here/ADVANCED_R'
 alias goBASE='cd ~/code/try_things_here/BASE/'
-alias goBee='cd ~/code/beekeeper/'
 alias goBlog='cd ~/code/jimrothstein.github.io/'   # same as goJimrothstein
 alias goCode='cd ~/code/'
 alias goDocs='cd ~/code/docs'
