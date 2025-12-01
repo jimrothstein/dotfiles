@@ -58,6 +58,8 @@
 # Ignore Files/dir that BEGIN with _ (_dir/ _script, _file.txt, etc.)
 # (NOT ignore my_file)
 _*
+# do NOT ignore _snaps (testthat::expect_snaps)
+!_snaps
 
 #---------------
 #   do not include AppImages
