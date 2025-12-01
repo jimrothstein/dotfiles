@@ -194,6 +194,8 @@ assign [class="rstudio"] $ws4
 bar {
     # from https://github.com/Tazeg/i3status
     #status_command exec /home/yelinaung/.config/i3status/mybar.sh
+    status_command exec ~/dotfiles/i3/i3status/mybar.sh
+
     status_command i3status --config ~/.config/i3/i3status.conf
     colors {
         separator #000000
