@@ -1,10 +1,10 @@
-# 9 JUNE 2024 - works -  makes CAPSLOCK become ESC	
-# also works:   setxkbmap -option "caps:escape" (takes effect immediate)
+# 9 JUNE 2024 - works like a charm!
+# Makes CAPSLOCK become ESC - life is better this way
+# Also works: setxkbmap -option "caps:escape" (instant effect)
 
-# KEYBOARD CONFIGURATION FILE 
-# Consult the keyboard(5) manual page.
+# KEYBOARD CONFIGURATION
+# This is where the magic happens for my keyboard setup
 XKBMODEL="pc105"
 XKBLAYOUT="us"
-XKBVARIANT=""
 XKBOPTIONS="caps:escape"
 BACKSPACE="guess"
