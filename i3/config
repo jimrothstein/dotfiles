@@ -19,13 +19,13 @@
 # -  exec --no-startup-id  	# registers window?
 # -  exec_always  		runs on reload as well.
 #
-#       TODO
 # ---------------------------------------
 set $mod Mod4
 set $myTerm wezterm
 workspace_layout stacking   
 
-bindsym $mod+y border normal  3 
+# does not work
+#bindsym $mod+y border normal  3 
 
 # Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
 workspace_auto_back_and_forth yes
@@ -70,16 +70,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # ---------------
 #       Bindsym
 # ---------------
-# System commands
-bindsym $mod+Shift+c  reload
-# to get to zsh prompt
-bindsym $mod+Shift+r restart
-
-# close the current window
-#bindsym $mod+Shift+q 
-
-bindsym $mod+q exec --no-startup-id i3-msg exit         # exit i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -128,11 +118,12 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # STARTUP apps ---- (exec_always runs on 1st startup AND after $mod Shift r)
-exec_always --no-startup-id i3-msg 'workspace $ws1; exec $myTerm'
 exec_always --no-startup-id i3-msg 'workspace $ws2; exec firefox'
 exec_always --no-startup-id i3-msg 'workspace $ws3; exec emacs'
 exec_always --no-startup-id i3-msg 'workspace $ws4; exec rstudio'    # low-case r
 exec_always --no-startup-id i3-msg 'workspace $ws8; exec zotero'
+
+exec_always --no-startup-id i3-msg 'workspace $ws1; exec $myTerm'
 #exec --no-startup-id i3-msg 'workspace $ws9; exec slack'
 
 
@@ -208,3 +199,43 @@ bar {
     }
     #height 25
 }
+
+#------------------------  separate
+
+# experimental
+# bindsym $mod+Shift+d exec systemctl poweroff -i
+
+set $mode_system System (l) lock, (c) reload,  (e) logout, (E) exit, (r) reboot, (R) restart, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+
+    # reload?
+    bindsym $mod+Shift+c  reload
+
+    # return to lightdm screen
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"        
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+    # same?  return to ligthdm screen
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+
+# to get to zsh prompt
+bindsym $mod+Shift+r restart
+
+# close the current window
+#bindsym $mod+Shift+q 
+
+    # pauses for 90 sec at pymouth screen (?), then shuts down
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+y mode "$mode_system"
+
+
+
