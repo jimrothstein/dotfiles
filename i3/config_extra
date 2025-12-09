@@ -1,5 +1,5 @@
 ## ---------------------
-#       i3 config_extra file (v4)
+#       i3 config_extra file (v4) - extra goodies!
 # ---------------------
 
 #------------------------  PURPOSE
@@ -8,23 +8,6 @@
 # ~/dotfiles/i3/config  as simple as possible.
 #------------------------  PURPOSE
 
-# experimental
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    # from https://github.com/Tazeg/i3status
-    #status_command exec /home/yelinaung/.config/i3status/mybar.sh
-    colors {
-        separator #000000
-
-        ## colour of border, background, and text
-        focused_workspace       #2f343f #bf616a #d8dee8
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspace        #2f343f #ebcb8b #2f343f
-    }
-    #height 25
-}
 
 #------------------------ change focused window  
 bindsym $mod+h focus left
@@ -78,8 +61,8 @@ bindsym $mod+a focus parent
 
 # window operations
 bindsym $mod+Shift+f fullscreen toggle          # toggle fullscreen
-bindsym $mod+Shift+c kill                        # close window
-bindsym $mod+Shift+r restart                     # restart i3
+#bindsym $mod+Shift+c kill                        # close window
+#bindsym $mod+Shift+r restart                     # restart i3, dup
 
 # quick workspace switching - REMOVED to avoid conflicts with main config
 # Keep workspace bindings in main config file only
