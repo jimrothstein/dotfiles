@@ -1,5 +1,5 @@
 # Set personal zsh aliases
-# For a full list of active aliases, run `alias`.
+# alias  (to see current)
 #
 # ------------------------  To find WHERE alias defined:
 # >which <alias>
@@ -36,6 +36,7 @@ alias dirs='dirs -lpv'
 #	coding, 
 alias goAdmiral='cd ~/code/admiral/R'
 alias goad='cd ~/code/admiraldev/R'
+alias goaNCA='cd ~/code/aNCA/R'
 alias goADVANCED_R='cd ~/code/try_things_here/ADVANCED_R'
 alias goBASE='cd ~/code/try_things_here/BASE/'
 alias goBlog='cd ~/code/jimrothstein.github.io/'   # same as goJimrothstein
@@ -68,7 +69,6 @@ alias goShiny='cd ~/code/shiny_project/'
 alias goTech='cd ~/code/docs/tech_notes'
 alias goVECTOR='cd ~/code/try_things_here/VECTORS_LISTS/'
 alias goYoutubeR='cd ~/code/youtubeR/R/'
-alias goWapir='cd ~/code/httr2_project/WAPIR/'
 alias goZsh='cd ~/code/zsh_project/'
 alias goZC='cd ~/.config/zsh'               # go Zsh Config
 
@@ -83,9 +83,7 @@ alias cx='chmod +x'				# USE:    cx  new_script.sh
 #	docs
 
 # export (so go<TAB> works)
-export goCode goDot goVim goBin 
-export goYoutubeR goTry
-export goRRapply  
+export goCode goDot goBin goTry
 
 ##
 # ============
