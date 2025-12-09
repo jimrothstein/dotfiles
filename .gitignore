@@ -27,6 +27,10 @@
 #  *.a    files (anywhere) end in .a
 #   .a    the file ".a"  (anywhere)
 #
+
+## API keys (for R: use .Renviron)
+~/.env
+
 # .R overhead (these exact files, in any directory)
 # =============
 .Rproj.user
