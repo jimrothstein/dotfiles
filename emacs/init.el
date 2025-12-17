@@ -41,6 +41,10 @@
 ;; jump to other window (still need?)
 (global-set-key [C-tab] 'other-window)
  
+;;------------------------  ;; org-mode shortcuts
+
+(require 'org-tempo)
+
 ;;------------------------ typst-ts-mode 
 
 ;  NOT WORKING

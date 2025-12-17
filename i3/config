@@ -82,19 +82,22 @@ floating_modifier $mod
 # ----------------------------------
 bindsym $mod+d exec --no-startup-id dmenu_run
 
+# reload config
+bindsym $mod+Shift+c reload
+# restart
+bindsym $mod+Shift+r restart
+#bindsym $mod+Shift+e exit
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 # active workspace tab = red/pink
 bindsym $mod+p title_window_icon on
-
-
-# built-in
-# bindsym $mod+Shift+r reload
 
 
 #------------------------  navigation, SEE config_extra
 # set variables for named workspaces   ---------------------
 set $ws1 "1: Terminal"
-set $ws2 "2: Firefox"
-set $ws3 "3: Emacs"
+set $ws2 "2: Emacs"
+set $ws3 "3: Firefox"
 set $ws4 "4: RStudio"
 set $ws5 "5: Files"
 set $ws6 "6: R"
@@ -128,8 +131,8 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # STARTUP apps ---- (exec_always runs on 1st startup AND after $mod Shift r)
-exec_always --no-startup-id i3-msg 'workspace $ws2; exec firefox'
-exec_always --no-startup-id i3-msg 'workspace $ws3; exec emacs'
+exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacs'
+exec_always --no-startup-id i3-msg 'workspace $ws3; exec firefox'
 exec_always --no-startup-id i3-msg 'workspace $ws4; exec rstudio'    # low-case r
 exec_always --no-startup-id i3-msg 'workspace $ws8; exec zotero'
 
@@ -186,7 +189,7 @@ bindsym $mod+o mode "$mode_launcher"
 
 
 # assign, assigns an application to workspace
-assign [class="org.wezfurlong.wezterm"] $ws1
+#assign [class="org.wezfurlong.wezterm"] $ws1
 assign [class="rstudio"] $ws4
 
 #------------------------  i3bar
@@ -213,24 +216,27 @@ bar {
     #height 25
 }
 
+
 #------------------------  $mode_system
 
-set $mode_system System  (c) reload,  (e) logout, (E) exit i3, (r) reboot,  (Shift+s) shutdown
+# TODO:   problems - fix later
+
+
+#set $mode_system System | (a) resize | (c) reload,  [E]xit i3, (r) reboot,  (Shift+s) shutdown
+
 mode "$mode_system" {
 
     #bindsym l exec --no-startup-id $Locker, mode "default"
 
-    # reload i3 config, do not kill X11
-    bindsym $mod+Shift+c  reload  
 
     # return, exist i3, return to  lightdm screen
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"        
+    #bindsym e exec --no-startup-id i3-msg exit, mode "default"        
 
     # warns, but return to lightdm screen
-    bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+    #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
     # reboots system 
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    #bindsym r exec --no-startup-id systemctl reboot, mode "default"
 
     # to get to zsh prompt
     #bindsym $mod+Shift+r restart
@@ -243,8 +249,8 @@ mode "$mode_system" {
 
 
     # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    #bindsym Return mode "default"
+    #bindsym Escape mode "default"
 }
 
 # activate $mode_sytstem
