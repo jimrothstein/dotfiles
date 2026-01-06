@@ -86,7 +86,8 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Shift+c reload
 # restart
 bindsym $mod+Shift+r restart
-#bindsym $mod+Shift+e exit
+
+# exit  (returns to lightdm login)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # active workspace tab = red/pink
@@ -131,14 +132,19 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # STARTUP apps ---- (exec_always runs on 1st startup AND after $mod Shift r)
+# ------------------------  emacsclient - too confusing
+# CLAIM:  launches emacsclient dameon and opens frame (see init.el)
+#exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacsclient -c -n -a""'
+
+
+
+exec_always --no-startup-id i3-msg 'workspace $ws1; exec $myTerm'
 exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacs'
 exec_always --no-startup-id i3-msg 'workspace $ws3; exec firefox'
 exec_always --no-startup-id i3-msg 'workspace $ws4; exec rstudio'    # low-case r
 exec_always --no-startup-id i3-msg 'workspace $ws8; exec zotero'
 
-exec_always --no-startup-id i3-msg 'workspace $ws1; exec $myTerm'
 #exec --no-startup-id i3-msg 'workspace $ws9; exec slack'
-
 # ------------------------  resize
 
 # mode "resize" windows ------------------------  
