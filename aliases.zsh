@@ -1,5 +1,6 @@
 # Set personal zsh aliases
 # alias  (to see current)
+# vim.tiny $A  # to edit this file
 #
 # ------------------------  To find WHERE alias defined:
 # >which <alias>
@@ -36,6 +37,8 @@ alias dirs='dirs -lpv'
 #	coding, 
 alias goAdmiral='cd ~/code/admiral/R'
 alias goad='cd ~/code/admiraldev/R'
+alias goai='cd ~/code/pytorch_projects/; source ~/code/pytorch_projects/bin/activate'
+alias gopeds='cd ~/code/admiralpeds/R'
 alias goaNCA='cd ~/code/aNCA/R'
 alias goADVANCED_R='cd ~/code/try_things_here/ADVANCED_R'
 alias goBASE='cd ~/code/try_things_here/BASE/'
@@ -51,9 +54,11 @@ alias goJimrothstein='cd ~/code/jimrothstein.github.io'
 alias goJobs='cd ~/code/docs/jobs/'
 alias goghactions='cd ~/code/gh_actions_project/'
 alias goLSR='cd ~/code/LSR_rbook/'
+alias goLLM='cd ~/code/LLM_project/'
 alias goMp3='cd ~/code/mp3/'
 alias goNSE='cd ~/code/try_things_here/NSE_project/'
 alias goPublish='cd ~/code/publish_project/'
+alias goPython='cd ~/code/python_project/'
 alias goQuarto='cd ~/code/publish_project/'
 alias goSdtm='cd ~/code/sdtmchecks/'
 alias goRacket='cd ~/code/racket_project'

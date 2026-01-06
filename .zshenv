@@ -19,7 +19,7 @@
 
 ## DO NOT SEND to GITHUB !!!
 
-# 
+# keys - for LLM, put into LLM_project/ directory in .env
 export GEMINI_API_KEY="***REMOVED***"
 export key="***REMOVED***"    # July 25, 2025
 

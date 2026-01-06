@@ -3,6 +3,8 @@
 ;; Timestamp: <>
 ;;------------------------ setup
 
+;; REF  (useful tips) https://gitlab.com/taonaw/taonah/-/blob/master/public/emacs_settings.org
+
 ;; default package mgr:  `package`
 ;; ..  remove references to `straight` a newer, package mgr
 
@@ -10,6 +12,11 @@
 ;; use-package aids configuing packages; it uses built-in package mgr.
 
 ;; (6/24/2025) r 
+
+;; ------------------------  to use emacsclient
+;; Set one time only (at cli), setups emacsclient to run;   systemctl --user enable --now emacs
+;;# In i3 config:    exec emacsclient -c -n -a ""
+;;# If begin in terminal, use this zsh alias:  alias ec='emacsclient -n -c' 
 
 ;; ------------------------  package
 
@@ -30,6 +37,12 @@
 ;; ------------------------  config
 (setq backup-directory-alist '( ("." . "~/.emacs_saves")))
 
+;; delete file, but save in trash
+(setq delete-by-moving-to-trash t)
+
+;; allow wide text to wrap (so no need to scroll)
+(global-visual-line-mode +1)
+
 ;; automatically upgrade built-in packages
 (setq package-install-upgrade-built-in t)
 
@@ -41,6 +54,9 @@
 
 ;; jump to other window (still need?)
 (global-set-key [C-tab] 'other-window)
+
+;; STOP  C-x C-c from exiting emacs (often my mistake)
+(global-unset-key (kbd "\C-x\C-c"))
  
 ;;------------------------  ;; org-mode shortcuts
 
@@ -229,6 +245,11 @@
 
 ;; y/n   (not yes/no)
 (setq use-short-answers t)
+
+;; to turn off, uncomment
+; (tool-bar-mode -1)
+; (scroll-bar-mode -1)
+; (menu-bar-mode -1) 
 
 ;; display column number
 (setq column-number-mode t) 
