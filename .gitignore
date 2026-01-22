@@ -2,15 +2,6 @@
 # ~/dotfiles/.gitignore   ($G)
 #
 #
-# JUNE 28, 2024
-# update man and .rd files (past were ignored;  now included)
-# Updte MAY 8, 2023
-#
-#	TODO:
-# - .Renviron (API keys) - how to save this file, but NOT to github?
-# -  Add quarto /docs/*html  but not other *html
-#
-#
 #
 ## CAUTION:  if file already in index, MUST remove it ---- 
 
@@ -46,7 +37,6 @@
 
 #	vim backups .Renviron~
 .Renviron*
-/home/jim/.config/nvim/backup/.Renviron*
 
 # files ending in .RDS or .Rd  .json (anywhere,  except mainfest.json (connect.cloud posit needs)
 *.RDS
@@ -124,17 +114,14 @@ zsh_project/CURL_examples/.secret
 # Special
 # =========
 # plugin "jimrothstein/myhelp" - separate from rest of code/
-vim-myhelp/
 *.tar.gz
 ~/code/jimHelp/doc/*
 
 # ------------
 # *.appimage
 # ------------
-# should ignore nvim.appimage
 *.appimage
 *.AppImage
-~/bin/nvim.appimage
 
 tags
 

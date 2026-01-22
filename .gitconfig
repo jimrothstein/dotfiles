@@ -64,7 +64,7 @@ l1 = "log --decorate --oneline --graph -20 --abbrev-commit" --pretty=format:'%h 
 # ------------------------  list all git projects	
 	all = "!find **/.git/config"
 [credential]
-	helper = cache
+	helper = cache --timeout 3600
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential

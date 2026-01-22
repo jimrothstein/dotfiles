@@ -351,15 +351,31 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   '("~/code/docs/tech_notes/000_PROJECTS.org"
+     "/home/jim/code/docs/tech_notes/baby.org"))
  '(package-selected-packages
    '(## @ company denote ess ess-r-insert-obj ess-r-mode
         ess-smart-underscore evil evil-collection exwm flycheck gptel
         gptel-aibo gptel-magit indent-bars magit markdown-preview-mode
-        org-modern paredit poly-R polymode quarto-mode racket-mode
-        request-deferred simpleclip use-package-ensure-system-package
-        vertico which-key whitespace-cleanup-mode whitespace-mode
-        xclip yaml-mode yasnippet yasnippet-snippets))
+        org-modern ox-typst paredit poly-R polymode quarto-mode
+        racket-mode request-deferred simpleclip
+        use-package-ensure-system-package vertico which-key
+        whitespace-cleanup-mode whitespace-mode xclip yaml-mode
+        yasnippet yasnippet-snippets))
  '(x-select-enable-clipboard-manager t))
+
+;;------------------------  ox-typst
+;; org to *.typ
+
+
+(use-package ox-typst
+  :ensure t
+  :after org)
+
+(use-package ox-typst
+  :after org
+  :ensure (ox-typst :host github :repo "jmpunkt/ox-typst"))
 ;; ------------------------  
 
 (custom-set-faces
@@ -371,8 +387,8 @@
 
 
 ;; ^C. = go other window;   ^C, = return  [Hold ctrl key, press ,]
-(global-set-key (kbd "C-.") #'other-window)
-(global-set-key (kbd "C-,") #'prev-window)
+;;(global-set-key (kbd "C-.") #'other-window)
+;;(global-set-key (kbd "C-,") #'prev-window)
 
 (defun prev-window ()
   (interactive)
@@ -489,3 +505,8 @@
       time-stamp-format "Last changed %Y-%02m-%02d %02H:%02M:%02S by %u")
 (add-hook 'write-file-hooks 'time-stamp) ; Update when saving.
 
+;; loads file - C-. (other window)
+(load-file "/home/jim/dotfiles/emacs/nav_windows.el")
+
+
+(buffer-file-name)
