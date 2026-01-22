@@ -26,12 +26,17 @@
 # Mod4 is 'windows' key 
 #
 # ---------------------------------------
+
+# Claim:   will stop sleeping ? no
+# SEE https://wiki.archlinux.org/title/Display_Power_Management_Signaling
+exec --no-startup-id xset s off -dpms
+
 set $mod Mod4
 set $myTerm wezterm
 workspace_layout stacking   
 
 # Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
-workspace_auto_back_and_forth yes
+# workspace_auto_back_and_forth yes
 
 #------------------------ include 
 #include ~/dotfiles/i3/config_extra
@@ -70,6 +75,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+
+
+#------------------------ /var/log/i3.log
+# added January 2026     (here or in .sh file?) 
+exec_always --no-startup-id i3-msg 'i3 -V -d all >> /var/log/i3.log'
+
 # ---------------
 #       Bindsym
 # ---------------
@@ -81,6 +92,7 @@ floating_modifier $mod
 # start dmenu (a program launcher) (compare dmenu | rofi )
 # ----------------------------------
 bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+Return exec wezterm 
 
 # reload config
 bindsym $mod+Shift+c reload
@@ -132,17 +144,17 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # STARTUP apps ---- (exec_always runs on 1st startup AND after $mod Shift r)
+
 # ------------------------  emacsclient - too confusing
 # CLAIM:  launches emacsclient dameon and opens frame (see init.el)
 #exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacsclient -c -n -a""'
 
-
-
-exec_always --no-startup-id i3-msg 'workspace $ws1; exec $myTerm'
-exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacs'
+exec_always --no-startup-id i3-msg 'workspace $ws1; exec wezterm'
+exec_always --no-startup-id i3-msg 'workspace $ws2; exec wezterm'
+#exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacs'
 exec_always --no-startup-id i3-msg 'workspace $ws3; exec firefox'
-exec_always --no-startup-id i3-msg 'workspace $ws4; exec rstudio'    # low-case r
-exec_always --no-startup-id i3-msg 'workspace $ws8; exec zotero'
+# exec_always --no-startup-id i3-msg 'workspace $ws4; exec rstudio'    # low-case r
+# exec_always --no-startup-id i3-msg 'workspace $ws8; exec zotero'
 
 #exec --no-startup-id i3-msg 'workspace $ws9; exec slack'
 # ------------------------  resize
@@ -194,13 +206,12 @@ bindsym $mod+o mode "$mode_launcher"
 # for_window [class="org.wezfurlong.wezterm"] move to workspace $ws1
 
 
-# assign, assigns an application to workspace
-#assign [class="org.wezfurlong.wezterm"] $ws1
+# assign, assigns an application to workspace (and ONLY this workspace)
+# assign [class="org.wezfurlong.wezterm"] $ws1
 assign [class="rstudio"] $ws4
 
 #------------------------  i3bar
 
-# experimental
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {

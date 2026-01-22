@@ -369,13 +369,13 @@
 ;; org to *.typ
 
 
-(use-package ox-typst
-  :ensure t
-  :after org)
-
-(use-package ox-typst
-  :after org
-  :ensure (ox-typst :host github :repo "jmpunkt/ox-typst"))
+ ;;(use-package ox-typst
+ ;;  :ensure t
+ ;;  :after org)
+ ;;
+ ;;(use-package ox-typst
+ ;;  :after org
+ ;;  :ensure (ox-typst :host github :repo "jmpunkt/ox-typst"))
 ;; ------------------------  
 
 (custom-set-faces
