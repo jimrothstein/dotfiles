@@ -29,7 +29,9 @@
 
 # Claim:   will stop sleeping ? no
 # SEE https://wiki.archlinux.org/title/Display_Power_Management_Signaling
-exec --no-startup-id xset s off -dpms
+# exec --no-startup-id xset s off -dpms
+exec --no-startup xset s dpms 0 0 0 && xset s off
+
 
 set $mod Mod4
 set $myTerm wezterm
