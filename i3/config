@@ -3,6 +3,7 @@
 # ---------------------
 #  REF: https://wiki.archlinux.org/title/I3
 #  REF: https://i3wm.org/docs/userguide.html for a complete reference!
+#  REF: https://github.com/MDiaznf23/simple-autoricing-i3wm-dotfiles/blob/main/.config/i3/config 
 #  REF CARD ! (in i3 docs)
 #  VIDEO:  Chris Titus Tech
 #  i3bar vs polybar (better control?) 
@@ -36,6 +37,15 @@ exec --no-startup xset s dpms 0 0 0 && xset s off
 set $mod Mod4
 set $myTerm wezterm
 workspace_layout stacking   
+
+# ------------------------ experiment
+# Border configuration
+set $thick 2
+
+# DEFAULT BORDER
+for_window [class="^.*"] border pixel $thick
+for_window [title="^.*"] border pixel $thick
+# -----------------------
 
 # Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
 # workspace_auto_back_and_forth yes
