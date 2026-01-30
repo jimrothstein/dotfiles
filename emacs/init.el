@@ -20,6 +20,7 @@
 
 ;; ------------------------  package
 
+;; (message-box "hello:  init.el")    # modal
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
@@ -297,13 +298,13 @@
 (set-register ?a (cons 'file "~/.config/zsh/aliases.zsh"))
 (set-register ?i (cons 'file "~/.config/emacs/init.el"))
 (set-register ?3 (cons 'file "~/.config/i3/config"))
-(set-register ?e (cons 'file "~/code/docs/tech_notes/280_emacs_notes.qmd"))
+(set-register ?e (cons 'file "~/code/docs/tech_notes/281_emacs_notes.typ"))
 (set-register ?j (cons 'file "~/code/docs/jobs/310_job_notes.qmd"))
-(set-register ?m (cons 'file "~/code/docs/health_notes/medical_notes.qmd"))
-(set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.qmd"))
+(set-register ?m (cons 'file "~/code/docs/health_notes/2025_2026_medical_notes.typ"))
+(set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.typ"))
 (set-register ?q (cons 'file "~/code/docs/tech_notes/250_quarto_knitr_SCSS_NOTES.qmd"))
-(set-register ?r (cons 'file "~/code/docs/tech_notes/310_R_notes.qmd"))
-(set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.qmd"))
+(set-register ?r (cons 'file "~/code/docs/tech_notes/310_R_notes.typ"))
+(set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.typ"))
 
 ;;  always follow symlinks to actual file (and don't ask)
 (setq vc-follow-symlinks t)
@@ -373,9 +374,6 @@
   :ensure t
   :after org)
 
-(use-package ox-typst
-  :after org
-  :ensure (ox-typst :host github :repo "jmpunkt/ox-typst"))
 ;; ------------------------  
 
 (custom-set-faces
