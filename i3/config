@@ -36,7 +36,7 @@ exec --no-startup xset s dpms 0 0 0 && xset s off
 
 set $mod Mod4
 set $myTerm wezterm
-workspace_layout stacking   
+#workspace_layout stacking   
 
 # ------------------------ experiment
 # Border configuration
@@ -48,7 +48,7 @@ for_window [title="^.*"] border pixel $thick
 # -----------------------
 
 # Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
-# workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth yes
 
 #------------------------ include 
 #include ~/dotfiles/i3/config_extra
@@ -91,7 +91,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 #------------------------ /var/log/i3.log
 # added January 2026     (here or in .sh file?) 
-exec_always --no-startup-id i3-msg 'i3 -V -d all >> /var/log/i3.log'
+#exec_always --no-startup-id i3-msg 'i3 -V -d all >> /var/log/i3.log'
 
 # ---------------
 #       Bindsym
@@ -161,14 +161,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # CLAIM:  launches emacsclient dameon and opens frame (see init.el)
 #exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacsclient -c -n -a""'
 
-exec_always --no-startup-id i3-msg 'workspace $ws1; exec wezterm'
-exec_always --no-startup-id i3-msg 'workspace $ws2; exec wezterm'
-#exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacs'
-exec_always --no-startup-id i3-msg 'workspace $ws3; exec firefox'
-# exec_always --no-startup-id i3-msg 'workspace $ws4; exec rstudio'    # low-case r
-# exec_always --no-startup-id i3-msg 'workspace $ws8; exec zotero'
+#exec_always --no-startup-id i3-msg 'workspace $ws2; exec wezterm'
+#exec_always --no-startup-id i3-msg 'workspace $ws3; exec firefox'
 
-#exec --no-startup-id i3-msg 'workspace $ws9; exec slack'
 # ------------------------  resize
 
 # mode "resize" windows ------------------------  
@@ -192,25 +187,24 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 # ------------------------ activate mode "resize"
 bindsym $mod+r mode "resize"
 
-# ------------------------- mode "mode_launcher"
-set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]ezterm
-mode "$mode_launcher" {
-    bindsym f exec firefox
-    bindsym s exec slack
-    bindsym e exec emacs
-    bindsym r exec rstudio
-    bindsym z exec zotero
-    bindsym w exec wezterm
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
-# -----		   active mode "mode_launcher"   
-bindsym $mod+o mode "$mode_launcher"
+## ------------------------- $mod+o  "mode_launcher"
+#set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]ezterm
+#mode "$mode_launcher" {
+#    bindsym f exec firefox
+#    bindsym s exec slack
+#    bindsym e exec emacs
+#    bindsym r exec rstudio
+#    bindsym z exec zotero
+#    bindsym w exec wezterm
+#
+#    bindsym Escape mode "default"
+#    bindsym Return mode "default"
+#}
+## -----		   active mode "mode_launcher"   
+#bindsym $mod+o mode "$mode_launcher"
 
 ## Assign applications to workspaces
 
@@ -253,37 +247,33 @@ bar {
 
 #set $mode_system System | (a) resize | (c) reload,  [E]xit i3, (r) reboot,  (Shift+s) shutdown
 
-mode "$mode_system" {
+#mode "$mode_system" {
 
-    #bindsym l exec --no-startup-id $Locker, mode "default"
-
-
-    # return, exist i3, return to  lightdm screen
-    #bindsym e exec --no-startup-id i3-msg exit, mode "default"        
-
-    # warns, but return to lightdm screen
-    #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-    # reboots system 
-    #bindsym r exec --no-startup-id systemctl reboot, mode "default"
-
-    # to get to zsh prompt
-    #bindsym $mod+Shift+r restart
-
-   # close the current window
-   #bindsym $mod+Shift+q 
 
     # pauses for 90 sec at pymouth screen (?), then shuts down
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+#    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
 
-    # back to normal: Enter or Escape
-    #bindsym Return mode "default"
-    #bindsym Escape mode "default"
-}
+#}
 
 # activate $mode_sytstem
-bindsym $mod+y mode "$mode_system"
+#bindsym $mod+y mode "$mode_system"
 
 
 
+
+#------------------------ change focused window  
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# change container layout (stacked, tabbed, toggle split = defaut)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# split
+bindsym $mod+v split vertical
+#bindsym $mod+h split horizontal
+bindsym $mod+t split toggle
