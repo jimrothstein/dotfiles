@@ -5,20 +5,26 @@
 #  REF: https://i3wm.org/docs/userguide.html for a complete reference!
 #  REF: https://github.com/MDiaznf23/simple-autoricing-i3wm-dotfiles/blob/main/.config/i3/config 
 #  REF CARD ! (in i3 docs)
+#------------------------  
+
 #  VIDEO:  Chris Titus Tech
 #  i3bar vs polybar (better control?) 
 #
 #  SUSPEND = put info into RAM, then low-power (sleep)
 #  CLOSE LID = should trigger SUSPEND
-#  HIBERNATE = put info on DISK, then power-off (shutdown?)
+#  HIBERNATE = put info on DISK, then power-off (not shutdown)
 #
-# CLI:
+# 
+# ------------------------ CLI commands:
 # i3
 # i3lock, service, handles details
 # i3-msg, 
 # i3-status
+# xset - set X11 such as bell, screen colors; here use to time screensaver
+# xss-lock - not used
+# xcb, xlib  - not used, not available
 
-# commands
+# ------------------------ # config-only ?c ommands
 # -  exec				runs 1st load only
 # -  exec --no-startup-id  	# registers window?
 # -  exec_always  		runs on reload as well.
@@ -28,15 +34,11 @@
 #
 # ---------------------------------------
 
-# Claim:   will stop sleeping ? no
-# SEE https://wiki.archlinux.org/title/Display_Power_Management_Signaling
-# exec --no-startup-id xset s off -dpms
-exec --no-startup xset s dpms 0 0 0 && xset s off
 
 
 set $mod Mod4
 set $myTerm wezterm
-#workspace_layout stacking   
+workspace_layout stacking   
 
 # ------------------------ experiment
 # Border configuration
@@ -62,21 +64,42 @@ font pango:DejaVu Sans Mono 12
 # SEE https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# ----------------
-#       Applets?
-# ----------------
-# GOAL:  lock laptop BEFORE SUSPEND
-# xss-lock grabs a logind suspend ????; then  use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-# LOCK laptop before SUSPEND
-exec --no-startup-id \
-     xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# ------------------------
+# CAFFEINE (screen lock, re-authentication, low-power)
+# ------------------------
+
+#  xss-lock is timer
+# 3 thing can happen:
+# 1. screensaver (software)
+# 2. low-power mode (hardward)
+# 3. password to reactivate
+
+# xss-lock normally controls when screensaver comes on; locking; low-power
+# Screen lock + authentication
+# After inactivity, screen/locks apply.   Pain to recover.
+
+# SEE https://wiki.archlinux.org/title/Display_Power_Management_Signaling
+# TO TEST:   run at CLI, but use time 10 10 (10 seconds)
+
+# controls hardware  (sleep > 1 hour) ; dpms refers to power mgmt
+  exec --no-startup-id xset dpms 3600 3600 3600
+
+# controls screen saver (after > 1 hour)
+  exec --no-startup-id xset s 3600 3600
+
+# CAFFEINE ON = power mgmt is off
+# $mod+Alt+c
+# Toggle Caffeine Mode (Super + Alt + c)  toggle
+  bindsym $mod+Mod1+c exec --no-startup-id "xset q | grep -q 'DPMS is Enabled' && (xset s off -dpms && notify-send 'Caffeine: ON') || (xset s on +dpms && notify-send 'Caffeine: OFF')"
+#------------------------ 
+
 
 # -----------------
 # NetworkManager 
 # -----------------
 # manage wifi with nm-applet,  a desktop environment-independent system tray GUI.
-exec --no-startup-id nm-applet
+  exec --no-startup-id nm-applet
 
 # -------------------------------------------
 # Use pactl to adjust volume in PulseAudio.
@@ -90,8 +113,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 
 #------------------------ /var/log/i3.log
+# CAUTION:   redirecting to root controled direction;   consider safer ways
 # added January 2026     (here or in .sh file?) 
-#exec_always --no-startup-id i3-msg 'i3 -V -d all >> /var/log/i3.log'
+exec_always --no-startup-id i3-msg 'i3 -V -d all >> ~./i3.log 
 
 # ---------------
 #       Bindsym
@@ -107,12 +131,12 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Return exec wezterm 
 
 # reload config
-bindsym $mod+Shift+c reload
+  bindsym $mod+Shift+c reload
 # restart
-bindsym $mod+Shift+r restart
+  bindsym $mod+Shift+r restart
 
 # exit  (returns to lightdm login)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+  bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # active workspace tab = red/pink
 bindsym $mod+p title_window_icon on
@@ -213,8 +237,12 @@ bindsym $mod+r mode "resize"
 
 
 # assign, assigns an application to workspace (and ONLY this workspace)
-# assign [class="org.wezfurlong.wezterm"] $ws1
+assign [class="org.wezfurlong.wezterm"] $ws1
+assign [class="Emacs"] $ws2
+assign [class="Firefox"] $ws3
 assign [class="rstudio"] $ws4
+assign [class="Zotero"] $ws8
+assign [class="Slack"] $ws9
 
 #------------------------  i3bar
 
@@ -273,7 +301,7 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# split
+# split  $mod+b , so $mode+h means move left
 bindsym $mod+v split vertical
-#bindsym $mod+h split horizontal
+bindsym $mod+b split horizontal
 bindsym $mod+t split toggle

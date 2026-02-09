@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; package -- summary: thereafter use-package loads packages  toggle whitespace mode on/off (now in init.el)
 
 ;; Timestamp: <>
@@ -64,10 +66,21 @@
 (require 'org-tempo)
 
 ;;------------------------ typst-ts-mode 
+;; (setq treesit-language-source-alist
+;; '((typst "https://github.com/uben0/tree-sitter-typst")))
 
-;  NOT WORKING
-;(use-package typst-ts-mode
-;  :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode"))
+;; Run M-x treesit-install-language-grammar for 'typst' if it's your first time.
+
+;; parse code; build syntax tree; ts=treesitter
+;;(use-package typst-ts-mode
+;;  :vc (:url "https://github.com/Ziqi-Yang/typst-ts-mode")
+;;  :mode "\\.typ\\'"
+;;  :init
+;;  ;; Force typst-ts-mode to the front of the line
+;;  (add-to-list 'auto-mode-alist '("\\.typ\\'" . typst-ts-mode)))
+
+
+;;  :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode"))
 
 ;;------------------------  ysasnippet
 (use-package yasnippet
@@ -270,6 +283,7 @@
       evil-visual-state-cursor '(box "#F86155"));; visulal =  red 
 
 ;; ------------------------ company (text completion)
+;; comp(lete) any(thing)
 (use-package company
   :config
   (setq company-idle-delay 0)
@@ -356,23 +370,20 @@
    '("~/code/docs/tech_notes/000_PROJECTS.org"
      "/home/jim/code/docs/tech_notes/baby.org"))
  '(package-selected-packages
-   '(## @ company denote ess ess-r-insert-obj ess-r-mode
-        ess-smart-underscore evil evil-collection exwm flycheck gptel
-        gptel-aibo gptel-magit indent-bars magit markdown-preview-mode
-        org-modern ox-typst paredit poly-R polymode quarto-mode
-        racket-mode request-deferred simpleclip
-        use-package-ensure-system-package vertico which-key
-        whitespace-cleanup-mode whitespace-mode xclip yaml-mode
-        yasnippet yasnippet-snippets))
+   '(@ command-log-mode company consult denote evil-collection flycheck
+       gptel-aibo gptel-magit indent-bars marginalia poly-R
+       quarto-mode racket-mode request-deferred simpleclip
+       vertico which-key whitespace-cleanup-mode xclip
+       yaml-mode yasnippet))
  '(x-select-enable-clipboard-manager t))
 
 ;;------------------------  ox-typst
 ;; org to *.typ
 
 
-(use-package ox-typst
-  :ensure t
-  :after org)
+;;(use-package ox-typst
+;;  :ensure t
+;;  :after org)
 
 ;; ------------------------  
 
