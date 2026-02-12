@@ -4,6 +4,7 @@
 #  REF: https://wiki.archlinux.org/title/I3
 #  REF: https://i3wm.org/docs/userguide.html for a complete reference!
 #  REF: https://github.com/MDiaznf23/simple-autoricing-i3wm-dotfiles/blob/main/.config/i3/config 
+#  REF: Bashbunni is great! https://www.youtube.com/watch?v=zavmtaqMY_A
 #  REF CARD ! (in i3 docs)
 #------------------------  
 
@@ -120,7 +121,15 @@ exec_always --no-startup-id i3-msg 'i3 -V -d all >> ~./i3.log
 #       Bindsym
 # ---------------
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+#floating_modifier $mod
+
+# tiled window becomes floating (use mouse)
+bindsym $mod+Shift+space floating toggle
+
+# kill focused window
+bindsym $mod+Shift+q  kill
+
+bindsym $mod+a focus parent
 
 #  BASICS
 # ----------------------------------
@@ -287,6 +296,9 @@ bar {
 #------------------------  exec apps
 #exec Firefox
 
+# type $mod and F4 together  (screenshot)
+bindsym $mod+F4 exec --no-startup-id flameshot gui
+
 
 #------------------------ change focused window  
 bindsym $mod+h focus left
@@ -303,3 +315,9 @@ bindsym $mod+e layout toggle split
 bindsym $mod+v split vertical
 bindsym $mod+b split horizontal
 bindsym $mod+t split toggle
+
+
+# ------------------------  emergency
+# does not work
+# bindsym $mod+F5 exec --no-startup-id xfce4-sessions manager terminal 
+
