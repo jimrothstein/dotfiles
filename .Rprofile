@@ -81,3 +81,9 @@ if (interactive()) {
     suppressMessages(library(purrr))
     suppressMessages(library(dplyr))
 }
+
+# ---------------------- chores, set model   
+ options(chores.chat = ellmer::chat_google_gemini(model =
+                                            #   "claude-3-7-sonnet-20250219")) 
+                                            "gemini-2.5-flash-lite") 
+ )

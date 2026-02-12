@@ -68,7 +68,6 @@ exec --no-startup-id dex --autostart --environment i3
 # ------------------------
 # CAFFEINE (screen lock, re-authentication, low-power)
 # ------------------------
-
 #  xss-lock is timer
 # 3 thing can happen:
 # 1. screensaver (software)
@@ -184,7 +183,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # ------------------------  emacsclient - too confusing
 # CLAIM:  launches emacsclient dameon and opens frame (see init.el)
 #exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacsclient -c -n -a""'
-
 #exec_always --no-startup-id i3-msg 'workspace $ws2; exec wezterm'
 #exec_always --no-startup-id i3-msg 'workspace $ws3; exec firefox'
 
@@ -214,21 +212,6 @@ mode "resize" {
 # ------------------------ activate mode "resize"
 bindsym $mod+r mode "resize"
 
-## ------------------------- $mod+o  "mode_launcher"
-#set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]ezterm
-#mode "$mode_launcher" {
-#    bindsym f exec firefox
-#    bindsym s exec slack
-#    bindsym e exec emacs
-#    bindsym r exec rstudio
-#    bindsym z exec zotero
-#    bindsym w exec wezterm
-#
-#    bindsym Escape mode "default"
-#    bindsym Return mode "default"
-#}
-## -----		   active mode "mode_launcher"   
-#bindsym $mod+o mode "$mode_launcher"
 
 ## Assign applications to workspaces
 
@@ -239,10 +222,27 @@ bindsym $mod+r mode "resize"
 # assign, assigns an application to workspace (and ONLY this workspace)
 assign [class="org.wezfurlong.wezterm"] $ws1
 assign [class="Emacs"] $ws2
-assign [class="Firefox"] $ws3
+assign [class="Firefox"]  $ws3
 assign [class="rstudio"] $ws4
 assign [class="Zotero"] $ws8
 assign [class="Slack"] $ws9
+
+## ------------------------- $mod+o  "mode_launcher"
+#set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]ezterm
+
+mode "$mode_launcher" {
+#    bindsym f $ws3;exec firefox
+#    bindsym s exec slack
+#    bindsym e exec emacs
+#    bindsym r exec rstudio
+#    bindsym z exec zotero
+#    bindsym w exec wezterm
+#
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+## -----		   active mode "mode_launcher"   
+bindsym $mod+o mode "$mode_launcher"
 
 #------------------------  i3bar
 
@@ -272,22 +272,20 @@ bar {
 
 # TODO:   problems - fix later
 
-
 #set $mode_system System | (a) resize | (c) reload,  [E]xit i3, (r) reboot,  (Shift+s) shutdown
-
 #mode "$mode_system" {
 
-
-    # pauses for 90 sec at pymouth screen (?), then shuts down
+# pauses for 90 sec at pymouth screen (?), then shuts down
 #    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
-
-
 #}
 
 # activate $mode_sytstem
 #bindsym $mod+y mode "$mode_system"
+# ------------------------  
 
 
+#------------------------  exec apps
+#exec Firefox
 
 
 #------------------------ change focused window  
