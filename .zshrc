@@ -177,7 +177,7 @@ compinit
 #  named directories,  
 #    if export DIR=~/path/to/dir/
 #    then cd $DIR will display `~DIR` and not actual path
-epi=~/code/epinowcast/
+# epi=~/code/epinowcast/
 # ================================
 # TODO:  re-read
  setopt AUTO_NAME_DIRS
@@ -195,12 +195,8 @@ setopt NO_CASE_GLOB
 # TO LIST:  > hash -d
 
 
-# initialize
-# ~dotfiles # ':'   does nothing
-
-
 set NO_BEEP
-# ------------------------  separate
+# ------------------------  apply keymaps (CAPSLOCK)
 #
 # # apply Debian keyboard mappings (in ~/.xmodmap)
 #  ~/.xinitrc contains xmodmap statment to make CAPS LOCK behave like ESC
@@ -208,9 +204,18 @@ set NO_BEEP
 source ~/.xinitrc
 #
 #
+
+# ------------------------ remove?
+
 ##  open terminal - infinite LOOP   do not do this !!!
+#
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
+# ?
 . "$HOME/.local/share/../bin/env"
+
+# yt-dlp wants this (2/2026)
+. "/home/jim/.deno/env"
+eval "$(uv generate-shell-completion zsh)"

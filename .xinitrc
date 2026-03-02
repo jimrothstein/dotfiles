@@ -1,13 +1,13 @@
 #  PURPOSE:    ~/.xinitr
 #       maps "capslock" key to Escape.
 #      .xinitrc is one (of many) ways to configure X11
-#       (in .zshrc: must  "source ~/.xinitrc")
+#       (in ~/.zshrc: must  "source ~/.xinitrc")
 #
 #
 #		
 setxkbmap -option caps:escape
 #
-# ----------- Deprecated ---------------------------------------------
+# ----------- These are Deprecated ---------------------------------------------
 #   30JUNE2024  -  CAPSLOCK now  works like ESC
 #   - on HP845 G7/linuxmint  21.3
 #   - TODO:  i  made  an addition to  /etc/X11/xorg.conf.d/swap_2_escape.conf
@@ -15,7 +15,7 @@ setxkbmap -option caps:escape
 # ------------------------  separate
 #  USE kev to find keycode for "capslock" and "escape"
 #		- xmodmap is older, but simpler.
-#		- newer is kxb... but I find more effort to figure out simple things. -	SEE  tech_notes
+#		- newer is kxb... but effort to figure out simple things. -	SEE  ~/code/docs/tech_notes/
 # ------------------------  
 #   17JULY2023, conflict between ebook-view (calibre) and esc:swap....
 #   Using setxkbmap -option caps:escape  seems to fix
