@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+(setq debug-on-error t)
+
 ;; package -- summary: thereafter use-package loads packages  toggle whitespace mode on/off (now in init.el)
 
 ;; Timestamp: <>
@@ -88,7 +90,7 @@
 (yas-global-mode 1)
 (use-package org
   :ensure t)
-:;; ------------------------  evil
+;; ------------------------  evil
 (unless (package-installed-p 'evil)
   (package-install 'evil))
 (use-package evil
@@ -136,10 +138,21 @@
 ;; clipboard, use + register in Evil 
 (setq x-select-enable-clipboard nil)
 
-;;  cut & paste?   experiment (6/25)
-(global-set-key "\C-w" 'clipboard-kill-region)
-(global-set-key "\M-w" 'clipboard-kill-ring-save)
-(global-set-key "\C-y" 'clipboard-yank)
+;; emacs throws error!
+;;  cut & paste?   experiment (2/26)
+;; from ring, to document (paste)
+;;(keymap-global-set "C-v" 'clipboard-yank) 
+
+;; saves to clipboard (copy)
+;;keymap-global-set ("C-c" 'clipboard-kill-ring-save)
+
+;;(keymap-global-set "M-w" 'clipboard-kill-ring-save) ;; saves to clipboard (copy)
+
+;; ------------------------  obsolete
+;;(global-set-key "\C-w" 'clipboard-kill-region)
+;;(global-set-key "\M-w" 'clipboard-kill-ring-save)
+;; (global-set-key "\C-y" 'clipboard-yank)
+
 
 
 ;;------------------------  Polymode, ESS, Quarto, R
@@ -168,8 +181,6 @@
 
 ;;
 ;; ------------------------  ESS SETUP
-
-;;
 
 (use-package ess
   :ensure t

@@ -1,26 +1,30 @@
 ## ---------------------
 #       i3 config file (v4) - my cozy setup!
 # ---------------------
+# ------------------------  TODO
+# see save/load workspace   docs https://i3wm.org/docs/layout-saving.html
+
 #  REF: https://wiki.archlinux.org/title/I3
 #  REF: https://i3wm.org/docs/userguide.html for a complete reference!
 #  REF: https://github.com/MDiaznf23/simple-autoricing-i3wm-dotfiles/blob/main/.config/i3/config 
 #  REF: Bashbunni is great! https://www.youtube.com/watch?v=zavmtaqMY_A
 #  REF CARD ! (in i3 docs)
-#------------------------  
-
 #  VIDEO:  Chris Titus Tech
+
+# ------------------------  Notes
 #  i3bar vs polybar (better control?) 
 #
 #  SUSPEND = put info into RAM, then low-power (sleep)
 #  CLOSE LID = should trigger SUSPEND
 #  HIBERNATE = put info on DISK, then power-off (not shutdown)
-#
 # 
 # ------------------------ CLI commands:
 # i3
 # i3lock, service, handles details
 # i3-msg, 
 # i3-status
+
+# xprop <CR>  and click on a window to get properties
 # xset - set X11 such as bell, screen colors; here use to time screensaver
 # xss-lock - not used
 # xcb, xlib  - not used, not available
@@ -28,29 +32,15 @@
 # ------------------------ # config-only ?c ommands
 # -  exec				runs 1st load only
 # -  exec --no-startup-id  	# registers window?
-# -  exec_always  		runs on reload as well.
+# -  exec_always  		runs on 1st startup and on reload as well.
 #
 # Do NOT put comments (#) on same line as a command **
 # Mod4 is 'windows' key 
-#
 # ---------------------------------------
-
-
 
 set $mod Mod4
 set $myTerm wezterm
 workspace_layout stacking   
-
-# ------------------------ experiment
-# Border configuration
-set $thick 2
-
-# DEFAULT BORDER
-for_window [class="^.*"] border pixel $thick
-for_window [title="^.*"] border pixel $thick
-# -----------------------
-
-# Ex:  mod+2 (move to firefox);  2nd mod+2 returns you workspace came from
 workspace_auto_back_and_forth yes
 
 #------------------------ include 
@@ -65,6 +55,13 @@ font pango:DejaVu Sans Mono 12
 # SEE https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# ------------------------ experiment
+# Border configuration
+set $thick 2
+
+# DEFAULT BORDER
+for_window [class="^.*"] border pixel $thick
+for_window [title="^.*"] border pixel $thick
 
 # ------------------------
 # CAFFEINE (screen lock, re-authentication, low-power)
@@ -82,11 +79,11 @@ exec --no-startup-id dex --autostart --environment i3
 # SEE https://wiki.archlinux.org/title/Display_Power_Management_Signaling
 # TO TEST:   run at CLI, but use time 10 10 (10 seconds)
 
-# controls hardware  (sleep > 1 hour) ; dpms refers to power mgmt
-  exec --no-startup-id xset dpms 3600 3600 3600
+# controls hardware  (sleep > 1/2 hour) ; dpms refers to power mgmt
+  exec --no-startup-id xset dpms 1800 1800 1800
 
-# controls screen saver (after > 1 hour)
-  exec --no-startup-id xset s 3600 3600
+# controls screen saver (after > 1/2 hour)
+  exec --no-startup-id xset s 1800 1800
 
 # CAFFEINE ON = power mgmt is off
 # $mod+Alt+c
@@ -94,32 +91,22 @@ exec --no-startup-id dex --autostart --environment i3
   bindsym $mod+Mod1+c exec --no-startup-id "xset q | grep -q 'DPMS is Enabled' && (xset s off -dpms && notify-send 'Caffeine: ON') || (xset s on +dpms && notify-send 'Caffeine: OFF')"
 #------------------------ 
 
+# USE nmtui to manage wifi  (I do not have nm-applet)
 
-# -----------------
-# NetworkManager 
-# -----------------
-# manage wifi with nm-applet,  a desktop environment-independent system tray GUI.
-  exec --no-startup-id nm-applet
+# Use pactl to adjust volume in PulseAudio. ------------------------  
 
-# -------------------------------------------
-# Use pactl to adjust volume in PulseAudio.
-# -------------------------------------------
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-
-
 #------------------------ /var/log/i3.log
 # CAUTION:   redirecting to root controled direction;   consider safer ways
 # added January 2026     (here or in .sh file?) 
-exec_always --no-startup-id i3-msg 'i3 -V -d all >> ~./i3.log 
 
-# ---------------
-#       Bindsym
-# ---------------
+# throwing errors
+# exec_always --no-startup-id i3-msg 'i3 -V -d all > ~/.i3.log'
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 #floating_modifier $mod
 
@@ -131,23 +118,26 @@ bindsym $mod+Shift+q  kill
 
 bindsym $mod+a focus parent
 
-#  BASICS
-# ----------------------------------
-# start dmenu (a program launcher) (compare dmenu | rofi )
-# ----------------------------------
+# dmenu vs rofi?
 bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+Return exec wezterm 
+
+# open terminal
+    bindsym $mod+Return exec wezterm 
 
 # reload config
-  bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+c reload
+
 # restart
-  bindsym $mod+Shift+r restart
+    bindsym $mod+Shift+r restart
 
 # exit  (returns to lightdm login)
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # active workspace tab = red/pink
-bindsym $mod+p title_window_icon on
+  bindsym $mod+p title_window_icon on
+
+# type $mod and F4 together  (screenshot, annotate!)
+bindsym $mod+F4 exec --no-startup-id flameshot gui
 
 
 #------------------------  navigation, SEE config_extra
@@ -187,13 +177,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# STARTUP apps ---- (exec_always runs on 1st startup AND after $mod Shift r)
-
-# ------------------------  emacsclient - too confusing
-# CLAIM:  launches emacsclient dameon and opens frame (see init.el)
-#exec_always --no-startup-id i3-msg 'workspace $ws2; exec emacsclient -c -n -a""'
-#exec_always --no-startup-id i3-msg 'workspace $ws2; exec wezterm'
-#exec_always --no-startup-id i3-msg 'workspace $ws3; exec firefox'
 
 # ------------------------  resize
 
@@ -202,10 +185,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -231,7 +214,7 @@ bindsym $mod+r mode "resize"
 # assign, assigns an application to workspace (and ONLY this workspace)
 assign [class="org.wezfurlong.wezterm"] $ws1
 assign [class="Emacs"] $ws2
-assign [class="Firefox"]  $ws3
+assign [class="^firefox$" instance="^Navigator$" ]  $ws3
 assign [class="rstudio"] $ws4
 assign [class="Zotero"] $ws8
 assign [class="Slack"] $ws9
@@ -275,10 +258,7 @@ bar {
     }
     #height 25
 }
-
-
-#------------------------  $mode_system
-
+#------------------------  mod+y $mode_system
 # TODO:   problems - fix later
 
 #set $mode_system System | (a) resize | (c) reload,  [E]xit i3, (r) reboot,  (Shift+s) shutdown
@@ -296,8 +276,6 @@ bar {
 #------------------------  exec apps
 #exec Firefox
 
-# type $mod and F4 together  (screenshot)
-bindsym $mod+F4 exec --no-startup-id flameshot gui
 
 
 #------------------------ change focused window  
@@ -320,4 +298,26 @@ bindsym $mod+t split toggle
 # ------------------------  emergency
 # does not work
 # bindsym $mod+F5 exec --no-startup-id xfce4-sessions manager terminal 
+
+
+
+# ------------------------ experiments
+
+
+# FAIL !                   
+# ext command WILL start new instance of firefox,  but will do so in current window
+
+# bindsym $mod+f exec firefox
+# exec --no-startup-id firefox NO!  starts firefox on current $ws
+
+# nothing! just clock 
+#exec "--no-startup-id dmenu_run firefox" 
+
+# seems to WORK!    on startup; slack appears in ws9
+# BUT slack fills up my log files; try starting only when needed? 
+# exec --no-startup-id "test $(date +%u) -lt 6 && slack"
+
+
+#
+exec --no-startup-id firefox
 
