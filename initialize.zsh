@@ -28,9 +28,15 @@ if [[ -n $HOST ]] ; then
 else
 	echo "X never set "
 fi
-if [[ $(hostname) == "jim-ThinkPad-T480" ]]
+if [[ $(hostname) == "jim-debian" ]]
 	then
-		echo "You are working on lenovo"
+		echo "You are working on HP"
 	else
-		echo "Are you working on HP laptop?"
+		echo "Are you working on ???"
 	fi
+
+echo "any large files?"
+# -A reads password ??
+# -h human
+# -d depth 1
+sudo -A du -hd 1 /home/jim | sort -h

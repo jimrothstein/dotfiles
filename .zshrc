@@ -15,11 +15,6 @@
 #   * use `setopt` , not `set`
 # REF: [archwiki]( https://wiki.archlinux.org/index.php/Zsh#Simple_.zshrc )
 # =================================================
-# News
-# 6/30/2024
-# -  .zshrc is working, but badly need tune-up;
-# -  using emacs, NOT vim or neovim
-# =================================================
 # no need for promptinit
 autoload -Uz vcs_info # enable vcs_info
 precmd () { vcs_info } # always load before displaying the prompt
@@ -81,8 +76,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 #  >setopt    # output of setopt (Aug 2021)
 # ===================
 #
-#
-#
 # =========================================================
 #  SOURCING
 # =========================================================
@@ -105,13 +98,10 @@ source ~/.config/zsh/functions.zsh
 # BINDKEY
 source ~/.config/zsh/bindkey.zsh
 
-
-
-
 # =========================================================
 ##   PATH and path
 # =========================================================
-##	Use typeset to set shell attribute to -U (maintain unique entries )
+##	typeset: to set shell attribute to -U (maintain unique entries )
 ##	zsh automatically syncs env $PATH and array $path
     typeset -U PATH path
     PATH=/usr/local/bin:/usr/bin:/bin
@@ -141,23 +131,15 @@ source ~/.config/zsh/bindkey.zsh
 ZSH_THEME="intheloop"
 
 
-# (JR:)  Not sure why, but tmux windows names works with this "true"
-# Uncomment the following line to disable auto-setting terminal title.
- DISABLE_AUTO_TITLE="true"
-
-#
+# 2/7/26 - commented next line
+# DISABLE_AUTO_TITLE="true"
 #	
 # ================
-# TAB completion
+# TAB completion - SEE line 50
 # ================
-# autoload -Uz compinit		
-compinit
-
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-
 # ===============
 #   directory stack
 # ===============
@@ -185,7 +167,7 @@ compinit
 # ================================
 #  AUTO_CD   > DIR   zsh recognizes you meant cd DIR
 # ================================
-  setopt AUTO_CD
+setopt AUTO_CD
 
 setopt extendedglob
 
@@ -203,14 +185,9 @@ set NO_BEEP
 #  SEE  https://wiki.archlinux.org/title/Xmodmap
 source ~/.xinitrc
 #
-#
-
-# ------------------------ remove?
 
 ##  open terminal - infinite LOOP   do not do this !!!
-#
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#
 
 
 # ?
@@ -218,4 +195,8 @@ source ~/.xinitrc
 
 # yt-dlp wants this (2/2026)
 . "/home/jim/.deno/env"
+
 eval "$(uv generate-shell-completion zsh)"
+
+# opencode
+export PATH=/home/jim/.opencode/bin:$PATH

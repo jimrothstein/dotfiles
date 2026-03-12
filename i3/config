@@ -220,21 +220,25 @@ assign [class="Zotero"] $ws8
 assign [class="Slack"] $ws9
 
 ## ------------------------- $mod+o  "mode_launcher"
-#set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]ezterm
+set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]ezterm [d]ate
 
 mode "$mode_launcher" {
-#    bindsym f $ws3;exec firefox
-#    bindsym s exec slack
-#    bindsym e exec emacs
-#    bindsym r exec rstudio
+     bindsym f exec firefox
+     bindsym s exec slack
+     bindsym e exec emacs
+     bindsym r exec rstudio
 #    bindsym z exec zotero
-#    bindsym w exec wezterm
+     bindsym w exec wezterm
+
+# 
+#     bindsym d exec "i3-nagbar -t warning -b -m 'test $(date +%u)'" 
 #
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
-## -----		   active mode "mode_launcher"   
 bindsym $mod+o mode "$mode_launcher"
+#------------------------ 
+
 
 #------------------------  i3bar
 
@@ -273,11 +277,6 @@ bar {
 # ------------------------  
 
 
-#------------------------  exec apps
-#exec Firefox
-
-
-
 #------------------------ change focused window  
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -299,13 +298,7 @@ bindsym $mod+t split toggle
 # does not work
 # bindsym $mod+F5 exec --no-startup-id xfce4-sessions manager terminal 
 
-
-
 # ------------------------ experiments
-
-
-# FAIL !                   
-# ext command WILL start new instance of firefox,  but will do so in current window
 
 # bindsym $mod+f exec firefox
 # exec --no-startup-id firefox NO!  starts firefox on current $ws
