@@ -20,8 +20,8 @@
 ## DO NOT SEND to GITHUB !!!
 
 # keys - for LLM, put into LLM_project/ directory in .env
-export GEMINI_API_KEY="AIzaSyByqDSI6T-n3PuM3ayV-fIL8iwthCKYMoE"
-export key="AIzaSyBW7YFOeje58b-KADLR65vxMUej9BqkpWU"    # July 25, 2025
+# export GEMINI_API_KEY="AIzaSyByqDSI6T-n3PuM3ayV-fIL8iwthCKYMoE"
+# export key="AIzaSyBW7YFOeje58b-KADLR65vxMUej9BqkpWU"    # July 25, 2025
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -36,6 +36,8 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # ~/dotfiles
 export DOT_DIR="$HOME/dotfiles"
+
+export EDITOR=emacs
 
 
 
