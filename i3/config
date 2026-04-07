@@ -145,9 +145,9 @@ bindsym $mod+F4 exec --no-startup-id flameshot gui
 set $ws1 "1: Terminal"
 set $ws2 "2: Emacs"
 set $ws3 "3: Firefox"
-set $ws4 "4: RStudio"
+set $ws4 "4: Positron"
 set $ws5 "5: Files"
-set $ws6 "6: R"
+set $ws6 "6: "
 set $ws7 "7: Terminal"
 set $ws8 "8: Zotero"
 set $ws9 "9: Slack"
@@ -215,22 +215,20 @@ bindsym $mod+r mode "resize"
 assign [class="org.wezfurlong.wezterm"] $ws1
 assign [class="Emacs"] $ws2
 assign [class="^firefox$" instance="^Navigator$" ]  $ws3
-assign [class="rstudio"] $ws4
+assign [class="Positron"] $ws4
 assign [class="Zotero"] $ws8
 assign [class="Slack"] $ws9
 
 ## ------------------------- $mod+o  "mode_launcher"
-set $mode_launcher Launch: [f]irefox [s]lack [e]macs [r]studio [z]otero [w]ezterm [d]ate
+set $mode_launcher Launch: [f]irefox [s]lack [e]macs [p]ositron [z]otero [w]ezterm [d]ate
 
 mode "$mode_launcher" {
      bindsym f exec firefox
      bindsym s exec slack
      bindsym e exec emacs
-     bindsym r exec rstudio
+     bindsym p exec positron
 #    bindsym z exec zotero
      bindsym w exec wezterm
-
-# 
 #     bindsym d exec "i3-nagbar -t warning -b -m 'test $(date +%u)'" 
 #
     bindsym Escape mode "default"
@@ -288,7 +286,7 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# split  $mod+b , so $mode+h means move left
+# split:  use $mod+b to set for horizontal ( use "b",  so $mode+h means move left)
 bindsym $mod+v split vertical
 bindsym $mod+b split horizontal
 bindsym $mod+t split toggle
@@ -312,6 +310,9 @@ bindsym $mod+t split toggle
 
 
 #
-#exec --no-startup source ~/.xinitrc   # use capslock as esc
+# claim:  this will always set capslock 
+exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id firefox
+exec --no-startup-id wezterm
+exec --no-startup-id emacs
 
