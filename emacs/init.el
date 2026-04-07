@@ -63,7 +63,24 @@
 ;; STOP  C-x C-c from exiting emacs (often my mistake)
 (global-unset-key (kbd "\C-x\C-c"))
  
-;;------------------------  ;; org-mode shortcuts
+;;------------------------  ;; org-mode setup
+
+(defun org-mode-setup() 
+  (org-indent-mode)
+  (variable-pitch-mode 1)
+  (visual-line-mode 1)
+  (setq evil-auto-indent nil))
+
+
+(use-package org
+  :config
+  (setq org-ellipsis "📌"))
+
+(use-package org-bullets
+  :after org
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
 (require 'org-tempo)
 
@@ -88,8 +105,6 @@
 (use-package yasnippet
   :ensure t) ;; if not installed, use-package will do so
 (yas-global-mode 1)
-(use-package org
-  :ensure t)
 ;; ------------------------  evil
 (unless (package-installed-p 'evil)
   (package-install 'evil))
@@ -102,7 +117,7 @@
 
 ;; toggle evil/emacs
 (setq evil-toggle-key "C-z")
-(require 'evil) ;; evil must load 1st
+;;
 ;; Evil 'state' colors (mode in vim)
 
 ;; cursor colors
@@ -131,28 +146,11 @@
     indent-bars-color-by-depth nil
     indent-bars-highlight-current-depth '(:face default :blend 0.4))
 
-;; ------------------------ xclip board
-;; (6/25) TODO: claim: obsolete, use select-enable-clipboard ... instead?
-;; need BOTH this, and clipboard- commands ??? 
+;; ----------------------- clipboard
 
-;; clipboard, use + register in Evil 
-(setq x-select-enable-clipboard nil)
-
-;; emacs throws error!
-;;  cut & paste?   experiment (2/26)
-;; from ring, to document (paste)
-;;(keymap-global-set "C-v" 'clipboard-yank) 
-
-;; saves to clipboard (copy)
-;;keymap-global-set ("C-c" 'clipboard-kill-ring-save)
-
-;;(keymap-global-set "M-w" 'clipboard-kill-ring-save) ;; saves to clipboard (copy)
-
-;; ------------------------  obsolete
-;;(global-set-key "\C-w" 'clipboard-kill-region)
-;;(global-set-key "\M-w" 'clipboard-kill-ring-save)
-;; (global-set-key "\C-y" 'clipboard-yank)
-
+;; 3/2026
+;; When set to non-nil, USE M-w to select text in emacs, and paste C-p non-emacs app
+(setq select-enable-clipboard t) 
 
 
 ;;------------------------  Polymode, ESS, Quarto, R
@@ -248,8 +246,8 @@
 
 ;; use package yaml-mode - NOTHING
 (require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yaml\\'".yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.yml\\'".yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" yaml-mode))
+;;
 ;;
 (add-hook 'yaml-mode-hook
 	 #'(lambda ()
@@ -289,22 +287,22 @@
   (which-key-mode))
 
 ;; Evil 'state' colors (mode in vim)
-(setq evil-mode-line-format nil                 ;; normal = black
-      evil-insert-state-cursor '(bar "White")   ;; insert = thin bar
-      evil-visual-state-cursor '(box "#F86155"));; visulal =  red 
+;;(setq evil-mode-line-format nil                 ;; normal = black
+;;      evil-insert-state-cursor '(bar "White")   ;; insert = thin bar
+;;      evil-visual-state-cursor '(box "#F86155"));; visulal =  red 
 
 ;; ------------------------ company (text completion)
 ;; comp(lete) any(thing)
 (use-package company
   :config
-  (setq company-idle-delay 0)
-  (setq company-minimum-prefix-length 2)
+  (setq company-idle-delay 0.45)
+  (setq company-minimum-prefix-length 3)
   (add-hook 'after-init-hook 'global-company-mode))
 
 (setq company-selection-wrap-around t
       company-tooltip-align-annotations t
-      company-idle-delay 0.45
-      company-minimum-prefix-length 3
+      ;; company-idle-delay 0.45
+      ;; company-minimum-prefix-length 3
       company-tooltip-limit 10)
 
 ;;------------------------  quarto
@@ -358,6 +356,7 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+(setq org-agenda-files (file-expand-wildcards "~/code/docs/*.org"))
 
 ;; allow bash to run in org mode blocks
  (org-babel-do-load-languages
@@ -377,15 +376,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   '("~/code/docs/tech_notes/000_PROJECTS.org"
-     "/home/jim/code/docs/tech_notes/baby.org"))
+ ;;'(org-agenda-files
+ ;;  '("/home/jim/code/docs/tech_notes/000_PROJECTS.org"
+ ;;    "/home/jim/code/docs/tech_notes/baby.org"))
  '(package-selected-packages
    '(@ command-log-mode company consult denote evil-collection flycheck
-       gptel-aibo gptel-magit indent-bars marginalia poly-R
-       quarto-mode racket-mode request-deferred simpleclip
-       vertico which-key whitespace-cleanup-mode xclip
-       yaml-mode yasnippet))
+       gptel-aibo gptel-magit indent-bars marginalia org-bullets
+       poly-R quarto-mode racket-mode request-deferred simpleclip
+       typst-preview typst-ts-mode vertico which-key
+       whitespace-cleanup-mode xclip yaml-mode yasnippet))
  '(x-select-enable-clipboard-manager t))
 
 ;;------------------------  ox-typst
@@ -525,8 +524,14 @@
       time-stamp-format "Last changed %Y-%02m-%02d %02H:%02M:%02S by %u")
 (add-hook 'write-file-hooks 'time-stamp) ; Update when saving.
 
+;; TODO - remove?
 ;; loads file - C-. (other window)
-(load-file "/home/jim/dotfiles/emacs/nav_windows.el")
+;;(load-file "/home/jim/dotfiles/emacs/nav_windows.el")
 
 
-(buffer-file-name)
+; Source - https://stackoverflow.com/a/7083345
+; Posted by zev
+; Retrieved 2026-03-31, License - CC BY-SA 3.0
+
+;; TODO:  works, but default buffer still appears first!
+(find-file  "~/code/docs/tech_notes/000_PROJECTS.org")
