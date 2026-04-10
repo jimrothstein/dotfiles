@@ -1,6 +1,9 @@
 ;; -*- lexical-binding: t; -*-
 
 (setq debug-on-error t)
+(setq inhibit-startup-screen t
+      inhibit-startup-message t
+      inhibit-startup-echo-area-message t)
 
 ;; package -- summary: thereafter use-package loads packages  toggle whitespace mode on/off (now in init.el)
 
@@ -84,22 +87,8 @@
 
 (require 'org-tempo)
 
-;;------------------------ typst-ts-mode 
-;; (setq treesit-language-source-alist
-;; '((typst "https://github.com/uben0/tree-sitter-typst")))
+;;------------------------  typst (TODO)
 
-;; Run M-x treesit-install-language-grammar for 'typst' if it's your first time.
-
-;; parse code; build syntax tree; ts=treesitter
-;;(use-package typst-ts-mode
-;;  :vc (:url "https://github.com/Ziqi-Yang/typst-ts-mode")
-;;  :mode "\\.typ\\'"
-;;  :init
-;;  ;; Force typst-ts-mode to the front of the line
-;;  (add-to-list 'auto-mode-alist '("\\.typ\\'" . typst-ts-mode)))
-
-
-;;  :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode"))
 
 ;;------------------------  ysasnippet
 (use-package yasnippet
@@ -122,14 +111,12 @@
 
 ;; cursor colors
 (setq evil-mode-line-format nil                 ;; normal = black
-      evil-insert-state-cursor '(bar "White")   ;; insert = thin bar
+      evil-insert-state-cursor '((bar .5) "green")   ;; insert = thin bar
       evil-visual-state-cursor '(box "#F86155"));; visual =  red 
 
 ;; normal cursor = purple
 (setq evil-normal-state-cursor '(box "purple"))
 
-;; insert cursor = bar, blue
-(setq evil-insert-state-cursor '((bar . 5)  "green"))
 
 ;; ,w to save buffer
   (define-key evil-normal-state-map ",w" 'save-buffer)
@@ -245,7 +232,7 @@
 ;; (define-key apply-yaml (kbd "C-y") 'yaml-mode)
 
 ;; use package yaml-mode - NOTHING
-(require 'yaml-mode)
+(use-package yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yaml\\'" yaml-mode))
 ;;
 ;;
@@ -380,21 +367,13 @@
  ;;  '("/home/jim/code/docs/tech_notes/000_PROJECTS.org"
  ;;    "/home/jim/code/docs/tech_notes/baby.org"))
  '(package-selected-packages
-   '(@ command-log-mode company consult denote evil-collection flycheck
-       gptel-aibo gptel-magit indent-bars marginalia org-bullets
-       poly-R quarto-mode racket-mode request-deferred simpleclip
-       typst-preview typst-ts-mode vertico which-key
-       whitespace-cleanup-mode xclip yaml-mode yasnippet))
+   '(@ command-log-mode company evil-collection flycheck
+       indent-bars marginalia org-bullets
+       poly-R quarto-mode  vertico which-key
+       whitespace-cleanup-mode yaml-mode yasnippet))
  '(x-select-enable-clipboard-manager t))
 
-;;------------------------  ox-typst
-;; org to *.typ
-
-
-;;(use-package ox-typst
-;;  :ensure t
-;;  :after org)
-
+;;------------------------  ox-typst (TODO)
 ;; ------------------------  
 
 (custom-set-faces
@@ -422,25 +401,25 @@
 
 ;; USE:  M-x shell
 ;; opens shell in SAME window, not new one (default)
-(setq display-buffer-alist '(("\\*shell" (display-buffer-same-window))))
 
 ;; (April 2025) 
 (setq display-buffer-alist
-      '(("*R Dired ogg"
+      '(("\\*shell" (display-buffer-same-window))
+        ("*R Dired ogg"
          (display-buffer-reuse-window display-buffer-at-bottom)
          (window-width . 0.5)
-         (window-height 0.25)
+         (window-height . 0.25)
          (reusable-frames . nil))
         ("*R"
          (display-buffer-reuse-window display-buffer-in-side-window)
          (side . right)
-         (slot . -1) ;; left 1/3
+         (slot . -1)
          (window-width . 0.5)
          (reusable-frames . nil))
         ("^\\*Help"
          (display-buffer-reuse-window display-buffer-in-side-window)
          (side . right)
-         (slot . 1) ;; right 1/3
+         (slot . 1)
          (window-width . 0.5)
          (reusable-frames . nil))))
 
