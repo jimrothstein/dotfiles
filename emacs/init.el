@@ -43,6 +43,9 @@
         use-package-expand-minimally t))
 
 ;; ------------------------  config
+;; auto complete closing parenthesis 
+(electric-pair-mode 1)
+
 (setq backup-directory-alist '( ("." . "~/.emacs_saves")))
 
 ;; delete file, but save in trash
@@ -64,8 +67,17 @@
 (global-set-key [C-tab] 'other-window)
 
 ;; STOP  C-x C-c from exiting emacs (often my mistake)
-(global-unset-key (kbd "\C-x\C-c"))
- 
+
+;; recent files
+(use-package recentf
+  :config
+  (recentf-mode 1)
+  (setq recentf-max-menu-items 25))
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
+;; auto reload changed files (changed by another program)
+(global-auto-revert-mode 1)
+
 ;;------------------------  ;; org-mode setup
 
 (defun org-mode-setup() 
@@ -396,6 +408,9 @@
 
 
 ;;------------------------  experiments (at bottom)
+;; files begin with #!  are automatically set to execute, chmod +x
+(add-hook 'after-save-hook
+          #'executable-make-buffer-file-executable-if-script-p)
 
 ;; ------------------------  evil cursor fonts
 
