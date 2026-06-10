@@ -24,7 +24,7 @@
 
 # To test this file is NOT pushed use:  git check-ignore -v path/to/file
 # as of JUNE 10, 2026 (API keys)
-~/dotfiles/.zshrc_secret
+.zshrc_secret
 
 
 
