@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## PURPOSE:   Given a WORKFLOW, delete all runs
+## PURPOSE:   Given a WORKFLOW, delete all runs (be sure in right repo/directory)
 
 # REF:  https://github.com/orgs/community/discussions/26256#discussioncomment-10084663
 # Fetch all run IDs for the specified workflow using --json for structured output
@@ -14,6 +14,7 @@ WORKFLOW="verify_templates_experimental.yml"
 WORKFLOW="verify_version3.yml"
 WORKFLOW="verify_templates_experimental.yml"
 WORKFLOW="test.yml"
+WORKFLOW="opencode.yml"
 
 
 gh run ls \
