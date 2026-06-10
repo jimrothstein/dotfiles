@@ -1,9 +1,9 @@
 # .gitignore
-# ~/dotfiles/.gitignore   ($G)
+
+# - This file: ~/dotfiles/.gitignore   ($G)
+# - Test a file is NOT pushed use:  git check-ignore -v path/to/file
 #
-#
-#
-## CAUTION:  if file already in index, MUST remove it ---- 
+# - CAUTION:  if file already in index, MUST remove it ---- 
 
 # To remove file has been put into index (and not pushed)
 # =================================
@@ -19,14 +19,6 @@
 #   .a    the file ".a"  (anywhere)
 #
 
-## API keys (for R: use .Renviron)
-# ~/.env
-
-# To test this file is NOT pushed use:  git check-ignore -v path/to/file
-# as of JUNE 10, 2026 (API keys)
-.zshrc_secret
-
-
 
 # .R overhead (these exact files, in any directory)
 # =============
@@ -41,8 +33,7 @@
 # .Renviron has codes;  do NOT put on Github.   (Rprofile is ok on Github)
 .Renviron
 
-#	vim backups .Renviron~
-.Renviron*
+------------------------  separate
 
 # files ending in .RDS or .Rd  .json (anywhere,  except mainfest.json (connect.cloud posit needs)
 *.RDS
@@ -58,6 +49,8 @@
 # Ignore Files/dir that BEGIN with _ (_dir/ _script, _file.txt, etc.)
 # (NOT ignore my_file)
 _*
+------------------------  separate
+
 # do NOT ignore _snaps (testthat::expect_snaps)
 !_snaps
 
@@ -86,25 +79,14 @@ dev/
 jimTools/
 rtweet/
 make_project/
-AoC/
-out/
-output/
-pkg_mp3_files/
-pkg_yt_api/
 r_rafael/
 r_health_labs/
-book_modern_dive/
-opensecrets/
-test_opensecrets/
-CARES/
 ALZ_legal/
 ALZ/
 medical/
 JOB/
 correspondence/
 backup*/
-# jr removed;  need workflows, hooks etc
-#.git/
 
 
 # Google API
@@ -117,11 +99,16 @@ r_mp3/R/021_api_codes.Rmd
 zsh_project/CURL_examples/.secret
 
 
-# Special
-# =========
-# plugin "jimrothstein/myhelp" - separate from rest of code/
-*.tar.gz
-~/code/jimHelp/doc/*
+#------------------------  Other APIs
+.zshr_secret
+
+## API keys (for R: use .Renviron)
+# ~/.env
+
+# To test a file is NOT pushed use:  git check-ignore -v path/to/file
+# as of JUNE 10, 2026 (opencode API keys)
+.zshrc_secret
+
 
 # ------------
 # *.appimage
