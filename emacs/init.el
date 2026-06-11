@@ -529,3 +529,9 @@
 
 ;; TODO:  works, but default buffer still appears first!
 (find-file  "~/code/docs/tech_notes/000_PROJECTS.org")
+
+;;------------------------  recent file list
+(save-place-mode 1) ;; save cursor location
+(recentf-mode 1)   ;; persistent recent files list, chron order
+(setq recentf-max-menu-items 10) 
+(setq recentf-max-saved-items 10)
