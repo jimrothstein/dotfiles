@@ -103,7 +103,8 @@ zsh_project/CURL_examples/.secret
 .zshr_secret
 
 ## API keys (for R: use .Renviron)
-# ~/.env
+## .env used various LLM modesl
+.env
 
 # To test a file is NOT pushed use:  git check-ignore -v path/to/file
 # as of JUNE 10, 2026 (opencode API keys)

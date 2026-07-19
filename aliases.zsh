@@ -4,11 +4,9 @@
 #
 # ------------------------  To find WHERE alias defined:
 # >which <alias>
-# >grep -r '<alias=xxxx>'
+# >grep -r 'alias xxx='
 #
-# TODO:  in this file, wrap all alias calls in a function()
 # from .zshrc,  call this function
-# benefit?  ctags will tag the function
 #
 # #######################
 # 	alias
@@ -34,10 +32,12 @@ alias dirs='dirs -lpv'
 
 #  Using ex as editor
 
+# I have python3 (7/26)
+alias python='python3'
+
 #	coding, 
 alias goAGENTS='cd ~/code/docs/AGENTS'
 alias goAdmiral='cd ~/code/admiral/R'
-alias goad='cd ~/code/admiraldev/R'
 alias goai='cd ~/code/pytorch_projects/; source ~/code/pytorch_projects/bin/activate'
 alias gopeds='cd ~/code/admiralpeds/R'
 alias goaNCA='cd ~/code/aNCA/R'
@@ -57,13 +57,15 @@ alias goLSR='cd ~/code/LSR_rbook/'
 alias goLLM='cd ~/code/LLM_project/'
 alias goNSE='cd ~/code/try_things_here/NSE_project/'
 alias goOC='cd ~/.config/opencode/'
+alias goOpencode='cd ~/.config/opencode/'
+alias goPharmaverseadam='cd ~/code/pharmaverseadam/'
 alias goPublish='cd ~/code/publish_project/'
 alias goPython='cd ~/code/python_project/'
 alias goQuarto='cd ~/code/publish_project/'
-alias goSdtm='cd ~/code/sdtmchecks/'
 alias goRacket='cd ~/code/racket_project'
 alias goRscripts='cd ~/code/jimTools/Rscripts'
 alias goRHome='cd /usr/share/R/'              # R_HOME
+alias goSKILL='cd ~/.config/opencode/skills/'
 alias goShaina='cd ~/code/stats_project/shaina/' 
 alias goStats='cd ~/code/stats_project/'
 alias goTeal='cd ~/code/teal_project/'
@@ -95,7 +97,7 @@ export goCode goDot goBin goTry
 # long,
 # 1-per line,
 # desc (size),
-# no permissions, more
+# omit owner (-g), more
 # -S  to sort desc (size)
 # USAGE:   ll * m
 #
@@ -112,4 +114,4 @@ alias ldir='ll -d *(/)'
 alias R='R --no-save'
 
 # GREP
-alias grep='grep --color=always'
+alias grep='grep --color=auto'
