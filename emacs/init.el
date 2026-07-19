@@ -326,7 +326,7 @@
 (set-register ?p (cons 'file "~/code/docs/tech_notes/810_pharmaverse_NOTES.typ"))
 (set-register ?q (cons 'file "~/code/docs/tech_notes/250_quarto_knitr_SCSS_NOTES.qmd"))
 (set-register ?r (cons 'file "~/code/docs/tech_notes/310_R_notes.typ"))
-(set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.typ"))
+(set-register ?t (cons 'file "~/code/docs/tech_notes/300_tech_notes.md"))
 
 ;;  always follow symlinks to actual file (and don't ask)
 (setq vc-follow-symlinks t)

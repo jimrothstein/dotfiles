@@ -3,6 +3,7 @@
 	name = jimrothstein
 [push]
 	default = simple
+	autoSetupRemote = true
 [core]
 	editor = vim.tiny 
 	excludesfile = "~/.gitignore"

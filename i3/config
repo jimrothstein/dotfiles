@@ -317,6 +317,7 @@ bindsym $mod+t split toggle
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id firefox
 exec --no-startup-id wezterm
+exec --no-startup-id sleep 1 && i3-msg 'split h; exec wezterm'   # sleep avoids race condition 
 exec --no-startup-id emacs
 exec --no-startup-id positron 
 
