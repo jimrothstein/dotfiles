@@ -12,5 +12,6 @@
 - `python/python.md` is an orphan next to `python/SKILL.md` — remove or fold into `SKILL.md`.
 - Frontmatter violations: `audio_files` uses `version: .001` (not in allowed set).
 - Description grammar typos: `alias` ("when ever"), `random` ("generates"), `bump_version` ("users says"), `hello` ("user wants to list").
+- Review the files in `~/code/docs/AGENTS` — some are really skills and some have rules that may apply to R projects.
 
 ## Stop
