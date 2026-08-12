@@ -31,6 +31,9 @@
 #	DOWNLOADS  music in .ogg format
 #	- youtube list	must be "public"
 #------------------------
+#
+#  --cookies-from-browser firefox (if youtube wants permission)
+#  -I --playlist-items 1,3
 #	-o FORMAT
 #	for	 text xxx
 #	include var:   ${day}
@@ -39,35 +42,43 @@
 #	-v  verbose
 #	-- audio-format  best (default), aac, vorbis ...
 #	-F  list all formats of requested video
+#	-q  quiet
+#	--download_archive  creates with ID of downloaded files
+#	--dateafter DATE  (only download newer videos, uses date added to playlist?)
+#	--no-overwrites
+#	--ignore-errors
 # ----------------------------------------
 #
-mkdir -p ~/mp3_latest_downloads/
+# mkdir -p ~/mp3_downloads/
 
 # setup
-list=PLbcglKxZP5PMzNbrnMtdwtoPkkCi64cbw
+list="PLbcglKxZP5PNPlN66_s2GoWS_Ystw6c8j"
 
 ## (MASTER COPY is on external SATA SSD. 240GB)
-dir=/home/jim/latest_mp3_downloads/
+dir=/home/jim/mp3_downloads/
 
 ## url
 mylist=https://www.youtube.com/playlist?list="${list}"
 
-# download
-yt-dlp -x -v -i --audio-format vorbis \
-	-o ${dir}'%(autonumber)s_%(artist)s_%(title)s_'$(date +%d%b%Y)'.%(ext)s' \
-	 ${mylist}
-exit	
-
-
-# Download just ONE  video?
+#  For prefix
+#	-o ${dir}'%(autonumber)s_%(artist)s_%(title)s_'$(date +%d%b%Y)'.%(ext)s' \
+    #	 limit to 1,3 files
+# -I 1,3
 #
 #
-# youtube-dl -x -i [video id ONLY]
-
-# NOT with complete URL
+#  .archive.txt - IDs of all downloaded files (since 10AUG2026)
 #
-# I get "no match found"
-# youtube-dl -x -i https://.....
 
+yt-dlp \
+  --cookies-from-browser firefox \
+  -x -i \
+  --audio-format vorbis \
+  --download-archive ${dir}.archive.txt \
+  -o ${dir}'%(artist)s_%(title)s_'$(date +%d%b%Y | tr '[:lower:]' '[:upper:]')'.%(ext)s'  ${mylist}
 
+exit
 
+# SEARCH
+# list 10, with ID, Title
+# yt-dlp ytsearch10:lebron james --get-id --get-title
+#

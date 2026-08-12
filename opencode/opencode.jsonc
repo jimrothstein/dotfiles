@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "@tarquinen/opencode-dcp@latest"
+  ],
+  "mcp": {
+    "ailang-docs": {
+      "type": "remote",
+      "url": "https://mcp.ailang.sunholo.com/mcp/"
+    }
+  }
+}

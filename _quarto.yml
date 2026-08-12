@@ -21,6 +21,9 @@ execute:
     cache: false     ## knitr caches R chunks
 
 format:
+  typst:
+    mainfont: "Liberation Serif"
+    monofont: "Liberation Mono"
   html:
     theme:
       - custom.scss
