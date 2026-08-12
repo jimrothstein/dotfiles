@@ -1,5 +1,19 @@
 # Global opencode setup — to-do
 
+
+## Changes jim made to opencode global_setup_to_do.md
+- use ~/dotfiles/opencode/ for all configuration, skills, agents files.
+- Old location: ~/.config/opencode is now soft link
+- all Skills (1-5) below should listed as "future" to-do, ie lower-priorty
+- Scope ambiguity (# 7).  project.md, (one file for each project).  It would be nice if all project.md files would be in this folder~/dotfiles/opencode/projects/.  This simplifies using github to backup files.  In the root of each project, do a soft link. Example:  ~/code/docs and subdirectories are where I keep notes, documentation etc about all my activities and projects. However, I prefer to have just one projects.md file in ~/code/docs/projects.md   
+- NO Claude, I only use opencode.
+- For today, please rewrite this summary.
+- If you agree, all project management files (projects.md) should be in ~/dotfiles/opencode/projects/ then do this and make it the rule. 
+
+
+
+## Below is orignal,  written by opencode
+
 Goal: write `~/.config/opencode/AGENTS.md` (none exists today) with rules for
 `SKILL.md` and for project management files (`project.md`).
 
