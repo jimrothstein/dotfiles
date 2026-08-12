@@ -20,8 +20,11 @@
 ## DO NOT SEND to GITHUB !!!
 
 # keys - for LLM, put into LLM_project/ directory in .env
-# export GEMINI_API_KEY="AIzaSyByqDSI6T-n3PuM3ayV-fIL8iwthCKYMoE"
-# export key="AIzaSyBW7YFOeje58b-KADLR65vxMUej9BqkpWU"    # July 25, 2025
+#
+#
+# X11 needs this; if remove: no display; and  i3 and restart_ligthdm WILL NOT RUN
+export DISPLAY=:0
+
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
