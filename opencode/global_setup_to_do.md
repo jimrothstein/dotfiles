@@ -1,73 +1,16 @@
 # Global opencode setup — to-do
 
+## Done
+- All configuration, skills, and agents live in `~/dotfiles/opencode/`; `~/.config/opencode` is a soft link to it.
+- Stale duplicate skill trees deleted (`skills/.agents/`, `skills/agent_CHECK/`). Rule added: never keep duplicate skill trees.
+- `~/dotfiles/opencode/projects/` created for all `project.md` files. Rule added: symlink each project's `project.md` into this folder; never create `project.md` elsewhere.
+- No Claude — opencode only.
 
-## Changes jim made to opencode global_setup_to_do.md
-- use ~/dotfiles/opencode/ for all configuration, skills, agents files.
-- Old location: ~/.config/opencode is now soft link
-- all Skills (1-5) below should listed as "future" to-do, ie lower-priorty
-- Scope ambiguity (# 7).  project.md, (one file for each project).  It would be nice if all project.md files would be in this folder~/dotfiles/opencode/projects/.  This simplifies using github to backup files.  In the root of each project, do a soft link. Example:  ~/code/docs and subdirectories are where I keep notes, documentation etc about all my activities and projects. However, I prefer to have just one projects.md file in ~/code/docs/projects.md   
-- NO Claude, I only use opencode.
-- For today, please rewrite this summary.
-- If you agree, all project management files (projects.md) should be in ~/dotfiles/opencode/projects/ then do this and make it the rule. 
+## Future / low priority
+- `get_news` skill is broken: file is `get_news.md`, not `SKILL.md`; `name:` frontmatter is invalid and description references KDnuggets.
+- `md2pdf/` has no `SKILL.md` at all — complete or remove.
+- `python/python.md` is an orphan next to `python/SKILL.md` — remove or fold into `SKILL.md`.
+- Frontmatter violations: `audio_files` uses `version: .001` (not in allowed set).
+- Description grammar typos: `alias` ("when ever"), `random` ("generates"), `bump_version` ("users says"), `hello` ("user wants to list").
 
-
-
-## Below is orignal,  written by opencode
-
-Goal: write `~/.config/opencode/AGENTS.md` (none exists today) with rules for
-`SKILL.md` and for project management files (`project.md`).
-
-## Skills (`SKILL.md`)
-
-1. **`get_news` is broken and never loads.** The file is
-   `skills/get_news/get_news.md`, but opencode only scans for `**/SKILL.md`.
-   Also frontmatter `name: get_news.md` (invalid, has extension) and the
-   description is copy-paste from `posit-news` (references "KDnuggets-news").
-   Rename file to `SKILL.md`, fix name, rewrite description.
-2. **Stale duplicates: `skills/agent_CHECK/` and `skills/.agents/`** each hold
-   a full nested copy of the 24 posit skills, while `skills-lock.json` lists
-   them as installed yet none exist at the top level. Decide the canonical
-   location and delete the other two trees.
-3. **Empty/orphan skills:** `skills/md2pdf/` has no `SKILL.md` at all;
-   `skills/python/python.md` is an orphan next to `python/SKILL.md`. Either
-   complete or remove.
-4. **Frontmatter violations:** `audio_files` uses `version: .001` (not in the
-   allowed frontmatter set — only `name`, `description`, `license`,
-   `compatibility`, `metadata`); `hello`/`random`/`alias`/`bump_version`
-   descriptions have grammar typos ("when ever", "generates", "users says").
-   Document the allowed fields + a "trigger keywords in description" rule, and
-   fix the offenders.
-5. **Document SKILL.md content rules globally:** body < 500 lines, imperative
-   voice, explain *why* instead of all-caps MUSTs, use bundled
-   `scripts/`/`references/`/`assets/` for progressive disclosure, `name` must
-   equal the folder name. Point to `skill-creator` as the canonical guide.
-
-## Project management files (`project.md`)
-
-6. **Adopt `project-memory` as the global convention.** Global AGENTS.md
-   should mandate: read `project.md` at session start, record decisions as
-   they happen (not only at end), format `Decisions / Current state / Paths
-   chosen`, date-stamped bullets with a one-line why, and never record failed
-   paths. `~/project.md` and `~/code/jimTools/project.md` are the live
-   examples.
-7. **Scope ambiguity:** `project.md` sits at `~/` (home) and in
-   `~/code/jimTools`. Document that a `project.md` lives in the project root
-   (cwd) only, and that `~/project.md` is a special case for home-level work —
-   otherwise sessions will write memory to the wrong place.
-
-## Global config
-
-8. **Write `~/.config/opencode/AGENTS.md`** (auto-loaded). Keep it
-   personal/behavioral only; project-level rules already exist in
-   `~/dotfiles/AGENTS.md`, `~/bin/AGENTS.md`, etc.
-9. **Document precedence:** local project `AGENTS.md`/`CLAUDE.md` wins over
-   global, global wins over `~/.claude/CLAUDE.md`; first match wins per
-   category. Global rules must defer to project files (e.g.
-   `~/dotfiles/AGENTS.md` has its own "be terse / explain every line"
-   contract).
-10. **Capture cross-cutting behavioral rules:** "be terse", "present a plan
-    before changing files, ask instead of guessing" (already scattered in
-    `typst`, `audio_files`, `dotfiles/AGENTS.md`), plus the
-    `~/.config/opencode/opencode.jsonc` gap — it has no `instructions` field,
-    no `skills.paths`, and `agents/` is empty, so nothing references these
-    conventions today.
+## Stop
