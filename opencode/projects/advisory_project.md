@@ -6,6 +6,7 @@ Project memory for the `~/code/docs/advisory/` subproject.
 - Check the Lane County Public Health website for broken URL links.
 - Compare the CDC URL list against other County Public Health pages as they're added.
 - 2026-08-13: Build the GitHub Actions demo (a working, not-perfect link-audit workflow) and push it. — DONE, verified on GitHub.
+- 2026-08-13: **jim will try the GitHub Actions workflow himself** (trigger via Actions tab → Run workflow, or wait for the monthly cron). Return tomorrow with results/feedback.
 
 ## jim (the user) ADDED STEPS:
 - Goal remains find all broken urls and present in list to user.
@@ -21,12 +22,14 @@ Project memory for the `~/code/docs/advisory/` subproject.
   1. **GitHub Actions** (free; public repo = unlimited minutes) — runs on a schedule, produces a static report served via GitHub Pages. User just opens a bookmarked URL; nothing runs locally.
   2. **Posit free tier** — a Shiny app on shinyapps.io (5 apps / 25 active-hrs/mo, no scheduling) or Connect Cloud (4 GB/1 CPU, 20 active-hrs/mo, unlimited static docs, can publish from GitHub). Runs on demand; scheduling is paid. R runs server-side, so the user's machine needs nothing.
 - 2026-08-13: **Today we build the GitHub Actions option as a demonstration only.** It must work but need not be perfect — partial coverage of the Public Health site and minor errors are acceptable. We defer the Shiny/Posit path for a later session.
+- 2026-08-13: Reviewed the **GitHub Actions Marketplace** for URL checkers (query "url check", 43 results). Finding: none crawl an external website — they all check URL lists you supply: urlchecker-action/URL Checker/URLs Checker scan URLs embedded in your repo's own files (.md/.py/.rst); Check URLs reads a JSON list and needs a SLACK_WEBHOOK; URL Health Check / Check URL Status ping hardcoded URLs. Our use case needs **discovery (crawl) + checking**, which the marketplace actions don't cover. **Decision: keep the custom `link_audit.py` as-is** — it already does both, stdlib-only, and was verified live on GitHub. No marketplace action adopted.
 
 ## Current state
 - Just started. First output artifact is `cdc_urls.qmd`: 19 unique links to cdc.gov found across 3 subpages of Lane County Public Health (Immunization Program, Coronavirus (COVID-19), Preparedness). The main Public Health landing page has no CDC links; Public Health News mentions "Centers for Disease Control and Prevention" in a measles story without linking.
 - 2026-08-13: Audit tool decisions settled — crawl the **entire Public Health section** recursively; "broken" = any 4xx/5xx + connection failures (DNS/timeout/SSL). Building the GitHub Actions demo now.
 - 2026-08-13: GitHub Actions demo built and **verified working on GitHub**. `advisory/link_audit.py` (Python stdlib only: urllib + html.parser) crawls the PH portal (pageId-marked internal links only), extracts outbound links, checks each (HEAD/GET, redirects, DNS/timeout/SSL handling), writes `link_audit.md` + `link_audit.csv` under `advisory/audit_results/`. Workflow `.github/workflows/link_audit.yml` runs it on a monthly cron + manual `workflow_dispatch` and commits results back to the repo. Live run on GitHub: 40 PH pages → 189 unique outbound links → 29 broken. Results committed as commit `8cd7` ("Update link audit results").
 - Known demo limitations (acceptable for now): (1) some 403s are bot-blocking not real breaks (ssa.gov, peacehealth, redcross); (2) SSL cert failures on public.health.oregon.gov flagged though site may still load in a browser; (3) botched URLs on the site itself (e.g. `http://https://...`) surface as DNS errors — useful findings; (4) results are committed to the repo, not yet served via GitHub Pages.
+- 2026-08-13: Marketplace review complete — no URL-checker action fits (none discover links by crawling); custom script retained. Next: jim personally tests the workflow.
 
 ## Paths chosen
 - Auditing outbound links from Lane County Public Health website, page by page.
