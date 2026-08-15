@@ -8,7 +8,8 @@
 - All project memory files (`project.md`) live in `~/dotfiles/opencode/projects/`.
 - In each project root, place a soft link: `ln -s ~/dotfiles/opencode/projects/<project>.md <project_root>/project.md`.
 - Do not create `project.md` files anywhere else.
-- Every `project.md` must have a section near the top named `NEXT STEPS`.
+- Every `project.md` must have, near the top, a `PLAN` section (plan and TODO list, including done items) and a `NEXT STEPS` section.
+- Keep each project's plan/TODO in its own `project.md`; do not keep separate to-do files in project roots.
 
 ## Skills
 - There is a single canonical skills tree at `~/dotfiles/opencode/skills/`.

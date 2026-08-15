@@ -2,6 +2,15 @@
 
 Single project.md for the whole `~/code/docs/` repo, with one section per subdirectory/activity.
 
+## PLAN
+### Done
+- 2026-08-12: Single project.md covers the whole repo; symlinked from `~/dotfiles/opencode/projects/docs_project.md`.
+- 2026-08-12: advisory got its own memory file. Created `cdc_urls.qmd` with CDC.gov links found on Lane County Public Health pages.
+
+### TODO
+- advisory: check the directory's website for broken URL links (see `advisory/advisory_project.md`).
+- AGENTS: review the files in `~/code/docs/AGENTS` — some are really skills and some have rules that may apply to R projects.
+
 ## NEXT STEPS
 - advisory: check the directory's website for broken URL links (see `advisory/advisory_project.md`).
 - AGENTS: review the files in `~/code/docs/AGENTS` — some are really skills and some have rules that may apply to R projects.

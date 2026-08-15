@@ -2,6 +2,18 @@
 
 Project memory for the `~/code/docs/advisory/` subproject.
 
+## PLAN
+### Done
+- 2026-08-12: Saved CDC.gov links as `cdc_urls.qmd` (19 links, 3 subpages).
+- 2026-08-13: GitHub Actions demo built and verified on GitHub — link audit workflow runs monthly cron + manual trigger, commits results.
+- 2026-08-13: Marketplace review — no URL-checker action crawls; custom `link_audit.py` retained.
+
+### TODO
+- jim to test the GitHub Actions workflow himself (Actions tab → Run workflow, or monthly cron); return feedback.
+- Check Lane County Public Health website for broken URL links.
+- Compare CDC URL list against other County Public Health pages as they're added.
+- Plan and write the non-technical-user code (see jim's steps below); discuss interactively today.
+
 ## NEXT STEPS
 - Check the Lane County Public Health website for broken URL links.
 - Compare the CDC URL list against other County Public Health pages as they're added.

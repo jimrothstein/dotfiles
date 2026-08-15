@@ -2,6 +2,15 @@
 
 Old makefiles salvaging useful zsh/linux commands. See `000_plan.md` for the reorg plan.
 
+## PLAN
+### Done
+- 2026-08-13: Project set up. Memory file symlinked from `~/dotfiles/opencode/projects/make_project.md`.
+- 2026-08-13: Reorganized per `000_plan.md` (see Current state).
+
+### TODO
+- After user approval, commit and push the reorganized makefiles.
+- Review other `*.mk` files (0080, 0090_makeR, 0100, 0120, 0200, 0220, 0225, 0032, 0040, 0050) for possible future consolidation.
+
 ## NEXT STEPS
 - After user approval, commit and push the reorganized makefiles.
 - Review other `*.mk` files (0080, 0090_makeR, 0100, 0120, 0200, 0220, 0225, 0032, 0040, 0050) for possible future consolidation.
