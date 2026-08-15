@@ -1,0 +1,1 @@
+/home/jim/dotfiles/opencode/projects/project_agent_configuration.md
