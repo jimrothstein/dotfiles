@@ -2,6 +2,17 @@
 
 Increase tests so that file R/PKNCA.R is 100% covered.
 
+## PLAN
+### Done
+- (none yet)
+
+### TODO
+- Run coverage on R/PKNCA.R (Method 0/1/2 below).
+- Increase test coverage toward 100%.
+
+## NEXT STEPS
+- Obtain a coverage report for R/PKNCA.R.
+
 
 # General rules
 Be terse.
