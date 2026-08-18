@@ -9,6 +9,7 @@ Personal music/podcast download directory (~5092 files, mostly `.ogg`; some `.mp
 - 2026-08-16: Wrote `duplicate_report.md` (56 true duplicate clusters, 113 files involved). Report only — no deletions.
 - 2026-08-16: Wrote plan to `~/code/docs/000_duplicate_music_plan.md`.
 - 2026-08-17: User reviewed `duplicate_report.md` and approved deletion (keep MIME/newest per cluster). All 56 clusters re-verified with MD5 (canonical name + byte size + identical MD5), then 57 duplicate files (146 MB) moved to `/tmp/opencode/mp3_dup_removed_2026-08-17/` (recoverable staging, not hard-deleted). Directory now 5037 entries; re-scan confirms 0 duplicate clusters.
+- 2026-08-17: User spotted a missed duplicate (`ANGEL_BABY_Kathy_Young`). Original date-suffix stripping covered only `_2021-10-27`, `_08Sep2020`, `_02Feb2022` styles; a second, broader scan (also stripping `_YYYY_MM_DD`, `_DD_Mmm_YYYY`, `_ddmmyyyy`, run-style suffixes) found 33 more true-duplicate clusters / 33 files (95.4 MB, MD5-verified, content identical). Same policy applied (keep MIME/newest); moved to staging. Final state: 90 files staged over two passes (241.5 MB), directory now 5004 entries, scan reports 0 clusters. A final over-broad "also drop trailing year" scan also confirms 0.
 
 ### TODO
 - (none currently)
