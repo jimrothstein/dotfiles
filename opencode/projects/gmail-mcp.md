@@ -36,6 +36,10 @@ Key files:
 - 2026-08-18: Use the project-local `.venv/bin/python` to run scripts; the
   parent repo's Python 3.12 venv lacks google packages.
 - 2026-08-18: Start with minimal two-tool MCP server before adding features.
+- 2026-08-18: Removed `ailang-docs` MCP server from opencode global config
+  (commit dd3bf3 in ~/dotfiles). Why: AILANG is pre-1.0 with ~33 GitHub stars /
+  no adoption; keeping the MCP loaded wasted context tokens every session.
+  AILANG learning remains a possible future TODO (research topic, not now).
 
 ## NEXT STEPS
 - Add more tools (send, threads, labels modify) as needed per PLAN.
