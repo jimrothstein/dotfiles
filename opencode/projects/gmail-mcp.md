@@ -4,6 +4,8 @@
 Minimal Gmail MCP server built at `/home/jim/code/python_project/gmail-mcp`.
 OAuth client shared with old R app (GCP project `light-tribute-354619`); user
 approved shared client. `credentials.json` and `token.json` are gitignored.
+Verified 2026-08-18: MCP server connected in opencode; `list_labels` returns
+correct labels (system + ~16 custom, incl. 000_tech/*, Legal_Financial/*).
 
 Stack: Python 3.13 project-local `.venv` (uses `/usr/bin/python3`), `mcp`
 2.0.0, `google-api-python-client` 2.198.0, `google-auth-oauthlib`,
@@ -15,6 +17,13 @@ Key files:
   and `list_labels`; refresh flow persists refreshed token.
 
 ## Decisions
+- 2026-08-18: Implemented all four TODO items in server.py: friendly error if
+  `token.json` missing (no mention of `auth_gmail.py`), re-auth hint on refresh
+  failure, `gmail()` cached via `functools.cache`, and switched the N+1 fetch in
+  `search_messages` to `service.new_batch_http_request()`. Why: `batchGet` does
+  not exist in the Gmail API (verified live + 404 on REST endpoint); the client
+  library's `BatchHttpRequest(url=...)` 404s on the legacy `www.googleapis.com/batch`
+  endpoint, so the resource-based `new_batch_http_request()` is the correct form.
 - 2026-08-18: Use shared Google OAuth client (old R app's) rather than a
   dedicated one. Why: no new consent needed, acceptable for personal use.
 - 2026-08-18: Migrated server.py from `FastMCP` (v1 API) to `MCPServer` from
@@ -29,13 +38,10 @@ Key files:
 - 2026-08-18: Start with minimal two-tool MCP server before adding features.
 
 ## NEXT STEPS
-- Fix server.py review issues (see TODO #1-#3).
+- Add more tools (send, threads, labels modify) as needed per PLAN.
 
 ## TODO
-1. Friendly error if `token.json` is missing: call out running `auth_gmail.py`.
-2. Re-auth hint if token refresh fails (currently exception escapes).
-3. Consider `users.messages.batchGet` for N+1 fetch in `search_messages`.
-4. (nit) Cache the gmail service (e.g. `functools.cache` on `gmail()`).
+(none pending)
 
 ## PLAN
 Build up a functional Gmail MCP server; add more tools (send, labels, threads)
