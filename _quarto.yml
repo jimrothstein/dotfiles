@@ -1,7 +1,7 @@
 project:
   type: website
   title: misc
-  output-dir: docs            ## NO indent, also _quarto.yml for entier project
+  output-dir: "."            ## NO indent, also _quarto.yml for entier project
   render:
     -  "*.qmd"
 
