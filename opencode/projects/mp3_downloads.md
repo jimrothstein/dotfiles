@@ -16,7 +16,8 @@ Personal music/podcast download directory (~5092 files, mostly `.ogg`; some `.mp
 
 ## NEXT STEPS
 - `duplicate_report.md` is now historical (predates the 2026-08-17 deletions). Can be deleted or kept as-is.
-- Staged duplicates in `/tmp/opencode/mp3_dup_removed_2026-08-17/` can be hard-deleted once the user is satisfied (safe to `rm -rf`).
+- Staged duplicates in `/tmp/opencode/mp3_dup_removed_2026-08-17/` (90 files / 241.5 MB) can be hard-deleted once the user is satisfied (safe to `rm -rf`). 2026-08-17: user will review tomorrow before deciding.
+- On 2026-08-17 the original plan file `~/code/docs/000_duplicate_music_plan.md` was deleted (marked obsolete by user). Plan contents are fully captured in this file, so nothing is lost.
 
 ## Method notes
 - Duplicate definition (user-approved): same canonical song name AND byte-identical size, verified by MD5 content hash. Deliberately conservative (exact size only) to avoid false positives; fuzzy name-matching intentionally NOT done (too slow, more error-prone).
