@@ -7,6 +7,16 @@
     "ailang-docs": {
       "type": "remote",
       "url": "https://mcp.ailang.sunholo.com/mcp/"
+    },
+    "gmail-organizer": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "/home/jim/code/python_project/gmail-mcp/.venv/bin/python",
+        "/home/jim/code/python_project/gmail-mcp/server.py"
+      ],
+      "cwd": "/home/jim/code/python_project/gmail-mcp",
+      "timeout": 15000
     }
   }
 }
