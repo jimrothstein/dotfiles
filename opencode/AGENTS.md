@@ -1,5 +1,10 @@
 # Global opencode rules
 
+## Configuration layout
+- All opencode configuration files live in `~/dotfiles/opencode/`.
+- `~/.config/opencode/` is a symlink to `~/dotfiles/opencode/` — edit files there (e.g. `opencode.jsonc`), never create separate copies.
+- The global config file is `~/dotfiles/opencode/opencode.jsonc` (not `.json`).
+
 ## Version control
 - Before making a change to any project, first git commit the current state (staging all current changes) so there is a clean baseline to revert to.
 - Always commit and push our work, and maintain the `project.md` file.
