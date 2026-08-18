@@ -4,10 +4,6 @@
     "@tarquinen/opencode-dcp@latest"
   ],
   "mcp": {
-    "ailang-docs": {
-      "type": "remote",
-      "url": "https://mcp.ailang.sunholo.com/mcp/"
-    },
     "gmail-organizer": {
       "type": "local",
       "enabled": true,
