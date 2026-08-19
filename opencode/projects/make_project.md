@@ -8,6 +8,14 @@ Old makefiles salvaging useful zsh/linux commands. See `000_plan.md` for the reo
 - 2026-08-13: Reorganized per `000_plan.md` (see Current state).
 
 ### TODO
+Plan from `000_plan.md` (to be deleted after review):
+- Goal: reorganize certain make files (*.mk*) in this directory.
+- Some files may be combined:
+  - Files beginning with 0030_, 0020, 0110 -> rename to `0110_linux_shell_cmds.mk` (DONE).
+  - Files beginning with 0060_, 0065_, 0090_regex -> rename resulting file to `0210_find_grep_regex.mk` (DONE).
+- If a file is not listed above, ignore it.
+- Do not edit files other than appending. If you see make errors, ignore these.
+- This is a "project" and needs a "project management file". Commit before any changes. Commit and push only when user approves.
 - After user approval, commit and push the reorganized makefiles.
 - Review other `*.mk` files (0080, 0090_makeR, 0100, 0120, 0200, 0220, 0225, 0032, 0040, 0050) for possible future consolidation.
 
