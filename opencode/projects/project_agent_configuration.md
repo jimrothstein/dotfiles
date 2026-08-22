@@ -25,6 +25,7 @@
 - 2026-08-12: All `project.md` memory files live in `~/dotfiles/opencode/projects/`, symlinked into each project root. Why: one backup location for all project memory via GitHub.
 - 2026-08-12: No Claude — opencode only.
 - 2026-08-22: Typst skill (`skills/typst/SKILL.md`) cleaned up: removed stray `.typ`-style YAML frontmatter from the Quarto section (qmd files don't use it); clarified "update/add" rules — target is a `*.qmd` by default, `*.typ` only when user explicitly specifies it (with confirmation). Frontmatter name renamed to "typst SKILL" (by Jim). Committed as 2ff9.
+- 2026-08-22: Typst skill review finished (session complete): Jim reverted frontmatter name back to `typst`, fenced the cetz example in `{=typst}`, added "always use latest version" note for fletcher (instead of version pinning), fixed example quoting; agent fixed description grammar ("the users says" → "the user says") and a trailing space. Final state committed as 205d.
 
 ## Current state
 Global rules for skill hygiene and project memory are documented in `~/dotfiles/opencode/AGENTS.md`. The skills tree contains only the canonical skills; broken/low-priority skill fixes (get_news, md2pdf, python orphan, audio_files frontmatter, grammar typos) are deferred and listed in `global_setup_to_do.md`.
