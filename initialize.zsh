@@ -20,10 +20,10 @@ xset s 1200
 echo $OSTYPE
 echo $hostname
 
-export HOST=$(hostname)
+export MY_HOST=$(hostname)
 
 ##  test if MACHINE_NAME was set    
-if [[ -n $HOST ]] ; then
+if [[ -n $MY_HOST ]] ; then
     echo $(hostname)
 else
 	echo "X never set "
