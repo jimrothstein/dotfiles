@@ -7,6 +7,16 @@
     "@tarquinen/opencode-dcp@latest"
   ],
   "mcp": {
+    "filesystem": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/jim/code/mcp_project"
+      ]
+    },
     "gmail-organizer": {
       "type": "local",
       "enabled": true,
