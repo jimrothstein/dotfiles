@@ -8,7 +8,8 @@
 	editor = vim.tiny 
 	excludesfile = "~/.gitignore"
         abbrev = 4    # need more?
-
+	# use actual file at end of symlink
+    symlinks = false
 ### SEE  https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date/1441062#1441062
 #   USAGE:  git log   (jr: 2023-06-03)
 [log]

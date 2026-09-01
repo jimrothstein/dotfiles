@@ -104,3 +104,10 @@
   ;; You may want to use `embark-prefix-help-command' or which-key instead.
   ;; (keymap-set consult-narrow-map (concat consult-narrow-key " ?") #'consult-narrow-help)
 )
+
+;; (jr) In ~/.doom.d/config.el
+
+;; Change the cursor type based on the Evil state
+(setq! evil-normal-state-cursor 'box
+       evil-insert-state-cursor 'bar
+       evil-visual-state-cursor 'hollow)

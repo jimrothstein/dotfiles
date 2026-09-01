@@ -2,8 +2,8 @@ project:
   type: website
   title: misc
   output-dir: "."            ## NO indent, also _quarto.yml for entier project
-  render:
-    -  "*.qmd"
+#  render:
+#    -  "*.qmd"
 
 author: "jim"
 #date: "12/20/2023"      # date started project
@@ -24,6 +24,16 @@ format:
   typst:
     mainfont: "Liberation Serif"
     monofont: "Liberation Mono"
+    papersize: "us-letter"
+    page-numbering: false
+    toc: false
+    toc-depth: 3
+    margin:
+      x: 1cm
+      y: 1cm
+      top: 1cm
+      bottom: 1cm
+
   html:
     theme:
       - custom.scss
