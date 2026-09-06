@@ -17,6 +17,19 @@
         "/home/jim/code/mcp_project"
       ]
     },
+    "notes": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uv",
+        "run",
+        "--directory",
+        "/home/jim/code/mcp_project/notes-mcp",
+        "python",
+        "server.py"
+      ],
+      "cwd": "/home/jim/code/mcp_project/notes-mcp"
+    },
     "gmail-organizer": {
       "type": "local",
       "enabled": true,
