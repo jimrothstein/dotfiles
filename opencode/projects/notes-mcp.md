@@ -13,6 +13,7 @@ Notes MCP server built with the official `mcp` SDK (`MCPServer`).
 - 2026-09-05: Fixed `uv run mcp dev server.py` failing with `failed to spawn 'mcp'`: the venv was stale from when the project lived at the old path (`/home/jim/code/notes-mcp`), leaving a broken shebang in `.venv/bin/mcp`. Fix: `rm -rf .venv && uv sync`.
 - 2026-09-05: Registered `notes` MCP server in `~/dotfiles/opencode/opencode.jsonc` as a local server (`uv run --directory /home/jim/code/mcp_project/notes-mcp python server.py`, `cwd` = project root). Verified live in opencode: get_all_notes works.
 - 2026-09-05: Made `search_notes` case-insensitive substring match on title (was exact/empty-match style). Note: an already-connected MCP session keeps the old code until the server is restarted/reconnected.
+- 2026-09-05: Verified live: `search_notes("lesson")` returns both "Make lesson" and "Make Lessons"; `search_notes("esson")` also returns both — confirming case-insensitive *substring* match. Full note list confirmed via `get_all_notes` (19 notes).
 
 ## NEXT STEPS
 - Decide how to actually run the server: `uv run mcp dev server.py` (via root wrapper) or the `notes-mcp` console script.
