@@ -20,14 +20,27 @@ offers unsave/delete or full saved-post history.)
   - Git repo initialized and committed.
   - Added to shared GitHub monorepo `jimrothstein/mcp_project` (as
     `reddit-mcp/` subdir); project `project.md` symlink + memory file created.
-- Requires a Reddit script app (client_id/client_secret/username/password).
+- 2026-09-17: SWITCHED OFF PRAW to the RSS-only approach (Path B).
+  Why: Reddit now blocks creating a script app with a robot/captcha loop
+  and requires Data API registration. `saved.py` rewritten to use the
+  private saved-links RSS feed (`REDDIT_SAVED_RSS_URL` from
+  reddit.com/prefs/feeds/) via `feedparser` + stdlib urllib.
+  - Constraints: read-only (no unsave/delete), ~100 most recent saved
+    items, sortable/filterable. PRAW removed; deps now feedparser +
+    python-dotenv only.
+  - `saved.py` parses title, link, subreddit (regex from content/link),
+    post id, published time; `list [--keyword] [--limit] [--json]`.
+  - Verified parsing against a mock entry; CLI help/compile OK.
 
 ## NEXT STEPS
-- Create `.env` with real credentials (copy `.env.example`, fill in from
-  reddit.com/prefs/apps) and run `uv run python saved.py list` to verify.
+- Copy `.env.example` -> `.env`, put the saved-links feed URL in
+  `REDDIT_SAVED_RSS_URL`, then `uv run python saved.py list --keyword mcp`.
 
 ## TODO
-- Live-test list / delete against a real account.
+- Live-test against the real feed.
+- If delete/unsave ever becomes important: register for Data API (Path A)
+  or pursue a browser-session-cookie approach.
 
 ## PLAN
-- Small, simple PRAW-based tool. No MCP server. No web framework.
+- Small, simple, keyless RSS-based tool for listing/searching saved posts.
+  No MCP server. No web framework.
