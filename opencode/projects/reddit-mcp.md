@@ -1,8 +1,9 @@
 # reddit-mcp
 
-List, search, and organize saved Reddit posts using PRAW.
-(Not actually using MCP — PRAW chosen over an MCP server because no MCP server
-offers unsave/delete or full saved-post history.)
+List, search, and organize saved Reddit posts via Reddit's private saved
+feed (JSON), authenticated with your `reddit_session` cookie. No API app
+or Data API registration needed. (MCP was explored first; plain Python
+chosen because no MCP server offers delete/unsave or full saved history.)
 
 ## Project Summary
 - 2026-09-17: Project created at `~/code/mcp_project/reddit-mcp`.
@@ -48,17 +49,28 @@ offers unsave/delete or full saved-post history.)
   dist 100). Conclusion: the feed token is valid but Reddit now requires the
   account's `reddit_session` cookie on top of the token. Added
   `REDDIT_SESSION_COOKIE` support to `saved.py` (Cookie header added when set).
+- 2026-09-17: WORKING live. With `REDDIT_SESSION_COOKIE` set, `list` fetches
+  jimrothstein's saved posts. List output improved: clickable full URLs
+  (permalink + external content link), saved date (YYYY-MM-DD), post id,
+  subreddit, title. Verified against real account (r/opencode, r/medicare,
+  r/learnmath posts). Committed/pushed to local repo + mcp_project monorepo.
 
 ## NEXT STEPS
-- Copy `reddit_session` cookie value from browser DevTools (Application ->
-  Cookies -> reddit.com) into `.env` as `REDDIT_SESSION_COOKIE`, then
-  `uv run python saved.py list --keyword mcp`.
+- Brainstorm + implement more useful features (see TODO).
+- Possibly pursue unsave/delete: the session cookie grants write-ish access;
+  legacy POST /api/unsave on www.reddit.com with `id=t3_..` + modhash (from
+  GET /api/me.json) may work without Data API registration. Test cautiously.
 
 ## TODO
-- Live-test against the real feed.
-- If delete/unsave ever becomes important: register for Data API (Path A)
-  or pursue a browser-session-cookie approach.
+- Ideas to make it more useful:
+  - Export to CSV / Markdown / JSON file for archiving.
+  - Stats + grouping by subreddit (what do I save the most of?).
+  - Selftext preview; extra columns: author, domain, NSFW, score.
+  - Local storage so history survives the ~100-item feed window.
+  - Per-post unsave/delete (via cookie+modhash, or manual link printout).
+  - Optional MCP wrapper exposing the feed as a tool (project name is reddit-mcp).
 
 ## PLAN
-- Small, simple, keyless RSS-based tool for listing/searching saved posts.
-  No MCP server. No web framework.
+- Grow from list/search into a personal saved-posts manager: richer display,
+  export, stats, and (if workable) unsave via the session cookie — plus an
+  optional MCP server wrapper.
