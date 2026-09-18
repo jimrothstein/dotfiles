@@ -31,6 +31,16 @@ offers unsave/delete or full saved-post history.)
   - `saved.py` parses title, link, subreddit (regex from content/link),
     post id, published time; `list [--keyword] [--limit] [--json]`.
   - Verified parsing against a mock entry; CLI help/compile OK.
+- 2026-09-17: Switched feed format to JSON (`saved.json?feed=...`) instead of
+  RSS. Why: JSON is the structured-data standard on Reddit's feeds page (prefs/feeds
+  has both RSS and JSON buttons), richer fields (id, subreddit, permalink,
+  selftext, created_utc), no XML parsing. `feedparser` dependency dropped
+  (stdlib `json` + `urllib` only).
+  - `REDDIT_SAVED_RSS_URL` still auto-converts to `.json` (`.rss?` -> `.json?`);
+    optional `REDDIT_SAVED_JSON_URL` override.
+  - Skips non-post children (kind != t3, e.g. saved comments).
+  - Test caught a bug: `kind` lives on the child object, not inside `data`;
+    fixed. Verified URL transform + payload parsing with mock backend.
 
 ## NEXT STEPS
 - Copy `.env.example` -> `.env`, put the saved-links feed URL in
