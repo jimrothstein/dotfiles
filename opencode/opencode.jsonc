@@ -7,6 +7,11 @@
     "@tarquinen/opencode-dcp@latest"
   ],
   "mcp": {
+    "context7": {
+      "type": "remote",
+      "enabled": true,
+      "url": "https://mcp.context7.com/mcp"
+    },
     "filesystem": {
       "type": "local",
       "enabled": true,
@@ -16,6 +21,18 @@
         "@modelcontextprotocol/server-filesystem",
         "/home/jim/code/mcp_project"
       ]
+    },
+    "15-min-mcp": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uv",
+        "run",
+        "--directory",
+        "/home/jim/code/mcp_project/15-min-mcp",
+        "15-min-mcp"
+      ],
+      "cwd": "/home/jim/code/mcp_project/15-min-mcp"
     },
     "notes": {
       "type": "local",
