@@ -7,10 +7,12 @@ YouTube MCP server project (named "pauling"), skeleton only, living at `~/code/m
 - Uses `youtube-studio-mcp` 0.3.0 (PyPI package `youtube_mcp`) as the actual MCP server binary. Venv also has `google-api-python-client 2.200.0`, `google-auth-oauthlib`, `youtube-transcript-api 1.2.4`, `httpx2`, `uvicorn`. `pyproject.toml` deps still empty (venv populated ad hoc; `mcp<2` pin NOT yet codified in pyproject).
 - `.env` holds a Google OAuth client secret in var `YOUTUBE_MCP_CLIENT_SECRET` (note the typo "SERET"). `.env` is gitignored; never commit the secret.
 - 2026-09-22: OAuth DONE. Added self as test user in Google Cloud console; ran `youtube_auth` from opencode → browser consent granted. Token saved to `pauling-mcp/.config/youtube-mcp/token.json`. Verified `youtube_get_channel` works: channel **jim rothstein** @jimrothstein (`UClB5qWyXejlAwwkDAzJis-Q`), 0 subs/views/videos, uploads playlist `UUlB5qWyXejlAwwkDAzJis-Q`. Scopes granted: youtube.readonly, youtube, youtube.upload, youtube.force-ssl, yt-analytics.readonly, yt-analytics-monetary.readonly.
+- 2026-09-22: End-to-end sanity check passed. `youtube_list_playlists` (mine, max_results=0) returned **205 playlists / 11,946 videos**. Biggest: Calm Down! (4911), all music (910), 60s - early - femaleVoices (809), 000_r_next (382), politics (86). Plenty of singletons. NOTE: API-reported total (202) vs actual fetched (205) — pagination count mismatch; trust the fetched list.
 
 ## NEXT STEPS
 - Decide the shape: reuse/wrap `youtube_mcp` (youtube-studio-mcp) directly, or build a thin FastMCP server using the same deps.
 - Decide what "pauling" should actually do first (per TODO). Server is fully functional as-is now.
+- Worth exploring next: analytics (`youtube_analytics_*`), transcripts, or a real use-case (e.g. maintain a playlist from a file).
 
 ## Current state
 - 2026-09-22: Registered as `youtube` MCP server in global `~/dotfiles/opencode/opencode.jsonc` (local, cmd = `.../pauling-mcp/.venv/bin/youtube-studio-mcp`, cwd = project) with `environment`: `YOUTUBE_MCP_CLIENT_SECRET` = `pauling-mcp/.client_secret.json`, `YOUTUBE_MCP_CONFIG_DIR` = `pauling-mcp/.config/youtube-mcp` (keeps token out of `~`).
