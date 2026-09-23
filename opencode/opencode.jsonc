@@ -63,7 +63,11 @@
       "command": [
         "/home/jim/code/mcp_project/pauling-mcp/.venv/bin/youtube-studio-mcp"
       ],
-      "cwd": "/home/jim/code/mcp_project/pauling-mcp"
+      "cwd": "/home/jim/code/mcp_project/pauling-mcp",
+      "environment": {
+        "YOUTUBE_MCP_CLIENT_SECRET": "/home/jim/code/mcp_project/pauling-mcp/.client_secret.json",
+        "YOUTUBE_MCP_CONFIG_DIR": "/home/jim/code/mcp_project/pauling-mcp/.config/youtube-mcp"
+      }
     }
   }
 }
