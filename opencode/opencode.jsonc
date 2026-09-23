@@ -56,6 +56,14 @@
       ],
       "cwd": "/home/jim/code/python_project/gmail-mcp",
       "timeout": 15000
+    },
+    "youtube": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "/home/jim/code/mcp_project/pauling-mcp/.venv/bin/youtube-studio-mcp"
+      ],
+      "cwd": "/home/jim/code/mcp_project/pauling-mcp"
     }
   }
 }
