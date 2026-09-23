@@ -1,4 +1,4 @@
-# pauling-ai
+# pauling-mcp
 
 YouTube MCP server project (named "pauling"), skeleton only, living at `~/code/mcp_project/pauling-mcp`.
 
