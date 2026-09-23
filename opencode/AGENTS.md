@@ -17,7 +17,7 @@
   - NEXT STEPS (items we hope to do at very next session)
   - TODO (items to do in future, perhaps next session but could be at an unknown future session )
   - PLAN (long-term goal, not list of TODOs. How, at this moment, we see the work in this project evolving)
-  - Project Summary or Memory. Brief description of key decisions, actions we did today.
+  - Project Summary or Memory. Brief description of key decisions, actions we did today. Use bullet points, not sentences, be terse.  User can read github commits to learn more details.
 - You must keep the project.md file up-to-date. The user may say "update the
   project file or update the project summary".  But if user forgets, you must
   still do this.  
