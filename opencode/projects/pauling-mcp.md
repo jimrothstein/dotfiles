@@ -6,12 +6,11 @@ YouTube MCP server project (named "pauling"), skeleton only, living at `~/code/m
 - 2026-09-22: Created via `uv init` (src layout `pauling_mcp`, Python >=3.12, `.python-version` = 3.12, entry point `pauling-mcp = pauling_mcp:main`). Only code is a stub `main()` that prints "Hello from pauling-mcp!".
 - Uses `youtube-studio-mcp` 0.3.0 (PyPI package `youtube_mcp`) as the actual MCP server binary. Venv also has `google-api-python-client 2.200.0`, `google-auth-oauthlib`, `youtube-transcript-api 1.2.4`, `httpx2`, `uvicorn`. `pyproject.toml` deps still empty (venv populated ad hoc; `mcp<2` pin NOT yet codified in pyproject).
 - `.env` holds a Google OAuth client secret in var `YOUTUBE_MCP_CLIENT_SECRET` (note the typo "SERET"). `.env` is gitignored; never commit the secret.
+- 2026-09-22: OAuth DONE. Added self as test user in Google Cloud console; ran `youtube_auth` from opencode → browser consent granted. Token saved to `pauling-mcp/.config/youtube-mcp/token.json`. Verified `youtube_get_channel` works: channel **jim rothstein** @jimrothstein (`UClB5qWyXejlAwwkDAzJis-Q`), 0 subs/views/videos, uploads playlist `UUlB5qWyXejlAwwkDAzJis-Q`. Scopes granted: youtube.readonly, youtube, youtube.upload, youtube.force-ssl, yt-analytics.readonly, yt-analytics-monetary.readonly.
 
 ## NEXT STEPS
-- Credentials wired via `environment` block in opencode config (`YOUTUBE_MCP_CLIENT_SECRET` → `pauling-mcp/.client_secret.json`, `YOUTUBE_MCP_CONFIG_DIR` → `pauling-mcp/.config/youtube-mcp`). Next: restart opencode, call `youtube_auth` tool, do the one-time browser consent.
 - Decide the shape: reuse/wrap `youtube_mcp` (youtube-studio-mcp) directly, or build a thin FastMCP server using the same deps.
-- Set up Google OAuth (client ID/secret + scopes, e.g. youtube.readonly / youtube.upload) and verify the auth flow works via the `youtube_auth` tool.
-- Restart opencode to load the new `youtube` MCP server.
+- Decide what "pauling" should actually do first (per TODO). Server is fully functional as-is now.
 
 ## Current state
 - 2026-09-22: Registered as `youtube` MCP server in global `~/dotfiles/opencode/opencode.jsonc` (local, cmd = `.../pauling-mcp/.venv/bin/youtube-studio-mcp`, cwd = project) with `environment`: `YOUTUBE_MCP_CLIENT_SECRET` = `pauling-mcp/.client_secret.json`, `YOUTUBE_MCP_CONFIG_DIR` = `pauling-mcp/.config/youtube-mcp` (keeps token out of `~`).
