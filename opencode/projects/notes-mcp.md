@@ -15,8 +15,12 @@ Notes MCP server built with the official `mcp` SDK (`MCPServer`).
 - 2026-09-05: Made `search_notes` case-insensitive substring match on title (was exact/empty-match style). Note: an already-connected MCP session keeps the old code until the server is restarted/reconnected.
 - 2026-09-05: Verified live: `search_notes("lesson")` returns both "Make lesson" and "Make Lessons"; `search_notes("esson")` also returns both — confirming case-insensitive *substring* match. Full note list confirmed via `get_all_notes` (19 notes).
 
+- 2026-09-25: Recreated two files that were missing from the working tree (project could not start at all): `notes.json` (3 seed notes: welcome, mcp, run-command) and `src/notes_mcp/__init__.py` (`from notes_mcp.main import main`) — the build failed with `Expected a Python module at: src/notes_mcp/__init__.py`.
+- 2026-09-25: Confirmed the run command: `uv run --directory ~/code/mcp_project/notes-mcp python server.py` (matches the `notes` server entry in `~/dotfiles/opencode/opencode.jsonc`). `mcp dev server.py` remains useful for interactive debugging.
+- 2026-09-25: Restored `project.md` symlink in project root -> `~/dotfiles/opencode/projects/notes-mcp.md`.
+
 ## NEXT STEPS
-- Decide how to actually run the server: `uv run mcp dev server.py` (via root wrapper) or the `notes-mcp` console script.
+- Decide how to actually run the server: `uv run --directory . python server.py` (via root wrapper, what opencode uses) or `uv run mcp dev server.py` for interactive debugging.
 - `fetch_page` and `rag`/`retrieve` modules are referenced but do not exist yet (tools return error strings). Build them or remove the tools.
 - Commit the current state (repo has no commits yet); consider adding a git remote for pushes.
 
