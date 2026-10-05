@@ -6,38 +6,41 @@
 - The global config file is `~/dotfiles/opencode/opencode.jsonc` (not `.json`).
 
 ## Version control
-- Before making a change to any project, first git commit the current state (staging all current changes) so there is a clean baseline to revert to.
-- Always commit and push our work, and maintain the `project.md` file.
+- Before making any change to a project or AGENTS.md, first git commit the current state (staging all changes) to create a clean baseline.
+- Always commit and push your work.
 
-## Project memory
+
+## project.md
+
+### Project memory / project summary
 - All project memory files (`project.md`) live in `~/dotfiles/opencode/projects/`.
 - In each project root, place a soft link: `ln -s ~/dotfiles/opencode/projects/<project>.md <project_root>/project.md`.
 - Do not create `project.md` files anywhere else.
-- This project.md file is important and may include sections for:
-  - NEXT STEPS (items we hope to do at very next session)
-  - TODO (items to do in future, perhaps next session but could be at an unknown future session )
-  - PLAN (long-term goal, not list of TODOs. How, at this moment, we see the work in this project evolving)
-  - Project Summary or Memory. Brief description of key decisions, actions we did today. Use bullet points, not sentences, be terse.  User can read github commits to learn more details.
-- You must keep the project.md file up-to-date. The user may say "update the
-  project file or update the project summary".  But if user forgets, you must
-  still do this.  
-- Always append to "Project Summary or Memory".
-- After each session or after major changes, you should keep the NEXT STEPS and TODO up-to-date. 
-- Occasionally, "PLAN" may be updated, but the user will
-  usually ask you to do this.
-- Each project has just one project.md.  Do not add additional files for TODO
-  or plan or planning or next step.  If you see a file like this, ask the user if the
-  contents should be added to project.md file.
+- Maintain exactly one `project.md` per project. If the user says there is no project.md or this is not a project, skip this.
+- For each project's AGENTS.md, you may update: PROJECT SUMMARY (most frequently, even multiple times per session), TODO (as needed), and NEXT STEPS (as needed). Update PLAN only on request.
+- The user may request updates; if forgotten, still keep relevant sections current.
+
+### Structure (sections) of each projects.md
+
+Sections for each project.md may include:
+
+- <NAME>      -     name of project
+- <PROJECT SUMMARY> -   
+- <NEXT STEPS>- Tasks to do at very next session (unless user says not to)
+- <TODO>      - Tasks to do at some future time; terse; use [ ]  (checkbox) for each task.
+- <PLAN>      - What is direction of project/What is long-term goal? (seldom updated;  user will tell you)
+
+
+### Updating project.md file
+- Keep PROJECT SUMMARY (dated, bullet points - only major decisions/achievements), NEXT STEPS, and TODO current. Update PROJECT SUMMARY as often as needed (possibly multiple times per session).
+- Update TODO and NEXT STEPS only as needed. Update PLAN only on request.
+- Do not add separate files for TODO/PLAN/NEXT STEPS; if found, ask whether to merge into project.md.
+- PROJECT SUMMARY must be terse - not instructions to recreate the project. Include date and only essential context.
 
 ## Terse output to screen
-- Unless user specifically says otherwise, always be terse.
-- For example, when doing intermediate steps ("thinking", "testing", "checking", "searching", "reading"), you should NOT give any details.  
-Just one line: "thinking" or "checking" etc so user knows you are busy.  If the user wants more detail, the user will ask.  
-- Of course, when you have reached a conclusion, a recommendation, a problem, or need something from the user, then you must report to user. 
-- Never be verbose, unless the user says "explain", "more detail", "I do not understand" or otherwise indicates the user wants more than terse minimum.
-- When running a bash/zsh script or command, tell the user only "running bash script" (one line). Do NOT show the command/code being run, and do NOT display its output.
-- When editing a *.md file or a code file, do NOT display the edit on screen. Say only one line (e.g. "editing ...") so the user knows you are busy.
-- TERSE means: do not fill the screen with output; do not show the file you are editing with its changes. If you must fill the screen, you are not being terse.
+- Default to terse (one line). For intermediate steps ("thinking", "testing", "checking", "searching", "reading"), output only the action name.
+- When running commands or editing files, output only status (e.g. "running bash script" or "editing ..."); do not show command output or file diffs.
+- Report conclusions, recommendations, problems, or needs to the user. Be detailed only when explicitly requested ("explain", "more detail", "I do not understand").
 
 ## Skills
 - There is a single canonical skills tree at `~/dotfiles/opencode/skills/`.
