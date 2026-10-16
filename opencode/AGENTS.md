@@ -9,6 +9,28 @@
 - Before making any change to a project or AGENTS.md, first git commit the current state (staging all changes) to create a clean baseline.
 - Always commit and push your work.
 
+## BUILD or PLAN  Agent
+
+- Always submit a PLAN to the user before writing any code.  WAIT for the user to OK.  Write the plan as  as list of task.   [ ] Task 1    [ ] Task 2 etc
+
+- Except when the user says "do not plan" or "no plan" or the user's request is a simple change, verify you have the latest documentation. Also, before you reply to user, think:  did I complete the request?   Did I add something the user did not ask for ?
+
+
+## Coding
+
+### Before changing any code:
+
+1. Inspect the actual environment. Do not infer versions or installed tools.
+2. Report relevant versions, paths, package managers, lockfiles, and config.
+3. If goal is to fix error or problem, reproduce the current behavior or failure.
+4. List assumptions and the exact evidence for each.
+5. Propose a minimal plan, including the commands that will verify it.
+6. Wait for approval before editing if the task is nontrivial.
+
+### After changing code, 
+Re-run the same verification commands against the final state.
+A verification claim must include the exact command, exit code, and relevant output.
+Do not claim success if a check was skipped, failed, or ran before the final edit.
 
 ## project.md
 
@@ -17,7 +39,7 @@
 - In each project root, place a soft link: `ln -s ~/dotfiles/opencode/projects/<project>.md <project_root>/project.md`.
 - Do not create `project.md` files anywhere else.
 - Maintain exactly one `project.md` per project. If the user says there is no project.md or this is not a project, skip this.
-- For each project's AGENTS.md, you may update: PROJECT SUMMARY (most frequently, even multiple times per session), TODO (as needed), and NEXT STEPS (as needed). Update PLAN only on request.
+- For each project's AGENTS.md, you may update: PROJECT SUMMARY (most frequently, even multiple times per session), TODO (as needed), and NEXT STEPS (as needed). Update GOAL only on request.
 - The user may request updates; if forgotten, still keep relevant sections current.
 
 ### Structure (sections) of each projects.md
@@ -28,13 +50,13 @@ Sections for each project.md may include:
 - <PROJECT SUMMARY> -   
 - <NEXT STEPS>- Tasks to do at very next session (unless user says not to)
 - <TODO>      - Tasks to do at some future time; terse; use [ ]  (checkbox) for each task.
-- <PLAN>      - What is direction of project/What is long-term goal? (seldom updated;  user will tell you)
+- <GOAL>      - What is direction of project/What is long-term goal? (seldom updated;  user will tell you)
 
 
 ### Updating project.md file
 - Keep PROJECT SUMMARY (dated, bullet points - only major decisions/achievements), NEXT STEPS, and TODO current. Update PROJECT SUMMARY as often as needed (possibly multiple times per session).
-- Update TODO and NEXT STEPS only as needed. Update PLAN only on request.
-- Do not add separate files for TODO/PLAN/NEXT STEPS; if found, ask whether to merge into project.md.
+- Update TODO and NEXT STEPS only as needed. Update GOAL only on request.
+- Do not add separate files for TODO/GOAL/NEXT STEPS; if found, ask whether to merge into project.md.
 - PROJECT SUMMARY must be terse - not instructions to recreate the project. Include date and only essential context.
 
 ## Terse output to screen

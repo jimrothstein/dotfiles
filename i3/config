@@ -147,7 +147,7 @@ set $ws2 "2: Emacs"
 set $ws3 "3: Firefox"
 set $ws4 "4: Positron"
 set $ws5 "5: Files"
-set $ws6 "6: "
+set $ws6 "6: Terminal 2"
 set $ws7 "7: Terminal"
 set $ws8 "8: Zotero"
 set $ws9 "9: Slack"
@@ -210,17 +210,14 @@ bindsym $mod+r mode "resize"
 
 ## Assign applications to workspaces
 
-# RULE, especially for badly behaved apps
-# for_window [class="org.wezfurlong.wezterm"] move to workspace $ws1
-
-
 # assign, assigns an application to workspace (and ONLY this workspace)
-assign [class="org.wezfurlong.wezterm"] $ws1
+# assign also sends every instance of application to same window
+#assign [class="org.wezfurlong.wezterm"] $ws1
 assign [class="Emacs"] $ws2
 assign [class="^firefox$" instance="^Navigator$" ]  $ws3
-assign [class="Positron"] $ws4
+assign [class="^[Pp]ositron$"] $ws4
 assign [class="Zotero"] $ws8
-assign [class="Slack"] $ws9
+assign [class="^[Ss]lack$"] $ws9
 
 ## ------------------------- $mod+o  "mode_launcher"
 set $mode_launcher Launch: [f]irefox [s]lack [e]macs [p]ositron [z]otero [w]ezterm [d]ate
@@ -319,5 +316,8 @@ exec --no-startup-id firefox
 exec --no-startup-id wezterm
 exec --no-startup-id sleep 1 && i3-msg 'split h; exec wezterm'   # sleep avoids race condition 
 exec --no-startup-id emacs
-exec --no-startup-id positron 
+exec --no-startup-id positron
 
+
+# LLM claims:  This allows ws6 to also  be wezterm
+bindsym $mod+Shift+Return exec --no-startup-id i3-msg 'workspace number $ws6; exec wezterm; workspace number $ws1'

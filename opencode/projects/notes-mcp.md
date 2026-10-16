@@ -20,6 +20,7 @@ Notes MCP server built with the official `mcp` SDK (`MCPServer`).
 - 2026-09-25: Restored `project.md` symlink in project root -> `~/dotfiles/opencode/projects/notes-mcp.md`.
 
 ## NEXT STEPS
+- Add and test RAG (`rag.py`: `retrieve(query, top_k)` for `search_docs`; embeddings + vector store TBD).
 - Decide how to actually run the server: `uv run --directory . python server.py` (via root wrapper, what opencode uses) or `uv run mcp dev server.py` for interactive debugging.
 - `fetch_page` and `rag`/`retrieve` modules are referenced but do not exist yet (tools return error strings). Build them or remove the tools.
 - Commit the current state (repo has no commits yet); consider adding a git remote for pushes.
