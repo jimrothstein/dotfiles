@@ -68,6 +68,13 @@ Key files:
   AILANG learning remains a possible future TODO (research topic, not now).
 
 ## NEXT STEPS
+- **2026-10-15 — NEXT SESSION: user wants to look at the Gmail MCP.** Pick and
+  wire up the SELF-HOSTED path (recommended: existing `server.py`). Known bug to
+  fix first: the opencode `gmail-organizer` MCP config points at nonexistent
+  `/home/jim/code/python_project/gmail-mcp`; the real project is
+  `/home/jim/code/mcp_project/gmail-mcp` — that bad path is why `opencode mcp list`
+  reports gmail-organizer failed (NotFound). Also: `gmail-mcp/project.md` is a
+  plain 49-byte text file holding the path, not a symlink as AGENTS.md requires.
 - **Blocked: the hosted Gmail MCP server (`gmailmcp.googleapis.com`) is DEAD
   END for us.** It is gated behind the Google Workspace Developer Preview Program,
   which requires a non-Gmail/org account to enroll — user cannot enroll. Do NOT
