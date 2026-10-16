@@ -68,6 +68,15 @@
         "YOUTUBE_MCP_CLIENT_SECRET": "/home/jim/code/mcp_project/pauling-mcp/.client_secret.json",
         "YOUTUBE_MCP_CONFIG_DIR": "/home/jim/code/mcp_project/pauling-mcp/.config/youtube-mcp"
       }
+    },
+    "huggingface": {
+      "type": "remote",
+      "enabled": true,
+      "url": "https://huggingface.co/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:HF_TOKEN}"
+      },
+      "oauth": false
     }
   }
 }
