@@ -4,6 +4,7 @@
 - All opencode configuration files live in `~/dotfiles/opencode/`.
 - `~/.config/opencode/` is a symlink to `~/dotfiles/opencode/` — edit files there (e.g. `opencode.jsonc`), never create separate copies.
 - The global config file is `~/dotfiles/opencode/opencode.jsonc` (not `.json`).
+- The preferred location for API codes, tokens are located: ~/dotfiles/.zshrc_secret  (git does not include this file)
 
 ## Version control
 - Before making any change to a project or AGENTS.md, first git commit the current state (staging all changes) to create a clean baseline.
