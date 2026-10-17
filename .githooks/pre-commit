@@ -1,0 +1,14 @@
+#!/bin/sh
+# Block commits that contain secrets.
+# Install once per clone with:  git config core.hooksPath .githooks
+set -e
+
+if command -v gitleaks >/dev/null 2>&1; then
+  exec gitleaks git --staged --no-banner --redact
+fi
+
+# Fallback when gitleaks is unavailable: scan the staged diff.
+if git diff --cached -U0 | grep -qE '(AIzaSy[A-Za-z0-9_-]{20,}|sk-or-v1-[A-Za-z0-9]{20,}|sk-[A-Za-z0-9]{30,}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|hf_[A-Za-z0-9]{30,}|xox[baprs]-[A-Za-z0-9-]{10,}|AKIA[0-9A-Z]{16,}|-----BEGIN [A-Z ]*PRIVATE KEY-----)'; then
+  echo "pre-commit: potential secret detected - commit blocked." >&2
+  exit 1
+fi
