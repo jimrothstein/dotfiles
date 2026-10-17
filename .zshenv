@@ -43,7 +43,8 @@ export DOT_DIR="$HOME/dotfiles"
 export EDITOR=emacs
 
 # also exp
-# export HF_TOKEN=hf_... (set in local env, not in git)
+# non-R secrets (HF_TOKEN, etc.) live in ~/dotfiles/.zshrc_secret (gitignored)
+[ -f "$HOME/dotfiles/.zshrc_secret" ] && source "$HOME/dotfiles/.zshrc_secret"
 
 # HISTORY
 export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
