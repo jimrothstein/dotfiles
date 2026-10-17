@@ -100,7 +100,7 @@ zsh_project/CURL_examples/.secret
 
 
 #------------------------  Other APIs
-.zshr_secret
+.zshrc_secret
 
 ## API keys (for R: use .Renviron)
 ## .env used various LLM modesl

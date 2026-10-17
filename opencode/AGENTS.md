@@ -22,7 +22,7 @@
 
 1. Inspect the actual environment. Do not infer versions or installed tools.
 2. Report relevant versions, paths, package managers, lockfiles, and config.
-3. If goal is to fix error or problem, reproduce the current behavior or failure.
+3. If goal is to find and fix error or problem, reproduce the current behavior or failure.
 4. List assumptions and the exact evidence for each.
 5. Propose a minimal plan, including the commands that will verify it.
 6. Wait for approval before editing if the task is nontrivial.

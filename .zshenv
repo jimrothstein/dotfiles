@@ -42,9 +42,6 @@ export DOT_DIR="$HOME/dotfiles"
 
 export EDITOR=emacs
 
-# experiment (10/26 );  also do not surround in quotes
-# export OPENROUTER_API_KEY=sk-or-v1-... (set in local env, not in git)
-
 # also exp
 # export HF_TOKEN=hf_... (set in local env, not in git)
 
