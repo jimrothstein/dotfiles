@@ -12,6 +12,7 @@ Single project.md for the whole `~/code/docs/` repo, with one section per subdir
 - AGENTS: review the files in `~/code/docs/AGENTS` — some are really skills and some have rules that may apply to R projects.
 
 ## NEXT STEPS
+- tech_notes: review `2026_laptop_requirements.md` options and set up eBay saved searches (T14/T14s Gen 4 AMD 32GB, X13 Gen 3 AMD).
 - advisory: check the directory's website for broken URL links (see `advisory/advisory_project.md`).
 - AGENTS: review the files in `~/code/docs/AGENTS` — some are really skills and some have rules that may apply to R projects.
 
