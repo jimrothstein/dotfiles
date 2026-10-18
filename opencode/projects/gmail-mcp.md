@@ -1,9 +1,22 @@
 # gmail-mcp
 
-## Summary
-Goal (user, 2026-10-17): **use MCP server tools to clean up Gmail** (sort, label,
-archive, trash). Google's hosted Gmail MCP server is not available to the user →
-that route is closed.
+## GOAL
+Use MCP server tools to clean up Gmail — sort, label, archive, trash.
+(user, 2026-10-17; seldom revised)
+
+## PROJECT SUMMARY
+Google's hosted Gmail MCP server is not available to the user (no Workspace
+Developer Preview enrollment) → that route is closed.
+
+**Status 2026-10-17 (end of day): DONE — the `gmail` MCP server is live and verified
+in opencode (27 tools, reads + writes tested, all test changes reverted). Next is
+real cleanup work.**
+
+Gmail account state (2026-10-17): 35 labels = 16 user + 19 system. User naming scheme:
+`000_tech/*` (`opencode`, `typst`, `math`, `LLM AI neural`), `000_tech`, `000_read`,
+`Legal_Financial/*` (incl. `zimmerman/*`, `Tow`), `apt`, `Call log`, `kidney_oxalate`,
+`prius`, `Scanned_Nov2012`. `get-unread-emails` reported the 100-item cap (heavier
+than it looks: ~34 KB). No triage/label bucket for mail cleanup yet.
 
 Three code artifacts exist:
 1. `/home/jim/code/mcp_project/gmail-mcp/server.py` — our old self-hosted server
@@ -109,13 +122,13 @@ re-run the server's auth command (delete tokens.json) to recover.
   (commit dd3bf3 in `~/dotfiles`). Why: pre-1.0, ~33 stars; wasted context tokens.
 
 ## NEXT STEPS
-- Exercise real cleanup on a small batch and confirm in Gmail: e.g. search
-  newsletters/promotions → `create-label`/`apply-label` → `archive-email` (or
-  `batch-archive {query, max_results}`). Prefer `search-emails "label:<name>"` over
-  `search-by-label`, which is broken. User's label scheme uses `000_tech/...`,
-  `000_read`, `Legal_Financial/...` prefixes.
-- If gmail ever fails to load after a config change, remember MCP config is owned by
-  the background service: `opencode service restart` (a TUI restart is not enough).
+- Continue where the user stopped: run the first real cleanup batch and confirm in
+  Gmail. Method: `search-emails` (small `max_results`) → `create-label`/`apply-label`
+  → `archive-email` or `batch-archive {query, max_results}`; verify, then next batch.
+  Use `search-emails "label:<name>"` — `search-by-label` is broken. User's prefixes:
+  `000_tech/...`, `000_read`, `Legal_Financial/...`.
+- When a new MCP server or config change does not show up: MCP config is owned by the
+  background service → `opencode service restart` (TUI restart is NOT enough).
   Second suspect: migrate `mcp` in `opencode.jsonc` to the V2 shape (`mcp.servers`,
   `disabled`, object `timeout`).
 - Re-run auth when the ~7-day Testing-mode refresh token expires: delete
@@ -123,19 +136,23 @@ re-run the server's auth command (delete tokens.json) to recover.
   `uv run --directory /home/jim/code/mcp_project/theposch_gmail-mcp gmail
   --creds-file-path /home/jim/.gmail-mcp/credentials.json
   --token-path /home/jim/.gmail-mcp/tokens.json`.
-- Decide the fate of our own `/home/jim/code/mcp_project/gmail-mcp/{server.py,client.py}`
-  (likely move `client.py` to an `attic/` with a "do not run" note; `server.py`
-  superseded).
-- Fix `/home/jim/code/mcp_project/gmail-mcp/project.md` → symlink to
-  `~/dotfiles/opencode/projects/gmail-mcp.md` (still a plain file).
+- Tidy items the user queued: see TODO (project.md symlink, `client.py` → `attic/`).
 
 ## TODO
 - [ ] Replace `mcp_project/gmail-mcp/project.md` with symlink to this file
 - [ ] Move `client.py` (hosted path) to `attic/` with a warning header
+- [ ] Decide on a cleanup label scheme before bulk work (e.g. reuse `000_read`,
+      add `000_read/newsletters`, or a `zz-junk` bucket)
+- [ ] Optional: patch our clone so `search-by-label` resolves label ID → name
+      (upstream bug; workaround is `search-emails "label:<name>"`)
 - [ ] Consider publishing the OAuth consent screen to stop 7-day re-auth
 - [ ] Optional: add a per-project `.gitignore` in `mcp_project/gmail-mcp`
+- [ ] Optional: keep `mcp_project/theposch_gmail-mcp` out of the parent repo
+      (`mcp_project` has it as an untracked nested clone)
 
 ## PLAN
 Clean up Gmail through MCP tools. Short term: the third-party `theposch/gmail-mcp`
-server wired into opencode (running now). Fallback if it disappoints: extend our own
+server wired into opencode (live now). Fallback if it disappoints: extend our own
 minimal `server.py` to add read/label/archive/trash tools.
+Working method: small batches, verify after each batch in Gmail, prefer reversible
+moves (label first, then archive; `trash-email` last).
