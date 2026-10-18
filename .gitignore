@@ -98,6 +98,17 @@ r_mp3/R/021_api_codes.R
 r_mp3/R/021_api_codes.Rmd
 zsh_project/CURL_examples/.secret
 
+# Gmail MCP OAuth secrets (client + token) ---- NEVER commit
+#   credentials.json = OAuth client (client_id/client_secret)
+#   tokens.json      = OAuth grant  (access/refresh token)
+#   dir may be ~/.gmail-mcp/  or  ~/.config/opencode/gmail-mcp/
+#   (~/.config/opencode is a symlink -> ~/dotfiles/opencode = a git repo)
+#   Test:  git -C ~/dotfiles check-ignore -v opencode/gmail-mcp/tokens.json
+#   note: *.json above already covers the two files; the dir rules are belt-and-braces
+.gmail-mcp/
+opencode/gmail-mcp/
+opencode/.gmail-mcp
+
 
 #------------------------  Other APIs
 
