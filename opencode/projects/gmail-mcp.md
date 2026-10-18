@@ -47,6 +47,11 @@ OAuth client = Desktop client `jim_youtube_http2_test_app` in GCP project
 re-run the server's auth command (delete tokens.json) to recover.
 
 ## Decisions
+- 2026-10-17: **DELETED** the retired `/home/jim/code/mcp_project/gmail-mcp` dir —
+  `git rm -r gmail-mcp` + commit `594b`, pushed to
+  `origin git@github.com:jimrothstein/mcp_project.git` (main). Recover any file with
+  `git checkout 74b9 -- gmail-mcp/<file>`. Session cwd moved from that dir to
+  `/home/jim/code/mcp_project`. Only `theposch_gmail-mcp/` remains untracked there.
 - 2026-10-17: Auth answer (asked before deleting the old dir): the `theposch` server
   owns auth — `GmailService.get_token()` auto-runs at startup: load `--token-path`,
   refresh if expired, else `InstalledAppFlow.from_client_secrets_file(--creds-file-path,
@@ -152,12 +157,10 @@ re-run the server's auth command (delete tokens.json) to recover.
   `uv run --directory /home/jim/code/mcp_project/theposch_gmail-mcp gmail
   --creds-file-path /home/jim/.gmail-mcp/credentials.json
   --token-path /home/jim/.gmail-mcp/tokens.json`.
-- Tidy: the retired `/home/jim/code/mcp_project/gmail-mcp` dir can be deleted (see
-  TODO). Remember the live project path is `mcp_project/theposch_gmail-mcp`.
+- Tidy: the retired `gmail-mcp` dir is deleted (commit `594b`). Remember the live
+  project path is `mcp_project/theposch_gmail-mcp`.
 
 ## TODO
-- [ ] Delete the retired `/home/jim/code/mcp_project/gmail-mcp` dir (user's call;
-      recoverable from git history)
 - [ ] Decide on a cleanup label scheme before bulk work (e.g. reuse `000_read`,
       add `000_read/newsletters`, or a `zz-junk` bucket)
 - [ ] Optional: patch our clone so `search-by-label` resolves label ID → name
