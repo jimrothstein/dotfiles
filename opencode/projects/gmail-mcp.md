@@ -24,6 +24,12 @@ Gmail account state (2026-10-17): 35 labels = 16 user + 19 system. User naming s
 `prius`, `Scanned_Nov2012`. `get-unread-emails` reported the 100-item cap (heavier
 than it looks: ~34 KB). No triage/label bucket for mail cleanup yet.
 
+**Data probe (2026-10-17):** `older_than:5y larger:5M` → exactly **10 messages, ~85 MB**
+(all 2011–2016, big attachments: scans / medical / academic / "Dad"). Counted with a
+read-only paged `messages.list` helper `/tmp/opencode/gmail_count.py` (and
+`gmail_count2.py` for per-message sizes); both now read the token from
+`/home/jim/.config/opencode/.gmail-mcp/tokens.json`. First cleanup candidates.
+
 **Retired first attempt** — `/home/jim/code/mcp_project/gmail-mcp`: 4 tracked files
 (`server.py` 2 read-only tools, `auth_gmail.py` one-shot OAuth, `client.py` client for
 the hosted Gmail MCP, `project.md` a plain stub — not a symlink). Nothing live depends
@@ -161,9 +167,10 @@ re-run the server's auth command (delete tokens.json) to recover.
   (commit dd3bf3 in `~/dotfiles`). Why: pre-1.0, ~33 stars; wasted context tokens.
 
 ## NEXT STEPS
-- Continue where the user stopped: run the first real cleanup batch and confirm in
-  Gmail. Method: `search-emails` (small `max_results`) → `create-label`/`apply-label`
-  → `archive-email` or `batch-archive {query, max_results}`; verify, then next batch.
+- **Awaiting the user's decision on a cleanup label scheme** (he is reviewing the
+  10-message / 85 MB finding offline). Then run the first real batch and confirm in
+  Gmail: `search-emails` (small `max_results`) → `create-label`/`apply-label` →
+  `archive-email` or `batch-archive {query, max_results}`; verify, then next batch.
   Use `search-emails "label:<name>"` — `search-by-label` is broken. User's prefixes:
   `000_tech/...`, `000_read`, `Legal_Financial/...`.
 - When a new MCP server or config change does not show up: MCP config is owned by the
