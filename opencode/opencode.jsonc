@@ -47,6 +47,23 @@
       ],
       "cwd": "/home/jim/code/mcp_project/notes-mcp"
     },
+    "gmail": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uv",
+        "run",
+        "--directory",
+        "/home/jim/code/mcp_project/theposch_gmail-mcp",
+        "gmail",
+        "--creds-file-path",
+        "/home/jim/.gmail-mcp/credentials.json",
+        "--token-path",
+        "/home/jim/.gmail-mcp/tokens.json"
+      ],
+      "cwd": "/home/jim/code/mcp_project/theposch_gmail-mcp",
+      "timeout": 30000
+    },
     "gmail-organizer": {
       "type": "local",
       "enabled": true,
