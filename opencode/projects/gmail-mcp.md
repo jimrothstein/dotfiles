@@ -5,6 +5,12 @@ Use MCP server tools to clean up Gmail — sort, label, archive, trash.
 (user, 2026-10-17; seldom revised)
 
 ## PROJECT SUMMARY
+**Canonical path (2026-10-17): `/home/jim/code/mcp_project/theposch_gmail-mcp`.**
+This memory file keeps the short name `gmail-mcp`, but the project code lives in
+`theposch_gmail-mcp` (third-party `theposch/gmail-mcp`, wired into opencode as MCP
+server `gmail`). Any future work here means that directory, not
+`/home/jim/code/mcp_project/gmail-mcp`.
+
 Google's hosted Gmail MCP server is not available to the user (no Workspace
 Developer Preview enrollment) → that route is closed.
 
@@ -18,12 +24,14 @@ Gmail account state (2026-10-17): 35 labels = 16 user + 19 system. User naming s
 `prius`, `Scanned_Nov2012`. `get-unread-emails` reported the 100-item cap (heavier
 than it looks: ~34 KB). No triage/label bucket for mail cleanup yet.
 
-Three code artifacts exist:
-1. `/home/jim/code/mcp_project/gmail-mcp/server.py` — our old self-hosted server
-   (2 read-only tools, mcp `MCPServer`). Unused now.
-2. `/home/jim/code/mcp_project/gmail-mcp/auth_gmail.py` — our one-shot OAuth.
-3. `/home/jim/code/mcp_project/gmail-mcp/client.py` — client for Google's hosted
-   Gmail MCP. Dead end (preview-gated); do not pursue.
+**Retired first attempt** — `/home/jim/code/mcp_project/gmail-mcp`: 4 tracked files
+(`server.py` 2 read-only tools, `auth_gmail.py` one-shot OAuth, `client.py` client for
+the hosted Gmail MCP, `project.md` a plain stub — not a symlink). Nothing live depends
+on it, no credentials inside (those are in `~/.gmail-mcp/`), working tree clean, fully
+preserved in the `mcp_project` git history (commits `58f4`, `66b4`, `74b9`) → safe to
+delete whenever. The one non-obvious trick worth keeping is `server.py`'s
+`service.new_batch_http_request()` for the N+1 message fetch (recorded 2026-08-18
+below), and `client.py`'s two Google/SDK monkeypatches (recorded 2026-08-31 below).
 
 **Active path (experiment, user said "not a project"):** third-party
 `theposch/gmail-mcp` (GPL-3.0) cloned to
@@ -136,11 +144,12 @@ re-run the server's auth command (delete tokens.json) to recover.
   `uv run --directory /home/jim/code/mcp_project/theposch_gmail-mcp gmail
   --creds-file-path /home/jim/.gmail-mcp/credentials.json
   --token-path /home/jim/.gmail-mcp/tokens.json`.
-- Tidy items the user queued: see TODO (project.md symlink, `client.py` → `attic/`).
+- Tidy: the retired `/home/jim/code/mcp_project/gmail-mcp` dir can be deleted (see
+  TODO). Remember the live project path is `mcp_project/theposch_gmail-mcp`.
 
 ## TODO
-- [ ] Replace `mcp_project/gmail-mcp/project.md` with symlink to this file
-- [ ] Move `client.py` (hosted path) to `attic/` with a warning header
+- [ ] Delete the retired `/home/jim/code/mcp_project/gmail-mcp` dir (user's call;
+      recoverable from git history)
 - [ ] Decide on a cleanup label scheme before bulk work (e.g. reuse `000_read`,
       add `000_read/newsletters`, or a `zz-junk` bucket)
 - [ ] Optional: patch our clone so `search-by-label` resolves label ID → name
