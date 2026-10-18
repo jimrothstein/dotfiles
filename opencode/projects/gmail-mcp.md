@@ -47,6 +47,14 @@ OAuth client = Desktop client `jim_youtube_http2_test_app` in GCP project
 re-run the server's auth command (delete tokens.json) to recover.
 
 ## Decisions
+- 2026-10-17: Auth answer (asked before deleting the old dir): the `theposch` server
+  owns auth — `GmailService.get_token()` auto-runs at startup: load `--token-path`,
+  refresh if expired, else `InstalledAppFlow.from_client_secrets_file(--creds-file-path,
+  scopes).run_local_server(port=0)` and save. `~/.gmail-mcp/credentials.json` is an
+  `installed` (Desktop) client. `/tmp/opencode/gmail_auth.log` is the proof (new token
+  fetched → saved to `~/.gmail-mcp/tokens.json`). `auth_gmail.py` is the same algorithm
+  hardcoded to the old `BASE/credentials.json` + `BASE/token.json`, which no longer
+  exist → dead code, safe to delete. Re-auth = delete `tokens.json`, start the server.
 - 2026-10-17 (live test, PASS): after `opencode service restart`, `opencode mcp list`
   shows `✓ gmail connected` (gmail-organizer gone) and all 27 `gmail_*` tools are in
   the Code Mode catalog. Verified **read**: list-labels (35 labels, 16 user),
