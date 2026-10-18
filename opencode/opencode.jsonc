@@ -57,9 +57,9 @@
         "/home/jim/code/mcp_project/theposch_gmail-mcp",
         "gmail",
         "--creds-file-path",
-        "/home/jim/.gmail-mcp/credentials.json",
+        "/home/jim/.config/opencode/.gmail-mcp/credentials.json",
         "--token-path",
-        "/home/jim/.gmail-mcp/tokens.json"
+        "/home/jim/.config/opencode/.gmail-mcp/tokens.json"
       ],
       "cwd": "/home/jim/code/mcp_project/theposch_gmail-mcp",
       "timeout": 30000
