@@ -62,9 +62,9 @@ re-run the server's auth command (delete tokens.json) to recover.
   `git ls-files opencode/.gmail-mcp` = 0 files; a stdio probe with the NEW paths
   (`/tmp/opencode/gmail_probe_new.py`) → token loaded, `gmail 0.1.0`, 27 tools,
   live `search-emails` OK, exit 0. `~/.gmail-mcp/` is now empty.
-  **Pending: `opencode service restart` (user must run it outside opencode; it owns
-  MCP config and restarts this session's server) to make the live server use the new
-  paths.**
+  **User ran `opencode service restart`; verified after: `opencode mcp list` → `✓ gmail
+  connected`, log `mcp connected server=gmail tools=27`, live `list-labels` → 35 labels
+  (16 user) — the running server reads the new paths.**
 - 2026-10-17: **DELETED** the retired `/home/jim/code/mcp_project/gmail-mcp` dir —
   `git rm -r gmail-mcp` + commit `594b`, pushed to
   `origin git@github.com:jimrothstein/mcp_project.git` (main). Recover any file with
@@ -184,8 +184,6 @@ re-run the server's auth command (delete tokens.json) to recover.
 - [ ] Optional: patch our clone so `search-by-label` resolves label ID → name
       (upstream bug; workaround is `search-emails "label:<name>"`)
 - [ ] Consider publishing the OAuth consent screen to stop 7-day re-auth
-- [ ] Confirm after `opencode service restart`: `✓ gmail connected` + a `list-labels`
-      call, proving the live server reads the new `~/.config/opencode/.gmail-mcp/` paths
 - [ ] Optional: keep `mcp_project/theposch_gmail-mcp` out of the parent repo
       (`mcp_project` has it as an untracked nested clone)
 
