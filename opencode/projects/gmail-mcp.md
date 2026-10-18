@@ -26,6 +26,18 @@ OAuth client = Desktop client `jim_youtube_http2_test_app` in GCP project
 re-run the server's auth command (delete tokens.json) to recover.
 
 ## Decisions
+- 2026-10-17 (live test, PASS): after `opencode service restart`, `opencode mcp list`
+  shows `✓ gmail connected` (gmail-organizer gone) and all 27 `gmail_*` tools are in
+  the Code Mode catalog. Verified **read**: list-labels (35 labels, 16 user),
+  search-emails (real mail), read-email, search-by-label, list-folders, list-drafts,
+  get-unread-emails (capped at 100, ~34 KB payload — heavy). Verified **write** and
+  confirmed with the Gmail API directly (`/tmp/opencode/gmail_check*.py`, read-only,
+  same token): create-label, apply-label, remove-label, delete-label, archive-email
+  (INBOX dropped), restore-to-inbox (INBOX back). All test changes reverted; label
+  set and inbox state back to the original 16 user labels.
+  **BUG (upstream, unfixed):** `search-by-label(label_id)` returns 0 results — it
+  passes the label **ID** (`Label_112`) to Gmail's `label:` operator, which needs the
+  label **NAME**. Workaround: `search-emails {query: "label:<name>"}` (works).
 - 2026-10-17 (test): Ran the EXACT command opencode is configured with
   (`uv run --directory …/theposch_gmail-mcp gmail --creds-file-path … --token-path …`)
   as a stdio MCP server: initialize OK (`gmail 0.1.0`), **27 tools**, `search-emails
@@ -97,13 +109,15 @@ re-run the server's auth command (delete tokens.json) to recover.
   (commit dd3bf3 in `~/dotfiles`). Why: pre-1.0, ~33 stars; wasted context tokens.
 
 ## NEXT STEPS
-- **Run `opencode service restart`** (from a terminal outside opencode; it kills the
-  service hosting the current session), then confirm `opencode mcp list` shows
-  `✓ gmail connected` and that `gmail_*` tools appear; then exercise cleanup on a
-  small batch first (e.g. "search newsletters, apply label, archive") and confirm
-  the changes are visible in Gmail.
-  If gmail still does not load, migrate `mcp` in `opencode.jsonc` to the V2 shape
-  (`mcp.servers`, `disabled`, object `timeout`).
+- Exercise real cleanup on a small batch and confirm in Gmail: e.g. search
+  newsletters/promotions → `create-label`/`apply-label` → `archive-email` (or
+  `batch-archive {query, max_results}`). Prefer `search-emails "label:<name>"` over
+  `search-by-label`, which is broken. User's label scheme uses `000_tech/...`,
+  `000_read`, `Legal_Financial/...` prefixes.
+- If gmail ever fails to load after a config change, remember MCP config is owned by
+  the background service: `opencode service restart` (a TUI restart is not enough).
+  Second suspect: migrate `mcp` in `opencode.jsonc` to the V2 shape (`mcp.servers`,
+  `disabled`, object `timeout`).
 - Re-run auth when the ~7-day Testing-mode refresh token expires: delete
   `/home/jim/.gmail-mcp/tokens.json` and re-run
   `uv run --directory /home/jim/code/mcp_project/theposch_gmail-mcp gmail
