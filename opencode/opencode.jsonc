@@ -64,16 +64,6 @@
       "cwd": "/home/jim/code/mcp_project/theposch_gmail-mcp",
       "timeout": 30000
     },
-    "gmail-organizer": {
-      "type": "local",
-      "enabled": true,
-      "command": [
-        "/home/jim/code/python_project/gmail-mcp/.venv/bin/python",
-        "/home/jim/code/python_project/gmail-mcp/server.py"
-      ],
-      "cwd": "/home/jim/code/python_project/gmail-mcp",
-      "timeout": 15000
-    },
     "youtube": {
       "type": "local",
       "enabled": true,
