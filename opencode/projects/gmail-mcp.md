@@ -26,6 +26,23 @@ OAuth client = Desktop client `jim_youtube_http2_test_app` in GCP project
 re-run the server's auth command (delete tokens.json) to recover.
 
 ## Decisions
+- 2026-10-17 (test): Ran the EXACT command opencode is configured with
+  (`uv run --directory …/theposch_gmail-mcp gmail --creds-file-path … --token-path …`)
+  as a stdio MCP server: initialize OK (`gmail 0.1.0`), **27 tools**, `search-emails
+  {in:inbox}` → real mail, `list-labels` OK, exit 0. The server binary + token work.
+- 2026-10-17 (test): The server is NOT live in the opencode session: no `gmail_*`
+  tools in the catalog, and `opencode mcp list` still prints
+  `✗ gmail-organizer failed: NotFound …/python_project/gmail-mcp` with **no** `gmail`
+  entry, although the config file on disk has `gmail` and no `gmail-organizer`.
+  Cause: the **shared background service (pid 38524, started 15:09) owns MCP config
+  and loaded it before the `gmail` entry was committed (19:28)**. A TUI restart does
+  NOT reload it (TUI pid 108629 started 19:29 and still saw the stale entry).
+  Documented fix: `opencode service restart` (docs: /v2/docs/troubleshooting).
+- 2026-10-17: V2 docs note (from /v2/docs/mcp-servers): V2 wants servers under
+  `mcp.servers` and uses `disabled` instead of `enabled`; server `timeout` is an
+  object (`startup`/`catalog`/`execution`), not the integer ms we used. Our flat
+  `mcp: {name: …}` + `"timeout": 30000` is deprecated V1 shape — still works today
+  (other servers load), but migrate if gmail fails to load after the restart.
 - 2026-10-17: Reviewed `gmail-mcp`. Findings: no `.venv`/`pyproject`/creds; the
   opencode `gmail-organizer` entry pointed at a nonexistent path
   (`/home/jim/code/python_project/gmail-mcp`); `gmail-mcp/project.md` is a plain
@@ -80,9 +97,13 @@ re-run the server's auth command (delete tokens.json) to recover.
   (commit dd3bf3 in `~/dotfiles`). Why: pre-1.0, ~33 stars; wasted context tokens.
 
 ## NEXT STEPS
-- Restart opencode so the new `gmail` MCP server loads, then exercise cleanup on a
+- **Run `opencode service restart`** (from a terminal outside opencode; it kills the
+  service hosting the current session), then confirm `opencode mcp list` shows
+  `✓ gmail connected` and that `gmail_*` tools appear; then exercise cleanup on a
   small batch first (e.g. "search newsletters, apply label, archive") and confirm
   the changes are visible in Gmail.
+  If gmail still does not load, migrate `mcp` in `opencode.jsonc` to the V2 shape
+  (`mcp.servers`, `disabled`, object `timeout`).
 - Re-run auth when the ~7-day Testing-mode refresh token expires: delete
   `/home/jim/.gmail-mcp/tokens.json` and re-run
   `uv run --directory /home/jim/code/mcp_project/theposch_gmail-mcp gmail
