@@ -27,7 +27,7 @@ than it looks: ~34 KB). No triage/label bucket for mail cleanup yet.
 **Retired first attempt** — `/home/jim/code/mcp_project/gmail-mcp`: 4 tracked files
 (`server.py` 2 read-only tools, `auth_gmail.py` one-shot OAuth, `client.py` client for
 the hosted Gmail MCP, `project.md` a plain stub — not a symlink). Nothing live depends
-on it, no credentials inside (those are in `~/.gmail-mcp/`), working tree clean, fully
+on it, no credentials inside (those are in `~/.config/opencode/.gmail-mcp/`), working tree clean, fully
 preserved in the `mcp_project` git history (commits `58f4`, `66b4`, `74b9`) → safe to
 delete whenever. The one non-obvious trick worth keeping is `server.py`'s
 `service.new_batch_http_request()` for the N+1 message fetch (recorded 2026-08-18
@@ -40,13 +40,31 @@ below), and `client.py`'s two Google/SDK monkeypatches (recorded 2026-08-31 belo
 `archive-email`, `batch-archive`, `restore-to-inbox`, `trash-email`, filters,
 folders, drafts, send. Registered in opencode as MCP server `gmail`.
 
-Credentials: `/home/jim/.gmail-mcp/credentials.json` + `tokens.json`
-(dir 700, files 600), account `jimrothstein@gmail.com`, scope `gmail.modify`.
+Credentials (moved 2026-10-17): `/home/jim/.config/opencode/.gmail-mcp/`
+(= `~/dotfiles/opencode/.gmail-mcp/`) — dir 700, `credentials.json` 600,
+`tokens.json` 664. It sits inside the `~/dotfiles` git repo but is **git-ignored**
+(see Decisions). Account `jimrothstein@gmail.com`, scope `gmail.modify`.
 OAuth client = Desktop client `jim_youtube_http2_test_app` in GCP project
 `light-tribute-354619`, **in Testing mode → refresh token expires ~every 7 days**;
 re-run the server's auth command (delete tokens.json) to recover.
 
 ## Decisions
+- 2026-10-17: **Moved the Gmail OAuth secrets** from `~/.gmail-mcp/` to
+  `~/.config/opencode/.gmail-mcp/` (= `~/dotfiles/opencode/.gmail-mcp/`) at the user's
+  request (the dir name is arbitrary — only `--creds-file-path`/`--token-path` matter).
+  Because `~/.config/opencode` is a symlink into the `~/dotfiles` **git repo**, the
+  user first required an explicit exclusion in the **global** ignore file
+  (`~/.gitignore` → symlink to `~/dotfiles/.gitignore`, also `core.excludesfile`).
+  Added there (commit `750c`) with a comment: `.gmail-mcp/`, `opencode/gmail-mcp/`,
+  `opencode/.gmail-mcp` (belt-and-braces; `*.json` at line 46 already covered the two
+  files). Then updated the two flags in `~/dotfiles/opencode/opencode.jsonc`
+  (commit `6275a`), both pushed. Verified: `git check-ignore -v` matches the new paths;
+  `git ls-files opencode/.gmail-mcp` = 0 files; a stdio probe with the NEW paths
+  (`/tmp/opencode/gmail_probe_new.py`) → token loaded, `gmail 0.1.0`, 27 tools,
+  live `search-emails` OK, exit 0. `~/.gmail-mcp/` is now empty.
+  **Pending: `opencode service restart` (user must run it outside opencode; it owns
+  MCP config and restarts this session's server) to make the live server use the new
+  paths.**
 - 2026-10-17: **DELETED** the retired `/home/jim/code/mcp_project/gmail-mcp` dir —
   `git rm -r gmail-mcp` + commit `594b`, pushed to
   `origin git@github.com:jimrothstein/mcp_project.git` (main). Recover any file with
@@ -153,10 +171,10 @@ re-run the server's auth command (delete tokens.json) to recover.
   Second suspect: migrate `mcp` in `opencode.jsonc` to the V2 shape (`mcp.servers`,
   `disabled`, object `timeout`).
 - Re-run auth when the ~7-day Testing-mode refresh token expires: delete
-  `/home/jim/.gmail-mcp/tokens.json` and re-run
+  `/home/jim/.config/opencode/.gmail-mcp/tokens.json` and re-run
   `uv run --directory /home/jim/code/mcp_project/theposch_gmail-mcp gmail
-  --creds-file-path /home/jim/.gmail-mcp/credentials.json
-  --token-path /home/jim/.gmail-mcp/tokens.json`.
+  --creds-file-path /home/jim/.config/opencode/.gmail-mcp/credentials.json
+  --token-path /home/jim/.config/opencode/.gmail-mcp/tokens.json`.
 - Tidy: the retired `gmail-mcp` dir is deleted (commit `594b`). Remember the live
   project path is `mcp_project/theposch_gmail-mcp`.
 
@@ -166,7 +184,8 @@ re-run the server's auth command (delete tokens.json) to recover.
 - [ ] Optional: patch our clone so `search-by-label` resolves label ID → name
       (upstream bug; workaround is `search-emails "label:<name>"`)
 - [ ] Consider publishing the OAuth consent screen to stop 7-day re-auth
-- [ ] Optional: add a per-project `.gitignore` in `mcp_project/gmail-mcp`
+- [ ] Confirm after `opencode service restart`: `✓ gmail connected` + a `list-labels`
+      call, proving the live server reads the new `~/.config/opencode/.gmail-mcp/` paths
 - [ ] Optional: keep `mcp_project/theposch_gmail-mcp` out of the parent repo
       (`mcp_project` has it as an untracked nested clone)
 
