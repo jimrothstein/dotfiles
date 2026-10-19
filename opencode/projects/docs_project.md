@@ -12,11 +12,13 @@ Single project.md for the whole `~/code/docs/` repo, with one section per subdir
 - AGENTS: review the files in `~/code/docs/AGENTS` — some are really skills and some have rules that may apply to R projects.
 
 ## NEXT STEPS
+- tech_notes: review `2026_eReader_requirements.md` findings; decide color vs mono, front light, new vs used. Set eBay saved searches for BOOX Go 10.3 (Gen 1/Gen II), Note Air3, Note Air3 C.
 - tech_notes: review `2026_laptop_requirements.md` options and set up eBay saved searches (T14/T14s Gen 4 AMD 32GB, X13 Gen 3 AMD).
 - advisory: check the directory's website for broken URL links (see `advisory/advisory_project.md`).
 - AGENTS: review the files in `~/code/docs/AGENTS` — some are really skills and some have rules that may apply to R projects.
 
 ## Current state
+- 2026-10-19: tech_notes/2026_eReader_requirements.md — appended "Findings and recommendations" (10.3" e-ink for technical PDFs). Pick: BOOX Go 10.3 Gen II Lumi $449.99 (mono 300 ppi, Android 15); runner-up BOOX Note Air6 C $579.99 (Kaleido 3 color, Android 16, microSD); used: Go 10.3 Gen 1 / Note Air3. Ruled out Kindle Scribe, Kobo Elipsa 2E, PocketBook InkPad X Pro, Supernote, reMarkable. Deciding factor = Android (Google Drive app, KOReader/Calibre-Web OPDS, file grouping). Linked from new `### 2026_eReader_notes` fence in 300_tech_notes.qmd. Verified: quarto gfm + typst renders EXIT=0. Committed 4d8c, pushed.
 - 2026-10-18: 2026_laptop_requirements.md extended with "Laptop requirements and options" research (Dell has no AMD Latitude; T14/X13 Gen 4 AMD and L14 G3/Framework as fallbacks). 300_tech_notes.qmd fence now points to it as "requirements and options". Verified: quarto gfm + typst renders EXIT=0. Committed 6172, pushed.
 - 2026-10-18: tech_notes/2026_laptop_requirements.md added (Perplexity: Lenovo T14s Gen 3 ranking + P14s vs T14s). Linked from the literal fence in 300_tech_notes.qmd `### 2026_laptop_notes`. Verified: `quarto render 300_tech_notes.qmd --to gfm` and `--to typst` both EXIT=0. Committed c4ef, pushed.
 - 2026-08-22: tech_notes/300_tech_notes.qmd — fixed unclosed code fence at EOF and appended a `### Typst - purple ellipse` section with a `{=typst}` chunk using built-in `#ellipse(fill: purple)`. Verified via `quarto render --to typst` (PDF OK). Committed (2152) and pushed.
