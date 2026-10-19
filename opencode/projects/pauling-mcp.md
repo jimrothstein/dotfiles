@@ -5,7 +5,7 @@ YouTube MCP server project (named "pauling"), skeleton only, living at `~/code/m
 ## Project Summary
 - 2026-09-22: Created via `uv init` (src layout `pauling_mcp`, Python >=3.12, `.python-version` = 3.12, entry point `pauling-mcp = pauling_mcp:main`). Only code is a stub `main()` that prints "Hello from pauling-mcp!".
 - Uses `youtube-studio-mcp` 0.3.0 (PyPI package `youtube_mcp`) as the actual MCP server binary. Venv also has `google-api-python-client 2.200.0`, `google-auth-oauthlib`, `youtube-transcript-api 1.2.4`, `httpx2`, `uvicorn`. `pyproject.toml` deps still empty (venv populated ad hoc; `mcp<2` pin NOT yet codified in pyproject).
-- `.env` holds a Google OAuth client secret in var `YOUTUBE_MCP_CLIENT_SECRET` (note the typo "SERET"). `.env` is gitignored; never commit the secret.
+- `.env` (gitignored) holds the Google OAuth client secret in `YOUTUBE_MCP_CLIENT_SECRET`; never commit. (Var name fixed 2026-10-18; was typo `..._SERET`.)
 - 2026-09-22: OAuth DONE. Added self as test user in Google Cloud console; ran `youtube_auth` from opencode → browser consent granted. Token saved to `pauling-mcp/.config/youtube-mcp/token.json`. Verified `youtube_get_channel` works: channel **jim rothstein** @jimrothstein (`UClB5qWyXejlAwwkDAzJis-Q`), 0 subs/views/videos, uploads playlist `UUlB5qWyXejlAwwkDAzJis-Q`. Scopes granted: youtube.readonly, youtube, youtube.upload, youtube.force-ssl, yt-analytics.readonly, yt-analytics-monetary.readonly.
 - 2026-09-22: End-to-end sanity check passed. `youtube_list_playlists` (mine, max_results=0) returned **205 playlists / 11,946 videos**. Biggest: Calm Down! (4911), all music (910), 60s - early - femaleVoices (809), 000_r_next (382), politics (86). Plenty of singletons. NOTE: API-reported total (202) vs actual fetched (205) — pagination count mismatch; trust the fetched list.
 - 2026-10-18: Deps codified. `pyproject.toml` now declares `mcp>=1.30.0,<2` + `youtube-studio-mcp>=0.3.0`; `[tool.uv].constraint-dependencies = ["oauthlib<4"]`. Generated `uv.lock`; `uv sync` upgraded all patch/minor packages (52 pkgs, venv now uv-managed). Removed orphan leftovers (mcp-types, httpx2, httpcore2, truststore). Re-verified over stdio: initialize OK, 43 tools. Deliberately NOT upgraded: `mcp` (2.x breaks ysm 0.3.0) and `oauthlib` (major 4.x).
@@ -15,7 +15,6 @@ YouTube MCP server project (named "pauling"), skeleton only, living at `~/code/m
 - Decide what "pauling" should actually do first (per TODO). Server is fully functional as-is now.   1st we must test the various tools and see it works.  Then see PLAN (below)
 - Worth exploring next: analytics (`youtube_analytics_*`), transcripts, or a real use-case (e.g. maintain a playlist from a file). (SEE PLAN)
 - SEE https://github.com/pauling-ai/youtube-mcp-server.  Test several tools. Ask user.
-- Fix typo, spelling error:  .env change to YOUTUBE_MCP_CLIENT_SECRET.
 - Explain to user the steps to start up the mcp.  And how a simple tool works.   This includes listing python code (number each line).  User is beginning, explain one thing at a time. Wait for user to tell you to continue.
 - When writing Project Summary:  .  Summary should have more short bullet points. Use sentences only when necessary. Use as many bullet points as needed (each on separate line)
 (Ajust the AGENTS.md file so all projects can these changes)   
@@ -28,7 +27,7 @@ YouTube MCP server project (named "pauling"), skeleton only, living at `~/code/m
   - Uses `youtube-studio-mcp` 0.3.0 (PyPI package `youtube_mcp`) as the actual MCP server binary. 
   - Venv also has `google-api-python-client 2.200.0`, `google-auth-oauthlib`, `youtube-transcript-api 1.2.4`, `httpx2`, `uvicorn`. `pyproject.toml` 
   - deps still empty (venv populated ad hoc; `mcp<2` pin NOT yet codified in pyproject).
-  -.env` holds a Google OAuth client secret in var `YOUTUBE_MCP_CLIENT_SECRET` (note the typo "SERET"). 
+  -.env` (gitignored) holds the Google OAuth client secret in `YOUTUBE_MCP_CLIENT_SECRET`.
   -.env` is gitignored; never commit the secret.
 - 2026-09-22: OAuth DONE, steps include:
   - Added jimrothstein@gmail.com (not "self") as test user in Google Cloud console; 
