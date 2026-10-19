@@ -8,6 +8,7 @@ YouTube MCP server project (named "pauling"), skeleton only, living at `~/code/m
 - `.env` holds a Google OAuth client secret in var `YOUTUBE_MCP_CLIENT_SECRET` (note the typo "SERET"). `.env` is gitignored; never commit the secret.
 - 2026-09-22: OAuth DONE. Added self as test user in Google Cloud console; ran `youtube_auth` from opencode → browser consent granted. Token saved to `pauling-mcp/.config/youtube-mcp/token.json`. Verified `youtube_get_channel` works: channel **jim rothstein** @jimrothstein (`UClB5qWyXejlAwwkDAzJis-Q`), 0 subs/views/videos, uploads playlist `UUlB5qWyXejlAwwkDAzJis-Q`. Scopes granted: youtube.readonly, youtube, youtube.upload, youtube.force-ssl, yt-analytics.readonly, yt-analytics-monetary.readonly.
 - 2026-09-22: End-to-end sanity check passed. `youtube_list_playlists` (mine, max_results=0) returned **205 playlists / 11,946 videos**. Biggest: Calm Down! (4911), all music (910), 60s - early - femaleVoices (809), 000_r_next (382), politics (86). Plenty of singletons. NOTE: API-reported total (202) vs actual fetched (205) — pagination count mismatch; trust the fetched list.
+- 2026-10-18: Deps codified. `pyproject.toml` now declares `mcp>=1.30.0,<2` + `youtube-studio-mcp>=0.3.0`; `[tool.uv].constraint-dependencies = ["oauthlib<4"]`. Generated `uv.lock`; `uv sync` upgraded all patch/minor packages (52 pkgs, venv now uv-managed). Removed orphan leftovers (mcp-types, httpx2, httpcore2, truststore). Re-verified over stdio: initialize OK, 43 tools. Deliberately NOT upgraded: `mcp` (2.x breaks ysm 0.3.0) and `oauthlib` (major 4.x).
 
 ## NEXT STEPS
 - (1) Explain this issue to user:   (2) Decide the shape: reuse/wrap `youtube_mcp` (youtube-studio-mcp) directly, or build a thin FastMCP server using the same deps.
@@ -49,7 +50,7 @@ YouTube MCP server project (named "pauling"), skeleton only, living at `~/code/m
 
 ## TODO
 - Clarify what "pauling" should actually do: upload/publishing, analytics, transcripts, channel management, or all of the above.
-- Decide whether to vendor or depend on `youtube-studio-mcp` (0.3.0, MIT, alpha).
+- [x] Decide whether to vendor or depend on `youtube-studio-mcp` (0.3.0, MIT, alpha). → Depend (declared in pyproject + uv.lock).
 
 ## PLAN
 - A working YouTube MCP server in `~/code/mcp_project` using the installed youtube-studio-mcp stack, wired into opencode, giving opencode access to the user's YouTube channel/data.
