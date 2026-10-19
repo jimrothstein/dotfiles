@@ -59,3 +59,20 @@ YouTube MCP server project (named "pauling"), skeleton only, living at `~/code/m
 ## PLAN
 - A working YouTube MCP server in `~/code/mcp_project` using the installed youtube-studio-mcp stack, wired into opencode, giving opencode access to the user's YouTube channel/data.
 - The goal:   user wants to organize playlists.  For example, if two playlists can be combined then do so.   If a playlist is no longer needed, delete it.  If a playlist should be renamed, do so.   If certain videos, in one or more playlists, are no longer needed, then remove them.   In all of these case, the USER will tell you what to do.  We are still experimenting.   So there is no definite PLAN.  Over time, we may be able to write a plan or continually improve the plan.   For now, the plan is really to test and to experiment.
+
+## PLAN — opencode MCP cleanup (2026-10-18, global config)
+Context/constraints from user:
+- Most `~/code/mcp_project/*` dirs are **toys** (experiments/learning, not production) → don't invest in hardening them.
+- `context7` is used **often** → keep it globally enabled.
+- All the **other** MCP servers can be turned **off globally** (for now).
+
+Facts: opencode v2.0.32; `~/dotfiles/opencode/opencode.jsonc` has 7 servers, all `enabled: true` → ~99 tool defs + ~10 processes every session (youtube 43, gmail 27, filesystem 14, notes 8, huggingface 4, context7 2, 15-min 1). Flat `mcp.<name>` form is **deprecated** in v2; new form is `mcp.servers.<name>` with `disabled: true` (plus `codemode`, `protocol`, `timeout: {startup,catalog,execution}`). Project config: `<project>/opencode.json(c)` or `<project>/.opencode/opencode.json(c)`, merged over global.
+
+Tasks:
+- [ ] Migrate `mcp` flat map → `mcp.servers` map; replace `enabled: true/false` with `disabled: true/false`.
+- [ ] Keep enabled globally: `context7` only.
+- [ ] Disable globally: `youtube`, `gmail`, `notes`, `15-min-mcp`, `huggingface`.
+- [ ] Remove `filesystem` entirely — redundant with opencode's built-in read/write/edit/glob/grep; was scoped to `/home/jim/code/mcp_project` only.
+- [ ] Add opt-in per project: `<project>/opencode.json` declaring only that project's server (e.g. `pauling-mcp/opencode.json` → `youtube` with its `environment`).
+- [ ] Keep secrets in `~/dotfiles/.zshrc_secret` (policy in AGENTS.md); reference via `{env:...}` where possible.
+- [ ] Verify after restart: `ps` shows no local MCP procs; tool catalog only context7 (+ any project-level server); re-verify youtube via `.venv/bin/python /tmp/opencode/mcp_probe.py`.
