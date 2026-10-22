@@ -54,7 +54,7 @@ ignore mp3_downloads/
 [ ] - /home/jim/code/mcp_project
 [ ] - /home/jim/code/publish_project
 [ ] - /home/jim/code/python_project
-[ ] - /home/jim/code/pytorch_projects/gym_game
+[ ] - /home/jim/code/pytorch_projects/gym_game  (NOT a github repo yet — do not touch until Task #2)
 [ ] - /home/jim/code/shiny_project
 [ ] - /home/jim/code/stats_project
 [ ] - /home/jim/code/try_things_here
@@ -64,7 +64,7 @@ ignore mp3_downloads/
 (note: mp3_downloads .git removed; throwaway removed entirely)
 
 ## Problems / questions / issues
-[ ] - gym_game has 6 untracked files and no remote — commit or remove .git (uncommitted work at risk).
+[ ] - gym_game (pytorch) is NOT a github repo yet — do not touch until Task #2 (6 untracked files present).
 [ ] - dotfiles tracks opencode config — do not delete without backup (currently clean).
 [ ] - git_project has two remotes (git_project, origin) — which is canonical?
 [ ] - Removing github backups needs repo list + gh auth (gh installed v2.74.1).
