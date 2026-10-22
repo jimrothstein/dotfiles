@@ -8,6 +8,7 @@
 
 - 2026-08-18: Created 220_save_model_json.py following Kaggle "Python - How to Save and Load ML Models" (prmohanty), Approach 3 (Manual Save/Restore to JSON) only. Cleaned up a duplicated `MyLogReg` class block (copy-paste artifact from the tutorial), added a runnable demo that saves a `MyLogReg` instance to `mylogreg.json` and restores it into a fresh object. Added scikit-learn to the venv via `uv add scikit-learn` (scikit-learn 1.9.0). Added `*.json` to .gitignore so generated model files are not committed.
 - 2026-10-08: Created 410_simple_transform.py demonstrating linear equation y=3x+2 with x from -1 to 1 in steps of 0.01 (201 points). Table displays 4 columns: x, y, u=tanh(x), v=tanh(y). Plot shows blue line y=3x+2 and red (u,v) points with limits x[-2,2], y[-10,10]. Plot saved to 410_simple_transform_plot.png.
+- 2026-10-20: Created 520_nonlinear_transform.py: step1 unit square plot; step2 nonlinear transform f=(x^2-y^2,2xy) on square perimeter; step3 5 random interior points transformed; step4 horizontal segment y=0.2 transformed. PNG outputs saved.
 
 ## Decisions
 
