@@ -3,6 +3,7 @@
 ## Project Summary / Memory
 
 - 2026-09-09: Learning session on Posit's **orbital** package (R + Python; Python version converts trained scikit-learn pipelines and PyTorch feed-forward nets into pure SQL so predictions run inside a database without a Python runtime).
+- 2026-10-21: Created GitHub repo jimrothstein/pytorch_projects and pushed initial commit (source scripts + .gitignore; venv and nested gym_game/orbital excluded).
 - First working end-to-end example: `orbital/110_orbital_sum.py` — a tiny `Linear(2,3)→ReLU→Linear(3,1)` net trained to add two numbers; converted via `orbital.parse_pytorch_model(model, features)` and `orbital.export_sql("MY_TABLE", pipeline, dialect="duckdb")`; SQL executed in DuckDB. Works from zsh via venv.
 - The generated SQL unrolls the trained weights/biases as column arithmetic (visible as `WITH "t1"/"t2"/"t3"` CTEs); `GREATEST/CASE WHEN <0` implements ReLU.
 - Learned: model extrapolates poorly — `(3,4)` (sum 7.0) gave 3.88 because training inputs were ~N(0,1). In-range inputs needed for accurate prediction.
