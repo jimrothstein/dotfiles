@@ -67,6 +67,5 @@ ignore mp3_downloads/
 [ ] - gym_game (pytorch) is NOT a github repo yet — do not touch until Task #2 (6 untracked files present).
 [ ] - git_project has two remotes (git_project, origin) — which is canonical?
 [ ] - Removing github backups needs repo list + gh auth (gh installed v2.74.1).
-
 [ ] - Need user decision on scope and order before any deletion.
 [ ] - Re-init + push requires creating remotes for repos with none.
