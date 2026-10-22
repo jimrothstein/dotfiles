@@ -2,7 +2,8 @@
 
 ## PROJECT SUMMARY
 - 2026-10-21: Task #1 complete. Verified all 16 .git locations via `find /home/jim -type d -name .git`; list matches file.
-- 2026-10-21: Task #2 step 4 done: created ~/code/python_project/git_clean.py implementing 5 steps (delete .git/, git init, force push) with safety confirmation + origin capture. Script compiles and aborts safely when no .git/. Not run on any repo. Awaiting user to run on chosen repos.
+- 2026-10-21: Task #2 step 4 done: created ~/code/python_project/git_clean.py implementing 5 steps (delete .git/, git init, force push) with safety confirmation + origin capture. Script compiles and aborts safely when no .git/.
+- 2026-10-21: User ran script on a repo — reported "it all worked". Script verified functional.
 
 ## git_project.md
 - This is the project file (memmory)
