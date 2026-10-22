@@ -64,7 +64,7 @@ ignore mp3_downloads/
 [ ] - /home/jim/.config/emacs (+ ~100 straight repos) (emacs.original ignored per user)
 
 ## Problems / questions / issues
-[ ] - Uncommitted changes in 5 repos (python_project 8, gym_game 6, dotfiles 2, mp3_downloads 1, throwaway removed) — deleting .git loses them unless committed/stashed first.
+[ ] - Uncommitted changes in 4 repos (gym_game 6, dotfiles 2, mp3_downloads 1; python_project now clean) — deleting .git loses them unless committed/stashed first.
 [ ] - mp3_downloads, gym_game have no remote — no recovery after deletion (throwaway removed).
 [ ] - dotfiles tracks opencode config — do not delete without backup.
 [ ] - bin fixed: working tree clean (was 12 uncommitted).
