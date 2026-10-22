@@ -60,16 +60,15 @@ ignore mp3_downloads/
 [ ] - /home/jim/code/try_things_here
 [ ] - /home/jim/code/zsh_project
 [ ] - /home/jim/dotfiles
-[ ] - /home/jim/mp3_downloads
 [ ] - /home/jim/.config/emacs (+ ~100 straight repos) (emacs.original ignored per user)
+(note: mp3_downloads .git removed; throwaway removed entirely)
 
 ## Problems / questions / issues
-[ ] - Uncommitted changes in 4 repos (gym_game 6, dotfiles 2, mp3_downloads 1; python_project now clean) — deleting .git loses them unless committed/stashed first.
-[ ] - mp3_downloads, gym_game have no remote — no recovery after deletion (throwaway removed).
-[ ] - dotfiles tracks opencode config — do not delete without backup.
-[ ] - bin fixed: working tree clean (was 12 uncommitted).
+[ ] - gym_game has 6 untracked files and no remote — commit or remove .git (uncommitted work at risk).
+[ ] - dotfiles tracks opencode config — do not delete without backup (currently clean).
 [ ] - git_project has two remotes (git_project, origin) — which is canonical?
 [ ] - Removing github backups needs repo list + gh auth (gh installed v2.74.1).
 [ ] - emacs straight repos are third-party clones — deleting breaks package manager; keep.
 [ ] - Need user decision on scope and order before any deletion.
 [ ] - Re-init + push requires creating remotes for repos with none.
+[ ] - throwaway removed entirely; mp3_downloads .git removed; bin/python_project clean.
