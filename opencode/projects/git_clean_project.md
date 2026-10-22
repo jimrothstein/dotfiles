@@ -64,8 +64,6 @@ ignore mp3_downloads/
 (note: mp3_downloads .git removed; throwaway removed entirely)
 
 ## Problems / questions / issues
-[X] - throwaway removed entirely; mp3_downloads .git removed; bin/python_project/dotfiles clean.
-[X] - emacs.original ignored per user.
 [ ] - gym_game (pytorch) is NOT a github repo yet — do not touch until Task #2 (6 untracked files present).
 [ ] - git_project has two remotes (git_project, origin) — which is canonical?
 [ ] - Removing github backups needs repo list + gh auth (gh installed v2.74.1).
