@@ -14,7 +14,7 @@
     },
     "filesystem": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "npx",
         "-y",
@@ -24,7 +24,7 @@
     },
     "15-min-mcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uv",
         "run",
@@ -36,7 +36,7 @@
     },
     "notes": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uv",
         "run",
@@ -49,7 +49,7 @@
     },
     "gmail": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uv",
         "run",
@@ -66,7 +66,7 @@
     },
     "youtube": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "/home/jim/code/mcp_project/pauling-mcp/.venv/bin/youtube-studio-mcp"
       ],
@@ -78,7 +78,7 @@
     },
     "huggingface": {
       "type": "remote",
-      "enabled": true,
+      "enabled": false,
       "url": "https://huggingface.co/mcp",
       "headers": {
         "Authorization": "Bearer {env:HF_TOKEN}"
