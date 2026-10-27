@@ -6,6 +6,8 @@
 - Write the plan as a task list: `[ ] Task 1`, `[ ] Task 2`, etc.
 - No exceptions except when the user says "do not plan"/"no plan" or the request is a simple change.
 - Do not start coding, editing, or running commands until the plan is approved.
+- **Requirement:** A plan is MANDATORY for every non-trivial task; never skip it, never fold it into other output.
+- **Terminal:** The plan is the TERMINAL output of the turn. After emitting it, STOP — no further tool calls, edits, commentary, or follow-up actions until the user explicitly approves. The plan must be the last thing in the message.
 
 ## Configuration layout
 - All opencode configuration files live in `~/dotfiles/opencode/`.
