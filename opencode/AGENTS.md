@@ -1,5 +1,12 @@
 # Global opencode rules
 
+## PLAN FIRST (HARD GATE)
+
+- Before ANY tool call that writes, edits, or runs commands: output a PLAN and WAIT for explicit user OK.
+- Write the plan as a task list: `[ ] Task 1`, `[ ] Task 2`, etc.
+- No exceptions except when the user says "do not plan"/"no plan" or the request is a simple change.
+- Do not start coding, editing, or running commands until the plan is approved.
+
 ## Configuration layout
 - All opencode configuration files live in `~/dotfiles/opencode/`.
 - `~/.config/opencode/` is a symlink to `~/dotfiles/opencode/` — edit files there (e.g. `opencode.jsonc`), never create separate copies.
@@ -11,8 +18,6 @@
 - Always commit and push your work.
 
 ## BUILD or PLAN  Agent
-
-- Always submit a PLAN to the user before writing any code.  WAIT for the user to OK.  Write the plan as  as list of task.   [ ] Task 1    [ ] Task 2 etc
 
 - Except when the user says "do not plan" or "no plan" or the user's request is a simple change, verify you have the latest documentation. Also, before you reply to user, think:  did I complete the request?   Did I add something the user did not ask for ?
 
