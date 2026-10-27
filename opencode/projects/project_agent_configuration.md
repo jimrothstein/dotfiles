@@ -7,6 +7,7 @@
 - `~/dotfiles/opencode/projects/` created for all `project.md` files. Rule added: symlink each project's `project.md` into this folder; never create `project.md` elsewhere.
 - No Claude — opencode only.
 - PLAN section convention added to AGENTS.md; `global_setup_to_do.md` folded into this file.
+- 2026-10-26: PLAN FIRST rule made a hard requirement and terminal (plan is mandatory, terminal output of turn). Committed 65f7.
 
 ### Future / low priority
 - `get_news` skill is broken: file is `get_news.md`, not `SKILL.md`; `name:` frontmatter is invalid and description references KDnuggets.
