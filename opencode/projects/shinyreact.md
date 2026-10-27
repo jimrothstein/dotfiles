@@ -8,6 +8,7 @@
 ## NEXT STEPS
 - Verify histogram renders in browser; tune SVG axes.
 - Consider Vite tier if more components needed.
+- Adjust vertical scroll bars for the 5-row table containers (150_iris_filter).
 
 ## TODO
 - [ ] Add client-side (jsdom) test for www/ui.js wire ids
