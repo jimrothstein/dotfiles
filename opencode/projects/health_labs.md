@@ -2,6 +2,9 @@
 health_labs
 
 <PROJECT SUMMARY>
+- 2026-10-31: py_shinyreact (Python Shiny 1.9.0 + shinyreact 0.1.1, `.venv`) runs successfully in
+  browser at http://127.0.0.1:8000 — verified HTTP 200. Launch: `.venv/bin/python -m shiny run app.py`.
+  Reads LABS Google Sheet via CSV gviz URL; JSON data served with `reactive_output`/page_react.
 - 2026-10-05: `shiny/app.R` reads/writes Google Sheet `LABS - ALL` tab of
   spreadsheet `16PRB17uBRtferrNyVSPKHCyelTNW4I6m2bMaTcsgo7s` (owner: jimrothstein@gmail.com).
 - Read path: `googlesheets4::read_sheet()`. Write path: `sheet_append()` (appends, never overwrites).
