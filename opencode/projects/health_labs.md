@@ -2,6 +2,14 @@
 health_labs
 
 <PROJECT SUMMARY>
+- 2026-11-02: py_shinyreact (Python UI in `py_shinyreact/`) upgraded. Top table now trimmed to
+  ID/Date/Test_Name only (all 406 rows) — full-column dataframe removed. Row selection via
+  ↑/↓ arrow keys (highlight + auto-scroll, click also selects); detail panel below shows all
+  11 fields of selected row (name/value 2-col table). Backend `table_data()` sends full
+  records + `columns` (trimmed) + `columns_all`. Sheet columns: ID, Date, Test_Name,
+  Test_Result, Code, Comment, Normal, Where, Purpose, Exercise Level, Allopurinol (no literal
+  "Test" column; Test_Name used, no renaming at user request). Commits aaf5 (baseline), 9d67,
+  c11c — pushed to main. Verified: live-sheet payload check, node --check, app import.
 - 2026-10-31: py_shinyreact (Python Shiny 1.9.0 + shinyreact 0.1.1, `.venv`) runs successfully in
   browser at http://127.0.0.1:8000 — verified HTTP 200. Launch: `.venv/bin/python -m shiny run app.py`.
   Reads LABS Google Sheet via CSV gviz URL; JSON data served with `reactive_output`/page_react.
@@ -23,8 +31,8 @@ health_labs
   installed via install.packages (compiled from source, ~1 min).
 
 <NEXT STEPS>
-- Continue `shiny/app.R` code walkthrough at chunk lines 51–58 (`renderDT`,
-  `renderUI`) — resume under explain_code skill commands.
+- Resume with user feedback on the arrow-key selection/detail-view UI (session 2026-11-02,
+  commit c11c); user confirmed it "is very good" as of end of session.
 - Delete test rows `ZZTEST001` and `ZTEST2` from the `LABS - ALL` tab (both are throwaway
   markers written during the write-path test).
 - Push the 5 local commits in health_labs when the user says so.
